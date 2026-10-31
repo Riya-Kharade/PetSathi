@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../../css/inner.css">
 </head>
 <style>
-    .behaviours {
+    .behaviour-info {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 24px;
@@ -45,17 +45,62 @@
 
     }
 
+    .communication-section {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .communication-section h2,
+    .communication-description {
+        text-align: center;
+    }
+
+    .communication-info {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+        margin: 35px 0 20px;
+        padding: 0 20px;
+    }
+
+    .communication-card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 26px;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .communication-card:hover {
+        cursor: pointer;
+        border-color: #b5cbb9;
+        box-shadow: 0 8px 24px rgba(40, 104, 73, 0.10);
+    }
+
+
+
     @media (max-width: 900px) {
-        .behaviour-grid {
+        .behaviour-info {
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
+
+        .communication-info {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
     }
+
 
     /* Responsiveness for Mobile */
     @media (max-width: 600px) {
-        .behaviour-grid {
+        .behaviour-info {
             grid-template-columns: 1fr;
         }
+
+        .communication-info {
+            grid-template-columns: 1fr;
+        }
+
     }
 </style>
 
@@ -89,7 +134,7 @@
 
         <a class="button" href="#cat-behaviours">Explore Cat Behaviour ↓</a>
     </section>
-    <div class="behaviours">
+    <div class="behaviour-info">
 
         <article class="info-card">
             <img src="../../../assets/images/cats/cat-purring.jpg" alt="Cat Purring" class="behaviour-image">
@@ -153,6 +198,58 @@
                 situation and the individual cat.
             </p>
         </article>
+    </div>
+
+    <div class="communication-section">
+        <h2> Understanding Cat Communication</h2>
+        <p class="communication-description">
+            Cats communicate through their body language, expressions
+            and sounds. Learning these signals helps you understand
+            how your cat feels and what they need.
+        </p>
+        <div class="communication-info">
+            <article class="communication-card">
+                <h3>Body Language</h3>
+                <p>
+                    A cat's posture can reveal a lot about its mood.
+                    A relaxed body often suggests comfort, while a tense or crouched posture may indicate fear or
+                    uncertainty.
+                </p>
+            </article>
+            <article class="communication-card">
+                <h3>Ear & Tail Positions</h3>
+                <p>
+                    Forward-facing ears often show interest, while flattened
+                    ears can signal fear or irritation. An upright tail
+                    commonly indicates a friendly or confident mood.
+                </p>
+            </article>
+            <article class="communication-card">
+                <h3>Eye Contact & Blinking</h3>
+                <p>
+                    Slow blinking can be a sign of trust and comfort.
+                    Avoid forcing eye contact, especially when a cat
+                    appears nervous or uncomfortable.
+                </p>
+            </article>
+            <article class="communication-card">
+                <h3>Vocal Communication</h3>
+                <p>
+                    Meowing, chirping, purring, hissing and growling
+                    all communicate different things. Their meaning
+                    depends on the situation and your cat's behaviour.
+                </p>
+            </article>
+            <article class="communication-card">
+                <h3>Signs of Comfort & Stress</h3>
+                <p>
+                    Relaxed muscles, normal grooming and comfortable
+                    exploration can indicate that a cat feels safe.
+                    Hiding, flattened ears or a tense posture may signal stress.
+                </p>
+            </article>
+
+        </div>
     </div>
 
 
