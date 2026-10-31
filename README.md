@@ -1,241 +1,137 @@
 # 🐾 PetSathi — Your Pet's Trusted Walking Companion
 
-**PetSathi** is an open-source web application that connects pet owners with pet walkers. It aims to make finding walkers, managing pets, scheduling walks, and tracking bookings simple and convenient.
+**PetSathi** is an open-source pet care and walking platform developed as part of **NSoC Winter Edition**. It aims to connect pet owners with trusted pet walkers while providing a convenient space to explore pet-related information, manage pets, and schedule walking services.
 
-Our goal is to build a user-friendly platform that supports responsible pet care while providing opportunities for developers to learn, collaborate, and contribute to a real-world project.
+Our vision is to make pet care simpler, more accessible, and more convenient through technology.
 
 ---
 
-## 🌟 Project Vision
+## 🌟 About PetSathi
 
-PetSathi aims to create a convenient platform where pet owners can find suitable walkers for their pets and manage their walking schedules.
+PetSathi is designed to bring pet owners and pet walkers together through a user-friendly web platform.
 
-The project will be developed in multiple levels, allowing contributors to participate in frontend development, backend development, database design, testing, documentation, and new feature development.
+Users will be able to explore different pet categories, learn about pet care, create pet profiles, discover suitable walkers, and manage walking bookings.
 
-## ✨ Planned Features
+The platform will support different types of pets, with dedicated sections containing relevant information and features for each category.
 
-### 🐶 Pet Owner Features
+## 🎯 Project Objectives
+
+- Connect pet owners with trusted pet walkers.
+- Provide useful information about different pet categories.
+- Make pet profile management simple and convenient.
+- Simplify pet walking requests and booking management.
+- Provide a user-friendly experience for pet owners and walkers.
+- Encourage responsible pet care through technology.
+
+## 🐶 Pet Categories
+
+PetSathi aims to support multiple pet categories with dedicated pages and relevant information.
+
+| Category | Planned Content |
+|---|---|
+| 🐕 Dogs | Breeds, nutrition, exercise, walking and grooming |
+| 🐈 Cats | Breeds, food, indoor activities and health care |
+| 🐦 Birds | Species, nutrition, habitat and daily care |
+| 🐇 Rabbits | Breeds, food, exercise and grooming |
+| 🐾 Other Pets | Additional pet categories and care information |
+
+## ✨ Key Features
+
+### 🏠 Pet Owner Platform
+
 - User registration and login.
 - Create and manage pet profiles.
-- Browse available pet walkers.
-- View walker profiles, experience, and pricing.
+- Explore different pet categories.
+- Access pet care information.
+- Search and discover pet walkers.
+- View walker profiles and availability.
 - Request and manage walking bookings.
 - View booking history.
 - Submit ratings and reviews.
 
-### 🚶 Pet Walker Features
+### 🚶 Pet Walker Platform
+
 - Create and manage walker profiles.
-- Add experience, service areas, and pricing.
-- Manage availability.
+- Add experience and service areas.
+- Set walking prices and availability.
 - Accept or reject booking requests.
-- Update booking status.
-- View customer feedback.
+- Manage scheduled walks.
+- Receive customer feedback.
 
-### 🛡️ Admin Features
-- Manage user and walker accounts.
+### 🛡️ Admin Platform
+
+- Manage pet owners and walkers.
 - Review and approve walker profiles.
-- Monitor bookings.
+- Monitor booking activities.
 - Manage reports and reviews.
-- View basic platform statistics.
+- View platform statistics.
 
-*These are planned features and will be implemented progressively.*
+*The above features represent the planned functionality and will be implemented progressively.*
 
-## 🛠️ Tech Stack
+## 🛠️ Technology Stack
 
-| Technology | Purpose |
+| Technology | Usage |
 |---|---|
-| HTML5 | Website structure |
+| HTML5 | Frontend structure |
 | CSS3 | Styling and responsive design |
-| JavaScript | Client-side interactivity |
+| JavaScript | Frontend functionality |
 | PHP | Backend development |
 | MySQL | Database management |
 | XAMPP | Local development environment |
-| Git & GitHub | Version control and collaboration |
+| Git & GitHub | Version control |
 
-## 🗺️ Development Roadmap
+## 🗺️ Project Development Plan
 
-### Level 1: Frontend UI & Database Design
-- Create the homepage and navigation.
-- Design registration and login pages.
-- Build pet owner and walker dashboards.
-- Create walker listing and booking pages.
-- Design the admin dashboard.
-- Make the website responsive.
-- Design the database schema and SQL tables.
+PetSathi will be developed through five major levels.
 
-### Level 2: Backend Development
-- Connect PHP with MySQL.
-- Implement user registration and login.
-- Add secure password hashing and session management.
-- Implement server-side validation.
-- Create backend operations for managing pets, walkers, and bookings.
+### Level 1 — Frontend UI & Database Design
 
-### Level 3: Core Functionality
-- Implement pet profile management.
-- Add walker search and filtering.
-- Implement booking requests and booking status updates.
-- Add booking history and cancellation rules.
-- Introduce ratings and reviews.
-- Handle walker availability and booking conflicts.
+- Homepage and navigation.
+- Individual pet category pages.
+- User interface for owners, walkers and administrators.
+- Responsive website design.
+- MySQL database design.
 
-### Level 4: Admin & Advanced Features
-- Implement role-based access control.
-- Add walker approval workflows.
-- Build user and booking management tools.
-- Add notifications and reporting features.
-- Improve security and usability.
+### Level 2 — Backend Development
 
-### Level 5: Testing & Deployment
-- Test application functionality.
-- Fix bugs and improve performance.
-- Validate forms and user permissions.
-- Write project documentation.
-- Prepare the application for deployment.
+- PHP and MySQL integration.
+- User authentication.
+- Database operations.
+- Server-side validation.
 
-## 🗄️ Planned Database Structure
+### Level 3 — Core Functionality
 
-The database may include the following tables:
+- Pet profile management.
+- Walker discovery and filtering.
+- Booking management.
+- Ratings and reviews.
 
-| Table | Purpose |
-|---|---|
-| `users` | Store user accounts and roles |
-| `pets` | Store pet information |
-| `walker_profiles` | Store walker details |
-| `availability` | Store walker availability |
-| `bookings` | Manage walking bookings |
-| `reviews` | Store ratings and feedback |
-| `notifications` | Store application notifications |
+### Level 4 — Advanced Features
 
-The final schema will be refined during Level 1.
+- Admin dashboard.
+- Walker verification and approval.
+- Notifications.
+- Advanced booking management.
 
-## 🚀 Getting Started
+### Level 5 — Testing & Deployment
 
-### Prerequisites
+- Application testing.
+- Bug fixing.
+- Security improvements.
+- Deployment and documentation.
 
-Install the following tools:
+## 🌐 Live Demo
 
-- [XAMPP](https://www.apachefriends.org/)
-- A code editor such as Visual Studio Code.
-- Git.
-- A GitHub account.
+**Coming Soon!**
 
-### Local Setup
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/YOUR-USERNAME/PetSathi.git
-   ```
-
-2. Move the project folder into the XAMPP `htdocs` directory.
-
-3. Start **Apache** and **MySQL** from the XAMPP Control Panel.
-
-4. Open phpMyAdmin in your browser and create the project database.
-
-5. Import the SQL file from the `database/` directory when it becomes available.
-
-6. Configure the database connection using the project's backend configuration file.
-
-7. Open the application through your local Apache server.
-
-   ```text
-   http://localhost/PetSathi/
-   ```
-
-*The setup instructions may be updated as development progresses.*
-
-## 📁 Project Structure
-
-```text
-PetSathi/
-├── frontend/
-│   ├── index.html
-│   ├── login.html
-│   ├── register.html
-│   ├── dashboard.html
-│   ├── walkers.html
-│   ├── booking.html
-│   ├── css/
-│   ├── js/
-│   └── assets/
-├── backend/
-│   ├── config/
-│   ├── auth/
-│   ├── pets/
-│   ├── walkers/
-│   ├── bookings/
-│   └── admin/
-├── database/
-│   ├── schema.sql
-│   └── seed.sql
-├── docs/
-├── tests/
-├── README.md
-├── CONTRIBUTING.md
-├── CODE_OF_CONDUCT.md
-├── LICENSE
-└── .gitignore
-```
-
-*This is the proposed structure; folders and files will be added as development progresses.*
-
-## 🤝 Contributing
-
-PetSathi welcomes contributions from developers, designers, testers, and documentation writers.
-
-You can contribute by:
-
-- Improving the user interface.
-- Developing new features.
-- Fixing bugs.
-- Improving accessibility and responsiveness.
-- Optimizing database design.
-- Writing tests and documentation.
-
-### Contribution Workflow
-
-1. Fork the repository.
-2. Create a feature branch.
-3. Make your changes.
-4. Test your work.
-5. Commit your changes with a meaningful message.
-6. Open a pull request with a clear description.
-
-Please check `CONTRIBUTING.md` for detailed guidelines once it is available.
-
-## 🔐 Security
-
-- Passwords will be stored using secure password hashing.
-- User input will be validated on the server.
-- Database queries will use prepared statements.
-- Access to protected features will be controlled through authentication and authorization.
-- Sensitive configuration files will not be committed to the repository.
-
-## 🎯 Project Goals
-
-- Build a practical pet-walking platform.
-- Create a responsive and accessible user interface.
-- Learn and implement full-stack web development.
-- Encourage open-source collaboration.
-- Provide beginner-friendly contribution opportunities.
-- Maintain readable, documented, and maintainable code.
-
-## 🐾 Future Enhancements
-
-- Map-based walker discovery.
-- Email notifications.
-- Walk status updates.
-- Emergency contact information.
-- Improved booking management.
-- Additional accessibility improvements.
-
-## 📄 License
-
-The project license will be selected before public contributions begin. Once selected, the corresponding `LICENSE` file will be added to the repository.
+The live website link will be added here after the initial deployment.
 
 ## 💗 Our Mission
 
 **PetSathi — तुमच्या Pet चा विश्वासू साथी!**
 
-Making every walk easier, every pet happier, and every contribution meaningful. 🐾
+Our mission is to create a platform where every pet gets the care, attention, and happy walks it deserves.
+
+**Built with ❤️ for pets and the open-source community.**
+
+*NSoC Winter Edition*
