@@ -1,5 +1,34 @@
 # 💗 PetSathi Code of Conduct
 
+## 📢 Community Introduction – Start Here First!
+
+Welcome to PetSathi! 🐾
+
+Before participating in project development, requesting an issue assignment, or contributing code, **every new contributor must introduce themselves in our official PetSathi Welcome Announcement.**
+
+👉 [Introduce Yourself – PetSathi Welcome Discussion](https://github.com/Riya-Kharade/PetSathi/discussions/6)
+
+Please share the following details in the discussion:
+
+1. **Name:** Your name or GitHub username.
+2. **Introduction:** A short introduction about yourself.
+3. **Technical Skills:** Technologies and tools you know.
+4. **Area of Interest:** Frontend, Backend, UI/UX, Database, Documentation, etc.
+5. **Open-Source Experience:** Is this your first open-source contribution?
+
+### Important Guidelines
+
+- Introducing yourself in the Welcome Announcement is mandatory for new contributors.
+- Read `README.md` and `CONTRIBUTING.md` before starting work.
+- Explore the available GitHub issues.
+- Comment on an issue to express your interest.
+- Wait for maintainer assignment before starting development.
+- Do not start working on an issue until it is assigned to you.
+
+**Our goal is to know our contributors, understand their interests, and build a collaborative community! 💚**
+
+---
+
 ## Our Pledge
 
 PetSathi is an open-source project created for collaboration and learning as part of **NSoC Winter Edition**.
@@ -44,6 +73,7 @@ The following behaviour is not acceptable:
 - Do not create duplicate issues or spam the repository.
 - Do not repeatedly tag maintainers or contributors without a valid reason.
 - Ask questions politely when you need help.
+- Introduce yourself in the official Welcome Announcement before requesting an issue assignment.
 - Respect the issue assignment limit and contribution workflow described in `CONTRIBUTING.md`.
 
 ## 🔐 Privacy and Security
@@ -92,4 +122,4 @@ Let's build PetSathi with kindness, collaboration, and respect.
 
 Every contribution matters, whether it is a line of code, a bug report, a design improvement, or helping another contributor.
 
-**Be kind. Be respectful. Keep building together. 💗**
+**Introduce yourself. Share your ideas. Collaborate. Build together. 💗**
