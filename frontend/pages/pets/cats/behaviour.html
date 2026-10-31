@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../../css/inner.css">
 </head>
 <style>
+    /* Behaviour section CSS */
     .behaviour-info {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -45,6 +46,7 @@
 
     }
 
+    /* Communication section CSS */
     .communication-section {
         padding-top: 55px;
         padding-bottom: 55px;
@@ -77,8 +79,83 @@
         box-shadow: 0 8px 24px rgba(40, 104, 73, 0.10);
     }
 
+    /* Training section CSS */
+    .training-section {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
 
+    .training-section h2,
+    .training-description {
+        text-align: center;
+    }
 
+    .training-info {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+        margin: 35px 0 55px;
+        padding: 0 20px;
+    }
+
+    .training-card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 26px;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .training-card:hover {
+        cursor: pointer;
+        border-color: #b5cbb9;
+        box-shadow: 0 8px 24px rgba(40, 104, 73, 0.10);
+    }
+
+    /* Activities section CsS */
+    .activities-section {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .activities-section h2,
+    .activities-description {
+        text-align: center;
+    }
+
+    .activities-info {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+        margin: 35px 0 55px;
+        padding: 0 20px;
+    }
+
+    .activity-card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 28px;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .activity-card:hover {
+        cursor: pointer;
+        border-color: #b5cbb9;
+        box-shadow: 0 8px 24px rgba(40, 104, 73, 0.10);
+    }
+
+    .activity-number {
+        display: inline-block;
+        color: var(--green);
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin-bottom: 5px;
+    }
+
+    /* Responsiveness */
+    /* For Tablet */
     @media (max-width: 900px) {
         .behaviour-info {
             grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -88,10 +165,16 @@
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
+        .training-info {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .activities-info {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
     }
 
-
-    /* Responsiveness for Mobile */
+    /* For Mobile */
     @media (max-width: 600px) {
         .behaviour-info {
             grid-template-columns: 1fr;
@@ -101,6 +184,13 @@
             grid-template-columns: 1fr;
         }
 
+        .training-info {
+            grid-template-columns: 1fr;
+        }
+
+        .activities-info {
+            grid-template-columns: 1fr;
+        }
     }
 </style>
 
@@ -251,8 +341,112 @@
 
         </div>
     </div>
+    <div class="training-section">
+        <h2>Training & Socialisation</h2>
+        <p class="training-description">
+            Cats learn best through patience, consistency and positive experiences. Small
+            steps can help them feel confident in their surroundings.
+        </p>
+        <div class="training-info">
+            <article class="training-card">
+                <h3>Litter Training</h3>
+                <p>
+                    Place a clean litter box in a quiet, accessible location. Keep it clean and help your cat become
+                    familiar with it. Reward consistent use and avoid punishment for accidents.
+                </p>
+            </article>
+            <article class="training-card">
+                <h3>Positive Reinforcement</h3>
+                <p>
+                    Encourage desirable behaviour with treats, praise or playtime. Reward your cat immediately after the
+                    behaviour so they can associate it with a positive experience.
+                </p>
+            </article>
+            <article class="training-card">
+                <h3>Scratching Post Training</h3>
+                <p>
+                    Place scratching posts near favourite resting areas or places your cat already scratches. Encourage
+                    their use with toys, treats and praise.
+                </p>
+            </article>
 
+            <article class="training-card">
+                <h3>Introducing New Environments</h3>
+                <p>
+                    Let your cat explore unfamiliar spaces gradually.Start with a quiet, comfortable room and allow them
+                    to explore at their own pace.
+                </p>
+            </article>
 
+            <article class="training-card">
+                <h3>Meeting New People & Pets</h3>
+                <p>
+                    Introduce new people and animals slowly. Give your cat a safe space to retreat to, supervise early
+                    interactions and never force contact.
+                </p>
+            </article>
+
+        </div>
+    </div>
+    <div class="activities-section">
+        <h2> Indoor Activities & Enrichment </h2>
+        <p class="activities-description">
+            Indoor cats need opportunities to explore, play and stay active. Simple activities can keep their minds
+            stimulated and support their physical well-being.
+        </p>
+
+        <div class="activities-info">
+            <article class="activity-card">
+                <span class="activity-number">01</span>
+                <h3>Interactive Toys</h3>
+                <p>
+                    Wand toys, moving toys and toy mice encourage natural hunting instincts while keeping cats
+                    physically active.
+                </p>
+            </article>
+            <article class="activity-card">
+                <span class="activity-number">02</span>
+                <h3>Puzzle Feeders</h3>
+                <p>
+                    Make mealtimes more engaging with puzzle feeders that encourage cats to think, explore and work for
+                    their food.
+                </p>
+            </article>
+
+            <article class="activity-card">
+                <span class="activity-number">03</span>
+                <h3>Climbing Structures</h3>
+                <p>
+                    Cat trees, shelves and climbing spaces provide exercise and elevated spots where cats can observe
+                    their surroundings.
+                </p>
+            </article>
+
+            <article class="activity-card">
+                <span class="activity-number">04</span>
+                <h3>Scratching Posts</h3>
+                <p>
+                    Scratching posts help cats stretch, maintain their claws and express natural scratching behaviour.
+                </p>
+            </article>
+            <article class="activity-card">
+                <span class="activity-number">05</span>
+                <h3>Hide-and-Seek</h3>
+                <p>
+                    Use cardboard boxes, tunnels and safe hiding spots to encourage curiosity and give cats places to
+                    explore.
+                </p>
+            </article>
+            <article class="activity-card">
+                <span class="activity-number">06</span>
+                <h3>Interactive Play Sessions</h3>
+                <p>
+                    Set aside regular time to play with your cat. Short, engaging sessions help build confidence and
+                    strengthen your bond.
+                </p>
+            </article>
+        </div>
+    </div>
 
 </body>
 
