@@ -1,0 +1,152 @@
+
+name: PetSathi - 36 Hour Issue Assignment Timeout
+
+on:
+  issues:
+    types: [assigned]
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  pull-requests: read
+  contents: read
+
+jobs:
+  check-assignment:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check 36-hour assignments
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const HOURS = 36;
+            const LABEL = "available";
+            const { owner, repo } = context.repo;
+            const now = Date.now();
+            const deadline = HOURS * 60 * 60 * 1000;
+
+            // Get all open issues
+            const issues = await github.paginate(
+              github.rest.issues.listForRepo,
+              {
+                owner,
+                repo,
+                state: "open",
+                per_page: 100
+              }
+            );
+
+            // Get all PRs, including draft and closed PRs
+            const prs = await github.paginate(
+              github.rest.pulls.list,
+              {
+                owner,
+                repo,
+                state: "all",
+                per_page: 100
+              }
+            );
+
+            for (const issue of issues) {
+              if (issue.pull_request || !issue.assignees?.length) continue;
+
+              // Get assignment history
+              const events = await github.paginate(
+                github.rest.issues.listEvents,
+                {
+                  owner,
+                  repo,
+                  issue_number: issue.number,
+                  per_page: 100
+                }
+              );
+
+              for (const assignee of issue.assignees) {
+                const assignment = events
+                  .filter(event =>
+                    event.event === "assigned" &&
+                    event.assignee?.login === assignee.login
+                  )
+                  .sort((a, b) =>
+                    new Date(b.created_at) - new Date(a.created_at)
+                  )[0];
+
+                // Never guess an assignment timestamp
+                if (!assignment) {
+                  console.log(
+                    `No assignment event found for ${assignee.login} on #${issue.number}`
+                  );
+                  continue;
+                }
+
+                const assignedAt = new Date(assignment.created_at).getTime();
+
+                if (now - assignedAt < deadline) continue;
+
+                // Look for a linked PR opened after assignment.
+                // Draft PRs also count.
+                const escapedRepo = `${owner}/${repo}`.replace(
+                  /[.*+?^${}()|[\]\\]/g,
+                  "\\$&"
+                );
+
+                const closingPattern = new RegExp(
+                  `(?:close[sd]?|fix(?:es|ed)?|resolve[sd]?)\\s+(?:${escapedRepo})?#${issue.number}\\b`,
+                  "i"
+                );
+
+                const linkedPR = prs.some(pr =>
+                  new Date(pr.created_at).getTime() >= assignedAt &&
+                  closingPattern.test(pr.body || "")
+                );
+
+                if (linkedPR) {
+                  console.log(
+                    `PR found for #${issue.number}. Keeping ${assignee.login} assigned.`
+                  );
+                  continue;
+                }
+
+                // Remove only the expired contributor
+                await github.rest.issues.removeAssignees({
+                  owner,
+                  repo,
+                  issue_number: issue.number,
+                  assignees: [assignee.login]
+                });
+
+                // Add available label only if nobody remains assigned
+                const remaining = issue.assignees
+                  .filter(person => person.login !== assignee.login);
+
+                if (remaining.length === 0) {
+                  await github.rest.issues.addLabels({
+                    owner,
+                    repo,
+                    issue_number: issue.number,
+                    labels: [LABEL]
+                  });
+                }
+
+                // Notify the contributor
+                await github.rest.issues.createComment({
+                  owner,
+                  repo,
+                  issue_number: issue.number,
+                  body:
+                    `⏰ @${assignee.login}, your assignment has expired because no linked Pull Request was opened within 36 hours.\n\n` +
+                    `You have been unassigned. ` +
+                    (remaining.length === 0
+                      ? "This issue is now available for another contributor."
+                      : "Other contributors are still assigned to this issue.") +
+                    "\n\nPlease follow the PetSathi contribution guidelines. 💚🐾"
+                });
+
+                console.log(
+                  `Released ${assignee.login} from issue #${issue.number}.`
+                );
+              }
+            }
