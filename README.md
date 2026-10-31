@@ -67,15 +67,6 @@ PetSathi aims to support multiple pet categories with dedicated pages and releva
 
 *The features above represent the planned functionality and will be implemented progressively.*
 
-## 📸 Project Screenshots
-
-Here are some previews of the PetSathi platform.
-
-### Screenshot 1 – Homepage
-
-![PetSathi Homepage](<img width="1887" height="896" alt="image" src="https://github.com/user-attachments/assets/86ab65b0-f68b-4046-ba4f-17db53ed712a" />
-)
-
 
 ## 🛠️ Technology Stack
 
