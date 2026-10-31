@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../css/global.css">
+    <link rel="stylesheet" href="../../../css/inner.css">
+</head>
+<style>
+    .behaviours {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+        margin: 35px 0 55px;
+        padding: 0 20px;
+        overflow: hidden;
+    }
+
+    .behaviour-image {
+        width: 100%;
+        height: 190px;
+        object-fit: cover;
+        border-radius: 12px;
+        display: block;
+        margin-bottom: 18px;
+        transition: transform 0.4s ease;
+
+    }
+
+    .info-card {
+        background: #ffffff;
+        border: 1px solid var(--line);
+        padding: 16px;
+        border-radius: 18px;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    }
+
+    .info-card:hover,
+    .behaviour-image {
+        cursor: pointer;
+        transform: scale(1.05);
+
+    }
+
+    @media (max-width: 900px) {
+        .behaviour-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    /* Responsiveness for Mobile */
+    @media (max-width: 600px) {
+        .behaviour-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<body>
+    <header class="site-header"><a class="brand" href="../../../../index.html">
+            <span class="brand-mark">🐾</span>
+            <span>Pet<span>Sathi</span></span>
+        </a>
+        <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <nav class="main-nav">
+            <a href="../../../../index.html">Home</a>
+            <a href="../index.html">Explore Pets</a>
+            <a href="../../services/index.html">Services</a>
+            <a href="../../walker/index.html">Find a Walker</a>
+            <a href="../../about.html">About Us</a>
+            <a href="../../auth/login.html">Log in</a>
+            <a class="button button-small" href="../../auth/register.html">Get Started ↗</a>
+        </nav>
+    </header>
+    <section class="page-hero behaviour-hero">
+        <div class="eyebrow">PetSathi • UNDERSTANDING CATS</div>
+
+        <div class="page-emoji">🐈</div>
+
+        <h1>Understand Your Cat Better</h1>
+
+        <p>
+            Discover what your cat's behaviour mean, learn how they communicate and explore simple ways to keep them
+            happy, active and comfortable
+        </p>
+
+        <a class="button" href="#cat-behaviours">Explore Cat Behaviour ↓</a>
+    </section>
+    <div class="behaviours">
+
+        <article class="info-card">
+            <img src="../../../assets/images/cats/cat-purring.jpg" alt="Cat Purring" class="behaviour-image">
+            <h2>Purring</h2>
+            <p>
+                Cats often purr when they feel relaxed and comfortable.
+                However, they may also purr when stressed or in pain.
+            </p>
+        </article>
+        <article class="info-card">
+            <img src="../../../assets/images/cats/cat-kneading.png" alt="Cat Kneading" class="behaviour-image">
+            <h2>Kneading</h2>
+            <p>
+                Kneading happens when cats rhythmically push their paws
+                against soft surfaces. It is often associated with comfort
+                and relaxation.
+            </p>
+        </article>
+        <article class="info-card">
+            <img src="../../../assets/images/cats/cat-tail.jpg" alt="Cat upright tail" class="behaviour-image">
+            <h2>Tail Movements</h2>
+            <p>
+                A cat's tail can reveal its mood. An upright tail may
+                indicate friendliness, while a rapidly flicking tail
+                can signal irritation.
+            </p>
+        </article>
+        <article class="info-card">
+            <img src="../../../assets/images/cats/cat-scratching.jpg" alt="Cat Scratching" class="behaviour-image">
+            <h2>Scratching</h2>
+            <p>
+                Scratching helps cats maintain their claws, stretch
+                their bodies, and mark their territory. Provide
+                suitable scratching posts.
+            </p>
+        </article>
+        <article class="info-card">
+            <img src="../../../assets/images/cats/cat-hiding.jpg" alt="Cat Hiding" class="behaviour-image">
+            <h2>Hiding</h2>
+            <p>
+                Cats may hide when they feel nervous, overwhelmed,
+                or simply want some quiet time. Give them a safe
+                space to retreat to.
+            </p>
+        </article>
+        <article class="info-card">
+            <img src="../../../assets/images/cats/cat-rubbing.jpg" alt="Cat Rubbing" class="behaviour-image">
+            <h2>Rubbing</h2>
+            <p>
+                When cats rub against people or objects, they often
+                leave their scent behind. This can be a way of
+                marking familiar surroundings.
+            </p>
+        </article>
+        <article class="info-card">
+            <img src="../../../assets/images/cats/cat-meowing.jpg" alt="Cat Meowing" class="behaviour-image">
+            <h2>Meowing</h2>
+            <p>
+                Meowing, chirping, and other sounds are ways cats
+                communicate. Their meaning can depend on the
+                situation and the individual cat.
+            </p>
+        </article>
+    </div>
+
+
+
+</body>
+
+</html>
