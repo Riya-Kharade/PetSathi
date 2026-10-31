@@ -122,9 +122,7 @@ PetSathi will be developed through five major levels.
 
 ## 🌐 Live Demo
 
-**Coming Soon!**
-
-The live website link will be added here after the initial deployment.
+https://petsathi-nsoc.netlify.app/
 
 ## 💗 Our Mission
 
