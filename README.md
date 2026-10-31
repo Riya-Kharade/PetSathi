@@ -1,6 +1,8 @@
-# 🐾 PetSathi - Your Pet's Trusted Walking Companion
+# 🐾 PetSathi – Your Pet's Trusted Companion
 
-**PetSathi** is an open-source pet care and walking platform developed as part of **NSoC Winter Edition**. It aims to connect pet owners with trusted pet walkers while providing a convenient space to explore pet-related information, manage pets, and schedule walking services.
+**PetSathi** is an open-source pet care and pet-walking platform developed as part of **Nexus Spring of Code (NSoC) 2026 – Winter Edition**.
+
+It aims to connect pet owners with trusted pet-walking companions while providing a convenient platform to explore pet-related information, manage pets, and schedule walking services.
 
 Our vision is to make pet care simpler, more accessible, and more convenient through technology.
 
@@ -12,25 +14,25 @@ PetSathi is designed to bring pet owners and pet walkers together through a user
 
 Users will be able to explore different pet categories, learn about pet care, create pet profiles, discover suitable walkers, and manage walking bookings.
 
-The platform will support different types of pets, with dedicated sections containing relevant information and features for each category.
+The platform aims to support different types of pets, with dedicated sections containing relevant information and features for each category.
 
 ## 🎯 Project Objectives
 
-- Connect pet owners with trusted pet walkers.
+- Connect pet owners with trusted pet-walking companions.
 - Provide useful information about different pet categories.
 - Make pet profile management simple and convenient.
-- Simplify pet walking requests and booking management.
+- Simplify pet-walking requests and booking management.
 - Provide a user-friendly experience for pet owners and walkers.
 - Encourage responsible pet care through technology.
 
-## 🐶 Pet Categories
+## 🐾 Pet Categories
 
 PetSathi aims to support multiple pet categories with dedicated pages and relevant information.
 
 | Category | Planned Content |
 |---|---|
 | 🐕 Dogs | Breeds, nutrition, exercise, walking and grooming |
-| 🐈 Cats | Breeds, food, indoor activities and health care |
+| 🐈 Cats | Breeds, food, indoor activities and healthcare |
 | 🐦 Birds | Species, nutrition, habitat and daily care |
 | 🐇 Rabbits | Breeds, food, exercise and grooming |
 | 🐾 Other Pets | Additional pet categories and care information |
@@ -38,7 +40,6 @@ PetSathi aims to support multiple pet categories with dedicated pages and releva
 ## ✨ Key Features
 
 ### 🏠 Pet Owner Platform
-
 - User registration and login.
 - Create and manage pet profiles.
 - Explore different pet categories.
@@ -50,7 +51,6 @@ PetSathi aims to support multiple pet categories with dedicated pages and releva
 - Submit ratings and reviews.
 
 ### 🚶 Pet Walker Platform
-
 - Create and manage walker profiles.
 - Add experience and service areas.
 - Set walking prices and availability.
@@ -59,14 +59,23 @@ PetSathi aims to support multiple pet categories with dedicated pages and releva
 - Receive customer feedback.
 
 ### 🛡️ Admin Platform
-
 - Manage pet owners and walkers.
 - Review and approve walker profiles.
 - Monitor booking activities.
 - Manage reports and reviews.
 - View platform statistics.
 
-*The above features represent the planned functionality and will be implemented progressively.*
+*The features above represent the planned functionality and will be implemented progressively.*
+
+## 📸 Project Screenshots
+
+Here are some previews of the PetSathi platform.
+
+### Screenshot 1 – Homepage
+
+![PetSathi Homepage](<img width="1887" height="896" alt="image" src="https://github.com/user-attachments/assets/86ab65b0-f68b-4046-ba4f-17db53ed712a" />
+)
+
 
 ## 🛠️ Technology Stack
 
@@ -80,49 +89,54 @@ PetSathi aims to support multiple pet categories with dedicated pages and releva
 | XAMPP | Local development environment |
 | Git & GitHub | Version control |
 
-## 🗺️ Project Development Plan
+## 🗺️ Project Development Roadmap
 
-PetSathi will be developed through five major levels.
+PetSathi will be developed progressively through five development phases.
 
-### Level 1 — Frontend UI & Database Design
-
+### Phase 1 – Frontend UI Development
 - Homepage and navigation.
 - Individual pet category pages.
 - User interface for owners, walkers and administrators.
 - Responsive website design.
-- MySQL database design.
 
-### Level 2 — Backend Development
-
+### Phase 2 – Backend Development
 - PHP and MySQL integration.
 - User authentication.
 - Database operations.
 - Server-side validation.
 
-### Level 3 — Core Functionality
-
+### Phase 3 – Core Functionality
 - Pet profile management.
 - Walker discovery and filtering.
 - Booking management.
 - Ratings and reviews.
 
-### Level 4 — Advanced Features
-
+### Phase 4 – Advanced Features
 - Admin dashboard.
 - Walker verification and approval.
 - Notifications.
 - Advanced booking management.
 
-### Level 5 — Testing & Deployment
-
+### Phase 5 – Testing & Deployment
 - Application testing.
 - Bug fixing.
 - Security improvements.
 - Deployment and documentation.
 
+## 🚧 Current Project Status
+
+PetSathi is currently under active development as part of NSoC Winter Edition.
+
+- Frontend development: In progress.
+- Backend development: Planned.
+- Database integration: Planned.
+- Pet-walking and booking functionality: Planned.
+
 ## 🌐 Live Demo
 
-https://petsathi-nsoc.netlify.app/
+**Website:** https://petsathi-nsoc.netlify.app/
+
+**GitHub Repository:** https://github.com/Riya-Kharade/PetSathi
 
 ## 💗 Our Mission
 
@@ -132,4 +146,4 @@ Our mission is to create a platform where every pet gets the care, attention, an
 
 **Built with ❤️ for pets and the open-source community.**
 
-*NSoC Winter Edition*
+*Proudly participating in Nexus Spring of Code (NSoC) 2026 – Winter Edition.*
