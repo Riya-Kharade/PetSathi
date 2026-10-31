@@ -1,4 +1,4 @@
-# 🐾 PetSathi — Your Pet's Trusted Walking Companion
+# 🐾 PetSathi - Your Pet's Trusted Walking Companion
 
 **PetSathi** is an open-source pet care and walking platform developed as part of **NSoC Winter Edition**. It aims to connect pet owners with trusted pet walkers while providing a convenient space to explore pet-related information, manage pets, and schedule walking services.
 
