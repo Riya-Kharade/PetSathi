@@ -1,8 +1,476 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Cat Behaviour & Training | PetSathi</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Behaviour & Enrichment | PetSathi</title>
+    <link rel="stylesheet" href="../../../css/global.css">
+    <link rel="stylesheet" href="../../../css/inner.css">
+    <style>
+        /* Behaviour section CSS */
+        .behaviour-info {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+            margin: 35px 0 55px;
+            padding: 0 20px;
+            overflow: hidden;
+        }
+
+        .behaviour-image {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 12px;
+            display: block;
+            margin-bottom: 18px;
+            transition: transform 0.4s ease;
+
+        }
+
+        .info-card {
+            background: #ffffff;
+            border: 1px solid var(--line);
+            padding: 16px;
+            border-radius: 18px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            overflow: hidden;
+        }
+
+        .info-card:hover {
+            cursor: pointer;
+            border-color: #b5cbb9;
+            box-shadow: 0 8px 24px rgba(40, 104, 73, 0.10);
+
+        }
+
+        .behaviour-image {
+            transition: transform 0.4s ease;
+        }
+
+        .info-card:hover .behaviour-image {
+            transform: scale(1.04);
+        }
+
+        /* Common CSS */
+        .section {
+            padding-top: 55px;
+            padding-bottom: 55px;
+        }
+
+        .section h2,
+        .description {
+            text-align: center;
+        }
+
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+            margin: 35px 0 20px;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 26px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            cursor: pointer;
+            border-color: #b5cbb9;
+            box-shadow: 0 8px 24px rgba(40, 104, 73, 0.10);
+        }
+
+        .activity-number {
+            color: var(--green);
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        /*CTA*/
+        .cta-section {
+            text-align: center;
+            align-items: center;
+            margin-bottom: 55px;
+        }
+
+        .cta-section h2 {
+            opacity: 0.7;
+        }
+
+        .cta-section p {
+            padding-bottom: 30px;
+        }
+
+        /*Responsiveness */
+        /*For Tablet*/
+
+        @media (max-width: 900px) {
+            .behaviour-info {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .info-cards {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        /* For Mobile */
+        @media (max-width: 600px) {
+            .behaviour-info {
+                grid-template-columns: 1fr;
+            }
+
+            .info-cards {
+                grid-template-columns: 1fr;
+            }
+
+        }
+    </style>
+
 </head>
+
 <body>
+    <header class="site-header"><a class="brand" href="../../../../index.html">
+            <span class="brand-mark">🐾</span>
+            <span>Pet<span>Sathi</span></span>
+        </a>
+        <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <nav class="main-nav">
+            <a href="../../../../index.html">Home</a>
+            <a href="../index.html">Explore Pets</a>
+            <a href="../../services/index.html">Services</a>
+            <a href="../../walker/index.html">Find a Walker</a>
+            <a href="../../about.html">About Us</a>
+            <a href="../../auth/login.html">Log in</a>
+            <a class="button button-small" href="../../auth/register.html">Get Started ↗</a>
+        </nav>
+    </header>
+    <section class="page-hero behaviour-hero">
+        <div class="eyebrow">PetSathi • UNDERSTANDING CATS</div>
+
+        <div class="page-emoji">🐈</div>
+
+        <h1>Understand Your Cat Better</h1>
+
+        <p>
+            Discover what your cat's behaviour means, learn how they communicate and explore simple ways to keep them
+            happy, active and comfortable
+        </p>
+
+        <a class="button" href="#cat-behaviours">Explore Cat Behaviour ↓</a>
+    </section>
+    <div class="behaviour-info" id="cat-behaviours">
+
+        <article class="info-card">
+            <img src="../../../assets/images/cats/cat-purring.jpg" alt="Cat Purring" class="behaviour-image">
+            <h2>Purring</h2>
+            <p>
+                Cats often purr when they feel relaxed and comfortable.
+                However, they may also purr when stressed or in pain.
+            </p>
+        </article>
+        <article class="info-card">
+            <img src="../../../assets/images/cats/cat-kneading.png" alt="Cat Kneading" class="behaviour-image">
+            <h2>Kneading</h2>
+            <p>
+                Kneading happens when cats rhythmically push their paws
+                against soft surfaces. It is often associated with comfort
+                and relaxation.
+            </p>
+        </article>
+        <article class="info-card">
+            <img src="../../../assets/images/cats/cat-tail.jpg" alt="Cat upright tail" class="behaviour-image">
+            <h2>Tail Movements</h2>
+            <p>
+                A cat's tail can reveal its mood. An upright tail may
+                indicate friendliness, while a rapidly flicking tail
+                can signal irritation.
+            </p>
+        </article>
+        <article class="info-card">
+            <img src="../../../assets/images/cats/cat-scratching.jpg" alt="Cat Scratching" class="behaviour-image">
+            <h2>Scratching</h2>
+            <p>
+                Scratching helps cats maintain their claws, stretch
+                their bodies, and mark their territory. Provide
+                suitable scratching posts.
+            </p>
+        </article>
+        <article class="info-card">
+            <img src="../../../assets/images/cats/cat-hiding.jpg" alt="Cat Hiding" class="behaviour-image">
+            <h2>Hiding</h2>
+            <p>
+                Cats may hide when they feel nervous, overwhelmed,
+                or simply want some quiet time. Give them a safe
+                space to retreat to.
+            </p>
+        </article>
+        <article class="info-card">
+            <img src="../../../assets/images/cats/cat-rubbing.jpg" alt="Cat Rubbing" class="behaviour-image">
+            <h2>Rubbing</h2>
+            <p>
+                When cats rub against people or objects, they often
+                leave their scent behind. This can be a way of
+                marking familiar surroundings.
+            </p>
+        </article>
+        <article class="info-card">
+            <img src="../../../assets/images/cats/cat-meowing.jpg" alt="Cat Meowing" class="behaviour-image">
+            <h2>Meowing</h2>
+            <p>
+                Meowing, chirping, and other sounds are ways cats
+                communicate. Their meaning can depend on the
+                situation and the individual cat.
+            </p>
+        </article>
+    </div>
+
+
+    <div class="section">
+        <h2>Cat Communication</h2>
+        <p class="description">
+            Cats communicate through their body language, expressions
+            and sounds. Learning these signals helps you understand
+            how your cat feels and what they need.
+        </p>
+        <div class="info-cards">
+            <article class="card">
+                <h3>Body Language</h3>
+                <p>
+                    A cat's posture can reveal a lot about its mood.
+                    A relaxed body often suggests comfort, while a tense or crouched posture may indicate fear or
+                    uncertainty.
+                </p>
+            </article>
+            <article class="card">
+                <h3>Ear & Tail Positions</h3>
+                <p>
+                    Forward-facing ears often show interest, while flattened
+                    ears can signal fear or irritation. An upright tail
+                    commonly indicates a friendly or confident mood.
+                </p>
+            </article>
+            <article class="card">
+                <h3>Eye Contact & Blinking</h3>
+                <p>
+                    Slow blinking can be a sign of trust and comfort.
+                    Avoid forcing eye contact, especially when a cat
+                    appears nervous or uncomfortable.
+                </p>
+            </article>
+            <article class="card">
+                <h3>Vocal Communication</h3>
+                <p>
+                    Meowing, chirping, purring, hissing and growling
+                    all communicate different things. Their meaning
+                    depends on the situation and your cat's behaviour.
+                </p>
+            </article>
+            <article class="card">
+                <h3>Signs of Comfort & Stress</h3>
+                <p>
+                    Relaxed muscles, normal grooming and comfortable
+                    exploration can indicate that a cat feels safe.
+                    Hiding, flattened ears or a tense posture may signal stress.
+                </p>
+            </article>
+
+        </div>
+    </div>
+    <div class="section">
+        <h2>Training & Socialisation</h2>
+        <p class="description">
+            Cats learn best through patience, consistency and positive experiences. Small steps can help them feel
+            confident in their surroundings.
+        </p>
+        <div class="info-cards">
+            <article class="card">
+                <h3>Litter Training</h3>
+                <p>
+                    Place a clean litter box in a quiet, accessible location. Keep it clean and help your cat become
+                    familiar with it. Reward consistent use and avoid punishment for accidents.
+                </p>
+            </article>
+            <article class="card">
+                <h3>Positive Reinforcement</h3>
+                <p>
+                    Encourage desirable behaviour with treats, praise or playtime. Reward your cat immediately after
+                    the
+                    behaviour so they can associate it with a positive experience.
+                </p>
+            </article>
+            <article class="card">
+                <h3>Scratching Post Training</h3>
+                <p>
+                    Place scratching posts near favourite resting areas or places your cat already scratches.
+                    Encourage
+                    their use with toys, treats and praise.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Introducing New Environments</h3>
+                <p>
+                    Let your cat explore unfamiliar spaces gradually. Start with a quiet, comfortable room and allow
+                    them
+                    to explore at their own pace.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Meeting New People & Pets</h3>
+                <p>
+                    Introduce new people and animals slowly. Give your cat a safe space to retreat to, supervise
+                    early
+                    interactions and never force contact.
+                </p>
+            </article>
+
+        </div>
+    </div>
+    <div class="section">
+        <h2> Indoor Activities & Enrichment </h2>
+        <p class="description">
+            Indoor cats need opportunities to explore, play and stay active. Simple activities can keep their minds
+            stimulated and support their physical well-being.
+        </p>
+
+        <div class="info-cards">
+            <article class="card">
+                <span class="activity-number">01</span>
+                <h3>Interactive Toys</h3>
+                <p>
+                    Wand toys, moving toys and toy mice encourage natural hunting instincts while keeping cats
+                    physically active.
+                </p>
+            </article>
+            <article class="card">
+                <span class="activity-number">02</span>
+                <h3>Puzzle Feeders</h3>
+                <p>
+                    Make mealtimes more engaging with puzzle feeders that encourage cats to think, explore and work
+                    for
+                    their food.
+                </p>
+            </article>
+
+            <article class="card">
+                <span class="activity-number">03</span>
+                <h3>Climbing Structures</h3>
+                <p>
+                    Cat trees, shelves and climbing spaces provide exercise and elevated spots where cats can
+                    observe
+                    their surroundings.
+                </p>
+            </article>
+
+            <article class="card">
+                <span class="activity-number">04</span>
+                <h3>Scratching Posts</h3>
+                <p>
+                    Scratching posts help cats stretch, maintain their claws and express natural scratching
+                    behaviour.
+                </p>
+            </article>
+            <article class="card">
+                <span class="activity-number">05</span>
+                <h3>Hide-and-Seek</h3>
+                <p>
+                    Use cardboard boxes, tunnels and safe hiding spots to encourage curiosity and give cats places
+                    to
+                    explore.
+                </p>
+            </article>
+            <article class="card">
+                <span class="activity-number">06</span>
+                <h3>Interactive Play Sessions</h3>
+                <p>
+                    Set aside regular time to play with your cat. Short, engaging sessions help build confidence and
+                    strengthen your bond.
+                </p>
+            </article>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Building a Bond With Your Cat</h2>
+        <p class="description">
+            Every cat has its own personality and way of showing affection. A strong bond grows through patience,
+            understanding and everyday positive experiences.
+        </p>
+        <div class="info-cards">
+            <article class="card">
+                <h3>Respect Their Personal Space</h3>
+                <p>
+                    Allow your cat to approach you when they feel comfortable. Avoid forcing cuddles or handling and
+                    give them a quiet place to retreat whenever they need it.
+                </p>
+            </article>
+            <article class="card">
+                <h3>Make Time for Play</h3>
+                <p>
+                    Set aside time each day for interactive play. Follow your cat's energy levels and use toys that
+                    encourage their natural curiosity.
+                </p>
+            </article>
+            <article class="card">
+                <h3>Create a Comfortable Environment</h3>
+                <p>
+                    Provide cosy resting spots, clean litter areas,
+                    fresh water and safe spaces where your cat can
+                    relax and feel secure.
+                </p>
+            </article>
+            <article class="card">
+                <h3>Understand Their Preferences</h3>
+                <p>
+                    Some cats enjoy being petted, while others prefer
+                    sitting nearby. Notice what your cat enjoys and
+                    respect their individual personality.
+                </p>
+            </article>
+            <article class="card">
+                <h3>Build Trust Through Positive Interaction</h3>
+                <p>
+                    Use gentle handling, patience, treats and positive
+                    experiences to help your cat feel safe and develop
+                    confidence around you.
+                </p>
+            </article>
+        </div>
+    </div>
+    <div class="cta-section">
+        <h2>Happy Cats, Happy Homes! 🐾</h2>
+        <p>
+            Understanding your cat is just the beginning.
+            Explore more resources to give your feline friend
+            a healthy, happy and comfortable life.
+        </p>
+
+        <!-- Get Care and Cat Nutrition page are not avilable yet. 
+        These Buttons temporarily link to the cats landing page to avoid broken links. Update, when dedicated pages are added.  -->
+
+        <div class="cta-buttons">
+            <a class="button" href="index.html">Explore Cat Care</a>
+
+            <a class="button button-secondary" href="index.html">
+                Cat Nutrition
+            </a>
+
+            <a class="button button-secondary" href="index.html">
+                Back to Cats
+            </a>
+        </div>
+
+
+    </div>
+    <script src="../../../js/main.js"></script>
+
 </body>
+
 </html>
