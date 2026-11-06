@@ -3,13 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dog care and wellness essentials - grooming, nutrition, and veterinary guidance on PetSathi.">
-  <title>Dog Care & Health Guide | PetSathi</title>
+  <meta name="description" content="A complete guide to daily dog care, grooming, health, safety, and lifelong wellbeing on PetSathi.">
+  <title>Complete Dog Care Guide | PetSathi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../../css/global.css">
+  <link rel="stylesheet" href="../../../css/home.css">
   <link rel="stylesheet" href="../../../css/inner.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    .care-hero{min-height:500px;padding-block:48px 58px}
+    .care-badge{display:inline-flex;align-items:center;gap:9px;margin-bottom:16px;padding:7px 14px;border-radius:999px;background:#eaf2e9;color:var(--green);font-size:.76rem;font-weight:800;letter-spacing:.8px;text-transform:uppercase}
+    .care-badge i,.care-jump i,.care-filter i{color:var(--green)}
+    .care-hero h1{font-size:clamp(2.7rem,5vw,4.35rem);letter-spacing:-2.7px}
+    .care-hero h1 em{color:var(--green);font-style:normal}
+    .care-hero .hero-copy>p{max-width:510px}
+    .care-hero .hero-actions{margin-top:24px}
+    .care-hero .hero-visual{min-height:390px}
+    .care-hero .hero-photo{height:345px}
+    .care-hero .floating-card{font-size:1rem}
+    .care-hero .floating-card i{color:var(--green)}
+    .care-jumps{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+    .care-jump{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border:1px solid var(--line);border-radius:999px;background:white;color:var(--ink);font-size:.82rem;font-weight:700;transition:border-color .2s,color .2s}
+    .care-jump:hover{border-color:var(--green);color:var(--green)}
+    .care-tools{padding:24px 0;background:#f0f3eb;border-block:1px solid var(--line)}
+    .care-tools-inner{display:grid;grid-template-columns:minmax(220px,1fr) auto;align-items:center;gap:18px}
+    .care-search-wrap{position:relative}
+    .care-search-wrap i{position:absolute;top:50%;left:16px;transform:translateY(-50%);color:var(--muted)}
+    .care-search{width:100%;height:46px;padding:0 16px 0 43px;border:1px solid #dce3da;border-radius:999px;background:white;color:var(--ink);font:inherit}
+    .care-search:focus{outline:2px solid #9dbdaa;outline-offset:2px}
+    .care-filters{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px}
+    .care-filter{min-height:38px;padding:0 14px;border:1px solid #dce3da;border-radius:999px;background:white;color:#59675e;font:600 .8rem "DM Sans",sans-serif;cursor:pointer}
+    .care-filter:hover,.care-filter[aria-pressed="true"]{border-color:var(--green);background:var(--green);color:white}
+    .care-filter i{margin-right:5px}
+    .care-filter:hover i,.care-filter[aria-pressed="true"] i{color:white}
+    .care-results{min-height:25px;margin:12px 0 0;color:var(--muted);font-size:.82rem}
+    .care-section{padding-block:58px 75px}
+    .care-section-heading{max-width:700px;margin-bottom:26px}
+    .care-section-heading h2{margin:0 0 10px;font-size:clamp(1.8rem,3vw,2.4rem);letter-spacing:-1.3px}
+    .care-section-heading>p{margin:0}
+    .care-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch;gap:22px}
+    .care-card{display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--line);border-radius:20px;background:white;transition:box-shadow .22s,border-color .22s,transform .22s}
+    .care-card:hover{transform:translateY(-4px);border-color:#cbd9ce;box-shadow:var(--shadow)}
+    .care-card[hidden]{display:none}
+    .care-card-media{position:relative;height:172px;overflow:hidden;background:var(--soft)}
+    .care-card-media img{width:100%;height:100%;object-fit:cover}
+    .care-card-icon{position:absolute;right:15px;bottom:-1px;display:grid;place-items:center;width:47px;height:47px;border:3px solid white;border-radius:15px;background:#eaf2e9;color:var(--green);font-size:1.15rem}
+    .care-card-body{display:flex;flex:1;flex-direction:column;padding:20px 21px 21px}
+    .care-card-category{margin-bottom:7px;color:var(--green);font-size:.68rem;font-weight:800;letter-spacing:1px;text-transform:uppercase}
+    .care-card h3{margin:0 0 8px;font-size:1.18rem;letter-spacing:-.4px}
+    .care-card-body>p{margin:0 0 15px;font-size:.86rem;line-height:1.55}
+    .care-topic-list{display:grid;gap:11px;margin:0;padding:14px 0 0;border-top:1px solid var(--line);list-style:none}
+    .care-topic-list li{display:grid;grid-template-columns:19px 1fr;gap:8px;font-size:.82rem;line-height:1.45}
+    .care-topic-list li>i{padding-top:3px;color:var(--green);font-size:.78rem}
+    .care-topic-list strong{display:block;color:var(--ink);font-size:.82rem}
+    .care-topic-list span{display:block;margin-top:2px;color:var(--muted)}
+    .care-empty{grid-column:1/-1;padding:35px;border:1px dashed #cbd9ce;border-radius:18px;background:white;text-align:center;color:var(--muted)}
+    .care-empty i{display:block;margin-bottom:10px;color:var(--green);font-size:1.5rem}
+    .care-note{display:flex;align-items:flex-start;gap:12px;margin-top:28px;padding:18px 20px;border:1px solid var(--line);border-radius:16px;background:#f0f3eb}
+    .care-note i{padding-top:3px;color:var(--green)}
+    .care-note p{margin:0;font-size:.86rem}
+    .care-note strong{color:var(--ink)}
+    @media(max-width:960px){.care-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.care-tools-inner{grid-template-columns:1fr}.care-filters{justify-content:flex-start}}
+    @media(max-width:640px){.care-hero{padding-top:30px}.care-hero h1{font-size:2.7rem}.care-hero .hero-visual{min-height:320px}.care-hero .hero-photo{height:285px}.care-grid{grid-template-columns:1fr}.care-section{padding-block:45px 58px}.care-card-media{height:190px}.care-filters{gap:7px}.care-filter{padding-inline:11px}.care-jumps{gap:8px}.care-jump{font-size:.76rem}}
+    @media(prefers-reduced-motion:reduce){.care-card,.care-filter,.care-jump{transition:none}.care-card:hover{transform:none}}
+  </style>
 </head>
 <body>
 <header class="site-header">
@@ -50,59 +109,284 @@
   </nav>
 </header>
 
-<main>
-  <section class="page-hero">
-    <div class="eyebrow">PetSathi • DOG CARE & WELLNESS</div>
-    <div class="page-emoji">🩺</div>
-    <h1>Dog Care & Health Guide</h1>
-    <p>Comprehensive care tips covering routine health checkups, coat grooming, balanced daily nutrition, and hygiene essentials for your dog.</p>
-    <a class="button" href="index.html">← Back to Dogs Landing Page</a>
-  </section>
-
-  <section class="section-wrap inner-grid">
-    <article class="info-card">
-      <div class="info-emoji">🩺</div>
-      <h2>Routine Veterinary Wellness</h2>
-      <p>Schedule regular veterinary checkups for core vaccinations (Rabies, DHPP), parasite control, and early health screening to ensure lifelong vitality.</p>
-    </article>
-
-    <article class="info-card">
-      <div class="info-emoji">🛁</div>
-      <h2>Grooming & Coat Care</h2>
-      <p>Brush coats regularly to remove loose fur and reduce matting. Bathe monthly with dog-specific shampoo, clip nails safely, and clean ears gently.</p>
-    </article>
-
-    <article class="info-card">
-      <div class="info-emoji">🥣</div>
-      <h2>Wholesome Nutrition</h2>
-      <p>Feed high-quality meals formulated for your dog's age, weight, and activity level. Always keep fresh, clean drinking water accessible 24/7.</p>
-    </article>
-
-    <article class="info-card">
-      <div class="info-emoji">🦷</div>
-      <h2>Dental Hygiene</h2>
-      <p>Prevent periodontal disease through regular tooth brushing with canine toothpaste, dental chew toys, and professional oral health evaluations.</p>
-    </article>
-
-    <article class="info-card">
-      <div class="info-emoji">🛡️</div>
-      <h2>Parasite Prevention</h2>
-      <p>Protect against fleas, ticks, and heartworms year-round with vet-recommended preventative treatments and post-walk tick inspections.</p>
-    </article>
-
-    <article class="info-card">
-      <div class="info-emoji">💚</div>
-      <h2>Comfort & Emotional Health</h2>
-      <p>Provide a quiet sleeping bed, positive bonding time, mental puzzle toys, and loving security to keep your companion emotionally fulfilled.</p>
-    </article>
-  </section>
-
-  <section class="inner-cta">
-    <h2>More Dog Care Articles In Progress</h2>
-    <p>We are continuously expanding PetSathi's pet care resources to help you provide the best possible care for your dog.</p>
-    <div style="margin-top: 20px;">
-      <a class="button" href="index.html">Back to Dogs Guide ↗</a>
+<main id="main-content">
+  <section class="hero section-wrap care-hero" aria-labelledby="care-title">
+    <div class="hero-copy">
+      <div class="care-badge"><i class="fa-solid fa-paw" aria-hidden="true"></i> PetSathi • Dog Care</div>
+      <h1 id="care-title">Complete Guide to <em>Dog Care</em></h1>
+      <p>Everything you need to keep your dog healthy, clean, comfortable, and happy.</p>
+      <div class="hero-actions">
+        <a class="button" href="#care-topics">Explore Care Topics <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
+        <a class="button button-outline" href="index.html">Dogs Guide <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+      </div>
+      <nav class="care-jumps" aria-label="Jump to care topics">
+        <a class="care-jump" href="#care-daily"><i class="fa-solid fa-sun" aria-hidden="true"></i> Daily care</a>
+        <a class="care-jump" href="#care-bathing"><i class="fa-solid fa-soap" aria-hidden="true"></i> Grooming</a>
+        <a class="care-jump" href="#care-vet"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Health</a>
+        <a class="care-jump" href="#care-puppy"><i class="fa-solid fa-dog" aria-hidden="true"></i> Puppy care</a>
+        <a class="care-jump" href="#care-senior"><i class="fa-solid fa-heart" aria-hidden="true"></i> Senior care</a>
+        <a class="care-jump" href="#care-safety"><i class="fa-solid fa-shield-dog" aria-hidden="true"></i> Safety</a>
+      </nav>
     </div>
+    <div class="hero-visual">
+      <div class="hero-blob"></div>
+      <img class="hero-photo" src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1000&q=85" alt="Two happy dogs running together through a sunny field">
+      <div class="floating-card card-top"><i class="fa-solid fa-heart" aria-hidden="true"></i><span><b>Everyday wellbeing</b><small>Care for every life stage</small></span></div>
+      <div class="floating-card card-bottom"><i class="fa-solid fa-paw" aria-hidden="true"></i><span><b>Happy, healthy paws</b><small>Simple tips for dog parents</small></span></div>
+    </div>
+  </section>
+
+  <section class="care-tools" aria-label="Search and filter care topics">
+    <div class="section-wrap care-tools-inner">
+      <label class="care-search-wrap">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <input id="care-search" class="care-search" type="search" placeholder="Search care topics..." autocomplete="off" aria-label="Search dog care topics">
+      </label>
+      <div class="care-filters" role="group" aria-label="Filter care topics by category">
+        <button class="care-filter" type="button" data-filter="all" aria-pressed="true">All topics</button>
+        <button class="care-filter" type="button" data-filter="daily"><i class="fa-solid fa-sun" aria-hidden="true"></i> Daily Care</button>
+        <button class="care-filter" type="button" data-filter="grooming"><i class="fa-solid fa-soap" aria-hidden="true"></i> Grooming</button>
+        <button class="care-filter" type="button" data-filter="health"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Health</button>
+        <button class="care-filter" type="button" data-filter="puppy"><i class="fa-solid fa-dog" aria-hidden="true"></i> Puppy Care</button>
+        <button class="care-filter" type="button" data-filter="senior"><i class="fa-solid fa-heart" aria-hidden="true"></i> Senior Dog Care</button>
+        <button class="care-filter" type="button" data-filter="safety"><i class="fa-solid fa-shield-dog" aria-hidden="true"></i> Safety</button>
+      </div>
+    </div>
+    <div class="section-wrap"><p class="care-results" id="care-results" aria-live="polite">Showing all 13 care guides</p></div>
+  </section>
+
+  <section class="section-wrap care-section" id="care-topics" aria-labelledby="topics-title">
+    <div class="care-section-heading">
+      <div class="eyebrow">Practical tips for every day</div>
+      <h2 id="topics-title">Explore Dog Care Topics</h2>
+      <p>Browse clear, practical advice for every stage of your dog's life.</p>
+    </div>
+    <div class="care-grid" id="care-grid">
+      <article class="care-card" id="care-daily" data-category="daily">
+        <div class="care-card-media">
+          <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=700&q=85" alt="Golden retriever relaxing outdoors" loading="lazy">
+          <span class="care-card-icon"><i class="fa-solid fa-sun" aria-hidden="true"></i></span>
+        </div>
+        <div class="care-card-body">
+          <div class="care-card-category">Daily Care</div>
+          <h3>Daily Dog Care</h3>
+          <p>Build a simple routine that supports comfort, health, and good habits.</p>
+          <ul class="care-topic-list">
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Daily care routine</strong><span>Balance walks, play, meals, and rest.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Cleaning & hygiene</strong><span>Keep bedding, bowls, and living areas clean.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Fresh water</strong><span>Refresh clean drinking water throughout the day.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Comfortable sleeping space</strong><span>Choose a calm, draft-free resting spot.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Daily health observation</strong><span>Notice changes in appetite, movement, or mood.</span></div></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="care-card" id="care-bathing" data-category="grooming">
+        <div class="care-card-media">
+          <img src="https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=700&q=85" alt="Clean, freshly groomed dog resting comfortably" loading="lazy">
+          <span class="care-card-icon"><i class="fa-solid fa-soap" aria-hidden="true"></i></span>
+        </div>
+        <div class="care-card-body">
+          <div class="care-card-category">Grooming</div>
+          <h3>Bathing & Cleaning</h3>
+          <p>Keep bath time gentle and suited to your dog's skin and coat.</p>
+          <ul class="care-topic-list">
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Bathing frequency</strong><span>Adjust baths to coat, lifestyle, and vet advice.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Choosing dog shampoo</strong><span>Use a gentle product made for dogs.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Proper bathing steps</strong><span>Use lukewarm water and avoid the eyes and ears.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Drying & cleaning tips</strong><span>Towel dry well and keep your dog warm.</span></div></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="care-card" id="care-coat" data-category="grooming">
+        <div class="care-card-media">
+          <img src="https://images.unsplash.com/photo-1551717743-49959800b1f6?auto=format&fit=crop&w=700&q=85" alt="Long-haired dog with a healthy, brushed coat" loading="lazy">
+          <span class="care-card-icon"><i class="fa-solid fa-brush" aria-hidden="true"></i></span>
+        </div>
+        <div class="care-card-body">
+          <div class="care-card-category">Grooming</div>
+          <h3>Brushing & Coat Care</h3>
+          <p>Regular brushing helps keep coats comfortable and free of tangles.</p>
+          <ul class="care-topic-list">
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Types of dog coats</strong><span>Match the brush to your dog's coat type.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Brushing frequency</strong><span>Brush more often when coats shed or tangle.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Removing loose fur</strong><span>Use gentle strokes to lift loose hair.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Preventing tangles & mats</strong><span>Work through knots gently; never pull at skin.</span></div></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="care-card" id="care-dental" data-category="grooming">
+        <div class="care-card-media">
+          <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=700&q=85" alt="Happy dog looking toward the camera" loading="lazy">
+          <span class="care-card-icon"><i class="fa-solid fa-tooth" aria-hidden="true"></i></span>
+        </div>
+        <div class="care-card-body">
+          <div class="care-card-category">Grooming</div>
+          <h3>Dental Care</h3>
+          <p>Good oral habits can help protect teeth and keep breath fresh.</p>
+          <ul class="care-topic-list">
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Brushing your dog's teeth</strong><span>Introduce a soft brush gradually and gently.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Dog toothpaste</strong><span>Use canine toothpaste, never human toothpaste.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Dental chews</strong><span>Choose an appropriate chew and supervise use.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Preventing bad breath</strong><span>Ask your vet about persistent odor or discomfort.</span></div></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="care-card" id="care-paws" data-category="grooming">
+        <div class="care-card-media">
+          <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=700&q=85" alt="Dog enjoying a walk on a nature path" loading="lazy">
+          <span class="care-card-icon"><i class="fa-solid fa-paw" aria-hidden="true"></i></span>
+        </div>
+        <div class="care-card-body">
+          <div class="care-card-category">Grooming</div>
+          <h3>Nail & Paw Care</h3>
+          <p>Routine checks help keep paws comfortable on walks and at home.</p>
+          <ul class="care-topic-list">
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Nail trimming</strong><span>Trim gradually or ask a groomer for help.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Paw cleaning</strong><span>Wipe paws after walks and check between toes.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Checking cuts & injuries</strong><span>Look for swelling, debris, or tender spots.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Hot weather paw protection</strong><span>Avoid hot pavement and choose cooler walk times.</span></div></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="care-card" id="care-ears-eyes" data-category="grooming">
+        <div class="care-card-media">
+          <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=700&q=85" alt="Close-up of a healthy dog with bright eyes" loading="lazy">
+          <span class="care-card-icon"><i class="fa-solid fa-eye" aria-hidden="true"></i></span>
+        </div>
+        <div class="care-card-body">
+          <div class="care-card-category">Grooming</div>
+          <h3>Ear & Eye Care</h3>
+          <p>Gentle cleaning and early attention can help prevent discomfort.</p>
+          <ul class="care-topic-list">
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Safe ear cleaning</strong><span>Clean only the visible outer ear with vet-approved supplies.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Recognising ear infections</strong><span>Watch for odor, redness, head shaking, or scratching.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Eye cleaning</strong><span>Wipe discharge gently with a clean, damp cloth.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Identifying irritation</strong><span>Contact your vet about redness, squinting, or discharge.</span></div></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="care-card" id="care-summer" data-category="safety">
+        <div class="care-card-media">
+          <img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=700&q=85" alt="Dog cooling off outdoors on a warm day" loading="lazy">
+          <span class="care-card-icon"><i class="fa-solid fa-sun" aria-hidden="true"></i></span>
+        </div>
+        <div class="care-card-body">
+          <div class="care-card-category">Safety</div>
+          <h3>Summer Care</h3>
+          <p>Offer shade and fresh water, and avoid walks during peak heat.</p>
+        </div>
+      </article>
+
+      <article class="care-card" id="care-winter" data-category="safety">
+        <div class="care-card-media">
+          <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=700&q=85" alt="Dog enjoying a crisp winter day outdoors" loading="lazy">
+          <span class="care-card-icon"><i class="fa-solid fa-snowflake" aria-hidden="true"></i></span>
+        </div>
+        <div class="care-card-body">
+          <div class="care-card-category">Safety</div>
+          <h3>Winter Care</h3>
+          <p>Provide warm bedding and dry your dog after cold or wet outings.</p>
+        </div>
+      </article>
+
+      <article class="care-card" id="care-monsoon" data-category="safety">
+        <div class="care-card-media">
+          <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=700&q=85" alt="Dog staying comfortable during rainy weather" loading="lazy">
+          <span class="care-card-icon"><i class="fa-solid fa-cloud-rain" aria-hidden="true"></i></span>
+        </div>
+        <div class="care-card-body">
+          <div class="care-card-category">Safety</div>
+          <h3>Monsoon Care</h3>
+          <p>Dry paws and coat after walks, and watch for slippery paths.</p>
+        </div>
+      </article>
+
+      <article class="care-card" id="care-puppy" data-category="puppy">
+        <div class="care-card-media">
+          <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=700&q=85" alt="Young dog looking alert and curious" loading="lazy">
+          <span class="care-card-icon"><i class="fa-solid fa-dog" aria-hidden="true"></i></span>
+        </div>
+        <div class="care-card-body">
+          <div class="care-card-category">Puppy Care</div>
+          <h3>Puppy Care</h3>
+          <p>Make the first weeks safe, calm, and full of positive routines.</p>
+          <ul class="care-topic-list">
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>New puppy essentials</strong><span>Prepare food, bowls, a bed, and safe toys.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>First-day home care</strong><span>Let your puppy explore at a relaxed pace.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Toilet training basics</strong><span>Use a consistent schedule and reward progress.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Socialisation</strong><span>Introduce new people and places gradually.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Puppy-proofing your home</strong><span>Secure cords, chemicals, and small objects.</span></div></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="care-card" id="care-senior" data-category="senior">
+        <div class="care-card-media">
+          <img src="https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?auto=format&fit=crop&w=700&q=85" alt="Older dog resting peacefully at home" loading="lazy">
+          <span class="care-card-icon"><i class="fa-solid fa-heart" aria-hidden="true"></i></span>
+        </div>
+        <div class="care-card-body">
+          <div class="care-card-category">Senior Dog Care</div>
+          <h3>Senior Dog Care</h3>
+          <p>Small adjustments can make later years more comfortable.</p>
+          <ul class="care-topic-list">
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Special care for older dogs</strong><span>Adjust activity and routines to changing needs.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Comfortable sleeping arrangements</strong><span>Offer supportive bedding in an easy-to-reach spot.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Mobility support</strong><span>Keep paths clear and use non-slip surfaces.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Regular veterinary checkups</strong><span>Discuss new changes and age-related needs early.</span></div></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="care-card" id="care-safety" data-category="safety">
+        <div class="care-card-media">
+          <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=700&q=85" alt="Dog walking safely with a person outdoors" loading="lazy">
+          <span class="care-card-icon"><i class="fa-solid fa-shield-dog" aria-hidden="true"></i></span>
+        </div>
+        <div class="care-card-body">
+          <div class="care-card-category">Safety</div>
+          <h3>Dog Safety</h3>
+          <p>Prepare your home and outings to reduce common risks.</p>
+          <ul class="care-topic-list">
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Home safety</strong><span>Secure windows, bins, cords, and small objects.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Outdoor safety</strong><span>Use identification, a secure lead, and close supervision.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Toxic household products</strong><span>Store medicines, cleaners, and unsafe foods out of reach.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Emergency warning signs</strong><span>Seek urgent help for breathing trouble or collapse.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>First-aid basics</strong><span>Keep your vet's number handy; call before treating injuries.</span></div></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="care-card" id="care-vet" data-category="health">
+        <div class="care-card-media">
+          <img src="https://plus.unsplash.com/premium_photo-1661916447474-235409b19e16?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Veterinarian gently examining a dog" loading="lazy">
+          <span class="care-card-icon"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i></span>
+        </div>
+        <div class="care-card-body">
+          <div class="care-card-category">Health</div>
+          <h3>Vet Visits & Preventive Care</h3>
+          <p>Work with your veterinarian to plan prevention and timely care.</p>
+          <ul class="care-topic-list">
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Regular veterinary checkups</strong><span>Plan routine visits based on age and health.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Vaccination schedule</strong><span>Follow a schedule tailored by your veterinarian.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Deworming</strong><span>Ask your vet how often parasite checks are needed.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>Tick & flea prevention</strong><span>Choose suitable prevention with veterinary guidance.</span></div></li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i><div><strong>When to visit a veterinarian</strong><span>Get advice for persistent or sudden changes.</span></div></li>
+          </ul>
+        </div>
+      </article>
+      <div class="care-empty" id="care-empty" hidden><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>No care guides match your search. Try another topic or category.</div>
+    </div>
+    <aside class="care-note">
+      <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+      <p><strong>A note on health:</strong> Every dog is different. Use this guide for general care and contact your veterinarian for personalised advice or urgent concerns.</p>
+    </aside>
   </section>
 </main>
 
@@ -137,6 +421,52 @@
     <span>तुमच्या Pet चा विश्वासू साथी! 🐾</span>
   </div>
 </footer>
+<script>
+  const searchInput = document.getElementById("care-search");
+  const filterButtons = document.querySelectorAll(".care-filter");
+  const careCards = document.querySelectorAll(".care-card");
+  const careResults = document.getElementById("care-results");
+  const emptyState = document.getElementById("care-empty");
+  let activeCategory = "all";
+
+  function filterCareCards() {
+    const query = searchInput.value.trim().toLocaleLowerCase();
+    let visibleCount = 0;
+
+    careCards.forEach((card) => {
+      const matchesCategory = activeCategory === "all" || card.dataset.category === activeCategory;
+      const matchesSearch = card.textContent.toLocaleLowerCase().includes(query);
+      const isVisible = matchesCategory && matchesSearch;
+      card.hidden = !isVisible;
+      visibleCount += Number(isVisible);
+    });
+
+    emptyState.hidden = visibleCount > 0;
+    careResults.textContent = `Showing ${visibleCount} of ${careCards.length} care guides`;
+  }
+
+  searchInput.addEventListener("input", filterCareCards);
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      activeCategory = button.dataset.filter;
+      filterButtons.forEach((filterButton) => {
+        filterButton.setAttribute("aria-pressed", String(filterButton === button));
+      });
+      filterCareCards();
+    });
+  });
+
+  document.querySelectorAll(".care-jump").forEach((link) => {
+    link.addEventListener("click", () => {
+      activeCategory = "all";
+      searchInput.value = "";
+      filterButtons.forEach((button) => {
+        button.setAttribute("aria-pressed", String(button.dataset.filter === "all"));
+      });
+      filterCareCards();
+    });
+  });
+</script>
 <script src="../../../js/main.js"></script>
 </body>
 </html>
