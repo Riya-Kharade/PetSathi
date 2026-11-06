@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore everything you need to know about pet reptiles on PetSathi - reptile species, terrarium habitat setup, lighting, heating, nutrition, care, and safe handling.">
+  <title>Reptiles Information & Care Guide | PetSathi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/global.css">
+  <link rel="stylesheet" href="../../../css/home.css">
+  <link rel="stylesheet" href="../../../css/inner.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    /* Reptiles Landing Page Specific Styles */
+    .reptile-badge-strip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: #eaf2e9;
+      color: var(--green);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    /* Quick Navigation Bar */
+    .quick-nav-section {
+      padding: 10px 0 35px;
+    }
+
+    .quick-nav-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      box-shadow: 0 4px 18px rgba(35, 57, 43, 0.04);
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .quick-nav-label {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--ink);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .quick-nav-label i {
+      color: var(--green);
+    }
+
+    .quick-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .quick-nav-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 18px;
+      border-radius: 999px;
+      background: #f1f6f1;
+      color: var(--ink);
+      font-size: 0.86rem;
+      font-weight: 700;
+      text-decoration: none;
+      border: 1px solid transparent;
+      transition: all 0.25s ease;
+    }
+
+    .quick-nav-pill i {
+      color: var(--green);
+      font-size: 0.95rem;
+      transition: color 0.25s ease;
+    }
+
+    .quick-nav-pill:hover {
+      background: var(--green);
+      color: white;
+      border-color: var(--green);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(40, 104, 73, 0.18);
+    }
+
+    .quick-nav-pill:hover i {
+      color: white;
+    }
+
+    /* Section Titles & Subtitles with subtle green/cream backgrounds */
+    .section-heading-boxed {
+      background: #f6faf5;
+      border: 1px solid #e1ece2;
+      border-radius: 22px;
+      padding: 30px 36px;
+      margin-bottom: 36px;
+      text-align: center;
+    }
+
+    .section-heading-boxed .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      background: #eaf2e9;
+      color: var(--green);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-heading-boxed h2 {
+      margin: 4px 0 10px;
+      font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+      color: var(--ink);
+    }
+
+    .section-heading-boxed h2 em {
+      color: var(--green);
+      font-style: normal;
+    }
+
+    .section-heading-boxed p {
+      max-width: 680px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.65;
+    }
+
+    /* Topic Grid (3 cards per row desktop) */
+    .reptile-info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .reptile-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .reptile-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      border-color: #cbd9ce;
+    }
+
+    .reptile-card-media {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+      background: #eef3ee;
+    }
+
+    .reptile-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .reptile-card:hover .reptile-card-media img {
+      transform: scale(1.05);
+    }
+
+    .reptile-card-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(4px);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .reptile-card-badge i {
+      color: var(--green);
+    }
+
+    .reptile-card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .reptile-card-body h3 {
+      font-size: 1.25rem;
+      margin: 0 0 10px;
+      color: var(--ink);
+    }
+
+    .reptile-card-body p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin: 0 0 20px;
+      flex-grow: 1;
+      color: var(--muted);
+    }
+
+    .reptile-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--green);
+      transition: color 0.2s, transform 0.2s;
+      align-self: flex-start;
+      text-decoration: none;
+    }
+
+    .reptile-card-link:hover {
+      color: var(--dark);
+      transform: translateX(4px);
+    }
+
+    /* Additional Information Section */
+    .reptile-quick-info-section {
+      background: #fbfbf8;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 60px 0;
+    }
+
+    .quick-info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .quick-info-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .quick-info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .quick-info-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .quick-info-icon-wrap {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: #eaf2e9;
+      color: var(--green);
+      display: grid;
+      place-items: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .quick-info-header h3 {
+      font-size: 1.22rem;
+      margin: 0;
+      color: var(--ink);
+    }
+
+    .quick-info-card p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin: 0 0 16px;
+      color: var(--muted);
+    }
+
+    .quick-info-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+    }
+
+    .quick-info-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.86rem;
+      color: var(--ink);
+      line-height: 1.5;
+    }
+
+    .quick-info-list li i {
+      color: var(--green);
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    /* Guides Navigation Strip */
+    .guides-nav-strip {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 32px;
+      margin-top: 40px;
+      box-shadow: 0 10px 30px rgba(35, 57, 43, 0.04);
+    }
+
+    .guides-nav-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .guide-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px;
+      background: var(--soft);
+      border: 1px solid transparent;
+      border-radius: 14px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .guide-nav-item:hover {
+      background: white;
+      border-color: var(--green);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(40, 104, 73, 0.08);
+    }
+
+    .guide-nav-item span {
+      font-size: 1.8rem;
+    }
+
+    .guide-nav-item div b {
+      display: block;
+      font-size: 0.92rem;
+      color: var(--ink);
+    }
+
+    .guide-nav-item div small {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* Reptile CTA Band */
+    .reptile-cta-band {
+      background: linear-gradient(135deg, #1d5039 0%, #286849 100%);
+      color: white;
+      border-radius: 28px;
+      padding: 50px 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 36px;
+      margin-block: 40px 75px;
+    }
+
+    .reptile-cta-band h2 {
+      color: white;
+      margin: 0 0 12px;
+    }
+
+    .reptile-cta-band h2 em {
+      color: #f4c79f;
+      font-style: normal;
+    }
+
+    .reptile-cta-band p {
+      color: #e0ece2;
+      font-size: 1.02rem;
+      max-width: 580px;
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    .reptile-cta-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+    }
+
+    .button-translucent {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: white;
+    }
+
+    .button-translucent:hover {
+      background: rgba(255, 255, 255, 0.28);
+      color: white;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 960px) {
+      .reptile-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .quick-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .guides-nav-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .reptile-cta-band {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 36px 30px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .reptile-info-grid {
+        grid-template-columns: 1fr;
+      }
+      .quick-info-grid {
+        grid-template-columns: 1fr;
+      }
+      .guides-nav-grid {
+        grid-template-columns: 1fr;
+      }
+      .quick-nav-card {
+        border-radius: 20px;
+        padding: 16px;
+        gap: 10px;
+      }
+      .quick-nav-links {
+        width: 100%;
+        gap: 8px;
+      }
+      .quick-nav-pill {
+        flex: 1 1 calc(50% - 8px);
+        justify-content: center;
+        padding: 8px 12px;
+        font-size: 0.8rem;
+      }
+      .section-heading-boxed {
+        padding: 22px 18px;
+      }
+      .reptile-card-media {
+        height: 185px;
+      }
+      .reptile-cta-band {
+        padding: 28px 20px;
+      }
+      .reptile-cta-actions {
+        width: 100%;
+      }
+      .reptile-cta-actions .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header and Navigation -->
+<header class="site-header">
+  <a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a>
+  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+  <nav class="main-nav" aria-label="Main navigation">
+    <a href="../../../../index.html">Home</a>
+    <div class="nav-item"><a href="../index.html">Explore Pets <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-explore">
+        <a href="../dogs/index.html">Dogs</a><a href="../cats/index.html">Cats</a><a href="../birds/index.html">Birds</a><a href="../rabbits/index.html">Rabbits</a><a href="../other/fish.html">Aquarium Fish</a><a href="index.html">Reptiles</a>
+      </div>
+    </div>
+    <div class="nav-item"><a href="../../services/index.html">Services <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-services"><a href="../../services/dog-walking.html">Dog Walking</a><a href="../../services/cat-care.html">Cat Care</a><a href="../../services/pet-care.html">Pet Care</a></div>
+    </div>
+    <div class="nav-item"><a href="../../walker/index.html">Find a Walker <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-walker"><a href="../../walker/dogs.html">Search Walkers</a><a href="../../walker/cats.html">Walker Profiles</a><a href="../../walker/index.html#bookings">My Bookings</a></div>
+    </div>
+    <a href="../../about.html">About Us</a><a href="../../auth/login.html">Log in</a><a class="button button-small" href="../../auth/register.html">Get Started</a>
+  </nav>
+</header>
+
+<main id="main-content">
+  <!-- 1. Hero Section -->
+  <section class="hero section-wrap" id="reptile-hero">
+    <div class="hero-copy">
+      <div class="reptile-badge-strip">
+        <i class="fa-solid fa-dragon" aria-hidden="true"></i> PetSathi • Reptile Companion Guide
+      </div>
+      <h1>Everything You Need to Know About <em>Reptiles</em></h1>
+      <p>
+        Welcome to PetSathi's dedicated reptile care and companion guide. From gentle bearded dragons and quiet leopard geckos to calm tortoises and docile corn snakes, pet reptiles offer a fascinating, low-dander companionship. Learn about specialized terrarium setup, precise thermal gradients, UVB lighting, wholesome nutrition, safe handling, and daily wellness.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="#reptile-topics" id="hero-cta-topics">Explore Care Topics ↓</a>
+        <a class="button button-outline" href="#quick-nav" id="hero-cta-quicknav">Quick Navigation ↓</a>
+      </div>
+      <div class="hero-note">♥ &nbsp; Dedicated to calm, healthy, and thriving scaly companions.</div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-blob"></div>
+      <img
+        src="../../../assets/images/reptiles/bearded-dragon.jpg"
+        alt="Friendly Bearded Dragon resting comfortably on a warm basking branch"
+        class="hero-photo"
+        id="hero-reptile-image"
+      >
+      <div class="floating-card card-top">
+        🌿 <span><b>Fascinating &amp; Calm</b><small>Low-allergen companions</small></span>
+      </div>
+      <div class="floating-card card-bottom">
+        ☀️ <span><b>Thermal &amp; UVB Care</b><small>Basking &amp; habitat balance</small></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Quick Navigation Section -->
+  <section class="quick-nav-section" id="quick-nav" aria-label="Reptile Quick Navigation">
+    <div class="section-wrap">
+      <div class="quick-nav-card">
+        <span class="quick-nav-label"><i class="fa-solid fa-compass" aria-hidden="true"></i> Quick Jump:</span>
+        <div class="quick-nav-links">
+          <a href="#card-species" class="quick-nav-pill" id="quick-link-species">
+            <i class="fa-solid fa-dragon" aria-hidden="true"></i>
+            <span>Reptile Species</span>
+          </a>
+          <a href="#card-care" class="quick-nav-pill" id="quick-link-care">
+            <i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i>
+            <span>Reptile Care</span>
+          </a>
+          <a href="#card-nutrition" class="quick-nav-pill" id="quick-link-nutrition">
+            <i class="fa-solid fa-bowl-food" aria-hidden="true"></i>
+            <span>Food &amp; Nutrition</span>
+          </a>
+          <a href="#card-safety" class="quick-nav-pill" id="quick-link-safety">
+            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+            <span>Habitat &amp; Safety</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Section Titles & Subtitles with subtle green/cream background -->
+  <!-- 4. Explore Essential Reptile Topics -->
+  <section class="section section-wrap" id="reptile-topics">
+    <div class="section-heading-boxed">
+      <div class="eyebrow"><i class="fa-solid fa-book-open-reader" aria-hidden="true"></i> Comprehensive Reptile Guides</div>
+      <h2>Explore Essential <em>Reptile Topics</em></h2>
+      <p>
+        Browse curated guides crafted to assist reptile keepers with proper vivarium setups,
+        specialized insect and vegetable diets, temperature controls, and gentle handling habits.
+      </p>
+    </div>
+
+    <div class="reptile-info-grid">
+      <!-- Card 1: Reptile Species -->
+      <article class="reptile-card" id="card-species">
+        <div class="reptile-card-media">
+          <span class="reptile-card-badge"><i class="fa-solid fa-dragon" aria-hidden="true"></i> Species</span>
+          <img
+            src="../../../assets/images/reptiles/leopard-gecko.jpg"
+            alt="Colorful Leopard Gecko smiling on clean terrarium rock"
+            loading="lazy"
+          >
+        </div>
+        <div class="reptile-card-body">
+          <h3>Reptile Species</h3>
+          <p>
+            Discover beginner-friendly pet reptiles—from sociable Bearded Dragons and gentle Leopard Geckos to calm Russian Tortoises and docile Corn Snakes. Learn about individual temperaments, lifespan expectations, adult sizes, and specialized habitat requirements.
+          </p>
+          <a class="reptile-card-link" href="../other/reptiles.html#species" id="link-card-species">
+            Explore Reptile Species <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 2: Reptile Care & Handling -->
+      <article class="reptile-card" id="card-care">
+        <div class="reptile-card-media">
+          <span class="reptile-card-badge"><i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i> Care &amp; Handling</span>
+          <img
+            src="../../../assets/images/reptiles/blue-tongued-skink.jpg"
+            alt="Gentle Blue-tongued Skink calmly exploring terrarium substrate"
+            loading="lazy"
+          >
+        </div>
+        <div class="reptile-card-body">
+          <h3>Reptile Care &amp; Handling</h3>
+          <p>
+            Master gentle, stress-free interaction techniques. Learn how to support your reptile's full body weight, recognize normal shedding patterns, maintain enclosure cleanliness, avoid tail drop in geckos, and build trusting, calm relationships with your pet.
+          </p>
+          <a class="reptile-card-link" href="#quick-info-section" id="link-card-care">
+            Explore Care &amp; Handling <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 3: Reptile Food & Nutrition -->
+      <article class="reptile-card" id="card-nutrition">
+        <div class="reptile-card-media">
+          <span class="reptile-card-badge"><i class="fa-solid fa-bowl-food" aria-hidden="true"></i> Nutrition</span>
+          <img
+            src="../../../assets/images/reptiles/crested-gecko.png"
+            alt="Crested Gecko resting near fresh nectar fruit diet"
+            loading="lazy"
+          >
+        </div>
+        <div class="reptile-card-body">
+          <h3>Reptile Food &amp; Nutrition</h3>
+          <p>
+            Understand your reptile's exact dietary classification: herbivorous tortoises, insectivorous geckos, or omnivorous dragons. Discover gut-loading feeder insects, daily calcium dusting with D3, fresh leafy green salads, and safe hydration practices.
+          </p>
+          <a class="reptile-card-link" href="#quick-info-nutrition" id="link-card-nutrition">
+            Explore Food &amp; Nutrition <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 4: Reptile Health & Wellness -->
+      <article class="reptile-card" id="card-health">
+        <div class="reptile-card-media">
+          <span class="reptile-card-badge"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Wellness</span>
+          <img
+            src="../../../assets/images/reptiles/russian-tortoise.jpg"
+            alt="Healthy Russian Tortoise foraging outdoors on fresh dandelion greens"
+            loading="lazy"
+          >
+        </div>
+        <div class="reptile-card-body">
+          <h3>Reptile Health &amp; Wellness</h3>
+          <p>
+            Prevent common reptile medical conditions such as Metabolic Bone Disease (MBD), respiratory distress, dysecdysis (stuck shed), and digestive impaction. Find out how to spot subtle symptoms of illness early and locate qualified exotic reptile veterinarians.
+          </p>
+          <a class="reptile-card-link" href="#quick-info-handling" id="link-card-health">
+            Explore Health &amp; Wellness <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 5: Habitat & Tank Setup -->
+      <article class="reptile-card" id="card-habitat">
+        <div class="reptile-card-media">
+          <span class="reptile-card-badge"><i class="fa-solid fa-house-chimney-window" aria-hidden="true"></i> Tank Setup</span>
+          <img
+            src="../../../assets/images/reptiles/ball-python.jpg"
+            alt="Ball Python curled comfortably inside a secure vivarium hiding cave"
+            loading="lazy"
+          >
+        </div>
+        <div class="reptile-card-body">
+          <h3>Habitat &amp; Tank Setup</h3>
+          <p>
+            Construct an authentic, secure vivarium environment. Choose proper glass or PVC enclosure dimensions, secure screen clips, safe substrates, multiple hiding caves on both warm and cool ends, climbing branches, and clean water pools for soaking.
+          </p>
+          <a class="reptile-card-link" href="#quick-info-habitat" id="link-card-habitat">
+            Explore Habitat &amp; Tank Setup <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 6: Temperature, Lighting & Safety -->
+      <article class="reptile-card" id="card-safety">
+        <div class="reptile-card-media">
+          <span class="reptile-card-badge"><i class="fa-solid fa-temperature-high" aria-hidden="true"></i> Lighting &amp; Safety</span>
+          <img
+            src="../../../assets/images/reptiles/corn-snake.jpg"
+            alt="Corn Snake resting comfortably under controlled warm vivarium lighting"
+            loading="lazy"
+          >
+        </div>
+        <div class="reptile-card-body">
+          <h3>Temperature, Lighting &amp; Safety</h3>
+          <p>
+            Because reptiles cannot self-regulate body heat, precise thermal gradients and linear UVB lamps are vital for calcium metabolism and survival. Learn about digital thermostat sensors, nighttime ceramic heaters, and safe household hygiene precautions.
+          </p>
+          <a class="reptile-card-link" href="#quick-info-lighting" id="link-card-safety">
+            Explore Lighting &amp; Safety <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 5. Additional Information Section -->
+  <section class="section reptile-quick-info-section" id="quick-info-section">
+    <div class="section-wrap">
+      <div class="section-heading-boxed">
+        <div class="eyebrow"><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i> Practical Terrarium Guide</div>
+        <h2>Essential Information for <em>Reptile Parents</em></h2>
+        <p>
+          Reptiles have unique physiological needs that differ significantly from mammalian pets.
+          Follow these fundamental principles to ensure your terrarium companion stays thriving and healthy.
+        </p>
+      </div>
+
+      <div class="quick-info-grid">
+        <!-- Info Card 1: Habitat Requirements -->
+        <article class="quick-info-card" id="quick-info-habitat">
+          <div class="quick-info-header">
+            <div class="quick-info-icon-wrap">
+              <i class="fa-solid fa-house" aria-hidden="true"></i>
+            </div>
+            <h3>Terrarium &amp; Habitat Setup</h3>
+          </div>
+          <p>
+            Enclosures must replicate your pet's native biotope—whether arid desert or humid tropical rainforest.
+          </p>
+          <ul class="quick-info-list">
+            <li>
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+              <span><strong>Dual Hiding Caves:</strong> Provide at least two secure, opaque hides—one in the warm basking zone and one on the cool side.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+              <span><strong>Substrate Safety:</strong> Use paper towels, slate tiles, or species-specific soil mixes; avoid cedar, pine, or loose fine silica sands.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+              <span><strong>Humidity Monitoring:</strong> Use reliable digital hygrometers to maintain exact species humidity; mist tropical setups daily.</span>
+            </li>
+          </ul>
+        </article>
+
+        <!-- Info Card 2: Temperature & Lighting -->
+        <article class="quick-info-card" id="quick-info-lighting">
+          <div class="quick-info-header">
+            <div class="quick-info-icon-wrap">
+              <i class="fa-solid fa-sun" aria-hidden="true"></i>
+            </div>
+            <h3>Temperature &amp; UVB Lighting</h3>
+          </div>
+          <p>
+            Reptiles are ectothermic and rely completely on external heat and ultraviolet rays for metabolic health.
+          </p>
+          <ul class="quick-info-list">
+            <li>
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+              <span><strong>Thermal Gradient:</strong> Maintain a warm basking spot (88°F–105°F) and a cooler retreat zone (72°F–80°F) for thermoregulation.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+              <span><strong>Thermostat Regulation:</strong> Always connect all heat mats, ceramic emitters, and radiant panels to digital pulse thermostats.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+              <span><strong>Linear UVB Output:</strong> Supply full-spectrum T5 or T8 linear UVB tubes; replace lamps every 6–12 months as output degrades.</span>
+            </li>
+          </ul>
+        </article>
+
+        <!-- Info Card 3: Feeding & Nutrition -->
+        <article class="quick-info-card" id="quick-info-nutrition">
+          <div class="quick-info-header">
+            <div class="quick-info-icon-wrap">
+              <i class="fa-solid fa-bowl-food" aria-hidden="true"></i>
+            </div>
+            <h3>Feeding, Nutrition &amp; Supplements</h3>
+          </div>
+          <p>
+            A nutrient-dense diet combined with essential mineral dusting prevents painful nutritional deficiencies.
+          </p>
+          <ul class="quick-info-list">
+            <li>
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+              <span><strong>Calcium &amp; D3 Dusting:</strong> Dust feeder insects or fresh greens with high-quality calcium powder and multivitamin supplements.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+              <span><strong>Gut-Loading Feeders:</strong> Feed live crickets, dubia roaches, and mealworms fresh squash and greens 24 hours prior to feeding.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+              <span><strong>Dechlorinated Water:</strong> Provide fresh, dechlorinated drinking water daily in shallow dishes that prevent accidental drowning.</span>
+            </li>
+          </ul>
+        </article>
+
+        <!-- Info Card 4: Safe Handling & Hygiene -->
+        <article class="quick-info-card" id="quick-info-handling">
+          <div class="quick-info-header">
+            <div class="quick-info-icon-wrap">
+              <i class="fa-solid fa-hand-holding-medical" aria-hidden="true"></i>
+            </div>
+            <h3>Safe Handling &amp; Household Safety</h3>
+          </div>
+          <p>
+            Gentle handling techniques and strict personal hygiene keep both reptiles and family members safe.
+          </p>
+          <ul class="quick-info-list">
+            <li>
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+              <span><strong>Support the Body:</strong> Scoop reptiles gently from beneath, supporting all four legs; never grab by the tail, neck, or limbs.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+              <span><strong>Hand Washing:</strong> Wash hands thoroughly with warm water and antimicrobial soap immediately before and after contact.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+              <span><strong>Sanitary Terrarium Care:</strong> Disinfect bowls and decorations using veterinary-approved F10 disinfectant away from kitchen areas.</span>
+            </li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- Quick Guide Navigation Strip -->
+      <div class="guides-nav-strip">
+        <div class="section-heading" style="margin-bottom: 0;">
+          <div>
+            <div class="eyebrow"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Companion Navigation</div>
+            <h2 style="font-size: 1.5rem; margin-top: 4px;">Explore Other <em>Pet Guides</em></h2>
+          </div>
+          <p style="margin: 0; font-size: 0.88rem;">
+            Discover PetSathi's curated guides for dogs, cats, birds, rabbits, and other domestic pets.
+          </p>
+        </div>
+        <div class="guides-nav-grid">
+          <a href="../other/reptiles.html#species" class="guide-nav-item" id="hub-link-species">
+            <span>🦎</span>
+            <div>
+              <b>Species Encyclopedia</b>
+              <small>Detailed Profiles &amp; Diets</small>
+            </div>
+          </a>
+          <a href="../other/fish.html" class="guide-nav-item" id="hub-link-fish">
+            <span>🐠</span>
+            <div>
+              <b>Aquarium Fish Guide</b>
+              <small>Freshwater &amp; Marine Tanks</small>
+            </div>
+          </a>
+          <a href="../other/small-pets.html" class="guide-nav-item" id="hub-link-small-pets">
+            <span>🐹</span>
+            <div>
+              <b>Small Pets Guide</b>
+              <small>Hamsters, Guinea Pigs &amp; Mice</small>
+            </div>
+          </a>
+          <a href="../index.html" class="guide-nav-item" id="hub-link-all-pets">
+            <span>🐾</span>
+            <div>
+              <b>All Pet Categories</b>
+              <small>Explore Dogs, Cats &amp; Birds</small>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner Section -->
+  <section class="section-wrap">
+    <div class="reptile-cta-band">
+      <div>
+        <div class="eyebrow" style="color: #c3ddc8;">Start Your Reptile Journey</div>
+        <h2>Every Pet Deserves a <em>Thriving Habitat.</em></h2>
+        <p>
+          Whether you are setting up your very first terrarium or expanding specialized care for an existing scaly companion,
+          PetSathi is here to support you with expert advice, verified guides, and trusted resources.
+        </p>
+      </div>
+      <div class="reptile-cta-actions">
+        <a class="button button-light" href="../other/reptiles.html" id="cta-full-guide">Explore Species Library ↗</a>
+        <a class="button button-translucent" href="../index.html" id="cta-all-pets">All Pet Categories</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="section-wrap footer-grid">
+    <div><a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a><p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p></div>
+    <div><b>Explore</b><a href="../../../../index.html#home">Home</a><a href="../index.html">Explore Pets</a><a href="../../services/index.html">Services</a><a href="../../walker/index.html">Find a Walker</a></div>
+    <div><b>Information</b><a href="../../about.html">About Us</a><a href="../../contact.html">Contact Us</a><a href="../../faq.html">FAQ / Help Center</a><a href="#privacy">Privacy Policy</a><a href="#terms">Terms &amp; Conditions</a></div>
+    <div><b>Connect With Us</b><a href="https://github.com/Riya-Kharade/PetSathi" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/riyakharade/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://petsathi-nsoc.netlify.app/" target="_blank" rel="noopener noreferrer">Live Website</a></div>
+  </div>
+  <div class="section-wrap footer-bottom"><span>&copy; 2026 PetSathi. All rights reserved.</span><span>Made with &hearts; for pets.</span><span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E; &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span></div>
+</footer>
+
+<script src="../../../js/main.js"></script>
+</body>
+</html>
