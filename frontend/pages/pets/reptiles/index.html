@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore everything you need to know about pet reptiles on PetSathi - reptile species, terrarium habitat setup, lighting, heating, nutrition, care, and safe handling.">
-  <title>Reptiles Information & Care Guide | PetSathi</title>
+  <meta name="description" content="Explore everything you need to know about pet reptiles on PetSathi - reptile species, nutrition and feeding, terrarium habitat setup, heating and lighting, wellness, and safe handling.">
+  <title>Reptiles Care & Information Guide | PetSathi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../../css/global.css">
   <link rel="stylesheet" href="../../../css/home.css">
   <link rel="stylesheet" href="../../../css/inner.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <style>
     /* Reptiles Landing Page Specific Styles */
     .reptile-badge-strip {
@@ -29,127 +28,6 @@
       margin-bottom: 16px;
     }
 
-    /* Quick Navigation Bar */
-    .quick-nav-section {
-      padding: 10px 0 35px;
-    }
-
-    .quick-nav-card {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 12px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      box-shadow: 0 4px 18px rgba(35, 57, 43, 0.04);
-      max-width: 980px;
-      margin: 0 auto;
-    }
-
-    .quick-nav-label {
-      font-size: 0.85rem;
-      font-weight: 800;
-      color: var(--ink);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .quick-nav-label i {
-      color: var(--green);
-    }
-
-    .quick-nav-links {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .quick-nav-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 9px 18px;
-      border-radius: 999px;
-      background: #f1f6f1;
-      color: var(--ink);
-      font-size: 0.86rem;
-      font-weight: 700;
-      text-decoration: none;
-      border: 1px solid transparent;
-      transition: all 0.25s ease;
-    }
-
-    .quick-nav-pill i {
-      color: var(--green);
-      font-size: 0.95rem;
-      transition: color 0.25s ease;
-    }
-
-    .quick-nav-pill:hover {
-      background: var(--green);
-      color: white;
-      border-color: var(--green);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(40, 104, 73, 0.18);
-    }
-
-    .quick-nav-pill:hover i {
-      color: white;
-    }
-
-    /* Section Titles & Subtitles with subtle green/cream backgrounds */
-    .section-heading-boxed {
-      background: #f6faf5;
-      border: 1px solid #e1ece2;
-      border-radius: 22px;
-      padding: 30px 36px;
-      margin-bottom: 36px;
-      text-align: center;
-    }
-
-    .section-heading-boxed .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 5px 14px;
-      background: #eaf2e9;
-      color: var(--green);
-      border-radius: 999px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
-    .section-heading-boxed h2 {
-      margin: 4px 0 10px;
-      font-size: clamp(1.8rem, 3.2vw, 2.4rem);
-      color: var(--ink);
-    }
-
-    .section-heading-boxed h2 em {
-      color: var(--green);
-      font-style: normal;
-    }
-
-    .section-heading-boxed p {
-      max-width: 680px;
-      margin: 0 auto;
-      color: var(--muted);
-      font-size: 0.94rem;
-      line-height: 1.65;
-    }
-
-    /* Topic Grid (3 cards per row desktop) */
     .reptile-info-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -176,7 +54,7 @@
       position: relative;
       height: 200px;
       overflow: hidden;
-      background: #eef3ee;
+      background: #f0f3eb;
     }
 
     .reptile-card-media img {
@@ -203,12 +81,8 @@
       color: var(--dark);
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-    }
-
-    .reptile-card-badge i {
-      color: var(--green);
     }
 
     .reptile-card-body {
@@ -249,17 +123,16 @@
       transform: translateX(4px);
     }
 
-    /* Additional Information Section */
+    /* Quick Information Section */
     .reptile-quick-info-section {
       background: #fbfbf8;
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
-      padding: 60px 0;
     }
 
     .quick-info-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
 
@@ -267,7 +140,7 @@
       background: white;
       border: 1px solid var(--line);
       border-radius: 20px;
-      padding: 28px;
+      padding: 30px;
       display: flex;
       flex-direction: column;
       transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -278,34 +151,26 @@
       box-shadow: var(--shadow);
     }
 
-    .quick-info-header {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 14px;
-    }
-
     .quick-info-icon-wrap {
-      width: 52px;
-      height: 52px;
-      border-radius: 14px;
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
       background: #eaf2e9;
-      color: var(--green);
       display: grid;
       place-items: center;
-      font-size: 1.4rem;
-      flex-shrink: 0;
+      font-size: 1.7rem;
+      margin-bottom: 18px;
     }
 
-    .quick-info-header h3 {
-      font-size: 1.22rem;
-      margin: 0;
+    .quick-info-card h3 {
+      font-size: 1.25rem;
+      margin: 0 0 12px;
       color: var(--ink);
     }
 
     .quick-info-card p {
       font-size: 0.9rem;
-      line-height: 1.6;
+      line-height: 1.65;
       margin: 0 0 16px;
       color: var(--muted);
     }
@@ -325,18 +190,18 @@
       display: flex;
       align-items: flex-start;
       gap: 10px;
-      font-size: 0.86rem;
+      font-size: 0.85rem;
       color: var(--ink);
       line-height: 1.5;
     }
 
-    .quick-info-list li i {
+    .quick-info-list li span {
       color: var(--green);
-      margin-top: 3px;
+      font-weight: 700;
       flex-shrink: 0;
     }
 
-    /* Guides Navigation Strip */
+    /* Quick Guide Navigation Strip */
     .guides-nav-strip {
       background: white;
       border: 1px solid var(--line);
@@ -378,7 +243,7 @@
 
     .guide-nav-item div b {
       display: block;
-      font-size: 0.92rem;
+      font-size: 0.95rem;
       color: var(--ink);
     }
 
@@ -437,13 +302,15 @@
       color: white;
     }
 
-    /* Responsive Design */
     @media (max-width: 960px) {
       .reptile-info-grid {
         grid-template-columns: repeat(2, 1fr);
       }
       .quick-info-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+      .quick-info-grid .quick-info-card:nth-child(3) {
+        grid-column: span 2;
       }
       .guides-nav-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -462,29 +329,17 @@
       .quick-info-grid {
         grid-template-columns: 1fr;
       }
+      .quick-info-grid .quick-info-card:nth-child(3) {
+        grid-column: span 1;
+      }
       .guides-nav-grid {
         grid-template-columns: 1fr;
       }
-      .quick-nav-card {
-        border-radius: 20px;
-        padding: 16px;
-        gap: 10px;
-      }
-      .quick-nav-links {
-        width: 100%;
-        gap: 8px;
-      }
-      .quick-nav-pill {
-        flex: 1 1 calc(50% - 8px);
-        justify-content: center;
-        padding: 8px 12px;
-        font-size: 0.8rem;
-      }
-      .section-heading-boxed {
+      .guides-nav-strip {
         padding: 22px 18px;
       }
       .reptile-card-media {
-        height: 185px;
+        height: 180px;
       }
       .reptile-cta-band {
         padding: 28px 20px;
@@ -497,6 +352,7 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
@@ -522,21 +378,19 @@
 </header>
 
 <main id="main-content">
-  <!-- 1. Hero Section -->
+  <!-- Hero Section -->
   <section class="hero section-wrap" id="reptile-hero">
     <div class="hero-copy">
-      <div class="reptile-badge-strip">
-        <i class="fa-solid fa-dragon" aria-hidden="true"></i> PetSathi • Reptile Companion Guide
-      </div>
+      <div class="reptile-badge-strip">🦎 PetSathi • Reptile Companion Guide</div>
       <h1>Everything You Need to Know About <em>Reptiles</em></h1>
       <p>
-        Welcome to PetSathi's dedicated reptile care and companion guide. From gentle bearded dragons and quiet leopard geckos to calm tortoises and docile corn snakes, pet reptiles offer a fascinating, low-dander companionship. Learn about specialized terrarium setup, precise thermal gradients, UVB lighting, wholesome nutrition, safe handling, and daily wellness.
+        Welcome to PetSathi's dedicated reptile care and companion guide. From friendly bearded dragons and quiet leopard geckos to calm tortoises and docile corn snakes, reptiles make fascinating, low-allergen companions. Explore species characteristics, terrarium setups, heating, linear UVB lighting, balanced nutrition, and gentle handling.
       </p>
       <div class="hero-actions">
-        <a class="button" href="#reptile-topics" id="hero-cta-topics">Explore Care Topics ↓</a>
-        <a class="button button-outline" href="#quick-nav" id="hero-cta-quicknav">Quick Navigation ↓</a>
+        <a class="button" href="../other/reptiles.html" id="hero-cta-species">Explore Reptile Species ↗</a>
+        <a class="button button-outline" href="#reptile-topics" id="hero-cta-topics">Explore Care Topics ↓</a>
       </div>
-      <div class="hero-note">♥ &nbsp; Dedicated to calm, healthy, and thriving scaly companions.</div>
+      <div class="hero-note">♥ &nbsp; Dedicated to healthy habitats and thriving scaly companions.</div>
     </div>
 
     <div class="hero-visual">
@@ -548,50 +402,30 @@
         id="hero-reptile-image"
       >
       <div class="floating-card card-top">
-        🌿 <span><b>Fascinating &amp; Calm</b><small>Low-allergen companions</small></span>
+        🌿 <span><b>Fascinating & Calm</b><small>Low-allergen companions</small></span>
       </div>
       <div class="floating-card card-bottom">
-        ☀️ <span><b>Thermal &amp; UVB Care</b><small>Basking &amp; habitat balance</small></span>
+        ☀️ <span><b>Thermal & UVB Care</b><small>Basking & habitat balance</small></span>
       </div>
     </div>
   </section>
 
-  <!-- 2. Quick Navigation Section -->
-  <section class="quick-nav-section" id="quick-nav" aria-label="Reptile Quick Navigation">
-    <div class="section-wrap">
-      <div class="quick-nav-card">
-        <span class="quick-nav-label"><i class="fa-solid fa-compass" aria-hidden="true"></i> Quick Jump:</span>
-        <div class="quick-nav-links">
-          <a href="#card-species" class="quick-nav-pill" id="quick-link-species">
-            <i class="fa-solid fa-dragon" aria-hidden="true"></i>
-            <span>Reptile Species</span>
-          </a>
-          <a href="#card-care" class="quick-nav-pill" id="quick-link-care">
-            <i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i>
-            <span>Reptile Care</span>
-          </a>
-          <a href="#card-nutrition" class="quick-nav-pill" id="quick-link-nutrition">
-            <i class="fa-solid fa-bowl-food" aria-hidden="true"></i>
-            <span>Food &amp; Nutrition</span>
-          </a>
-          <a href="#card-safety" class="quick-nav-pill" id="quick-link-safety">
-            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
-            <span>Habitat &amp; Safety</span>
-          </a>
-        </div>
-      </div>
-    </div>
+  <!-- Quick Category Strip -->
+  <section class="trust-strip" aria-label="Reptile Knowledge Topics Overview">
+    <span>REPTILE KNOWLEDGE BASE</span>
+    <div>🦎 Species　　🩺 Health & Wellness　　🥣 Food & Nutrition　　🏡 Habitat & Tank　　☀️ Lighting & Heat　　🤝 Care & Handling</div>
   </section>
 
-  <!-- 3. Section Titles & Subtitles with subtle green/cream background -->
-  <!-- 4. Explore Essential Reptile Topics -->
+  <!-- Six Informative Sections / Cards -->
   <section class="section section-wrap" id="reptile-topics">
-    <div class="section-heading-boxed">
-      <div class="eyebrow"><i class="fa-solid fa-book-open-reader" aria-hidden="true"></i> Comprehensive Reptile Guides</div>
-      <h2>Explore Essential <em>Reptile Topics</em></h2>
+    <div class="section-heading">
+      <div>
+        <div class="eyebrow">Comprehensive Reptile Guides</div>
+        <h2>Explore Essential <em>Reptile Topics</em></h2>
+      </div>
       <p>
-        Browse curated guides crafted to assist reptile keepers with proper vivarium setups,
-        specialized insect and vegetable diets, temperature controls, and gentle handling habits.
+        Browse through curated guides crafted to assist reptile keepers with everyday health,
+        wholesome diets, proper terrarium setups, and attentive care.
       </p>
     </div>
 
@@ -599,291 +433,217 @@
       <!-- Card 1: Reptile Species -->
       <article class="reptile-card" id="card-species">
         <div class="reptile-card-media">
-          <span class="reptile-card-badge"><i class="fa-solid fa-dragon" aria-hidden="true"></i> Species</span>
+          <span class="reptile-card-badge">🦎 Species</span>
           <img
             src="../../../assets/images/reptiles/leopard-gecko.jpg"
-            alt="Colorful Leopard Gecko smiling on clean terrarium rock"
+            alt="Colorful Leopard Gecko resting on terrarium stone"
             loading="lazy"
           >
         </div>
         <div class="reptile-card-body">
           <h3>Reptile Species</h3>
           <p>
-            Discover beginner-friendly pet reptiles—from sociable Bearded Dragons and gentle Leopard Geckos to calm Russian Tortoises and docile Corn Snakes. Learn about individual temperaments, lifespan expectations, adult sizes, and specialized habitat requirements.
+            Different reptile species and their characteristics. Discover popular pets—from docile Bearded Dragons and quiet Leopard Geckos to calm Russian Tortoises and friendly Corn Snakes. Learn about temperaments, adult sizes, and terrarium suitability.
           </p>
-          <a class="reptile-card-link" href="../other/reptiles.html#species" id="link-card-species">
-            Explore Reptile Species <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-          </a>
+          <a class="reptile-card-link" href="../other/reptiles.html#species" id="link-card-species">Explore Reptile Species ↗</a>
         </div>
       </article>
 
-      <!-- Card 2: Reptile Care & Handling -->
-      <article class="reptile-card" id="card-care">
-        <div class="reptile-card-media">
-          <span class="reptile-card-badge"><i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i> Care &amp; Handling</span>
-          <img
-            src="../../../assets/images/reptiles/blue-tongued-skink.jpg"
-            alt="Gentle Blue-tongued Skink calmly exploring terrarium substrate"
-            loading="lazy"
-          >
-        </div>
-        <div class="reptile-card-body">
-          <h3>Reptile Care &amp; Handling</h3>
-          <p>
-            Master gentle, stress-free interaction techniques. Learn how to support your reptile's full body weight, recognize normal shedding patterns, maintain enclosure cleanliness, avoid tail drop in geckos, and build trusting, calm relationships with your pet.
-          </p>
-          <a class="reptile-card-link" href="#quick-info-section" id="link-card-care">
-            Explore Care &amp; Handling <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-          </a>
-        </div>
-      </article>
-
-      <!-- Card 3: Reptile Food & Nutrition -->
+      <!-- Card 2: Food & Nutrition -->
       <article class="reptile-card" id="card-nutrition">
         <div class="reptile-card-media">
-          <span class="reptile-card-badge"><i class="fa-solid fa-bowl-food" aria-hidden="true"></i> Nutrition</span>
+          <span class="reptile-card-badge">🥣 Nutrition</span>
           <img
             src="../../../assets/images/reptiles/crested-gecko.png"
-            alt="Crested Gecko resting near fresh nectar fruit diet"
+            alt="Crested Gecko near fresh fruit nectar food"
             loading="lazy"
           >
         </div>
         <div class="reptile-card-body">
-          <h3>Reptile Food &amp; Nutrition</h3>
+          <h3>Food & Nutrition</h3>
           <p>
-            Understand your reptile's exact dietary classification: herbivorous tortoises, insectivorous geckos, or omnivorous dragons. Discover gut-loading feeder insects, daily calcium dusting with D3, fresh leafy green salads, and safe hydration practices.
+            Reptile food, nutrition, and healthy diet. Understand species-specific dietary needs, from insectivorous geckos to herbivorous tortoises. Learn about gut-loading insects, fresh greens, calcium with D3 dusting, and clean hydration.
           </p>
-          <a class="reptile-card-link" href="#quick-info-nutrition" id="link-card-nutrition">
-            Explore Food &amp; Nutrition <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-          </a>
+          <a class="reptile-card-link" href="#quick-info" id="link-card-nutrition">Explore Food & Nutrition ↗</a>
         </div>
       </article>
 
-      <!-- Card 4: Reptile Health & Wellness -->
-      <article class="reptile-card" id="card-health">
-        <div class="reptile-card-media">
-          <span class="reptile-card-badge"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Wellness</span>
-          <img
-            src="../../../assets/images/reptiles/russian-tortoise.jpg"
-            alt="Healthy Russian Tortoise foraging outdoors on fresh dandelion greens"
-            loading="lazy"
-          >
-        </div>
-        <div class="reptile-card-body">
-          <h3>Reptile Health &amp; Wellness</h3>
-          <p>
-            Prevent common reptile medical conditions such as Metabolic Bone Disease (MBD), respiratory distress, dysecdysis (stuck shed), and digestive impaction. Find out how to spot subtle symptoms of illness early and locate qualified exotic reptile veterinarians.
-          </p>
-          <a class="reptile-card-link" href="#quick-info-handling" id="link-card-health">
-            Explore Health &amp; Wellness <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-          </a>
-        </div>
-      </article>
-
-      <!-- Card 5: Habitat & Tank Setup -->
+      <!-- Card 3: Habitat & Tank Setup -->
       <article class="reptile-card" id="card-habitat">
         <div class="reptile-card-media">
-          <span class="reptile-card-badge"><i class="fa-solid fa-house-chimney-window" aria-hidden="true"></i> Tank Setup</span>
+          <span class="reptile-card-badge">🏡 Habitat</span>
           <img
             src="../../../assets/images/reptiles/ball-python.jpg"
-            alt="Ball Python curled comfortably inside a secure vivarium hiding cave"
+            alt="Ball Python resting inside a secure vivarium hiding cave"
             loading="lazy"
           >
         </div>
         <div class="reptile-card-body">
-          <h3>Habitat &amp; Tank Setup</h3>
+          <h3>Habitat & Tank Setup</h3>
           <p>
-            Construct an authentic, secure vivarium environment. Choose proper glass or PVC enclosure dimensions, secure screen clips, safe substrates, multiple hiding caves on both warm and cool ends, climbing branches, and clean water pools for soaking.
+            Enclosure requirements and vivarium setup. Keep your reptile safe, secure, and comfortable. Discover glass and PVC terrarium sizing, escape-proof mesh lids, safe substrates, warm and cool hiding shelters, climbing branches, and humidity controls.
           </p>
-          <a class="reptile-card-link" href="#quick-info-habitat" id="link-card-habitat">
-            Explore Habitat &amp; Tank Setup <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-          </a>
+          <a class="reptile-card-link" href="#quick-info" id="link-card-habitat">Explore Tank Setup ↗</a>
         </div>
       </article>
 
-      <!-- Card 6: Temperature, Lighting & Safety -->
-      <article class="reptile-card" id="card-safety">
+      <!-- Card 4: Care & Handling -->
+      <article class="reptile-card" id="card-care">
         <div class="reptile-card-media">
-          <span class="reptile-card-badge"><i class="fa-solid fa-temperature-high" aria-hidden="true"></i> Lighting &amp; Safety</span>
+          <span class="reptile-card-badge">🤝 Care</span>
           <img
-            src="../../../assets/images/reptiles/corn-snake.jpg"
-            alt="Corn Snake resting comfortably under controlled warm vivarium lighting"
+            src="../../../assets/images/reptiles/blue-tongued-skink.jpg"
+            alt="Blue-tongued Skink calmly exploring terrarium substrate"
             loading="lazy"
           >
         </div>
         <div class="reptile-card-body">
-          <h3>Temperature, Lighting &amp; Safety</h3>
+          <h3>Care & Handling</h3>
           <p>
-            Because reptiles cannot self-regulate body heat, precise thermal gradients and linear UVB lamps are vital for calcium metabolism and survival. Learn about digital thermostat sensors, nighttime ceramic heaters, and safe household hygiene precautions.
+            Gentle handling and stress-free interaction. Maintain a trusting, calm bond with your reptile. Find practical guidance on full-body weight support, shedding cycles, enclosure spot cleaning, safe hygiene, and avoiding handling stress.
           </p>
-          <a class="reptile-card-link" href="#quick-info-lighting" id="link-card-safety">
-            Explore Lighting &amp; Safety <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-          </a>
+          <a class="reptile-card-link" href="#quick-info" id="link-card-care">Explore Care & Handling ↗</a>
+        </div>
+      </article>
+
+      <!-- Card 5: Health & Wellness -->
+      <article class="reptile-card" id="card-health">
+        <div class="reptile-card-media">
+          <span class="reptile-card-badge">🩺 Wellness</span>
+          <img
+            src="../../../assets/images/reptiles/russian-tortoise.jpg"
+            alt="Healthy Russian Tortoise foraging outdoors on fresh greens"
+            loading="lazy"
+          >
+        </div>
+        <div class="reptile-card-body">
+          <h3>Health & Wellness</h3>
+          <p>
+            General reptile health and veterinary care. Protect your companion with preventative routines against Metabolic Bone Disease (MBD), respiratory illness, and dysecdysis (stuck shed). Learn to spot subtle signs of discomfort early.
+          </p>
+          <a class="reptile-card-link" href="#quick-info" id="link-card-health">Explore Health & Wellness ↗</a>
+        </div>
+      </article>
+
+      <!-- Card 6: Temperature & Lighting -->
+      <article class="reptile-card" id="card-safety">
+        <div class="reptile-card-media">
+          <span class="reptile-card-badge">☀️ Lighting</span>
+          <img
+            src="../../../assets/images/reptiles/corn-snake.jpg"
+            alt="Corn Snake resting comfortably under warm terrarium lighting"
+            loading="lazy"
+          >
+        </div>
+        <div class="reptile-card-body">
+          <h3>Temperature & Lighting</h3>
+          <p>
+            Basking heat and UVB lighting essentials. Because reptiles are ectothermic, external temperature regulation is vital. Learn how to set up thermal gradients with thermostats, daytime basking bulbs, and linear full-spectrum UVB tubes.
+          </p>
+          <a class="reptile-card-link" href="#quick-info" id="link-card-safety">Explore Lighting & Safety ↗</a>
         </div>
       </article>
     </div>
   </section>
 
-  <!-- 5. Additional Information Section -->
-  <section class="section reptile-quick-info-section" id="quick-info-section">
+  <!-- Quick Information Section -->
+  <section class="section reptile-quick-info-section" id="quick-info">
     <div class="section-wrap">
-      <div class="section-heading-boxed">
-        <div class="eyebrow"><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i> Practical Terrarium Guide</div>
-        <h2>Essential Information for <em>Reptile Parents</em></h2>
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">Essential Reptile Insights</div>
+          <h2>Quick Information for <em>Reptile Parents</em></h2>
+        </div>
         <p>
-          Reptiles have unique physiological needs that differ significantly from mammalian pets.
-          Follow these fundamental principles to ensure your terrarium companion stays thriving and healthy.
+          Understanding your companion is the cornerstone of a fulfilling pet parenthood journey.
+          Here is what makes reptiles special and how to care for them responsibly.
         </p>
       </div>
 
       <div class="quick-info-grid">
-        <!-- Info Card 1: Habitat Requirements -->
-        <article class="quick-info-card" id="quick-info-habitat">
-          <div class="quick-info-header">
-            <div class="quick-info-icon-wrap">
-              <i class="fa-solid fa-house" aria-hidden="true"></i>
-            </div>
-            <h3>Terrarium &amp; Habitat Setup</h3>
-          </div>
+        <!-- 1. Why reptiles make wonderful companions -->
+        <article class="quick-info-card" id="info-companionship">
+          <div class="quick-info-icon-wrap">🦎</div>
+          <h3>Why Reptiles Make Wonderful Companions</h3>
           <p>
-            Enclosures must replicate your pet's native biotope—whether arid desert or humid tropical rainforest.
+            Reptiles are quiet, hypoallergenic, and captivating pets that bring calm energy and unique beauty to modern homes.
           </p>
           <ul class="quick-info-list">
-            <li>
-              <i class="fa-solid fa-check" aria-hidden="true"></i>
-              <span><strong>Dual Hiding Caves:</strong> Provide at least two secure, opaque hides—one in the warm basking zone and one on the cool side.</span>
-            </li>
-            <li>
-              <i class="fa-solid fa-check" aria-hidden="true"></i>
-              <span><strong>Substrate Safety:</strong> Use paper towels, slate tiles, or species-specific soil mixes; avoid cedar, pine, or loose fine silica sands.</span>
-            </li>
-            <li>
-              <i class="fa-solid fa-check" aria-hidden="true"></i>
-              <span><strong>Humidity Monitoring:</strong> Use reliable digital hygrometers to maintain exact species humidity; mist tropical setups daily.</span>
-            </li>
+            <li><span>✓</span> Quiet, peaceful companions that do not bark or shed fur in the house.</li>
+            <li><span>✓</span> Ideal for owners or children with allergies to dog or cat fur and dander.</li>
+            <li><span>✓</span> Compact habitat footprint with beautiful naturalistic terrarium displays.</li>
+            <li><span>✓</span> Fascinating natural behaviors, intriguing colors, and calm temperaments.</li>
           </ul>
         </article>
 
-        <!-- Info Card 2: Temperature & Lighting -->
-        <article class="quick-info-card" id="quick-info-lighting">
-          <div class="quick-info-header">
-            <div class="quick-info-icon-wrap">
-              <i class="fa-solid fa-sun" aria-hidden="true"></i>
-            </div>
-            <h3>Temperature &amp; UVB Lighting</h3>
-          </div>
+        <!-- 2. Responsibilities of reptile owners -->
+        <article class="quick-info-card" id="info-responsibilities">
+          <div class="quick-info-icon-wrap">📋</div>
+          <h3>Responsibilities of Reptile Keepers</h3>
           <p>
-            Reptiles are ectothermic and rely completely on external heat and ultraviolet rays for metabolic health.
+            Welcoming a reptile is a rewarding commitment that requires diligent attention to their environmental needs.
           </p>
           <ul class="quick-info-list">
-            <li>
-              <i class="fa-solid fa-check" aria-hidden="true"></i>
-              <span><strong>Thermal Gradient:</strong> Maintain a warm basking spot (88°F–105°F) and a cooler retreat zone (72°F–80°F) for thermoregulation.</span>
-            </li>
-            <li>
-              <i class="fa-solid fa-check" aria-hidden="true"></i>
-              <span><strong>Thermostat Regulation:</strong> Always connect all heat mats, ceramic emitters, and radiant panels to digital pulse thermostats.</span>
-            </li>
-            <li>
-              <i class="fa-solid fa-check" aria-hidden="true"></i>
-              <span><strong>Linear UVB Output:</strong> Supply full-spectrum T5 or T8 linear UVB tubes; replace lamps every 6–12 months as output degrades.</span>
-            </li>
+            <li><span>✓</span> Maintaining strict temperature gradients and daily UVB lighting schedules.</li>
+            <li><span>✓</span> Supplying balanced live prey, fresh salads, and calcium with D3 supplements.</li>
+            <li><span>✓</span> Routine vivarium spot cleaning and fresh, dechlorinated drinking water.</li>
+            <li><span>✓</span> Thorough hand washing with soap before and after handling any reptile.</li>
           </ul>
         </article>
 
-        <!-- Info Card 3: Feeding & Nutrition -->
-        <article class="quick-info-card" id="quick-info-nutrition">
-          <div class="quick-info-header">
-            <div class="quick-info-icon-wrap">
-              <i class="fa-solid fa-bowl-food" aria-hidden="true"></i>
-            </div>
-            <h3>Feeding, Nutrition &amp; Supplements</h3>
-          </div>
+        <!-- 3. Importance of regular reptile care -->
+        <article class="quick-info-card" id="info-regular-care">
+          <div class="quick-info-icon-wrap">🩺</div>
+          <h3>Importance of Proper Habitat & Care</h3>
           <p>
-            A nutrient-dense diet combined with essential mineral dusting prevents painful nutritional deficiencies.
+            Consistent environmental management and preventative health care protect your reptile from common ailments.
           </p>
           <ul class="quick-info-list">
-            <li>
-              <i class="fa-solid fa-check" aria-hidden="true"></i>
-              <span><strong>Calcium &amp; D3 Dusting:</strong> Dust feeder insects or fresh greens with high-quality calcium powder and multivitamin supplements.</span>
-            </li>
-            <li>
-              <i class="fa-solid fa-check" aria-hidden="true"></i>
-              <span><strong>Gut-Loading Feeders:</strong> Feed live crickets, dubia roaches, and mealworms fresh squash and greens 24 hours prior to feeding.</span>
-            </li>
-            <li>
-              <i class="fa-solid fa-check" aria-hidden="true"></i>
-              <span><strong>Dechlorinated Water:</strong> Provide fresh, dechlorinated drinking water daily in shallow dishes that prevent accidental drowning.</span>
-            </li>
-          </ul>
-        </article>
-
-        <!-- Info Card 4: Safe Handling & Hygiene -->
-        <article class="quick-info-card" id="quick-info-handling">
-          <div class="quick-info-header">
-            <div class="quick-info-icon-wrap">
-              <i class="fa-solid fa-hand-holding-medical" aria-hidden="true"></i>
-            </div>
-            <h3>Safe Handling &amp; Household Safety</h3>
-          </div>
-          <p>
-            Gentle handling techniques and strict personal hygiene keep both reptiles and family members safe.
-          </p>
-          <ul class="quick-info-list">
-            <li>
-              <i class="fa-solid fa-check" aria-hidden="true"></i>
-              <span><strong>Support the Body:</strong> Scoop reptiles gently from beneath, supporting all four legs; never grab by the tail, neck, or limbs.</span>
-            </li>
-            <li>
-              <i class="fa-solid fa-check" aria-hidden="true"></i>
-              <span><strong>Hand Washing:</strong> Wash hands thoroughly with warm water and antimicrobial soap immediately before and after contact.</span>
-            </li>
-            <li>
-              <i class="fa-solid fa-check" aria-hidden="true"></i>
-              <span><strong>Sanitary Terrarium Care:</strong> Disinfect bowls and decorations using veterinary-approved F10 disinfectant away from kitchen areas.</span>
-            </li>
+            <li><span>✓</span> Reliable digital thermostats prevent life-threatening overheating or chills.</li>
+            <li><span>✓</span> High-quality UVB lighting enables proper calcium synthesis and prevents MBD.</li>
+            <li><span>✓</span> Correct humidity levels prevent respiratory illness and ensure complete shedding.</li>
+            <li><span>✓</span> Periodic checkups with an exotic veterinary specialist for long-term health.</li>
           </ul>
         </article>
       </div>
 
-      <!-- Quick Guide Navigation Strip -->
+      <!-- Quick Navigation Hub -->
       <div class="guides-nav-strip">
         <div class="section-heading" style="margin-bottom: 0;">
           <div>
-            <div class="eyebrow"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Companion Navigation</div>
-            <h2 style="font-size: 1.5rem; margin-top: 4px;">Explore Other <em>Pet Guides</em></h2>
+            <div class="eyebrow">Quick Navigation Hub</div>
+            <h3 style="font-size: 1.5rem; margin: 0;">Explore Dedicated Pet Knowledge Chapters</h3>
           </div>
-          <p style="margin: 0; font-size: 0.88rem;">
-            Discover PetSathi's curated guides for dogs, cats, birds, rabbits, and other domestic pets.
-          </p>
+          <p>Direct access to specialized pet care guides, species profiles, and services.</p>
         </div>
+
         <div class="guides-nav-grid">
-          <a href="../other/reptiles.html#species" class="guide-nav-item" id="hub-link-species">
+          <a href="../other/reptiles.html" class="guide-nav-item" id="hub-link-species">
             <span>🦎</span>
             <div>
-              <b>Species Encyclopedia</b>
-              <small>Detailed Profiles &amp; Diets</small>
+              <b>Reptile Species Guide</b>
+              <small>Profiles & Habitat Details</small>
             </div>
           </a>
           <a href="../other/fish.html" class="guide-nav-item" id="hub-link-fish">
             <span>🐠</span>
             <div>
               <b>Aquarium Fish Guide</b>
-              <small>Freshwater &amp; Marine Tanks</small>
+              <small>Freshwater & Marine Tanks</small>
             </div>
           </a>
-          <a href="../other/small-pets.html" class="guide-nav-item" id="hub-link-small-pets">
-            <span>🐹</span>
+          <a href="../dogs/index.html" class="guide-nav-item" id="hub-link-dogs">
+            <span>🐕</span>
             <div>
-              <b>Small Pets Guide</b>
-              <small>Hamsters, Guinea Pigs &amp; Mice</small>
+              <b>Dog Care Guide</b>
+              <small>Breeds, Health & Walking</small>
             </div>
           </a>
-          <a href="../index.html" class="guide-nav-item" id="hub-link-all-pets">
-            <span>🐾</span>
+          <a href="../cats/index.html" class="guide-nav-item" id="hub-link-cats">
+            <span>🐈</span>
             <div>
-              <b>All Pet Categories</b>
-              <small>Explore Dogs, Cats &amp; Birds</small>
+              <b>Cat Care Guide</b>
+              <small>Feline Nutrition & Wellness</small>
             </div>
           </a>
         </div>
@@ -898,12 +658,12 @@
         <div class="eyebrow" style="color: #c3ddc8;">Start Your Reptile Journey</div>
         <h2>Every Pet Deserves a <em>Thriving Habitat.</em></h2>
         <p>
-          Whether you are setting up your very first terrarium or expanding specialized care for an existing scaly companion,
-          PetSathi is here to support you with expert advice, verified guides, and trusted resources.
+          Whether you are preparing your very first terrarium or looking to give your companion
+          the best environmental and dietary care, PetSathi is here to guide you every step of the way.
         </p>
       </div>
       <div class="reptile-cta-actions">
-        <a class="button button-light" href="../other/reptiles.html" id="cta-full-guide">Explore Species Library ↗</a>
+        <a class="button button-light" href="../other/reptiles.html" id="cta-species">Explore Reptile Profiles ↗</a>
         <a class="button button-translucent" href="../index.html" id="cta-all-pets">All Pet Categories</a>
       </div>
     </div>
