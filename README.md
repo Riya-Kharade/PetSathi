@@ -80,6 +80,26 @@ PetSathi aims to support multiple pet categories with dedicated pages and releva
 | XAMPP | Local development environment |
 | Git & GitHub | Version control |
 
+## 🧩 Shared Header & Footer
+
+The site header and footer live in one place each:
+
+- `frontend/components/header.js`
+- `frontend/components/footer.js`
+
+To change the navigation or footer, edit the markup inside these files and it updates on every page. Write links relative to the project root, prefixed with `${ROOT}` (for example `${ROOT}frontend/pages/about.html`).
+
+When creating a new page, add the components where the header and footer should appear, using the correct relative path for that page's folder (normal script tags, without `async` or `defer`). Example for a page in `frontend/pages/services/`:
+
+```html
+<body>
+  <script src="../../components/header.js"></script>
+  <!-- page content -->
+  <script src="../../components/footer.js"></script>
+  <script src="../../js/main.js"></script>
+</body>
+```
+
 ## 🗺️ Project Development Roadmap
 
 PetSathi will be developed progressively through five development phases.
