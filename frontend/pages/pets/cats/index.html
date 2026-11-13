@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../../../css/home.css" />
     <link rel="stylesheet" href="../../../css/inner.css" />
     <style>
+      /* Font Awesome 6 Free Webfont definition */
       @font-face {
         font-family: "Font Awesome 6 Free";
         font-style: normal;
@@ -30,6 +31,7 @@
             format("truetype");
       }
 
+      /* Cats Landing Page Specific Styles */
       .cat-badge-strip {
         display: inline-flex;
         align-items: center;
@@ -166,6 +168,7 @@
         transform: translateX(4px);
       }
 
+      /* Quick Information Section */
       .cat-quick-info-section {
         background: #ffffff;
         border-top: none !important;
@@ -292,6 +295,7 @@
         line-height: 1.7;
       }
 
+      /* Dog Topics & Quick Info Heading Card - Exact User Specification */
       .cat-topics-heading {
         position: relative;
         max-width: 1400px;
@@ -305,6 +309,7 @@
         box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
       }
 
+      /* Curvy decorative wave layers matching reference image */
       .corner-wave {
         position: absolute;
         pointer-events: none;
@@ -372,6 +377,7 @@
         color: #28764a;
       }
 
+      /* Heading Radiating Rays / Sparkles - Clean Fan Radiating from Text */
       .heading-burst {
         display: inline-block;
         position: relative;
@@ -387,6 +393,7 @@
         border-radius: 9999px;
       }
 
+      /* Left burst: 3 rays radiating out to the left from the right edge */
       .heading-burst.left span {
         right: 0;
         transform-origin: right center;
@@ -412,6 +419,7 @@
         transform: rotate(-35deg);
       }
 
+      /* Right burst: 3 rays radiating out to the right from the left edge */
       .heading-burst.right span {
         left: 0;
         transform-origin: left center;
@@ -446,6 +454,7 @@
         line-height: 1.65;
       }
 
+      /* Decorative Paws (Font Awesome) - Exactly 2 on left, 2 on right */
       .paw {
         position: absolute;
         color: rgba(115, 173, 91, 0.28);
@@ -558,6 +567,7 @@
         }
       }
 
+      /* Quick Guide Navigation Strip - Match Reference Design */
       .guides-nav-strip {
         position: relative;
         background: #ffffff;
@@ -571,6 +581,7 @@
         overflow: hidden;
       }
 
+      /* Decorative Corner Paws */
       .quick-nav-decor {
         position: absolute;
         pointer-events: none;
@@ -639,6 +650,7 @@
         transform: rotate(15deg);
       }
 
+      /* Centered Header & Pill Badge */
       .quick-nav-header {
         position: relative;
         z-index: 1;
@@ -700,20 +712,21 @@
         font-weight: 800;
       }
 
+      /* Navigation Pills Grid */
       .guides-nav-grid {
         position: relative;
         z-index: 1;
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 14px;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 16px;
         margin: 0;
       }
 
       .guide-nav-item {
         display: flex;
         align-items: center;
-        gap: 10px;
-        padding: 9px 16px 9px 9px;
+        gap: 12px;
+        padding: 9px 18px 9px 9px;
         background: #edf7f0;
         border: 1px solid #cce4d2;
         border-radius: 9999px;
@@ -723,12 +736,9 @@
           box-shadow 0.2s ease,
           border-color 0.2s ease,
           background 0.2s ease;
-        min-width: 0;
-        cursor: pointer;
       }
 
-      .guide-nav-item:hover,
-      .guide-nav-item.active-filter {
+      .guide-nav-item:hover {
         background: #e4f4e8;
         border-color: #237847;
         transform: translateY(-2px);
@@ -736,15 +746,15 @@
       }
 
       .guide-nav-icon {
-        width: 38px;
-        height: 38px;
+        width: 42px;
+        height: 42px;
         border-radius: 50%;
         background: #d1ecda;
         color: #1e6f43;
         display: grid;
         place-items: center;
         flex-shrink: 0;
-        font-size: 1rem;
+        font-size: 1.15rem;
         line-height: 1;
         transition:
           background 0.2s ease,
@@ -756,22 +766,20 @@
         line-height: 1;
       }
 
-      .guide-nav-item:hover .guide-nav-icon,
-      .guide-nav-item.active-filter .guide-nav-icon {
+      .guide-nav-item:hover .guide-nav-icon {
         background: #1e6f43;
         color: #ffffff;
       }
 
       .guide-nav-label {
         font-family: "DM Sans", "Manrope", sans-serif !important;
-        font-size: 0.88rem;
+        font-size: 0.95rem;
         font-weight: 700;
         color: #1c2b20;
         white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
       }
 
+      /* Font Awesome font protection against global.css */
       .guides-nav-strip i,
       .guides-nav-strip [class*="fa-"],
       .fa-solid,
@@ -800,6 +808,7 @@
         font-weight: 400 !important;
       }
 
+      /* CTA Banner Section matching main index.html */
       .cta {
         margin-top: 0;
         margin-bottom: 92px;
@@ -824,86 +833,6 @@
         color: white;
       }
 
-      .cat-search-filter-wrap {
-        max-width: 1200px;
-        width: calc(100% - 40px);
-        margin: 0 auto 35px;
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        flex-wrap: nowrap;
-      }
-
-      .cat-search-bar {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        background: #ffffff;
-        border: 1px solid var(--line);
-        border-radius: 999px;
-        padding: 6px 6px 6px 18px;
-        box-shadow: 0 4px 16px rgba(35, 75, 45, 0.03);
-        transition:
-          border-color 0.2s ease,
-          box-shadow 0.2s ease;
-      }
-
-      .cat-search-bar:focus-within {
-        border-color: var(--green);
-        box-shadow: 0 6px 20px rgba(35, 75, 45, 0.08);
-      }
-
-      .cat-search-bar i {
-        color: var(--muted);
-        font-size: 0.95rem;
-        margin-right: 10px;
-      }
-
-      .cat-search-bar input {
-        flex: 1;
-        border: none;
-        outline: none;
-        background: transparent;
-        font-family: "DM Sans", sans-serif;
-        font-size: 0.92rem;
-        color: var(--ink);
-      }
-
-      .cat-search-bar input::placeholder {
-        color: #8a9a90;
-      }
-
-      .cat-filter-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 12px 22px;
-        background: #edf7f0;
-        border: 1px solid #cce4d2;
-        border-radius: 999px;
-        color: var(--green);
-        font-family: "DM Sans", sans-serif;
-        font-size: 0.92rem;
-        font-weight: 700;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        white-space: nowrap;
-      }
-
-      .cat-filter-btn:hover,
-      .cat-filter-btn.active-filter-btn {
-        background: var(--green);
-        color: #ffffff;
-        border-color: var(--green);
-        box-shadow: 0 4px 14px rgba(35, 100, 55, 0.12);
-      }
-
-      @media (max-width: 1100px) {
-        .guides-nav-grid {
-          grid-template-columns: repeat(3, 1fr);
-        }
-      }
-
       @media (max-width: 960px) {
         .cat-info-grid {
           grid-template-columns: repeat(2, 1fr);
@@ -911,15 +840,6 @@
 
         .guides-nav-grid {
           grid-template-columns: repeat(2, 1fr);
-        }
-
-        .cat-search-filter-wrap {
-          flex-direction: column;
-          align-items: stretch;
-        }
-
-        .cat-filter-btn {
-          justify-content: center;
         }
       }
 
@@ -976,6 +896,7 @@
         }
       }
 
+      /* Specific adjustments for 6-card grid */
       .cat-card-media {
         height: 200px;
       }
@@ -987,6 +908,7 @@
   </head>
 
   <body>
+    <!-- Header and Navigation -->
     <header class="site-header">
       <a class="brand" href="../../../../index.html" aria-label="PetSathi home"
         ><svg
@@ -1058,6 +980,7 @@
     </header>
 
     <main>
+      <!-- Hero Section -->
       <section class="hero section-wrap" id="cat-hero">
         <div class="hero-copy">
           <div class="cat-badge-strip">
@@ -1112,7 +1035,9 @@
         </div>
       </section>
 
+      <!-- Quick Navigation Hub -->
       <div class="guides-nav-strip">
+        <!-- Decorative Corner Paws -->
         <div class="quick-nav-decor decor-top-left" aria-hidden="true">
           <i class="fa-solid fa-paw decor-paw decor-paw-1"></i>
           <i class="fa-solid fa-paw decor-paw decor-paw-2"></i>
@@ -1123,6 +1048,7 @@
           <i class="fa-solid fa-paw decor-paw decor-paw-4"></i>
         </div>
 
+        <!-- Centered Header -->
         <div class="quick-nav-header">
           <div class="quick-nav-eyebrow-wrap">
             <span class="quick-nav-line"></span>
@@ -1140,91 +1066,68 @@
           </h3>
         </div>
 
+        <!-- Navigation Pills -->
         <div class="guides-nav-grid">
-          <div
-            class="guide-nav-item filter-trigger"
-            data-filter="breeds"
-            id="hub-link-breeds"
-          >
-            <span class="guide-nav-icon"
-              ><i class="fa-solid fa-cat" aria-hidden="true"></i
-            ></span>
-            <span class="guide-nav-label">Breeds</span>
-          </div>
+          <a href="breeds.html" class="guide-nav-item" id="hub-link-breeds">
+            <span class="guide-nav-icon">
+              <i class="fa-solid fa-cat" aria-hidden="true"></i>
+            </span>
+            <span class="guide-nav-label">Cat Breeds</span>
+          </a>
 
-          <div
-            class="guide-nav-item filter-trigger"
-            data-filter="grooming"
-            id="hub-link-care"
-          >
-            <span class="guide-nav-icon"
-              ><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i
-            ></span>
-            <span class="guide-nav-label">Grooming</span>
-          </div>
+          <a href="care.html" class="guide-nav-item" id="hub-link-care">
+            <span class="guide-nav-icon">
+              <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
+            </span>
+            <span class="guide-nav-label">Care &amp; Grooming</span>
+          </a>
 
-          <div
-            class="guide-nav-item filter-trigger"
-            data-filter="nutrition"
-            id="hub-link-food"
-          >
-            <span class="guide-nav-icon"
-              ><i class="fa-solid fa-bowl-food" aria-hidden="true"></i
-            ></span>
-            <span class="guide-nav-label">Nutrition</span>
-          </div>
+          <a href="nutrition.html" class="guide-nav-item" id="hub-link-food">
+            <span class="guide-nav-icon">
+              <i class="fa-solid fa-bowl-food" aria-hidden="true"></i>
+            </span>
+            <span class="guide-nav-label">Food &amp; Nutrition</span>
+          </a>
 
-          <div
-            class="guide-nav-item filter-trigger"
-            data-filter="health"
+          <a
+            href="care.html#health"
+            class="guide-nav-item"
             id="hub-link-health"
           >
-            <span class="guide-nav-icon"
-              ><i class="fa-solid fa-stethoscope" aria-hidden="true"></i
-            ></span>
-            <span class="guide-nav-label">Health</span>
-          </div>
+            <span class="guide-nav-icon">
+              <i class="fa-solid fa-stethoscope" aria-hidden="true"></i>
+            </span>
+            <span class="guide-nav-label">Health &amp; Wellness</span>
+          </a>
 
-          <div
-            class="guide-nav-item filter-trigger"
-            data-filter="behaviour"
+          <a
+            href="behaviour.html"
+            class="guide-nav-item"
             id="hub-link-behaviour"
           >
-            <span class="guide-nav-icon"
-              ><i class="fa-solid fa-brain" aria-hidden="true"></i
-            ></span>
-            <span class="guide-nav-label">Behaviour</span>
-          </div>
+            <span class="guide-nav-icon">
+              <i class="fa-solid fa-brain" aria-hidden="true"></i>
+            </span>
+            <span class="guide-nav-label">Behaviour &amp; Training</span>
+          </a>
 
-          <div
-            class="guide-nav-item filter-trigger"
-            data-filter="safety"
+          <a
+            href="care.html#safety"
+            class="guide-nav-item"
             id="hub-link-safety"
           >
-            <span class="guide-nav-icon"
-              ><i class="fa-solid fa-shield-cat" aria-hidden="true"></i
-            ></span>
-            <span class="guide-nav-label">Safety</span>
-          </div>
+            <span class="guide-nav-icon">
+              <i class="fa-solid fa-shield-cat" aria-hidden="true"></i>
+            </span>
+            <span class="guide-nav-label">Safety &amp; Indoor Living</span>
+          </a>
         </div>
       </div>
 
-      <div class="cat-search-filter-wrap">
-        <div class="cat-search-bar">
-          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-          <input
-            type="text"
-            id="catSearchInput"
-            placeholder="Search cat topics, nutrition, grooming, health..."
-          />
-        </div>
-        <button class="cat-filter-btn" id="resetFilterBtn" type="button">
-          <i class="fa-solid fa-filter" aria-hidden="true"></i> Reset Filters
-        </button>
-      </div>
-
+      <!-- Six Essential Cat Topics Cards -->
       <section class="section section-wrap" id="cat-topics">
         <div class="cat-topics-heading">
+          <!-- Curvy decorative corner shapes matching reference image -->
           <svg
             class="corner-wave wave-tl"
             viewBox="0 0 220 130"
@@ -1262,6 +1165,7 @@
             />
           </svg>
 
+          <!-- Decorative Paws (Font Awesome) - Exactly 2 left, 2 right -->
           <div class="paw paw-left-1"><i class="fa-solid fa-paw"></i></div>
           <div class="paw paw-left-2"><i class="fa-solid fa-paw"></i></div>
           <div class="paw paw-right-1"><i class="fa-solid fa-paw"></i></div>
@@ -1290,8 +1194,10 @@
           </div>
         </div>
 
+        <!-- 6 Topic Cards Grid -->
         <div class="cat-info-grid">
-          <article class="cat-card" data-category="breeds" id="card-breeds">
+          <!-- 1. Cat Breeds -->
+          <article class="cat-card" id="card-breeds">
             <div class="cat-card-media">
               <span class="cat-card-badge">
                 <i class="fa-solid fa-cat" aria-hidden="true"></i>
@@ -1320,7 +1226,8 @@
             </div>
           </article>
 
-          <article class="cat-card" data-category="grooming" id="card-grooming">
+          <!-- 2. Cat Care & Grooming -->
+          <article class="cat-card" id="card-grooming">
             <div class="cat-card-media">
               <span class="cat-card-badge">
                 <i class="fa-solid fa-soap" aria-hidden="true"></i>
@@ -1349,11 +1256,8 @@
             </div>
           </article>
 
-          <article
-            class="cat-card"
-            data-category="nutrition"
-            id="card-nutrition"
-          >
+          <!-- 3. Cat Food & Nutrition -->
+          <article class="cat-card" id="card-nutrition">
             <div class="cat-card-media">
               <span class="cat-card-badge">
                 <i class="fa-solid fa-bowl-food" aria-hidden="true"></i>
@@ -1382,7 +1286,8 @@
             </div>
           </article>
 
-          <article class="cat-card" data-category="health" id="card-health">
+          <!-- 4. Cat Health & Wellness -->
+          <article class="cat-card" id="card-health">
             <div class="cat-card-media">
               <span class="cat-card-badge">
                 <i class="fa-solid fa-stethoscope" aria-hidden="true"></i>
@@ -1411,11 +1316,8 @@
             </div>
           </article>
 
-          <article
-            class="cat-card"
-            data-category="behaviour"
-            id="card-behaviour"
-          >
+          <!-- 5. Cat Behaviour & Training -->
+          <article class="cat-card" id="card-behaviour">
             <div class="cat-card-media">
               <span class="cat-card-badge">
                 <i class="fa-solid fa-brain" aria-hidden="true"></i>
@@ -1444,7 +1346,8 @@
             </div>
           </article>
 
-          <article class="cat-card" data-category="safety" id="card-safety">
+          <!-- 6. Cat Safety & Indoor Living -->
+          <article class="cat-card" id="card-safety">
             <div class="cat-card-media">
               <span class="cat-card-badge">
                 <i class="fa-solid fa-shield-cat" aria-hidden="true"></i>
@@ -1475,9 +1378,11 @@
         </div>
       </section>
 
+      <!-- Additional Cat Information Sections -->
       <section class="section cat-quick-info-section" id="quick-info">
         <div class="section-wrap">
           <div class="cat-topics-heading">
+            <!-- Curvy decorative corner shapes matching reference image -->
             <svg
               class="corner-wave wave-tl"
               viewBox="0 0 220 130"
@@ -1515,6 +1420,7 @@
               />
             </svg>
 
+            <!-- Decorative Paws (Font Awesome) - Exactly 2 left, 2 right -->
             <div class="paw paw-left-1"><i class="fa-solid fa-paw"></i></div>
             <div class="paw paw-left-2"><i class="fa-solid fa-paw"></i></div>
             <div class="paw paw-right-1"><i class="fa-solid fa-paw"></i></div>
@@ -1545,6 +1451,7 @@
           </div>
 
           <div class="quick-info-grid">
+            <!-- 1. Why cats make wonderful companions -->
             <article class="quick-info-card" id="info-companionship">
               <div class="quick-info-icon-wrap">
                 <i class="fa-solid fa-cat" aria-hidden="true"></i>
@@ -1574,6 +1481,7 @@
               </ul>
             </article>
 
+            <!-- 2. Essential daily cat care checklist -->
             <article class="quick-info-card" id="info-daily-care">
               <div class="quick-info-icon-wrap">
                 <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
@@ -1603,6 +1511,7 @@
               </ul>
             </article>
 
+            <!-- 3. Creating a happy indoor home -->
             <article class="quick-info-card" id="info-indoor-life">
               <div class="quick-info-icon-wrap">
                 <i class="fa-solid fa-shield-cat" aria-hidden="true"></i>
@@ -1635,6 +1544,7 @@
         </div>
       </section>
 
+      <!-- Call to Action Banner Section -->
       <section class="cta section-wrap">
         <div>
           <div class="eyebrow">START YOUR FELINE JOURNEY</div>
@@ -1656,6 +1566,7 @@
       </section>
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
       <div class="section-wrap footer-grid">
         <div>
@@ -1677,7 +1588,7 @@
                 d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z"
                 fill="currentColor"
               /></svg
-            ><span class="brand-name">Pet<span>Sathi</span></span></a
+            ><span>Pet<span>Sathi</span></span></a
           >
           <p>
             Your pet's trusted companion. Making pet care easier, one paw at a
@@ -1730,73 +1641,13 @@
     </footer>
 
     <script>
+      // Mobile Nav Toggle
       const toggle = document.querySelector(".menu-toggle");
       const nav = document.querySelector(".main-nav");
       if (toggle && nav) {
         toggle.addEventListener("click", () => {
           const open = nav.classList.toggle("open");
           toggle.setAttribute("aria-expanded", String(open));
-        });
-      }
-
-      const searchInput = document.getElementById("catSearchInput");
-      const catCards = document.querySelectorAll(".cat-card");
-      const filterTriggers = document.querySelectorAll(".filter-trigger");
-      const resetFilterBtn = document.getElementById("resetFilterBtn");
-
-      function filterCards(category) {
-        catCards.forEach((card) => {
-          const cardCat = card.getAttribute("data-category");
-          if (!category || cardCat === category) {
-            card.style.display = "flex";
-          } else {
-            card.style.display = "none";
-          }
-        });
-      }
-
-      if (searchInput) {
-        searchInput.addEventListener("input", (e) => {
-          const query = e.target.value.toLowerCase().trim();
-          filterTriggers.forEach((t) => t.classList.remove("active-filter"));
-
-          catCards.forEach((card) => {
-            const title = card.querySelector("h3").textContent.toLowerCase();
-            const description = card
-              .querySelector("p")
-              .textContent.toLowerCase();
-            if (title.includes(query) || description.includes(query)) {
-              card.style.display = "flex";
-            } else {
-              card.style.display = "none";
-            }
-          });
-        });
-      }
-
-      filterTriggers.forEach((trigger) => {
-        trigger.addEventListener("click", (e) => {
-          e.preventDefault();
-          const category = trigger.getAttribute("data-filter");
-
-          filterTriggers.forEach((t) => t.classList.remove("active-filter"));
-          trigger.classList.add("active-filter");
-
-          if (searchInput) searchInput.value = "";
-          filterCards(category);
-
-          const topicsSection = document.getElementById("cat-topics");
-          if (topicsSection) {
-            topicsSection.scrollIntoView({ behavior: "smooth" });
-          }
-        });
-      });
-
-      if (resetFilterBtn) {
-        resetFilterBtn.addEventListener("click", () => {
-          if (searchInput) searchInput.value = "";
-          filterTriggers.forEach((t) => t.classList.remove("active-filter"));
-          filterCards(null);
         });
       }
     </script>
