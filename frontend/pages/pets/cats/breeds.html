@@ -13,11 +13,29 @@
   <style>
     /* Page Specific Styles for Cat Breeds */
     :root {
-      --cat-accent: #e58b5f;
-      --cat-accent-soft: #fcf1eb;
-      --cat-tag-bg: #edf3ec;
-      --cat-tag-text: #24573d;
       --card-radius: 20px;
+    }
+
+    body .fa-solid,
+    body .fa-solid::before {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900 !important;
+      font-style: normal !important;
+      line-height: 1 !important;
+    }
+    body .fa-regular,
+    body .fa-regular::before {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 400 !important;
+      font-style: normal !important;
+      line-height: 1 !important;
+    }
+    body .fa-brands,
+    body .fa-brands::before {
+      font-family: "Font Awesome 6 Brands" !important;
+      font-weight: 400 !important;
+      font-style: normal !important;
+      line-height: 1 !important;
     }
 
     /* Breadcrumbs */
@@ -45,65 +63,104 @@
       font-weight: 600;
     }
 
-    /* Enhanced Hero */
-    .page-hero {
-      position: relative;
-      background: linear-gradient(180deg, #eef4ec 0%, #f7f9f5 100%);
-      padding: 50px 24px 60px;
-      text-align: center;
-      border-bottom: 1px solid var(--line);
-    }
-    .page-hero .eyebrow {
-      display: inline-flex;
+    /* Match the Cat Index hero layout and image treatment. */
+    .hero {
+      min-height: 560px;
+      padding-block: 55px 75px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       align-items: center;
-      gap: 6px;
-      background: rgba(40, 104, 73, 0.09);
-      padding: 6px 14px;
-      border-radius: 999px;
-      margin-bottom: 16px;
+      gap: 40px;
     }
-    .page-hero h1 {
-      margin: 10px auto 16px;
-      max-width: 800px;
-      font-size: clamp(2.4rem, 4.8vw, 3.8rem);
-      line-height: 1.15;
+    .hero h1 {
+      max-width: 600px;
+      margin: 0 0 20px;
     }
-    .page-hero h1 em {
-      color: var(--green);
-      font-style: normal;
-    }
-    .page-hero p {
-      max-width: 680px;
-      margin: 0 auto 28px;
+    .hero-copy > p {
+      max-width: 550px;
       font-size: 1.05rem;
-      line-height: 1.75;
-      color: #55665d;
+      line-height: 1.85;
     }
     .hero-actions {
       display: flex;
-      justify-content: center;
-      gap: 12px;
+      gap: 13px;
       flex-wrap: wrap;
+      margin-top: 27px;
     }
-    .hero-stats {
-      display: flex;
-      justify-content: center;
-      gap: 36px;
-      margin-top: 40px;
-      padding-top: 28px;
-      border-top: 1px dashed #d5ded3;
-      flex-wrap: wrap;
-    }
-    .hero-stat-item b {
-      display: block;
-      font: 800 1.65rem Manrope, sans-serif;
-      color: var(--green);
-      line-height: 1.1;
-    }
-    .hero-stat-item span {
-      font-size: 0.8rem;
+    .hero-note {
+      margin-top: 24px;
       color: var(--muted);
-      font-weight: 500;
+      font-size: 0.85rem;
+    }
+    .hero-note i,
+    .floating-card > i,
+    .category-icon {
+      color: var(--green);
+    }
+    .hero-visual {
+      min-height: 430px;
+      position: relative;
+      display: grid;
+      place-items: center;
+    }
+    .hero-blob {
+      position: absolute;
+      width: 85%;
+      height: 88%;
+      background: #e8f0e4;
+      border-radius: 48% 52% 42% 58%;
+    }
+    .hero-photo {
+      position: relative;
+      width: 78%;
+      height: 370px;
+      object-fit: cover;
+      border-radius: 48% 48% 24px 24px;
+      box-shadow: var(--shadow);
+    }
+    .floating-card {
+      position: absolute;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #ffffff;
+      padding: 13px 17px;
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+      font-size: 1.2rem;
+    }
+    .floating-card span {
+      display: grid;
+    }
+    .floating-card b {
+      font-size: 0.82rem;
+    }
+    .floating-card small {
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+    .card-top {
+      top: 48px;
+      right: 0;
+    }
+    .card-bottom {
+      bottom: 30px;
+      left: 0;
+    }
+    .cat-badge-strip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      margin-bottom: 16px;
+      background: #eaf2e9;
+      color: var(--green);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
     /* Section Headers */
@@ -118,6 +175,9 @@
     .section-title-wrap p {
       margin: 0;
       font-size: 0.98rem;
+    }
+    .section-title-wrap .eyebrow {
+      margin-bottom: 8px;
     }
 
     /* Breed Categories Grid */
@@ -157,6 +217,7 @@
     }
     .category-icon {
       font-size: 2.4rem;
+      line-height: 1;
       margin-bottom: 12px;
       display: inline-block;
     }
@@ -219,15 +280,15 @@
 
     /* Filter & Search Bar */
     .filter-section {
-      background: white;
+      background: #f4faf5;
       border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 22px 26px;
+      border-radius: 18px;
+      padding: 20px 22px;
       margin-bottom: 34px;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+      box-shadow: 0 8px 24px rgba(35, 57, 43, 0.05);
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 14px;
     }
     .filter-header {
       display: flex;
@@ -247,22 +308,23 @@
     .filter-search-wrap {
       position: relative;
       flex: 1;
-      max-width: 320px;
+      max-width: 360px;
     }
     .filter-search-input {
       width: 100%;
-      padding: 10px 14px 10px 36px;
-      border: 1px solid #d5ded3;
+      min-height: 44px;
+      padding: 10px 14px 10px 40px;
+      border: 1px solid #dcebc9;
       border-radius: 999px;
       font-size: 0.88rem;
       font-family: inherit;
       outline: none;
       transition: border-color 0.2s, box-shadow 0.2s;
-      background: #fafbfa;
+      background: #ffffff;
     }
     .filter-search-input:focus {
       border-color: var(--green);
-      background: white;
+      background: #ffffff;
       box-shadow: 0 0 0 3px rgba(40, 104, 73, 0.12);
     }
     .filter-search-icon {
@@ -280,35 +342,39 @@
       flex-wrap: wrap;
     }
     .filter-btn {
-      background: var(--soft);
-      border: 1px solid transparent;
-      padding: 8px 16px;
+      background: #ffffff;
+      border: 1px solid #dcebc9;
+      padding: 7px 12px;
       border-radius: 999px;
-      font-size: 0.84rem;
+      font-size: 0.8rem;
       font-weight: 600;
-      color: #55665d;
+      color: var(--green);
       cursor: pointer;
       transition: all 0.2s ease;
       white-space: nowrap;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 7px;
     }
     .filter-btn:hover {
-      background: #e4ebe0;
-      color: var(--ink);
+      background: #eaf2e9;
+      color: var(--dark);
     }
     .filter-btn.active {
       background: var(--green);
       color: white;
       border-color: var(--green);
-      box-shadow: 0 4px 12px rgba(40, 104, 73, 0.25);
+      box-shadow: 0 4px 12px rgba(40, 104, 73, 0.16);
+    }
+    .filter-btn i,
+    .filter-title i {
+      color: currentColor;
     }
     .filter-count-badge {
       font-size: 0.72rem;
       padding: 2px 7px;
       border-radius: 999px;
-      background: rgba(0,0,0,0.08);
+      background: #eaf2e9;
       font-weight: 700;
     }
     .filter-btn.active .filter-count-badge {
@@ -319,11 +385,11 @@
     /* Popular Breeds Cards */
     .breeds-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-      gap: 28px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
     }
     .breed-card {
-      background: white;
+      background: #ffffff;
       border: 1px solid var(--line);
       border-radius: var(--card-radius);
       overflow: hidden;
@@ -341,9 +407,9 @@
     }
     .breed-image-wrap {
       position: relative;
-      height: 230px;
+      height: 200px;
       overflow: hidden;
-      background: #eef2eb;
+      background: #f0f3eb;
     }
     .breed-image {
       width: 100%;
@@ -373,7 +439,7 @@
       position: absolute;
       top: 14px;
       right: 14px;
-      background: rgba(23, 40, 31, 0.75);
+      background: rgba(29, 80, 57, 0.92);
       backdrop-filter: blur(4px);
       color: white;
       font-size: 0.72rem;
@@ -382,7 +448,7 @@
       border-radius: 999px;
     }
     .breed-body {
-      padding: 22px;
+      padding: 24px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
@@ -414,17 +480,49 @@
       line-height: 1.6;
       color: var(--muted);
       margin: 0 0 18px;
-      min-height: 52px;
+      min-height: 58px;
+      flex-grow: 1;
     }
     .breed-details-list {
-      background: #fafbfa;
+      display: none;
+      background: #f4faf5;
       border: 1px solid var(--line);
       border-radius: 14px;
       padding: 14px;
-      display: flex;
       flex-direction: column;
       gap: 12px;
-      margin-top: auto;
+      margin-top: 14px;
+    }
+    .breed-card.details-open .breed-details-list {
+      display: flex;
+    }
+    .breed-details-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 40px;
+      padding: 8px 14px;
+      align-self: flex-start;
+      border: 1px solid #cbd9ce;
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--green);
+      font: 700 0.86rem "DM Sans", sans-serif;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .breed-details-toggle:hover,
+    .breed-card.details-open .breed-details-toggle {
+      background: var(--green);
+      border-color: var(--green);
+      color: #ffffff;
+    }
+    .breed-details-toggle:focus-visible,
+    .filter-btn:focus-visible,
+    .filter-search-input:focus-visible {
+      outline: 3px solid #b7deb8;
+      outline-offset: 2px;
     }
     .breed-detail-row {
       display: flex;
@@ -460,20 +558,20 @@
       text-transform: uppercase;
     }
     .grooming-tag.high {
-      background: #fde8e8;
-      color: #b91c1c;
+      background: #eaf2e9;
+      color: var(--green);
     }
     .grooming-tag.moderate {
-      background: #fef3c7;
-      color: #b45309;
+      background: #f1f4ed;
+      color: var(--dark);
     }
     .grooming-tag.low {
-      background: #dcfce7;
-      color: #15803d;
+      background: #eaf2e9;
+      color: var(--green);
     }
     .grooming-tag.special {
-      background: #f3e8ff;
-      color: #7e22ce;
+      background: #f1f4ed;
+      color: var(--dark);
     }
 
     /* Comparison Table Section */
@@ -487,7 +585,7 @@
     }
     .table-controls {
       padding: 18px 24px;
-      background: #f8faf7;
+      background: #f4faf5;
       border-bottom: 1px solid var(--line);
       display: flex;
       justify-content: space-between;
@@ -527,7 +625,7 @@
       min-width: 820px;
     }
     .comparison-table th {
-      background: #f1f5ee;
+      background: #edf6df;
       color: var(--ink);
       font-weight: 700;
       font-family: Manrope, sans-serif;
@@ -541,13 +639,13 @@
       padding: 16px 18px;
       border-bottom: 1px solid #edf0ea;
       vertical-align: middle;
-      color: #4a5951;
+      color: var(--muted);
     }
     .comparison-table tbody tr {
       transition: background-color 0.15s ease;
     }
     .comparison-table tbody tr:hover {
-      background-color: #f7faf5;
+      background-color: #f4faf5;
     }
     .table-breed-cell {
       display: flex;
@@ -576,46 +674,46 @@
       white-space: nowrap;
     }
     .badge-act-high {
-      background: #fef2f2;
-      color: #dc2626;
-      border: 1px solid #fecaca;
+      background: #f1f4ed;
+      color: var(--dark);
+      border: 1px solid var(--line);
     }
     .badge-act-mod {
-      background: #fefce8;
-      color: #ca8a04;
-      border: 1px solid #fef08a;
+      background: #edf6df;
+      color: var(--green);
+      border: 1px solid #dcebc9;
     }
     .badge-act-calm {
-      background: #ecfdf5;
-      color: #059669;
-      border: 1px solid #a7f3d0;
+      background: #eaf2e9;
+      color: var(--green);
+      border: 1px solid #cbd9ce;
     }
     .badge-coat {
-      background: #f3f4f6;
-      color: #374151;
-      border: 1px solid #e5e7eb;
+      background: #f1f4ed;
+      color: var(--dark);
+      border: 1px solid var(--line);
     }
     .badge-groom-daily {
-      background: #fee2e2;
-      color: #991b1b;
+      background: #eaf2e9;
+      color: var(--green);
     }
     .badge-groom-mod {
-      background: #fef3c7;
-      color: #92400e;
+      background: #edf6df;
+      color: var(--dark);
     }
     .badge-groom-low {
-      background: #dcfce7;
-      color: #166534;
+      background: #eaf2e9;
+      color: var(--green);
     }
     .badge-groom-spec {
-      background: #f3e8ff;
-      color: #6b21a8;
+      background: #f1f4ed;
+      color: var(--dark);
     }
 
     /* Cat Care CTA Section */
     .cat-care-cta {
-      background: linear-gradient(135deg, #f4ebe1 0%, #faede1 100%);
-      border: 1px solid #ebdcd0;
+      background: #f4faf5;
+      border: 1px solid #dcebc9;
       border-radius: 26px;
       padding: 50px 45px;
       margin: 80px auto;
@@ -627,13 +725,7 @@
       overflow: hidden;
     }
     .cat-care-cta::after {
-      content: "🐾";
-      position: absolute;
-      right: -20px;
-      bottom: -30px;
-      font-size: 13rem;
-      opacity: 0.05;
-      pointer-events: none;
+      content: none;
     }
     .cat-care-cta h2 {
       margin: 0 0 12px;
@@ -643,7 +735,7 @@
     .cat-care-cta p {
       margin: 0;
       max-width: 620px;
-      color: #665b52;
+      color: var(--muted);
       font-size: 1rem;
       line-height: 1.7;
     }
@@ -685,18 +777,20 @@
         flex-wrap: wrap;
       }
     }
-    @media (max-width: 768px) {
-      .page-hero {
-        padding: 40px 16px 45px;
-      }
-      .hero-stats {
+    @media (max-width: 900px) {
+      .hero {
         gap: 20px;
       }
+      .breeds-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 768px) {
       .categories-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
       .breeds-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
       .filter-header {
         flex-direction: column;
@@ -706,16 +800,37 @@
         max-width: 100%;
       }
       .filter-pills {
-        overflow-x: auto;
-        padding-bottom: 6px;
-        flex-wrap: nowrap;
-        -webkit-overflow-scrolling: touch;
+        gap: 7px;
       }
     }
-    @media (max-width: 600px) {
+    @media (max-width: 620px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 35px;
+      }
+      .categories-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 2.9rem;
+      }
+      .hero-visual {
+        min-height: 340px;
+      }
+      .hero-photo {
+        height: 300px;
+      }
+      .card-top {
+        top: 25px;
+      }
+      .breeds-grid {
+        grid-template-columns: 1fr;
+      }
       .hero-actions .button {
         width: 100%;
       }
+    }
+    @media (max-width: 600px) {
       .cat-cta-actions .button {
         width: 100%;
       }
@@ -827,49 +942,35 @@
 </header>
 
   <main>
-    <!-- Page Hero -->
-    <section class="page-hero">
-      <div class="section-wrap">
-        <div class="breadcrumb-nav">
-          <a href="../../../../index.html">Home</a>
-          <span class="breadcrumb-separator">/</span>
-          <a href="../index.html">Explore Pets</a>
-          <span class="breadcrumb-separator">/</span>
-          <a href="index.html">Cats</a>
-          <span class="breadcrumb-separator">/</span>
-          <span class="breadcrumb-current">Cat Breeds</span>
-        </div>
-
-        <div class="eyebrow">PetSathi • CAT BREEDS DIRECTORY</div>
-        <div class="page-emoji">🐈</div>
-        <h1>Explore Different <em>Cat Breeds</em></h1>
+    <!-- Hero Section -->
+    <section class="hero section-wrap" id="cat-breed-hero">
+      <div class="hero-copy">
+        <div class="cat-badge-strip"><i class="fa-solid fa-paw" aria-hidden="true"></i> PetSathi • Cat Breed Guide</div>
+        <h1>Find the <em>Cat Breed</em> That Fits Your Home</h1>
         <p>
-          Discover the rich variety of domestic felines. From quiet lap cats and dignified loungers to inquisitive acrobats, explore physical traits, temperament, and grooming needs to find your ideal whiskered friend.
+          Explore popular cat breeds, their temperaments, coat types, and care needs to find a companion that feels right for your family.
         </p>
-
         <div class="hero-actions">
-          <a class="button" href="#popular-breeds">Explore 10 Breeds ↓</a>
-          <a class="button button-outline" href="#categories">Breed Categories</a>
-          <a class="button button-outline" href="#comparison">Compare Breeds</a>
+          <a class="button" href="#popular-breeds">Browse 10 Cat Breeds <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          <a class="button button-outline" href="#categories">Explore Breed Types</a>
         </div>
+        <div class="hero-note"><i class="fa-solid fa-heart" aria-hidden="true"></i> Helpful profiles for every kind of cat person.</div>
+      </div>
 
-        <div class="hero-stats">
-          <div class="hero-stat-item">
-            <b>10+</b>
-            <span>Popular Breeds</span>
-          </div>
-          <div class="hero-stat-item">
-            <b>5</b>
-            <span>Breed Categories</span>
-          </div>
-          <div class="hero-stat-item">
-            <b>100%</b>
-            <span>Static &amp; Fast</span>
-          </div>
-          <div class="hero-stat-item">
-            <b>🐾</b>
-            <span>Pet-First Advice</span>
-          </div>
+      <div class="hero-visual">
+        <div class="hero-blob"></div>
+        <img
+          src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"
+          alt="A relaxed domestic cat with bright eyes"
+          class="hero-photo"
+        >
+        <div class="floating-card card-top">
+          <i class="fa-solid fa-cat" aria-hidden="true"></i>
+          <span><b>10 Popular Breeds</b><small>Explore their unique traits</small></span>
+        </div>
+        <div class="floating-card card-bottom">
+          <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          <span><b>Find Your Companion</b><small>Compare care and temperament</small></span>
         </div>
       </div>
     </section>
@@ -886,7 +987,7 @@
         <!-- Category 1: Long-haired cats -->
         <article class="category-card">
           <span class="cat-badge">Double Coat &amp; Volume</span>
-          <div class="category-icon">🦁</div>
+          <div class="category-icon"><i class="fa-solid fa-cat" aria-hidden="true"></i></div>
           <h3>Long-Haired Cats</h3>
           <p>
             Characterized by dense undercoats, lush guard hairs, majestic neck ruffs, and full plume tails. They possess a regal presence and are frequently calm, affectionate companions.
@@ -896,13 +997,13 @@
             <div><span class="label">Key Trait:</span> <span class="val">Regal &amp; Silky Plumes</span></div>
             <div><span class="label">Famous Breeds:</span> <span class="val">Persian, Maine Coon, Ragdoll</span></div>
           </div>
-          <button class="filter-trigger" onclick="setBreedFilter('long-haired')">View Long-Haired Breeds →</button>
+          <button class="filter-trigger" onclick="setBreedFilter('long-haired')"><i class="fa-solid fa-filter" aria-hidden="true"></i> View Long-Haired Breeds</button>
         </article>
 
         <!-- Category 2: Short-haired cats -->
         <article class="category-card">
           <span class="cat-badge">Low-Maintenance &amp; Crisp</span>
-          <div class="category-icon">🐆</div>
+          <div class="category-icon"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
           <h3>Short-Haired Cats</h3>
           <p>
             Sporting sleek, dense, or satin coats that sit close to the skin. Highly adaptable, athletic, and easier to groom, making them wonderful for busy households and family homes.
@@ -912,13 +1013,13 @@
             <div><span class="label">Key Trait:</span> <span class="val">Low-Shedding &amp; Resilient</span></div>
             <div><span class="label">Famous Breeds:</span> <span class="val">British, American, Russian Blue</span></div>
           </div>
-          <button class="filter-trigger" onclick="setBreedFilter('short-haired')">View Short-Haired Breeds →</button>
+          <button class="filter-trigger" onclick="setBreedFilter('short-haired')"><i class="fa-solid fa-filter" aria-hidden="true"></i> View Short-Haired Breeds</button>
         </article>
 
         <!-- Category 3: Hairless cats -->
         <article class="category-card">
           <span class="cat-badge">Warm &amp; Distinctive</span>
-          <div class="category-icon">✨</div>
+          <div class="category-icon"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></div>
           <h3>Hairless Cats</h3>
           <p>
             Featuring warm, soft suede-like skin or ultra-fine downy peach fuzz. Lacking a protective coat, they crave body heat, human contact, and specialized skincare regimens.
@@ -928,13 +1029,13 @@
             <div><span class="label">Key Trait:</span> <span class="val">Radiant Body Warmth</span></div>
             <div><span class="label">Famous Breeds:</span> <span class="val">Sphynx Cat, Peterbald</span></div>
           </div>
-          <button class="filter-trigger" onclick="setBreedFilter('hairless')">View Hairless Breeds →</button>
+          <button class="filter-trigger" onclick="setBreedFilter('hairless')"><i class="fa-solid fa-filter" aria-hidden="true"></i> View Hairless Breeds</button>
         </article>
 
         <!-- Category 4: Indoor-friendly cats -->
         <article class="category-card">
           <span class="cat-badge">Peaceful &amp; Homebodies</span>
-          <div class="category-icon">🏡</div>
+          <div class="category-icon"><i class="fa-solid fa-house" aria-hidden="true"></i></div>
           <h3>Indoor-Friendly Cats</h3>
           <p>
             Placid, gentle personalities with lower outdoor wanderlust. They thrive in apartments or tranquil houses, relishing quiet cuddle routines, sunny perches, and steady rhythms.
@@ -944,13 +1045,13 @@
             <div><span class="label">Key Trait:</span> <span class="val">Even Temperament &amp; Chill</span></div>
             <div><span class="label">Famous Breeds:</span> <span class="val">Scottish Fold, Ragdoll, Persian</span></div>
           </div>
-          <button class="filter-trigger" onclick="setBreedFilter('indoor-friendly')">View Indoor Cats →</button>
+          <button class="filter-trigger" onclick="setBreedFilter('indoor-friendly')"><i class="fa-solid fa-filter" aria-hidden="true"></i> View Indoor Cats</button>
         </article>
 
         <!-- Category 5: Active & playful cats -->
         <article class="category-card">
           <span class="cat-badge">Athletic &amp; Inquisitive</span>
-          <div class="category-icon">⚡</div>
+          <div class="category-icon"><i class="fa-solid fa-bolt" aria-hidden="true"></i></div>
           <h3>Active &amp; Playful Cats</h3>
           <p>
             Feline dynamos with soaring curiosity and sharp intelligence. They love puzzle toys, tall cat towers, interactive wand play, fetch games, and sometimes even leash walks.
@@ -960,7 +1061,7 @@
             <div><span class="label">Key Trait:</span> <span class="val">Acrobatic &amp; Vocal</span></div>
             <div><span class="label">Famous Breeds:</span> <span class="val">Bengal, Siamese, Maine Coon</span></div>
           </div>
-          <button class="filter-trigger" onclick="setBreedFilter('active-playful')">View Active Breeds →</button>
+          <button class="filter-trigger" onclick="setBreedFilter('active-playful')"><i class="fa-solid fa-filter" aria-hidden="true"></i> View Active Breeds</button>
         </article>
       </div>
     </section>
@@ -977,15 +1078,16 @@
       <div class="filter-section">
         <div class="filter-header">
           <div class="filter-title">
-            <span>🔍 Filter by Category:</span>
+            <i class="fa-solid fa-sliders" aria-hidden="true"></i>
+            <span>Filter by category</span>
           </div>
           <div class="filter-search-wrap">
-            <span class="filter-search-icon">🔎</span>
+            <i class="filter-search-icon fa-solid fa-magnifying-glass" aria-hidden="true"></i>
             <input
-              type="text"
+              type="search"
               id="breedSearchInput"
               class="filter-search-input"
-              placeholder="Search by breed, coat, trait..."
+              placeholder="Search breeds, coats, or traits"
               aria-label="Search cat breeds"
             >
           </div>
@@ -993,22 +1095,22 @@
 
         <div class="filter-pills" role="tablist">
           <button class="filter-btn active" data-category="all" onclick="setBreedFilter('all')">
-            🐾 All Breeds <span class="filter-count-badge">10</span>
+            <i class="fa-solid fa-paw" aria-hidden="true"></i> All Breeds <span class="filter-count-badge">10</span>
           </button>
           <button class="filter-btn" data-category="long-haired" onclick="setBreedFilter('long-haired')">
-            🦁 Long-Haired <span class="filter-count-badge">3</span>
+            <i class="fa-solid fa-cat" aria-hidden="true"></i> Long-Haired <span class="filter-count-badge">3</span>
           </button>
           <button class="filter-btn" data-category="short-haired" onclick="setBreedFilter('short-haired')">
-            🐆 Short-Haired <span class="filter-count-badge">5</span>
+            <i class="fa-solid fa-paw" aria-hidden="true"></i> Short-Haired <span class="filter-count-badge">6</span>
           </button>
           <button class="filter-btn" data-category="hairless" onclick="setBreedFilter('hairless')">
-            ✨ Hairless <span class="filter-count-badge">1</span>
+            <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Hairless <span class="filter-count-badge">1</span>
           </button>
           <button class="filter-btn" data-category="indoor-friendly" onclick="setBreedFilter('indoor-friendly')">
-            🏡 Indoor-Friendly <span class="filter-count-badge">6</span>
+            <i class="fa-solid fa-house" aria-hidden="true"></i> Indoor-Friendly <span class="filter-count-badge">7</span>
           </button>
           <button class="filter-btn" data-category="active-playful" onclick="setBreedFilter('active-playful')">
-            ⚡ Active &amp; Playful <span class="filter-count-badge">4</span>
+            <i class="fa-solid fa-bolt" aria-hidden="true"></i> Active &amp; Playful <span class="filter-count-badge">5</span>
           </button>
         </div>
       </div>
@@ -1036,6 +1138,7 @@
             <p class="breed-desc">
               Renowned for their luxurious flowing coats and expressive sweet faces, Persians are gentle, serene lap cats who cherish quiet domestic bliss.
             </p>
+            <button type="button" class="breed-details-toggle" aria-expanded="false" onclick="toggleBreedDetails(this)"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> View Details</button>
             <div class="breed-details-list">
               <div class="breed-detail-row">
                 <span class="breed-detail-icon">💖</span>
@@ -1083,6 +1186,7 @@
             <p class="breed-desc">
               Striking and vocal, the Siamese is a social extrovert with deep sapphire eyes, loving human conversation, play, and close companionship.
             </p>
+            <button type="button" class="breed-details-toggle" aria-expanded="false" onclick="toggleBreedDetails(this)"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> View Details</button>
             <div class="breed-details-list">
               <div class="breed-detail-row">
                 <span class="breed-detail-icon">💖</span>
@@ -1130,6 +1234,7 @@
             <p class="breed-desc">
               The "Gentle Giant" of cats, Maine Coons combine rugged outdoor origins with a goofy, patient, and dog-like friendly personality.
             </p>
+            <button type="button" class="breed-details-toggle" aria-expanded="false" onclick="toggleBreedDetails(this)"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> View Details</button>
             <div class="breed-details-list">
               <div class="breed-detail-row">
                 <span class="breed-detail-icon">💖</span>
@@ -1177,6 +1282,7 @@
             <p class="breed-desc">
               Possessing the exotic look of a wild jungle leopard, Bengals are dynamic athletes who thrive on vertical climbing, puzzle toys, and water play.
             </p>
+            <button type="button" class="breed-details-toggle" aria-expanded="false" onclick="toggleBreedDetails(this)"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> View Details</button>
             <div class="breed-details-list">
               <div class="breed-detail-row">
                 <span class="breed-detail-icon">💖</span>
@@ -1224,6 +1330,7 @@
             <p class="breed-desc">
               Famous for going limp with contentment when held, Ragdolls are deeply relaxed, affectionate lap cats with captivating oval blue eyes.
             </p>
+            <button type="button" class="breed-details-toggle" aria-expanded="false" onclick="toggleBreedDetails(this)"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> View Details</button>
             <div class="breed-details-list">
               <div class="breed-detail-row">
                 <span class="breed-detail-icon">💖</span>
@@ -1271,6 +1378,7 @@
             <p class="breed-desc">
               With their plush teddy-bear appearance, round cheeks, and calm demeanor, British Shorthairs are dignified and pleasantly easygoing roommates.
             </p>
+            <button type="button" class="breed-details-toggle" aria-expanded="false" onclick="toggleBreedDetails(this)"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> View Details</button>
             <div class="breed-details-list">
               <div class="breed-detail-row">
                 <span class="breed-detail-icon">💖</span>
@@ -1318,6 +1426,7 @@
             <p class="breed-desc">
               Hairless, wrinkled, and radiating warmth, Sphynx cats are mischievous extroverts who love burrowing under blankets and snuggling for warmth.
             </p>
+            <button type="button" class="breed-details-toggle" aria-expanded="false" onclick="toggleBreedDetails(this)"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> View Details</button>
             <div class="breed-details-list">
               <div class="breed-detail-row">
                 <span class="breed-detail-icon">💖</span>
@@ -1365,6 +1474,7 @@
             <p class="breed-desc">
               Instantly recognizable by forward-folded ears and big owl-like eyes, Scottish Folds are gentle, soft-spoken, and often sit upright in a comical Buddha pose.
             </p>
+            <button type="button" class="breed-details-toggle" aria-expanded="false" onclick="toggleBreedDetails(this)"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> View Details</button>
             <div class="breed-details-list">
               <div class="breed-detail-row">
                 <span class="breed-detail-icon">💖</span>
@@ -1412,6 +1522,7 @@
             <p class="breed-desc">
               Graceful and poised with shimmering silver-tipped fur and emerald eyes, Russian Blues form intense, loving bonds with their trusted human family.
             </p>
+            <button type="button" class="breed-details-toggle" aria-expanded="false" onclick="toggleBreedDetails(this)"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> View Details</button>
             <div class="breed-details-list">
               <div class="breed-detail-row">
                 <span class="breed-detail-icon">💖</span>
@@ -1459,6 +1570,7 @@
             <p class="breed-desc">
               Loved for its robust health, cheerful disposition, and classic silver tabby markings, the American Shorthair is an ideal, low-fuss family companion.
             </p>
+            <button type="button" class="breed-details-toggle" aria-expanded="false" onclick="toggleBreedDetails(this)"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> View Details</button>
             <div class="breed-details-list">
               <div class="breed-detail-row">
                 <span class="breed-detail-icon">💖</span>
@@ -1720,7 +1832,7 @@
     <section class="section-wrap">
       <div class="cat-care-cta">
         <div>
-          <div class="eyebrow" style="color: #8b5335;">Feline Wellness &amp; Nutrition</div>
+          <div class="eyebrow">Feline Wellness &amp; Nutrition</div>
           <h2>Ready to Explore <em>Cat Care &amp; Nutrition?</em></h2>
           <p>
             Understanding breed characteristics is only the first step. Keep your feline companion vibrant and healthy with balanced meal recommendations, indoor stimulation ideas, and routine health practices.
@@ -1750,6 +1862,15 @@
   <script>
     // Breed Filter & Search Logic
     let currentCategory = 'all';
+
+    function toggleBreedDetails(button) {
+      const card = button.closest('.breed-card');
+      if (!card) return;
+
+      const expanded = card.classList.toggle('details-open');
+      button.setAttribute('aria-expanded', String(expanded));
+      button.lastChild.textContent = expanded ? ' Hide Details' : ' View Details';
+    }
 
     function setBreedFilter(category) {
       currentCategory = category;
