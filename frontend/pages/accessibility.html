@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PetSathi Accessibility Statement. Learn about our commitment to digital accessibility, inclusive design, WCAG 2.1 AA benchmarks, screen reader considerations, and how to report feedback.">
+  <title>Accessibility Statement | PetSathi</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core & Page Stylesheets -->
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/accessibility.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body class="accessibility-page">
+  <!-- Skip to Main Content Link for Keyboard & Screen Reader Users -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Standard PetSathi Site Header -->
+  <header class="site-header">
+    <a class="brand" href="../../index.html" aria-label="PetSathi home">
+      <svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false">
+        <circle cx="12" cy="12" r="4" fill="currentColor" />
+        <circle cx="21" cy="8" r="4" fill="currentColor" />
+        <circle cx="30" cy="12" r="4" fill="currentColor" />
+        <path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor" />
+      </svg>
+      <span>Pet<span>Sathi</span></span>
+    </a>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="../../index.html">Home</a>
+      <div class="nav-item">
+        <a href="pets/index.html">Explore Pets <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+        <div class="dropdown dropdown-explore">
+          <a href="pets/dogs/index.html">Dogs</a>
+          <a href="pets/cats/index.html">Cats</a>
+          <a href="pets/birds/index.html">Birds</a>
+          <a href="pets/rabbits/index.html">Rabbits</a>
+          <a href="pets/other/fish.html">Aquarium Fish</a>
+          <a href="pets/other/reptiles.html">Reptiles</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="services/index.html">Services <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+        <div class="dropdown dropdown-services">
+          <a href="services/dog-walking.html">Dog Walking</a>
+          <a href="services/cat-care.html">Cat Care</a>
+          <a href="services/pet-care.html">Pet Care</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="walker/index.html">Find a Walker <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+        <div class="dropdown dropdown-walker">
+          <a href="walker/dogs.html">Search Walkers</a>
+          <a href="walker/cats.html">Walker Profiles</a>
+          <a href="walker/index.html#bookings">My Bookings</a>
+        </div>
+      </div>
+      <a href="about.html">About Us</a>
+      <a href="auth/login.html">Log in</a>
+      <a class="button button-small" href="auth/register.html">Get Started</a>
+    </nav>
+  </header>
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="acc-breadcrumb" aria-label="Breadcrumb">
+    <a href="../../index.html"><i class="fa-solid fa-house" aria-hidden="true"></i> Home</a>
+    <span class="separator" aria-hidden="true">/</span>
+    <span class="current" aria-current="page">Accessibility Statement</span>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="acc-hero" aria-labelledby="hero-heading">
+    <div class="acc-badge">
+      <i class="fa-solid fa-universal-access" aria-hidden="true"></i> Digital Inclusion &amp; Usability
+    </div>
+    <h1 id="hero-heading">Accessibility Statement</h1>
+    <p>
+      At PetSathi, we believe every pet parent, animal enthusiast, and caregiver deserves effortless access to pet care advice, breed knowledge, and community services. We are dedicated to building and maintaining an inclusive web environment accessible to individuals of all abilities.
+    </p>
+    <div class="acc-meta-grid">
+      <div class="acc-meta-item">
+        <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
+        <span>Target Standard: <strong>WCAG 2.1 Level AA</strong></span>
+      </div>
+      <div class="acc-meta-item">
+        <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+        <span>Conformance Status: <strong>Partial / Ongoing Improvements</strong></span>
+      </div>
+      <div class="acc-meta-item">
+        <i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i>
+        <span>Last Reviewed: <strong>November 2026</strong></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Container: Sticky Sidebar TOC + Content Sections -->
+  <main id="main-content" class="acc-container">
+    <!-- Sticky Table of Contents Sidebar -->
+    <aside class="acc-toc-card" aria-label="Table of Contents">
+      <div class="acc-toc-header">
+        <i class="fa-solid fa-list-check" aria-hidden="true"></i> On This Page
+      </div>
+      <ol class="acc-toc-list">
+        <li><a href="#intro" class="active"><span class="num">1</span> Introduction</a></li>
+        <li><a href="#approach"><span class="num">2</span> Accessibility Approach</a></li>
+        <li><a href="#visual"><span class="num">3</span> Visual Accessibility</a></li>
+        <li><a href="#keyboard"><span class="num">4</span> Keyboard Navigation</a></li>
+        <li><a href="#screen-reader"><span class="num">5</span> Screen Reader Support</a></li>
+        <li><a href="#responsive"><span class="num">6</span> Responsive Design</a></li>
+        <li><a href="#limitations"><span class="num">7</span> Known Limitations</a></li>
+        <li><a href="#feedback"><span class="num">8</span> Feedback &amp; Suggestions</a></li>
+        <li><a href="#future"><span class="num">9</span> Future Improvements</a></li>
+        <li><a href="#contact"><span class="num">10</span> Contact Information</a></li>
+      </ol>
+      <div class="acc-toc-help">
+        <strong>Need Assistance?</strong>
+        Encountering a barrier? Please report it on our <a href="https://github.com/Riya-Kharade/PetSathi/issues" target="_blank" rel="noopener noreferrer">GitHub repository</a> or via our <a href="contact.html">Contact Us</a> form.
+      </div>
+    </aside>
+
+    <!-- Content Sections -->
+    <div class="acc-content">
+
+      <!-- Section 1: Introduction -->
+      <article id="intro" class="acc-card">
+        <div class="acc-card-header">
+          <div class="acc-card-icon"><i class="fa-solid fa-heart" aria-hidden="true"></i></div>
+          <div class="acc-card-title-group">
+            <h2>1. Introduction</h2>
+            <div class="acc-card-subtitle">PetSathi's accessibility commitment</div>
+          </div>
+        </div>
+        <p>
+          PetSathi was founded with a community-first spirit: to make reliable pet wellness, breed education, adoption guidance, and walking services readily available to all pet lovers. We consider digital accessibility a core element of user experience, not an optional feature.
+        </p>
+        <p>
+          We are committed to providing a website that is welcoming and usable by everyone, including people who rely on screen readers, screen magnification, voice recognition software, keyboard-only navigation, switch devices, or specific color contrast preferences.
+        </p>
+        <div class="acc-callout">
+          <h3><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Core Commitment</h3>
+          <p>
+            Whether you are researching puppy nutrition, discovering gentle cat breeds, scheduling a dog walk, or reviewing care guidelines for exotic pets, we strive to make every interaction seamless, equitable, and dignified.
+          </p>
+        </div>
+      </article>
+
+      <!-- Section 2: Accessibility Approach -->
+      <article id="approach" class="acc-card">
+        <div class="acc-card-header">
+          <div class="acc-card-icon"><i class="fa-solid fa-compass-drafting" aria-hidden="true"></i></div>
+          <div class="acc-card-title-group">
+            <h2>2. Accessibility Approach</h2>
+            <div class="acc-card-subtitle">Guiding principles and standards</div>
+          </div>
+        </div>
+        <p>
+          To ensure consistent accessibility across our web ecosystem, PetSathi uses the <strong>Web Content Accessibility Guidelines (WCAG) 2.1 Level AA</strong> standard as our principal benchmark. These guidelines are organized under four foundational principles (POUR):
+        </p>
+        <div class="acc-feature-grid">
+          <div class="acc-feature-box">
+            <h3><i class="fa-solid fa-eye" aria-hidden="true"></i> Perceivable</h3>
+            <p>Information and user interface components must be presentable to users in ways they can perceive, through both visual styling and non-visual screen reader text.</p>
+          </div>
+          <div class="acc-feature-box">
+            <h3><i class="fa-solid fa-hand-pointer" aria-hidden="true"></i> Operable</h3>
+            <p>Interface components and navigation must be fully operable using keyboard alone, without reliance on a pointer or touch gestures, and free from keyboard traps.</p>
+          </div>
+          <div class="acc-feature-box">
+            <h3><i class="fa-solid fa-brain" aria-hidden="true"></i> Understandable</h3>
+            <p>Information and the operation of the user interface must be intuitive, predictable, and written in clear, unambiguous language.</p>
+          </div>
+          <div class="acc-feature-box">
+            <h3><i class="fa-solid fa-microchip" aria-hidden="true"></i> Robust</h3>
+            <p>Content must be robust enough that it can be interpreted reliably by a wide variety of user agents, including assistive technologies, desktop browsers, and mobile devices.</p>
+          </div>
+        </div>
+        <p>
+          Our development lifecycle incorporates semantic HTML validation, clean CSS architecture, modular components, and accessibility testing during code reviews and community contributions.
+        </p>
+      </article>
+
+      <!-- Section 3: Visual Accessibility -->
+      <article id="visual" class="acc-card">
+        <div class="acc-card-header">
+          <div class="acc-card-icon"><i class="fa-solid fa-palette" aria-hidden="true"></i></div>
+          <div class="acc-card-title-group">
+            <h2>3. Visual Accessibility</h2>
+            <div class="acc-card-subtitle">Contrast, typography, and clear visual hierarchy</div>
+          </div>
+        </div>
+        <p>
+          PetSathi features a nature-inspired green, cream, and white palette carefully curated to promote calm, readable interfaces that minimize visual fatigue.
+        </p>
+        <ul class="acc-list">
+          <li><strong>Color Contrast Ratios:</strong> Primary text and interactive components maintain a minimum contrast ratio of 4.5:1 against their backgrounds (exceeding 7:1 for headers and deep forest green accents), aligning with WCAG 2.1 AA specifications.</li>
+          <li><strong>Readable Typography:</strong> Body copy is rendered in modern sans-serif typefaces (DM Sans and system fallbacks) with generous line heights (1.6 to 1.75) and balanced letter spacing to aid individuals with dyslexia or low vision.</li>
+          <li><strong>Non-Reliance on Color Alone:</strong> Color is never the sole medium used to convey crucial information, error states, or interactive cues. Alerts and system statuses pair distinct colors with descriptive icons and text labels.</li>
+          <li><strong>Zoom &amp; Magnification:</strong> The layout is designed to scale gracefully when users zoom up to 200% in their browser settings without truncation or broken horizontal scrolling.</li>
+        </ul>
+      </article>
+
+      <!-- Section 4: Keyboard Navigation -->
+      <article id="keyboard" class="acc-card">
+        <div class="acc-card-header">
+          <div class="acc-card-icon"><i class="fa-solid fa-keyboard" aria-hidden="true"></i></div>
+          <div class="acc-card-title-group">
+            <h2>4. Keyboard Navigation</h2>
+            <div class="acc-card-subtitle">Full keyboard access without requiring a mouse</div>
+          </div>
+        </div>
+        <p>
+          All key interactions and content areas on PetSathi are engineered to be reachable and operable using keyboard input alone. Users can navigate without needing a mouse, trackpad, or touch screen.
+        </p>
+        <div class="acc-feature-grid">
+          <div class="acc-feature-box">
+            <h3><i class="fa-solid fa-arrows-split-up-and-left" aria-hidden="true"></i> Logical Tab Order</h3>
+            <p>Interactive elements follow a natural top-to-bottom, left-to-right reading order matching visual presentation.</p>
+          </div>
+          <div class="acc-feature-box">
+            <h3><i class="fa-solid fa-square" aria-hidden="true"></i> Visible Focus Indicators</h3>
+            <p>Active elements display clear focus rings, ensuring keyboard navigators always know their location.</p>
+          </div>
+          <div class="acc-feature-box">
+            <h3><i class="fa-solid fa-forward" aria-hidden="true"></i> Skip to Content</h3>
+            <p>A "Skip to main content" bypass link is available as the first tab stop, allowing users to jump directly to page content.</p>
+          </div>
+          <div class="acc-feature-box">
+            <h3><i class="fa-solid fa-bars" aria-hidden="true"></i> Accessible Menus</h3>
+            <p>Navigation dropdowns and mobile toggles update their <code>aria-expanded</code> states and can be triggered via keyboard.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Section 5: Screen Reader Support -->
+      <article id="screen-reader" class="acc-card">
+        <div class="acc-card-header">
+          <div class="acc-card-icon"><i class="fa-solid fa-volume-high" aria-hidden="true"></i></div>
+          <div class="acc-card-title-group">
+            <h2>5. Screen Reader Support</h2>
+            <div class="acc-card-subtitle">Semantic markup, ARIA landmarks, and assistive compatibility</div>
+          </div>
+        </div>
+        <p>
+          We build with semantic HTML5 elements to ensure screen reader software—such as NVDA, JAWS, VoiceOver, and TalkBack—can accurately convey page hierarchy and meaning:
+        </p>
+        <ul class="acc-list">
+          <li><strong>Landmark Structure:</strong> Proper use of <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, and <code>&lt;footer&gt;</code> allows assistive users to navigate by landmarks efficiently.</li>
+          <li><strong>Heading Hierarchy:</strong> Pages feature a singular <code>&lt;h1&gt;</code> representing the primary page subject, followed by structured <code>&lt;h2&gt;</code> and <code>&lt;h3&gt;</code> subtitles without skipped levels.</li>
+          <li><strong>Image Alternative Text:</strong> Meaningful images include descriptive <code>alt</code> text detailing their subject matter. Decorative elements, icons, and SVGs are marked with <code>aria-hidden="true"</code> to prevent auditory clutter.</li>
+          <li><strong>Form Accessibility:</strong> Contact inputs, login fields, and search boxes feature explicit labels, descriptive placeholder hints, and clear error associations.</li>
+        </ul>
+      </article>
+
+      <!-- Section 6: Responsive Design -->
+      <article id="responsive" class="acc-card">
+        <div class="acc-card-header">
+          <div class="acc-card-icon"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i></div>
+          <div class="acc-card-title-group">
+            <h2>6. Responsive Design</h2>
+            <div class="acc-card-subtitle">Consistent accessibility across all screen sizes and orientations</div>
+          </div>
+        </div>
+        <p>
+          PetSathi adapts smoothly across diverse devices, screen sizes, and orientations:
+        </p>
+        <ul class="acc-list">
+          <li><strong>Flexible Grid Systems:</strong> Layouts adapt dynamically from 4K desktop displays and laptops down to tablets and mobile phones without horizontal overflow.</li>
+          <li><strong>Accessible Touch Targets:</strong> Interactive elements (buttons, links, form controls) are sized with adequate padding (minimum 44&times;44 CSS pixels) to facilitate accurate touch interaction for individuals with motor impairments.</li>
+          <li><strong>Responsive Navigation Drawer:</strong> On small screens, navigation folds into an accessible slide-out drawer with a high-contrast toggle button and keyboard trapping considerations.</li>
+          <li><strong>Device Orientation:</strong> The site operates seamlessly in both portrait and landscape modes on mobile and tablet devices.</li>
+        </ul>
+      </article>
+
+      <!-- Section 7: Known Limitations -->
+      <article id="limitations" class="acc-card">
+        <div class="acc-card-header">
+          <div class="acc-card-icon"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i></div>
+          <div class="acc-card-title-group">
+            <h2>7. Known Limitations</h2>
+            <div class="acc-card-subtitle">Transparent assessment of ongoing challenges</div>
+          </div>
+        </div>
+        <p>
+          While we strive for comprehensive accessibility, PetSathi is an actively evolving open-source community platform. In the spirit of transparency, we acknowledge the following known limitations currently undergoing remediation:
+        </p>
+        <div class="acc-callout warning">
+          <h3><i class="fa-solid fa-clock" aria-hidden="true"></i> Active Remediation Areas</h3>
+          <p>We are actively working to address these items in upcoming release sprints. Community contributions and feedback on these areas are warmly welcomed.</p>
+        </div>
+        <ul class="acc-list">
+          <li><strong>Third-Party Components:</strong> External links, mapping widgets, and CDN-hosted assets may occasionally have accessibility constraints outside our direct codebase control.</li>
+          <li><strong>Legacy Media Alt Attributes:</strong> A subset of community-contributed pet breed photographs may feature brief or generic alternative descriptions. We are currently performing a comprehensive media audit.</li>
+          <li><strong>Dark Mode &amp; High-Contrast Toggle:</strong> While our green and cream palette meets contrast thresholds, a dedicated high-contrast or system dark-mode theme switcher is currently in active development.</li>
+          <li><strong>Dynamic Filtering Live Regions:</strong> Certain dynamic search filters (e.g. breed search or pet-walker filters) are being updated with expanded <code>aria-live</code> polite regions to announce real-time result counts to screen readers.</li>
+        </ul>
+      </article>
+
+      <!-- Section 8: Feedback & Suggestions -->
+      <article id="feedback" class="acc-card">
+        <div class="acc-card-header">
+          <div class="acc-card-icon"><i class="fa-solid fa-comment-dots" aria-hidden="true"></i></div>
+          <div class="acc-card-title-group">
+            <h2>8. Feedback &amp; Suggestions</h2>
+            <div class="acc-card-subtitle">How to report barriers and suggest enhancements</div>
+          </div>
+        </div>
+        <p>
+          We welcome your feedback on the accessibility of PetSathi. If you encounter any accessibility barrier, difficulty accessing specific content, or have suggestions for improvements, please reach out to us:
+        </p>
+        <ul class="acc-list">
+          <li><strong>What to include:</strong> Please provide the webpage URL, the device and operating system you are using, the assistive technology used (if applicable), and a brief description of the issue encountered.</li>
+          <li><strong>Response commitment:</strong> We aim to acknowledge accessibility reports within <strong>48 hours</strong> and work collaboratively with contributors to implement fixes promptly.</li>
+        </ul>
+        <div class="acc-actions">
+          <a href="https://github.com/Riya-Kharade/PetSathi/issues/new" target="_blank" rel="noopener noreferrer" class="acc-btn acc-btn-primary">
+            <i class="fa-brands fa-github" aria-hidden="true"></i> Report on GitHub Issues
+          </a>
+          <a href="contact.html" class="acc-btn acc-btn-secondary">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i> Submit Contact Form
+          </a>
+        </div>
+      </article>
+
+      <!-- Section 9: Future Improvements -->
+      <article id="future" class="acc-card">
+        <div class="acc-card-header">
+          <div class="acc-card-icon"><i class="fa-solid fa-rocket" aria-hidden="true"></i></div>
+          <div class="acc-card-title-group">
+            <h2>9. Future Improvements</h2>
+            <div class="acc-card-subtitle">Our ongoing accessibility roadmap</div>
+          </div>
+        </div>
+        <p>
+          Continuous improvement is a pillar of PetSathi's development ethos. Our upcoming accessibility roadmap includes:
+        </p>
+        <div class="acc-feature-grid">
+          <div class="acc-feature-box">
+            <h3><i class="fa-solid fa-vial-circle-check" aria-hidden="true"></i> CI/CD Automated Audits</h3>
+            <p>Integrating Axe-Core and Google Lighthouse accessibility checks into our GitHub Actions deployment pipeline to catch regressions early.</p>
+          </div>
+          <div class="acc-feature-box">
+            <h3><i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i> Sitewide Theme Switcher</h3>
+            <p>Introducing a native high-contrast and dark theme option respecting <code>prefers-color-scheme</code> user preferences.</p>
+          </div>
+          <div class="acc-feature-box">
+            <h3><i class="fa-solid fa-arrows-to-eye" aria-hidden="true"></i> Enhanced Skip Links</h3>
+            <p>Refining sitewide skip-navigation targets across all inner subpages and multi-step forms.</p>
+          </div>
+          <div class="acc-feature-box">
+            <h3><i class="fa-solid fa-book-open" aria-hidden="true"></i> Contributor Guidelines</h3>
+            <p>Adding dedicated accessibility best practices to <code>CONTRIBUTING.md</code> to guide future student and community contributors.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Section 10: Contact Information -->
+      <article id="contact" class="acc-card">
+        <div class="acc-card-header">
+          <div class="acc-card-icon"><i class="fa-solid fa-address-book" aria-hidden="true"></i></div>
+          <div class="acc-card-title-group">
+            <h2>10. Contact Information</h2>
+            <div class="acc-card-subtitle">Official communication channels</div>
+          </div>
+        </div>
+        <p>
+          You can connect directly with the PetSathi development and maintainer team through any of the following official channels:
+        </p>
+        <ul class="acc-list">
+          <li><strong>GitHub Repository:</strong> <a href="https://github.com/Riya-Kharade/PetSathi" target="_blank" rel="noopener noreferrer">github.com/Riya-Kharade/PetSathi</a></li>
+          <li><strong>Project Maintainer:</strong> <a href="https://github.com/Riya-Kharade" target="_blank" rel="noopener noreferrer">@Riya-Kharade</a> on GitHub</li>
+          <li><strong>Community Discussions:</strong> <a href="https://github.com/Riya-Kharade/PetSathi/discussions" target="_blank" rel="noopener noreferrer">PetSathi GitHub Discussions</a></li>
+          <li><strong>Contact Form:</strong> <a href="contact.html">PetSathi Contact Us Page</a></li>
+          <li><strong>Help &amp; FAQ Center:</strong> <a href="faq.html">PetSathi FAQ Center</a></li>
+        </ul>
+        <div class="acc-callout">
+          <p>
+            Thank you for helping us make PetSathi more accessible, inclusive, and enjoyable for pet owners and caregivers everywhere!
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Back to Top Button -->
+  <a href="#main-content" class="acc-back-top" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+  </a>
+
+  <!-- Standard PetSathi Site Footer -->
+  <footer class="footer">
+    <div class="section-wrap footer-grid">
+      <div>
+        <a class="brand" href="../../index.html" aria-label="PetSathi home">
+          <svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false">
+            <circle cx="12" cy="12" r="4" fill="currentColor" />
+            <circle cx="21" cy="8" r="4" fill="currentColor" />
+            <circle cx="30" cy="12" r="4" fill="currentColor" />
+            <path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor" />
+          </svg>
+          <span>Pet<span>Sathi</span></span>
+        </a>
+        <p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p>
+      </div>
+      <div>
+        <b>Explore</b>
+        <a href="../../index.html#home">Home</a>
+        <a href="pets/index.html">Explore Pets</a>
+        <a href="services/index.html">Services</a>
+        <a href="walker/index.html">Find a Walker</a>
+      </div>
+      <div>
+        <b>Information</b>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="faq.html">FAQ / Help Center</a>
+        <a href="accessibility.html">Accessibility Statement</a>
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#terms">Terms &amp; Conditions</a>
+      </div>
+      <div>
+        <b>Connect With Us</b>
+        <a href="https://github.com/Riya-Kharade/PetSathi" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/riyakharade/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://petsathi-nsoc.netlify.app/" target="_blank" rel="noopener noreferrer">Live Website</a>
+      </div>
+    </div>
+    <div class="section-wrap footer-bottom">
+      <span>&copy; <span id="year">2026</span> PetSathi. All rights reserved.</span>
+      <span>Made with &hearts; for pets.</span>
+      <span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E; &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/main.js"></script>
+  <script src="../js/accessibility.js"></script>
+</body>
+</html>
