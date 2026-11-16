@@ -391,138 +391,402 @@
         transform: rotate(-15deg);
       }
 
-      /* Quick Navigation Hub Matching Reference */
-      .guides-nav-strip {
-        background: white;
-        border: 1px solid var(--line);
-        border-radius: 24px;
-        padding: 32px;
-        margin-top: 40px;
-        box-shadow: 0 10px 30px rgba(35, 57, 43, 0.04);
+            .guides-nav-strip {
+        position: relative;
+        background: #ffffff;
+        margin: 40px auto;
+        max-width: 1200px;
+        width: calc(100% - 40px);
+        border: 1px solid #dceade;
+        border-radius: 32px;
+        padding: 42px 36px 38px;
+        box-shadow: 0 4px 24px rgba(35, 80, 50, 0.04);
+        overflow: hidden;
       }
-      .guides-nav-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
+
+      .quick-nav-decor {
+        position: absolute;
+        pointer-events: none;
+        z-index: 0;
+        color: #cde4d3;
+        opacity: 0.55;
+      }
+
+      .decor-top-left {
+        top: -8px;
+        left: -8px;
+        width: 130px;
+        height: 130px;
+        background: radial-gradient(
+          circle at 10% 10%,
+          #eaf5ed 0%,
+          rgba(234, 245, 237, 0) 70%
+        );
+        border-radius: 0 0 100% 0;
+      }
+
+      .decor-bottom-right {
+        bottom: -8px;
+        right: -8px;
+        width: 130px;
+        height: 130px;
+        background: radial-gradient(
+          circle at 90% 90%,
+          #eaf5ed 0%,
+          rgba(234, 245, 237, 0) 70%
+        );
+        border-radius: 100% 0 0 0;
+      }
+
+      .decor-paw {
+        position: absolute;
+        display: inline-block;
+        line-height: 1;
+      }
+
+      .decor-paw-1 {
+        top: 14px;
+        left: 28px;
+        font-size: 28px;
+        transform: rotate(-15deg);
+      }
+
+      .decor-paw-2 {
+        top: 38px;
+        left: 12px;
+        font-size: 19px;
+        transform: rotate(20deg);
+      }
+
+      .decor-paw-3 {
+        bottom: 36px;
+        right: 14px;
+        font-size: 19px;
+        transform: rotate(-25deg);
+      }
+
+      .decor-paw-4 {
+        bottom: 14px;
+        right: 28px;
+        font-size: 28px;
+        transform: rotate(15deg);
+      }
+
+      .quick-nav-header {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .quick-nav-eyebrow-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         gap: 16px;
-        margin-top: 20px;
+        margin-bottom: 14px;
       }
+
+      .quick-nav-line {
+        height: 1px;
+        width: 110px;
+        background: #d6ead9;
+      }
+
+      .quick-nav-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 16px;
+        background: #f4faf5;
+        border: 1px solid #b7deb8;
+        border-radius: 9999px;
+        color: #1e6f43;
+        font-family: "DM Sans", "Manrope", sans-serif !important;
+        font-size: 0.74rem;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        box-shadow: 0 1px 4px rgba(35, 100, 55, 0.04);
+      }
+
+      .quick-nav-badge i {
+        font-size: 0.95rem;
+        line-height: 1;
+        color: #1e6f43;
+        flex-shrink: 0;
+      }
+
+      .quick-nav-title {
+        font-family: "Manrope", sans-serif !important;
+        font-size: clamp(1.45rem, 2.4vw, 1.95rem);
+        font-weight: 800;
+        color: #1a251e;
+        margin: 0;
+        letter-spacing: -0.02em;
+        line-height: 1.25;
+        text-align: center;
+      }
+
+      .quick-nav-title span {
+        color: #1e6f43;
+        font-weight: 800;
+      }
+
+      .guides-nav-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 14px;
+        margin: 0;
+      }
+
       .guide-nav-item {
         display: flex;
         align-items: center;
-        gap: 14px;
-        padding: 16px;
-        background: var(--soft);
-        border: 1px solid transparent;
-        border-radius: 14px;
-        transition: all 0.2s ease;
+        gap: 10px;
+        padding: 9px 16px 9px 9px;
+        background: #edf7f0;
+        border: 1px solid #cce4d2;
+        border-radius: 9999px;
         text-decoration: none;
-      }
-      .guide-nav-item:hover {
-        background: white;
-        border-color: var(--green);
-        transform: translateY(-3px);
-        box-shadow: 0 6px 18px rgba(40, 104, 73, 0.08);
-      }
-      .guide-nav-icon {
-        font-size: 1.5rem;
-        color: var(--green);
-        width: 40px;
-        height: 40px;
-        background: #eaf2e9;
-        display: grid;
-        place-items: center;
-        border-radius: 50%;
-        flex-shrink: 0;
-      }
-      .guide-nav-item div b {
-        display: block;
-        font-size: 0.95rem;
-        color: var(--ink);
-      }
-      .guide-nav-item div small {
-        display: block;
-        font-size: 0.78rem;
-        color: var(--muted);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          border-color 0.2s ease,
+          background 0.2s ease;
+        min-width: 0;
+        cursor: pointer;
       }
 
-      .dog-cta-band {
-        background: linear-gradient(135deg, #1d5039 0%, #286849 100%);
-        color: white;
-        border-radius: 28px;
-        padding: 50px 56px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 36px;
-        margin-block: 40px 75px;
+      .guide-nav-item:hover,
+      .guide-nav-item.active-filter {
+        background: #e4f4e8;
+        border-color: #237847;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 18px rgba(35, 100, 55, 0.12);
       }
-      .dog-cta-band h2 {
-        color: white;
-        margin: 0 0 12px;
+
+      .guide-nav-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: #d1ecda;
+        color: #1e6f43;
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+        font-size: 1rem;
+        line-height: 1;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
       }
-      .dog-cta-band h2 em {
-        color: #f4c79f;
-        font-style: normal;
+
+      .guide-nav-icon i {
+        display: inline-block;
+        line-height: 1;
       }
-      .dog-cta-band p {
-        color: #e0ece2;
-        font-size: 1.02rem;
-        max-width: 580px;
-        margin: 0;
-        line-height: 1.7;
+
+      .guide-nav-item:hover .guide-nav-icon,
+      .guide-nav-item.active-filter .guide-nav-icon {
+        background: #1e6f43;
+        color: #ffffff;
       }
-      .dog-cta-actions {
+
+      .guide-nav-label {
+        font-family: "DM Sans", "Manrope", sans-serif !important;
+        font-size: 0.88rem;
+        font-weight: 700;
+        color: #1c2b20;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .guides-nav-strip i,
+      .guides-nav-strip [class*="fa-"],
+      .fa-solid,
+      .fa-regular,
+      .fa-brands {
+        font-family: "Font Awesome 6 Free" !important;
+        font-style: normal !important;
+        font-variant: normal !important;
+        text-rendering: auto !important;
+        line-height: 1 !important;
+      }
+
+      .guides-nav-strip .fa-solid,
+      .fa-solid {
+        font-weight: 900 !important;
+      }
+
+      .guides-nav-strip .fa-regular,
+      .fa-regular {
+        font-weight: 400 !important;
+      }
+
+      .guides-nav-strip .fa-brands,
+      .fa-brands {
+        font-family: "Font Awesome 6 Brands" !important;
+        font-weight: 400 !important;
+      }
+
+      .cta {
+        margin-top: 0;
+        margin-bottom: 92px;
+        border: 1px solid #e6d6c6;
+      }
+
+      .cta-actions {
         display: flex;
         gap: 14px;
         flex-wrap: wrap;
         flex-shrink: 0;
       }
-      .button-translucent {
-        background: rgba(255, 255, 255, 0.15);
-        border: 1px solid rgba(255, 255, 255, 0.35);
+
+      .cta .button-outline {
+        background: transparent;
+        color: var(--green);
+        border-color: var(--green);
+      }
+
+      .cta .button-outline:hover {
+        background: var(--green);
         color: white;
       }
-      .button-translucent:hover {
-        background: rgba(255, 255, 255, 0.28);
-        color: white;
+
+      .dog-search-filter-wrap {
+        max-width: 1200px;
+        width: calc(100% - 40px);
+        margin: 0 auto 35px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: nowrap;
       }
+
+      .dog-search-bar {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        background: #ffffff;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 6px 6px 6px 18px;
+        box-shadow: 0 4px 16px rgba(35, 75, 45, 0.03);
+        transition:
+          border-color 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .dog-search-bar:focus-within {
+        border-color: var(--green);
+        box-shadow: 0 6px 20px rgba(35, 75, 45, 0.08);
+      }
+
+      .dog-search-bar i {
+        color: var(--muted);
+        font-size: 0.95rem;
+        margin-right: 10px;
+      }
+
+      .dog-search-bar input {
+        flex: 1;
+        border: none;
+        outline: none;
+        background: transparent;
+        font-family: "DM Sans", sans-serif;
+        font-size: 0.92rem;
+        color: var(--ink);
+      }
+
+      .dog-search-bar input::placeholder {
+        color: #8a9a90;
+      }
+
+      .dog-filter-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 22px;
+        background: #edf7f0;
+        border: 1px solid #cce4d2;
+        border-radius: 999px;
+        color: var(--green);
+        font-family: "DM Sans", sans-serif;
+        font-size: 0.92rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        white-space: nowrap;
+      }
+
+      .dog-filter-btn:hover,
+      .dog-filter-btn.active-filter-btn {
+        background: var(--green);
+        color: #ffffff;
+        border-color: var(--green);
+        box-shadow: 0 4px 14px rgba(35, 100, 55, 0.12);
+      }
+
+      @media (max-width: 1100px) {
+        .guides-nav-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
       @media (max-width: 960px) {
         .dog-info-grid,
         .quick-info-grid {
           grid-template-columns: repeat(2, 1fr);
         }
+
         .quick-info-grid .quick-info-card:nth-child(3) {
           grid-column: span 2;
         }
+
         .guides-nav-grid {
           grid-template-columns: repeat(2, 1fr);
         }
-        .dog-cta-band {
+
+        .dog-search-filter-wrap {
           flex-direction: column;
-          align-items: flex-start;
-          padding: 36px 30px;
+          align-items: stretch;
+        }
+
+        .dog-filter-btn {
+          justify-content: center;
         }
       }
+
       @media (max-width: 640px) {
         .dog-info-grid,
         .quick-info-grid,
         .guides-nav-grid {
           grid-template-columns: 1fr;
         }
+
         .quick-info-grid .quick-info-card:nth-child(3) {
           grid-column: span 1;
         }
+
         .guides-nav-strip {
           padding: 22px 18px;
         }
+
         .dog-card-media {
           height: 180px;
         }
-        .dog-cta-band {
-          padding: 28px 20px;
+
+        .cta-actions {
+          width: 100%;
+          flex-direction: column;
+          margin-top: 18px;
         }
-        .dog-cta-actions,
-        .dog-cta-actions .button {
+
+        .cta-actions .button {
           width: 100%;
         }
       }
@@ -677,19 +941,116 @@
         </div>
       </section>
 
-      <section
-        class="trust-strip"
-        aria-label="Canine Knowledge Topics Overview"
-      >
-        <span>CANINE KNOWLEDGE BASE</span>
-        <div>
-          🐕 &nbsp; Breeds &nbsp;&nbsp;&nbsp;&nbsp; 🩺 &nbsp; Health & Wellness
-          &nbsp;&nbsp;&nbsp;&nbsp; 🥣 &nbsp; Food & Nutrition
-          &nbsp;&nbsp;&nbsp;&nbsp; 🎾 &nbsp; Exercise & Walking
-          &nbsp;&nbsp;&nbsp;&nbsp; 🛁 &nbsp; Grooming & Care
-          &nbsp;&nbsp;&nbsp;&nbsp; 🧠 &nbsp; Training
+      <div class="guides-nav-strip">
+        <div class="quick-nav-decor decor-top-left" aria-hidden="true">
+          <i class="fa-solid fa-paw decor-paw decor-paw-1"></i>
+          <i class="fa-solid fa-paw decor-paw decor-paw-2"></i>
         </div>
-      </section>
+
+        <div class="quick-nav-decor decor-bottom-right" aria-hidden="true">
+          <i class="fa-solid fa-paw decor-paw decor-paw-3"></i>
+          <i class="fa-solid fa-paw decor-paw decor-paw-4"></i>
+        </div>
+
+        <div class="quick-nav-header">
+          <div class="quick-nav-eyebrow-wrap">
+            <span class="quick-nav-line"></span>
+            <div class="quick-nav-badge">
+              <i
+                class="fa-regular fa-compass quick-nav-badge-icon"
+                aria-hidden="true"
+              ></i>
+              <span>QUICK NAVIGATION</span>
+            </div>
+            <span class="quick-nav-line"></span>
+          </div>
+          <h3 class="quick-nav-title">
+            Explore Dedicated <span>Dog Knowledge Chapters</span>
+          </h3>
+        </div>
+
+        <div class="guides-nav-grid">
+          <div
+            class="guide-nav-item filter-trigger"
+            data-filter="breeds"
+            id="hub-link-breeds"
+          >
+            <span class="guide-nav-icon"
+              ><i class="fa-solid fa-dog" aria-hidden="true"></i
+            ></span>
+            <span class="guide-nav-label">Breeds</span>
+          </div>
+
+          <div
+            class="guide-nav-item filter-trigger"
+            data-filter="nutrition"
+            id="hub-link-food"
+          >
+            <span class="guide-nav-icon"
+              ><i class="fa-solid fa-bowl-food" aria-hidden="true"></i
+            ></span>
+            <span class="guide-nav-label">Nutrition</span>
+          </div>
+
+          <div
+            class="guide-nav-item filter-trigger"
+            data-filter="walking"
+            id="hub-link-walking"
+          >
+            <span class="guide-nav-icon"
+              ><i class="fa-solid fa-person-walking" aria-hidden="true"></i
+            ></span>
+            <span class="guide-nav-label">Exercise</span>
+          </div>
+
+          <div
+            class="guide-nav-item filter-trigger"
+            data-filter="grooming"
+            id="hub-link-care"
+          >
+            <span class="guide-nav-icon"
+              ><i class="fa-solid fa-bath" aria-hidden="true"></i
+            ></span>
+            <span class="guide-nav-label">Grooming</span>
+          </div>
+
+          <div
+            class="guide-nav-item filter-trigger"
+            data-filter="health"
+            id="hub-link-health"
+          >
+            <span class="guide-nav-icon"
+              ><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i
+            ></span>
+            <span class="guide-nav-label">Health</span>
+          </div>
+
+          <div
+            class="guide-nav-item filter-trigger"
+            data-filter="training"
+            id="hub-link-behaviour"
+          >
+            <span class="guide-nav-icon"
+              ><i class="fa-solid fa-brain" aria-hidden="true"></i
+            ></span>
+            <span class="guide-nav-label">Training</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="dog-search-filter-wrap">
+        <div class="dog-search-bar">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <input
+            type="text"
+            id="dogSearchInput"
+            placeholder="Search dog topics, nutrition, grooming, health..."
+          />
+        </div>
+        <button class="dog-filter-btn" id="resetFilterBtn" type="button">
+          <i class="fa-solid fa-filter" aria-hidden="true"></i> Reset Filters
+        </button>
+      </div>
 
       <section class="section section-wrap" id="dog-topics">
         <div class="dog-topics-heading">
@@ -764,7 +1125,7 @@
         </div>
 
         <div class="dog-info-grid">
-          <article class="dog-card" id="card-breeds">
+          <article class="dog-card" data-category="breeds" id="card-breeds">
             <div class="dog-card-media">
               <span class="dog-card-badge">🐕 Breeds</span>
               <img
@@ -787,7 +1148,7 @@
             </div>
           </article>
 
-          <article class="dog-card" id="card-nutrition">
+          <article class="dog-card" data-category="nutrition" id="card-nutrition">
             <div class="dog-card-media">
               <span class="dog-card-badge">🥣 Nutrition</span>
               <img
@@ -813,7 +1174,7 @@
             </div>
           </article>
 
-          <article class="dog-card" id="card-walking">
+          <article class="dog-card" data-category="walking" id="card-walking">
             <div class="dog-card-media">
               <span class="dog-card-badge">🎾 Exercise</span>
               <img
@@ -839,7 +1200,7 @@
             </div>
           </article>
 
-          <article class="dog-card" id="card-grooming">
+          <article class="dog-card" data-category="grooming" id="card-grooming">
             <div class="dog-card-media">
               <span class="dog-card-badge">🛁 Grooming</span>
               <img
@@ -862,7 +1223,7 @@
             </div>
           </article>
 
-          <article class="dog-card" id="card-health">
+          <article class="dog-card" data-category="health" id="card-health">
             <div class="dog-card-media">
               <span class="dog-card-badge">🩺 Wellness</span>
               <img
@@ -883,7 +1244,7 @@
             </div>
           </article>
 
-          <article class="dog-card" id="card-training">
+          <article class="dog-card" data-category="training" id="card-training">
             <div class="dog-card-media">
               <span class="dog-card-badge">🧠 Behaviour</span>
               <img
@@ -1077,106 +1438,33 @@
             </article>
           </div>
 
-          <div class="guides-nav-strip">
-            <div
-              class="dog-topics-heading"
-              style="
-                margin: 0 auto 20px;
-                border: none;
-                background: transparent;
-                box-shadow: none;
-                padding: 0;
-              "
-            >
-              <div class="heading-content">
-                <span class="heading-label"
-                  ><i class="fa-solid fa-compass" aria-hidden="true"></i> Quick
-                  Navigation Hub</span
-                >
-                <h3 style="font-size: 1.5rem; margin: 0; color: var(--ink)">
-                  Explore Dedicated Dog Knowledge Chapters
-                </h3>
-              </div>
-            </div>
-
-            <div class="guides-nav-grid">
-              <a href="breeds.html" class="guide-nav-item" id="hub-link-breeds">
-                <span class="guide-nav-icon"
-                  ><i class="fa-solid fa-dog" aria-hidden="true"></i
-                ></span>
-                <div>
-                  <b>Dog Breeds</b>
-                  <small>Profiles & Characteristics</small>
-                </div>
-              </a>
-              <a href="health.html" class="guide-nav-item" id="hub-link-care">
-                <span class="guide-nav-icon"
-                  ><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i
-                ></span>
-                <div>
-                  <b>Health & Wellness</b>
-                  <small>Wellness, Vaccines & Care</small>
-                </div>
-              </a>
-              <a
-                href="walking.html"
-                class="guide-nav-item"
-                id="hub-link-walking"
-              >
-                <span class="guide-nav-icon"
-                  ><i class="fa-solid fa-person-walking" aria-hidden="true"></i
-                ></span>
-                <div>
-                  <b>Exercise & Walking</b>
-                  <small>Activity Needs & Routines</small>
-                </div>
-              </a>
-              <a
-                href="../../services/dog-walking.html"
-                class="guide-nav-item"
-                id="hub-link-walking-service"
-              >
-                <span class="guide-nav-icon"
-                  ><i class="fa-solid fa-paw" aria-hidden="true"></i
-                ></span>
-                <div>
-                  <b>Dog Walking Service</b>
-                  <small>Explore Walking Companions</small>
-                </div>
-              </a>
-            </div>
           </div>
-        </div>
       </section>
 
-      <section class="section-wrap">
-        <div class="dog-cta-band">
-          <div>
-            <div class="eyebrow" style="color: #c3ddc8">
-              Start Your Dog's Journey
-            </div>
-            <h2>Every Paw Deserves a <em>Happy Walk.</em></h2>
-            <p>
-              Whether you are preparing to adopt your first puppy or looking to
-              give your faithful companion the best daily walks and wellness
-              support, PetSathi is here to guide and support you every step of
-              the way.
-            </p>
-          </div>
-          <div class="dog-cta-actions">
-            <a
-              class="button button-light"
-              href="../../walker/dogs.html"
-              id="cta-find-walker"
-              >Find a Dog Walker ↗</a
-            >
-            <a
-              class="button button-translucent"
-              href="../../services/dog-walking.html"
-              id="cta-walking-service"
-              >Dog Walking Service</a
-            >
-          </div>
+      <section class="cta section-wrap">
+        <div>
+          <div class="eyebrow">START YOUR DOG'S JOURNEY</div>
+          <h2>Every Paw Deserves a <em>Happy Walk.</em></h2>
+          <p>
+            Whether you are preparing to adopt your first puppy or looking to
+            give your faithful companion the best daily walks and wellness
+            support, PetSathi is here to guide and support you every step of
+            the way.
+          </p>
+        </div>
+        <div class="cta-actions">
+          <a
+            class="button button-light"
+            href="../../walker/dogs.html"
+            id="cta-find-walker"
+            >Find a Dog Walker ↗</a
+          >
+          <a
+            class="button button-outline"
+            href="../../services/dog-walking.html"
+            id="cta-walking-service"
+            >Dog Walking Service</a
+          >
         </div>
       </section>
     </main>
@@ -1232,5 +1520,76 @@
     </footer>
 
     <script src="../../../js/main.js"></script>
+    <script>
+      const toggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector(".main-nav");
+      if (toggle && nav) {
+        toggle.addEventListener("click", () => {
+          const open = nav.classList.toggle("open");
+          toggle.setAttribute("aria-expanded", String(open));
+        });
+      }
+
+      const searchInput = document.getElementById("dogSearchInput");
+      const dogCards = document.querySelectorAll(".dog-card");
+      const filterTriggers = document.querySelectorAll(".filter-trigger");
+      const resetFilterBtn = document.getElementById("resetFilterBtn");
+
+      function filterCards(category) {
+        dogCards.forEach((card) => {
+          const cardCat = card.getAttribute("data-category");
+          if (!category || cardCat === category) {
+            card.style.display = "flex";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener("input", (e) => {
+          const query = e.target.value.toLowerCase().trim();
+          filterTriggers.forEach((t) => t.classList.remove("active-filter"));
+
+          dogCards.forEach((card) => {
+            const title = card.querySelector("h3").textContent.toLowerCase();
+            const description = card
+              .querySelector("p")
+              .textContent.toLowerCase();
+            if (title.includes(query) || description.includes(query)) {
+              card.style.display = "flex";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      }
+
+      filterTriggers.forEach((trigger) => {
+        trigger.addEventListener("click", (e) => {
+          e.preventDefault();
+          const category = trigger.getAttribute("data-filter");
+
+          filterTriggers.forEach((t) => t.classList.remove("active-filter"));
+          trigger.classList.add("active-filter");
+
+          if (searchInput) searchInput.value = "";
+          filterCards(category);
+
+          const topicsSection = document.getElementById("dog-topics");
+          if (topicsSection) {
+            topicsSection.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+
+      if (resetFilterBtn) {
+        resetFilterBtn.addEventListener("click", () => {
+          if (searchInput) searchInput.value = "";
+          filterTriggers.forEach((t) => t.classList.remove("active-filter"));
+          filterCards(null);
+        });
+      }
+    </script>
   </body>
 </html>

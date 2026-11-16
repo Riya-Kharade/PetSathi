@@ -3,6 +3,48 @@
    Green, Cream & White Theme matching PetSathi Design System
    ======================================================== */
 
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src:
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.woff2") format("woff2"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Font Awesome 6 Brands";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src:
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-brands-400.woff2") format("woff2"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-brands-400.ttf") format("truetype");
+}
+
+body.accessibility-page [class*="fa-"],
+body.accessibility-page [class*="fa-"]::before,
+body.accessibility-page i.fa-solid,
+body.accessibility-page i.fa-solid::before,
+.accessibility-page .fa-solid,
+.accessibility-page .fa-solid::before,
+.accessibility-page i[class*="fa-"] {
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900 !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  text-rendering: auto !important;
+  line-height: 1 !important;
+}
+
+body.accessibility-page .fa-brands,
+body.accessibility-page .fa-brands::before,
+.accessibility-page i.fa-brands {
+  font-family: "Font Awesome 6 Brands" !important;
+  font-weight: 400 !important;
+}
+
 :root {
   --acc-primary: #286849;
   --acc-primary-dark: #1d5039;
