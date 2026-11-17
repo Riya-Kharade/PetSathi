@@ -603,7 +603,7 @@ a.contact-item-value:hover {
 }
 
 .contact-bottom-cta p {
-  color: #d1e5db;
+  color: #718078;
   max-width: 620px;
   margin: 0 auto 24px;
   font-size: 1.02rem;
@@ -615,6 +615,11 @@ a.contact-item-value:hover {
   flex-wrap: wrap;
   justify-content: center;
   gap: 14px;
+}
+
+.contact-bottom-cta .button-outline:hover {
+  background: #edf3ec;
+  color: #1d5039;
 }
 
 /* Animations */
