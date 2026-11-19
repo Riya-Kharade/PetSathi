@@ -59,6 +59,171 @@
         width: 18px;
         text-align: center;
       }
+      .dog-health-breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 24px;
+        color: #64736a;
+        font-size: 0.85rem;
+      }
+
+      .dog-health-breadcrumb a {
+        color: #246b43;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .dog-health-breadcrumb a:hover {
+        color: #16442a;
+        text-decoration: underline;
+      }
+
+      .dog-health-breadcrumb span:last-child {
+        color: #263b30;
+        font-weight: 700;
+      }
+
+      .dog-health-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 16px;
+        margin-bottom: 16px;
+        border: 1px solid #cce4d2;
+        border-radius: 9999px;
+        background: #edf7f0;
+        color: #237847;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+      }
+
+      #health-hero.hero {
+        min-height: 0;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 48px;
+        padding-top: 24px;
+        padding-bottom: 60px;
+      }
+
+      #health-hero .hero-copy h1 {
+        margin: 0 0 18px;
+        color: #1a251e;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2.4rem, 4vw, 3.4rem);
+        line-height: 1.15;
+      }
+
+      #health-hero .hero-copy h1 em {
+        color: #28764a;
+      }
+
+      #health-hero .hero-copy > p {
+        max-width: 580px;
+        margin: 0 0 28px;
+        color: #55665b;
+        font-size: 1.05rem;
+        line-height: 1.68;
+      }
+
+      #health-hero .hero-actions {
+        gap: 14px;
+        margin: 0 0 20px;
+      }
+
+      #health-hero .hero-note {
+        color: #718176;
+        font-size: 0.84rem;
+      }
+
+      #health-hero .hero-visual {
+        min-height: 380px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #health-hero .hero-blob {
+        width: 90%;
+        height: 90%;
+        z-index: 0;
+        background: radial-gradient(circle, #edf7f0 0%, #d8e8ce 100%);
+        filter: blur(20px);
+        opacity: 0.7;
+      }
+
+      #health-hero .hero-photo {
+        z-index: 1;
+        width: 100%;
+        max-width: 440px;
+        height: 380px;
+        border: 3px solid #fff;
+        border-radius: 32px;
+        box-shadow: 0 16px 40px rgba(35, 75, 45, 0.12);
+      }
+
+      #health-hero .floating-card {
+        z-index: 2;
+        gap: 10px;
+        padding: 10px 16px;
+        border: 1px solid #dceade;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(6px);
+        box-shadow: 0 8px 24px rgba(35, 75, 45, 0.08);
+        color: #1a251e;
+        font-size: 0.82rem;
+      }
+
+      #health-hero .floating-card b {
+        display: block;
+        color: #1e3325;
+        font-size: 0.85rem;
+      }
+
+      #health-hero .floating-card small {
+        color: #64736a;
+        font-size: 0.75rem;
+      }
+
+      #health-hero .card-top {
+        top: 20px;
+        right: -10px;
+      }
+
+      #health-hero .card-bottom {
+        bottom: 20px;
+        left: -10px;
+      }
+
+      @media (max-width: 960px) {
+        #health-hero.hero {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        #health-hero .hero-visual {
+          min-height: 280px;
+        }
+
+        #health-hero .hero-photo {
+          height: 280px;
+        }
+
+        #health-hero .card-top {
+          right: 0;
+        }
+
+        #health-hero .card-bottom {
+          left: 0;
+        }
+      }
+
       /* Search & Filter Styles matching Index */
       .health-search-bar {
         max-width: 700px;
@@ -118,7 +283,7 @@
       }
       .filter-chip:focus-visible,
       .guide-nav-item:focus-visible,
-      .health-hero-actions .button:focus-visible,
+      .hero-actions .button:focus-visible,
       .health-final-cta .button:focus-visible {
         outline: 3px solid #9cbea2;
         outline-offset: 3px;
@@ -993,6 +1158,7 @@
     height: 160px;
     margin: 0 -20px 20px;
   }
+
 }
 
 /* ===== Health Priority Section ===== */
@@ -1339,45 +1505,62 @@
 
     <main>
 
-<section class="health-hero">
-  <div class="health-hero-content">
-    <div class="eyebrow">
-      <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
-      Dog Care & Protection
-    </div>
+      <section class="hero section-wrap" id="health-hero">
+        <div class="hero-copy">
+          <nav class="dog-health-breadcrumb" aria-label="Breadcrumb">
+            <a href="../../../../index.html">Home</a>
+            <span aria-hidden="true">/</span>
+            <a href="../index.html">Explore Pets</a>
+            <span aria-hidden="true">/</span>
+            <a href="index.html">Dogs</a>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">Dog Health &amp; Wellness</span>
+          </nav>
 
-    <h1>
-      Keeping Your Dog
-      <em>Happy & Healthy!</em>
-    </h1>
+          <div class="dog-health-badge">
+            🐾 PetSathi • Canine Health Guide
+          </div>
+          <h1>Complete Guide to <em>Dog Health</em></h1>
 
-    <p>
-      Every wag deserves a healthy life. Explore practical guidance on
-      preventive care, vaccinations, early warning signs, and everyday
-      wellness to help your companion thrive.
-    </p>
+          <p>
+            Explore practical guidance on common health problems, preventive
+            care, vaccinations, early warning signs, and everyday wellness to
+            support your dog's health at every life stage.
+          </p>
 
-    <div class="health-hero-actions">
-      <a class="button" href="#problems-section">
-        Explore Health Guide <i class="fa-solid fa-arrow-down"></i>
-      </a>
-    </div>
-  </div>
+          <div class="hero-actions">
+            <a class="button" href="#problems-section">Explore Health Topics ↓</a>
+            <a class="button button-outline" href="index.html">← Dogs Overview</a>
+          </div>
 
-  <div class="health-hero-visual">
-    <div class="health-hero-image-frame">
-      <img
-        src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1000&q=85"
-        alt="Happy golden retriever enjoying a healthy life"
-      />
-    </div>
+          <div class="hero-note">
+            ♥ &nbsp; Dedicated to happy paws and healthy companions.
+          </div>
+        </div>
 
-    <div class="health-hero-note">
-      <i class="fa-solid fa-shield-heart" aria-hidden="true"></i>
-      <span>Care today. Healthier tomorrows.</span>
-    </div>
-  </div>
-</section>
+        <div class="hero-visual">
+          <div class="hero-blob"></div>
+          <img
+            src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1000&q=85"
+            alt="Happy golden retriever enjoying a healthy life"
+            class="hero-photo"
+          />
+          <div class="floating-card card-top">
+            🩺
+            <span>
+              <b>Preventive Care</b>
+              <small>Support every life stage</small>
+            </span>
+          </div>
+          <div class="floating-card card-bottom">
+            🐾
+            <span>
+              <b>Happy &amp; Healthy</b>
+              <small>Lifelong health &amp; comfort</small>
+            </span>
+          </div>
+        </div>
+      </section>
 
 
       <div class="section-wrap" style="padding-block: 60px">
@@ -2781,7 +2964,7 @@
             </div>
           </div>
           <div
-            class="health-card searchable-item"
+            class="health-card preventive-health-card searchable-item"
             data-keywords="preventive health care checklist sanitation water"
             style="background: var(--soft)"
           >
@@ -3222,6 +3405,10 @@
       document
         .querySelectorAll(".health-card, .warning-card")
         .forEach((card, index) => {
+          if (card.classList.contains("preventive-health-card")) {
+            return;
+          }
+
           const title = card.querySelector("h3")?.textContent.trim();
           const image = document.createElement("img");
           image.className = "health-card-photo";
