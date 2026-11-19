@@ -69,7 +69,14 @@
         padding: 8px;
         border: 1px solid var(--line);
         border-radius: 999px;
-        box-shadow: var(--shadow);
+        box-shadow: 0 12px 32px rgba(35, 75, 45, 0.07);
+        transition:
+          border-color 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+      .health-search-bar:focus-within {
+        border-color: #9cbea2;
+        box-shadow: 0 0 0 4px rgba(40, 104, 73, 0.1);
       }
       .health-search-bar input {
         border: none;
@@ -94,13 +101,27 @@
         cursor: pointer;
         font-weight: 600;
         font-size: 0.85rem;
-        transition: 0.2s;
+        transition:
+          color 0.2s ease,
+          background 0.2s ease,
+          border-color 0.2s ease,
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
       }
       .filter-chip.active,
       .filter-chip:hover {
         background: var(--green);
         color: white;
         border-color: var(--green);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(40, 104, 73, 0.16);
+      }
+      .filter-chip:focus-visible,
+      .guide-nav-item:focus-visible,
+      .health-hero-actions .button:focus-visible,
+      .health-final-cta .button:focus-visible {
+        outline: 3px solid #9cbea2;
+        outline-offset: 3px;
       }
 
       .health-grid {
@@ -109,19 +130,23 @@
         gap: 24px;
         margin-bottom: 50px;
       }
-      .health-card {
+      .health-card,
+      .warning-card {
         background: white;
         border: 1px solid var(--line);
         border-radius: 20px;
         padding: 30px;
         display: flex;
         flex-direction: column;
+        align-items: center;
+        text-align: center;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
         transition:
           transform 0.25s ease,
           box-shadow 0.25s ease;
       }
-      .health-card:hover {
+      .health-card:hover,
+      .warning-card:hover {
         transform: translateY(-5px);
         box-shadow: var(--shadow);
       }
@@ -136,47 +161,20 @@
         font-size: 1.4rem;
         margin-bottom: 18px;
       }
-      .health-card h3 {
+      .health-card h3,
+      .warning-card h3 {
         font-size: 1.25rem;
         margin: 0 0 12px;
         color: var(--ink);
+        text-align: center;
       }
-      .health-card p {
-        font-size: 0.9rem;
-        line-height: 1.65;
-        margin: 0;
-        color: var(--muted);
-      }
-
-      .warning-card {
-        background: #fdf6f0;
-        border: 1px solid #f5c6b8;
-        border-radius: 20px;
-        padding: 30px;
-        display: flex;
-        flex-direction: column;
-        transition:
-          transform 0.25s ease,
-          box-shadow 0.25s ease;
-      }
-      .warning-card:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow);
-      }
-      .warning-card .health-icon-wrap {
-        background: #f7e3d7;
-        color: #c0392b;
-      }
-      .warning-card h3 {
-        color: #c0392b;
-        font-size: 1.25rem;
-        margin: 0 0 12px;
-      }
+      .health-card p,
       .warning-card p {
         font-size: 0.9rem;
         line-height: 1.65;
         margin: 0;
         color: var(--muted);
+        text-align: center;
       }
 
       /* Section Heading Cards - Signature Style matching Riya's reference */
@@ -188,9 +186,16 @@
         overflow: hidden;
         text-align: center;
         border-radius: 35px;
-        border: 1px solid #dcebc9;
-        background: #fafcf7;
-        box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
+        border: 1px solid #dceade;
+        background:
+          radial-gradient(ellipse at 0 0, rgba(216, 232, 206, 0.35), transparent 38%),
+          radial-gradient(ellipse at 100% 100%, rgba(216, 232, 206, 0.32), transparent 38%),
+          #fafcf7;
+        box-shadow: 0 12px 34px rgba(35, 75, 45, 0.055);
+        isolation: isolate;
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
       }
       .corner-wave {
         position: absolute;
@@ -863,11 +868,14 @@
   align-items: stretch;
 }
 
-.health-card {
+.health-card,
+.warning-card {
   position: relative;
   overflow: hidden;
-  min-height: 220px;
-  padding: 30px;
+  min-height: 380px;
+  padding: 0 24px 28px;
+  align-items: center;
+  text-align: center;
   border: 1px solid #e3eadf;
   border-radius: 24px;
   background: linear-gradient(145deg, #ffffff 0%, #f9fcf7 100%);
@@ -878,7 +886,24 @@
     border-color 0.3s ease;
 }
 
-.health-card::before {
+.health-card-photo {
+  display: block;
+  width: calc(100% + 48px);
+  max-width: none;
+  height: 180px;
+  margin: 0 -24px 24px;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.health-card > *,
+.warning-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.health-card::before,
+.warning-card::before {
   content: "";
   position: absolute;
   top: 0;
@@ -887,17 +912,25 @@
   height: 4px;
   background: linear-gradient(90deg, #477b50, #b5cf9e);
   opacity: 0;
+  z-index: 2;
   transition: opacity 0.3s ease;
 }
 
-.health-card:hover {
+.health-card:hover,
+.warning-card:hover {
   transform: translateY(-7px);
   border-color: #b9cfb3;
   box-shadow: 0 18px 38px rgba(32, 66, 43, 0.11);
 }
 
-.health-card:hover::before {
+.health-card:hover::before,
+.warning-card:hover::before {
   opacity: 1;
+}
+
+.health-card:hover .health-card-photo,
+.warning-card:hover .health-card-photo {
+  transform: scale(1.05);
 }
 
 .health-icon-wrap {
@@ -913,28 +946,28 @@
     background 0.3s ease;
 }
 
-.health-card:hover .health-icon-wrap {
+.health-card:hover .health-icon-wrap,
+.warning-card:hover .health-icon-wrap {
   transform: scale(1.06);
   background: #dcebd5;
 }
 
-.health-card h3 {
+.health-card h3,
+.warning-card h3 {
   font-size: 1.2rem;
   line-height: 1.4;
-  margin-bottom: 12px;
+  margin: 0 0 12px;
   letter-spacing: -0.02em;
+  color: var(--ink);
+  text-align: center;
 }
 
-.health-card p {
+.health-card p,
+.warning-card p {
   font-size: 0.94rem;
   line-height: 1.75;
   color: #687568;
-}
-
-.warning-card {
-  border-radius: 24px;
-  padding: 30px;
-  box-shadow: 0 8px 24px rgba(110, 57, 35, 0.05);
+  text-align: center;
 }
 
 @media (max-width: 900px) {
@@ -951,19 +984,28 @@
 
   .health-card,
   .warning-card {
-    padding: 24px;
+    padding: 0 20px 24px;
     min-height: auto;
+  }
+
+  .health-card-photo {
+    width: calc(100% + 40px);
+    height: 160px;
+    margin: 0 -20px 20px;
   }
 }
 
 /* ===== Health Priority Section ===== */
 
 .health-priority {
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 48px;
-  margin: 80px 0 36px;
+  width: calc(100% - 48px);
+  max-width: 1200px;
+  margin: 70px auto 36px;
   padding: 38px;
   border: 1px solid #e3eadf;
   border-radius: 30px;
@@ -1045,12 +1087,15 @@
 /* ===== Final CTA ===== */
 
 .health-final-cta {
+  box-sizing: border-box;
   position: relative;
   overflow: hidden;
-  margin: 36px 0 70px;
+  width: calc(100% - 48px);
+  max-width: 1200px;
+  margin: 36px auto 70px;
   padding: 58px 28px;
   border-radius: 28px;
-  background: #244d36;
+  background: var(--green);
   color: white;
   text-align: center;
 }
@@ -1104,7 +1149,7 @@
   padding: 14px 24px;
   border-radius: 999px;
   background: white;
-  color: #244d36;
+  color: var(--green);
   font-weight: 750;
   text-decoration: none;
   transition: transform 0.2s ease, background 0.2s ease;
@@ -1125,6 +1170,13 @@
 
   .health-priority-image {
     height: 300px;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .health-priority-content {
+    max-width: 700px;
+    margin: 0 auto;
   }
 }
 
@@ -1138,7 +1190,20 @@
     height: 240px;
   }
 
+  .health-priority-content {
+    text-align: center;
+  }
+
+  .health-priority-content .eyebrow {
+    display: block;
+  }
+
+  .health-priority-point {
+    text-align: left;
+  }
+
   .health-final-cta {
+    width: calc(100% - 32px);
     margin-bottom: 45px;
     padding: 46px 22px;
     border-radius: 22px;
@@ -1147,6 +1212,46 @@
   .health-final-cta::before,
   .health-final-cta::after {
     font-size: 65px;
+  }
+}
+
+@media (max-width: 900px) {
+  .guides-nav-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dog-topics-heading {
+    margin: 36px auto 28px;
+    padding: 36px 24px 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .guides-nav-strip {
+    box-sizing: border-box;
+    width: calc(100% - 32px);
+    padding: 30px 20px;
+    border-radius: 24px;
+  }
+
+  .guides-nav-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dog-topics-heading {
+    margin: 30px auto 22px;
+    padding: 30px 18px 26px;
+    border-radius: 24px;
+  }
+
+  .health-priority {
+    width: calc(100% - 32px);
+    margin-top: 42px;
+    padding: 18px;
+  }
+
+  .health-final-cta {
+    margin-top: 28px;
   }
 }
 
@@ -3114,6 +3219,19 @@
 
     <script src="../../../js/main.js"></script>
     <script>
+      document
+        .querySelectorAll(".health-card, .warning-card")
+        .forEach((card, index) => {
+          const title = card.querySelector("h3")?.textContent.trim();
+          const image = document.createElement("img");
+          image.className = "health-card-photo";
+          image.src = `https://placedog.net/800/400?id=${index + 1}`;
+          image.alt = title ? `Dog health: ${title}` : "Dog health and wellness";
+          image.loading = "lazy";
+          image.decoding = "async";
+          card.prepend(image);
+        });
+
       function toggleFaq(btn) {
         const item = btn.parentElement;
         item.classList.toggle("active");
