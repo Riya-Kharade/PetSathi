@@ -3,76 +3,591 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore PetSathi's pet categories and discover guides for dogs, cats, birds, rabbits, and reptiles."
+    />
     <title>Explore Pet Categories | PetSathi</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="../../css/global.css" />
+    <link rel="stylesheet" href="../../css/home.css" />
     <link rel="stylesheet" href="../../css/inner.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
+
+    <style>
+      /* Hero refinements */
+      .pets-hero {
+        padding-block: 55px 65px;
+      }
+
+      .pets-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 7px 15px;
+        margin-bottom: 18px;
+        background: #eaf2e9;
+        color: var(--green);
+        border-radius: 999px;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+      }
+
+      .pets-hero h1 {
+        font-family: "Manrope", sans-serif;
+        font-size: clamp(2.5rem, 5vw, 4.2rem);
+        line-height: 1.12;
+      }
+
+      .pets-hero h1 em {
+        color: var(--green);
+        font-style: normal;
+      }
+
+      .pets-hero .hero-copy > p {
+        max-width: 540px;
+        color: var(--muted);
+      }
+
+      .pets-hero .hero-note {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .pets-hero .hero-note i {
+        color: var(--green);
+      }
+
+      .pets-hero .hero-visual {
+        min-height: 440px;
+      }
+
+      .pets-hero .hero-photo {
+        height: 390px;
+        border-radius: 45% 45% 24px 24px;
+      }
+
+      .pets-hero .hero-blob {
+        background: #e8f0e4;
+      }
+
+      .pets-hero .floating-card {
+        max-width: 230px;
+      }
+
+      /* Category section */
+      .pets-category-section {
+        padding-block: 30px 75px;
+      }
+
+      .pets-section-heading {
+        text-align: center;
+        max-width: 750px;
+        margin: 0 auto 30px;
+      }
+
+      .pets-section-heading .eyebrow {
+        margin-bottom: 10px;
+      }
+
+      .pets-section-heading h2 {
+        margin: 0 0 12px;
+        font-family: "Manrope", sans-serif;
+        font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+        color: var(--ink);
+      }
+
+      .pets-section-heading p {
+        color: var(--muted);
+        line-height: 1.7;
+        margin: 0;
+      }
+
+      /* Search and filter */
+      .pets-search-filter {
+        max-width: 1200px;
+        margin: 0 auto 30px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .pets-search {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        min-width: 230px;
+        gap: 10px;
+        padding: 5px 18px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        box-shadow: 0 3px 14px rgba(35, 75, 45, 0.04);
+        color: var(--muted);
+      }
+
+      .pets-search:focus-within {
+        border-color: var(--green);
+        box-shadow: 0 0 0 3px rgba(64, 130, 82, 0.1);
+      }
+
+      .pets-search i {
+        color: var(--green);
+      }
+
+      .pets-search input {
+        width: 100%;
+        min-width: 0;
+        border: none;
+        outline: none;
+        background: transparent;
+        padding: 12px 0;
+        color: var(--ink);
+        font-family: "DM Sans", sans-serif;
+        font-size: 0.92rem;
+      }
+
+      .pets-search input::placeholder {
+        color: #929c94;
+      }
+
+      .pets-filter-list {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .pets-filter-btn {
+        border: 1px solid #cce4d2;
+        background: #edf7f0;
+        color: var(--green);
+        padding: 10px 17px;
+        border-radius: 999px;
+        font: 600 0.84rem "DM Sans", sans-serif;
+        cursor: pointer;
+        transition: 0.2s ease;
+      }
+
+      .pets-filter-btn:hover,
+      .pets-filter-btn.active {
+        background: var(--green);
+        border-color: var(--green);
+        color: white;
+      }
+
+      /* Ensure filtered cards are hidden */
+      .pets-category-card[hidden] {
+        display: none !important;
+      }
+
+      /* Cards */
+      .pets-category-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .pets-category-card {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        overflow: hidden;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        transition:
+          transform 0.28s ease,
+          box-shadow 0.28s ease,
+          border-color 0.28s ease;
+      }
+
+      .pets-category-card:hover {
+        transform: translateY(-6px);
+        border-color: #cbd9ce;
+        box-shadow: var(--shadow);
+      }
+
+      .pets-card-image {
+        position: relative;
+        overflow: hidden;
+        height: 220px;
+        background: #edf3eb;
+      }
+
+      .pets-card-image img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.35s ease;
+      }
+
+      .pets-category-card:hover .pets-card-image img {
+        transform: scale(1.05);
+      }
+
+      .pets-card-emoji {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        display: grid;
+        place-items: center;
+        width: 48px;
+        height: 48px;
+        background: white;
+        border-radius: 15px;
+        font-size: 1.55rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .pets-card-content {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding: 23px;
+      }
+
+      .pets-card-content h3 {
+        margin: 0 0 10px;
+        font-family: "Manrope", sans-serif;
+        font-size: 1.25rem;
+        color: var(--ink);
+      }
+
+      .pets-card-content p {
+        margin: 0 0 18px;
+        font-size: 0.9rem;
+        line-height: 1.7;
+        color: var(--muted);
+        flex: 1;
+      }
+
+      .pets-card-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        align-self: flex-start;
+        color: var(--green);
+        font-size: 0.88rem;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .pets-card-link:hover {
+        gap: 11px;
+      }
+
+      .pets-card-link,
+      .pets-card-link:hover {
+        transition: gap 0.2s ease;
+      }
+
+      .pets-empty-state {
+        display: none;
+        text-align: center;
+        padding: 35px 20px;
+        color: var(--muted);
+        background: #f7faf6;
+        border: 1px dashed var(--line);
+        border-radius: 18px;
+      }
+
+      .pets-empty-state.visible {
+        display: block;
+      }
+
+      .pets-empty-state span {
+        display: block;
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      /* Responsive */
+      @media (max-width: 960px) {
+        .pets-category-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .pets-search-filter {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .pets-filter-list {
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .pets-hero {
+          grid-template-columns: 1fr;
+          padding-top: 35px;
+        }
+
+        .pets-hero h1 {
+          font-size: 2.7rem;
+        }
+
+        .pets-hero .hero-visual {
+          min-height: 340px;
+        }
+
+        .pets-hero .hero-photo {
+          height: 300px;
+        }
+
+        .pets-hero .card-top {
+          top: 20px;
+        }
+
+        .pets-hero .card-bottom {
+          bottom: 15px;
+        }
+
+        .pets-category-section {
+          padding-bottom: 45px;
+        }
+
+        .pets-category-grid {
+          grid-template-columns: 1fr;
+          gap: 18px;
+        }
+
+        .pets-card-image {
+          height: 210px;
+        }
+
+        .pets-filter-list {
+          gap: 7px;
+        }
+
+        .pets-filter-btn {
+          padding: 9px 13px;
+          font-size: 0.8rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .pets-category-card,
+        .pets-card-image img,
+        .pets-card-link {
+          transition: none;
+        }
+      }
+    </style>
   </head>
+
   <body>
-  <div id="header"></div>
+    <div id="header"></div>
+
     <main>
-      <section class="page-hero">
-        <div class="eyebrow">PetSathi • MEET YOUR LITTLE FRIEND</div>
-        <div class="page-emoji">🐾</div>
-        <h1>Explore Pet Categories</h1>
-        <p>
-          Choose a pet category to explore dedicated information about breeds,
-          nutrition, care, and everyday needs.
-        </p>
-        <a class="button" href="../../../index.html">Back to Home ↗</a>
+      <!-- Hero -->
+      <section class="hero section-wrap pets-hero">
+        <div class="hero-copy">
+          <div class="pets-badge">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+            PetSathi • Find Your Companion
+          </div>
+
+          <h1>Every Pet Has a Story. <em>Find Yours.</em></h1>
+
+          <p>
+            From loyal dogs and curious cats to colourful birds and tiny
+            companions, discover helpful guides to understand, care for, and build
+            a happier life with your pet.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button" href="#pet-categories">Explore Pet Categories ↗</a>
+            <a class="button button-outline" href="../../../index.html">Back to Home</a>
+          </div>
+
+          <div class="hero-note">
+            <i class="fa-solid fa-heart" aria-hidden="true"></i>
+            A little knowledge makes every pet's life better.
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-blob"></div>
+
+          <img
+            src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1000&q=85"
+            alt="Pets enjoying companionship"
+            class="hero-photo"
+            loading="eager"
+          />
+
+          <div class="floating-card card-top">
+            🐾
+            <span>
+              <b>Every Pet Matters</b>
+              <small>Care, love & companionship</small>
+            </span>
+          </div>
+
+          <div class="floating-card card-bottom">
+            ✨
+            <span>
+              <b>Explore & Learn</b>
+              <small>Guides for every little friend</small>
+            </span>
+          </div>
+        </div>
       </section>
-      <section class="section-wrap inner-grid">
-        <article class="info-card">
-          <div class="info-emoji">Dogs</div>
-          <h2>🐕</h2>
+
+      <!-- Pet Categories -->
+      <section class="section-wrap pets-category-section" id="pet-categories">
+        <div class="pets-section-heading">
+          <div class="eyebrow">Explore • Discover • Care</div>
+          <h2>Meet Your Favourite Companions</h2>
           <p>
-            Explore dog breeds, nutrition, exercise, grooming, and walking
-            information. <a href="dogs/index.html">Explore dogs →</a>
+            Choose a category to explore breeds, nutrition, health, behaviour,
+            grooming, and everything your companion needs.
           </p>
-        </article>
-        <article class="info-card">
-          <div class="info-emoji">Cats</div>
-          <h2>🐈</h2>
-          <p>
-            Learn about cat breeds, food, indoor activities, grooming, and care.
-            <a href="cats/index.html">Explore cats →</a>
-          </p>
-        </article>
-        <article class="info-card">
-          <div class="info-emoji">Birds</div>
-          <h2>🐦</h2>
-          <p>
-            Discover bird species, habitat, nutrition, and daily care.
-            <a href="birds/index.html">Explore birds →</a>
-          </p>
-        </article>
-        <article class="info-card">
-          <div class="info-emoji">Rabbits</div>
-          <h2>🐇</h2>
-          <p>
-            Find information about rabbit breeds, food, exercise, and grooming.
-            <a href="rabbits/index.html">Explore rabbits →</a>
-          </p>
-        </article>
-        <article class="info-card">
-          <div class="info-emoji">Reptiles</div>
-          <h2>🦎</h2>
-          <p>
-            Meet popular pet reptiles and learn about their habitats, lighting,
-            feeding, and responsible care.
-            <a href="other/reptiles.html">Explore reptiles →</a>
-          </p>
-        </article>
+        </div>
+
+        <!-- Search and category filters -->
+        <div class="pets-search-filter">
+          <label class="pets-search" for="pet-category-search">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            <input
+              type="search"
+              id="pet-category-search"
+              placeholder="Search pet categories..."
+              autocomplete="off"
+            />
+          </label>
+
+          <div class="pets-filter-list" role="group" aria-label="Filter pet categories">
+            <button class="pets-filter-btn active" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="pets-filter-btn" type="button" data-filter="dogs" aria-pressed="false">Dogs</button>
+            <button class="pets-filter-btn" type="button" data-filter="cats" aria-pressed="false">Cats</button>
+            <button class="pets-filter-btn" type="button" data-filter="birds" aria-pressed="false">Birds</button>
+            <button class="pets-filter-btn" type="button" data-filter="rabbits" aria-pressed="false">Rabbits</button>
+            <button class="pets-filter-btn" type="button" data-filter="reptiles" aria-pressed="false">Reptiles</button>
+          </div>
+        </div>
+
+        <div class="pets-category-grid" id="pets-category-grid">
+          <article class="pets-category-card" data-category="dogs">
+            <div class="pets-card-image">
+              <img
+                src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=800&q=85"
+                alt="Dog enjoying the outdoors"
+                loading="lazy"
+              />
+              <span class="pets-card-emoji" aria-hidden="true">🐕</span>
+            </div>
+            <div class="pets-card-content">
+              <h3>Dogs</h3>
+              <p>
+                Explore dog breeds, nutrition, exercise, grooming, and walking
+                information.
+              </p>
+              <a class="pets-card-link" href="dogs/index.html">Explore dogs <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="pets-category-card" data-category="cats">
+            <div class="pets-card-image">
+              <img
+                src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=85"
+                alt="Cat resting comfortably"
+                loading="lazy"
+              />
+              <span class="pets-card-emoji" aria-hidden="true">🐈</span>
+            </div>
+            <div class="pets-card-content">
+              <h3>Cats</h3>
+              <p>
+                Learn about cat breeds, food, indoor activities, grooming, and
+                care.
+              </p>
+              <a class="pets-card-link" href="cats/index.html">Explore cats <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="pets-category-card" data-category="birds">
+            <div class="pets-card-image">
+              <img
+                src="https://images.unsplash.com/photo-1657648724320-7df480a82438?auto=format&fit=crop&w=800&q=85"
+                alt="Colourful bird perched on a branch"
+                loading="lazy"
+              />
+              <span class="pets-card-emoji" aria-hidden="true">🐦</span>
+            </div>
+            <div class="pets-card-content">
+              <h3>Birds</h3>
+              <p>
+                Discover bird species, habitat, nutrition, and daily care.
+              </p>
+              <a class="pets-card-link" href="birds/index.html">Explore birds <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="pets-category-card" data-category="rabbits">
+            <div class="pets-card-image">
+              <img
+                src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&fit=crop&w=800&q=85"
+                alt="Rabbit sitting in a grassy area"
+                loading="lazy"
+              />
+              <span class="pets-card-emoji" aria-hidden="true">🐇</span>
+            </div>
+            <div class="pets-card-content">
+              <h3>Rabbits</h3>
+              <p>
+                Find information about rabbit breeds, food, exercise, and
+                grooming.
+              </p>
+              <a class="pets-card-link" href="rabbits/index.html">Explore rabbits <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="pets-category-card" data-category="reptiles">
+            <div class="pets-card-image">
+              <img
+                src="https://images.unsplash.com/photo-1728672975980-8f2988216b8f?auto=format&fit=crop&w=800&q=85"
+                alt="Green reptile resting on a branch"
+                loading="lazy"
+              />
+              <span class="pets-card-emoji" aria-hidden="true">🦎</span>
+            </div>
+            <div class="pets-card-content">
+              <h3>Reptiles</h3>
+              <p>
+                Meet popular pet reptiles and learn about their habitats, lighting,
+                feeding, and responsible care.
+              </p>
+              <a class="pets-card-link" href="other/reptiles.html">Explore reptiles <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+        </div>
+
+        <div class="pets-empty-state" id="pets-empty-state" aria-live="polite">
+          <span>🐾</span>
+          <strong>No pet categories found.</strong>
+          <p>Try a different search or select another filter.</p>
+        </div>
       </section>
+
+      <!-- Existing CTA preserved -->
       <section class="inner-cta">
         <h2>More happy moments are on the way.</h2>
         <p>
@@ -81,7 +596,57 @@
         </p>
       </section>
     </main>
-  <div id="footer"></div>
+
+    <div id="footer"></div>
+
     <script src="../../js/main.js"></script>
+
+    <script>
+      (() => {
+        const searchInput = document.getElementById("pet-category-search");
+        const filterButtons = document.querySelectorAll(".pets-filter-btn");
+        const cards = document.querySelectorAll(".pets-category-card");
+        const emptyState = document.getElementById("pets-empty-state");
+
+        let activeFilter = "all";
+
+        function filterPetCategories() {
+          const searchTerm = searchInput.value.trim().toLowerCase();
+          let visibleCount = 0;
+
+          cards.forEach((card) => {
+            const category = card.dataset.category;
+            const text = card.textContent.toLowerCase();
+
+            const matchesFilter =
+              activeFilter === "all" || category === activeFilter;
+            const matchesSearch = text.includes(searchTerm);
+            const isVisible = matchesFilter && matchesSearch;
+
+            card.hidden = !isVisible;
+
+            if (isVisible) visibleCount++;
+          });
+
+          emptyState.classList.toggle("visible", visibleCount === 0);
+        }
+
+        searchInput.addEventListener("input", filterPetCategories);
+
+        filterButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            activeFilter = button.dataset.filter;
+
+            filterButtons.forEach((filterButton) => {
+              const isActive = filterButton === button;
+              filterButton.classList.toggle("active", isActive);
+              filterButton.setAttribute("aria-pressed", String(isActive));
+            });
+
+            filterPetCategories();
+          });
+        });
+      })();
+    </script>
   </body>
 </html>
