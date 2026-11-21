@@ -28,29 +28,6 @@
     .fa-solid { font-weight: 900 !important; }
     .fa-regular { font-weight: 400 !important; }
 
-    /* Breadcrumbs */
-    .breadcrumb-nav {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.85rem;
-      color: #64736a;
-      margin-bottom: 24px;
-      flex-wrap: wrap;
-    }
-    .breadcrumb-nav a {
-      color: #246b43;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.2s;
-    }
-    .breadcrumb-nav a:hover {
-      color: #16442a;
-      text-decoration: underline;
-    }
-    .breadcrumb-separator { color: #b0c4b5; }
-    .breadcrumb-current { color: #263b30; font-weight: 700; }
-
     /* Main Hero Section matching cats/index.html */
     .hero {
       display: grid;
@@ -59,6 +36,11 @@
       gap: 48px;
       padding-top: 24px;
       padding-bottom: 60px;
+    }
+    #cat-care-hero {
+      width: 100%;
+      box-sizing: border-box;
+      padding-inline: max(24px, calc((100% - 1160px) / 2));
     }
     .cat-badge-strip {
       display: inline-flex;
@@ -289,6 +271,15 @@
       object-fit: cover;
       transition: transform 0.35s ease;
     }
+    #card-litter-box .cat-care-media img,
+    #card-grooming-coat .cat-care-media img,
+    #card-nail-paw .cat-care-media img {
+      object-position: center 35%;
+    }
+    #card-dental-care .cat-care-media img,
+    #card-senior-care .cat-care-media img {
+      object-position: center 15%;
+    }
     .cat-care-card:hover .cat-care-media img {
       transform: scale(1.05);
     }
@@ -371,18 +362,22 @@
     /* Redesigned CTA Banner Matching Cat Index */
     .cat-cta-band {
       position: relative;
-      background: #fafcf7;
-      border: 1px solid #dcebc9;
+      background: #fcecef;
+      border: 1px solid #e6d6c6;
       border-radius: 32px;
-      padding: 48px 52px;
+      padding: 32px 36px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 36px;
-      margin: 50px auto 75px;
+      margin: 32px auto 75px;
       box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
       overflow: hidden;
     }
+    main .cat-cta-band { background-color: #fcecef !important; }
+    .cat-cta-band .corner-wave { display: none; }
+    main > section .cat-cta-band h2 { text-align: left; }
+    main > section .cat-cta-band .eyebrow { margin-left: 0; }
     .cat-cta-band .eyebrow {
       color: #1e6f43;
       font-weight: 700;
@@ -482,17 +477,6 @@
     <!-- Main Hero Section (Requirement 1 - Matching Cat Index Layout) -->
     <section class="hero section-wrap" id="cat-care-hero">
       <div class="hero-copy">
-        <!-- Breadcrumb Nav -->
-        <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-          <a href="../../../../index.html">Home</a>
-          <span class="breadcrumb-separator">/</span>
-          <a href="../index.html">Explore Pets</a>
-          <span class="breadcrumb-separator">/</span>
-          <a href="index.html">Cats</a>
-          <span class="breadcrumb-separator">/</span>
-          <span class="breadcrumb-current">Cat Care &amp; Health</span>
-        </nav>
-
         <div class="cat-badge-strip">🐾 PetSathi • Feline Care Guide</div>
         <h1>Complete Guide to <em>Cat Care</em></h1>
         <p>
@@ -780,7 +764,7 @@
               <i class="fa-solid fa-stethoscope" aria-hidden="true"></i>
               Preventative
             </span>
-            <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=700&q=85" alt="Veterinarian examining cat gently" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1725409796872-8b41e8eca929?auto=format&fit=crop&w=700&q=85" alt="Veterinarian examining cat gently" loading="lazy">
           </div>
           <div class="cat-care-body">
             <h3>Veterinary Checkups</h3>
@@ -838,7 +822,7 @@
               <i class="fa-solid fa-baby" aria-hidden="true"></i>
               0–12 Months
             </span>
-            <img src="https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=700&q=85" alt="Curious playful young kitten exploring" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1695042542773-643329874f6e?auto=format&fit=crop&w=700&q=85" alt="Curious playful young kitten exploring" loading="lazy">
           </div>
           <div class="cat-care-body">
             <h3>Kitten Care</h3>
