@@ -1,0 +1,101 @@
+.walker-page .walker-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; padding-block: 55px 75px; min-height: 560px; }
+.walker-page h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin: 16px 0 20px; }
+.walker-page .hero-copy > p { max-width: 550px; line-height: 1.85; font-size: 1.05rem; }
+.walker-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; background: var(--soft); color: var(--dark); border-radius: 999px; font-size: .85rem; font-weight: 700; }
+.walker-actions { display: flex; gap: 13px; flex-wrap: wrap; margin-top: 27px; }
+.walker-visual { min-height: 430px; position: relative; display: grid; place-items: center; }
+.walker-blob { position: absolute; width: 85%; height: 88%; background: var(--soft); border-radius: 48% 52% 42% 58%; }
+.walker-photo { position: relative; width: 78%; height: 370px; object-fit: cover; border-radius: 48% 48% 24px 24px; box-shadow: var(--shadow); }
+.walker-directory { padding-block: 0 60px; }
+.walker-section-heading { text-align: center; background: var(--soft); padding: 35px 20px; border-radius: 24px; margin-bottom: 24px; }
+.walker-section-heading h2 { margin: 0 0 12px; font-size: clamp(1.8rem, 3vw, 2.4rem); }
+.walker-section-heading p { margin: 0; }
+.walker-filters { display: grid; grid-template-columns: minmax(0, 1fr) 180px auto; gap: 16px; align-items: end; padding: 20px; border: 1px solid var(--line); border-radius: 18px; background: white; }
+.walker-filters label { display: block; margin-bottom: 6px; font-weight: 700; font-size: .9rem; }
+.walker-search > div { display: flex; align-items: center; gap: 10px; border: 1px solid var(--line); border-radius: 9px; padding-left: 12px; }
+.walker-page i { color: var(--green); }
+.walker-page .fa-solid, .walker-page .fa-solid::before { font-family: "Font Awesome 6 Free" !important; font-weight: 900 !important; font-style: normal; }
+.walker-filters input, .walker-filters select { width: 100%; min-height: 44px; padding: 10px; border: 1px solid var(--line); border-radius: 9px; background: white; color: var(--dark); font: inherit; }
+.walker-search input { border: 0; min-width: 0; background: transparent; }
+.walker-filters button { min-height: 46px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font: inherit; }
+.walker-page :focus-visible { outline: 3px solid var(--green); outline-offset: 4px; }
+#walker-result-count { font-size: .9rem; color: var(--dark); }
+.walker-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.walker-card { background: white; border: 1px solid var(--line); border-radius: 20px; padding: 24px; min-height: 264px; display: flex; flex-direction: column; align-items: flex-start; transition: transform .2s, box-shadow .2s; }
+.walker-card:hover, .walker-card:focus-within { transform: translateY(-4px); box-shadow: var(--shadow); }
+.walker-icon { display: grid; place-items: center; width: 48px; height: 48px; background: var(--soft); border-radius: 14px; font-size: 1.25rem; }
+.walker-card h3 { font-size: 1.25rem; margin: 18px 0 10px; }
+.walker-card p { font-size: .95rem; margin: 0 0 20px; flex-grow: 1; }
+.walker-card a { font-weight: 700; color: var(--green); text-decoration: underline; text-underline-offset: 4px; min-height: 44px; display: inline-flex; align-items: center; }
+.walker-card[hidden], #walker-empty[hidden] { display: none; }
+#walker-empty { background: white; border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+.walker-page .booking-section { padding-top: 0; }
+@media (max-width: 900px) {
+  .walker-page .walker-hero { gap: 20px; }
+  .walker-filters { grid-template-columns: minmax(0, 1fr) 160px; }
+  .walker-filters button { grid-column: 1 / -1; justify-self: start; }
+}
+@media (max-width: 700px) {
+  .walker-page .walker-hero { grid-template-columns: 1fr; padding-block: 40px; }
+  .walker-visual { min-height: 300px; }
+  .walker-photo { height: 280px; max-width: 400px; }
+  .walker-grid { grid-template-columns: 1fr; }
+  .walker-filters { grid-template-columns: 1fr; }
+  .walker-filters button { justify-content: center; width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) { .walker-card { transition: none; } .walker-card:hover, .walker-card:focus-within { transform: none; } }
+
+/* global.css forces white section backgrounds; restore the Cat Index treatment here only. */
+.walker-page .walker-section-heading {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 45px auto 35px;
+  padding: 44px 35px 38px;
+  border: 1px solid #dcebc9;
+  border-radius: 35px;
+  background-color: #fafcf7 !important;
+  box-shadow: 0 4px 24px rgba(35, 75, 45, .04);
+  text-align: center;
+}
+.walker-page .walker-section-heading::before,
+.walker-page .walker-section-heading::after {
+  content: "";
+  position: absolute;
+  width: 160px;
+  height: 85px;
+  background: #edf6e6;
+  pointer-events: none;
+}
+.walker-page .walker-section-heading::before { top: 0; left: 0; border-radius: 0 0 100% 0; }
+.walker-page .walker-section-heading::after { bottom: 0; right: 0; border-radius: 100% 0 0 0; }
+.walker-page .walker-section-heading > * { position: relative; z-index: 1; }
+.walker-page .walker-section-heading h2 {
+  color: #263b30;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: clamp(24px, 3.2vw, 36px);
+  line-height: 1.2;
+  margin: 0 0 12px;
+}
+.walker-page .walker-section-heading p { color: var(--dark); margin: 0 auto; max-width: 760px; }
+.walker-page .walker-section-heading .eyebrow { justify-content: center; color: var(--green); }
+.walker-page .booking-badge,
+.walker-page .booking-badge.is-progress,
+.walker-page .booking-badge.is-complete { background: #eaf2e9; color: var(--dark); }
+.walker-page .inner-cta {
+  width: min(1160px, calc(100% - 48px));
+  margin: 0 auto 75px;
+  padding: 38px 44px;
+  border: 1px solid #cbd9ce;
+  border-radius: 24px;
+  background-color: var(--soft) !important;
+  background-image: none !important;
+  text-align: left;
+}
+.walker-page .inner-cta h2 { color: var(--dark); margin: 0 0 12px; }
+.walker-page .inner-cta p { color: var(--ink); max-width: 760px; margin: 0; }
+.walker-page .button:hover i { color: inherit; }
+@media (max-width: 700px) {
+  .walker-page .walker-section-heading { padding: 35px 16px 30px; margin: 25px 0; border-radius: 24px; }
+  .walker-page .inner-cta { width: calc(100% - 36px); padding: 28px 24px; margin-bottom: 45px; }
+}

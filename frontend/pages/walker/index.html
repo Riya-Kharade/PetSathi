@@ -2,15 +2,56 @@
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Find a walking companion | PetSathi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../css/global.css"><link rel="stylesheet" href="../../css/inner.css">  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="../../css/walker-directory.css">
 </head><body>
   <div id="header"></div>
-<main><section class="page-hero"><div class="eyebrow">PetSathi • WALKER DIRECTORY</div><div class="page-emoji">🚶</div><h1>Find a walking companion</h1><p>Explore the planned walker directory. Walker profiles shown in future versions will include supported pet types, experience, service areas, pricing, and availability.</p><a class="button" href="../../../index.html">Back to Home ↗</a></section>
-<section class="section-wrap inner-grid"><article class="info-card"><div class="info-emoji">Dog Walkers</div><h2>🐕</h2><p>Discover walking companions for dogs. <a href='dogs.html'>Explore dog walkers →</a></p></article>
-<article class="info-card"><div class="info-emoji">Cat Caregivers</div><h2>🐈</h2><p>Explore care support for cats. <a href='cats.html'>Explore cat caregivers →</a></p></article>
-<article class="info-card"><div class="info-emoji">Bird Caregivers</div><h2>🐦</h2><p>Explore care support for companion birds. <a href='birds.html'>Explore bird caregivers →</a></p></article>
-<article class="info-card"><div class="info-emoji">Rabbit Caregivers</div><h2>🐇</h2><p>Explore care support for rabbits. <a href='rabbits.html'>Explore rabbit caregivers →</a></p></article></section>
+<main class="walker-page">
+  <section class="walker-hero section-wrap" aria-labelledby="walker-title">
+    <div class="hero-copy">
+      <div class="walker-badge"><i class="fa-solid fa-paw" aria-hidden="true"></i> PetSathi · Walker directory</div>
+      <h1 id="walker-title">Find a walking companion</h1>
+      <p>Explore the planned walker directory. Walker profiles shown in future versions will include supported pet types, experience, service areas, pricing, and availability.</p>
+      <div class="walker-actions">
+        <a class="button" href="#walker-directory">Explore caregivers</a>
+        <a class="button button-outline" href="../../../index.html">Back to Home</a>
+      </div>
+    </div>
+    <div class="walker-visual">
+      <div class="walker-blob" aria-hidden="true"></div>
+      <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"
+        alt="Golden retriever outdoors" width="500" height="370" class="walker-photo">
+    </div>
+  </section>
+  <section class="section-wrap walker-directory" id="walker-directory" aria-labelledby="caregiver-title">
+    <div class="walker-section-heading">
+      <h2 id="caregiver-title">Care for every companion</h2>
+      <p>Explore walking and care support by pet type.</p>
+    </div>
+    <form class="walker-filters" role="search" aria-label="Search caregiver categories">
+      <div class="walker-search"><label for="walker-search">Search categories</label>
+        <div><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input id="walker-search" type="search" placeholder="Try dogs or caregivers" autocomplete="off"></div>
+      </div>
+      <div><label for="walker-pet">Pet type</label><select id="walker-pet">
+        <option value="all">All pets</option><option value="dogs">Dogs</option><option value="cats">Cats</option>
+        <option value="birds">Birds</option><option value="rabbits">Rabbits</option>
+      </select></div>
+      <button type="reset" class="button button-outline"><i class="fa-solid fa-filter" aria-hidden="true"></i> Reset filters</button>
+    </form>
+    <p id="walker-result-count" role="status" aria-live="polite">4 caregiver categories</p>
+    <div class="walker-grid">
+      <article class="walker-card" data-pet="dogs"><span class="walker-icon"><i class="fa-solid fa-dog" aria-hidden="true"></i></span>
+        <h3>Dog Walkers</h3><p>Discover walking companions for dogs.</p><a href="dogs.html">Explore dog walkers</a></article>
+      <article class="walker-card" data-pet="cats"><span class="walker-icon"><i class="fa-solid fa-cat" aria-hidden="true"></i></span>
+        <h3>Cat Caregivers</h3><p>Explore care support for cats.</p><a href="cats.html">Explore cat caregivers</a></article>
+      <article class="walker-card" data-pet="birds"><span class="walker-icon"><i class="fa-solid fa-dove" aria-hidden="true"></i></span>
+        <h3>Bird Caregivers</h3><p>Explore care support for companion birds.</p><a href="birds.html">Explore bird caregivers</a></article>
+      <article class="walker-card" data-pet="rabbits"><span class="walker-icon"><i class="fa-solid fa-paw" aria-hidden="true"></i></span>
+        <h3>Rabbit Caregivers</h3><p>Explore care support for rabbits.</p><a href="rabbits.html">Explore rabbit caregivers</a></article>
+    </div>
+    <p id="walker-empty" hidden>No matching categories. Change your search or reset the filters.</p>
+  </section>
 <section class="section-wrap booking-section" id="bookings">
-  <div class="section-heading">
+  <div class="section-heading walker-section-heading">
     <div>
       <div class="eyebrow">PetSathi &bull; Scheduled walks</div>
       <h2>My Bookings</h2>
@@ -63,4 +104,4 @@
   </div>
 </section>
 <section class="inner-cta"><h2>More happy moments are on the way.</h2><p>PetSathi is growing one feature at a time. Some services are planned for future development.</p></section></main>
-  <div id="footer"></div><script src="../../js/main.js"></script></body></html>
+  <div id="footer"></div><script src="../../js/main.js"></script><script src="../../js/walker-directory.js"></script></body></html>
