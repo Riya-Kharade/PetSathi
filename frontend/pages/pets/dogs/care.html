@@ -13,273 +13,165 @@
   <link rel="stylesheet" href="../../../css/inner.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <style>
-    .care-page {
-  --care-green: #286849;
-  --care-dark: #1d5039;
-  --care-soft: #eaf2e9;
-  --care-copy: #64736a;
-  color: var(--ink);
-}
+    @font-face {
+      font-family: "Font Awesome 6 Free";
+      font-style: normal;
+      font-weight: 900;
+      font-display: block;
+      src:
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.woff2")
+          format("woff2"),
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.ttf")
+          format("truetype");
+    }
 
-
-
-
-    .care-page .fa-solid,
-    .care-page .fa-solid::before {
+    body [class*="fa-"],
+    body [class*="fa-"]::before {
       font-family: "Font Awesome 6 Free" !important;
       font-weight: 900 !important;
       font-style: normal !important;
+      font-variant: normal !important;
+      text-rendering: auto !important;
       line-height: 1 !important;
     }
 
-    .care-page .care-hero {
-      padding: 0;
-      background: linear-gradient(135deg, #f0f5ed 0%, #fcfaf5 70%) !important;
+    .fa-regular {
+      font-weight: 400 !important;
     }
- .care-hero > .section-wrap {
-  width: 100%;
-  max-width: none;
-  margin: 0;
-  padding-inline: clamp(16px, 2vw, 30px);
-  box-sizing: border-box;
-}
 
-@media (max-width: 640px) {
-  .care-hero > .section-wrap {
-    width: calc(100% - 32px);
-  }
-}
-/* Desktop hero layout */
-.care-hero-layout {
-  display: grid;
-  min-height: 420px;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  align-items: center;
-  gap: 40px;
-  padding-block: 8px 24px;
-}
-    .care-eyebrow {
+    .fa-brands {
+      font-family: "Font Awesome 6 Brands" !important;
+      font-weight: 400 !important;
+    }
+
+    /* Hero Badge Strip */
+    .dog-badge-strip,
+    .cat-badge-strip {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 12px;
-      padding: 6px 13px;
+      padding: 6px 14px;
+      background: #eaf2e9;
+      color: var(--green);
       border-radius: 999px;
-      background: var(--care-soft);
-      color: var(--care-green);
+      font-family: "DM Sans", sans-serif;
       font-size: 0.78rem;
       font-weight: 700;
-      letter-spacing: 0.04em;
+      letter-spacing: 1px;
       text-transform: uppercase;
+      margin-bottom: 16px;
     }
 
-    .care-hero h1 {
-  max-width: 700px;
-  margin: 0 0 18px;
-  font-size: clamp(2.2rem, 3vw, 3rem);
-  line-height: 1.12;
-  letter-spacing: -1.5px;
-}
-
-    .care-hero h1 em {
-      color: var(--care-green);
-      font-style: normal;
-    }
-
-    .care-hero-copy > p {
-      max-width: 550px;
-      margin: 0;
-      color: #4f6155;
-      font-size: 1.05rem;
-      line-height: 1.85;
-    }
-
-    .care-hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 27px;
-    }
-
-    .care-hero-actions .button {
-      min-height: 46px;
-    }
-
-    .care-hero-visual {
-      position: relative;
-      display: grid;
-      min-height: 390px;
-      place-items: center;
-    }
-
-    .care-hero-blob {
-      position: absolute;
-      width: 90%;
-      height: 90%;
-      border-radius: 46% 54% 48% 52% / 54% 46% 54% 46%;
-      background: #e9f0e6;
-    }
-
-    .care-hero-image {
-  position: relative;
-  width: 86%;
-  max-width: 390px;
-  height: 360px;
-  border: 4px solid #fff;
-  border-radius: 36px;
-  object-fit: cover;
-  box-shadow: var(--shadow);
-}
-
-    .care-floating-card {
-      position: absolute;
-      z-index: 2;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 16px;
-      border: 1px solid var(--line);
-      border-radius: 15px;
-      background: #fff;
-      box-shadow: var(--shadow);
-      color: var(--care-green);
-      font-size: 1.2rem;
-    }
-
-    .care-floating-card span {
-      display: grid;
-    }
-
-    .care-floating-card b {
-      color: var(--ink);
-      font-size: 0.82rem;
-    }
-
-    .care-floating-card small {
-      color: var(--muted);
-      font-size: 0.7rem;
-    }
-
-    .care-floating-card-top {
-      top: 24px;
-      right: -12px;
-    }
-
-    .care-floating-card-bottom {
-      bottom: 18px;
-      left: -12px;
-    }
-
-    .care-tools {
-      padding: 28px 0;
-      background: #fff;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .care-tools-inner {
-      display: grid;
-      grid-template-columns: minmax(230px, 0.8fr) minmax(0, 1.4fr);
-      align-items: center;
-      gap: 20px 32px;
-    }
-
-    .care-search-label {
-      display: block;
-      margin-bottom: 7px;
-      font-size: 0.84rem;
+    .hero-subtitle {
+      font-family: "DM Sans", "Manrope", sans-serif;
+      font-size: 1.18rem;
       font-weight: 700;
+      color: var(--green);
+      margin: 0 0 14px;
+      line-height: 1.4;
     }
 
-    .care-search-wrap {
+    .hero-actions .button-outline {
+      background: transparent;
+      color: var(--green);
+      border-color: var(--green);
+    }
+
+    .hero-actions .button-outline:hover {
+      background: var(--green);
+      color: white;
+    }
+
+    /* Quick Navigation Strip matching Cat Index */
+    .guides-nav-strip {
       position: relative;
-    }
-
-    .care-search-wrap i {
-      position: absolute;
-      top: 50%;
-      left: 15px;
-      color: var(--care-green);
-      transform: translateY(-50%);
-    }
-
-    .care-search {
-      width: 100%;
-      min-height: 46px;
-      padding: 10px 14px 10px 42px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: #fcfaf5;
-      color: var(--ink);
-      font: inherit;
-    }
-
-    .care-search:focus-visible,
-    .care-filter:focus-visible,
-    .care-quick-link:focus-visible {
-      outline: 3px solid rgba(40, 104, 73, 0.25);
-      outline-offset: 2px;
-    }
-
-    .care-filter-label {
-      margin: 0 0 8px;
-      font-size: 0.84rem;
-      font-weight: 700;
-    }
-
-    .care-filter-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .care-filter {
-      min-height: 36px;
-      padding: 7px 13px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: #fff;
-      color: var(--care-copy);
-      font: inherit;
-      font-size: 0.82rem;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    .care-filter:hover,
-    .care-filter[aria-pressed="true"] {
-      border-color: var(--care-green);
-      background: var(--care-green);
-      color: #fff;
-    }
-
-    .care-results {
-      grid-column: 1 / -1;
-      margin: -6px 0 0;
-      color: var(--muted);
-      font-size: 0.82rem;
-    }
-
-    .care-quick-nav {
-      position: relative;
-      width: calc(100% - 40px);
-      max-width: 1200px;
+      background: #ffffff;
       margin: 40px auto;
-      padding: 42px 36px 38px;
-      overflow: hidden;
+      max-width: 1200px;
+      width: calc(100% - 40px);
       border: 1px solid #dceade;
       border-radius: 32px;
-      background: #fff;
+      padding: 42px 36px 38px;
       box-shadow: 0 4px 24px rgba(35, 80, 50, 0.04);
+      overflow: hidden;
     }
 
-    .care-quick-header {
+    .quick-nav-decor {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+      color: #cde4d3;
+      opacity: 0.55;
+    }
+
+    .decor-top-left {
+      top: -8px;
+      left: -8px;
+      width: 130px;
+      height: 130px;
+      background: radial-gradient(
+        circle at 10% 10%,
+        #eaf5ed 0%,
+        rgba(234, 245, 237, 0) 70%
+      );
+      border-radius: 0 0 100% 0;
+    }
+
+    .decor-bottom-right {
+      bottom: -8px;
+      right: -8px;
+      width: 130px;
+      height: 130px;
+      background: radial-gradient(
+        circle at 90% 90%,
+        #eaf5ed 0%,
+        rgba(234, 245, 237, 0) 70%
+      );
+      border-radius: 100% 0 0 0;
+    }
+
+    .decor-paw {
+      position: absolute;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .decor-paw-1 {
+      top: 14px;
+      left: 28px;
+      font-size: 28px;
+      transform: rotate(-15deg);
+    }
+
+    .decor-paw-2 {
+      top: 38px;
+      left: 12px;
+      font-size: 19px;
+      transform: rotate(20deg);
+    }
+
+    .decor-paw-3 {
+      bottom: 36px;
+      right: 14px;
+      font-size: 19px;
+      transform: rotate(-25deg);
+    }
+
+    .decor-paw-4 {
+      bottom: 14px;
+      right: 28px;
+      font-size: 28px;
+      transform: rotate(15deg);
+    }
+
+    .quick-nav-header {
       position: relative;
       z-index: 1;
-      margin-bottom: 30px;
       text-align: center;
+      margin-bottom: 30px;
     }
 
-    .care-quick-eyebrow {
+    .quick-nav-eyebrow-wrap {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -287,213 +179,280 @@
       margin-bottom: 14px;
     }
 
-    .care-quick-line {
-      width: 110px;
+    .quick-nav-line {
       height: 1px;
+      width: 110px;
       background: #d6ead9;
     }
 
-    .care-quick-badge {
+    .quick-nav-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       padding: 6px 16px;
-      border: 1px solid #b7deb8;
-      border-radius: 999px;
       background: #f4faf5;
-      box-shadow: 0 1px 4px rgba(35, 100, 55, 0.04);
+      border: 1px solid #b7deb8;
+      border-radius: 9999px;
       color: #1e6f43;
+      font-family: "DM Sans", "Manrope", sans-serif !important;
       font-size: 0.74rem;
       font-weight: 700;
       letter-spacing: 1.2px;
       text-transform: uppercase;
+      box-shadow: 0 1px 4px rgba(35, 100, 55, 0.04);
     }
 
-    .care-quick-title {
-      margin: 0;
-      color: #1a251e;
-      font-family: Georgia, "Times New Roman", serif;
+    .quick-nav-badge i {
+      font-size: 0.95rem;
+      line-height: 1;
+      color: #1e6f43;
+      flex-shrink: 0;
+    }
+
+    .quick-nav-title {
+      font-family: "Manrope", sans-serif !important;
       font-size: clamp(1.45rem, 2.4vw, 1.95rem);
       font-weight: 800;
+      color: #1a251e;
+      margin: 0;
       letter-spacing: -0.02em;
       line-height: 1.25;
-    }
-
-    .care-quick-title span {
-      color: #1e6f43;
-    }
-
-    .care-quick-links {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .care-quick-decor {
-      position: absolute;
-      z-index: 0;
-      color: #cde4d3;
-      opacity: 0.55;
-      pointer-events: none;
-    }
-
-    .care-decor-top-left,
-    .care-decor-bottom-right {
-      width: 130px;
-      height: 130px;
-      background: radial-gradient(circle, #eaf5ed 0%, rgba(234, 245, 237, 0) 70%);
-    }
-
-    .care-decor-top-left {
-      top: -8px;
-      left: -8px;
-      border-radius: 0 0 100% 0;
-    }
-
-    .care-decor-bottom-right {
-      right: -8px;
-      bottom: -8px;
-      border-radius: 100% 0 0 0;
-    }
-
-    .care-decor-paw {
-      position: absolute;
-      display: inline-block;
-      line-height: 1;
-    }
-
-    .care-decor-paw-1 {
-      top: 14px;
-      left: 28px;
-      font-size: 28px;
-      transform: rotate(-15deg);
-    }
-
-    .care-decor-paw-2 {
-      top: 38px;
-      left: 12px;
-      font-size: 19px;
-      transform: rotate(20deg);
-    }
-
-    .care-decor-paw-3 {
-      right: 14px;
-      bottom: 36px;
-      font-size: 19px;
-      transform: rotate(-25deg);
-    }
-
-    .care-decor-paw-4 {
-      right: 28px;
-      bottom: 14px;
-      font-size: 28px;
-      transform: rotate(15deg);
-    }
-
-    .care-quick-link {
-      display: flex;
-      align-items: center;
-      min-width: 0;
-      gap: 12px;
-      padding: 9px 18px 9px 9px;
-      border: 1px solid #cce4d2;
-      border-radius: 999px;
-      background: #edf7f0;
-      color: #1c2b20;
-      font-size: 0.95rem;
-      font-weight: 700;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-    }
-
-    .care-quick-link:hover {
-      transform: translateY(-2px);
-      border-color: #237847;
-      background: #e4f4e8;
-      box-shadow: 0 6px 18px rgba(35, 100, 55, 0.12);
-    }
-
-    .care-quick-link > i {
-      display: grid;
-      flex: 0 0 42px;
-      width: 42px;
-      height: 42px;
-      place-items: center;
-      border-radius: 50%;
-      background: #d1ecda;
-      color: #1e6f43;
-      font-size: 1.05rem;
-      transition: background 0.2s ease, color 0.2s ease;
-    }
-
-    .care-quick-link:hover > i {
-      background: #1e6f43;
-      color: #fff;
-    }
-
-    .care-sections {
-      padding: 8px 0 12px;
-    }
-
-
-    .care-page .care-section {
-      padding: 30px;
-      border: 1px solid #e3eadf;
-      border-radius: 26px;
-      background: #f2f7ef !important;
-      scroll-margin-top: 28px;
-    }
-
-    .care-page .care-section:nth-child(even) {
-      background: #fcfaf5 !important;
-    }
-
-    .care-heading {
-      position: relative;
-      display: flex;
-      min-height: 200px;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      margin: 45px auto 35px;
-      padding: 44px 35px 38px;
-      border: 1px solid #dcebc9;
-      border-radius: 35px;
-      background: #fafcf7;
-      box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
       text-align: center;
     }
 
-    .care-heading .corner-wave {
-      position: absolute;
-      width: 220px;
-      height: 130px;
-      z-index: 0;
-      pointer-events: none;
+    .quick-nav-title span {
+      color: #1e6f43;
+      font-weight: 800;
     }
 
-    .care-heading .wave-tl {
-      top: 0;
-      left: 0;
+    .guides-nav-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      gap: 14px;
+      margin: 0;
     }
 
-    .care-heading .wave-br {
-      right: 0;
-      bottom: 0;
+    .guide-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 16px 9px 9px;
+      background: #edf7f0;
+      border: 1px solid #cce4d2;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+      min-width: 0;
+      cursor: pointer;
     }
 
-    .care-heading-label {
+    .guide-nav-item:hover,
+    .guide-nav-item.active-filter {
+      background: #e4f4e8;
+      border-color: #237847;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(35, 100, 55, 0.12);
+    }
+
+    .guide-nav-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #d1ecda;
+      color: #1e6f43;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      font-size: 1rem;
+      line-height: 1;
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .guide-nav-item:hover .guide-nav-icon,
+    .guide-nav-item.active-filter .guide-nav-icon {
+      background: #1e6f43;
+      color: #ffffff;
+    }
+
+    .guide-nav-label {
+      font-family: "DM Sans", "Manrope", sans-serif !important;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #1c2b20;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Search & Filter Section matching Cat Index styling */
+    .care-search-filter-wrap,
+    .cat-search-filter-wrap {
+      max-width: 1200px;
+      width: calc(100% - 40px);
+      margin: 0 auto 35px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .care-search-bar,
+    .cat-search-bar {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 14px 6px 18px;
+      box-shadow: 0 4px 16px rgba(35, 75, 45, 0.03);
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .care-search-bar:focus-within,
+    .cat-search-bar:focus-within {
+      border-color: var(--green);
+      box-shadow: 0 6px 20px rgba(35, 75, 45, 0.08);
+    }
+
+    .care-search-bar i,
+    .cat-search-bar i {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-right: 12px;
+    }
+
+    .care-search-bar input,
+    .cat-search-bar input {
+      flex: 1;
+      border: none;
+      outline: none;
+      background: transparent;
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.92rem;
+      color: var(--ink);
+    }
+
+    .care-search-bar input::placeholder,
+    .cat-search-bar input::placeholder {
+      color: #8a9a90;
+    }
+
+    .care-filter-list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .care-filter-btn,
+    .cat-filter-btn,
+    .care-filter {
       display: inline-flex;
       align-items: center;
-      gap: 9px;
-      margin-bottom: 16px;
-      padding: 7px 20px;
-      border: 1px solid #dcebc9;
+      gap: 8px;
+      padding: 9px 18px;
+      background: #edf7f0;
+      border: 1px solid #cce4d2;
       border-radius: 999px;
+      color: var(--green);
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .care-filter-btn:hover,
+    .care-filter-btn.active-filter-btn,
+    .cat-filter-btn:hover,
+    .cat-filter-btn.active-filter-btn,
+    .care-filter:hover,
+    .care-filter.active-filter-btn,
+    .care-filter[aria-pressed="true"] {
+      background: var(--green);
+      color: #ffffff;
+      border-color: var(--green);
+      box-shadow: 0 4px 14px rgba(35, 100, 55, 0.12);
+    }
+
+    .care-filter-btn:hover i,
+    .care-filter-btn.active-filter-btn i,
+    .care-filter:hover i,
+    .care-filter[aria-pressed="true"] i {
+      color: #ffffff;
+    }
+
+    .care-results {
+      text-align: center;
+      color: var(--muted);
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.85rem;
+      margin: 0;
+    }
+
+    /* Section Heading matching Cat Index (.cat-topics-heading) */
+    .cat-topics-heading,
+    .care-topics-heading {
+      position: relative;
+      max-width: 1400px;
+      margin: 0 auto 30px;
+      padding: 44px 35px 38px;
+      overflow: hidden;
+      text-align: center;
+      border-radius: 35px;
+      border: 1px solid #dcebc9;
+      background: #fafcf7;
+      box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
+    }
+
+    .corner-wave {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wave-tl {
+      top: 0;
+      left: 0;
+      width: 220px;
+      height: 130px;
+    }
+
+    .wave-br {
+      bottom: 0;
+      right: 0;
+      width: 220px;
+      height: 130px;
+    }
+
+    .heading-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .heading-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 20px;
+      margin-bottom: 16px;
+      border-radius: 50px;
       background: #edf6df;
+      border: 1px solid #dcebc9;
       color: #246b43;
+      font-family: "DM Sans", "Manrope", sans-serif !important;
       font-size: 13px;
       font-weight: 700;
       letter-spacing: 1.2px;
@@ -501,406 +460,382 @@
       box-shadow: 0 1px 4px rgba(36, 107, 67, 0.06);
     }
 
-    .care-heading .heading-content {
-      position: relative;
-      z-index: 2;
+    .heading-label i {
+      font-size: 14px;
+      color: #246b43;
+      line-height: 1;
     }
 
-    .care-heading-label i {
-      font-size: 0.9rem;
-    }
-
-    .care-heading h2 {
+    .cat-topics-heading h2,
+    .care-topics-heading h2 {
+      color: #263b30;
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: clamp(24px, 3.2vw, 36px);
+      font-weight: 700;
+      margin: 0 0 12px;
+      line-height: 1.2;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 12px;
       flex-wrap: wrap;
-      margin: 0 0 12px;
-      color: #263b30;
-      font-family: Georgia, "Times New Roman", serif !important;
-      font-size: clamp(24px, 3.2vw, 36px);
-      font-weight: 700;
-      letter-spacing: 0;
-      line-height: 1.2;
     }
 
-    .care-heading h2 > span:not(.heading-burst) {
+    .cat-topics-heading h2 span,
+    .care-topics-heading h2 span {
       color: #28764a;
     }
 
-    .care-heading .heading-burst {
-      position: relative;
+    .heading-burst {
       display: inline-block;
-      flex: 0 0 24px;
+      position: relative;
       width: 24px;
       height: 24px;
+      flex-shrink: 0;
       vertical-align: middle;
     }
 
-    .care-heading .heading-burst span {
+    .heading-burst span {
       position: absolute;
-      border-radius: 9999px;
       background: #60a872;
+      border-radius: 9999px;
     }
 
-    .care-heading .heading-burst.left span {
+    .heading-burst.left span {
       right: 0;
       transform-origin: right center;
     }
 
-    .care-heading .heading-burst.right span {
-      left: 0;
-      transform-origin: left center;
-    }
-
-    .care-heading .heading-burst.left span:nth-child(1),
-    .care-heading .heading-burst.right span:nth-child(1) {
+    .heading-burst.left span:nth-child(1) {
       top: 3px;
       width: 14px;
       height: 2.8px;
-    }
-
-    .care-heading .heading-burst.left span:nth-child(1) {
       transform: rotate(35deg);
     }
 
-    .care-heading .heading-burst.right span:nth-child(1) {
-      transform: rotate(-35deg);
-    }
-
-    .care-heading .heading-burst span:nth-child(2) {
+    .heading-burst.left span:nth-child(2) {
       top: 11px;
       width: 18px;
       height: 2.8px;
     }
 
-    .care-heading .heading-burst.left span:nth-child(3),
-    .care-heading .heading-burst.right span:nth-child(3) {
+    .heading-burst.left span:nth-child(3) {
       bottom: 3px;
       width: 14px;
       height: 2.8px;
-    }
-
-    .care-heading .heading-burst.left span:nth-child(3) {
       transform: rotate(-35deg);
     }
 
-    .care-heading .heading-burst.right span:nth-child(3) {
+    .heading-burst.right span {
+      left: 0;
+      transform-origin: left center;
+    }
+
+    .heading-burst.right span:nth-child(1) {
+      top: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(-35deg);
+    }
+
+    .heading-burst.right span:nth-child(2) {
+      top: 11px;
+      width: 18px;
+      height: 2.8px;
+    }
+
+    .heading-burst.right span:nth-child(3) {
+      bottom: 3px;
+      width: 14px;
+      height: 2.8px;
       transform: rotate(35deg);
     }
 
-    .care-heading .paw {
-      position: absolute;
-      z-index: 1;
-      display: inline-block;
-      color: rgba(115, 173, 91, 0.28);
-      line-height: 1;
-      pointer-events: none;
+    .cat-topics-heading p,
+    .care-topics-heading p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: #64736a;
+      font-family: "DM Sans", "Manrope", sans-serif !important;
+      font-size: 15px;
+      line-height: 1.65;
     }
 
-    .care-heading .paw-left-1 {
+    .paw {
+      position: absolute;
+      color: rgba(115, 173, 91, 0.28);
+      z-index: 1;
+      pointer-events: none;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .paw-left-1 {
       top: 66px;
       left: 108px;
       font-size: 58px;
       transform: rotate(20deg);
     }
 
-    .care-heading .paw-left-2 {
+    .paw-left-2 {
       bottom: 24px;
       left: 82px;
       font-size: 38px;
       transform: rotate(-15deg);
     }
 
-    .care-heading .paw-right-1 {
+    .paw-right-1 {
       top: 60px;
       right: 75px;
       font-size: 56px;
       transform: rotate(18deg);
     }
 
-    .care-heading .paw-right-2 {
-      right: 140px;
+    .paw-right-2 {
       bottom: 35px;
+      right: 140px;
       font-size: 38px;
       transform: rotate(-15deg);
     }
 
-    .care-heading p {
-      max-width: 760px;
-      margin: 0;
-      color: #64736a;
-      font-size: 0.98rem;
-      line-height: 1.65;
+    /* Care Sections Layout */
+    .care-sections {
+      padding: 0;
     }
 
+    .care-section {
+      margin-bottom: 60px;
+      scroll-margin-top: 35px;
+    }
 
+    /* Care Topic Cards */
     .care-card-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
       align-items: stretch;
-      gap: 22px;
     }
 
     .care-card {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 32px 24px 28px;
       display: flex;
-      min-width: 0;
-      min-height: 235px;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 28px 24px;
-      border: 1px solid #e3eadf;
-      border-radius: 22px;
-      background: #fff;
-      box-shadow: 0 6px 20px rgba(32, 66, 43, 0.045);
       text-align: center;
-      transition: transform 0.25s ease, box-shadow 0.25s ease,
-        border-color 0.25s ease;
+      height: 100%;
+      box-sizing: border-box;
+      transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease,
+        border-color 0.28s ease;
     }
 
     .care-card:hover {
-      transform: translateY(-5px);
-      border-color: #b9cfb3;
-      box-shadow: 0 14px 30px rgba(32, 66, 43, 0.10);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      border-color: #cbd9ce;
     }
 
     .care-card-icon {
-      display: grid;
-      width: 62px;
-      height: 62px;
-      flex: 0 0 62px;
-      place-items: center;
-      margin-bottom: 18px;
-      border-radius: 19px;
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
       background: #eaf2e9;
-      color: #286849;
-      font-size: 1.55rem;
+      color: var(--green);
+      display: grid;
+      place-items: center;
+      font-size: 1.45rem;
+      margin-bottom: 20px;
+      flex-shrink: 0;
+      transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+    }
+
+    .care-card:hover .care-card-icon {
+      background: var(--green);
+      color: #ffffff;
+      transform: scale(1.05);
     }
 
     .care-card h3 {
-      margin: 0 0 10px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.2rem;
+      font-weight: 700;
       color: var(--ink);
-      font-size: 1.12rem;
-      font-weight: 800;
-      line-height: 1.4;
+      margin: 0 0 10px;
+      line-height: 1.35;
     }
 
     .care-card p {
-      max-width: 310px;
-      margin: 0;
-      color: var(--care-copy);
+      font-family: "DM Sans", "Manrope", sans-serif;
       font-size: 0.9rem;
-      line-height: 1.65;
+      line-height: 1.6;
+      color: var(--muted);
+      margin: 0;
+      max-width: 310px;
     }
 
     .care-no-results {
-      padding: 28px;
+      padding: 40px 20px;
       border: 1px dashed #cbd9ce;
-      border-radius: 16px;
-      color: var(--care-copy);
+      border-radius: 20px;
+      color: var(--muted);
       text-align: center;
+      background: #ffffff;
+      margin: 20px auto 40px;
+      max-width: 1160px;
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.95rem;
     }
 
     .care-note {
-      margin: 26px 0 50px;
-      padding: 18px 20px;
-      border: 1px solid #cbd9ce;
-      border-radius: 16px;
-      background: #f0f5ed;
-      color: #42584a;
-      font-size: 0.9rem;
+      margin: 30px auto 60px;
+      padding: 20px 24px;
+      border: 1px solid #cce4d2;
+      border-radius: 18px;
+      background: #f4faf5;
+      color: #2e4a38;
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      display: flex;
+      align-items: center;
+      gap: 14px;
     }
 
     .care-note i {
-      margin-right: 7px;
-      color: var(--care-green);
+      color: var(--green);
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 1100px) {
+      .guides-nav-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      }
     }
 
     @media (max-width: 960px) {
-      .care-hero-layout {
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 28px;
-      }
-
-      .care-quick-links {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
       .care-card-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .guides-nav-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
       }
     }
 
-    @media (max-width: 640px) {
-      .care-hero {
-        padding: 0;
-      }
-
-      .care-hero-layout,
-      .care-tools-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .care-hero-layout {
-        min-height: 0;
-        gap: 10px;
-        padding-block: 20px 36px;
-      }
-
-      .care-hero-copy {
-        padding-top: 4px;
-      }
-
-      .care-hero h1 {
-        font-size: clamp(2.35rem, 10vw, 2.9rem);
-      }
-
-      .care-hero-visual {
-        min-height: 340px;
-      }
-
-      .care-hero-blob {
-        width: 82%;
-      }
-
-      .care-hero-image {
-        width: 78%;
-        height: 300px;
-        border-radius: 48% 48% 24px 24px;
-      }
-
-      .care-floating-card-top {
-        top: 24px;
-        right: 0;
-      }
-
-      .care-floating-card-bottom {
-        bottom: 8px;
-        left: 0;
-      }
-
-      .care-results {
-        grid-column: auto;
-      }
-
-      .care-quick-nav {
-        width: calc(100% - 32px);
-        margin: 26px auto;
-        padding: 28px 18px;
-        border-radius: 24px;
-      }
-
-      .care-quick-eyebrow {
-        gap: 9px;
-      }
-
-      .care-quick-line {
-        width: 38px;
-      }
-
-      .care-quick-links {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-
-      .care-quick-link {
-        padding-right: 14px;
-        font-size: 0.88rem;
-      }
-
-      .care-section {
-        padding: 34px 0;
-      }
-
-      .care-heading {
-        min-height: 190px;
-        margin: 25px 0;
+    @media (max-width: 768px) {
+      .cat-topics-heading,
+      .care-topics-heading {
+        margin: 0 auto 24px;
         padding: 35px 16px 30px;
         border-radius: 24px;
       }
 
-      .care-heading .corner-wave {
+      .corner-wave {
         width: 170px;
         height: 110px;
       }
 
-      .care-heading h2 {
-        gap: 8px;
+      .cat-topics-heading h2,
+      .care-topics-heading h2 {
         font-size: clamp(20px, 5vw, 26px);
+        gap: 8px;
       }
 
-      .care-heading .heading-burst {
-        flex-basis: 16px;
-        width: 16px;
-        height: 18px;
+      .cat-topics-heading p,
+      .care-topics-heading p {
+        font-size: 14px;
       }
 
-      .care-heading .heading-burst span:nth-child(1),
-      .care-heading .heading-burst span:nth-child(3) {
-        width: 10px;
-      }
-
-      .care-heading .heading-burst span:nth-child(2) {
-        width: 13px;
-      }
-
-      .care-heading .care-heading-label {
-        margin-bottom: 12px;
-        padding: 6px 14px;
+      .heading-label {
         font-size: 11px;
+        padding: 6px 14px;
+        margin-bottom: 12px;
       }
 
-      .care-heading .paw-left-1,
-      .care-heading .paw-right-1 {
+      .paw-left-1 {
+        left: 35px;
         top: 25px;
         font-size: 34px;
       }
 
-      .care-heading .paw-left-1 {
-        left: 35px;
-      }
-
-      .care-heading .paw-right-1 {
-        right: 25px;
-      }
-
-      .care-heading .paw-left-2,
-      .care-heading .paw-right-2 {
+      .paw-left-2 {
+        left: 18px;
         bottom: 14px;
         font-size: 24px;
       }
 
-      .care-heading .paw-left-2 {
-        left: 18px;
+      .paw-right-1 {
+        right: 25px;
+        top: 25px;
+        font-size: 34px;
       }
 
-      .care-heading .paw-right-2 {
+      .paw-right-2 {
         right: 65px;
+        bottom: 14px;
+        font-size: 24px;
       }
 
-      .care-heading p {
-        font-size: 0.9rem;
+      .heading-burst {
+        width: 16px;
+        height: 18px;
       }
 
+      .heading-burst span:nth-child(1),
+      .heading-burst span:nth-child(3) {
+        width: 10px;
+      }
+
+      .heading-burst span:nth-child(2) {
+        width: 13px;
+      }
+    }
+
+    @media (max-width: 640px) {
       .care-card-grid {
         grid-template-columns: 1fr;
-        gap: 15px;
+        gap: 16px;
       }
 
-}
+      .guides-nav-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .guides-nav-strip {
+        padding: 24px 18px;
+        border-radius: 24px;
+      }
+
+      .care-search-filter-wrap,
+      .cat-search-filter-wrap {
+        margin-bottom: 25px;
+      }
+
+      .care-section {
+        margin-bottom: 45px;
+      }
+    }
 
     @media (prefers-reduced-motion: reduce) {
-      .care-card {
-        transition: none;
+      .care-card,
+      .guide-nav-item,
+      .care-filter-btn,
+      .care-search-bar {
+        transition: none !important;
       }
-
-      .care-card:hover {
-        transform: none;
-      }
-.care-quick-link {
-        transition: none;
+      .care-card:hover,
+      .guide-nav-item:hover {
+        transform: none !important;
       }
     }
   </style>
@@ -908,164 +843,190 @@
 <body>
 
 <!-- Header Navigation -->
-<header class="site-header">
-  <a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a>
-  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
-  <nav class="main-nav" aria-label="Main navigation">
-    <a href="../../../../index.html">Home</a>
-    <div class="nav-item"><a href="../index.html">Explore Pets <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
-      <div class="dropdown dropdown-explore">
-        <a href="index.html">Dogs</a><a href="../cats/index.html">Cats</a><a href="../birds/index.html">Birds</a><a href="../rabbits/index.html">Rabbits</a><a href="../other/fish.html">Aquarium Fish</a><a href="../other/reptiles.html">Reptiles</a>
+  <div id="header"></div>
+
+<main id="main-content">
+
+  <!-- Main Hero Section matching Cat Index Layout -->
+  <section class="hero section-wrap" id="dog-care-hero">
+    <div class="hero-copy">
+      <div class="dog-badge-strip">
+        🐾 PetSathi • Canine Companion Guide
+      </div>
+      <h1>Everyday Care &amp; <em>Wellness</em></h1>
+      <p class="hero-subtitle">
+        Better care for a happier, healthier dog.
+      </p>
+      <p>
+        Explore practical guidance for daily routines, grooming, nutrition,
+        safety, and preventive care for every stage of your dog's life.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="#careSections" id="hero-cta-care">
+          Explore Dog Care ↓
+        </a>
+        <a class="button button-outline" href="index.html" id="hero-cta-overview">
+          Dog Overview ↗
+        </a>
+      </div>
+      <div class="hero-note">
+        ♥ &nbsp; Dedicated to happy paws and healthy, thriving companions.
       </div>
     </div>
-    <div class="nav-item"><a href="../../services/index.html">Services <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
-      <div class="dropdown dropdown-services"><a href="../../services/dog-walking.html">Dog Walking</a><a href="../../services/cat-care.html">Cat Care</a><a href="../../services/pet-care.html">Pet Care</a></div>
-    </div>
-    <div class="nav-item"><a href="../../walker/index.html">Find a Walker <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
-      <div class="dropdown dropdown-walker"><a href="../../walker/dogs.html">Search Walkers</a><a href="../../walker/cats.html">Walker Profiles</a><a href="../../walker/index.html#bookings">My Bookings</a></div>
-    </div>
-    <a href="../../about.html">About Us</a><a href="../../auth/login.html">Log in</a><a class="button button-small" href="../../auth/register.html">Get Started</a>
-  </nav>
-</header>
 
-<main id="main-content" class="care-page">
-
-<section class="care-hero" aria-labelledby="care-hero-title">
-  <div class="section-wrap">
-
-
-    <div class="care-hero-layout">
-      <div class="care-hero-copy">
-        <span class="care-eyebrow">
-          <i class="fa-solid fa-paw" aria-hidden="true"></i>
-          Everyday Care & Wellness
+    <div class="hero-visual">
+      <div class="hero-blob"></div>
+      <img
+        class="hero-photo"
+        src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1000&q=85"
+        alt="Golden retriever enjoying time outdoors"
+        id="hero-dog-image"
+        fetchpriority="high"
+      />
+      <div class="floating-card card-top">
+        ☀️
+        <span>
+          <b>Everyday Wellness</b>
+          <small>Small habits matter</small>
         </span>
-
-        <h1 id="care-hero-title">
-          Better care for a
-          <em>happier, healthier dog.</em>
-        </h1>
-
-        <p>
-          Explore practical guidance for daily routines, grooming, nutrition,
-          safety, and every stage of your dog's life.
-        </p>
-
-        <div class="care-hero-actions">
-          <a class="button" href="#daily-care">
-            Explore Dog Care
-            <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
-          </a>
-        </div>
       </div>
-
-      <div class="care-hero-visual">
-        <div class="care-hero-blob" aria-hidden="true"></div>
-
-        <img
-          class="care-hero-image"
-          src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1000&q=85"
-          alt="Golden retriever enjoying time outdoors"
-          fetchpriority="high"
-        />
-
-        <div class="care-floating-card care-floating-card-top">
-          <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
-          <span>
-            <b>Everyday wellness</b>
-            <small>Small habits matter</small>
-          </span>
-        </div>
-
-        <div class="care-floating-card care-floating-card-bottom">
-          <i class="fa-solid fa-shield-heart" aria-hidden="true"></i>
-          <span>
-            <b>Care with confidence</b>
-            <small>One step at a time</small>
-          </span>
-        </div>
+      <div class="floating-card card-bottom">
+        🐾
+        <span>
+          <b>Care with Confidence</b>
+          <small>Happy, healthy companion</small>
+        </span>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="care-tools" aria-label="Search and filter care topics">
-  <div class="section-wrap care-tools-inner">
-    <div>
-      <label class="care-search-label" for="careSearch">Search care topics</label>
-      <div class="care-search-wrap">
-        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-        <input
-          class="care-search"
-          type="search"
-          id="careSearch"
-          placeholder="Search feeding, grooming, puppy care..."
-          autocomplete="off"
-        />
-      </div>
+  <!-- Quick Navigation matching Cat Index Layout -->
+  <nav class="guides-nav-strip" aria-label="Explore Dedicated Dog Care Chapters">
+    <div class="quick-nav-decor decor-top-left" aria-hidden="true">
+      <i class="fa-solid fa-paw decor-paw decor-paw-1"></i>
+      <i class="fa-solid fa-paw decor-paw decor-paw-2"></i>
+    </div>
+    <div class="quick-nav-decor decor-bottom-right" aria-hidden="true">
+      <i class="fa-solid fa-paw decor-paw decor-paw-3"></i>
+      <i class="fa-solid fa-paw decor-paw decor-paw-4"></i>
     </div>
 
-    <div>
-      <p class="care-filter-label">Filter by topic</p>
-      <div class="care-filter-list" role="group" aria-label="Filter dog care topics">
-        <button class="care-filter" type="button" data-category="all" aria-pressed="true">All Topics</button>
-        <button class="care-filter" type="button" data-category="Daily Care" aria-pressed="false">Daily Care</button>
-        <button class="care-filter" type="button" data-category="Grooming" aria-pressed="false">Grooming</button>
-        <button class="care-filter" type="button" data-category="Health" aria-pressed="false">Health</button>
-        <button class="care-filter" type="button" data-category="Safety" aria-pressed="false">Safety</button>
-        <button class="care-filter" type="button" data-category="Puppy Care" aria-pressed="false">Puppy Care</button>
-        <button class="care-filter" type="button" data-category="Senior Dog Care" aria-pressed="false">Senior Care</button>
+    <div class="quick-nav-header">
+      <div class="quick-nav-eyebrow-wrap">
+        <span class="quick-nav-line"></span>
+        <div class="quick-nav-badge">
+          <i class="fa-regular fa-compass quick-nav-badge-icon" aria-hidden="true"></i>
+          <span>QUICK NAVIGATION</span>
+        </div>
+        <span class="quick-nav-line"></span>
       </div>
+      <h2 class="quick-nav-title">
+        Explore Dedicated <span>Dog Care Chapters</span>
+      </h2>
+    </div>
+
+    <div class="guides-nav-grid">
+      <a class="guide-nav-item" href="#daily-care">
+        <span class="guide-nav-icon"><i class="fa-solid fa-sun" aria-hidden="true"></i></span>
+        <span class="guide-nav-label">Daily Care</span>
+      </a>
+      <a class="guide-nav-item" href="#bathing">
+        <span class="guide-nav-icon"><i class="fa-solid fa-soap" aria-hidden="true"></i></span>
+        <span class="guide-nav-label">Bathing</span>
+      </a>
+      <a class="guide-nav-item" href="#coat-care">
+        <span class="guide-nav-icon"><i class="fa-solid fa-brush" aria-hidden="true"></i></span>
+        <span class="guide-nav-label">Coat Care</span>
+      </a>
+      <a class="guide-nav-item" href="#dental-care">
+        <span class="guide-nav-icon"><i class="fa-solid fa-tooth" aria-hidden="true"></i></span>
+        <span class="guide-nav-label">Dental Care</span>
+      </a>
+      <a class="guide-nav-item" href="#paw-care">
+        <span class="guide-nav-icon"><i class="fa-solid fa-paw" aria-hidden="true"></i></span>
+        <span class="guide-nav-label">Paw Care</span>
+      </a>
+      <a class="guide-nav-item" href="#ear-eye-care">
+        <span class="guide-nav-icon"><i class="fa-solid fa-eye" aria-hidden="true"></i></span>
+        <span class="guide-nav-label">Ear &amp; Eye</span>
+      </a>
+      <a class="guide-nav-item" href="#seasonal-care">
+        <span class="guide-nav-icon"><i class="fa-solid fa-cloud-sun" aria-hidden="true"></i></span>
+        <span class="guide-nav-label">Seasonal</span>
+      </a>
+      <a class="guide-nav-item" href="#puppy-care">
+        <span class="guide-nav-icon"><i class="fa-solid fa-dog" aria-hidden="true"></i></span>
+        <span class="guide-nav-label">Puppy Care</span>
+      </a>
+      <a class="guide-nav-item" href="#senior-care">
+        <span class="guide-nav-icon"><i class="fa-solid fa-heart" aria-hidden="true"></i></span>
+        <span class="guide-nav-label">Senior Care</span>
+      </a>
+      <a class="guide-nav-item" href="#safety">
+        <span class="guide-nav-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
+        <span class="guide-nav-label">Dog Safety</span>
+      </a>
+      <a class="guide-nav-item" href="#vet-care">
+        <span class="guide-nav-icon"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i></span>
+        <span class="guide-nav-label">Vet Care</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Search & Filter Section matching Cat Index Styling -->
+  <section class="care-search-filter-wrap cat-search-filter-wrap" aria-label="Search and filter dog care topics">
+    <div class="care-search-bar cat-search-bar">
+      <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+      <input
+        type="search"
+        id="careSearch"
+        placeholder="Search dog topics, feeding, grooming, puppy care..."
+        autocomplete="off"
+      />
+    </div>
+
+    <div class="care-filter-list" role="group" aria-label="Filter dog care topics">
+      <button class="care-filter-btn active-filter-btn" type="button" data-category="all" aria-pressed="true" id="resetFilterBtn">
+        <i class="fa-solid fa-layer-group" aria-hidden="true"></i> All Topics
+      </button>
+      <button class="care-filter-btn" type="button" data-category="Daily Care" aria-pressed="false">
+        <i class="fa-solid fa-sun" aria-hidden="true"></i> Daily Care
+      </button>
+      <button class="care-filter-btn" type="button" data-category="Grooming" aria-pressed="false">
+        <i class="fa-solid fa-soap" aria-hidden="true"></i> Grooming
+      </button>
+      <button class="care-filter-btn" type="button" data-category="Health" aria-pressed="false">
+        <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Health
+      </button>
+      <button class="care-filter-btn" type="button" data-category="Safety" aria-pressed="false">
+        <i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Safety
+      </button>
+      <button class="care-filter-btn" type="button" data-category="Puppy Care" aria-pressed="false">
+        <i class="fa-solid fa-dog" aria-hidden="true"></i> Puppy Care
+      </button>
+      <button class="care-filter-btn" type="button" data-category="Senior Dog Care" aria-pressed="false">
+        <i class="fa-solid fa-heart" aria-hidden="true"></i> Senior Care
+      </button>
     </div>
 
     <p class="care-results" id="careResults" role="status" aria-live="polite"></p>
-  </div>
-</section>
+  </section>
 
-<nav class="care-quick-nav" aria-label="Dog care sections">
-    <div class="care-quick-decor care-decor-top-left" aria-hidden="true">
-      <i class="fa-solid fa-paw care-decor-paw care-decor-paw-1"></i>
-      <i class="fa-solid fa-paw care-decor-paw care-decor-paw-2"></i>
-    </div>
-    <div class="care-quick-decor care-decor-bottom-right" aria-hidden="true">
-      <i class="fa-solid fa-paw care-decor-paw care-decor-paw-3"></i>
-      <i class="fa-solid fa-paw care-decor-paw care-decor-paw-4"></i>
-    </div>
-    <div class="care-quick-header">
-      <div class="care-quick-eyebrow">
-        <span class="care-quick-line" aria-hidden="true"></span>
-        <span class="care-quick-badge"><i class="fa-solid fa-compass" aria-hidden="true"></i> Quick Navigation</span>
-        <span class="care-quick-line" aria-hidden="true"></span>
-      </div>
-      <h2 class="care-quick-title">Explore Dedicated <span>Dog Care Chapters</span></h2>
-    </div>
-    <div class="care-quick-links">
-      <a class="care-quick-link" href="#daily-care"><i class="fa-solid fa-sun" aria-hidden="true"></i><span>Daily Care</span></a>
-      <a class="care-quick-link" href="#coat-care"><i class="fa-solid fa-brush" aria-hidden="true"></i><span>Grooming</span></a>
-      <a class="care-quick-link" href="#puppy-care"><i class="fa-solid fa-dog" aria-hidden="true"></i><span>Life Stages</span></a>
-      <a class="care-quick-link" href="#safety"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><span>Health &amp; Safety</span></a>
-    </div>
-  </nav>
-
+  <!-- Care Sections Container -->
   <div class="care-sections section-wrap" id="careSections"></div>
+
+  <!-- Status and Note -->
   <div class="section-wrap">
-    <p class="care-no-results" id="careNoResults" hidden>No topics match your search. Try another word or choose a different category.</p>
+    <p class="care-no-results" id="careNoResults" hidden>No topics match your search. Try another keyword or choose a different category.</p>
     <aside class="care-note">
       <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
-      Every dog is different. Ask your veterinarian for advice tailored to your dog's age, breed, health, and lifestyle.
+      <span>Every dog is unique. Ask your veterinarian for personalized care advice tailored to your dog's age, breed, lifestyle, and medical history.</span>
     </aside>
   </div>
 </main>
 
 <!-- Standard PetSathi Footer -->
-<footer class="footer">
-  <div class="section-wrap footer-grid">
-    <div><a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a><p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p></div>
-    <div><b>Explore</b><a href="../../../../index.html#home">Home</a><a href="../index.html">Explore Pets</a><a href="../../services/index.html">Services</a><a href="../../walker/index.html">Find a Walker</a></div>
-    <div><b>Information</b><a href="../../about.html">About Us</a><a href="../../contact.html">Contact Us</a><a href="../../faq.html">FAQ / Help Center</a><a href="../../community-guidelines.html">Community Guidelines</a><a href="#privacy">Privacy Policy</a><a href="#terms">Terms &amp; Conditions</a><a href="../../disclaimer.html">Disclaimer</a></div>    <div><b>Connect With Us</b><a href="https://github.com/Riya-Kharade/PetSathi" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/riyakharade/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://petsathi-nsoc.netlify.app/" target="_blank" rel="noopener noreferrer">Live Website</a></div>
-  </div>
-  <div class="section-wrap footer-bottom"><span>&copy; 2026 PetSathi. All rights reserved.</span><span>Made with &hearts; for pets.</span><span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E; &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span></div>
-</footer>
+  <div id="footer"></div>
 
 <script src="../../../js/main.js"></script>
 <script>
@@ -1204,7 +1165,7 @@
   const searchInput = document.getElementById("careSearch");
   const resultCount = document.getElementById("careResults");
   const noResults = document.getElementById("careNoResults");
-  const filterButtons = [...document.querySelectorAll(".care-filter")];
+  const filterButtons = [...document.querySelectorAll(".care-filter-btn")];
   let activeCategory = "all";
 
   function createCareCard(card) {
@@ -1241,38 +1202,45 @@
     sectionElement.setAttribute("aria-labelledby", `${section.id}-title`);
 
     const heading = document.createElement("div");
-    heading.className = "care-heading";
+    heading.className = "cat-topics-heading care-topics-heading";
+
     const waveTop = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     waveTop.classList.add("corner-wave", "wave-tl");
     waveTop.setAttribute("viewBox", "0 0 220 130");
     waveTop.setAttribute("fill", "none");
     waveTop.setAttribute("aria-hidden", "true");
     waveTop.innerHTML = '<path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity=".7"></path><path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity=".95"></path>';
+
     const waveBottom = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     waveBottom.classList.add("corner-wave", "wave-br");
     waveBottom.setAttribute("viewBox", "0 0 220 130");
     waveBottom.setAttribute("fill", "none");
     waveBottom.setAttribute("aria-hidden", "true");
     waveBottom.innerHTML = '<path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity=".7"></path><path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity=".95"></path>';
+
     const makePaw = (className) => {
-      const paw = document.createElement("i");
-      paw.className = `fa-solid fa-paw paw ${className}`;
-      paw.setAttribute("aria-hidden", "true");
-      return paw;
+      const pawWrap = document.createElement("div");
+      pawWrap.className = `paw ${className}`;
+      pawWrap.innerHTML = '<i class="fa-solid fa-paw" aria-hidden="true"></i>';
+      return pawWrap;
     };
+
     const content = document.createElement("div");
     content.className = "heading-content";
+
     const label = document.createElement("span");
-    label.className = "care-heading-label";
+    label.className = "heading-label";
     const labelIcon = document.createElement("i");
     labelIcon.className = "fa-solid fa-book-open";
     labelIcon.setAttribute("aria-hidden", "true");
     label.append(labelIcon, document.createTextNode(" Dog Care Guide"));
+
     const title = document.createElement("h2");
     title.id = `${section.id}-title`;
     const words = section.title.split(" ");
     const titleAccent = document.createElement("span");
     titleAccent.textContent = words.pop();
+
     const burst = (side) => {
       const ornament = document.createElement("span");
       ornament.className = `heading-burst ${side}`;
@@ -1280,9 +1248,12 @@
       ornament.innerHTML = "<span></span><span></span><span></span>";
       return ornament;
     };
+
     title.append(burst("left"), document.createTextNode(`${words.join(" ")} `), titleAccent, burst("right"));
+
     const description = document.createElement("p");
     description.textContent = section.description;
+
     content.append(label, title, description);
     heading.append(
       waveTop,
@@ -1297,6 +1268,7 @@
     const grid = document.createElement("div");
     grid.className = "care-card-grid";
     section.cards.forEach((card) => grid.append(createCareCard(card)));
+
     sectionElement.append(heading, grid);
     sectionsContainer.append(sectionElement);
   });
@@ -1322,11 +1294,14 @@
   }
 
   searchInput.addEventListener("input", updateCareResults);
+
   filterButtons.forEach((button) => {
     button.addEventListener("click", () => {
       activeCategory = button.dataset.category;
       filterButtons.forEach((filter) => {
-        filter.setAttribute("aria-pressed", String(filter === button));
+        const isActive = filter.dataset.category === activeCategory;
+        filter.setAttribute("aria-pressed", String(isActive));
+        filter.classList.toggle("active-filter-btn", isActive);
       });
       updateCareResults();
     });
@@ -1334,19 +1309,24 @@
 
   document.addEventListener("click", (event) => {
     const link = event.target.closest('a[href^="#"]');
-    const target = link && document.getElementById(link.getAttribute("href").slice(1));
-    if (!target || !target.classList.contains("care-section")) return;
+    if (!link) return;
+    const targetId = link.getAttribute("href").slice(1);
+    const target = document.getElementById(targetId);
+    if (!target) return;
 
-    searchInput.value = "";
-    activeCategory = "all";
-    filterButtons.forEach((button) => {
-      button.setAttribute("aria-pressed", String(button.dataset.category === "all"));
-    });
-    updateCareResults();
+    if (target.classList.contains("care-section") || targetId === "careSections") {
+      searchInput.value = "";
+      activeCategory = "all";
+      filterButtons.forEach((button) => {
+        const isAll = button.dataset.category === "all";
+        button.setAttribute("aria-pressed", String(isAll));
+        button.classList.toggle("active-filter-btn", isAll);
+      });
+      updateCareResults();
+    }
   });
 
   updateCareResults();
 </script>
 </body>
-
 </html>

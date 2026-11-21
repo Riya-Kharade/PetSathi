@@ -29,7 +29,11 @@
   color: var(--disc-ink);
   font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   line-height: 1.7;
-  padding-bottom: 70px;
+}
+
+/* The shared typography rule otherwise overrides Font Awesome's icon font. */
+.disclaimer-page .fa-solid {
+  font-family: "Font Awesome 6 Free" !important;
 }
 
 /* Skip Link */
@@ -174,10 +178,10 @@
 /* Layout Grid */
 .disc-container {
   width: min(1160px, calc(100% - 48px));
-  margin: 0 auto;
+  margin: 0 auto 64px;
   display: grid;
-  grid-template-columns: 310px 1fr;
-  gap: 40px;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 32px;
   align-items: start;
 }
 
@@ -285,9 +289,10 @@
 
 /* Content Area */
 .disc-content {
+  min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 24px;
 }
 
 /* Section Card */
@@ -295,7 +300,7 @@
   background: var(--disc-white);
   border: 1px solid var(--disc-line);
   border-radius: var(--disc-radius);
-  padding: 36px 38px;
+  padding: 32px;
   box-shadow: var(--disc-shadow-sm);
   transition: box-shadow 0.2s ease;
   scroll-margin-top: 110px;
@@ -350,6 +355,7 @@
   color: #31443a;
   margin: 0 0 16px 0;
   font-size: 1rem;
+  overflow-wrap: anywhere;
 }
 
 .disc-card p:last-child {
@@ -547,6 +553,17 @@
 }
 
 @media (max-width: 640px) {
+  .disc-breadcrumb,
+  .disc-hero,
+  .disc-container {
+    width: calc(100% - 32px);
+  }
+  .disc-hero {
+    padding: 32px 20px;
+  }
+  .disc-card {
+    padding: 24px 20px;
+  }
   .disc-hero h1 {
     font-size: 2rem;
   }

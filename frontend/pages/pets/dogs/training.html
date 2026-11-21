@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
-    /* Font Awesome 6 Webfont fallback protection matching dogs/index.html */
+    /* Font Awesome 6 Free Webfont definitions (Solid + Regular) */
     @font-face {
       font-family: "Font Awesome 6 Free";
       font-style: normal;
@@ -34,80 +34,81 @@
         url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.ttf") format("truetype");
     }
 
+    @font-face {
+      font-family: "Font Awesome 6 Free";
+      font-style: normal;
+      font-weight: 400;
+      font-display: block;
+      src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-regular-400.woff2") format("woff2"),
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-regular-400.ttf") format("truetype");
+    }
+
+    /* Font Awesome protection against global.css * font-family override */
     body [class*="fa-"],
-    body [class*="fa-"]::before {
+    body [class*="fa-"]::before,
+    body .guides-nav-strip i,
+    body .guides-nav-strip i::before,
+    body .dog-topics-heading i,
+    body .dog-topics-heading i::before,
+    body .training-card-icon i,
+    body .training-card-icon i::before,
+    body .tip-item-icon i,
+    body .tip-item-icon i::before {
       font-family: "Font Awesome 6 Free" !important;
-      font-weight: 900 !important;
       font-style: normal !important;
       font-variant: normal !important;
       text-rendering: auto !important;
       line-height: 1 !important;
     }
 
-    /* Page-Scoped CSS Custom Properties */
+    body .fa-solid,
+    body .fa-solid::before {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900 !important;
+    }
+
+    body .fa-regular,
+    body .fa-regular::before {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 400 !important;
+    }
+
+    body .fa-brands,
+    body .fa-brands::before {
+      font-family: "Font Awesome 6 Brands" !important;
+      font-weight: 400 !important;
+    }
+
+    /* Page-Scoped PetSathi Theme Variables (Green, Cream & White Only) */
     :root {
       --dog-green: #286849;
       --dog-green-dark: #1d5039;
+      --dog-green-accent: #1e6f43;
       --dog-green-light: #eaf2e9;
-      --dog-green-border: #d2e4d7;
+      --dog-green-soft: #edf7f0;
+      --dog-green-border: #dceade;
+      --dog-heading-border: #dcebc9;
       --dog-card-border: #e8ebe4;
       --dog-cream: #fcfaf5;
+      --dog-surface: #fafcf7;
       --dog-ink: #26372e;
-      --dog-muted: #718078;
-      --dog-soft-bg: #f8faf6;
-      --dog-warn-bg: #fdf6ec;
-      --dog-warn-border: #f8ddbe;
-      --dog-warn-text: #a05c12;
-      --dog-alert-bg: #fff1f0;
-      --dog-alert-border: #ffccc7;
-      --dog-alert-text: #a8071a;
-      --dog-shadow-sm: 0 4px 14px rgba(35, 57, 43, 0.04);
-      --dog-shadow-md: 0 12px 32px rgba(35, 57, 43, 0.08);
+      --dog-muted: #64736a;
+      --dog-shadow-sm: 0 4px 20px rgba(35, 75, 45, 0.04);
+      --dog-shadow-md: 0 18px 50px rgba(35, 57, 43, 0.08);
     }
 
-    /* Breadcrumbs */
-    .breadcrumb-nav {
-      width: min(1160px, calc(100% - 48px));
-      margin: 16px auto 0;
-      padding: 0 4px;
-      font-size: 0.84rem;
-      color: var(--dog-muted);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .breadcrumb-nav a {
-      color: var(--dog-green);
-      font-weight: 600;
-      transition: color 0.2s ease;
-    }
-
-    .breadcrumb-nav a:hover {
-      color: var(--dog-green-dark);
-      text-decoration: underline;
-    }
-
-    .breadcrumb-nav .separator {
-      color: #b5c2b9;
-      font-size: 0.75rem;
-    }
-
-    .breadcrumb-nav .current {
-      color: var(--dog-ink);
-      font-weight: 700;
-    }
-
-    /* Badge Strip (reused from dogs/index.html) */
+    /* ========================================================
+       MAIN HERO SECTION (Matching cats/index.html)
+       ======================================================== */
     .dog-badge-strip {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       padding: 6px 14px;
-      background: var(--dog-green-light);
-      color: var(--dog-green);
+      background: #eaf2e9;
+      color: var(--green);
       border-radius: 999px;
+      font-family: "DM Sans", "Manrope", sans-serif !important;
       font-size: 0.78rem;
       font-weight: 700;
       letter-spacing: 1px;
@@ -115,25 +116,448 @@
       margin-bottom: 16px;
     }
 
-    /* Hero Section Enhancements */
     #dog-training-hero {
-      padding-block: 45px 65px;
+      padding-block: 52px 64px;
     }
 
     #dog-training-hero h1 em {
-      color: var(--dog-green);
+      color: var(--green);
       font-style: normal;
     }
 
-    /* Section Decorative Heading Card (reused pattern from dogs/index.html) */
+    #dog-training-hero .hero-copy > p {
+      font-family: "DM Sans", "Manrope", sans-serif !important;
+      color: var(--dog-muted);
+      font-size: 1.02rem;
+      line-height: 1.8;
+    }
+
+    #dog-training-hero .hero-actions .button {
+      font-family: "DM Sans", "Manrope", sans-serif !important;
+    }
+
+    #dog-training-hero .hero-note {
+      font-family: "DM Sans", "Manrope", sans-serif !important;
+      color: var(--muted);
+    }
+
+    #dog-training-hero .floating-card b,
+    #dog-training-hero .floating-card small {
+      font-family: "DM Sans", "Manrope", sans-serif !important;
+    }
+
+    /* ========================================================
+       QUICK NAVIGATION & SEARCH (Matching cats/index.html)
+       ======================================================== */
+    .guides-nav-strip {
+      position: relative;
+      background: #ffffff;
+      margin: 16px auto 22px;
+      max-width: 1160px;
+      width: calc(100% - 48px);
+      border: 1px solid #dceade;
+      border-radius: 32px;
+      padding: 38px 34px 34px;
+      box-shadow: 0 4px 24px rgba(35, 80, 50, 0.04);
+      overflow: hidden;
+    }
+
+    .quick-nav-decor {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+      color: #cde4d3;
+      opacity: 0.55;
+    }
+
+    .decor-top-left {
+      top: -8px;
+      left: -8px;
+      width: 130px;
+      height: 130px;
+      background: radial-gradient(
+        circle at 10% 10%,
+        #eaf5ed 0%,
+        rgba(234, 245, 237, 0) 70%
+      );
+      border-radius: 0 0 100% 0;
+    }
+
+    .decor-bottom-right {
+      bottom: -8px;
+      right: -8px;
+      width: 130px;
+      height: 130px;
+      background: radial-gradient(
+        circle at 90% 90%,
+        #eaf5ed 0%,
+        rgba(234, 245, 237, 0) 70%
+      );
+      border-radius: 100% 0 0 0;
+    }
+
+    .decor-paw {
+      position: absolute;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .decor-paw-1 {
+      top: 14px;
+      left: 28px;
+      font-size: 28px;
+      transform: rotate(-15deg);
+    }
+
+    .decor-paw-2 {
+      top: 38px;
+      left: 12px;
+      font-size: 19px;
+      transform: rotate(20deg);
+    }
+
+    .decor-paw-3 {
+      bottom: 36px;
+      right: 14px;
+      font-size: 19px;
+      transform: rotate(-25deg);
+    }
+
+    .decor-paw-4 {
+      bottom: 14px;
+      right: 28px;
+      font-size: 28px;
+      transform: rotate(15deg);
+    }
+
+    .quick-nav-header {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      margin-bottom: 26px;
+    }
+
+    .quick-nav-eyebrow-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .quick-nav-line {
+      height: 1px;
+      flex: 1;
+      max-width: 110px;
+      background: #d6ead9;
+    }
+
+    .quick-nav-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: #f4faf5;
+      border: 1px solid #b7deb8;
+      border-radius: 9999px;
+      color: #1e6f43;
+      font-family: "DM Sans", "Manrope", sans-serif !important;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      box-shadow: 0 1px 4px rgba(35, 100, 55, 0.04);
+    }
+
+    .quick-nav-badge span {
+      font-family: "DM Sans", "Manrope", sans-serif !important;
+    }
+
+    .quick-nav-badge i {
+      font-size: 0.92rem;
+      line-height: 1;
+      color: #1e6f43;
+      flex-shrink: 0;
+    }
+
+    .quick-nav-title {
+      font-family: "Manrope", "DM Sans", sans-serif !important;
+      font-size: clamp(1.45rem, 2.4vw, 1.95rem);
+      font-weight: 800;
+      color: #1a251e;
+      margin: 0;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      text-align: center;
+    }
+
+    .quick-nav-title span {
+      color: #1e6f43;
+      font-family: "Manrope", "DM Sans", sans-serif !important;
+      font-weight: 800;
+    }
+
+    .quick-nav-subtitle {
+      max-width: 620px;
+      margin: 10px auto 0;
+      color: var(--dog-muted);
+      font-family: "DM Sans", "Manrope", sans-serif !important;
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    .guides-nav-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 0;
+    }
+
+    .guide-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      padding: 8px 14px 8px 8px;
+      background: #edf7f0;
+      border: 1px solid #cce4d2;
+      border-radius: 9999px;
+      text-align: left;
+      text-decoration: none;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+      min-width: 0;
+      cursor: pointer;
+    }
+
+    .guide-nav-item:hover,
+    .guide-nav-item.active {
+      background: #e4f4e8;
+      border-color: #237847;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(35, 100, 55, 0.12);
+    }
+
+    .guide-nav-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #d1ecda;
+      color: #1e6f43;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      font-size: 0.95rem;
+      line-height: 1;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .guide-nav-icon i {
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .guide-nav-item:hover .guide-nav-icon,
+    .guide-nav-item.active .guide-nav-icon {
+      background: #1e6f43;
+      color: #ffffff;
+    }
+
+    .guide-nav-label {
+      font-family: "DM Sans", "Manrope", sans-serif !important;
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: #1c2b20;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Compact Search & Filter Bar (Matching cats/index.html) */
+    .dog-search-filter-wrap {
+      max-width: 1160px;
+      width: calc(100% - 48px);
+      margin: 0 auto 14px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: nowrap;
+    }
+
+    .dog-search-bar {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 10px 6px 20px;
+      box-shadow: 0 4px 16px rgba(35, 75, 45, 0.03);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .dog-search-bar:focus-within {
+      border-color: var(--green);
+      box-shadow: 0 6px 20px rgba(35, 75, 45, 0.08);
+    }
+
+    .dog-search-bar .search-icon {
+      color: var(--green);
+      font-size: 0.95rem;
+      margin-right: 10px;
+      flex-shrink: 0;
+    }
+
+    .training-search-input {
+      flex: 1;
+      min-width: 0;
+      border: none;
+      outline: none;
+      background: transparent;
+      font-family: "DM Sans", "Manrope", sans-serif !important;
+      font-size: 0.92rem;
+      color: var(--ink);
+      padding: 6px 0;
+    }
+
+    .training-search-input::placeholder {
+      color: #8a9a90;
+    }
+
+    .search-clear-btn {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #eaf2e9;
+      border: none;
+      color: var(--green);
+      font-family: "DM Sans", sans-serif !important;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease;
+      margin-left: 8px;
+      flex-shrink: 0;
+    }
+
+    .search-clear-btn:hover {
+      background: var(--green);
+      color: #ffffff;
+    }
+
+    .search-clear-btn.visible {
+      display: inline-flex;
+    }
+
+    .dog-filter-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 22px;
+      background: #edf7f0;
+      border: 1px solid #cce4d2;
+      border-radius: 999px;
+      color: var(--green);
+      font-family: "DM Sans", "Manrope", sans-serif !important;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .dog-filter-btn:hover {
+      background: var(--green);
+      color: #ffffff;
+      border-color: var(--green);
+      box-shadow: 0 4px 14px rgba(35, 100, 55, 0.12);
+    }
+
+    .search-status-bar {
+      max-width: 1160px;
+      width: calc(100% - 48px);
+      margin: 0 auto 24px;
+      padding: 8px 18px;
+      background: #fafcf7;
+      border: 1px solid #e4ede6;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "DM Sans", "Manrope", sans-serif !important;
+      font-size: 0.84rem;
+      color: var(--dog-muted);
+    }
+
+    .results-count-text,
+    .results-count-text b {
+      font-family: "DM Sans", "Manrope", sans-serif !important;
+    }
+
+    .results-count-text b {
+      color: var(--green);
+    }
+
+    /* Empty Results State */
+    .no-results-box {
+      display: none;
+      max-width: 1160px;
+      width: calc(100% - 48px);
+      text-align: center;
+      padding: 46px 24px;
+      background: #ffffff;
+      border: 1px dashed #c8dccd;
+      border-radius: 24px;
+      margin: 12px auto 32px;
+    }
+
+    .no-results-icon {
+      font-size: 2.5rem;
+      color: var(--green);
+      opacity: 0.65;
+      margin-bottom: 12px;
+    }
+
+    .no-results-box h3 {
+      font-size: 1.3rem;
+      margin: 0 0 8px;
+      color: var(--ink);
+    }
+
+    .no-results-box p {
+      font-family: "DM Sans", "Manrope", sans-serif !important;
+      color: var(--dog-muted);
+      max-width: 500px;
+      margin: 0 auto 20px;
+      font-size: 0.9rem;
+    }
+
+    /* ========================================================
+       SECTION LAYOUT & DECORATIVE HEADINGS (Matching cats/index.html)
+       ======================================================== */
+    main > .section {
+      padding-block: 34px 40px;
+    }
+
     .dog-topics-heading {
       position: relative;
       max-width: 1160px;
-      margin: 45px auto 32px;
-      padding: 40px 32px 34px;
+      margin: 0 auto 32px;
+      padding: 42px 35px 36px;
       overflow: hidden;
       text-align: center;
-      border-radius: 32px;
+      border-radius: 35px;
       border: 1px solid #dcebc9;
       background: #fafcf7;
       box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
@@ -148,15 +572,15 @@
     .wave-tl {
       top: 0;
       left: 0;
-      width: 200px;
-      height: 120px;
+      width: 220px;
+      height: 130px;
     }
 
     .wave-br {
       bottom: 0;
       right: 0;
-      width: 200px;
-      height: 120px;
+      width: 220px;
+      height: 130px;
     }
 
     .heading-content {
@@ -167,32 +591,39 @@
     .heading-label {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 6px 18px;
-      margin-bottom: 14px;
+      gap: 10px;
+      padding: 7px 20px;
+      margin-bottom: 16px;
       border-radius: 50px;
       background: #edf6df;
       border: 1px solid #dcebc9;
       color: #246b43;
-      font-family: 'DM Sans', 'Manrope', sans-serif !important;
-      font-size: 12.5px;
+      font-family: "DM Sans", "Manrope", sans-serif !important;
+      font-size: 13px;
       font-weight: 700;
       letter-spacing: 1.2px;
       text-transform: uppercase;
+      box-shadow: 0 1px 4px rgba(36, 107, 67, 0.06);
     }
 
     .heading-label i {
-      font-size: 13px;
+      font-size: 14px;
       color: #246b43;
+      line-height: 1;
     }
 
     .dog-topics-heading h2 {
       color: #263b30;
       font-family: Georgia, "Times New Roman", serif !important;
-      font-size: clamp(23px, 3.2vw, 34px);
+      font-size: clamp(24px, 3.2vw, 36px);
       font-weight: 700;
-      margin: 0 0 10px;
+      margin: 0 0 12px;
       line-height: 1.2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
     .dog-topics-heading h2 em {
@@ -200,19 +631,84 @@
       font-style: normal;
     }
 
+    .heading-burst {
+      display: inline-block;
+      position: relative;
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      vertical-align: middle;
+    }
+
+    .heading-burst span {
+      position: absolute;
+      background: #60a872;
+      border-radius: 9999px;
+    }
+
+    .heading-burst.left span {
+      right: 0;
+      transform-origin: right center;
+    }
+
+    .heading-burst.left span:nth-child(1) {
+      top: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(35deg);
+    }
+
+    .heading-burst.left span:nth-child(2) {
+      top: 11px;
+      width: 18px;
+      height: 2.8px;
+    }
+
+    .heading-burst.left span:nth-child(3) {
+      bottom: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(-35deg);
+    }
+
+    .heading-burst.right span {
+      left: 0;
+      transform-origin: left center;
+    }
+
+    .heading-burst.right span:nth-child(1) {
+      top: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(-35deg);
+    }
+
+    .heading-burst.right span:nth-child(2) {
+      top: 11px;
+      width: 18px;
+      height: 2.8px;
+    }
+
+    .heading-burst.right span:nth-child(3) {
+      bottom: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(35deg);
+    }
+
     .dog-topics-heading p {
       max-width: 720px;
       margin: 0 auto;
       color: #64736a;
-      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-family: "DM Sans", "Manrope", sans-serif !important;
       font-size: 15px;
       line-height: 1.65;
     }
 
-    /* Decorative Paws on Headings */
+    /* Decorative Paws on Headings (Matching cats/index.html) */
     .paw {
       position: absolute;
-      color: rgba(115, 173, 91, 0.22);
+      color: rgba(115, 173, 91, 0.28);
       z-index: 1;
       pointer-events: none;
       display: inline-block;
@@ -220,264 +716,68 @@
     }
 
     .paw-left-1 {
-      top: 36px;
-      left: 70px;
-      font-size: 46px;
+      top: 56px;
+      left: 92px;
+      font-size: 54px;
       transform: rotate(20deg);
     }
 
     .paw-left-2 {
-      bottom: 20px;
-      left: 45px;
-      font-size: 30px;
+      bottom: 22px;
+      left: 70px;
+      font-size: 36px;
       transform: rotate(-15deg);
     }
 
     .paw-right-1 {
-      top: 36px;
-      right: 60px;
-      font-size: 44px;
+      top: 52px;
+      right: 72px;
+      font-size: 52px;
       transform: rotate(18deg);
     }
 
     .paw-right-2 {
-      bottom: 24px;
-      right: 95px;
-      font-size: 30px;
+      bottom: 28px;
+      right: 124px;
+      font-size: 36px;
       transform: rotate(-15deg);
     }
 
-    /* SEARCH & FILTER SECTION */
-    .training-search-filter-section {
-      background: #ffffff;
-      border: 1px solid var(--dog-green-border);
-      border-radius: 28px;
-      padding: 32px 30px 28px;
-      box-shadow: var(--dog-shadow-sm);
-      margin-top: 15px;
-      margin-bottom: 40px;
-    }
-
-    .search-filter-header {
-      text-align: center;
-      margin-bottom: 22px;
-    }
-
-    .search-filter-header h2 {
-      font-size: 1.65rem;
-      margin: 0 0 8px;
-      color: var(--dog-ink);
-    }
-
-    .search-filter-header p {
-      margin: 0 auto;
-      color: var(--dog-muted);
-      font-size: 0.92rem;
-      max-width: 640px;
-    }
-
-    .search-bar-wrap {
-      position: relative;
-      max-width: 680px;
-      margin: 0 auto 20px;
-    }
-
-    .search-bar-inner {
-      display: flex;
-      align-items: center;
-      background: var(--dog-soft-bg);
-      border: 2px solid #dce5dd;
-      border-radius: 999px;
-      padding: 6px 14px 6px 20px;
-      transition: all 0.25s ease;
-    }
-
-    .search-bar-inner:focus-within {
-      border-color: var(--dog-green);
-      background: #ffffff;
-      box-shadow: 0 6px 22px rgba(40, 104, 73, 0.12);
-    }
-
-    .search-icon {
-      font-size: 1.15rem;
-      color: var(--dog-green);
-      margin-right: 12px;
-    }
-
-    .training-search-input {
-      flex: 1;
-      border: none;
-      background: transparent;
-      font-family: inherit;
-      font-size: 0.98rem;
-      color: var(--dog-ink);
-      outline: none;
-      padding: 10px 0;
-    }
-
-    .training-search-input::placeholder {
-      color: #8c9e94;
-    }
-
-    .search-clear-btn {
-      display: none;
-      align-items: center;
-      justify-content: center;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: #e4ebe5;
-      border: none;
-      color: #55675c;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      margin-left: 8px;
-    }
-
-    .search-clear-btn:hover {
-      background: #d1ddd3;
-      color: var(--dog-ink);
-    }
-
-    .search-clear-btn.visible {
-      display: inline-flex;
-    }
-
-    /* Filter Category Pills */
-    .filter-pills-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 18px;
-    }
-
-    .filter-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 8px 16px;
-      background: var(--dog-soft-bg);
-      border: 1px solid #dce4dd;
-      border-radius: 999px;
-      font-size: 0.84rem;
-      font-weight: 600;
-      color: #4f6356;
-      cursor: pointer;
-      transition: all 0.22s ease;
-      user-select: none;
-    }
-
-    .filter-pill:hover {
-      border-color: var(--dog-green);
-      color: var(--dog-green);
-      background: var(--dog-green-light);
-      transform: translateY(-1px);
-    }
-
-    .filter-pill.active {
-      background: var(--dog-green);
-      border-color: var(--dog-green);
-      color: #ffffff;
-      box-shadow: 0 4px 14px rgba(40, 104, 73, 0.2);
-    }
-
-    .filter-pill.active i {
-      color: #ffffff;
-    }
-
-    .search-status-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 10px 14px;
-      background: var(--dog-soft-bg);
-      border-radius: 12px;
-      font-size: 0.84rem;
-      color: var(--dog-muted);
-      flex-wrap: wrap;
-    }
-
-    .results-count-text b {
-      color: var(--dog-green);
-    }
-
-    .reset-all-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 12px;
-      border: 1px solid #d0ded3;
-      border-radius: 999px;
-      background: #ffffff;
-      color: var(--dog-green);
-      font-size: 0.8rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .reset-all-btn:hover {
-      background: var(--dog-green-light);
-      border-color: var(--dog-green);
-    }
-
-    /* No Results Found Box */
-    .no-results-box {
-      display: none;
-      text-align: center;
-      padding: 50px 24px;
-      background: #ffffff;
-      border: 2px dashed #dbe5dc;
-      border-radius: 24px;
-      margin: 35px 0;
-    }
-
-    .no-results-icon {
-      font-size: 3rem;
-      color: #a4b6ab;
-      margin-bottom: 14px;
-    }
-
-    .no-results-box h3 {
-      font-size: 1.35rem;
-      margin: 0 0 8px;
-      color: var(--dog-ink);
-    }
-
-    .no-results-box p {
-      color: var(--dog-muted);
-      max-width: 500px;
-      margin: 0 auto 20px;
-      font-size: 0.92rem;
-    }
-
-    /* CARD GRIDS & CARDS (3 Desktop, 2 Tablet, 1 Mobile) */
-    .training-grid-3 {
+    /* ========================================================
+       UNIFIED TRAINING TOPIC CARDS (No Nested-Card Styling)
+       ======================================================== */
+    .training-grid-3,
+    .tips-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: stretch;
       gap: 24px;
-      margin-bottom: 40px;
+      margin-bottom: 12px;
     }
 
-    .training-card {
+    .training-card,
+    .tip-item-card {
       background: #ffffff;
-      border: 1px solid var(--dog-card-border);
+      border: 1px solid var(--line);
       border-radius: 20px;
-      padding: 24px;
+      padding: 26px 24px;
       display: flex;
       flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      height: 100%;
+      min-width: 0;
       position: relative;
-      transition: transform 0.26s ease, box-shadow 0.26s ease, border-color 0.26s ease;
-      box-shadow: var(--dog-shadow-sm);
+      transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease,
+        border-color 0.28s ease;
     }
 
-    .training-card:hover {
+    .training-card:hover,
+    .tip-item-card:hover {
       transform: translateY(-5px);
-      box-shadow: var(--dog-shadow-md);
+      box-shadow: var(--shadow);
       border-color: #cbd9ce;
     }
 
@@ -485,85 +785,112 @@
       display: flex;
       align-items: center;
       gap: 14px;
+      width: 100%;
       margin-bottom: 14px;
     }
 
-    .training-card-icon {
+    .training-card-icon,
+    .tip-item-icon {
       width: 48px;
       height: 48px;
       border-radius: 14px;
-      background: var(--dog-green-light);
-      color: var(--dog-green);
+      background: #eaf2e9;
+      color: var(--green);
       display: grid;
       place-items: center;
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       flex-shrink: 0;
-      transition: background 0.25s, color 0.25s;
+      transition: background 0.25s ease, color 0.25s ease;
     }
 
-    .training-card:hover .training-card-icon {
-      background: var(--dog-green);
+    .training-card:hover .training-card-icon,
+    .tip-item-card:hover .tip-item-icon {
+      background: var(--green);
       color: #ffffff;
     }
 
-    .training-card h3 {
+    .tip-item-icon {
+      margin-bottom: 14px;
+    }
+
+    .training-card h3,
+    .tip-item-content h3 {
       font-size: 1.15rem;
+      font-weight: 700;
       margin: 0;
-      color: var(--dog-ink);
+      color: var(--ink);
       line-height: 1.3;
+      letter-spacing: -0.2px;
     }
 
-    .training-card p {
+    .tip-item-content h3 {
+      margin-bottom: 10px;
+    }
+
+    .training-card > p,
+    .tip-item-content p {
+      font-family: "DM Sans", "Manrope", sans-serif !important;
       font-size: 0.9rem;
-      line-height: 1.6;
+      line-height: 1.65;
       color: var(--dog-muted);
-      margin: 0 0 12px;
-      flex-grow: 1;
+      margin: 0 0 16px;
     }
 
-    /* Practical Beginner Tip Box */
-    .card-tip-box {
-      margin-top: auto;
-      padding: 11px 14px;
-      background: var(--dog-soft-bg);
-      border-left: 3px solid var(--dog-green);
-      border-radius: 8px;
-      font-size: 0.84rem;
-      line-height: 1.55;
-      color: #42554a;
+    .training-card > p:last-child,
+    .tip-item-content p {
+      margin-bottom: 0;
     }
 
-    .card-tip-box strong {
-      color: var(--dog-green-dark);
-      display: block;
-      margin-bottom: 3px;
-      font-size: 0.78rem;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
+    .training-card > p strong {
+      font-family: "DM Sans", "Manrope", sans-serif !important;
+      color: var(--ink);
+      font-weight: 700;
     }
 
-    /* Problem Cards Approach Box */
+    /* Inline Context Reminder & Tip Note (Clean Hairline Divider — No Nested Card) */
+    .card-tip-box,
     .card-approach-box {
+      width: 100%;
       margin-top: auto;
-      padding: 11px 14px;
-      background: #fdfaf5;
-      border-left: 3px solid #d4934b;
-      border-radius: 8px;
-      font-size: 0.84rem;
-      line-height: 1.55;
-      color: #55442e;
+      padding: 14px 0 0;
+      background: transparent;
+      border: none;
+      border-top: 1px solid var(--line);
+      border-radius: 0;
+      font-family: "DM Sans", "Manrope", sans-serif !important;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: #45574c;
+      text-align: left;
     }
 
+    .card-tip-box strong,
     .card-approach-box strong {
-      color: #a05c12;
-      display: block;
-      margin-bottom: 3px;
-      font-size: 0.78rem;
-      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 4px;
+      font-family: "DM Sans", "Manrope", sans-serif !important;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.7px;
       text-transform: uppercase;
+      color: var(--green);
     }
 
-    /* Section Banner Image Strip */
+    .card-tip-box strong::before,
+    .card-approach-box strong::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0;
+    }
+
+    /* ========================================================
+       SECTION BANNER PHOTOS (Matching cats/index.html media cards)
+       ======================================================== */
     .section-banner-photo {
       width: 100%;
       height: 220px;
@@ -571,15 +898,16 @@
       overflow: hidden;
       margin-bottom: 24px;
       position: relative;
-      border: 1px solid var(--dog-card-border);
-      box-shadow: var(--dog-shadow-sm);
+      border: 1px solid var(--line);
+      background: #f0f3eb;
     }
 
     .section-banner-photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.4s ease;
+      object-position: center 35%;
+      transition: transform 0.35s ease;
     }
 
     .section-banner-photo:hover img {
@@ -594,42 +922,47 @@
       backdrop-filter: blur(4px);
       padding: 6px 14px;
       border-radius: 999px;
-      font-size: 0.78rem;
+      font-family: "DM Sans", "Manrope", sans-serif !important;
+      font-size: 0.76rem;
       font-weight: 700;
-      color: var(--dog-ink);
-      display: flex;
+      color: var(--dark);
+      display: inline-flex;
       align-items: center;
       gap: 6px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
     }
 
     .banner-badge i {
-      color: var(--dog-green);
+      color: var(--green);
+      font-size: 0.85rem;
     }
 
-    /* POSITIVE REINFORCEMENT PROCESS STEPS */
+    /* ========================================================
+       POSITIVE REINFORCEMENT CYCLE
+       ======================================================== */
     .reinforcement-feature {
-      background: linear-gradient(180deg, #f7faf7 0%, #ffffff 100%);
-      border: 1px solid #d5e5d9;
-      border-radius: 28px;
-      padding: 38px 30px;
-      margin-bottom: 35px;
+      background: #fafcf7;
+      border: 1px solid #dcebc9;
+      border-radius: 24px;
+      padding: 34px 28px;
+      margin-bottom: 28px;
       box-shadow: var(--dog-shadow-sm);
     }
 
     .reinforcement-cycle-header {
       text-align: center;
       max-width: 680px;
-      margin: 0 auto 30px;
+      margin: 0 auto 26px;
     }
 
     .reinforcement-cycle-header h3 {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       margin: 0 0 8px;
-      color: var(--dog-ink);
+      color: var(--ink);
     }
 
     .reinforcement-cycle-header p {
+      font-family: "DM Sans", "Manrope", sans-serif !important;
       margin: 0;
       font-size: 0.92rem;
       color: var(--dog-muted);
@@ -637,37 +970,36 @@
 
     .cycle-steps-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin-bottom: 30px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
     }
 
     .cycle-step-card {
       background: #ffffff;
-      border: 1px solid #dbe6de;
+      border: 1px solid var(--line);
       border-radius: 18px;
       padding: 22px 18px;
       text-align: center;
-      position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
-      box-shadow: 0 2px 10px rgba(40, 104, 73, 0.04);
-      transition: transform 0.22s ease, border-color 0.22s ease;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
     }
 
     .cycle-step-card:hover {
-      transform: translateY(-3px);
-      border-color: var(--dog-green);
+      transform: translateY(-4px);
+      border-color: #cbd9ce;
+      box-shadow: var(--shadow);
     }
 
     .cycle-step-badge {
-      width: 32px;
-      height: 32px;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
-      background: var(--dog-green);
+      background: var(--green);
       color: #ffffff;
-      font-size: 0.85rem;
+      font-family: "DM Sans", "Manrope", sans-serif !important;
+      font-size: 0.82rem;
       font-weight: 800;
       display: grid;
       place-items: center;
@@ -675,121 +1007,77 @@
     }
 
     .cycle-step-icon {
-      font-size: 1.7rem;
-      color: var(--dog-green);
+      font-size: 1.55rem;
+      color: var(--green);
       margin-bottom: 10px;
     }
 
     .cycle-step-card h4 {
-      font-size: 1.02rem;
+      font-size: 1.05rem;
+      font-weight: 700;
       margin: 0 0 8px;
-      color: var(--dog-ink);
+      color: var(--ink);
     }
 
     .cycle-step-card p {
-      font-size: 0.85rem;
-      line-height: 1.5;
+      font-family: "DM Sans", "Manrope", sans-serif !important;
+      font-size: 0.86rem;
+      line-height: 1.55;
       color: var(--dog-muted);
       margin: 0;
     }
 
-    /* TIPS CHECKLIST SECTION (7 cards) */
-    .tips-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      margin-bottom: 40px;
-    }
-
-    .tip-item-card {
-      background: #ffffff;
-      border: 1px solid var(--dog-card-border);
-      border-radius: 18px;
-      padding: 22px;
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
-      box-shadow: var(--dog-shadow-sm);
-    }
-
-    .tip-item-card:hover {
-      transform: translateY(-4px);
-      border-color: #cbd9ce;
-      box-shadow: var(--dog-shadow-md);
-    }
-
-    .tip-item-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: var(--dog-green-light);
-      color: var(--dog-green);
-      display: grid;
-      place-items: center;
-      font-size: 1.15rem;
-      flex-shrink: 0;
-    }
-
-    .tip-item-content h3 {
-      font-size: 1.08rem;
-      margin: 0 0 6px;
-      color: var(--dog-ink);
-    }
-
-    .tip-item-content p {
-      font-size: 0.88rem;
-      line-height: 1.6;
-      color: var(--dog-muted);
-      margin: 0;
-    }
-
-    /* PROFESSIONAL HELP SECTION */
+    /* ========================================================
+       PROFESSIONAL HELP SECTION (No Double-Boxed Wrapper)
+       ======================================================== */
     .pro-help-section {
-      background: #ffffff;
-      border: 1px solid #e5ddd0;
-      border-radius: 28px;
-      padding: 38px 30px;
-      margin-bottom: 40px;
-      box-shadow: var(--dog-shadow-sm);
+      background: transparent;
+      border: none;
+      padding: 0;
+      margin-bottom: 0;
+      box-shadow: none;
     }
 
     .pro-help-notice-box {
-      background: #fcf9f2;
-      border: 1px solid #ebdcc8;
-      border-left: 5px solid #d4934b;
-      border-radius: 14px;
-      padding: 20px 24px;
-      margin-top: 30px;
+      background: #fafcf7;
+      border: 1px solid #dcebc9;
+      border-left: 4px solid var(--green);
+      border-radius: 18px;
+      padding: 22px 26px;
+      margin-top: 24px;
       display: flex;
       gap: 16px;
       align-items: flex-start;
     }
 
     .pro-help-notice-icon {
-      font-size: 1.8rem;
-      color: #a05c12;
+      font-size: 1.5rem;
+      color: var(--green);
       flex-shrink: 0;
       margin-top: 2px;
     }
 
     .pro-help-notice-content h4 {
-      font-size: 1.05rem;
+      font-size: 1.08rem;
+      font-weight: 700;
       margin: 0 0 6px;
-      color: #7d4910;
+      color: var(--ink);
     }
 
     .pro-help-notice-content p {
+      font-family: "DM Sans", "Manrope", sans-serif !important;
       font-size: 0.9rem;
       line-height: 1.65;
-      color: #55442e;
+      color: var(--dog-muted);
       margin: 0;
     }
 
-    /* FAQ ACCORDION SECTION */
+    /* ========================================================
+       FAQ ACCORDION SECTION
+       ======================================================== */
     .faq-container {
       max-width: 960px;
-      margin: 0 auto 50px;
+      margin: 0 auto 12px;
     }
 
     .faq-controls-bar {
@@ -801,21 +1089,23 @@
     .faq-toggle-all-btn {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 7px 16px;
-      border: 1px solid #d2ded5;
+      gap: 8px;
+      padding: 8px 18px;
+      border: 1px solid #cce4d2;
       border-radius: 999px;
-      background: #ffffff;
+      background: #edf7f0;
+      font-family: "DM Sans", "Manrope", sans-serif !important;
       font-size: 0.84rem;
       font-weight: 700;
-      color: var(--dog-green);
+      color: var(--green);
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
     }
 
     .faq-toggle-all-btn:hover {
-      background: var(--dog-green-light);
-      border-color: var(--dog-green);
+      background: var(--green);
+      border-color: var(--green);
+      color: #ffffff;
     }
 
     .faq-accordion-list {
@@ -826,21 +1116,20 @@
 
     .faq-item {
       background: #ffffff;
-      border: 1px solid var(--dog-card-border);
+      border: 1px solid var(--line);
       border-radius: 18px;
       overflow: hidden;
-      box-shadow: var(--dog-shadow-sm);
       transition: border-color 0.22s ease, box-shadow 0.22s ease;
     }
 
     .faq-item:hover {
       border-color: #cbd9ce;
-      box-shadow: 0 6px 20px rgba(35, 57, 43, 0.06);
+      box-shadow: 0 6px 20px rgba(35, 57, 43, 0.05);
     }
 
     .faq-item.active {
-      border-color: var(--dog-green-border);
-      box-shadow: 0 8px 24px rgba(40, 104, 73, 0.08);
+      border-color: #b7d3be;
+      box-shadow: 0 8px 24px rgba(40, 104, 73, 0.07);
     }
 
     .faq-question-btn {
@@ -854,17 +1143,16 @@
       justify-content: space-between;
       gap: 16px;
       cursor: pointer;
-      font-family: inherit;
-      color: var(--dog-ink);
+      color: var(--ink);
       transition: background 0.2s ease;
     }
 
     .faq-item.active .faq-question-btn {
-      background: #f7faf7;
+      background: #fafcf7;
     }
 
     .faq-question-btn:focus-visible {
-      outline: 2px solid var(--dog-green);
+      outline: 2px solid var(--green);
       outline-offset: -2px;
     }
 
@@ -878,32 +1166,34 @@
     .faq-q-badge {
       display: grid;
       place-items: center;
-      width: 26px;
-      height: 26px;
+      width: 28px;
+      height: 28px;
       border-radius: 8px;
-      background: var(--dog-green-light);
-      color: var(--dog-green);
+      background: #eaf2e9;
+      color: var(--green);
+      font-family: "DM Sans", "Manrope", sans-serif !important;
       font-size: 0.78rem;
       font-weight: 800;
       flex-shrink: 0;
     }
 
     .faq-question-text {
-      font-size: 1.04rem;
+      font-size: 1.02rem;
       font-weight: 700;
-      font-family: 'Manrope', sans-serif;
+      font-family: "Manrope", "DM Sans", sans-serif !important;
       line-height: 1.4;
-      color: var(--dog-ink);
+      color: var(--ink);
     }
 
     .faq-toggle-icon {
       width: 32px;
       height: 32px;
       border-radius: 50%;
-      background: var(--dog-soft-bg);
-      color: var(--dog-green);
+      background: #edf7f0;
+      color: var(--green);
       display: grid;
       place-items: center;
+      font-family: "DM Sans", sans-serif !important;
       font-size: 1.15rem;
       font-weight: 700;
       flex-shrink: 0;
@@ -912,7 +1202,7 @@
 
     .faq-item.active .faq-toggle-icon {
       transform: rotate(45deg);
-      background: var(--dog-green);
+      background: var(--green);
       color: #ffffff;
     }
 
@@ -928,22 +1218,39 @@
     }
 
     .faq-answer-content {
-      padding: 0 22px 22px 60px;
-      font-size: 0.94rem;
-      line-height: 1.75;
-      color: #495c51;
+      padding: 0 22px 22px 62px;
+      font-family: "DM Sans", "Manrope", sans-serif !important;
+      font-size: 0.92rem;
+      line-height: 1.72;
+      color: var(--dog-muted);
     }
 
     .faq-answer-content p {
+      font-family: "DM Sans", "Manrope", sans-serif !important;
       margin: 0;
-      color: #495c51;
+      color: var(--dog-muted);
     }
 
-    /* CTA Section matching dogs/index.html */
+    /* ========================================================
+       CTA SECTION (Matching cats/index.html)
+       ======================================================== */
     .cta {
-      margin-top: 10px;
+      margin-top: 20px;
       margin-bottom: 85px;
       border: 1px solid #e6d6c6;
+    }
+
+    .cta h2 {
+      text-align: left !important;
+    }
+
+    .cta > div > p {
+      text-align: left !important;
+      font-family: "DM Sans", "Manrope", sans-serif !important;
+    }
+
+    .cta .eyebrow {
+      font-family: "DM Sans", "Manrope", sans-serif !important;
     }
 
     .cta-actions {
@@ -953,73 +1260,166 @@
       flex-shrink: 0;
     }
 
+    .cta .button {
+      font-family: "DM Sans", "Manrope", sans-serif !important;
+    }
+
     .cta .button-outline {
       background: transparent;
-      color: var(--dog-green);
-      border-color: var(--dog-green);
+      color: var(--green);
+      border-color: var(--green);
     }
 
     .cta .button-outline:hover {
-      background: var(--dog-green);
+      background: var(--green);
       color: #ffffff;
     }
 
-    /* RESPONSIVE BREAKPOINTS (Desktop: 3 cols, Tablet: 2 cols, Mobile: 1 col) */
-    @media (max-width: 960px) {
-      .training-grid-3 {
-        grid-template-columns: repeat(2, 1fr);
+    /* ========================================================
+       RESPONSIVE BREAKPOINTS
+       ======================================================== */
+    @media (max-width: 1024px) {
+      .guides-nav-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
+    }
 
+    @media (max-width: 960px) {
+      .training-grid-3,
       .tips-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
       }
 
       .cycle-steps-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .paw-left-1,
+      .dog-search-filter-wrap {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .dog-filter-btn {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .dog-topics-heading {
+        margin: 0 auto 24px;
+        padding: 34px 18px 28px;
+        border-radius: 24px;
+      }
+
+      .corner-wave {
+        width: 170px;
+        height: 110px;
+      }
+
+      .dog-topics-heading h2 {
+        font-size: clamp(20px, 5vw, 26px);
+        gap: 8px;
+      }
+
+      .dog-topics-heading p {
+        font-size: 14px;
+      }
+
+      .heading-label {
+        font-size: 11px;
+        padding: 6px 14px;
+        margin-bottom: 12px;
+      }
+
+      .paw-left-1 {
+        left: 30px;
+        top: 22px;
+        font-size: 32px;
+      }
+
+      .paw-left-2 {
+        left: 16px;
+        bottom: 14px;
+        font-size: 22px;
+      }
+
       .paw-right-1 {
-        display: none;
+        right: 24px;
+        top: 22px;
+        font-size: 32px;
+      }
+
+      .paw-right-2 {
+        right: 60px;
+        bottom: 14px;
+        font-size: 22px;
+      }
+
+      .heading-burst {
+        width: 16px;
+        height: 18px;
+      }
+
+      .heading-burst span:nth-child(1),
+      .heading-burst span:nth-child(3) {
+        width: 10px;
+      }
+
+      .heading-burst span:nth-child(2) {
+        width: 13px;
+      }
+
+      .quick-nav-eyebrow-wrap {
+        gap: 10px;
+      }
+
+      .quick-nav-line {
+        max-width: 56px;
       }
     }
 
     @media (max-width: 640px) {
-      .training-grid-3 {
-        grid-template-columns: 1fr;
+      main > .section {
+        padding-block: 26px 30px;
       }
 
-      .tips-grid {
-        grid-template-columns: 1fr;
+      .guides-nav-strip {
+        width: calc(100% - 32px);
+        padding: 24px 18px 22px;
+        border-radius: 24px;
       }
 
+      .guides-nav-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .dog-search-filter-wrap,
+      .search-status-bar,
+      .no-results-box {
+        width: calc(100% - 32px);
+      }
+
+      .training-grid-3,
+      .tips-grid,
       .cycle-steps-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
       }
 
-      .training-search-filter-section {
-        padding: 24px 16px 20px;
+      .training-card,
+      .tip-item-card {
+        padding: 22px 18px;
+      }
+
+      .section-banner-photo {
+        height: 170px;
+      }
+
+      .reinforcement-feature {
+        padding: 24px 18px;
         border-radius: 20px;
-      }
-
-      .dog-topics-heading {
-        padding: 30px 16px 26px;
-        border-radius: 22px;
-        margin: 30px auto 24px;
-      }
-
-      .filter-pills-row {
-        justify-content: flex-start;
-      }
-
-      .filter-pill {
-        font-size: 0.78rem;
-        padding: 6px 12px;
-      }
-
-      .search-status-bar {
-        flex-direction: column;
-        align-items: flex-start;
       }
 
       .faq-answer-content {
@@ -1029,6 +1429,7 @@
       .pro-help-notice-box {
         flex-direction: column;
         gap: 10px;
+        padding: 18px 20px;
       }
 
       .cta-actions {
@@ -1041,280 +1442,13 @@
         width: 100%;
       }
     }
-
-        /* Issue #131: Search and filter improvements */
-        .training-search-filter-section {
-          max-width: 1160px;
-          margin: 18px auto 36px;
-          padding: 26px 28px 22px;
-          border: 1px solid var(--dog-green-border);
-          border-radius: 22px;
-          background: #fff;
-          box-shadow: var(--dog-shadow-sm);
-        }
-
-        .search-filter-header {
-          margin-bottom: 18px;
-        }
-
-        .search-filter-header h2 {
-          font-size: clamp(1.25rem, 2vw, 1.5rem);
-        }
-
-        .search-bar-wrap {
-          max-width: 760px;
-          margin-bottom: 16px;
-        }
-
-        .search-bar-inner {
-          min-height: 48px;
-          padding: 4px 12px 4px 16px;
-          border: 1px solid #d5e2d8;
-          border-radius: 12px;
-          background: #f8faf6;
-        }
-
-        .training-search-input {
-          min-width: 0;
-          padding: 9px 0;
-          font-size: .92rem;
-        }
-
-        .filter-pills-row {
-          justify-content: center;
-          gap: 8px;
-          margin-bottom: 14px;
-        }
-
-        .filter-pill {
-          min-height: 36px;
-          padding: 7px 12px;
-          border-radius: 9px;
-          font-size: .8rem;
-        }
-
-        .filter-pill:hover {
-          transform: none;
-        }
-
-        .training-grid-3 {
-          display: grid;
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-          align-items: stretch;
-          gap: 18px;
-        }
-
-        .training-card {
-          min-width: 0;
-          min-height: 190px;
-          height: 100%;
-          padding: 22px 20px;
-          align-items: center;
-          text-align: center;
-          border-radius: 16px;
-        }
-
-        .training-card-header {
-          width: 100%;
-          flex-direction: column;
-          align-items: center;
-          justify-content: flex-start;
-          gap: 10px;
-          margin-bottom: 10px;
-        }
-
-        .training-card-icon {
-          width: 46px;
-          height: 46px;
-          border-radius: 13px;
-          font-size: 1.15rem;
-        }
-
-        .training-card h3 {
-          font-size: 1.02rem;
-          line-height: 1.3;
-          text-align: center;
-        }
-
-        .training-card > p {
-          display: -webkit-box;
-          -webkit-box-orient: vertical;
-          -webkit-line-clamp: 2;
-          overflow: hidden;
-          max-width: 34ch;
-          min-height: 2.8em;
-          margin: 0;
-          font-size: .86rem;
-          line-height: 1.4;
-        }
-
-        .training-card .card-tip-box,
-        .training-card .card-approach-box {
-          width: 100%;
-          margin-top: 14px;
-          text-align: left;
-          font-size: .8rem;
-          line-height: 1.45;
-        }
-
-        /* Training tips cards */
-        .tips-grid {
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-          align-items: stretch;
-          gap: 18px;
-        }
-
-        .tip-item-card {
-          min-width: 0;
-          min-height: 180px;
-          height: 100%;
-          flex-direction: column;
-          align-items: center;
-          justify-content: flex-start;
-          gap: 10px;
-          padding: 22px 18px;
-          text-align: center;
-          border-radius: 16px;
-        }
-
-        .tip-item-icon {
-          width: 46px;
-          height: 46px;
-          border-radius: 13px;
-          font-size: 1.15rem;
-        }
-
-        .tip-item-content h3 {
-          font-size: 1rem;
-          margin-bottom: 6px;
-        }
-
-        .tip-item-content p {
-          display: -webkit-box;
-          -webkit-box-orient: vertical;
-          -webkit-line-clamp: 2;
-          overflow: hidden;
-          margin: 0;
-          font-size: .85rem;
-          line-height: 1.45;
-        }
-
-        /* Puppy training image */
-        .section-banner-photo {
-          height: clamp(150px, 22vw, 210px);
-          max-width: 1000px;
-          margin: 0 auto 22px;
-          border-radius: 16px;
-          object-position: center 35%;
-        }
-
-        .training-section .dog-topics-heading {
-          margin-top: 30px;
-          margin-bottom: 26px;
-          background: #fff;
-          border-radius: 22px;
-          padding-top: 30px;
-          padding-bottom: 28px;
-        }
-
-        /* Tablet */
-        @media (max-width: 960px) {
-          .training-grid-3,
-          .tips-grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-          }
-        }
-
-        /* Mobile */
-        @media (max-width: 640px) {
-          .training-search-filter-section {
-            padding: 20px 14px 16px;
-          }
-
-          .filter-pills-row {
-            justify-content: flex-start;
-            gap: 7px;
-          }
-
-          .filter-pill {
-            min-height: 34px;
-            padding: 6px 10px;
-          }
-
-          .training-grid-3,
-          .tips-grid {
-            grid-template-columns: minmax(0, 1fr);
-            gap: 14px;
-          }
-
-          .training-card,
-          .tip-item-card {
-            min-height: 0;
-            padding: 20px 16px;
-          }
-
-          .training-card > p {
-            min-height: 0;
-          }
-
-          .section-banner-photo {
-            height: 150px;
-          }
-        }
-
   </style>
 </head>
 
 <body>
 
   <!-- Header and Navigation (Preserved exactly matching repository convention) -->
-  <header class="site-header">
-    <a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true"
-        viewBox="0 0 40 40" role="img" focusable="false">
-        <circle cx="12" cy="12" r="4" fill="currentColor" />
-        <circle cx="21" cy="8" r="4" fill="currentColor" />
-        <circle cx="30" cy="12" r="4" fill="currentColor" />
-        <path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z"
-          fill="currentColor" />
-      </svg><span>Pet<span>Sathi</span></span></a>
-    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars"
-        aria-hidden="true"></i></button>
-    <nav class="main-nav" aria-label="Main navigation">
-      <a href="../../../../index.html">Home</a>
-      <div class="nav-item"><a href="../index.html">Explore Pets <span class="nav-arrow"
-            aria-hidden="true">&#x25BE;</span></a>
-        <div class="dropdown dropdown-explore">
-          <a href="index.html">Dogs</a><a href="../cats/index.html">Cats</a><a href="../birds/index.html">Birds</a><a
-            href="../rabbits/index.html">Rabbits</a><a href="../other/fish.html">Aquarium Fish</a><a
-            href="../other/reptiles.html">Reptiles</a>
-        </div>
-      </div>
-      <div class="nav-item"><a href="../../services/index.html">Services <span class="nav-arrow"
-            aria-hidden="true">&#x25BE;</span></a>
-        <div class="dropdown dropdown-services"><a href="../../services/dog-walking.html">Dog Walking</a><a
-            href="../../services/cat-care.html">Cat Care</a><a href="../../services/pet-care.html">Pet Care</a></div>
-      </div>
-      <div class="nav-item"><a href="../../walker/index.html">Find a Walker <span class="nav-arrow"
-            aria-hidden="true">&#x25BE;</span></a>
-        <div class="dropdown dropdown-walker"><a href="../../walker/dogs.html">Search Walkers</a><a
-            href="../../walker/cats.html">Walker Profiles</a><a href="../../walker/index.html#bookings">My Bookings</a>
-        </div>
-      </div>
-      <a href="../../about.html">About Us</a><a href="../../auth/login.html">Log in</a><a class="button button-small"
-        href="../../auth/register.html">Get Started</a>
-    </nav>
-  </header>
-
-  <!-- Breadcrumb Navigation -->
-  <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-    <a href="../../../../index.html">Home</a>
-    <span class="separator" aria-hidden="true">/</span>
-    <a href="../index.html">Explore Pets</a>
-    <span class="separator" aria-hidden="true">/</span>
-    <a href="index.html">Dogs</a>
-    <span class="separator" aria-hidden="true">/</span>
-    <span class="current" aria-current="page">Dog Training & Behaviour</span>
-  </nav>
+  <div id="header"></div>
 
   <main id="main-content">
 
@@ -1350,72 +1484,101 @@
     </section>
 
     <!-- ========================================================
-         SECTION 2: SEARCH AND FILTER SECTION
+         SECTION 2: QUICK NAVIGATION & SEARCH (Matching cats/index.html)
          ======================================================== -->
-    <section class="section-wrap" id="training-search-filter" aria-label="Search and Filter Training Topics">
-      <div class="training-search-filter-section">
-        <div class="search-filter-header">
-          <h2>Find Training Topics & Guidance</h2>
-          <p>Search by command, behaviour challenge, puppy skill, or filter by category to find instant practical advice.</p>
+    <div id="training-search-filter" aria-label="Search and Filter Training Topics">
+      <div class="guides-nav-strip">
+        <div class="quick-nav-decor decor-top-left" aria-hidden="true">
+          <i class="fa-solid fa-paw decor-paw decor-paw-1"></i>
+          <i class="fa-solid fa-paw decor-paw decor-paw-2"></i>
         </div>
 
-        <div class="search-bar-wrap">
-          <div class="search-bar-inner">
-            <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
-            <input type="search" id="training-search-input" class="training-search-input"
-              placeholder="Search topics (e.g., sit, barking, leash pulling, puppy, crate)..."
-              aria-label="Search dog training topics, commands, and behaviour tips">
-            <button type="button" id="search-clear-btn" class="search-clear-btn" aria-label="Clear search input">×</button>
+        <div class="quick-nav-decor decor-bottom-right" aria-hidden="true">
+          <i class="fa-solid fa-paw decor-paw decor-paw-3"></i>
+          <i class="fa-solid fa-paw decor-paw decor-paw-4"></i>
+        </div>
+
+        <div class="quick-nav-header">
+          <div class="quick-nav-eyebrow-wrap">
+            <span class="quick-nav-line"></span>
+            <div class="quick-nav-badge">
+              <i class="fa-regular fa-compass" aria-hidden="true"></i>
+              <span>QUICK NAVIGATION</span>
+            </div>
+            <span class="quick-nav-line"></span>
           </div>
+          <h3 class="quick-nav-title">Explore <span>Dog Training Guides</span></h3>
+          <p class="quick-nav-subtitle">
+            Search by command, behaviour challenge, puppy skill, or filter by category to find instant practical advice.
+          </p>
         </div>
 
-        <!-- Filter Category Pills (7 required categories + All) -->
-        <div class="filter-pills-row" role="group" aria-label="Filter topics by category">
-          <button type="button" class="filter-pill active" data-category="all">
-            <i class="fa-solid fa-border-all" aria-hidden="true"></i> All Topics
+        <!-- Quick Navigation Filter Pills (7 required categories + All) -->
+        <div class="guides-nav-grid" role="group" aria-label="Filter topics by category">
+          <button type="button" class="guide-nav-item filter-pill active" data-category="all">
+            <span class="guide-nav-icon"><i class="fa-solid fa-border-all" aria-hidden="true"></i></span>
+            <span class="guide-nav-label">All Topics</span>
           </button>
-          <button type="button" class="filter-pill" data-category="behaviour">
-            <i class="fa-solid fa-dog" aria-hidden="true"></i> Dog Behaviour
+          <button type="button" class="guide-nav-item filter-pill" data-category="behaviour">
+            <span class="guide-nav-icon"><i class="fa-solid fa-dog" aria-hidden="true"></i></span>
+            <span class="guide-nav-label">Dog Behaviour</span>
           </button>
-          <button type="button" class="filter-pill" data-category="basic">
-            <i class="fa-solid fa-award" aria-hidden="true"></i> Basic Training
+          <button type="button" class="guide-nav-item filter-pill" data-category="basic">
+            <span class="guide-nav-icon"><i class="fa-solid fa-award" aria-hidden="true"></i></span>
+            <span class="guide-nav-label">Basic Training</span>
           </button>
-          <button type="button" class="filter-pill" data-category="puppy">
-            <i class="fa-solid fa-paw" aria-hidden="true"></i> Puppy Training
+          <button type="button" class="guide-nav-item filter-pill" data-category="puppy">
+            <span class="guide-nav-icon"><i class="fa-solid fa-paw" aria-hidden="true"></i></span>
+            <span class="guide-nav-label">Puppy Training</span>
           </button>
-          <button type="button" class="filter-pill" data-category="house">
-            <i class="fa-solid fa-house-chimney" aria-hidden="true"></i> House Training
+          <button type="button" class="guide-nav-item filter-pill" data-category="house">
+            <span class="guide-nav-icon"><i class="fa-solid fa-house-chimney" aria-hidden="true"></i></span>
+            <span class="guide-nav-label">House Training</span>
           </button>
-          <button type="button" class="filter-pill" data-category="leash">
-            <i class="fa-solid fa-route" aria-hidden="true"></i> Leash Training
+          <button type="button" class="guide-nav-item filter-pill" data-category="leash">
+            <span class="guide-nav-icon"><i class="fa-solid fa-route" aria-hidden="true"></i></span>
+            <span class="guide-nav-label">Leash Training</span>
           </button>
-          <button type="button" class="filter-pill" data-category="problems">
-            <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Behavioural Problems
+          <button type="button" class="guide-nav-item filter-pill" data-category="problems">
+            <span class="guide-nav-icon"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i></span>
+            <span class="guide-nav-label">Behavioural Problems</span>
           </button>
-          <button type="button" class="filter-pill" data-category="advanced">
-            <i class="fa-solid fa-medal" aria-hidden="true"></i> Advanced Training
+          <button type="button" class="guide-nav-item filter-pill" data-category="advanced">
+            <span class="guide-nav-icon"><i class="fa-solid fa-medal" aria-hidden="true"></i></span>
+            <span class="guide-nav-label">Advanced Training</span>
           </button>
-        </div>
-
-        <!-- Live Status Bar -->
-        <div class="search-status-bar">
-          <span class="results-count-text" id="results-count-text" aria-live="polite">
-            Showing all <b>67</b> training topics & insights
-          </span>
-          <button type="button" class="reset-all-btn" id="reset-all-btn">
-            <i class="fa-solid fa-rotate-left" aria-hidden="true"></i> Reset Search & Filters
-          </button>
-        </div>
-
-        <!-- Empty Results Message -->
-        <div class="no-results-box" id="no-results-box" role="status" aria-live="polite">
-          <i class="fa-solid fa-paw no-results-icon" aria-hidden="true"></i>
-          <h3>No training topics found</h3>
-          <p>We couldn't find any training cards matching your search query. Try typing another keyword (like "stay", "chewing", or "leash") or reset your filters.</p>
-          <button type="button" class="button button-small" id="no-results-reset-btn">Reset All Filters</button>
         </div>
       </div>
-    </section>
+
+      <!-- Compact Search & Reset Row (Matching cats/index.html) -->
+      <div class="dog-search-filter-wrap">
+        <div class="dog-search-bar">
+          <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
+          <input type="search" id="training-search-input" class="training-search-input"
+            placeholder="Search topics (e.g., sit, barking, leash pulling, puppy, crate)..."
+            aria-label="Search dog training topics, commands, and behaviour tips">
+          <button type="button" id="search-clear-btn" class="search-clear-btn" aria-label="Clear search input">×</button>
+        </div>
+        <button type="button" class="dog-filter-btn" id="reset-all-btn">
+          <i class="fa-solid fa-rotate-left" aria-hidden="true"></i> Reset Filters
+        </button>
+      </div>
+
+      <!-- Live Results Count -->
+      <div class="search-status-bar">
+        <span class="results-count-text" id="results-count-text" aria-live="polite">
+          Showing all <b>67</b> training topics & insights
+        </span>
+      </div>
+
+      <!-- Empty Results Message -->
+      <div class="no-results-box" id="no-results-box" role="status" aria-live="polite">
+        <i class="fa-solid fa-paw no-results-icon" aria-hidden="true"></i>
+        <h3>No training topics found</h3>
+        <p>We couldn't find any training cards matching your search query. Try typing another keyword (like "stay", "chewing", or "leash") or reset your filters.</p>
+        <button type="button" class="button button-small" id="no-results-reset-btn">Reset All Filters</button>
+      </div>
+    </div>
 
     <!-- ========================================================
          SECTION 3: UNDERSTANDING DOG BEHAVIOUR (8 Cards)
@@ -1437,7 +1600,7 @@
 
         <div class="heading-content">
           <span class="heading-label"><i class="fa-solid fa-eye"></i> Canine Communication</span>
-          <h2>Understanding <em>Dog Behaviour</em></h2>
+          <h2><span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span> Understanding <em>Dog Behaviour</em> <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span></h2>
           <p>
             Dogs communicate continuously through body postures, vocalizations, and facial expressions. Always interpret signals together within their full environmental context rather than relying on one isolated sign.
           </p>
@@ -1595,7 +1758,7 @@
 
         <div class="heading-content">
           <span class="heading-label"><i class="fa-solid fa-award"></i> Core Commands</span>
-          <h2>Basic Obedience <em>Training</em></h2>
+          <h2><span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span> Basic Obedience <em>Training</em> <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span></h2>
           <p>
             Mastering essential obedience commands establishes reliable communication, keeps your dog safe in public spaces, and builds everyday impulse control.
           </p>
@@ -1737,7 +1900,7 @@
 
         <div class="heading-content">
           <span class="heading-label"><i class="fa-solid fa-paw"></i> Young Paws Foundation</span>
-          <h2>Puppy Training <em>Basics</em></h2>
+          <h2><span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span> Puppy Training <em>Basics</em> <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span></h2>
           <p>
             The first 16 weeks of puppyhood shape lifelong behavior. Guide your young pup with gentle structure, positive associations, and predictable daily routines.
           </p>
@@ -1745,7 +1908,7 @@
       </div>
 
       <div class="section-banner-photo">
-        <span class="banner-badge"><i class="fa-solid fa-shield-cat"></i> Early Learning Period</span>
+        <span class="banner-badge"><i class="fa-solid fa-shield-dog"></i> Early Learning Period</span>
         <img src="https://images.unsplash.com/photo-1591160690555-5debfba289f0?auto=format&fit=crop&w=800&q=85"
           alt="Golden retriever puppy sitting alertly outdoors during early training" loading="lazy">
       </div>
@@ -1885,7 +2048,7 @@
 
         <div class="heading-content">
           <span class="heading-label"><i class="fa-solid fa-house-chimney"></i> Clean & Harmonious Living</span>
-          <h2>House <em>Training</em></h2>
+          <h2><span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span> House <em>Training</em> <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span></h2>
           <p>
             Establish clean habits and calm indoor manners through structured schedules, safe boundary setting, and proactive reinforcement.
           </p>
@@ -2011,7 +2174,7 @@
 
         <div class="heading-content">
           <span class="heading-label"><i class="fa-solid fa-route"></i> Relaxed Outings</span>
-          <h2>Leash Training & <em>Walking Manners</em></h2>
+          <h2><span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span> Leash Training & <em>Walking Manners</em> <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span></h2>
           <p>
             Transform stressful pulling into enjoyable neighborhood strolls. Learn how to foster loose-leash walking, outdoor focus, and respectful greeting etiquette.
           </p>
@@ -2143,7 +2306,7 @@
 
         <div class="heading-content">
           <span class="heading-label"><i class="fa-solid fa-heart"></i> Science-Based Methodology</span>
-          <h2>Positive Reinforcement <em>Training</em></h2>
+          <h2><span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span> Positive Reinforcement <em>Training</em> <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span></h2>
           <p>
             Modern behavioural science proves dogs learn faster and retain habits longer when rewarded for desirable actions rather than punished for mistakes.
           </p>
@@ -2288,7 +2451,7 @@
 
         <div class="heading-content">
           <span class="heading-label"><i class="fa-solid fa-triangle-exclamation"></i> Compassionate Solutions</span>
-          <h2>Common Behavioural <em>Problems</em></h2>
+          <h2><span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span> Common Behavioural <em>Problems</em> <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span></h2>
           <p>
             Unwanted behaviours are expressions of unmet canine needs, anxiety, or natural instincts. Address root causes using positive, humane training—never physical force or intimidation.
           </p>
@@ -2348,7 +2511,7 @@
         <article class="training-card" data-category="problems" data-title="Digging"
           data-keywords="digging yard sandbox cooling scent burrowing energy outlets">
           <div class="training-card-header">
-            <span class="training-card-icon"><i class="fa-solid fa-shovel" aria-hidden="true"></i></span>
+            <span class="training-card-icon"><i class="fa-solid fa-trowel" aria-hidden="true"></i></span>
             <h3>Digging</h3>
           </div>
           <p>
@@ -2446,7 +2609,7 @@
 
         <div class="heading-content">
           <span class="heading-label"><i class="fa-solid fa-handshake"></i> Confident Social Connections</span>
-          <h2>Socialisation & <em>Interaction</em></h2>
+          <h2><span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span> Socialisation & <em>Interaction</em> <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span></h2>
           <p>
             True socialisation is about fostering calm, confident neutrality across diverse environments. Emphasize gradual, controlled introductions and comfortable physical distances.
           </p>
@@ -2578,7 +2741,7 @@
 
         <div class="heading-content">
           <span class="heading-label"><i class="fa-solid fa-medal"></i> Elevate Canine Skills</span>
-          <h2>Advanced <em>Training</em></h2>
+          <h2><span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span> Advanced <em>Training</em> <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span></h2>
           <p>
             Challenge your dog's athletic agility, mental stamina, and emergency responsiveness through beginner-friendly advanced obedience and safe off-leash protocols.
           </p>
@@ -2704,7 +2867,7 @@
 
         <div class="heading-content">
           <span class="heading-label"><i class="fa-solid fa-lightbulb"></i> Trainer's Golden Rules</span>
-          <h2>Training Tips for <em>Dog Owners</em></h2>
+          <h2><span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span> Training Tips for <em>Dog Owners</em> <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span></h2>
           <p>
             Keep these seven essential principles in mind to make every training moment enjoyable, productive, and stress-free for both you and your canine friend.
           </p>
@@ -2797,7 +2960,7 @@
 
         <div class="heading-content">
           <span class="heading-label"><i class="fa-solid fa-user-doctor"></i> Expert Behavioral Guidance</span>
-          <h2>When to Seek <em>Professional Help</em></h2>
+          <h2><span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span> When to Seek <em>Professional Help</em> <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span></h2>
           <p>
             Certain behavioral challenges require hands-on evaluation by certified specialists to safeguard canine wellbeing, family peace, and neighborhood safety.
           </p>
@@ -2924,7 +3087,7 @@
 
         <div class="heading-content">
           <span class="heading-label"><i class="fa-solid fa-circle-question"></i> Common Inquiries</span>
-          <h2>Frequently Asked <em>Questions</em></h2>
+          <h2><span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span> Frequently Asked <em>Questions</em> <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span></h2>
           <p>
             Quick, expert answers to the most common canine training and behavior questions asked by dog parents.
           </p>
@@ -3124,31 +3287,7 @@
   </main>
 
   <!-- Footer (Preserved exactly matching repository convention) -->
-  <footer class="footer">
-    <div class="section-wrap footer-grid">
-      <div><a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark"
-            aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false">
-            <circle cx="12" cy="12" r="4" fill="currentColor" />
-            <circle cx="21" cy="8" r="4" fill="currentColor" />
-            <circle cx="30" cy="12" r="4" fill="currentColor" />
-            <path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z"
-              fill="currentColor" />
-          </svg><span>Pet<span>Sathi</span></span></a>
-        <p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p>
-      </div>
-      <div><b>Explore</b><a href="../../../../index.html#home">Home</a><a href="../index.html">Explore Pets</a><a
-          href="../../services/index.html">Services</a><a href="../../walker/index.html">Find a Walker</a></div>
-      <div><b>Information</b><a href="../../about.html">About Us</a><a href="../../contact.html">Contact Us</a><a
-          href="../../faq.html">FAQ / Help Center</a><a href="../../community-guidelines.html">Community Guidelines</a><a href="#privacy">Privacy Policy</a><a href="#terms">Terms &amp;
-          Conditions</a><a href="../../disclaimer.html">Disclaimer</a></div>      <div><b>Connect With Us</b><a href="https://github.com/Riya-Kharade/PetSathi" target="_blank"
-          rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/riyakharade/" target="_blank"
-          rel="noopener noreferrer">LinkedIn</a><a href="https://petsathi-nsoc.netlify.app/" target="_blank"
-          rel="noopener noreferrer">Live Website</a></div>
-    </div>
-    <div class="section-wrap footer-bottom"><span>&copy; 2026 PetSathi. All rights reserved.</span><span>Made with
-        &hearts; for pets.</span><span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E;
-        &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span></div>
-  </footer>
+  <div id="footer"></div>
 
   <!-- Global PetSathi Scripts -->
   <script src="../../../js/main.js"></script>

@@ -1,0 +1,1192 @@
+/* ==========================================================================
+   PetSathi - Privacy Policy Page Stylesheet (frontend/css/privacy-policy.css)
+   Green, cream & white theme matching PetSathi design language.
+   Fully responsive with accessible typography, sticky sidebar TOC,
+   and elegant interactive elements.
+   ========================================================================== */
+
+/* ==========================================================================
+   Font Awesome Webfont Definitions & Universal Icon Guard
+   global.css applies `body, body * { font-family: "Times New Roman" !important; }`
+   which strips Font Awesome icon glyphs. The rules below declare the webfonts
+   and enforce the correct font-family with !important so that all icons render.
+   ========================================================================== */
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src:
+    url("../assets/fonts/fa-solid-900.woff2") format("woff2"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.woff2") format("woff2"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src:
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-regular-400.woff2") format("woff2"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-regular-400.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Font Awesome 6 Brands";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src:
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-brands-400.woff2") format("woff2"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-brands-400.ttf") format("truetype");
+}
+
+/* Base icon reset */
+body [class*="fa-"],
+body [class*="fa-"]::before,
+body i[class*="fa-"],
+body i[class*="fa-"]::before,
+i[class*="fa-"],
+.fa-solid,
+.fa-brands,
+.fa-regular {
+  display: inline-block;
+  font-style: normal !important;
+  font-variant: normal !important;
+  text-rendering: auto !important;
+  line-height: 1 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Solid icons protection against global.css */
+body .fa-solid,
+body .fa-solid::before,
+body [class*="fa-solid"],
+body [class*="fa-solid"]::before,
+body i.fa-solid,
+body i.fa-solid::before,
+.fa-solid,
+.fa-solid::before {
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900 !important;
+}
+
+/* Brands icons protection against global.css */
+body .fa-brands,
+body .fa-brands::before,
+body [class*="fa-brands"],
+body [class*="fa-brands"]::before,
+body i.fa-brands,
+body i.fa-brands::before,
+.fa-brands,
+.fa-brands::before {
+  font-family: "Font Awesome 6 Brands" !important;
+  font-weight: 400 !important;
+}
+
+/* Regular icons protection against global.css */
+body .fa-regular,
+body .fa-regular::before,
+body [class*="fa-regular"],
+body [class*="fa-regular"]::before,
+body i.fa-regular,
+body i.fa-regular::before,
+.fa-regular,
+.fa-regular::before {
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 400 !important;
+}
+
+/* Explicit unicode mappings for all page icons to guarantee rendering */
+.fa-house::before { content: "\f015"; }
+.fa-shield-halved::before { content: "\f3ed"; }
+.fa-calendar-check::before { content: "\f274"; }
+.fa-code-branch::before { content: "\f126"; }
+.fa-hard-drive::before { content: "\f0a0"; }
+.fa-hand-holding-heart::before { content: "\f4be"; }
+.fa-arrow-down::before { content: "\f063"; }
+.fa-paw::before { content: "\f1b0"; }
+.fa-list-check::before { content: "\f0ae"; }
+.fa-circle-info::before { content: "\f05a"; }
+.fa-user-lock::before { content: "\f502"; }
+.fa-envelope-open-text::before { content: "\f658"; }
+.fa-clipboard-check::before { content: "\f46c"; }
+.fa-star-half-stroke::before { content: "\f5c0"; }
+.fa-ban::before { content: "\f05e"; }
+.fa-handshake-angle::before { content: "\f4c4"; }
+.fa-server::before { content: "\f233"; }
+.fa-truck-medical::before { content: "\f0f9"; }
+.fa-scale-balanced::before { content: "\f24e"; }
+.fa-triangle-exclamation::before { content: "\f071"; }
+.fa-eye::before { content: "\f06e"; }
+.fa-pen-to-square::before { content: "\f044"; }
+.fa-trash-can::before { content: "\f2ed"; }
+.fa-user-xmark::before { content: "\f235"; }
+.fa-envelope::before { content: "\f0e0"; }
+.fa-paper-plane::before { content: "\f1d8"; }
+.fa-location-dot::before { content: "\f3c5"; }
+.fa-github::before { content: "\f09b"; }
+.fa-cookie-bite::before { content: "\f564"; }
+.fa-chevron-up::before { content: "\f077"; }
+.fa-circle-check::before { content: "\f058"; }
+.fa-circle-xmark::before { content: "\f057"; }
+
+/* Typography Protection against global.css Times New Roman */
+.privacy-hero h1,
+.privacy-hero h1 em,
+.privacy-section h2,
+.privacy-section h3,
+.privacy-toc-header,
+.privacy-card h4,
+.privacy-table th {
+  font-family: "Manrope", sans-serif !important;
+}
+
+.privacy-hero-lede,
+.privacy-section p,
+.privacy-list li,
+.privacy-toc-link,
+.privacy-meta-item,
+.privacy-card p,
+.privacy-table td,
+.privacy-contact-card div,
+.privacy-breadcrumb,
+.privacy-alert-content,
+.privacy-btn,
+.privacy-badge,
+.privacy-kicker,
+.privacy-toc-help,
+.privacy-art-caption,
+.privacy-photo-badge span {
+  font-family: "DM Sans", sans-serif !important;
+}
+
+/* --------------------------------------------------------------------------
+   1. Skip Link & Accessibility
+   -------------------------------------------------------------------------- */
+.skip-link {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 100;
+  padding: 10px 16px;
+  background: #ffffff;
+  color: var(--dark, #1d5039);
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 18px rgba(35, 57, 43, 0.2);
+  transform: translateY(-160%);
+  transition: transform 0.2s ease-in-out;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 3px solid var(--green, #286849);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   2. Breadcrumbs
+   -------------------------------------------------------------------------- */
+.privacy-breadcrumb {
+  width: min(1160px, calc(100% - 48px));
+  margin: 18px auto 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.88rem;
+  color: #65756a;
+}
+
+.privacy-breadcrumb a {
+  color: var(--green, #286849);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s ease;
+}
+
+.privacy-breadcrumb a:hover,
+.privacy-breadcrumb a:focus-visible {
+  color: var(--dark, #1d5039);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.privacy-breadcrumb .separator {
+  color: #a4b3a8;
+  font-size: 0.8rem;
+}
+
+.privacy-breadcrumb .current {
+  color: var(--ink, #26372e);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   3. Hero Section
+   -------------------------------------------------------------------------- */
+.privacy-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 82% 28%, rgba(198, 217, 189, 0.45), transparent 26rem),
+    radial-gradient(circle at 10% 70%, rgba(248, 229, 216, 0.4), transparent 22rem),
+    linear-gradient(135deg, #fcfaf5 0%, #f6f3eb 100%);
+  border-bottom: 1px solid #e8ebe4;
+  margin-top: 10px;
+}
+
+.privacy-hero-inner {
+  width: min(1160px, calc(100% - 48px));
+  min-height: 400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 48px;
+  padding: 48px 0 56px;
+}
+
+.privacy-hero-copy {
+  max-width: 630px;
+}
+
+.privacy-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #eaf1e7;
+  color: var(--green, #286849);
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  border: 1px solid #d4dfd0;
+}
+
+.privacy-badge i {
+  font-size: 0.85rem;
+}
+
+.privacy-hero h1 {
+  margin: 0;
+  color: var(--dark, #1d5039);
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(2.6rem, 5.5vw, 4.4rem);
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+  font-weight: 800;
+}
+
+.privacy-hero h1 em {
+  color: var(--green, #286849);
+  font-style: normal;
+  position: relative;
+}
+
+.privacy-hero-lede {
+  max-width: 580px;
+  margin: 20px 0 24px;
+  color: #536258;
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(1rem, 1.7vw, 1.15rem);
+  line-height: 1.75;
+}
+
+/* Hero Meta Info Pills */
+.privacy-meta-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 26px;
+}
+
+.privacy-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #e5ebe2;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.8rem;
+  color: #49584e;
+  box-shadow: 0 2px 6px rgba(35, 57, 43, 0.03);
+}
+
+.privacy-meta-item i {
+  color: var(--green, #286849);
+  font-size: 0.85rem;
+}
+
+.privacy-meta-item strong {
+  color: var(--ink, #26372e);
+}
+
+.privacy-hero-jump {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 10px;
+  background: var(--green, #286849);
+  color: #ffffff;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  box-shadow: 0 8px 20px rgba(40, 104, 73, 0.22);
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.privacy-hero-jump:hover,
+.privacy-hero-jump:focus-visible {
+  background: var(--dark, #1d5039);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(29, 80, 57, 0.28);
+  color: #ffffff;
+}
+
+/* Photo collage */
+.privacy-hero-art {
+  width: min(100%, 420px);
+  justify-self: center;
+  text-align: center;
+}
+
+.privacy-photo-collage {
+  position: relative;
+  width: 100%;
+  height: 320px;
+}
+
+.privacy-photo {
+  position: absolute;
+  display: block;
+  object-fit: cover;
+  border: 6px solid #ffffff;
+  box-shadow: 0 16px 38px rgba(35, 57, 43, 0.15);
+}
+
+.privacy-photo-dog {
+  top: 6px;
+  left: 6%;
+  width: 66%;
+  height: 88%;
+  border-radius: 46% 46% 26px 26px;
+  object-position: center 25%;
+}
+
+.privacy-photo-cat {
+  top: 24px;
+  right: 0;
+  width: 40%;
+  height: 44%;
+  border-radius: 50%;
+  object-position: center 25%;
+}
+
+.privacy-photo-bird {
+  right: 2%;
+  bottom: 4px;
+  width: 45%;
+  height: 48%;
+  border-radius: 20px 20px 46% 20px;
+  object-position: center 30%;
+}
+
+.privacy-photo-badge {
+  position: absolute;
+  z-index: 2;
+  right: 6%;
+  top: 48%;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: var(--green, #286849);
+  color: #ffffff;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 10px 24px rgba(29, 80, 57, 0.25);
+}
+
+.privacy-art-caption {
+  display: block;
+  margin-top: 6px;
+  color: #65756a;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   4. Main Container & Layout
+   -------------------------------------------------------------------------- */
+.privacy-layout {
+  display: grid;
+  grid-template-columns: 270px minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(32px, 5vw, 68px);
+  padding-top: 56px;
+  padding-bottom: 96px;
+}
+
+/* --------------------------------------------------------------------------
+   5. Sticky Table of Contents (TOC)
+   -------------------------------------------------------------------------- */
+.privacy-toc-wrap {
+  position: sticky;
+  top: 24px;
+}
+
+.privacy-toc {
+  padding: 24px 20px;
+  border: 1px solid #e5ebe2;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 12px 32px rgba(35, 57, 43, 0.05);
+}
+
+.privacy-toc-header {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eef2ec;
+  color: var(--dark, #1d5039);
+  font-family: "Manrope", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.privacy-toc-header i {
+  color: var(--green, #286849);
+  font-size: 1rem;
+}
+
+.privacy-toc-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.privacy-toc-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 9px;
+  color: #536258;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.87rem;
+  line-height: 1.35;
+  transition: all 0.18s ease;
+  text-decoration: none;
+}
+
+.privacy-toc-link .toc-num {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: #f1f4ed;
+  color: var(--green, #286849);
+  transition: all 0.18s ease;
+}
+
+.privacy-toc-link:hover,
+.privacy-toc-link:focus-visible {
+  background: #f1f4ed;
+  color: var(--green, #286849);
+  transform: translateX(3px);
+}
+
+.privacy-toc-link.active {
+  background: #eaf1e7;
+  color: var(--dark, #1d5039);
+  font-weight: 700;
+}
+
+.privacy-toc-link.active .toc-num {
+  background: var(--green, #286849);
+  color: #ffffff;
+}
+
+.privacy-toc-help {
+  margin-top: 18px;
+  padding: 16px;
+  border-radius: 12px;
+  background: #fbfbf9;
+  border: 1px solid #edf0ea;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.8rem;
+  color: #5d6d63;
+  line-height: 1.5;
+}
+
+.privacy-toc-help strong {
+  display: block;
+  color: var(--dark, #1d5039);
+  font-size: 0.85rem;
+  margin-bottom: 5px;
+}
+
+.privacy-toc-help a {
+  color: var(--green, #286849);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   6. Content Column & Sections
+   -------------------------------------------------------------------------- */
+.privacy-content {
+  min-width: 0;
+}
+
+.privacy-section {
+  padding-bottom: 42px;
+  margin-bottom: 42px;
+  border-bottom: 1px solid #e6eae2;
+  scroll-margin-top: 32px;
+}
+
+.privacy-section:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.privacy-kicker {
+  display: inline-block;
+  margin: 0 0 8px;
+  color: var(--green, #286849);
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.privacy-section h2 {
+  margin: 0 0 16px;
+  color: var(--dark, #1d5039);
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(1.5rem, 3.2vw, 2.05rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.25;
+}
+
+.privacy-section h3 {
+  margin: 24px 0 12px;
+  color: var(--dark, #1d5039);
+  font-family: "Manrope", sans-serif;
+  font-size: 1.22rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.privacy-section p {
+  margin: 0 0 16px;
+  color: #45554b;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+.privacy-section p:last-child {
+  margin-bottom: 0;
+}
+
+.privacy-section strong {
+  color: #203126;
+  font-weight: 700;
+}
+
+.privacy-section a {
+  color: var(--green, #286849);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
+}
+
+.privacy-section a:hover,
+.privacy-section a:focus-visible {
+  color: var(--dark, #1d5039);
+}
+
+/* --------------------------------------------------------------------------
+   7. Information Cards & Feature Grids
+   -------------------------------------------------------------------------- */
+.privacy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.privacy-card {
+  padding: 22px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid #e8ebe4;
+  box-shadow: 0 6px 18px rgba(35, 57, 43, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.privacy-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(35, 57, 43, 0.06);
+}
+
+.privacy-card-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #eaf1e7;
+  color: var(--green, #286849);
+  font-size: 1.15rem;
+  margin-bottom: 14px;
+}
+
+.privacy-card-icon.accent-orange {
+  background: #faebe2;
+  color: #a45a2a;
+}
+
+.privacy-card-icon.accent-blue {
+  background: #e8f0f6;
+  color: #3b6b88;
+}
+
+.privacy-card-icon.accent-amber {
+  background: #f7f2de;
+  color: #8c7326;
+}
+
+.privacy-card h4 {
+  margin: 0 0 8px;
+  color: var(--dark, #1d5039);
+  font-family: "Manrope", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.privacy-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #55665b;
+}
+
+.privacy-card .data-tag {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: #f1f4ed;
+  color: #3b5042;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* --------------------------------------------------------------------------
+   8. Callout & Alert Boxes
+   -------------------------------------------------------------------------- */
+.privacy-alert {
+  display: flex;
+  gap: 16px;
+  padding: 20px 22px;
+  border-radius: 14px;
+  margin: 22px 0;
+  border: 1px solid #d9e6d4;
+  background: #f2f7f0;
+}
+
+.privacy-alert-icon {
+  flex-shrink: 0;
+  font-size: 1.3rem;
+  color: var(--green, #286849);
+  margin-top: 2px;
+}
+
+.privacy-alert-content {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: #38493d;
+}
+
+.privacy-alert-content strong {
+  display: block;
+  color: var(--dark, #1d5039);
+  font-size: 0.98rem;
+  margin-bottom: 4px;
+}
+
+.privacy-alert.alert-warning {
+  background: #fdf6ee;
+  border-color: #f1ddc9;
+}
+
+.privacy-alert.alert-warning .privacy-alert-icon {
+  color: #b56c28;
+}
+
+.privacy-alert.alert-warning .privacy-alert-content strong {
+  color: #7b4412;
+}
+
+/* --------------------------------------------------------------------------
+   9. Clean Bulleted & Numbered Lists
+   -------------------------------------------------------------------------- */
+.privacy-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 20px;
+  display: grid;
+  gap: 12px;
+}
+
+.privacy-list li {
+  position: relative;
+  padding-left: 28px;
+  color: #48584e;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
+.privacy-list li::before {
+  content: "\f058";
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900 !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  line-height: 1 !important;
+  position: absolute;
+  left: 0;
+  top: 3px;
+  color: var(--green, #286849);
+  font-size: 0.95rem;
+}
+
+.privacy-list.list-cross li::before {
+  content: "\f057";
+  color: #b84a39;
+}
+
+/* --------------------------------------------------------------------------
+   10. Interactive Data Tables
+   -------------------------------------------------------------------------- */
+.privacy-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin: 22px 0;
+  border: 1px solid #e4eae0;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(35, 57, 43, 0.02);
+}
+
+.privacy-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.92rem;
+  text-align: left;
+}
+
+.privacy-table th {
+  background: #f4f7f2;
+  color: var(--dark, #1d5039);
+  font-family: "Manrope", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 14px 18px;
+  border-bottom: 1px solid #e4eae0;
+  white-space: nowrap;
+}
+
+.privacy-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #edf1eb;
+  color: #48584e;
+  line-height: 1.6;
+  vertical-align: top;
+}
+
+.privacy-table tr:last-child td {
+  border-bottom: none;
+}
+
+.privacy-table tr:hover td {
+  background: #fafcf9;
+}
+
+.privacy-table .badge-demo {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: #fbf0e8;
+  color: #a05322;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.privacy-table .badge-local {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: #eaf1e7;
+  color: var(--green, #286849);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   11. Contact Block
+   -------------------------------------------------------------------------- */
+.privacy-contact-box {
+  padding: 28px;
+  border: 1px solid #d9e5d4;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(200, 222, 192, 0.3), transparent 16rem),
+    linear-gradient(135deg, #f4f8f2 0%, #edf4eb 100%);
+  margin-top: 18px;
+}
+
+.privacy-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.privacy-contact-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 18px;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e2ebd9;
+  box-shadow: 0 4px 14px rgba(35, 57, 43, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.privacy-contact-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(35, 57, 43, 0.07);
+  border-color: #c9dbbe;
+}
+
+.privacy-contact-icon,
+.privacy-contact-card > i {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 12px;
+  background: #eaf1e7;
+  color: var(--green, #286849);
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.privacy-contact-card:hover .privacy-contact-icon,
+.privacy-contact-card:hover > i {
+  background: var(--green, #286849);
+  color: #ffffff;
+}
+
+.privacy-contact-icon i,
+.privacy-contact-card > i {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.15rem !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: center;
+  width: auto !important;
+  height: auto !important;
+}
+
+.privacy-contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  font-family: "DM Sans", sans-serif !important;
+}
+
+.privacy-contact-details strong {
+  display: block;
+  color: var(--dark, #1d5039);
+  font-size: 0.94rem;
+  font-weight: 700;
+  font-family: "Manrope", sans-serif !important;
+}
+
+.privacy-contact-details a {
+  color: var(--green, #286849);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  overflow-wrap: anywhere;
+  display: inline-block;
+  transition: color 0.15s ease;
+}
+
+.privacy-contact-details a:hover {
+  color: var(--dark, #1d5039);
+}
+
+.privacy-contact-details span {
+  display: block;
+  font-size: 0.82rem;
+  color: #55675c;
+  line-height: 1.45;
+}
+
+.privacy-contact-details .contact-value {
+  color: #2c3e32;
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+
+.privacy-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+  align-items: center;
+}
+
+.privacy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-family: "DM Sans", sans-serif !important;
+  font-weight: 700;
+  font-size: 0.92rem;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  line-height: 1.2;
+}
+
+.privacy-btn i {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1rem !important;
+  line-height: 1 !important;
+  vertical-align: middle;
+}
+
+.privacy-btn-primary {
+  background: var(--green, #286849);
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(40, 104, 73, 0.2);
+}
+
+.privacy-btn-primary:hover,
+.privacy-btn-primary:focus-visible {
+  background: var(--dark, #1d5039);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(29, 80, 57, 0.25);
+}
+
+.privacy-btn-secondary {
+  background: #ffffff;
+  color: var(--dark, #1d5039) !important;
+  border: 1px solid #d4dfcf;
+}
+
+.privacy-btn-secondary:hover,
+.privacy-btn-secondary:focus-visible {
+  background: #f1f4ed;
+  border-color: #c2d2bc;
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   12. Back to Top Button
+   -------------------------------------------------------------------------- */
+.privacy-back-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 90;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--green, #286849);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-size: 1rem;
+  box-shadow: 0 8px 24px rgba(29, 80, 57, 0.28);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease, background-color 0.2s ease;
+  text-decoration: none !important;
+}
+
+.privacy-back-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.privacy-back-top:hover,
+.privacy-back-top:focus-visible {
+  background: var(--dark, #1d5039);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(29, 80, 57, 0.36);
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   13. Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 960px) {
+  .privacy-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 42px 0 48px;
+  }
+
+  .privacy-hero-art {
+    width: min(80%, 360px);
+  }
+
+  .privacy-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding-top: 40px;
+    padding-bottom: 72px;
+  }
+
+  .privacy-toc-wrap {
+    position: static;
+  }
+
+  .privacy-toc-nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .privacy-contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .privacy-breadcrumb,
+  .privacy-hero-inner,
+  .privacy-layout {
+    width: min(100% - 32px, 1160px);
+  }
+
+  .privacy-hero {
+    margin-top: 0;
+  }
+
+  .privacy-hero-inner {
+    padding-top: 32px;
+    padding-bottom: 36px;
+  }
+
+  .privacy-hero h1 {
+    font-size: clamp(2.2rem, 8vw, 3rem);
+  }
+
+  .privacy-photo-collage {
+    height: 250px;
+  }
+
+  .privacy-photo-badge {
+    right: 2%;
+    padding: 8px 12px;
+    font-size: 0.72rem;
+  }
+
+  .privacy-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .privacy-toc-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .privacy-contact-box {
+    padding: 20px;
+  }
+
+  .privacy-actions {
+    flex-direction: column;
+  }
+
+  .privacy-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .privacy-back-top {
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .privacy-hero-jump,
+  .privacy-card,
+  .privacy-toc-link,
+  .privacy-back-top,
+  .privacy-btn {
+    transition: none !important;
+    transform: none !important;
+  }
+}

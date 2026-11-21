@@ -2245,46 +2245,307 @@
         width: 100%;
       }
     }
+
+    /* =====================================================================
+       Layout & alignment consistency
+       - Consistent section spacing
+       - Card grids: max 3 per row (desktop), 2 (tablet), 1 (mobile);
+         incomplete last rows are centered
+       - Every card: icon -> title -> description, center-aligned
+       - Same green icon style and subtle hover on all cards
+       Scoped to #main-content so the header and footer are untouched.
+       ===================================================================== */
+
+    /* ---------- Section spacing ---------- */
+    #main-content > .section {
+      padding-block: clamp(2.75rem, 5vw, 3.5rem);
+    }
+
+    /* One spacing rhythm: heading box -> 2rem -> cards, no stacked margins */
+    #main-content .dog-topics-heading,
+    #main-content .dog-warning-heading {
+      margin: 0 auto 2rem;
+    }
+
+    #main-content .benefits-grid,
+    #main-content .dog-info-grid,
+    #main-content .activities-grid,
+    #main-content .safety-cards-grid,
+    #main-content .weather-cards-list,
+    #main-content .interactive-checklist-grid {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    #main-content .warning-signs-grid {
+      margin: 0 0 1.5rem;
+    }
+
+    /* ---------- Card grids ---------- */
+    #main-content .benefits-grid,
+    #main-content #requirements-grid:not(.single-horizontal-card),
+    #main-content .activities-grid,
+    #main-content #accessories-grid,
+    #main-content .safety-cards-grid,
+    #main-content .warning-signs-grid {
+      --card-cols: 3;
+      --card-gap: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: stretch;
+      gap: var(--card-gap);
+    }
+
+    #main-content .benefits-grid > *,
+    #main-content #requirements-grid:not(.single-horizontal-card) > *,
+    #main-content .activities-grid > *,
+    #main-content #accessories-grid > *,
+    #main-content .safety-cards-grid > *,
+    #main-content .warning-signs-grid > * {
+      flex: 0 0 calc((100% - (var(--card-cols) - 1) * var(--card-gap)) / var(--card-cols));
+      max-width: calc((100% - (var(--card-cols) - 1) * var(--card-gap)) / var(--card-cols));
+      min-width: 0;
+      box-sizing: border-box;
+    }
+
+    /* ---------- Shared card look & hover ---------- */
+    #main-content .benefit-card,
+    #main-content .dog-card,
+    #main-content .activity-compact-card,
+    #main-content .safety-tip-card,
+    #main-content .warning-sign-card,
+    #main-content .weather-row-card,
+    #main-content .interactive-checklist-card {
+      background: #ffffff;
+      border: 1px solid #dcebc9;
+      border-radius: 20px;
+      box-shadow: 0 4px 18px rgba(35, 75, 45, 0.04);
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    #main-content .benefit-card:hover,
+    #main-content .dog-card:hover,
+    #main-content .activity-compact-card:hover,
+    #main-content .safety-tip-card:hover,
+    #main-content .warning-sign-card:hover,
+    #main-content .weather-row-card:hover,
+    #main-content .interactive-checklist-card:hover {
+      transform: translateY(-4px);
+      border-color: #b9d4bf;
+      box-shadow: 0 12px 30px rgba(35, 75, 45, 0.1);
+    }
+
+    /* Highlighted safety tips keep emphasis using the cream theme colour */
+    #main-content .safety-tip-card.warning-highlight {
+      background: #fbf6ec;
+      border-color: #e6d6c6;
+    }
+
+    #main-content .safety-tip-card.warning-highlight:hover {
+      border-color: #b9d4bf;
+    }
+
+    #main-content .safety-tip-card.warning-highlight p strong {
+      color: var(--dark);
+    }
+
+    /* ---------- Center-aligned card content (icon -> title -> description) ---------- */
+    #main-content .benefit-card,
+    #main-content .activity-compact-card,
+    #main-content .safety-tip-card,
+    #main-content .warning-sign-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 1.625rem 1.375rem 1.5rem;
+    }
+
+    #main-content .safety-card-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    #main-content #requirements-grid:not(.single-horizontal-card) .dog-card-body,
+    #main-content #accessories-grid .dog-card-body {
+      align-items: center;
+      text-align: center;
+    }
+
+    #main-content #requirements-grid:not(.single-horizontal-card) .walking-time-badge,
+    #main-content #accessories-grid .walking-time-badge {
+      align-self: center;
+    }
+
+    #main-content #requirements-grid:not(.single-horizontal-card) .card-walk-tip,
+    #main-content #accessories-grid .card-walk-tip {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* ---------- Consistent icon style ---------- */
+    #main-content .benefit-icon-wrap,
+    #main-content .activity-icon-wrap,
+    #main-content .safety-icon-wrap,
+    #main-content .warning-sign-card .quick-info-icon-wrap,
+    #main-content .weather-row-card .weather-icon-box,
+    #main-content .checklist-icon-box {
+      width: 3.25rem;
+      height: 3.25rem;
+      border-radius: 14px;
+      background: #edf7f0;
+      color: #286849;
+      border: 1px solid #cce4d2;
+      display: grid;
+      place-items: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+    }
+
+    #main-content .benefit-icon-wrap,
+    #main-content .activity-icon-wrap,
+    #main-content .safety-icon-wrap,
+    #main-content .warning-sign-card .quick-info-icon-wrap {
+      margin: 0 auto 1rem;
+    }
+
+    #main-content .benefit-card:hover .benefit-icon-wrap,
+    #main-content .activity-compact-card:hover .activity-icon-wrap,
+    #main-content .safety-tip-card:hover .safety-icon-wrap,
+    #main-content .warning-sign-card:hover .quick-info-icon-wrap,
+    #main-content .weather-row-card:hover .weather-icon-box,
+    #main-content .interactive-checklist-card:hover .checklist-icon-box {
+      background: #286849;
+      color: #ffffff;
+      border-color: #286849;
+      transform: scale(1.06);
+    }
+
+    /* Icons follow their box colour (green, white on hover) so they stay visible */
+    #main-content .benefit-icon-wrap i,
+    #main-content .activity-icon-wrap i,
+    #main-content .safety-icon-wrap i,
+    #main-content .warning-sign-card .quick-info-icon-wrap i,
+    #main-content .weather-row-card .weather-icon-box i,
+    #main-content .checklist-icon-box i {
+      color: inherit;
+    }
+
+    /* ---------- Weather cards ---------- */
+    #main-content .weather-row-card {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 1.25rem;
+      padding: 1.75rem;
+    }
+
+    #main-content .weather-summary-col {
+      align-items: center;
+      text-align: center;
+      border-right: none;
+      border-bottom: 1px solid #edf4eb;
+      padding: 0 0 1.125rem;
+    }
+
+    #main-content .weather-summary-col p {
+      max-width: 40rem;
+      margin-inline: auto;
+    }
+
+    #main-content .weather-badge-top {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    #main-content .weather-row-card .weather-season-tag {
+      background: #edf7f0;
+      color: #1e6f43;
+      border: 1px solid #cce4d2;
+    }
+
+    #main-content .precaution-item {
+      text-align: center;
+    }
+
+    /* ---------- Checklist cards ---------- */
+    #main-content .card-top-bar,
+    #main-content .card-icon-title-wrap {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      text-align: center;
+    }
+
+    #main-content .interactive-checklist-card .card-desc {
+      text-align: center;
+    }
+
+    /* ---------- Search & filter strip ---------- */
+    #main-content .sf-filter-inline-row,
+    #main-content .sf-mini-pills,
+    #main-content .sf-meta-bar {
+      justify-content: center;
+    }
+
+    #main-content .sf-filter-inline-row {
+      align-items: center;
+    }
+
+    /* ---------- Tablet: 2 cards per row ---------- */
+    @media (max-width: 960px) {
+      #main-content .benefits-grid,
+      #main-content #requirements-grid:not(.single-horizontal-card),
+      #main-content .activities-grid,
+      #main-content #accessories-grid,
+      #main-content .safety-cards-grid,
+      #main-content .warning-signs-grid {
+        --card-cols: 2;
+        --card-gap: 1.25rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #main-content .dog-topics-heading,
+      #main-content .dog-warning-heading {
+        margin: 0 0 1.5rem;
+      }
+    }
+
+    /* ---------- Mobile: 1 card per row ---------- */
+    @media (max-width: 600px) {
+      #main-content .benefits-grid,
+      #main-content #requirements-grid:not(.single-horizontal-card),
+      #main-content .activities-grid,
+      #main-content #accessories-grid,
+      #main-content .safety-cards-grid,
+      #main-content .warning-signs-grid {
+        --card-cols: 1;
+        --card-gap: 1rem;
+      }
+
+      #main-content .weather-row-card {
+        padding: 1.25rem 1rem;
+      }
+      #main-content .weather-precautions-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #main-content .sf-filter-inline-row {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <header class="site-header">
-    <a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true"
-        viewBox="0 0 40 40" role="img" focusable="false">
-        <circle cx="12" cy="12" r="4" fill="currentColor" />
-        <circle cx="21" cy="8" r="4" fill="currentColor" />
-        <circle cx="30" cy="12" r="4" fill="currentColor" />
-        <path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z"
-          fill="currentColor" />
-      </svg><span>Pet<span>Sathi</span></span></a>
-    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars"
-        aria-hidden="true"></i></button>
-    <nav class="main-nav" aria-label="Main navigation">
-      <a href="../../../../index.html">Home</a>
-      <div class="nav-item"><a href="../index.html">Explore Pets <span class="nav-arrow"
-            aria-hidden="true">&#x25BE;</span></a>
-        <div class="dropdown dropdown-explore">
-          <a href="index.html">Dogs</a><a href="../cats/index.html">Cats</a><a href="../birds/index.html">Birds</a><a
-            href="../rabbits/index.html">Rabbits</a><a href="../other/fish.html">Aquarium Fish</a><a
-            href="../other/reptiles.html">Reptiles</a>
-        </div>
-      </div>
-      <div class="nav-item"><a href="../../services/index.html">Services <span class="nav-arrow"
-            aria-hidden="true">&#x25BE;</span></a>
-        <div class="dropdown dropdown-services"><a href="../../services/dog-walking.html">Dog Walking</a><a
-            href="../../services/cat-care.html">Cat Care</a><a href="../../services/pet-care.html">Pet Care</a></div>
-      </div>
-      <div class="nav-item"><a href="../../walker/index.html">Find a Walker <span class="nav-arrow"
-            aria-hidden="true">&#x25BE;</span></a>
-        <div class="dropdown dropdown-walker"><a href="../../walker/dogs.html">Search Walkers</a><a
-            href="../../walker/cats.html">Walker Profiles</a><a href="../../walker/index.html#bookings">My Bookings</a>
-        </div>
-      </div>
-      <a href="../../about.html">About Us</a><a href="../../auth/login.html">Log in</a><a class="button button-small"
-        href="../../auth/register.html">Get Started</a>
-    </nav>
-  </header>
+  <div id="header"></div>
 
   <main id="main-content">
     <!-- 1. Hero Section: Walking Your Dog (Matching Dog Index Page Exactly) -->
@@ -3699,31 +3960,7 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="section-wrap footer-grid">
-      <div><a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark"
-            aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false">
-            <circle cx="12" cy="12" r="4" fill="currentColor" />
-            <circle cx="21" cy="8" r="4" fill="currentColor" />
-            <circle cx="30" cy="12" r="4" fill="currentColor" />
-            <path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z"
-              fill="currentColor" />
-          </svg><span>Pet<span>Sathi</span></span></a>
-        <p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p>
-      </div>
-      <div><b>Explore</b><a href="../../../../index.html#home">Home</a><a href="../index.html">Explore Pets</a><a
-          href="../../services/index.html">Services</a><a href="../../walker/index.html">Find a Walker</a></div>
-      <div><b>Information</b><a href="../../about.html">About Us</a><a href="../../contact.html">Contact Us</a><a
-          href="../../faq.html">FAQ / Help Center</a><a href="../../community-guidelines.html">Community Guidelines</a><a href="#privacy">Privacy Policy</a><a href="#terms">Terms &amp;
-          Conditions</a><a href="../../disclaimer.html">Disclaimer</a></div>      <div><b>Connect With Us</b><a href="https://github.com/Riya-Kharade/PetSathi" target="_blank"
-          rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/riyakharade/" target="_blank"
-          rel="noopener noreferrer">LinkedIn</a><a href="https://petsathi-nsoc.netlify.app/" target="_blank"
-          rel="noopener noreferrer">Live Website</a></div>
-    </div>
-    <div class="section-wrap footer-bottom"><span>&copy; 2026 PetSathi. All rights reserved.</span><span>Made with
-        &hearts; for pets.</span><span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E;
-        &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span></div>
-  </footer>
+  <div id="footer"></div>
 
   <script src="../../../js/main.js"></script>
 

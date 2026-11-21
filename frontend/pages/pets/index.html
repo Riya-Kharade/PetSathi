@@ -3,220 +3,1853 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Explore Pet Categories | PetSathi</title>
+    <meta
+      name="description"
+      content="Explore every pet category on PetSathi - dog breeds, cat care, bird species, rabbit guides, aquarium fish, and reptile habitats all in one place."
+    />
+    <title>Explore Pet Categories &amp; Care Guides | PetSathi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../../css/global.css" />
+    <link rel="stylesheet" href="../../css/home.css" />
     <link rel="stylesheet" href="../../css/inner.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
+    <style>
+      @font-face {
+        font-family: "Font Awesome 6 Free";
+        font-style: normal;
+        font-weight: 900;
+        font-display: block;
+        src:
+          url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.woff2")
+            format("woff2"),
+          url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.ttf")
+            format("truetype");
+      }
+
+      body [class*="fa-"],
+      body [class*="fa-"]::before {
+        font-family: "Font Awesome 6 Free" !important;
+        font-weight: 900 !important;
+        font-style: normal !important;
+        font-variant: normal !important;
+        text-rendering: auto !important;
+        line-height: 1 !important;
+      }
+
+      .fa-regular {
+        font-weight: 400 !important;
+      }
+
+      /* =====================
+         Hero section
+         ===================== */
+      .pet-hero {
+        min-height: 560px;
+        padding-block: 55px 75px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: center;
+        gap: 40px;
+      }
+
+      .pet-hero h1 {
+        max-width: 640px;
+        margin: 0 0 20px;
+      }
+
+      .pet-hero .hero-copy > p {
+        max-width: 550px;
+        font-size: 1.05rem;
+        line-height: 1.85;
+      }
+
+      .pet-badge-strip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 14px;
+        background: #eaf2e9;
+        color: var(--green);
+        border-radius: 999px;
+        font-family: "DM Sans", "Manrope", sans-serif !important;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 13px;
+        flex-wrap: wrap;
+        margin-top: 27px;
+      }
+
+      .hero-actions .button-outline {
+        border-color: #cbd9ce;
+      }
+
+      .hero-actions .button-outline:hover {
+        background: var(--green);
+        border-color: var(--green);
+        color: #ffffff;
+      }
+
+      .hero-note {
+        display: flex;
+        align-items: center;
+        margin-top: 24px;
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+
+      .hero-visual {
+        min-height: 430px;
+        position: relative;
+        display: grid;
+        place-items: center;
+      }
+
+      .hero-blob {
+        position: absolute;
+        width: 85%;
+        height: 88%;
+        background: #e8f0e4;
+        border-radius: 48% 52% 42% 58%;
+      }
+
+      .hero-photo {
+        position: relative;
+        width: 78%;
+        height: 370px;
+        object-fit: cover;
+        border-radius: 48% 48% 24px 24px;
+        box-shadow: var(--shadow);
+      }
+
+      .floating-card {
+        position: absolute;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: #ffffff;
+        padding: 13px 17px;
+        border-radius: 15px;
+        box-shadow: var(--shadow);
+        font-size: 1.2rem;
+      }
+
+      .floating-card span {
+        display: grid;
+      }
+
+      .floating-card b {
+        font-size: 0.82rem;
+      }
+
+      .floating-card small {
+        font-size: 0.7rem;
+        color: var(--muted);
+      }
+
+      .card-top {
+        top: 48px;
+        right: 0;
+      }
+
+      .card-bottom {
+        bottom: 30px;
+        left: 0;
+      }
+
+      /* =====================
+         Quick navigation strip
+         ===================== */
+      .guides-nav-strip {
+        position: relative;
+        background: #ffffff;
+        margin: 40px auto;
+        max-width: 1200px;
+        width: calc(100% - 40px);
+        border: 1px solid #dceade;
+        border-radius: 32px;
+        padding: 42px 36px 38px;
+        box-shadow: 0 4px 24px rgba(35, 80, 50, 0.04);
+        overflow: hidden;
+      }
+
+      .quick-nav-decor {
+        position: absolute;
+        pointer-events: none;
+        z-index: 0;
+        color: #cde4d3;
+        opacity: 0.55;
+      }
+
+      .decor-top-left {
+        top: -8px;
+        left: -8px;
+        width: 130px;
+        height: 130px;
+        background: radial-gradient(
+          circle at 10% 10%,
+          #eaf5ed 0%,
+          rgba(234, 245, 237, 0) 70%
+        );
+        border-radius: 0 0 100% 0;
+      }
+
+      .decor-bottom-right {
+        bottom: -8px;
+        right: -8px;
+        width: 130px;
+        height: 130px;
+        background: radial-gradient(
+          circle at 90% 90%,
+          #eaf5ed 0%,
+          rgba(234, 245, 237, 0) 70%
+        );
+        border-radius: 100% 0 0 0;
+      }
+
+      .decor-paw {
+        position: absolute;
+        display: inline-block;
+        line-height: 1;
+      }
+
+      .decor-paw-1 {
+        top: 14px;
+        left: 28px;
+        font-size: 28px;
+        transform: rotate(-15deg);
+      }
+
+      .decor-paw-2 {
+        top: 38px;
+        left: 12px;
+        font-size: 19px;
+        transform: rotate(20deg);
+      }
+
+      .decor-paw-3 {
+        bottom: 36px;
+        right: 14px;
+        font-size: 19px;
+        transform: rotate(-25deg);
+      }
+
+      .decor-paw-4 {
+        bottom: 14px;
+        right: 28px;
+        font-size: 28px;
+        transform: rotate(15deg);
+      }
+
+      .quick-nav-header {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .quick-nav-eyebrow-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin-bottom: 14px;
+      }
+
+      .quick-nav-line {
+        height: 1px;
+        width: 110px;
+        background: #d6ead9;
+      }
+
+      .quick-nav-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 16px;
+        background: #f4faf5;
+        border: 1px solid #b7deb8;
+        border-radius: 9999px;
+        color: #1e6f43;
+        font-family: "DM Sans", "Manrope", sans-serif !important;
+        font-size: 0.74rem;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        box-shadow: 0 1px 4px rgba(35, 100, 55, 0.04);
+      }
+
+      .quick-nav-badge i {
+        font-size: 0.95rem;
+        line-height: 1;
+        color: #1e6f43;
+        flex-shrink: 0;
+      }
+
+      .quick-nav-title {
+        font-family: "Manrope", sans-serif !important;
+        font-size: clamp(1.45rem, 2.4vw, 1.95rem);
+        font-weight: 800;
+        color: #1a251e;
+        margin: 0;
+        letter-spacing: -0.02em;
+        line-height: 1.25;
+        text-align: center;
+      }
+
+      .quick-nav-title span {
+        color: #1e6f43;
+        font-weight: 800;
+      }
+
+      .guides-nav-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 14px;
+        margin: 0;
+      }
+
+      .guide-nav-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 9px 16px 9px 9px;
+        background: #edf7f0;
+        border: 1px solid #cce4d2;
+        border-radius: 9999px;
+        text-decoration: none;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          border-color 0.2s ease,
+          background 0.2s ease;
+        min-width: 0;
+        cursor: pointer;
+      }
+
+      .guide-nav-item:hover,
+      .guide-nav-item:focus-visible {
+        background: #e4f4e8;
+        border-color: #237847;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 18px rgba(35, 100, 55, 0.12);
+        outline: none;
+      }
+
+      .guide-nav-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: #d1ecda;
+        color: #1e6f43;
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+        font-size: 1rem;
+        line-height: 1;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+      }
+
+      .guide-nav-icon i {
+        display: inline-block;
+        line-height: 1;
+      }
+
+      .guide-nav-item:hover .guide-nav-icon,
+      .guide-nav-item:focus-visible .guide-nav-icon {
+        background: #1e6f43;
+        color: #ffffff;
+      }
+
+      .guide-nav-label {
+        font-family: "DM Sans", "Manrope", sans-serif !important;
+        font-size: 0.88rem;
+        font-weight: 700;
+        color: #1c2b20;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      /* =====================
+         Search & filter
+         ===================== */
+      .pet-search-filter-wrap {
+        max-width: 1200px;
+        width: calc(100% - 40px);
+        margin: 0 auto 35px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: nowrap;
+      }
+
+      .pet-search-bar {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        background: #ffffff;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 6px 6px 6px 18px;
+        box-shadow: 0 4px 16px rgba(35, 75, 45, 0.03);
+        transition:
+          border-color 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .pet-search-bar:focus-within {
+        border-color: var(--green);
+        box-shadow: 0 6px 20px rgba(35, 75, 45, 0.08);
+      }
+
+      .pet-search-bar i {
+        color: var(--muted);
+        font-size: 0.95rem;
+        margin-right: 10px;
+      }
+
+      .pet-search-bar input {
+        flex: 1;
+        min-width: 0;
+        border: none;
+        outline: none;
+        background: transparent;
+        font-family: "DM Sans", sans-serif;
+        font-size: 0.92rem;
+        color: var(--ink);
+      }
+
+      .pet-search-bar input::placeholder {
+        color: #8a9a90;
+      }
+
+      .pet-filter-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 22px;
+        background: #edf7f0;
+        border: 1px solid #cce4d2;
+        border-radius: 999px;
+        color: var(--green);
+        font-family: "DM Sans", sans-serif;
+        font-size: 0.92rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        white-space: nowrap;
+      }
+
+      .pet-filter-btn:hover,
+      .pet-filter-btn:focus-visible {
+        background: var(--green);
+        color: #ffffff;
+        border-color: var(--green);
+        box-shadow: 0 4px 14px rgba(35, 100, 55, 0.12);
+        outline: none;
+      }
+
+      /* =====================
+         Decorative section heading
+         ===================== */
+      .topics-heading {
+        position: relative;
+        max-width: 1400px;
+        margin: 0 auto 35px;
+        padding: 44px 35px 38px;
+        overflow: hidden;
+        text-align: center;
+        border-radius: 35px;
+        border: 1px solid #dcebc9;
+        background: #fafcf7;
+        box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
+      }
+
+      .corner-wave {
+        position: absolute;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .wave-tl {
+        top: 0;
+        left: 0;
+        width: 220px;
+        height: 130px;
+      }
+
+      .wave-br {
+        bottom: 0;
+        right: 0;
+        width: 220px;
+        height: 130px;
+      }
+
+      .heading-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .heading-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 7px 20px;
+        margin-bottom: 16px;
+        border-radius: 50px;
+        background: #edf6df;
+        border: 1px solid #dcebc9;
+        color: #246b43;
+        font-family: "DM Sans", "Manrope", sans-serif !important;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        box-shadow: 0 1px 4px rgba(36, 107, 67, 0.06);
+      }
+
+      .heading-label i {
+        font-size: 14px;
+        color: #246b43;
+        line-height: 1;
+      }
+
+      .topics-heading h2 {
+        color: #263b30;
+        font-family: Georgia, "Times New Roman", serif !important;
+        font-size: clamp(24px, 3.2vw, 36px);
+        font-weight: 700;
+        margin: 0 0 12px;
+        line-height: 1.2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .topics-heading h2 span:not(.heading-burst) {
+        color: #28764a;
+      }
+
+      .heading-burst {
+        display: inline-block;
+        position: relative;
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        vertical-align: middle;
+      }
+
+      .heading-burst span {
+        position: absolute;
+        background: #60a872;
+        border-radius: 9999px;
+      }
+
+      .heading-burst.left span {
+        right: 0;
+        transform-origin: right center;
+      }
+
+      .heading-burst.left span:nth-child(1) {
+        top: 3px;
+        width: 14px;
+        height: 2.8px;
+        transform: rotate(35deg);
+      }
+
+      .heading-burst.left span:nth-child(2) {
+        top: 11px;
+        width: 18px;
+        height: 2.8px;
+      }
+
+      .heading-burst.left span:nth-child(3) {
+        bottom: 3px;
+        width: 14px;
+        height: 2.8px;
+        transform: rotate(-35deg);
+      }
+
+      .heading-burst.right span {
+        left: 0;
+        transform-origin: left center;
+      }
+
+      .heading-burst.right span:nth-child(1) {
+        top: 3px;
+        width: 14px;
+        height: 2.8px;
+        transform: rotate(-35deg);
+      }
+
+      .heading-burst.right span:nth-child(2) {
+        top: 11px;
+        width: 18px;
+        height: 2.8px;
+      }
+
+      .heading-burst.right span:nth-child(3) {
+        bottom: 3px;
+        width: 14px;
+        height: 2.8px;
+        transform: rotate(35deg);
+      }
+
+      .topics-heading p {
+        max-width: 720px;
+        margin: 0 auto;
+        color: #64736a;
+        font-family: "DM Sans", "Manrope", sans-serif !important;
+        font-size: 15px;
+        line-height: 1.65;
+      }
+
+      .paw {
+        position: absolute;
+        color: rgba(115, 173, 91, 0.28);
+        z-index: 1;
+        pointer-events: none;
+        display: inline-block;
+        line-height: 1;
+      }
+
+      .paw-left-1 {
+        top: 66px;
+        left: 108px;
+        font-size: 58px;
+        transform: rotate(20deg);
+      }
+
+      .paw-left-2 {
+        bottom: 24px;
+        left: 82px;
+        font-size: 38px;
+        transform: rotate(-15deg);
+      }
+
+      .paw-right-1 {
+        top: 60px;
+        right: 75px;
+        font-size: 56px;
+        transform: rotate(18deg);
+      }
+
+      .paw-right-2 {
+        bottom: 35px;
+        right: 140px;
+        font-size: 38px;
+        transform: rotate(-15deg);
+      }
+
+      /* =====================
+         Pet category cards
+         ===================== */
+      .pet-info-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      .pet-card {
+        background: #ffffff;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition:
+          transform 0.28s ease,
+          box-shadow 0.28s ease,
+          border-color 0.28s ease;
+      }
+
+      .pet-card:hover,
+      .pet-card:focus-within {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow);
+        border-color: #cbd9ce;
+      }
+
+      .pet-card .pet-card-media {
+        position: relative;
+        height: 200px;
+        padding: 0;
+        overflow: hidden;
+        background: #f0f3eb;
+      }
+
+      .pet-card-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.35s ease;
+      }
+
+      .pet-card:hover .pet-card-media img,
+      .pet-card:focus-within .pet-card-media img {
+        transform: scale(1.05);
+      }
+
+      .pet-card-badge {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        z-index: 1;
+        background: rgba(255, 255, 255, 0.94);
+        backdrop-filter: blur(4px);
+        padding: 5px 12px;
+        border-radius: 999px;
+        font-family: "DM Sans", "Manrope", sans-serif !important;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--dark);
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      }
+
+      .pet-card-badge i {
+        color: var(--green);
+        font-size: 0.85rem;
+        display: inline-block;
+      }
+
+      .pet-card .pet-card-body {
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+
+      .pet-card-body h3 {
+        font-size: 1.25rem;
+        margin: 0 0 10px;
+        color: var(--ink);
+      }
+
+      .pet-card-body p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin: 0 0 20px;
+        flex-grow: 1;
+        color: var(--muted);
+      }
+
+      .pet-card-footer {
+        margin-top: auto;
+      }
+
+      .pet-card-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.88rem;
+        font-weight: 700;
+        color: var(--green);
+        transition:
+          color 0.2s,
+          transform 0.2s;
+        align-self: flex-start;
+      }
+
+      .pet-card-link:hover,
+      .pet-card-link:focus-visible {
+        color: var(--dark);
+        transform: translateX(4px);
+        outline: none;
+      }
+
+      .more-pets-link {
+        margin: 32px auto 0;
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .more-pets-link a {
+        color: var(--green);
+        font-weight: 700;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .more-pets-link a:hover {
+        color: var(--dark);
+      }
+
+      .no-results {
+        display: none;
+        margin: 34px auto 0;
+        padding: 18px 24px;
+        max-width: 620px;
+        text-align: center;
+        color: var(--muted);
+        background: #f4f8f2;
+        border: 1px dashed #cce4d2;
+        border-radius: 16px;
+      }
+
+      .no-results.is-visible {
+        display: block;
+      }
+
+      /* =====================
+         Quick info section
+         ===================== */
+      .pet-quick-info-section {
+        background: #ffffff;
+        border-top: none !important;
+        border-bottom: none;
+        padding-top: 60px;
+      }
+
+      .quick-info-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        width: 100%;
+      }
+
+      .quick-info-card {
+        display: grid;
+        grid-template-columns: 52px minmax(0, 1fr);
+        column-gap: 18px;
+        row-gap: 10px;
+        align-items: start;
+        width: 100%;
+        padding: 26px 30px;
+        background: #ffffff;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease,
+          border-color 0.25s ease;
+      }
+
+      .quick-info-card:hover {
+        transform: translateY(-3px);
+        border-color: #cbd9ce;
+        box-shadow: var(--shadow);
+      }
+
+      .quick-info-icon-wrap {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        background: #eaf2e9;
+        color: var(--green);
+        display: grid;
+        place-items: center;
+        font-size: 1.25rem;
+        margin: 0;
+      }
+
+      .quick-info-icon-wrap i {
+        color: var(--green);
+        font-size: 1.25rem;
+        display: inline-block;
+      }
+
+      .quick-info-card h3 {
+        grid-column: 2;
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--ink);
+        margin: 0;
+      }
+
+      .quick-info-card p {
+        grid-column: 2;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: var(--muted);
+        margin: 0;
+      }
+
+      .quick-info-list {
+        grid-column: 1 / -1;
+        list-style: none;
+        padding: 18px 0 0;
+        margin: 8px 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        border-top: 1px solid var(--line);
+      }
+
+      .quick-info-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 0.88rem;
+        color: var(--ink);
+        line-height: 1.6;
+      }
+
+      .quick-info-list li span {
+        color: var(--green);
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+
+      /* =====================
+         CTA section
+         ===================== */
+      .cta h2 {
+        text-align: left !important;
+      }
+
+      .cta-actions {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        flex-shrink: 0;
+      }
+
+      .cta .button-outline {
+        background: transparent;
+        color: var(--green);
+        border-color: var(--green);
+      }
+
+      .cta .button-outline:hover {
+        background: var(--green);
+        color: #ffffff;
+      }
+
+      /* =====================
+         Responsive
+         ===================== */
+      @media (max-width: 1100px) {
+        .guides-nav-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 980px) {
+        .pet-hero {
+          min-height: 0;
+          grid-template-columns: 1fr;
+          gap: 10px;
+          padding-block: 50px 65px;
+          text-align: center;
+        }
+
+        .pet-hero h1,
+        .pet-hero .hero-copy > p {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .pet-hero .hero-actions,
+        .pet-hero .hero-note {
+          justify-content: center;
+        }
+
+        .pet-hero .hero-visual {
+          width: 100%;
+          max-width: 540px;
+          min-height: 380px;
+          margin: 20px auto 0;
+        }
+
+        .pet-hero .hero-photo {
+          height: 340px;
+        }
+
+        .pet-info-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .cta {
+          display: block;
+        }
+
+        .cta-actions {
+          margin-top: 20px;
+        }
+      }
+
+      @media (max-width: 960px) {
+        .guides-nav-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .pet-search-filter-wrap {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .pet-filter-btn {
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .topics-heading {
+          margin: 25px 0;
+          padding: 35px 16px 30px;
+          border-radius: 24px;
+        }
+
+        .corner-wave {
+          width: 170px;
+          height: 110px;
+        }
+
+        .topics-heading h2 {
+          font-size: clamp(20px, 5vw, 26px);
+          gap: 8px;
+        }
+
+        .topics-heading p {
+          font-size: 14px;
+        }
+
+        .heading-label {
+          font-size: 11px;
+          padding: 6px 14px;
+          margin-bottom: 12px;
+        }
+
+        .paw-left-1 {
+          left: 35px;
+          top: 25px;
+          font-size: 34px;
+        }
+
+        .paw-left-2 {
+          left: 18px;
+          bottom: 14px;
+          font-size: 24px;
+        }
+
+        .paw-right-1 {
+          right: 25px;
+          top: 25px;
+          font-size: 34px;
+        }
+
+        .paw-right-2 {
+          right: 65px;
+          bottom: 14px;
+          font-size: 24px;
+        }
+
+        .heading-burst {
+          width: 16px;
+          height: 18px;
+        }
+
+        .heading-burst span:nth-child(1),
+        .heading-burst span:nth-child(3) {
+          width: 10px;
+        }
+
+        .heading-burst span:nth-child(2) {
+          width: 13px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .guides-nav-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .guides-nav-strip {
+          padding: 22px 18px;
+        }
+
+        .quick-nav-line {
+          width: 34px;
+        }
+
+        .pet-hero {
+          padding-block: 40px 55px;
+        }
+
+        .pet-hero .hero-visual {
+          min-height: 330px;
+        }
+
+        .pet-hero .hero-photo {
+          height: 290px;
+        }
+
+        .card-top {
+          top: 16px;
+          right: 0;
+        }
+
+        .card-bottom {
+          bottom: 12px;
+          left: 0;
+        }
+
+        .floating-card {
+          padding: 10px 12px;
+          gap: 8px;
+          font-size: 1rem;
+        }
+
+        .floating-card b {
+          font-size: 0.72rem;
+        }
+
+        .floating-card small {
+          font-size: 0.62rem;
+        }
+
+        .pet-info-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .pet-card .pet-card-media {
+          height: 190px;
+        }
+
+        .quick-info-card {
+          grid-template-columns: 42px minmax(0, 1fr);
+          column-gap: 12px;
+          padding: 20px 16px;
+        }
+
+        .quick-info-icon-wrap {
+          width: 42px;
+          height: 42px;
+          font-size: 1.1rem;
+        }
+
+        .quick-info-card h3 {
+          font-size: 1.02rem;
+        }
+
+        .quick-info-list {
+          gap: 10px;
+          padding-top: 14px;
+        }
+
+        .quick-info-list li {
+          font-size: 0.85rem;
+        }
+
+        .cta-actions {
+          width: 100%;
+          flex-direction: column;
+          margin-top: 18px;
+        }
+
+        .cta-actions .button {
+          width: 100%;
+        }
+      }
+    </style>
   </head>
+
   <body>
-    <header class="site-header">
-      <a class="brand" href="../../../index.html" aria-label="PetSathi home"
-        ><svg
-          class="brand-mark"
-          aria-hidden="true"
-          viewBox="0 0 40 40"
-          role="img"
-          focusable="false"
-        >
-          <circle cx="12" cy="12" r="4" fill="currentColor" />
-          <circle cx="21" cy="8" r="4" fill="currentColor" />
-          <circle cx="30" cy="12" r="4" fill="currentColor" />
-          <path
-            d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z"
-            fill="currentColor"
-          /></svg
-        ><span>Pet<span>Sathi</span></span></a
-      >
-      <button
-        class="menu-toggle"
-        aria-label="Toggle navigation"
-        aria-expanded="false"
-      >
-        <i class="fa-solid fa-bars" aria-hidden="true"></i>
-      </button>
-      <nav class="main-nav" aria-label="Main navigation">
-        <a href="../../../index.html">Home</a>
-        <div class="nav-item">
-          <a href="index.html"
-            >Explore Pets
-            <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a
-          >
-          <div class="dropdown dropdown-explore">
-            <a href="dogs/index.html">Dogs</a><a href="cats/index.html">Cats</a
-            ><a href="birds/index.html">Birds</a
-            ><a href="rabbits/index.html">Rabbits</a
-            ><a href="other/fish.html">Aquarium Fish</a
-            ><a href="other/reptiles.html">Reptiles</a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <a href="../services/index.html"
-            >Services
-            <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a
-          >
-          <div class="dropdown dropdown-services">
-            <a href="../services/dog-walking.html">Dog Walking</a
-            ><a href="../services/cat-care.html">Cat Care</a
-            ><a href="../services/pet-care.html">Pet Care</a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <a href="../walker/index.html"
-            >Find a Walker
-            <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a
-          >
-          <div class="dropdown dropdown-walker">
-            <a href="../walker/dogs.html">Search Walkers</a
-            ><a href="../walker/cats.html">Walker Profiles</a
-            ><a href="../walker/index.html#bookings">My Bookings</a>
-          </div>
-        </div>
-        <a href="../about.html">About Us</a
-        ><a href="../auth/login.html">Log in</a
-        ><a class="button button-small" href="../auth/register.html"
-          >Get Started</a
-        >
-      </nav>
-    </header>
+    <div id="header"></div>
+
     <main>
-      <section class="page-hero">
-        <div class="eyebrow">PetSathi • MEET YOUR LITTLE FRIEND</div>
-        <div class="page-emoji">🐾</div>
-        <h1>Explore Pet Categories</h1>
-        <p>
-          Choose a pet category to explore dedicated information about breeds,
-          nutrition, care, and everyday needs.
-        </p>
-        <a class="button" href="../../../index.html">Back to Home ↗</a>
+      <!-- =====================
+           Hero section
+           ===================== -->
+      <section class="pet-hero section-wrap" id="pet-hero">
+        <div class="hero-copy">
+          <div class="pet-badge-strip">
+            🐾 PetSathi • All Companion Guides
+          </div>
+          <h1>Everything You Need to Know About <em>Every Pet</em></h1>
+          <p>
+            Welcome to PetSathi's complete pet care hub. Whether you are looking
+            for a playful pup, a curious cat, a feathered friend, a gentle
+            rabbit, or a fascinating aquatic companion, explore trusted breed
+            information, nutrition advice, everyday care, and wellbeing tips in
+            one place.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#pet-categories" id="hero-cta-categories"
+              >Explore Pet Categories ↓</a
+            >
+            <a
+              class="button button-outline"
+              href="cats/index.html"
+              id="hero-cta-cats"
+              >Browse Cat Guides ↗</a
+            >
+          </div>
+          <div class="hero-note">
+            ♥ &nbsp; Thoughtful care guides for every stage of your pet's life.
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-blob"></div>
+          <img
+            src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"
+            alt="A dog and a cat resting together outdoors"
+            class="hero-photo"
+            id="hero-pet-image"
+            loading="eager"
+          />
+          <div class="floating-card card-top">
+            🐾
+            <span
+              ><b>Six Pet Categories</b
+              ><small>Dogs, cats, birds &amp; more</small></span
+            >
+          </div>
+          <div class="floating-card card-bottom">
+            ❤️
+            <span
+              ><b>Expert Care Guides</b
+              ><small>Trusted everyday advice</small></span
+            >
+          </div>
+        </div>
       </section>
-      <section class="section-wrap inner-grid">
-        <article class="info-card">
-          <div class="info-emoji">Dogs</div>
-          <h2>🐕</h2>
-          <p>
-            Explore dog breeds, nutrition, exercise, grooming, and walking
-            information. <a href="dogs/index.html">Explore dogs →</a>
-          </p>
-        </article>
-        <article class="info-card">
-          <div class="info-emoji">Cats</div>
-          <h2>🐈</h2>
-          <p>
-            Learn about cat breeds, food, indoor activities, grooming, and care.
-            <a href="cats/index.html">Explore cats →</a>
-          </p>
-        </article>
-        <article class="info-card">
-          <div class="info-emoji">Birds</div>
-          <h2>🐦</h2>
-          <p>
-            Discover bird species, habitat, nutrition, and daily care.
-            <a href="birds/index.html">Explore birds →</a>
-          </p>
-        </article>
-        <article class="info-card">
-          <div class="info-emoji">Rabbits</div>
-          <h2>🐇</h2>
-          <p>
-            Find information about rabbit breeds, food, exercise, and grooming.
-            <a href="rabbits/index.html">Explore rabbits →</a>
-          </p>
-        </article>
-        <article class="info-card">
-          <div class="info-emoji">Reptiles</div>
-          <h2>🦎</h2>
-          <p>
-            Meet popular pet reptiles and learn about their habitats, lighting,
-            feeding, and responsible care.
-            <a href="other/reptiles.html">Explore reptiles →</a>
-          </p>
-        </article>
-      </section>
-      <section class="inner-cta">
-        <h2>More happy moments are on the way.</h2>
-        <p>
-          PetSathi is growing one feature at a time. Some services are planned
-          for future development.
+
+      <!-- =====================
+           Quick navigation
+           ===================== -->
+      <nav class="guides-nav-strip" aria-label="Pet categories">
+        <div class="quick-nav-decor decor-top-left" aria-hidden="true">
+          <i class="fa-solid fa-paw decor-paw decor-paw-1"></i>
+          <i class="fa-solid fa-paw decor-paw decor-paw-2"></i>
+        </div>
+
+        <div class="quick-nav-decor decor-bottom-right" aria-hidden="true">
+          <i class="fa-solid fa-paw decor-paw decor-paw-3"></i>
+          <i class="fa-solid fa-paw decor-paw decor-paw-4"></i>
+        </div>
+
+        <div class="quick-nav-header">
+          <div class="quick-nav-eyebrow-wrap">
+            <span class="quick-nav-line"></span>
+            <div class="quick-nav-badge">
+              <i
+                class="fa-regular fa-compass quick-nav-badge-icon"
+                aria-hidden="true"
+              ></i>
+              <span>Quick Navigation</span>
+            </div>
+            <span class="quick-nav-line"></span>
+          </div>
+          <h3 class="quick-nav-title">
+            Explore Dedicated <span>Pet Knowledge Chapters</span>
+          </h3>
+        </div>
+
+        <div class="guides-nav-grid">
+          <a class="guide-nav-item" href="dogs/index.html" id="hub-link-dogs">
+            <span class="guide-nav-icon"
+              ><i class="fa-solid fa-dog" aria-hidden="true"></i
+            ></span>
+            <span class="guide-nav-label">Dogs</span>
+          </a>
+
+          <a class="guide-nav-item" href="cats/index.html" id="hub-link-cats">
+            <span class="guide-nav-icon"
+              ><i class="fa-solid fa-cat" aria-hidden="true"></i
+            ></span>
+            <span class="guide-nav-label">Cats</span>
+          </a>
+
+          <a class="guide-nav-item" href="birds/index.html" id="hub-link-birds">
+            <span class="guide-nav-icon"
+              ><i class="fa-solid fa-dove" aria-hidden="true"></i
+            ></span>
+            <span class="guide-nav-label">Birds</span>
+          </a>
+
+          <a
+            class="guide-nav-item"
+            href="rabbits/index.html"
+            id="hub-link-rabbits"
+          >
+            <span class="guide-nav-icon"
+              ><i class="fa-solid fa-carrot" aria-hidden="true"></i
+            ></span>
+            <span class="guide-nav-label">Rabbits</span>
+          </a>
+
+          <a
+            class="guide-nav-item"
+            href="other/fish.html"
+            id="hub-link-fish"
+          >
+            <span class="guide-nav-icon"
+              ><i class="fa-solid fa-fish" aria-hidden="true"></i
+            ></span>
+            <span class="guide-nav-label">Aquatic Fish</span>
+          </a>
+
+          <a
+            class="guide-nav-item"
+            href="other/reptiles.html"
+            id="hub-link-reptiles"
+          >
+            <span class="guide-nav-icon"
+              ><i class="fa-solid fa-dragon" aria-hidden="true"></i
+            ></span>
+            <span class="guide-nav-label">Reptiles</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- =====================
+           Search & filter
+           ===================== -->
+      <div class="pet-search-filter-wrap">
+        <div class="pet-search-bar">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <input
+            type="text"
+            id="petSearchInput"
+            placeholder="Search pet categories, breeds, care tips..."
+            aria-label="Search pet categories"
+            autocomplete="off"
+          />
+        </div>
+        <button class="pet-filter-btn" id="resetFilterBtn" type="button">
+          <i class="fa-solid fa-filter" aria-hidden="true"></i> Reset Filters
+        </button>
+      </div>
+
+      <!-- =====================
+           Pet category cards
+           ===================== -->
+      <section class="section section-wrap" id="pet-categories">
+        <div class="topics-heading">
+          <svg
+            class="corner-wave wave-tl"
+            viewBox="0 0 220 130"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z"
+              fill="#d8e8ce"
+              opacity="0.7"
+            />
+            <path
+              d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z"
+              fill="#edf6e6"
+              opacity="0.95"
+            />
+          </svg>
+          <svg
+            class="corner-wave wave-br"
+            viewBox="0 0 220 130"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z"
+              fill="#d8e8ce"
+              opacity="0.7"
+            />
+            <path
+              d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z"
+              fill="#edf6e6"
+              opacity="0.95"
+            />
+          </svg>
+
+          <div class="paw paw-left-1"><i class="fa-solid fa-paw"></i></div>
+          <div class="paw paw-left-2"><i class="fa-solid fa-paw"></i></div>
+          <div class="paw paw-right-1"><i class="fa-solid fa-paw"></i></div>
+          <div class="paw paw-right-2"><i class="fa-solid fa-paw"></i></div>
+
+          <div class="heading-content">
+            <span class="heading-label">
+              <i class="fa-solid fa-book-open"></i>
+              Comprehensive Pet Guides
+            </span>
+
+            <h2>
+              <span class="heading-burst left" aria-hidden="true"
+                ><span></span><span></span><span></span
+              ></span>
+              Explore Popular <span>Pet Categories</span>
+              <span class="heading-burst right" aria-hidden="true"
+                ><span></span><span></span><span></span
+              ></span>
+            </h2>
+
+            <p>
+              Browse through curated guides for breed information, balanced
+              nutrition, everyday care, and happy, healthy companions.
+            </p>
+          </div>
+        </div>
+
+        <div class="pet-info-grid" id="pet-category-grid">
+          <!-- Dogs -->
+          <article class="pet-card" data-category="dogs" id="card-dogs">
+            <div class="pet-card-media">
+              <span class="pet-card-badge">
+                <i class="fa-solid fa-dog" aria-hidden="true"></i>
+                Canine Companions
+              </span>
+              <img
+                src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&amp;fit=crop&amp;w=700&amp;q=85"
+                alt="Golden retriever puppy sitting outdoors"
+                loading="lazy"
+              />
+            </div>
+            <div class="pet-card-body">
+              <h3>Dogs</h3>
+              <p>
+                Explore dog breeds, nutrition, exercise, grooming, training, and
+                walking advice for a happy, healthy canine companion.
+              </p>
+              <div class="pet-card-footer">
+                <a
+                  class="pet-card-link"
+                  href="dogs/index.html"
+                  id="link-card-dogs"
+                  >Explore Dogs ↗</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Cats -->
+          <article class="pet-card" data-category="cats" id="card-cats">
+            <div class="pet-card-media">
+              <span class="pet-card-badge">
+                <i class="fa-solid fa-cat" aria-hidden="true"></i>
+                Feline Friends
+              </span>
+              <img
+                src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&amp;fit=crop&amp;w=700&amp;q=85"
+                alt="Attentive cat looking towards the camera"
+                loading="lazy"
+              />
+            </div>
+            <div class="pet-card-body">
+              <h3>Cats</h3>
+              <p>
+                Learn about cat breeds, food, grooming, indoor enrichment,
+                behaviour, and care for a contented feline friend.
+              </p>
+              <div class="pet-card-footer">
+                <a
+                  class="pet-card-link"
+                  href="cats/index.html"
+                  id="link-card-cats"
+                  >Explore Cats ↗</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Birds -->
+          <article class="pet-card" data-category="birds" id="card-birds">
+            <div class="pet-card-media">
+              <span class="pet-card-badge">
+                <i class="fa-solid fa-dove" aria-hidden="true"></i>
+                Feathered Friends
+              </span>
+              <img
+                src="https://images.unsplash.com/photo-1470662061953-318cd8c6c152?auto=format&amp;fit=crop&amp;w=700&amp;q=85"
+                alt="Green and yellow budgerigar perched on a branch"
+                loading="lazy"
+              />
+            </div>
+            <div class="pet-card-body">
+              <h3>Birds</h3>
+              <p>
+                Discover bird species, habitat setup, nutrition, enrichment, and
+                daily care for lively, melodic companions.
+              </p>
+              <div class="pet-card-footer">
+                <a
+                  class="pet-card-link"
+                  href="birds/index.html"
+                  id="link-card-birds"
+                  >Explore Birds ↗</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Rabbits -->
+          <article class="pet-card" data-category="rabbits" id="card-rabbits">
+            <div class="pet-card-media">
+              <span class="pet-card-badge">
+                <i class="fa-solid fa-carrot" aria-hidden="true"></i>
+                Gentle Hopping Pals
+              </span>
+              <img
+                src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&amp;fit=crop&amp;w=700&amp;q=85"
+                alt="Fluffy rabbit sitting peacefully in the grass"
+                loading="lazy"
+              />
+            </div>
+            <div class="pet-card-body">
+              <h3>Rabbits</h3>
+              <p>
+                Find rabbit breeds, feeding guidance, safe housing, grooming,
+                and exercise tips for a joyful long-eared friend.
+              </p>
+              <div class="pet-card-footer">
+                <a
+                  class="pet-card-link"
+                  href="rabbits/index.html"
+                  id="link-card-rabbits"
+                  >Explore Rabbits ↗</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Aquatic fish -->
+          <article class="pet-card" data-category="fish" id="card-fish">
+            <div class="pet-card-media">
+              <span class="pet-card-badge">
+                <i class="fa-solid fa-fish" aria-hidden="true"></i>
+                Underwater Wonders
+              </span>
+              <img
+                src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&amp;fit=crop&amp;w=700&amp;q=85"
+                alt="Colorful tropical fish swimming in clear water"
+                loading="lazy"
+              />
+            </div>
+            <div class="pet-card-body">
+              <h3>Aquatic Fish</h3>
+              <p>
+                Build a thriving aquarium with species profiles, water quality
+                guidance, feeding routines, and habitat essentials.
+              </p>
+              <div class="pet-card-footer">
+                <a
+                  class="pet-card-link"
+                  href="other/fish.html"
+                  id="link-card-fish"
+                  >Explore Aquatic Fish ↗</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Reptiles -->
+          <article class="pet-card" data-category="reptiles" id="card-reptiles">
+            <div class="pet-card-media">
+              <span class="pet-card-badge">
+                <i class="fa-solid fa-dragon" aria-hidden="true"></i>
+                Scaly Companions
+              </span>
+              <img
+                src="../../assets/images/reptiles/bearded-dragon.jpg"
+                alt="Bearded dragon resting peacefully in its terrarium"
+                loading="lazy"
+              />
+            </div>
+            <div class="pet-card-body">
+              <h3>Reptiles</h3>
+              <p>
+                Meet popular pet reptiles and learn about terrarium habitats,
+                heating, lighting, feeding, and responsible care.
+              </p>
+              <div class="pet-card-footer">
+                <a
+                  class="pet-card-link"
+                  href="other/reptiles.html"
+                  id="link-card-reptiles"
+                  >Explore Reptiles ↗</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <p class="no-results" id="noResults" role="status">
+          No pet categories match your search. Try a different keyword or press
+          <strong>Reset Filters</strong>.
         </p>
+
+        <p class="more-pets-link">
+          Looking for hamsters, guinea pigs, or other companions?
+          <a href="other/index.html">Explore the Other Pets hub ↗</a>
+        </p>
+      </section>
+
+      <!-- =====================
+           Quick information
+           ===================== -->
+      <section class="section pet-quick-info-section" id="quick-info">
+        <div class="section-wrap">
+          <div class="topics-heading">
+            <svg
+              class="corner-wave wave-tl"
+              viewBox="0 0 220 130"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z"
+                fill="#d8e8ce"
+                opacity="0.7"
+              />
+              <path
+                d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z"
+                fill="#edf6e6"
+                opacity="0.95"
+              />
+            </svg>
+            <svg
+              class="corner-wave wave-br"
+              viewBox="0 0 220 130"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z"
+                fill="#d8e8ce"
+                opacity="0.7"
+              />
+              <path
+                d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z"
+                fill="#edf6e6"
+                opacity="0.95"
+              />
+            </svg>
+
+            <div class="paw paw-left-1"><i class="fa-solid fa-paw"></i></div>
+            <div class="paw paw-left-2"><i class="fa-solid fa-paw"></i></div>
+            <div class="paw paw-right-1"><i class="fa-solid fa-paw"></i></div>
+            <div class="paw paw-right-2"><i class="fa-solid fa-paw"></i></div>
+
+            <div class="heading-content">
+              <span class="heading-label">
+                <i class="fa-solid fa-lightbulb"></i>
+                Essential Pet Insights
+              </span>
+
+              <h2>
+                <span class="heading-burst left" aria-hidden="true"
+                  ><span></span><span></span><span></span
+                ></span>
+                Quick Information for <span>Pet Parents</span>
+                <span class="heading-burst right" aria-hidden="true"
+                  ><span></span><span></span><span></span
+                ></span>
+              </h2>
+
+              <p>
+                Understanding your companion is the cornerstone of a happy pet
+                parenthood journey. Here are the essentials that apply to every
+                species.
+              </p>
+            </div>
+          </div>
+
+          <div class="quick-info-grid">
+            <article class="quick-info-card" id="info-choosing">
+              <div class="quick-info-icon-wrap">
+                <i class="fa-solid fa-heart" aria-hidden="true"></i>
+              </div>
+              <h3>Choosing the Right Companion</h3>
+              <p>
+                Match a pet's energy, space, and care needs with your lifestyle
+                before welcoming them home.
+              </p>
+              <ul class="quick-info-list">
+                <li>
+                  <span>✓</span> Consider daily time, activity level, and long-term
+                  commitment.
+                </li>
+                <li>
+                  <span>✓</span> Check breed traits, adult size, and temperament
+                  for your household.
+                </li>
+                <li>
+                  <span>✓</span> Make sure your home has safe, suitable space for
+                  the species.
+                </li>
+                <li>
+                  <span>✓</span> Plan for food, habitat, grooming, and veterinary
+                  costs.
+                </li>
+              </ul>
+            </article>
+
+            <article class="quick-info-card" id="info-daily-care">
+              <div class="quick-info-icon-wrap">
+                <i class="fa-solid fa-bowl-food" aria-hidden="true"></i>
+              </div>
+              <h3>Everyday Care Essentials</h3>
+              <p>
+                Consistent routines for food, water, cleanliness, and activity
+                keep pets comfortable and content.
+              </p>
+              <ul class="quick-info-list">
+                <li>
+                  <span>✓</span> Provide fresh, clean water and a balanced,
+                  species-appropriate diet.
+                </li>
+                <li>
+                  <span>✓</span> Keep enclosures, bedding, bowls, and litter areas
+                  clean.
+                </li>
+                <li>
+                  <span>✓</span> Offer daily exercise, play, and mental enrichment
+                  for your pet.
+                </li>
+                <li>
+                  <span>✓</span> Maintain grooming, nail care, and dental hygiene
+                  routines.
+                </li>
+              </ul>
+            </article>
+
+            <article class="quick-info-card" id="info-health">
+              <div class="quick-info-icon-wrap">
+                <i class="fa-solid fa-shield-heart" aria-hidden="true"></i>
+              </div>
+              <h3>Health, Safety &amp; Comfort</h3>
+              <p>
+                Preventive care and a safe environment help every pet live a
+                longer, healthier, and happier life.
+              </p>
+              <ul class="quick-info-list">
+                <li>
+                  <span>✓</span> Schedule regular wellness checkups and keep
+                  vaccinations up to date.
+                </li>
+                <li>
+                  <span>✓</span> Pet-proof your home and remove toxic plants,
+                  foods, and hazards.
+                </li>
+                <li>
+                  <span>✓</span> Watch for changes in appetite, energy, behaviour,
+                  or grooming.
+                </li>
+                <li>
+                  <span>✓</span> Keep identification, emergency contacts, and a
+                  first-aid kit ready.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================
+           CTA section
+           ===================== -->
+      <section class="cta section-wrap">
+        <div>
+          <div class="eyebrow">START YOUR PET JOURNEY</div>
+          <h2>Every Paw Deserves a <em>Loving Home.</em></h2>
+          <p>
+            Whether you are welcoming a playful puppy, a curious kitten, a
+            feathered friend, or a scaly companion, PetSathi is here to guide and
+            support you every step of the way with expert advice and loving care.
+          </p>
+        </div>
+        <div class="cta-actions">
+          <a class="button button-light" href="dogs/index.html"
+            >Explore Dog Care Guide ↗</a
+          >
+          <a class="button button-outline" href="cats/index.html"
+            >Browse Cat Guides</a
+          >
+        </div>
       </section>
     </main>
-    <footer class="footer">
-      <div class="section-wrap footer-grid">
-        <div>
-          <a class="brand" href="../../../index.html" aria-label="PetSathi home"
-            ><svg
-              class="brand-mark"
-              aria-hidden="true"
-              viewBox="0 0 40 40"
-              role="img"
-              focusable="false"
-            >
-              <circle cx="12" cy="12" r="4" fill="currentColor" />
-              <circle cx="21" cy="8" r="4" fill="currentColor" />
-              <circle cx="30" cy="12" r="4" fill="currentColor" />
-              <path
-                d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z"
-                fill="currentColor"
-              /></svg
-            ><span>Pet<span>Sathi</span></span></a
-          >
-          <p>
-            Your pet's trusted companion. Making pet care easier, one paw at a
-            time.
-          </p>
-        </div>
-        <div>
-          <b>Explore</b><a href="../../../index.html#home">Home</a
-          ><a href="index.html">Explore Pets</a
-          ><a href="../services/index.html">Services</a
-          ><a href="../walker/index.html">Find a Walker</a>
-        </div>
-        <div>
-          <b>Information</b><a href="../about.html">About Us</a
-          ><a href="../contact.html">Contact Us</a
-          ><a href="../faq.html">FAQ / Help Center</a
-          ><a href="../community-guidelines.html">Community Guidelines</a><a href="#privacy">Privacy Policy</a
-          ><a href="#terms">Terms &amp; Conditions</a><a href="../disclaimer.html">Disclaimer</a>        </div>
-        <div>
-          <b>Connect With Us</b
-          ><a
-            href="https://github.com/Riya-Kharade/PetSathi"
-            target="_blank"
-            rel="noopener noreferrer"
-            >GitHub</a
-          ><a
-            href="https://www.linkedin.com/in/riyakharade/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >LinkedIn</a
-          ><a
-            href="https://petsathi-nsoc.netlify.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Live Website</a
-          >
-        </div>
-      </div>
-      <div class="section-wrap footer-bottom">
-        <span>&copy; 2026 PetSathi. All rights reserved.</span
-        ><span>Made with &hearts; for pets.</span
-        ><span
-          >&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet
-          &#x091A;&#x093E;
-          &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942;
-          &#x0938;&#x093E;&#x0925;&#x0940;!</span
-        >
-      </div>
-    </footer>
+
+    <div id="footer"></div>
+
+    <script>
+      const toggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector(".main-nav");
+      if (toggle && nav) {
+        toggle.addEventListener("click", () => {
+          const open = nav.classList.toggle("open");
+          toggle.setAttribute("aria-expanded", String(open));
+        });
+      }
+
+      const searchInput = document.getElementById("petSearchInput");
+      const petCards = Array.from(document.querySelectorAll(".pet-card"));
+      const resetFilterBtn = document.getElementById("resetFilterBtn");
+      const noResults = document.getElementById("noResults");
+
+      function updateNoResults() {
+        if (!noResults) return;
+        const visibleCards = petCards.filter(
+          (card) => card.style.display !== "none",
+        );
+        noResults.classList.toggle("is-visible", visibleCards.length === 0);
+      }
+
+      function filterCards(query) {
+        const term = query.toLowerCase().trim();
+
+        petCards.forEach((card) => {
+          const title = card.querySelector("h3").textContent.toLowerCase();
+          const description = card
+            .querySelector("p")
+            .textContent.toLowerCase();
+          const matches =
+            !term || title.includes(term) || description.includes(term);
+
+          card.style.display = matches ? "flex" : "none";
+        });
+
+        updateNoResults();
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener("input", (event) => {
+          filterCards(event.target.value);
+        });
+      }
+
+      if (resetFilterBtn) {
+        resetFilterBtn.addEventListener("click", () => {
+          if (searchInput) searchInput.value = "";
+          filterCards("");
+          if (searchInput) searchInput.focus();
+        });
+      }
+    </script>
+
     <script src="../../js/main.js"></script>
   </body>
 </html>

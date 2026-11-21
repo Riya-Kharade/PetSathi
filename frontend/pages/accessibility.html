@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="PetSathi Accessibility Statement. Learn about our commitment to digital inclusion, WCAG 2.1 AA approach, keyboard and screen reader support, known limitations, and how to report barriers.">
+  <title>Accessibility Statement | PetSathi</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Core PetSathi Stylesheets -->
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/accessibility.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Font Awesome Definition Guard -->
+  <style>
+    @font-face {
+      font-family: "Font Awesome 6 Free";
+      font-style: normal;
+      font-weight: 900;
+      font-display: block;
+      src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.woff2") format("woff2"),
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.ttf") format("truetype");
+    }
+
+    body [class*="fa-"],
+    body [class*="fa-"]::before,
+    body i.fa-solid,
+    body i.fa-solid::before,
+    .fa-solid,
+    .fa-solid::before,
+    i[class*="fa-"] {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900 !important;
+      font-style: normal !important;
+      line-height: 1 !important;
+    }
+  </style>
+</head>
+
+<body class="accessibility-page">
+  <!-- Skip to Content Link for Keyboard & Screen Reader Users -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!--
+       1. PETSATHI HEADER & NAVIGATION
+       -->
+  <div id="header"></div>
+
+  <!--
+       2. MAIN CONTENT
+       -->
+  <main id="main-content">
+
+    <!-- Hero Section (Centered Clean Editorial Layout Matching sitemap.html & cats/index.html) -->
+    <section class="hero sitemap-hero-centered" id="accessibility-hero">
+      <div class="hero-copy">
+        <div class="cat-badge-strip sitemap-badge-strip">
+          <i class="fa-solid fa-paw" aria-hidden="true"></i> PetSathi • Digital Inclusion &amp; Accessibility
+        </div>
+        <h1>Universal Digital <span>Accessibility</span></h1>
+        <p>
+          PetSathi is committed to ensuring an inclusive, user-friendly digital community where every pet parent,
+          companion walker, and animal lover can seamlessly access our care guides and services—regardless of ability
+          or assistive technology.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="#introduction" id="hero-cta-intro">
+            Explore Standards ↓
+          </a>
+          <a class="button button-outline" href="#feedback" id="hero-cta-report">
+            Report an Issue ↗
+          </a>
+        </div>
+        <div class="hero-note">
+          <i class="fa-solid fa-heart" style="color: #286849; font-size: 0.85rem; margin-right: 4px;"
+            aria-hidden="true"></i> Dedicated to barrier-free pet care for every human and companion
+        </div>
+      </div>
+    </section>
+
+    <!--
+         SECTION 1: INTRODUCTION & ACCESSIBILITY COMMITMENT
+         -->
+    <section class="section-wrap access-section" id="introduction">
+      <div class="cat-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-heart" aria-hidden="true"></i> Accessibility Commitment
+          </span>
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Digital Inclusion &amp; <span>User Commitment</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+          <p>
+            At PetSathi, our founding mission is to ensure that compassionate pet care, verified health guides, and
+            trustworthy caregiver networks are reachable for everyone—regardless of physical, sensory, or cognitive
+            ability.
+          </p>
+        </div>
+      </div>
+
+      <!-- Topic Grid (Matching reptiles.html) -->
+      <div class="rep-topic-grid">
+        <div class="care-tip-card">
+          <div class="tip-icon-wrap">
+            <i class="fa-solid fa-universal-access" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <h3>Universal Access by Design</h3>
+            <p>
+              Every page is designed to accommodate users living with permanent, temporary, or situational limitations,
+              ensuring dignity-affirming interaction across all species portals.
+            </p>
+          </div>
+        </div>
+
+        <div class="care-tip-card">
+          <div class="tip-icon-wrap">
+            <i class="fa-solid fa-globe" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <h3>W3C Global Standards</h3>
+            <p>
+              We benchmark PetSathi against international Web Content Accessibility Guidelines (WCAG 2.1 AA) and
+              semantic HTML best practices to ensure broad interoperability.
+            </p>
+          </div>
+        </div>
+
+        <div class="care-tip-card">
+          <div class="tip-icon-wrap">
+            <i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <h3>Barrier-Free Pet Care</h3>
+            <p>
+              Compassionate care guides, vaccination schedules, and dog walker profiles are formatted so no pet owner or
+              companion is ever excluded by sensory gatekeeping.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--
+         SECTION 2: ACCESSIBILITY APPROACH & POUR PRINCIPLES
+         -->
+    <section class="section-wrap access-section" id="approach">
+      <div class="cat-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-compass" aria-hidden="true"></i> POUR Framework
+          </span>
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Accessibility Approach &amp; <span>POUR Principles</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+          <p>
+            Our engineering and design workflows incorporate accessibility from the initial wireframe stage, anchored in
+            the four foundational W3C pillars of digital inclusion.
+          </p>
+        </div>
+      </div>
+
+      <!-- POUR Bento Grid -->
+      <div class="pour-grid">
+        <div class="pour-card">
+          <div class="pour-card-head">
+            <span class="pour-letter">P</span>
+            <div class="pour-head-text">
+              <span class="pour-sub">Pillar 01</span>
+              <h3>Perceivable</h3>
+            </div>
+          </div>
+          <p>
+            All informational content and interface controls must be presented in formats that can be absorbed through
+            multiple senses. We pair high-contrast typography (6.1:1+ ratio) with clear structural hierarchy and
+            descriptive non-text alternatives.
+          </p>
+        </div>
+
+        <div class="pour-card">
+          <div class="pour-card-head">
+            <span class="pour-letter">O</span>
+            <div class="pour-head-text">
+              <span class="pour-sub">Pillar 02</span>
+              <h3>Operable</h3>
+            </div>
+          </div>
+          <p>
+            The interface cannot demand interactions that a user cannot perform. Navigation menus, search filters, and
+            form inputs are 100% operable via a standard keyboard alone, with zero mouse dependency or timed traps.
+          </p>
+        </div>
+
+        <div class="pour-card">
+          <div class="pour-card-head">
+            <span class="pour-letter">U</span>
+            <div class="pour-head-text">
+              <span class="pour-sub">Pillar 03</span>
+              <h3>Understandable</h3>
+            </div>
+          </div>
+          <p>
+            Information and platform operations must be predictable, clear, and logical. Content uses straightforward
+            pet care terminology, consistent navigation menus across all portals, and self-explanatory form feedback.
+          </p>
+        </div>
+
+        <div class="pour-card">
+          <div class="pour-card-head">
+            <span class="pour-letter">R</span>
+            <div class="pour-head-text">
+              <span class="pour-sub">Pillar 04</span>
+              <h3>Robust</h3>
+            </div>
+          </div>
+          <p>
+            Platform code is built with clean HTML5 semantics and valid CSS so it can be reliably interpreted by modern
+            browsers, screen readers (NVDA, JAWS, VoiceOver), screen magnifiers, and emerging assistive tech.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!--
+         SECTION 3: VISUAL ACCESSIBILITY, TYPOGRAPHY & CONTRAST
+         -->
+    <section class="section-wrap access-section" id="visual">
+      <div class="cat-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-palette" aria-hidden="true"></i> Visual Comfort
+          </span>
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Visual Accessibility &amp; <span>Contrast Standards</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+          <p>
+            Ensuring users with low vision, color vision deficiencies, or ambient glare can comfortably perceive every
+            piece of guidance with crystal clarity and zero eye fatigue.
+          </p>
+        </div>
+      </div>
+
+      <!-- 6 Topic Cards Desktop Grid -->
+      <div class="rep-topic-grid">
+        <div class="care-tip-card">
+          <div class="tip-icon-wrap">
+            <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <h3>High Contrast Ratios (6.1:1+)</h3>
+            <p>
+              Deep forest green (<code>#286849</code>) and dark charcoal ink (<code>#192b21</code>) paired against soft
+              cream (<code>#fafcf7</code>) surpass WCAG AA 4.5:1 minimums, reaching up to 11.4:1 contrast.
+            </p>
+          </div>
+        </div>
+
+        <div class="care-tip-card">
+          <div class="tip-icon-wrap">
+            <i class="fa-solid fa-font" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <h3>Dual-Font Typographic Hierarchy</h3>
+            <p>
+              Classic Georgia serif headings provide instant visual orientation, paired with clean geometric DM Sans
+              body text for effortless readability across desktop and mobile.
+            </p>
+          </div>
+        </div>
+
+        <div class="care-tip-card">
+          <div class="tip-icon-wrap">
+            <i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <h3>Fluid Zoom up to 200%</h3>
+            <p>
+              Scalable <code>rem</code> units and CSS <code>clamp()</code> functions allow browser zoom magnification up
+              to 200% without horizontal text overflow or visual clipping.
+            </p>
+          </div>
+        </div>
+
+        <div class="care-tip-card">
+          <div class="tip-icon-wrap">
+            <i class="fa-solid fa-icons" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <h3>Multi-Modal Signals</h3>
+            <p>
+              Color is never the sole communicator. Interactive links, validation alerts, and status tags always pair
+              color cues with distinctive icons and explicit text labels.
+            </p>
+          </div>
+        </div>
+
+        <div class="care-tip-card">
+          <div class="tip-icon-wrap">
+            <i class="fa-solid fa-text-height" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <h3>Generous Line Spacing &amp; Sizing</h3>
+            <p>
+              Paragraphs maintain generous line heights of 1.65 to 1.8 with base font sizes of 16px, preventing visual
+              crowding and aiding readers with dyslexia or visual fatigue.
+            </p>
+          </div>
+        </div>
+
+        <div class="care-tip-card">
+          <div class="tip-icon-wrap">
+            <i class="fa-solid fa-shield-heart" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <h3>Seizure &amp; Motion Safety</h3>
+            <p>
+              PetSathi contains zero rapidly flashing animations, strobing graphics, or autoplay video, eliminating
+              risks
+              related to photosensitive epileptic seizures (WCAG 2.3.1).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--
+         SECTION 4: KEYBOARD NAVIGATION & FOCUS MANAGEMENT
+         -->
+    <section class="section-wrap access-section" id="keyboard">
+      <div class="cat-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-keyboard" aria-hidden="true"></i> Motor Accessibility
+          </span>
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Keyboard Navigation &amp; <span>Focus Flow</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+          <p>
+            Every functional area—from searching pet directories to booking walkers—is 100% operable using only a
+            standard keyboard, ensuring independence for users who do not use a mouse.
+          </p>
+        </div>
+      </div>
+
+      <!-- Keyboard Spec Table -->
+      <div class="table-responsive keyboard-table-wrap">
+        <table class="keyboard-spec-table" aria-label="Keyboard Shortcuts and Interaction Specifications">
+          <thead>
+            <tr>
+              <th scope="col" style="width: 25%;">Key / Combination</th>
+              <th scope="col" style="width: 35%;">Element Targeted</th>
+              <th scope="col" style="width: 40%;">Expected Behavior</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="kbd-badge">Tab</span></td>
+              <td>Links, buttons, form fields</td>
+              <td>Advances focus forward along the natural reading and DOM hierarchy.</td>
+            </tr>
+            <tr>
+              <td><span class="kbd-badge">Shift</span> + <span class="kbd-badge">Tab</span></td>
+              <td>Interactive elements</td>
+              <td>Moves focus backward to the previously focused control.</td>
+            </tr>
+            <tr>
+              <td><span class="kbd-badge">Enter</span></td>
+              <td>Links, buttons, form submission</td>
+              <td>Activates the focused link, expands accordions, or submits the form.</td>
+            </tr>
+            <tr>
+              <td><span class="kbd-badge">Spacebar</span></td>
+              <td>Buttons, toggles, checkboxes</td>
+              <td>Toggles button states (e.g. mobile drawer menu, FAQ panels).</td>
+            </tr>
+            <tr>
+              <td><span class="kbd-badge">Escape</span></td>
+              <td>Open menus &amp; popups</td>
+              <td>Closes mobile navigation drawers and dismisses active flyouts.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 3 Feature Highlight Cards -->
+      <div class="rep-topic-grid" style="margin-top: 24px;">
+        <div class="care-tip-card">
+          <div class="tip-icon-wrap">
+            <i class="fa-solid fa-forward-step" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <h3>Skip to Main Content</h3>
+            <p>
+              A hidden link at the very top of the page becomes visible upon first <span class="kbd-badge">Tab</span>,
+              allowing keyboard users to bypass repetitive header links.
+            </p>
+          </div>
+        </div>
+
+        <div class="care-tip-card">
+          <div class="tip-icon-wrap">
+            <i class="fa-solid fa-ring" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <h3>High-Visibility Focus Rings</h3>
+            <p>
+              Focused interactive elements display a distinct 3px colored ring with comfortable offset, ensuring users
+              always know their exact position on screen.
+            </p>
+          </div>
+        </div>
+
+        <div class="care-tip-card">
+          <div class="tip-icon-wrap">
+            <i class="fa-solid fa-unlock" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <h3>Zero Keyboard Traps</h3>
+            <p>
+              Users can freely navigate into and out of all forms, search inputs, and dropdown panels without ever
+              getting trapped or requiring a pointer device.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--
+         SECTION 5: SCREEN READER SUPPORT & SEMANTIC STRUCTURE
+         -->
+    <section class="section-wrap access-section" id="screen-reader">
+      <div class="cat-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-headphones" aria-hidden="true"></i> Assistive Compatibility
+          </span>
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Screen Reader Support &amp; <span>Semantic HTML</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+          <p>
+            Architected for seamless compatibility with NVDA, JAWS, Apple VoiceOver, and Google TalkBack by prioritizing
+            clean, native HTML5 semantics over complex ARIA hacks.
+          </p>
+        </div>
+      </div>
+
+      <!-- 6 Topic Cards Desktop Grid -->
+      <div class="rep-topic-grid">
+        <div class="care-tip-card">
+          <div class="tip-icon-wrap">
+            <i class="fa-solid fa-landmark" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <h3>HTML5 Semantic Landmarks</h3>
+            <p>
+              Pages are structured using standardized <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>,
+              <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;footer&gt;</code> tags for rapid
+              landmark hopping.
+            </p>
+          </div>
+        </div>
+
+        <div class="care-tip-card">
+          <div class="tip-icon-wrap">
+            <i class="fa-solid fa-heading" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <h3>Strict Heading Progression</h3>
+            <p>
+              Each page maintains a single <code>&lt;h1&gt;</code> followed by logically ordered <code>&lt;h2&gt;</code>
+              and <code>&lt;h3&gt;</code> subheadings without skipped levels, creating a dependable document outline.
+            </p>
+          </div>
+        </div>
+
+        <div class="care-tip-card">
+          <div class="tip-icon-wrap">
+            <i class="fa-solid fa-image" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <h3>Descriptive Alt Text</h3>
+            <p>
+              Informational imagery includes descriptive <code>alt</code> attributes explaining the subject matter,
+              while
+              purely ornamental graphics use <code>aria-hidden="true"</code>.
+            </p>
+          </div>
+        </div>
+
+        <div class="care-tip-card">
+          <div class="tip-icon-wrap">
+            <i class="fa-solid fa-code" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <h3>Clear ARIA State Management</h3>
+            <p>
+              Dynamic controls update <code>aria-expanded="true/false"</code> and <code>aria-haspopup="true"</code> so
+              users immediately perceive when navigation menus expand or collapse.
+            </p>
+          </div>
+        </div>
+
+        <div class="care-tip-card">
+          <div class="tip-icon-wrap">
+            <i class="fa-solid fa-square-check" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <h3>Programmatic Form Labeling</h3>
+            <p>
+              Every input field, selector, and textarea is programmatically linked to a visible
+              <code>&lt;label for="..."&gt;</code> element with helpful placeholder context.
+            </p>
+          </div>
+        </div>
+
+        <div class="care-tip-card">
+          <div class="tip-icon-wrap">
+            <i class="fa-solid fa-bullhorn" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <h3>Explicit Action Labels</h3>
+            <p>
+              Icon-only buttons (such as the mobile menu toggle) feature descriptive <code>aria-label</code> tags (e.g.
+              <code>aria-label="Toggle navigation"</code>) for clear auditory output.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--
+         SECTION 6: RESPONSIVE DESIGN & VIEWPORT ADAPTABILITY
+         -->
+    <section class="section-wrap access-section" id="responsive">
+      <div class="cat-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-mobile-screen" aria-hidden="true"></i> Viewport Adaptability
+          </span>
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Responsive Design &amp; <span>Device Usability</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+          <p>
+            Adaptive fluid layouts engineered to deliver an uncompromising, equivalent experience across 4K monitors,
+            laptops, tablets, and handheld mobile devices.
+          </p>
+        </div>
+      </div>
+
+      <!-- 4 Topic Cards Grid -->
+      <div class="rep-topic-grid">
+        <div class="care-tip-card">
+          <div class="tip-icon-wrap">
+            <i class="fa-solid fa-arrows-left-right" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <h3>Viewport Reflow (WCAG 1.4.10)</h3>
+            <p>
+              Content reorganizes seamlessly from multi-column desktop grids into clean single-column mobile streams
+              down
+              to 320px width with zero horizontal scrolling.
+            </p>
+          </div>
+        </div>
+
+        <div class="care-tip-card">
+          <div class="tip-icon-wrap">
+            <i class="fa-solid fa-hand-pointer" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <h3>Generous 44&times;44px Touch Targets</h3>
+            <p>
+              Interactive elements—including navigation links, filter pills, and action buttons—meet the 44&times;44px
+              minimum touch target standard for coarse motor pointers.
+            </p>
+          </div>
+        </div>
+
+        <div class="care-tip-card">
+          <div class="tip-icon-wrap">
+            <i class="fa-solid fa-rotate" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <h3>Dual Orientation Freedom</h3>
+            <p>
+              The entire platform functions smoothly in both portrait and landscape screen modes without forcing device
+              rotation or restricting viewport flexibility.
+            </p>
+          </div>
+        </div>
+
+        <div class="care-tip-card">
+          <div class="tip-icon-wrap">
+            <i class="fa-solid fa-gauge-high" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <h3>Lightweight &amp; Fast Loading</h3>
+            <p>
+              Optimized CSS assets and minimal external dependencies ensure fast page rendering for users accessing pet
+              care on low-bandwidth or metered mobile connections.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--
+         SECTION 7: KNOWN LIMITATIONS & ACTIVE REMEDIATIONS
+         -->
+    <section class="section-wrap access-section" id="limitations">
+      <div class="cat-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Honest Transparency
+          </span>
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Known Limitations &amp; <span>Active Remediations</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+          <p>
+            In accordance with our commitment to transparency, we openly document verified technical limitations across
+            PetSathi that our engineering team is actively addressing.
+          </p>
+        </div>
+      </div>
+
+      <!-- 6 Real PetSathi Limitation Cards (3 Per Row on Desktop Grid Matching reptiles.html) -->
+      <div class="rep-topic-grid">
+        <div class="care-tip-card limitation-card">
+          <div class="tip-icon-wrap limitation-icon-wrap">
+            <i class="fa-solid fa-filter" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <span class="limitation-badge"><i class="fa-solid fa-wrench" aria-hidden="true"></i> Active
+              Remediation</span>
+            <h3>Dynamic Search Live Alerts</h3>
+            <p>
+              On <code>search-results.html</code> and <code>faq.html</code>, live query filtering updates DOM
+              results instantly without polite <code>aria-live</code> announcements stating exact matching counts.
+            </p>
+          </div>
+        </div>
+
+        <div class="care-tip-card limitation-card">
+          <div class="tip-icon-wrap limitation-icon-wrap">
+            <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <span class="limitation-badge"><i class="fa-solid fa-wrench" aria-hidden="true"></i> Active
+              Remediation</span>
+            <h3>Walker Booking Grid Navigation</h3>
+            <p>
+              In booking flows (<code>walker/index.html</code> and <code>walker/handover.html</code>), time slots use
+              button rows rather than full 2D ARIA grid keyboard arrow navigation
+              (<code>ArrowUp</code>/<code>Down</code>/<code>Left</code>/<code>Right</code>).
+            </p>
+          </div>
+        </div>
+
+        <div class="care-tip-card limitation-card">
+          <div class="tip-icon-wrap limitation-icon-wrap">
+            <i class="fa-solid fa-table" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <span class="limitation-badge"><i class="fa-solid fa-arrows-split-up-and-left" aria-hidden="true"></i>
+              Layout Redesign</span>
+            <h3>Dense Tables on Narrow Screens</h3>
+            <p>
+              In select guides (such as dog nutrition portions and reptile thermal ranges), multi-column tables require
+              horizontal swipe scrolling on viewports under 360px width.
+            </p>
+          </div>
+        </div>
+
+        <div class="care-tip-card limitation-card">
+          <div class="tip-icon-wrap limitation-icon-wrap">
+            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <span class="limitation-badge"><i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> External
+              Host</span>
+            <h3>Third-Party External Links</h3>
+            <p>
+              External destinations (including GitHub issues, LinkedIn profiles, and third-party walker route maps)
+              operate on host standards outside PetSathi's direct engineering control.
+            </p>
+          </div>
+        </div>
+
+        <div class="care-tip-card limitation-card">
+          <div class="tip-icon-wrap limitation-icon-wrap">
+            <i class="fa-solid fa-palette" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <span class="limitation-badge"><i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i> Color
+              Tuning</span>
+            <h3>Pastel Badge Small Text</h3>
+            <p>
+              A select few decorative tags with pastel backgrounds (<code>#edf6df</code>) meet WCAG AA (4.5:1+) for
+              large text, and are being darkened to meet the strict AAA standard (7:1) for small body text.
+            </p>
+          </div>
+        </div>
+
+        <div class="care-tip-card limitation-card">
+          <div class="tip-icon-wrap limitation-icon-wrap">
+            <i class="fa-solid fa-camera" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <span class="limitation-badge"><i class="fa-solid fa-file-pen" aria-hidden="true"></i> Form
+              Validation</span>
+            <h3>User-Submitted Media Alt-Text</h3>
+            <p>
+              On community review pages (<code>reviews.html</code>), future community photo submissions may lack
+              author-written alt text. Automated alt-text prompting workflows are in active design.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--
+         SECTION 8: FEEDBACK & BARRIER REPORTING
+         -->
+    <section class="section-wrap access-section" id="feedback">
+      <div class="cat-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-comment-dots" aria-hidden="true"></i> Community Input
+          </span>
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Feedback &amp; <span>Barrier Reporting</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+          <p>
+            We welcome constructive feedback, bug reports, and suggestions from individuals who rely on assistive
+            technologies. Your lived experience helps us prioritize critical fixes.
+          </p>
+        </div>
+      </div>
+
+      <!-- Guidelines Grid (Matching reptiles.html dos-donts-grid) -->
+      <div class="dos-donts-grid">
+        <div class="guideline-card dos">
+          <div class="guideline-card-header">
+            <div class="guideline-icon-wrap" style="background: #edf7f0; color: #286849;">
+              <i class="fa-solid fa-list-check" aria-hidden="true"></i>
+            </div>
+            <h3 class="guideline-title">Helpful Details to Include</h3>
+          </div>
+          <ul class="guideline-list">
+            <li>
+              <span class="guideline-tick"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
+              <span class="guideline-text"><b>Page URL or Title:</b> Where the accessibility obstacle was
+                encountered.</span>
+            </li>
+            <li>
+              <span class="guideline-tick"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
+              <span class="guideline-text"><b>Task Description:</b> What you were attempting to accomplish (e.g. search
+                walkers).</span>
+            </li>
+            <li>
+              <span class="guideline-tick"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
+              <span class="guideline-text"><b>Specific Barrier:</b> The unexpected behavior or roadblock
+                observed.</span>
+            </li>
+            <li>
+              <span class="guideline-tick"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
+              <span class="guideline-text"><b>Assistive Tech Details:</b> Your device, browser, and software (e.g. NVDA,
+                VoiceOver).</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="guideline-card dos">
+          <div class="guideline-card-header">
+            <div class="guideline-icon-wrap" style="background: #edf7f0; color: #286849;">
+              <i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i>
+            </div>
+            <h3 class="guideline-title">Our Response Commitment</h3>
+          </div>
+          <ul class="guideline-list">
+            <li>
+              <span class="guideline-tick"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
+              <span class="guideline-text"><b>2-3 Day Response:</b> Our support team acknowledges all accessibility
+                inquiries within 2 to 3 business days.</span>
+            </li>
+            <li>
+              <span class="guideline-tick"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
+              <span class="guideline-text"><b>Alternative Formats:</b> Immediate provision of accessible guidance,
+                telephone support, or alternative text formats.</span>
+            </li>
+            <li>
+              <span class="guideline-tick"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
+              <span class="guideline-text"><b>Engineering Sprint:</b> Direct escalation of identified roadblocks into
+                our active bug fixing queue.</span>
+            </li>
+            <li>
+              <span class="guideline-tick"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
+              <span class="guideline-text"><b>Follow-up Confirmation:</b> We notify you directly once the remediation
+                has been deployed to production.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!--
+         SECTION 9: FUTURE IMPROVEMENTS & ROADMAP
+         -->
+    <section class="section-wrap access-section" id="future">
+      <div class="cat-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i> Forward Roadmap
+          </span>
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Future Improvements &amp; <span>Continuous Milestones</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+          <p>
+            Digital inclusion is an ongoing journey of continuous refinement. Below are key engineering initiatives
+            slated on our roadmap to continually elevate PetSathi's accessibility maturity.
+          </p>
+        </div>
+      </div>
+
+      <!-- Roadmap Cards (Matching reptiles.html care-tip-card architecture) -->
+      <div class="rep-topic-grid">
+        <div class="care-tip-card roadmap-card-item">
+          <div class="tip-icon-wrap">
+            <i class="fa-solid fa-code" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <span class="roadmap-badge in-progress"><i class="fa-solid fa-spinner" aria-hidden="true"></i> Active
+              Development</span>
+            <h3>Automated CI/CD Audits</h3>
+            <p>
+              Integrating <code>axe-core</code> and Lighthouse automated accessibility test suites directly into our
+              GitHub Actions deployment pipelines to catch regressions early.
+            </p>
+          </div>
+        </div>
+
+        <div class="care-tip-card roadmap-card-item">
+          <div class="tip-icon-wrap">
+            <i class="fa-solid fa-universal-access" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <span class="roadmap-badge planned"><i class="fa-solid fa-clock" aria-hidden="true"></i> Planned
+              Phase</span>
+            <h3>Universal Skip Links</h3>
+            <p>
+              Rolling out standardized skip-to-content anchors and enhanced keyboard focus rings across every legacy pet
+              care sub-page and authentication portal.
+            </p>
+          </div>
+        </div>
+
+        <div class="care-tip-card roadmap-card-item">
+          <div class="tip-icon-wrap">
+            <i class="fa-solid fa-users" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <span class="roadmap-badge planned"><i class="fa-solid fa-list-check" aria-hidden="true"></i> Future
+              Phase</span>
+            <h3>Assistive Tech User Testing</h3>
+            <p>
+              Partnering with community volunteers who rely on screen readers and switch access devices for recurring
+              hands-on usability testing sessions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--
+         SECTION 10: CONTACT INFORMATION & DIRECT SUPPORT
+         -->
+    <section class="section-wrap access-section" id="contact">
+      <div class="cat-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-address-book" aria-hidden="true"></i> Direct Assistance
+          </span>
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Contact Information &amp; <span>Direct Support</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+          <p>
+            If you need assistance accessing any content on PetSathi, or would like to request an alternative format,
+            please reach out through any of our official communication channels.
+          </p>
+        </div>
+      </div>
+
+      <!-- Contact Channels Grid -->
+      <div class="rep-topic-grid">
+        <div class="care-tip-card contact-channel-card">
+          <div class="tip-icon-wrap">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <h3>Email Support</h3>
+            <p>Send an accessibility inquiry directly to our dedicated support inbox:</p>
+            <a class="contact-link" href="mailto:support@petsathi.com">
+              support@petsathi.com <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="care-tip-card contact-channel-card">
+          <div class="tip-icon-wrap">
+            <i class="fa-solid fa-comments" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <h3>Direct Contact Form</h3>
+            <p>Submit an inquiry through our secure and accessible online contact form:</p>
+            <a class="contact-link" href="contact.html">
+              Visit Contact Page <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="care-tip-card contact-channel-card">
+          <div class="tip-icon-wrap">
+            <i class="fa-solid fa-code-branch" aria-hidden="true"></i>
+          </div>
+          <div class="tip-content">
+            <h3>Community Tracker</h3>
+            <p>Open a public accessibility issue or view active code pull requests on GitHub:</p>
+            <a class="contact-link" href="https://github.com/Riya-Kharade/PetSathi/issues" target="_blank"
+              rel="noopener noreferrer">
+              PetSathi GitHub Issues <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Improved CTA Banner (Warm Sand Theme Matching cats/index.html & sitemap.html Exactly - Left Aligned) -->
+    <section class="cta section-wrap" id="accessibilityCta">
+      <div class="cta-content-left">
+        <div class="eyebrow"><i class="fa-solid fa-universal-access" aria-hidden="true"></i> &nbsp;COMMITTED TO DIGITAL
+          INCLUSION</div>
+        <h2>Need Assistance or <em>Alternative Formats?</em></h2>
+        <p>
+          Our volunteer support team is dedicated to barrier-free pet care. Whether you need guidance reviewing a care
+          topic, help navigating our caregiver directory, or want to report an accessibility obstacle, our team is
+          always here to support you.
+        </p>
+      </div>
+      <div class="cta-actions">
+        <a class="button button-light" href="contact.html" id="cta-contact">
+          Contact Support &nearr;
+        </a>
+        <a class="button button-outline" href="faq.html" id="cta-faq">
+          Help Center &amp; FAQ
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!--
+       3. PETSATHI GLOBAL FOOTER (Matching Latest Repo State)
+       -->
+  <div id="footer"></div>
+
+  <!-- Scripts -->
+  <script src="../js/main.js"></script>
+</body>
+
+</html>
