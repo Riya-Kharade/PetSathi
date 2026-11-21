@@ -99,37 +99,6 @@
       --cat-muted: #5d7164;
     }
 
-    /* Breadcrumbs */
-    .breadcrumb-nav {
-      padding: 14px 0 18px;
-      font-size: 0.85rem;
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .breadcrumb-nav a {
-      color: var(--muted);
-      transition: color 0.2s ease;
-      text-decoration: none;
-    }
-
-    .breadcrumb-nav a:hover {
-      color: var(--green);
-    }
-
-    .breadcrumb-separator {
-      color: #b5c2b9;
-      font-size: 0.8rem;
-    }
-
-    .breadcrumb-current {
-      color: var(--ink);
-      font-weight: 600;
-    }
-
     /* Hero Section Overrides */
     .nutrition-hero {
       background: linear-gradient(180deg, #edf4ee 0%, #fafcf7 100%);
@@ -764,18 +733,50 @@
     }
 
     .cat-media-media img {
+      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.35s ease;
+      object-position: center 35%;
     }
 
-    .cat-media-card:hover .cat-media-media img {
-      transform: scale(1.05);
+    .cat-media-card:nth-child(2) .cat-media-media,
+    .cat-media-card:nth-child(5) .cat-media-media {
+      background-position: center;
+      background-size: cover;
+    }
+
+    .cat-media-card:nth-child(2) .cat-media-media {
+      background-image: url("https://images.unsplash.com/photo-1561948955-570b270e7c36?auto=format&fit=crop&w=800&q=80");
+    }
+
+    .cat-media-card:nth-child(5) .cat-media-media {
+      background-image: url("https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=800&q=80");
+    }
+
+    .cat-media-card:nth-child(2) .cat-media-media::before,
+    .cat-media-card:nth-child(5) .cat-media-media::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: inherit;
+      filter: blur(16px);
+      transform: scale(1.15);
+    }
+
+    .cat-media-card:nth-child(2) .cat-media-media img,
+    .cat-media-card:nth-child(5) .cat-media-media img {
+      position: relative;
+      object-fit: contain;
+    }
+
+    .cat-media-card:nth-child(6) .cat-media-media img {
+      object-position: center 75%;
     }
 
     .cat-media-tag {
       position: absolute;
+      z-index: 1;
       top: 12px;
       left: 12px;
       background: rgba(255, 255, 255, 0.94);
@@ -1045,15 +1046,14 @@
     /* Complete Feline Care Section - Exact Match to Cat Index Final Section */
     .cta-nutrition {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      text-align: center;
-      gap: 18px;
-      background: var(--cat-warm-soft);
+      justify-content: space-between;
+      gap: 24px;
+      background: #fcecef;
       border: 1px solid var(--cat-warm-border);
       border-radius: 28px;
-      padding: 48px 36px;
-      margin: 40px auto 90px;
+      padding: 32px 36px;
+      margin: 24px auto 60px;
       max-width: 1200px;
     }
 
@@ -1069,7 +1069,7 @@
     .cta-nutrition h2 {
       font-family: Georgia, "Times New Roman", serif !important;
       font-size: clamp(1.8rem, 3.2vw, 2.4rem);
-      margin: 0;
+      margin: 0 0 8px;
       color: var(--cat-ink);
       line-height: 1.25;
     }
@@ -1091,8 +1091,8 @@
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 8px;
+      justify-content: flex-start;
+      flex: 0 1 340px;
     }
 
     .cta-nutrition .button-outline {
@@ -1114,6 +1114,15 @@
 
       .calculator-grid {
         grid-template-columns: 1fr;
+      }
+
+      .cta-nutrition {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .cta-nutrition .cta-actions {
+        flex: auto;
       }
 
       .paw-left-1,
@@ -1138,8 +1147,15 @@
       }
 
       .cta-nutrition {
-        padding: 36px 20px;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 28px 20px;
         border-radius: 22px;
+      }
+
+      .cta-nutrition .cta-actions {
+        flex: auto;
+        flex-direction: column;
       }
 
       .hero-key-points {
@@ -1159,17 +1175,6 @@
     <!-- Main Hero Section -->
     <section class="nutrition-hero" id="top">
       <div class="section-wrap">
-        <!-- Breadcrumbs -->
-        <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-          <a href="../../../../index.html">Home</a>
-          <span class="breadcrumb-separator">/</span>
-          <a href="../index.html">Explore Pets</a>
-          <span class="breadcrumb-separator">/</span>
-          <a href="index.html">Cats</a>
-          <span class="breadcrumb-separator">/</span>
-          <span class="breadcrumb-current">Food &amp; Nutrition</span>
-        </nav>
-
         <div class="hero">
           <div class="hero-copy">
             <div class="cat-badge-strip">
@@ -1941,12 +1946,14 @@
     <!-- Section 7: Complete Feline Care Section - Matching Cat Index Final Section Style -->
     <section class="section-wrap">
       <div class="cta-nutrition">
-        <div class="eyebrow">COMPLETE FELINE CARE</div>
-        <h2>Ready to Explore More <em>Cat Guides?</em></h2>
-        <p>
-          Nutrition is the foundation of wellness, but joyful cat parenting also involves behavioral enrichment,
-          grooming routines, and discovering unique breed traits. Explore our comprehensive cat care library!
-        </p>
+        <div>
+          <div class="eyebrow">COMPLETE FELINE CARE</div>
+          <h2>Ready to Explore More <em>Cat Guides?</em></h2>
+          <p>
+            Nutrition is the foundation of wellness, but joyful cat parenting also involves behavioral enrichment,
+            grooming routines, and discovering unique breed traits. Explore our comprehensive cat care library!
+          </p>
+        </div>
         <div class="cta-actions">
           <a class="button" href="index.html">← Back to Cats Overview</a>
           <a class="button button-outline" href="care.html">Explore Cat Care Guide ↗</a>
