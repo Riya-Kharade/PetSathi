@@ -4,13 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Comprehensive Care & Safety Guide for Small Pets, Aquarium Fish, and Reptiles on PetSathi. Daily routines, housing, species nutrition, health wellness, and safety practices.">
-  <title>Other Pets Care & Safety Guide | Small Pets, Fish & Reptiles | PetSathi</title>
+  <meta name="description"
+    content="Complete Reptile Care Guide on PetSathi. Learn terrarium setup, temperature gradients, linear UVB lighting, humidity management, cleaning routines, shedding care, and daily reptile husbandry.">
+  <title>Complete Reptile Care Guide | PetSathi</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome 6.5.2 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <!-- Core PetSathi Stylesheets -->
   <link rel="stylesheet" href="../../../css/global.css">
@@ -19,2372 +25,2790 @@
 
   <style>
     /* ========================================================
-       OTHER PETS CARE & SAFETY PAGE — STYLES & THEMING
+       FONT AWESOME 6 DEFINITIONS & GLOBAL RESILIENCE GUARDS
+       ======================================================== */
+    @font-face {
+      font-family: "Font Awesome 6 Free";
+      font-style: normal;
+      font-weight: 900;
+      font-display: block;
+      src:
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.woff2") format("woff2"),
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.ttf") format("truetype");
+    }
+
+    @font-face {
+      font-family: "Font Awesome 6 Free";
+      font-style: normal;
+      font-weight: 400;
+      font-display: block;
+      src:
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-regular-400.woff2") format("woff2"),
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-regular-400.ttf") format("truetype");
+    }
+
+    @font-face {
+      font-family: "Font Awesome 6 Brands";
+      font-style: normal;
+      font-weight: 400;
+      font-display: block;
+      src:
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-brands-400.woff2") format("woff2"),
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-brands-400.ttf") format("truetype");
+    }
+
+    body [class*="fa-"],
+    body [class*="fa-"]::before {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900 !important;
+      font-style: normal !important;
+      font-variant: normal !important;
+      text-rendering: auto !important;
+      line-height: 1 !important;
+    }
+
+    .fa-regular,
+    .fa-regular::before {
+      font-weight: 400 !important;
+    }
+
+    .fa-brands,
+    .fa-brands::before {
+      font-family: "Font Awesome 6 Brands" !important;
+      font-weight: 400 !important;
+    }
+
+    /* Disable global automatic pseudo-element icons inside dropdowns */
+    .dropdown a::before,
+    .dropdown a::after {
+      display: none !important;
+      content: none !important;
+    }
+
+    .dropdown a {
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      padding: 10px 16px !important;
+    }
+
+    .dropdown a i {
+      width: 18px;
+      text-align: center;
+    }
+
+    /* ========================================================
+       PAGE DESIGN SYSTEM & COLOR PALETTE
        ======================================================== */
     :root {
-      /* Category Theme Colors */
-      --smallpet-color: #d97706;
-      --smallpet-soft: #fef3c7;
-      --smallpet-border: #fcd34d;
+      --rep-green-dark: #1b3d2b;
+      --rep-green-primary: #286849;
+      --rep-green-hover: #1e5239;
+      --rep-green-light: #edf7f0;
+      --rep-green-soft: #f4faf6;
+      --rep-border-green: #cce4d2;
+      --rep-cream: #fafcf7;
+      --rep-white: #ffffff;
+      --rep-ink: #1a251e;
+      --rep-muted: #55665c;
+      --rep-line: #e2eddc;
+      --rep-card-shadow: 0 4px 20px rgba(35, 75, 45, 0.05);
+      --rep-hover-shadow: 0 14px 34px rgba(35, 75, 45, 0.12);
+      --rep-pink-bg: #fdf2f4;
+      --rep-pink-border: #f6d5db;
+      --rep-pink-accent: #b8334a;
+    }
 
-      --fish-color: #0f766e;
-      --fish-soft: #e6f6f4;
-      --fish-border: #99f6e4;
-
-      --reptile-color: #4d7c0f;
-      --reptile-soft: #ecfccb;
-      --reptile-border: #bef264;
-
-      --danger-color: #dc2626;
-      --danger-soft: #fee2e2;
-      --danger-border: #fca5a5;
-
-      --safe-color: #16a34a;
-      --safe-soft: #dcfce7;
-      --safe-border: #86efac;
-
-      --card-bg: #ffffff;
-      --card-border: var(--line);
-      --card-shadow: 0 10px 30px rgba(35, 57, 43, 0.05);
-      --card-shadow-hover: 0 18px 45px rgba(35, 57, 43, 0.1);
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      background: var(--cream);
+      background-color: var(--rep-cream);
+      color: var(--rep-ink);
+      font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Skip Link */
+    .skip-to-content {
+      position: absolute;
+      top: -40px;
+      left: 20px;
+      background: var(--rep-green-primary);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 6px;
+      z-index: 10000;
+      transition: top 0.2s ease;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .skip-to-content:focus {
+      top: 15px;
     }
 
     /* Breadcrumbs */
-    .care-breadcrumbs {
-      width: min(1160px, calc(100% - 48px));
-      margin: 18px auto 0;
+    .care-breadcrumb {
+      width: min(1280px, calc(100% - 48px));
+      margin: 20px auto 0;
       display: flex;
       align-items: center;
       gap: 8px;
       flex-wrap: wrap;
       font-size: 0.85rem;
-      color: var(--muted);
+      color: var(--rep-muted);
     }
 
-    .care-breadcrumbs a {
-      color: var(--green);
+    .care-breadcrumb a {
+      color: var(--rep-green-primary);
+      text-decoration: none;
       font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       transition: color 0.2s;
     }
 
-    .care-breadcrumbs a:hover {
-      color: var(--dark);
+    .care-breadcrumb a:hover {
+      color: var(--rep-green-dark);
       text-decoration: underline;
     }
 
-    .care-breadcrumbs .sep {
+    .care-breadcrumb .separator {
       color: #9cb1a4;
+      font-size: 0.8rem;
     }
 
-    .care-breadcrumbs .current {
-      color: var(--ink);
+    .care-breadcrumb .current {
+      color: var(--rep-ink);
       font-weight: 700;
     }
 
-    /* Hero Section */
-    .other-hero {
-      text-align: center;
-      padding: 60px 24px 65px;
-      background: linear-gradient(180deg, #edf4ee 0%, #f7faf7 60%, var(--cream) 100%);
-      border-bottom: 1px solid var(--line);
+    /* Section Wrapper */
+    .care-section-wrap {
+      width: min(1280px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    /* ========================================================
+       1. HERO SECTION (Matching Dog Index & Cat Index Layout)
+       ======================================================== */
+    .care-hero {
+      width: min(1280px, calc(100% - 48px));
+      margin: 30px auto 45px;
+      padding: 60px 6%;
+      min-height: 480px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      align-items: center;
+      gap: 50px;
+      background: linear-gradient(135deg, #f7faf4 0%, #edf6ee 100%);
+      border: 1px solid var(--rep-line);
+      border-radius: 32px;
+      overflow: hidden;
       position: relative;
+      box-shadow: 0 6px 24px rgba(35, 75, 45, 0.04);
+      box-sizing: border-box;
     }
 
-    .other-hero .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 6px 18px;
-      background: #e1eee4;
-      color: var(--green);
-      border-radius: 999px;
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-bottom: 18px;
+    .care-hero-copy {
+      min-width: 0;
+      z-index: 2;
     }
 
-    .other-hero h1 {
-      max-width: 920px;
-      margin: 0 auto 16px;
-      font-size: clamp(2.3rem, 4.8vw, 3.8rem);
-      line-height: 1.15;
-    }
-
-    .other-hero h1 em {
-      color: var(--green);
-      font-style: normal;
-    }
-
-    .other-hero p.hero-subtitle {
-      max-width: 760px;
-      margin: 0 auto 28px;
-      color: #55665c;
-      font-size: 1.05rem;
-      line-height: 1.8;
-    }
-
-    .hero-category-pills {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 30px;
-    }
-
-    .hero-cat-tag {
+    .care-badge-strip {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 9px 18px;
+      padding: 7px 18px;
+      background: #eaf3df;
+      color: var(--rep-green-primary);
+      border: 1px solid var(--rep-border-green);
       border-radius: 999px;
-      background: white;
-      border: 1px solid var(--line);
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: var(--ink);
-      box-shadow: 0 4px 12px rgba(35, 57, 43, 0.04);
-    }
-
-    /* Category Filter Strip */
-    .filter-wrapper {
-      background: white;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      padding: 16px 0;
-      position: sticky;
-      top: 0;
-      z-index: 30;
-      box-shadow: 0 4px 16px rgba(35, 57, 43, 0.05);
-    }
-
-    .filter-inner {
-      width: min(1160px, calc(100% - 48px));
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .filter-label {
-      font-size: 0.85rem;
-      font-weight: 800;
-      color: var(--ink);
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .filter-tabs {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .filter-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 18px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: var(--soft);
-      color: #4b5d52;
-      font-size: 0.86rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.25s ease;
-      font-family: inherit;
-    }
-
-    .filter-btn:hover {
-      background: #e2ede5;
-      color: var(--dark);
-    }
-
-    .filter-btn.active {
-      background: var(--green);
-      border-color: var(--green);
-      color: white;
-      box-shadow: 0 4px 14px rgba(40, 104, 73, 0.25);
-    }
-
-    /* Section Navigation Sub-strip */
-    .subnav-strip {
-      background: #fbfdf9;
-      border-bottom: 1px solid var(--line);
-      padding: 10px 0;
-    }
-
-    .subnav-inner {
-      width: min(1160px, calc(100% - 48px));
-      margin: auto;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      overflow-x: auto;
-      padding-bottom: 4px;
-      white-space: nowrap;
-      scrollbar-width: thin;
-    }
-
-    .subnav-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.83rem;
-      font-weight: 600;
-      color: var(--muted);
-      padding: 5px 12px;
-      border-radius: 8px;
-      transition: all 0.2s;
-    }
-
-    .subnav-link:hover,
-    .subnav-link.active {
-      background: #eef4ed;
-      color: var(--green);
-    }
-
-    /* Main Content Sections */
-    .care-main-content {
-      padding: 50px 0 80px;
-    }
-
-    .guide-section {
-      padding-top: 50px;
-      margin-bottom: 75px;
-      scroll-margin-top: 140px;
-    }
-
-    .section-header-block {
-      margin-bottom: 35px;
-      position: relative;
-    }
-
-    .section-header-block .section-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
       font-size: 0.78rem;
       font-weight: 800;
       letter-spacing: 1.2px;
       text-transform: uppercase;
-      color: var(--green);
-      margin-bottom: 8px;
+      margin-bottom: 20px;
     }
 
-    .section-header-block h2 {
-      font-size: clamp(1.8rem, 3.2vw, 2.5rem);
-      margin: 0 0 10px;
-      color: var(--ink);
+    .care-hero-copy h1 {
+      margin: 0 0 20px;
+      color: #22372a;
+      font-family: Georgia, "Playfair Display", serif;
+      font-size: clamp(2.3rem, 4.2vw, 3.8rem);
+      line-height: 1.15;
+      letter-spacing: -1.2px;
     }
 
-    .section-header-block p.section-desc {
+    .care-hero-copy h1 em {
+      color: var(--rep-green-primary);
+      font-style: normal;
+    }
+
+    .care-hero-copy p {
+      max-width: 540px;
+      margin: 0 0 28px;
+      color: var(--rep-muted);
       font-size: 1.02rem;
-      color: var(--muted);
-      max-width: 800px;
-      margin: 0;
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
-    /* Tri-Card Grid for Categories */
-    .category-cards-grid {
+    .care-hero-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .care-hero-actions .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 26px;
+      background: var(--rep-green-primary);
+      color: #ffffff;
+      border: 1px solid var(--rep-green-primary);
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 14px rgba(40, 104, 73, 0.25);
+    }
+
+    .care-hero-actions .button:hover {
+      background: var(--rep-green-hover);
+      border-color: var(--rep-green-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(40, 104, 73, 0.35);
+    }
+
+    .care-hero-actions .button-outline {
+      background: #ffffff;
+      color: var(--rep-green-primary);
+      border: 1px solid var(--rep-border-green);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .care-hero-actions .button-outline:hover {
+      background: var(--rep-green-light);
+      border-color: var(--rep-green-primary);
+      color: var(--rep-green-dark);
+    }
+
+    .care-hero-note {
+      font-size: 0.85rem;
+      color: var(--rep-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .care-hero-note i {
+      color: var(--rep-green-primary);
+    }
+
+    /* Hero Visual */
+    .care-hero-visual {
+      position: relative;
+      width: 100%;
+      min-width: 0;
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .care-hero-blob {
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(206, 235, 214, 0.65) 0%, rgba(206, 235, 214, 0) 70%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .care-hero-frame {
+      position: relative;
+      width: 100%;
+      max-width: 440px;
+      height: 380px;
+      border-radius: 40px;
+      overflow: hidden;
+      background: #d8e8dc;
+      box-shadow: 0 20px 48px rgba(35, 75, 45, 0.14);
+      z-index: 2;
+      border: 4px solid #ffffff;
+    }
+
+    .care-hero-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .care-hero-frame:hover img {
+      transform: scale(1.04);
+    }
+
+    /* Floating Hero Badges */
+    .care-floating-badge {
+      position: absolute;
+      z-index: 3;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border: 1px solid #dce8dd;
+      border-radius: 18px;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 10px 24px rgba(35, 75, 45, 0.1);
+      animation: floatBadge 3.5s ease-in-out infinite alternate;
+    }
+
+    .badge-top-left {
+      top: 15px;
+      left: -20px;
+    }
+
+    .badge-bottom-right {
+      bottom: 20px;
+      right: -15px;
+      animation-delay: 1.5s;
+    }
+
+    @keyframes floatBadge {
+      0% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(-8px);
+      }
+    }
+
+    .care-badge-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--rep-green-light);
+      color: var(--rep-green-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .care-badge-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .care-badge-text strong {
+      font-size: 0.85rem;
+      color: var(--rep-ink);
+      line-height: 1.2;
+    }
+
+    .care-badge-text small {
+      font-size: 0.74rem;
+      color: var(--rep-muted);
+    }
+
+    /* ========================================================
+       2. QUICK NAVIGATION HUB (Matching Dog Index / Cat Index)
+       ======================================================== */
+    .guides-nav-strip {
+      position: relative;
+      background: var(--rep-white);
+      margin: 40px auto 60px;
+      max-width: 1280px;
+      width: calc(100% - 48px);
+      border: 1px solid var(--rep-border-green);
+      border-radius: 32px;
+      padding: 42px 36px 38px;
+      box-shadow: 0 4px 24px rgba(35, 80, 50, 0.04);
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .quick-nav-decor {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+      color: #cde4d3;
+      opacity: 0.55;
+    }
+
+    .decor-top-left {
+      top: -8px;
+      left: -8px;
+      width: 130px;
+      height: 130px;
+      background: radial-gradient(circle at 10% 10%, #eaf5ed 0%, rgba(234, 245, 237, 0) 70%);
+      border-radius: 0 0 100% 0;
+    }
+
+    .decor-bottom-right {
+      bottom: -8px;
+      right: -8px;
+      width: 130px;
+      height: 130px;
+      background: radial-gradient(circle at 90% 90%, #eaf5ed 0%, rgba(234, 245, 237, 0) 70%);
+      border-radius: 100% 0 0 0;
+    }
+
+    .decor-leaf {
+      position: absolute;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .decor-leaf-1 {
+      top: 14px;
+      left: 28px;
+      font-size: 26px;
+      transform: rotate(-15deg);
+    }
+
+    .decor-leaf-2 {
+      top: 38px;
+      left: 12px;
+      font-size: 18px;
+      transform: rotate(20deg);
+    }
+
+    .decor-leaf-3 {
+      bottom: 36px;
+      right: 14px;
+      font-size: 18px;
+      transform: rotate(-25deg);
+    }
+
+    .decor-leaf-4 {
+      bottom: 14px;
+      right: 28px;
+      font-size: 26px;
+      transform: rotate(15deg);
+    }
+
+    .quick-nav-header {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .quick-nav-eyebrow-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    .quick-nav-line {
+      height: 1px;
+      width: 110px;
+      background: #d6ead9;
+    }
+
+    .quick-nav-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: var(--rep-green-soft);
+      border: 1px solid var(--rep-border-green);
+      border-radius: 9999px;
+      color: var(--rep-green-primary);
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      box-shadow: 0 1px 4px rgba(35, 100, 55, 0.04);
+    }
+
+    .quick-nav-badge i {
+      font-size: 0.95rem;
+      line-height: 1;
+      color: var(--rep-green-primary);
+    }
+
+    .quick-nav-title {
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(1.4rem, 2.3vw, 1.95rem);
+      font-weight: 800;
+      color: var(--rep-ink);
+      margin: 0;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      text-align: center;
+    }
+
+    .quick-nav-title span {
+      color: var(--rep-green-primary);
+      font-weight: 800;
+    }
+
+    .guides-nav-grid-7 {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin: 0;
+    }
+
+    .guide-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px 10px 10px;
+      background: var(--rep-green-light);
+      border: 1px solid var(--rep-border-green);
+      border-radius: 9999px;
+      color: var(--rep-green-primary);
+      text-decoration: none;
+      font-size: 0.86rem;
+      font-weight: 700;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 2px 6px rgba(35, 80, 50, 0.04);
+      justify-content: flex-start;
+      cursor: pointer;
+    }
+
+    .guide-nav-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #ffffff;
+      color: var(--rep-green-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.88rem;
+      flex-shrink: 0;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+      transition: all 0.25s ease;
+    }
+
+    .guide-nav-label {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .guide-nav-item:hover {
+      background: var(--rep-green-primary);
+      color: #ffffff;
+      border-color: var(--rep-green-primary);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(40, 104, 73, 0.2);
+    }
+
+    .guide-nav-item:hover .guide-nav-icon {
+      background: rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+    }
+
+    /* ========================================================
+       SIGNATURE SECTION HEADING CARDS (Matching Dogs/Cats Index)
+       ======================================================== */
+    .care-topics-heading {
+      position: relative;
+      max-width: 1280px;
+      margin: 55px auto 35px;
+      padding: 44px 35px 38px;
+      overflow: hidden;
+      text-align: center;
+      border-radius: 35px;
+      border: 1px solid #dcebc9;
+      background: #fafcf7;
+      box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
+      box-sizing: border-box;
+    }
+
+    .corner-wave {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wave-tl {
+      top: 0;
+      left: 0;
+      width: 220px;
+      height: 130px;
+    }
+
+    .wave-br {
+      bottom: 0;
+      right: 0;
+      width: 220px;
+      height: 130px;
+    }
+
+    .heading-decor-icon {
+      position: absolute;
+      pointer-events: none;
+      z-index: 1;
+      color: #c9decb;
+      opacity: 0.55;
+    }
+
+    .decor-pos-1 {
+      left: 35px;
+      top: 25px;
+      font-size: 34px;
+    }
+
+    .decor-pos-2 {
+      left: 18px;
+      bottom: 14px;
+      font-size: 24px;
+    }
+
+    .decor-pos-3 {
+      right: 25px;
+      top: 25px;
+      font-size: 34px;
+    }
+
+    .decor-pos-4 {
+      right: 65px;
+      bottom: 14px;
+      font-size: 24px;
+    }
+
+    .heading-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .heading-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 20px;
+      margin-bottom: 16px;
+      border-radius: 50px;
+      background: #edf6df;
+      border: 1px solid #dcebc9;
+      color: #246b43;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .care-topics-heading h2 {
+      color: #263b30;
+      font-family: Georgia, serif;
+      font-size: clamp(24px, 3.2vw, 36px);
+      font-weight: 700;
+      margin: 0 0 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .care-topics-heading h2 span {
+      color: var(--rep-green-primary);
+    }
+
+    .care-topics-heading p {
+      max-width: 680px;
+      margin: 0 auto;
+      font-size: 0.98rem;
+      color: var(--rep-muted);
+      line-height: 1.65;
+    }
+
+    .heading-burst {
+      display: inline-block;
+      position: relative;
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      vertical-align: middle;
+    }
+
+    .heading-burst span {
+      position: absolute;
+      background: #60a872;
+      border-radius: 9999px;
+    }
+
+    .heading-burst.left span {
+      right: 0;
+      transform-origin: right center;
+    }
+
+    .heading-burst.left span:nth-child(1) {
+      top: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(35deg);
+    }
+
+    .heading-burst.left span:nth-child(2) {
+      top: 11px;
+      width: 18px;
+      height: 2.8px;
+    }
+
+    .heading-burst.left span:nth-child(3) {
+      bottom: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(-35deg);
+    }
+
+    .heading-burst.right span {
+      left: 0;
+      transform-origin: left center;
+    }
+
+    .heading-burst.right span:nth-child(1) {
+      top: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(-35deg);
+    }
+
+    .heading-burst.right span:nth-child(2) {
+      top: 11px;
+      width: 18px;
+      height: 2.8px;
+    }
+
+    .heading-burst.right span:nth-child(3) {
+      bottom: 3px;
+      width: 14px;
+      height: 2.8px;
+    }
+
+    /* ========================================================
+       4. CARDS DESIGN (7 Care Tip Cards Grid)
+       ======================================================== */
+    .care-cards-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
-      align-items: stretch;
+      margin-bottom: 50px;
     }
 
-    .pet-care-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 20px;
+    .care-card {
+      background: var(--rep-white);
+      border: 1px solid var(--rep-line);
+      border-radius: 24px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      box-shadow: var(--card-shadow);
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      text-align: center;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+      box-shadow: var(--rep-card-shadow);
+      position: relative;
     }
 
-    .pet-care-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--card-shadow-hover);
+    .care-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--rep-hover-shadow);
+      border-color: #cbd9ce;
     }
 
-    /* Category Specific Border Highlights */
-    .pet-care-card.cat-smallpet {
-      border-top: 5px solid var(--smallpet-color);
-    }
-
-    .pet-care-card.cat-fish {
-      border-top: 5px solid var(--fish-color);
-    }
-
-    .pet-care-card.cat-reptile {
-      border-top: 5px solid var(--reptile-color);
-    }
-
-    .card-banner {
-      padding: 20px 22px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .card-category-title {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .card-category-title .cat-icon {
-      font-size: 1.7rem;
-      line-height: 1;
-    }
-
-    .card-category-title h3 {
-      font-size: 1.25rem;
-      margin: 0;
-      color: var(--ink);
-    }
-
-    .cat-badge {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      padding: 4px 10px;
-      border-radius: 999px;
-    }
-
-    .cat-badge.badge-smallpet {
-      background: var(--smallpet-soft);
-      color: #92400e;
-      border: 1px solid var(--smallpet-border);
-    }
-
-    .cat-badge.badge-fish {
-      background: var(--fish-soft);
-      color: #115e59;
-      border: 1px solid var(--fish-border);
-    }
-
-    .cat-badge.badge-reptile {
-      background: var(--reptile-soft);
-      color: #3f6212;
-      border: 1px solid var(--reptile-border);
-    }
-
-    .card-body {
-      padding: 22px;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .topic-item {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .topic-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--ink);
-      display: flex;
-      align-items: center;
-      gap: 7px;
-    }
-
-    .topic-title .topic-icon {
-      font-size: 1.1rem;
-    }
-
-    .topic-text {
-      font-size: 0.88rem;
-      color: #55665c;
-      line-height: 1.65;
-      margin: 0;
-    }
-
-    .topic-list {
-      margin: 4px 0 0;
-      padding-left: 20px;
-      font-size: 0.86rem;
-      color: #55665c;
-      line-height: 1.6;
-    }
-
-    .topic-list li {
-      margin-bottom: 4px;
-    }
-
-    .highlight-tip {
-      background: var(--soft);
-      border-left: 3px solid var(--green);
-      padding: 10px 14px;
-      border-radius: 0 10px 10px 0;
-      font-size: 0.84rem;
-      color: #3b5043;
-      margin-top: 6px;
-      line-height: 1.55;
-    }
-
-    /* Food Tables & Safe/Unsafe Grid */
-    .food-split-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 8px;
-    }
-
-    .food-pill-box {
-      border-radius: 12px;
-      padding: 12px;
-      font-size: 0.83rem;
-    }
-
-    .food-pill-box.safe-box {
-      background: var(--safe-soft);
-      border: 1px solid var(--safe-border);
-    }
-
-    .food-pill-box.unsafe-box {
-      background: var(--danger-soft);
-      border: 1px solid var(--danger-border);
-    }
-
-    .food-box-header {
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      margin-bottom: 6px;
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .safe-box .food-box-header {
-      color: #15803d;
-    }
-
-    .unsafe-box .food-box-header {
-      color: #b91c1c;
-    }
-
-    .food-pill-box ul {
-      margin: 0;
-      padding-left: 18px;
-      color: #4b5563;
-      line-height: 1.5;
-    }
-
-    .food-pill-box ul li {
-      margin-bottom: 3px;
-    }
-
-    /* Alert / Emergency Callout */
-    .alert-banner {
-      background: #fef2f2;
-      border: 1px solid #fecaca;
-      border-radius: 16px;
-      padding: 20px 24px;
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      margin-top: 30px;
-    }
-
-    .alert-banner .alert-icon {
-      font-size: 1.8rem;
-      line-height: 1;
-    }
-
-    .alert-content h4 {
-      margin: 0 0 6px;
-      font-size: 1.05rem;
-      color: #991b1b;
-    }
-
-    .alert-content p {
-      margin: 0;
-      font-size: 0.88rem;
-      color: #7f1d1d;
-      line-height: 1.6;
-    }
-
-    /* Interactive Daily Care Checklist Widget */
-    .interactive-widget-card {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 30px;
-      box-shadow: var(--shadow);
-      margin-top: 35px;
-    }
-
-    .widget-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-bottom: 24px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .widget-title h3 {
-      font-size: 1.35rem;
-      margin: 0 0 4px;
-    }
-
-    .widget-title p {
-      margin: 0;
-      font-size: 0.88rem;
-      color: var(--muted);
-    }
-
-    .checklist-controls {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .checklist-select {
-      padding: 8px 14px;
-      border-radius: 10px;
-      border: 1px solid #ccd8cf;
-      font-family: inherit;
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--ink);
-      background: white;
-    }
-
-    .checklist-progress-wrap {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 220px;
-    }
-
-    .checklist-bar-bg {
-      flex-grow: 1;
-      height: 10px;
-      background: var(--soft);
-      border-radius: 999px;
+    .care-card-media {
+      position: relative;
+      height: 190px;
       overflow: hidden;
+      background: #edf5ee;
     }
 
-    .checklist-bar-fill {
+    .care-card-media img {
+      width: 100%;
       height: 100%;
-      width: 0%;
-      background: var(--green);
-      transition: width 0.3s ease;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .care-card:hover .care-card-media img {
+      transform: scale(1.06);
+    }
+
+    .care-card-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(4px);
+      padding: 5px 14px;
       border-radius: 999px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--rep-green-dark);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
 
-    .checklist-count {
-      font-size: 0.82rem;
-      font-weight: 800;
-      color: var(--green);
-      white-space: nowrap;
+    .care-card-badge i {
+      color: var(--rep-green-primary);
     }
 
-    .checklist-items-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .check-task-label {
+    .care-card-body {
+      padding: 26px 22px 28px;
       display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      background: #fafcfa;
-      border: 1px solid var(--line);
-      padding: 12px 16px;
-      border-radius: 12px;
-      cursor: pointer;
+      flex-direction: column;
+      align-items: center;
+      flex-grow: 1;
+    }
+
+    .care-card-icon-bubble {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--rep-green-light);
+      border: 1px solid var(--rep-border-green);
+      color: var(--rep-green-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      margin-top: -50px;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 4px 12px rgba(35, 75, 45, 0.1);
+      transition: transform 0.25s ease;
+    }
+
+    .care-card:hover .care-card-icon-bubble {
+      transform: scale(1.1);
+      background: var(--rep-green-primary);
+      color: #ffffff;
+    }
+
+    .care-card-body h3 {
+      font-size: 1.22rem;
+      margin: 0 0 10px;
+      color: var(--rep-ink);
+      font-weight: 700;
+    }
+
+    .care-card-body p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin: 0 0 20px;
+      color: var(--rep-muted);
+      flex-grow: 1;
+    }
+
+    .care-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      background: var(--rep-green-soft);
+      border: 1px solid var(--rep-border-green);
+      border-radius: 50px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--rep-green-primary);
+      text-decoration: none;
       transition: all 0.2s ease;
     }
 
-    .check-task-label:hover {
-      background: #f2f7f3;
-      border-color: #c7ded0;
+    .care-card-link:hover {
+      background: var(--rep-green-primary);
+      color: #ffffff;
+      border-color: var(--rep-green-primary);
     }
 
-    .check-task-label input[type="checkbox"] {
-      margin-top: 3px;
-      accent-color: var(--green);
-      width: 17px;
-      height: 17px;
-      cursor: pointer;
+    /* ========================================================
+       CONTENT SECTIONS STYLING
+       ======================================================== */
+    .content-box {
+      background: var(--rep-white);
+      border: 1px solid var(--rep-line);
+      border-radius: 28px;
+      padding: 38px 34px;
+      margin-bottom: 35px;
+      box-shadow: var(--rep-card-shadow);
     }
 
-    .task-meta b {
-      display: block;
-      font-size: 0.9rem;
-      color: var(--ink);
-      margin-bottom: 2px;
+    .feature-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 24px;
     }
 
-    .task-meta span {
-      display: block;
-      font-size: 0.78rem;
-      color: var(--muted);
-      line-height: 1.4;
+    .feature-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      margin-top: 24px;
     }
 
-    .check-task-label.completed {
-      background: #f0f7f2;
-      border-color: #a4ceb2;
-    }
-
-    .check-task-label.completed .task-meta b {
-      text-decoration: line-through;
-      color: #718078;
-    }
-
-    /* Comparison Parameters Table */
-    .specs-table-wrapper {
-      margin-top: 30px;
-      overflow-x: auto;
-      border-radius: 16px;
-      border: 1px solid var(--line);
-      background: white;
-      box-shadow: var(--shadow);
-    }
-
-    .specs-table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-      font-size: 0.88rem;
-    }
-
-    .specs-table th,
-    .specs-table td {
-      padding: 14px 18px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .specs-table th {
-      background: #f4f8f4;
-      font-weight: 800;
-      color: var(--ink);
-      font-family: Manrope, sans-serif;
-      font-size: 0.85rem;
-      letter-spacing: 0.3px;
-    }
-
-    .specs-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .specs-table tr:hover td {
-      background: #fafdfa;
-    }
-
-    /* Quick Interactive Symptom Evaluator */
-    .symptom-evaluator-card {
-      background: white;
-      border: 1px solid var(--line);
+    .feature-card {
+      background: #fafcf8;
+      border: 1px solid #e1ecde;
       border-radius: 20px;
-      padding: 28px;
-      box-shadow: var(--shadow);
-      margin-top: 30px;
-    }
-
-    .symptom-buttons {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin: 18px 0;
-    }
-
-    .symptom-btn {
-      padding: 9px 16px;
-      border-radius: 10px;
-      border: 1px solid var(--line);
-      background: var(--soft);
-      font-family: inherit;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--ink);
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .symptom-btn:hover {
-      background: #e3ede6;
-    }
-
-    .symptom-btn.active {
-      background: #991b1b;
-      color: white;
-      border-color: #991b1b;
-    }
-
-    .symptom-result-panel {
-      background: #fbfdfb;
-      border: 1px solid #dbe6dd;
-      border-radius: 14px;
-      padding: 20px;
-      display: none;
-    }
-
-    .symptom-result-panel.visible {
-      display: block;
-      animation: fadeIn 0.3s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(4px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* FAQ Accordion */
-    .faq-accordion {
+      padding: 24px 20px;
       display: flex;
       flex-direction: column;
-      gap: 14px;
-      margin-top: 30px;
+      gap: 12px;
+      transition: all 0.25s ease;
     }
 
-    .faq-item {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      overflow: hidden;
-      transition: border-color 0.2s;
+    .feature-card:hover {
+      background: #ffffff;
+      border-color: #cbd9ce;
+      box-shadow: 0 8px 22px rgba(35, 75, 45, 0.08);
+      transform: translateY(-3px);
     }
 
-    .faq-item.active {
-      border-color: var(--green);
-    }
-
-    .faq-question {
-      width: 100%;
-      padding: 18px 22px;
-      background: transparent;
-      border: none;
+    .feature-header {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-      text-align: left;
-      font-family: Manrope, sans-serif;
-      font-size: 1.02rem;
+      gap: 12px;
+    }
+
+    .feature-icon-wrap {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--rep-green-light);
+      border: 1px solid var(--rep-border-green);
+      color: var(--rep-green-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.05rem;
+      flex-shrink: 0;
+    }
+
+    .feature-header h4 {
+      font-size: 1.06rem;
+      margin: 0;
+      color: var(--rep-ink);
       font-weight: 700;
-      color: var(--ink);
-      cursor: pointer;
     }
 
-    .faq-question:hover {
-      color: var(--green);
-    }
-
-    .faq-icon {
-      font-size: 1.2rem;
-      font-weight: 400;
-      color: var(--green);
-      transition: transform 0.3s ease;
-    }
-
-    .faq-item.active .faq-icon {
-      transform: rotate(45deg);
-    }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease, padding 0.35s ease;
-      padding: 0 22px;
+    .feature-card p {
       font-size: 0.9rem;
+      line-height: 1.6;
+      margin: 0;
+      color: var(--rep-muted);
+    }
+
+    /* Warning Alert Box */
+    .alert-banner {
+      background: #fff8f5;
+      border: 1px solid #f6ded5;
+      border-left: 5px solid #d9534f;
+      border-radius: 16px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .alert-banner i {
+      color: #d9534f;
+      font-size: 1.4rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .alert-banner h5 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+      color: #8c251f;
+      font-weight: 700;
+    }
+
+    .alert-banner p {
+      margin: 0;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: #6d413b;
+    }
+
+    /* Info Tip Box */
+    .tip-banner {
+      background: #f4faf6;
+      border: 1px solid var(--rep-border-green);
+      border-left: 5px solid var(--rep-green-primary);
+      border-radius: 16px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .tip-banner i {
+      color: var(--rep-green-primary);
+      font-size: 1.35rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .tip-banner h5 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+      color: var(--rep-green-dark);
+      font-weight: 700;
+    }
+
+    .tip-banner p {
+      margin: 0;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: var(--rep-muted);
+    }
+
+    /* Process / Steps Grid */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 26px;
+    }
+
+    .step-card {
+      background: #ffffff;
+      border: 1px solid var(--rep-line);
+      border-radius: 18px;
+      padding: 22px;
+      position: relative;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--rep-green-primary);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .step-card h4 {
+      font-size: 1rem;
+      margin: 0 0 8px;
+      color: var(--rep-ink);
+    }
+
+    .step-card p {
+      font-size: 0.87rem;
+      margin: 0;
+      color: var(--rep-muted);
+      line-height: 1.55;
+    }
+
+    /* Comparison / Dos & Don'ts Grid */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 26px;
+    }
+
+    .compare-card {
+      border-radius: 20px;
+      padding: 26px;
+      border: 1px solid;
+    }
+
+    .compare-card.positive {
+      background: #f7fbf8;
+      border-color: #d2e7d6;
+    }
+
+    .compare-card.negative {
+      background: #fdf7f7;
+      border-color: #f6d4d4;
+    }
+
+    .compare-card h4 {
+      margin: 0 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.1rem;
+    }
+
+    .compare-card.positive h4 {
+      color: #1e6f43;
+    }
+
+    .compare-card.negative h4 {
+      color: #b52c2c;
+    }
+
+    .compare-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .compare-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .compare-card.positive .compare-list li i {
+      color: #28764a;
+      margin-top: 3px;
+    }
+
+    .compare-card.negative .compare-list li i {
+      color: #c94a5e;
+      margin-top: 3px;
+    }
+
+    /* Routine Checklist Grid */
+    .routine-checklist-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 24px;
+    }
+
+    .routine-card {
+      background: #fafcf8;
+      border: 1px solid #e1ecde;
+      border-radius: 20px;
+      padding: 24px 20px;
+    }
+
+    .routine-card h4 {
+      margin: 0 0 14px;
+      font-size: 1.05rem;
+      color: var(--rep-ink);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .routine-card ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .routine-card li {
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: var(--rep-muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .routine-card li i {
+      color: var(--rep-green-primary);
+      margin-top: 3px;
+    }
+
+    /* ========================================================
+       5. FINAL CTA SECTION (Soft Light Pink Background)
+       ======================================================== */
+    .care-pink-cta {
+      max-width: 1280px;
+      width: calc(100% - 48px);
+      margin: 70px auto 90px;
+      padding: 60px 45px;
+      background: var(--rep-pink-bg);
+      border: 1px solid var(--rep-pink-border);
+      border-radius: 32px;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(184, 51, 74, 0.05);
+      position: relative;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .care-pink-cta-blob {
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(246, 213, 219, 0.6) 0%, rgba(246, 213, 219, 0) 70%);
+      pointer-events: none;
+    }
+
+    .care-pink-cta-blob-left {
+      position: absolute;
+      bottom: -50px;
+      left: -50px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(246, 213, 219, 0.6) 0%, rgba(246, 213, 219, 0) 70%);
+      pointer-events: none;
+    }
+
+    .care-pink-cta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 18px;
+      background: #fae4e8;
+      border: 1px solid #f2c7ce;
+      border-radius: 999px;
+      color: var(--rep-pink-accent);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .care-pink-cta h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+      color: #3b2025;
+      margin: 0 0 16px;
+      font-weight: 700;
+    }
+
+    .care-pink-cta p {
+      max-width: 680px;
+      margin: 0 auto 30px;
+      font-size: 1.02rem;
+      color: #68484e;
       line-height: 1.7;
-      color: #55665c;
     }
 
-    .faq-item.active .faq-answer {
-      max-height: 400px;
-      padding: 0 22px 20px;
+    .care-pink-cta .button-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px;
+      background: var(--rep-green-primary);
+      color: #ffffff;
+      border: 1px solid var(--rep-green-primary);
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 16px rgba(40, 104, 73, 0.25);
     }
 
-    /* Back To Top Floating Button */
+    .care-pink-cta .button-cta:hover {
+      background: var(--rep-green-hover);
+      border-color: var(--rep-green-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 22px rgba(40, 104, 73, 0.35);
+    }
+
+    /* Back To Top Button */
     .back-to-top {
       position: fixed;
-      bottom: 28px;
-      right: 28px;
-      width: 46px;
-      height: 46px;
+      bottom: 30px;
+      right: 30px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
-      background: var(--green);
-      color: white;
+      background: var(--rep-green-primary);
+      color: #ffffff;
       border: none;
-      box-shadow: 0 8px 24px rgba(35, 57, 43, 0.25);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
       cursor: pointer;
-      display: grid;
-      place-items: center;
-      font-size: 1.2rem;
       opacity: 0;
       visibility: hidden;
-      transform: translateY(15px);
+      transform: translateY(20px);
       transition: all 0.3s ease;
-      z-index: 99;
+      z-index: 999;
     }
 
-    .back-to-top.show {
+    .back-to-top.visible {
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
     }
 
     .back-to-top:hover {
-      background: var(--dark);
+      background: var(--rep-green-hover);
       transform: translateY(-3px);
     }
 
-    /* Responsive Queries */
-    @media (max-width: 980px) {
-      .category-cards-grid {
-        grid-template-columns: 1fr;
+    /* ========================================================
+       RESPONSIVE BREAKPOINTS (Desktop 3, Tablet 2, Mobile 1)
+       ======================================================== */
+    @media (max-width: 1100px) {
+      .guides-nav-grid-7 {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .food-split-grid {
-        grid-template-columns: 1fr;
+      .care-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .checklist-items-grid {
+      .feature-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .routine-checklist-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .care-hero {
+        grid-template-columns: 1fr;
+        padding: 45px 5%;
+        gap: 36px;
+        text-align: center;
+      }
+
+      .care-hero-copy {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .care-hero-actions {
+        justify-content: center;
+      }
+
+      .care-hero-note {
+        justify-content: center;
+      }
+
+      .care-hero-visual {
+        min-height: 320px;
+      }
+
+      .care-hero-frame {
+        height: 320px;
+      }
+
+      .compare-grid {
         grid-template-columns: 1fr;
       }
     }
 
-    @media (max-width: 768px) {
-      .filter-inner {
-        flex-direction: column;
-        align-items: flex-start;
+    @media (max-width: 680px) {
+      .care-hero {
+        width: calc(100% - 24px);
+        padding: 36px 20px;
+        margin: 20px auto 35px;
       }
 
-      .widget-top {
-        flex-direction: column;
-        align-items: flex-start;
+      .care-floating-badge {
+        display: none;
       }
 
-      .checklist-progress-wrap {
+      .guides-nav-strip {
+        width: calc(100% - 24px);
+        padding: 28px 18px;
+        margin: 30px auto 45px;
+      }
+
+      .guides-nav-grid-7 {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .guide-nav-item {
+        justify-content: flex-start;
+      }
+
+      .care-cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-grid-3,
+      .feature-grid-2,
+      .routine-checklist-grid,
+      .process-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .content-box {
+        padding: 26px 20px;
+      }
+
+      .care-topics-heading {
+        padding: 36px 20px;
+        margin: 40px auto 25px;
+      }
+
+      .care-pink-cta {
+        width: calc(100% - 24px);
+        padding: 40px 22px;
+        margin: 50px auto 70px;
+      }
+
+      .care-hero-actions {
         width: 100%;
+        flex-direction: column;
+      }
+
+      .care-hero-actions .button,
+      .care-hero-actions .button-outline {
+        width: 100%;
+        justify-content: center;
       }
     }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-to-content">Skip to content</a>
 
-  <!-- ========================================================
-       SITE HEADER & NAVIGATION
-       ======================================================== -->
+  <!-- Shared Header Placeholder -->
   <div id="header"></div>
 
-  <!-- ========================================================
-       BREADCRUMB TRAIL
-       ======================================================== -->
-  <nav class="care-breadcrumbs" aria-label="Breadcrumb">
-    <a href="../../../../index.html">Home</a>
-    <span class="sep">/</span>
-    <a href="../index.html">Explore Pets</a>
-    <span class="sep">/</span>
-    <span>Other Pets</span>
-    <span class="sep">/</span>
-    <span class="current">Care & Safety Guide</span>
+  <!-- Breadcrumbs -->
+  <nav class="care-breadcrumb" aria-label="Breadcrumb">
+    <a href="../../../index.html"><i class="fa-solid fa-house" aria-hidden="true"></i> Home</a>
+    <span class="separator">/</span>
+    <a href="../index.html">Pets</a>
+    <span class="separator">/</span>
+    <a href="index.html">Other Pets</a>
+    <span class="separator">/</span>
+    <a href="reptiles.html">Reptiles</a>
+    <span class="separator">/</span>
+    <span class="current" aria-current="page">Reptile Care Guide</span>
   </nav>
 
-  <!-- ========================================================
-       PAGE HERO
-       ======================================================== -->
-  <section class="other-hero">
-    <div class="section-wrap">
-      <div class="eyebrow">PetSathi • EXOTIC & AQUATIC CARE GUIDE</div>
-      <h1>Other Pets <em>Care & Safety</em> Guide</h1>
-      <p class="hero-subtitle">
-        Expert husbandry, nutrition, habitat management, and veterinary safety standards for owners of small pets (hamsters, guinea pigs, ferrets), aquarium fish, and reptiles.
+  <main id="main-content">
+    <!-- ========================================================
+         1. HERO SECTION (Complete Reptile Care Guide)
+         ======================================================== -->
+    <section class="care-hero" id="reptile-care-hero">
+      <div class="care-hero-copy">
+        <div class="care-badge-strip">
+          <i class="fa-solid fa-shield-halved" aria-hidden="true"></i> PetSathi • Reptile Husbandry &amp; Habitat Guide
+        </div>
+        <h1>Complete Reptile <em>Care Guide</em></h1>
+        <p>
+          Responsible reptile ownership begins with crafting an environment that accurately replicates your pet's native
+          biome. Because reptiles are ectotherms, their metabolism, immunity, and behavior rely entirely on proper terrarium
+          architecture, thermal gradients, linear UVB lighting, precise humidity, and diligent sanitation routines.
+        </p>
+        <div class="care-hero-actions">
+          <a class="button" href="#care-cards-overview" id="hero-cta-explore">
+            <i class="fa-solid fa-arrow-down" aria-hidden="true"></i> Explore Care Tips
+          </a>
+          <a class="button button-outline" href="#quick-nav" id="hero-cta-nav">
+            <i class="fa-solid fa-compass" aria-hidden="true"></i> Quick Navigation
+          </a>
+        </div>
+        <div class="care-hero-note">
+          <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Evidence-based terrarium setups &amp; exotic husbandry
+          protocols.
+        </div>
+      </div>
+
+      <div class="care-hero-visual">
+        <div class="care-hero-blob" aria-hidden="true"></div>
+        <div class="care-hero-frame">
+          <img src="../../../assets/images/reptiles/bearded-dragon.jpg"
+            alt="Healthy bearded dragon basking inside a naturalistic terrarium setup" id="hero-care-image">
+        </div>
+
+        <div class="care-floating-badge badge-top-left">
+          <div class="care-badge-icon">
+            <i class="fa-solid fa-temperature-arrow-up" aria-hidden="true"></i>
+          </div>
+          <div class="care-badge-text">
+            <strong>Thermal Gradients</strong>
+            <small>Active warm &amp; cool zones</small>
+          </div>
+        </div>
+
+        <div class="care-floating-badge badge-bottom-right">
+          <div class="care-badge-icon">
+            <i class="fa-solid fa-sun" aria-hidden="true"></i>
+          </div>
+          <div class="care-badge-text">
+            <strong>Full-Spectrum UVB</strong>
+            <small>Linear Ferguson zone lighting</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         2. QUICK NAVIGATION HUB (7 Buttons)
+         ======================================================== -->
+    <div class="guides-nav-strip" id="quick-nav">
+      <div class="quick-nav-decor decor-top-left" aria-hidden="true">
+        <i class="fa-solid fa-leaf decor-leaf decor-leaf-1"></i>
+        <i class="fa-solid fa-leaf decor-leaf decor-leaf-2"></i>
+      </div>
+
+      <div class="quick-nav-decor decor-bottom-right" aria-hidden="true">
+        <i class="fa-solid fa-leaf decor-leaf decor-leaf-3"></i>
+        <i class="fa-solid fa-leaf decor-leaf decor-leaf-4"></i>
+      </div>
+
+      <div class="quick-nav-header">
+        <div class="quick-nav-eyebrow-wrap">
+          <span class="quick-nav-line"></span>
+          <div class="quick-nav-badge">
+            <i class="fa-regular fa-compass" aria-hidden="true"></i>
+            <span>QUICK NAVIGATION</span>
+          </div>
+          <span class="quick-nav-line"></span>
+        </div>
+        <h3 class="quick-nav-title">
+          Explore Dedicated <span>Reptile Care Chapters</span>
+        </h3>
+      </div>
+
+      <div class="guides-nav-grid-7">
+        <a class="guide-nav-item" href="#terrarium-setup" id="nav-terrarium-setup">
+          <span class="guide-nav-icon"><i class="fa-solid fa-house" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Terrarium Setup</span>
+        </a>
+
+        <a class="guide-nav-item" href="#temperature-heating" id="nav-temp-heating">
+          <span class="guide-nav-icon"><i class="fa-solid fa-temperature-arrow-up" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Temperature &amp; Heating</span>
+        </a>
+
+        <a class="guide-nav-item" href="#uvb-lighting" id="nav-uvb-lighting">
+          <span class="guide-nav-icon"><i class="fa-solid fa-sun" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">UVB Lighting</span>
+        </a>
+
+        <a class="guide-nav-item" href="#humidity-control" id="nav-humidity-control">
+          <span class="guide-nav-icon"><i class="fa-solid fa-droplet" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Humidity Control</span>
+        </a>
+
+        <a class="guide-nav-item" href="#cleaning-maintenance" id="nav-cleaning">
+          <span class="guide-nav-icon"><i class="fa-solid fa-spray-can-sparkles" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Cleaning &amp; Maintenance</span>
+        </a>
+
+        <a class="guide-nav-item" href="#shedding-care" id="nav-shedding">
+          <span class="guide-nav-icon"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Shedding Care</span>
+        </a>
+
+        <a class="guide-nav-item" href="#daily-care" id="nav-daily-care">
+          <span class="guide-nav-icon"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Daily Reptile Care</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         4. CARDS DESIGN (7 Care Tip Cards Grid)
+         ======================================================== -->
+    <section class="care-section-wrap" id="care-cards-overview">
+      <div class="care-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+
+        <div class="heading-decor-icon decor-pos-1"><i class="fa-solid fa-leaf"></i></div>
+        <div class="heading-decor-icon decor-pos-2"><i class="fa-solid fa-leaf"></i></div>
+        <div class="heading-decor-icon decor-pos-3"><i class="fa-solid fa-leaf"></i></div>
+        <div class="heading-decor-icon decor-pos-4"><i class="fa-solid fa-leaf"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-book-open" aria-hidden="true"></i> Husbandry Essentials
+          </span>
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Core Reptile <span>Care Cards</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+          <p>
+            Quickly navigate the essential pillars of reptile husbandry. Click any card below to dive into detailed habitat
+            specifications, equipment guidelines, and veterinary protocols.
+          </p>
+        </div>
+      </div>
+
+      <div class="care-cards-grid">
+        <!-- Card 1: Terrarium Setup -->
+        <article class="care-card" id="card-terrarium-setup">
+          <div class="care-card-media">
+            <span class="care-card-badge">
+              <i class="fa-solid fa-house" aria-hidden="true"></i> Enclosure Design
+            </span>
+            <img src="../../../assets/images/reptiles/leopard-gecko.jpg"
+              alt="Naturalistic terrarium enclosure designed for leopard geckos" loading="lazy">
+          </div>
+          <div class="care-card-body">
+            <div class="care-card-icon-bubble">
+              <i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i>
+            </div>
+            <h3>Terrarium Setup</h3>
+            <p>
+              Select proper enclosure dimensions, safe non-toxic substrates, dual hiding spots, and secure climbing furniture.
+            </p>
+            <a href="#terrarium-setup" class="care-card-link">
+              Explore Setup <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 2: Temperature Control -->
+        <article class="care-card" id="card-temp-control">
+          <div class="care-card-media">
+            <span class="care-card-badge">
+              <i class="fa-solid fa-temperature-high" aria-hidden="true"></i> Thermal Balance
+            </span>
+            <img src="../../../assets/images/reptiles/corn-snake.jpg"
+              alt="Corn snake basking in temperature-regulated terrarium" loading="lazy">
+          </div>
+          <div class="care-card-body">
+            <div class="care-card-icon-bubble">
+              <i class="fa-solid fa-temperature-arrow-up" aria-hidden="true"></i>
+            </div>
+            <h3>Temperature Control</h3>
+            <p>
+              Establish warm and cool gradients using digital thermostats, halogen flood lamps, and deep heat projectors.
+            </p>
+            <a href="#temperature-heating" class="care-card-link">
+              Explore Heating <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 3: UVB Lighting -->
+        <article class="care-card" id="card-uvb-lighting">
+          <div class="care-card-media">
+            <span class="care-card-badge">
+              <i class="fa-solid fa-sun" aria-hidden="true"></i> Vitamin D3
+            </span>
+            <img src="../../../assets/images/reptiles/bearded-dragon.jpg"
+              alt="Bearded dragon basking beneath high-output linear UVB lamp" loading="lazy">
+          </div>
+          <div class="care-card-body">
+            <div class="care-card-icon-bubble">
+              <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+            </div>
+            <h3>UVB Lighting</h3>
+            <p>
+              Install linear T5 HO tubes matching Ferguson Zones to ensure natural calcium metabolism and prevent MBD.
+            </p>
+            <a href="#uvb-lighting" class="care-card-link">
+              Lighting Guide <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 4: Humidity Management -->
+        <article class="care-card" id="card-humidity-management">
+          <div class="care-card-media">
+            <span class="care-card-badge">
+              <i class="fa-solid fa-droplet" aria-hidden="true"></i> Moisture Balance
+            </span>
+            <img src="../../../assets/images/reptiles/ball-python.jpg"
+              alt="Ball python resting in a humid tropical enclosure" loading="lazy">
+          </div>
+          <div class="care-card-body">
+            <div class="care-card-icon-bubble">
+              <i class="fa-solid fa-cloud-rain" aria-hidden="true"></i>
+            </div>
+            <h3>Humidity Management</h3>
+            <p>
+              Maintain species-specific relative humidity using digital hygrometers, cross-ventilation, and moist sphagnum hides.
+            </p>
+            <a href="#humidity-control" class="care-card-link">
+              Humidity Guide <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 5: Cleaning Routine -->
+        <article class="care-card" id="card-cleaning-routine">
+          <div class="care-card-media">
+            <span class="care-card-badge">
+              <i class="fa-solid fa-spray-can-sparkles" aria-hidden="true"></i> Sanitation
+            </span>
+            <img src="../../../assets/images/reptiles/russian-tortoise.jpg"
+              alt="Russian tortoise enclosure maintained with clean substrates" loading="lazy">
+          </div>
+          <div class="care-card-body">
+            <div class="care-card-icon-bubble">
+              <i class="fa-solid fa-broom" aria-hidden="true"></i>
+            </div>
+            <h3>Cleaning Routine</h3>
+            <p>
+              Daily waste spot-cleaning, food and water dish sanitation, and monthly veterinary-grade disinfection with F10.
+            </p>
+            <a href="#cleaning-maintenance" class="care-card-link">
+              Cleaning Steps <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 6: Shedding Support -->
+        <article class="care-card" id="card-shedding-support">
+          <div class="care-card-media">
+            <span class="care-card-badge">
+              <i class="fa-solid fa-layer-group" aria-hidden="true"></i> Ecdysis Health
+            </span>
+            <img src="../../../assets/images/reptiles/blue-tongued-skink.jpg"
+              alt="Blue-tongued skink shedding skin smoothly across its body" loading="lazy">
+          </div>
+          <div class="care-card-body">
+            <div class="care-card-icon-bubble">
+              <i class="fa-solid fa-hand-holding-medical" aria-hidden="true"></i>
+            </div>
+            <h3>Shedding Support</h3>
+            <p>
+              Support natural ecdysis cycles, eliminate retained tail or digit rings, and utilize safe warm hydration soaks.
+            </p>
+            <a href="#shedding-care" class="care-card-link">
+              Shedding Care <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 7: Daily Care -->
+        <article class="care-card" id="card-daily-care">
+          <div class="care-card-media">
+            <span class="care-card-badge">
+              <i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Daily Routine
+            </span>
+            <img src="../../../assets/images/reptiles/red-eared-slider.jpg"
+              alt="Aquatic turtle swimming actively during daily observation" loading="lazy">
+          </div>
+          <div class="care-card-body">
+            <div class="care-card-icon-bubble">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+            </div>
+            <h3>Daily Reptile Care</h3>
+            <p>
+              5-minute daily health check: monitor basking temps, check fresh water, observe alert behaviors, and inspect latches.
+            </p>
+            <a href="#daily-care" class="care-card-link">
+              Daily Checklist <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         3A. TERRARIUM SETUP
+         ======================================================== -->
+    <section class="care-section-wrap" id="terrarium-setup">
+      <div class="care-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+
+        <div class="heading-decor-icon decor-pos-1"><i class="fa-solid fa-leaf"></i></div>
+        <div class="heading-decor-icon decor-pos-2"><i class="fa-solid fa-leaf"></i></div>
+        <div class="heading-decor-icon decor-pos-3"><i class="fa-solid fa-leaf"></i></div>
+        <div class="heading-decor-icon decor-pos-4"><i class="fa-solid fa-leaf"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-house" aria-hidden="true"></i> Habitat Architecture
+          </span>
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Terrarium <span>Setup &amp; Design</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+          <p>
+            An ideal terrarium is not merely a display container—it is a functional micro-ecosystem engineered to meet your
+            reptile's spatial, thermal, and instinctual behavioral requirements.
+          </p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="feature-grid-3">
+          <!-- 1. Enclosure Material -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-cube" aria-hidden="true"></i>
+              </div>
+              <h4>Choosing Enclosure Material</h4>
+            </div>
+            <p>
+              Front-opening PVC enclosures insulate heat and moisture exceptionally well. Glass tanks offer excellent
+              visibility for temperate desert species, while fully screen-meshed enclosures are mandatory for arbor-dwelling
+              chameleons requiring high airflow.
+            </p>
+          </div>
+
+          <!-- 2. Enclosure Size -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-ruler-combined" aria-hidden="true"></i>
+              </div>
+              <h4>Appropriate Sizing Standards</h4>
+            </div>
+            <p>
+              Juveniles need appropriately partitioned enclosures to find food easily, while adults require adult-scale
+              habitats: bearded dragons need a minimum 4x2x2 ft (120 gallon) enclosure, and ball pythons thrive in 4x2x2 ft
+              spaces with ample floor square footage.
+            </p>
+          </div>
+
+          <!-- 3. Substrate Selection -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+              </div>
+              <h4>Substrate Selection</h4>
+            </div>
+            <p>
+              Use organic topsoil and play sand mixes (70/30) for natural burrowing, or slate tile / butcher paper for
+              hygienic monitoring. <strong>Never use calcium sand, pine, or cedar shavings</strong>, which cause fatal gut
+              impactions and respiratory toxicities.
+            </p>
+          </div>
+
+          <!-- 4. Hides & Decor -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-dungeon" aria-hidden="true"></i>
+              </div>
+              <h4>Hiding Spaces &amp; Security</h4>
+            </div>
+            <p>
+              Provide a minimum of two fully enclosed hides: one placed directly on the warm side and one on the cool side,
+              plus an optional moist shedding hide. Dense foliage and cork bark flats reduce psychological stress.
+            </p>
+          </div>
+
+          <!-- 5. Climbing & Basking Perches -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-mountain" aria-hidden="true"></i>
+              </div>
+              <h4>Climbing &amp; Basking Perches</h4>
+            </div>
+            <p>
+              Incorporate sterilized branches, slate platforms, and textured driftwood. Natural slate rocks placed beneath
+              basking lamps absorb heat from above and release gentle belly warmth to assist with digestion.
+            </p>
+          </div>
+
+          <!-- 6. Species-Specific Habitats -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-tree" aria-hidden="true"></i>
+              </div>
+              <h4>Species Biome Tailoring</h4>
+            </div>
+            <p>
+              Arboreal species (crested geckos, green tree pythons) require vertical orientation with hanging vines, while
+              fossorial terrestrial species (sand boas, leopard geckos) require horizontal floor space and deep substrate.
+            </p>
+          </div>
+        </div>
+
+        <div class="tip-banner">
+          <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+          <div>
+            <h5>Escape-Proof Enclosure Security</h5>
+            <p>
+              Reptiles are exceptionally strong and adept at testing lid edges. Always install dual-action sliding door locks
+              or heavy-duty screen lid security clamps to eliminate escape attempts and protect curious pets in the household.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         3B. TEMPERATURE AND HEATING
+         ======================================================== -->
+    <section class="care-section-wrap" id="temperature-heating">
+      <div class="care-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+
+        <div class="heading-decor-icon decor-pos-1"><i class="fa-solid fa-leaf"></i></div>
+        <div class="heading-decor-icon decor-pos-2"><i class="fa-solid fa-leaf"></i></div>
+        <div class="heading-decor-icon decor-pos-3"><i class="fa-solid fa-leaf"></i></div>
+        <div class="heading-decor-icon decor-pos-4"><i class="fa-solid fa-leaf"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-temperature-arrow-up" aria-hidden="true"></i> Thermal Regulation
+          </span>
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Temperature &amp; <span>Heating Control</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+          <p>
+            Because reptiles cannot generate metabolic body heat, they rely on behavioral thermoregulation—moving between
+            hot and cool microclimates to digest food, fight pathogens, and regulate heart rates.
+          </p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="feature-grid-3">
+          <!-- 1. External Heat Importance -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-fire" aria-hidden="true"></i>
+              </div>
+              <h4>Importance of External Heat</h4>
+            </div>
+            <p>
+              Reptilian digestive enzymes (pepsin and amylase) operate efficiently only within species-specific Preferred
+              Optimal Temperature Zones (POTZ). Insufficient heat causes ingested food to ferment in the stomach rather than
+              digest.
+            </p>
+          </div>
+
+          <!-- 2. Warm & Cool Zones -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-arrows-left-right" aria-hidden="true"></i>
+              </div>
+              <h4>Establishing Thermal Gradients</h4>
+            </div>
+            <p>
+              Concentrate all heating sources on one side of the terrarium. This allows the opposite end to stay 10–15°F
+              cooler, empowering your reptile to regulate its exact core temperature by shifting locations at will.
+            </p>
+          </div>
+
+          <!-- 3. Basking Areas -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-sun" aria-hidden="true"></i>
+              </div>
+              <h4>Target Basking Surfaces</h4>
+            </div>
+            <p>
+              Distinguish between ambient air temperature and surface basking temperature. Measure the surface of basking
+              slates directly using an infrared temperature gun (e.g., 105–110°F for bearded dragons; 88–92°F for ball pythons).
+            </p>
+          </div>
+
+          <!-- 4. Heat Lamps & Ceramic Heaters -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+              </div>
+              <h4>Heat Sources &amp; Infrared Types</h4>
+            </div>
+            <p>
+              Use incandescent halogen flood lamps for daytime basking warmth mimicking the sun's Infrared-A spectrum. For
+              nighttime heating without disrupting sleep cycles, use ceramic heat emitters (CHE) or deep heat projectors (DHP).
+            </p>
+          </div>
+
+          <!-- 5. Thermostats & Monitoring -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-gauge-high" aria-hidden="true"></i>
+              </div>
+              <h4>Thermostatic Automation</h4>
+            </div>
+            <p>
+              Every heating device must be routed through a dedicated proportional dimming or pulse-proportional thermostat.
+              Secure digital temperature probes at the basking perch and cool hide to monitor temps 24/7.
+            </p>
+          </div>
+
+          <!-- 6. Burn Prevention -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-shield-virus" aria-hidden="true"></i>
+              </div>
+              <h4>Burn &amp; Overheating Prevention</h4>
+            </div>
+            <p>
+              Enclose internal heat bulbs inside protective wire mesh guards. <strong>Never use unregulated electric heat
+                rocks</strong>—reptiles lack concentrated thermal receptors in their bellies and will suffer third-degree
+              burns without moving away.
+            </p>
+          </div>
+        </div>
+
+        <div class="alert-banner">
+          <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+          <div>
+            <h5>Critical Safety Rule: Never Run Heaters Without a Thermostat</h5>
+            <p>
+              Heat bulbs connected directly to household wall outlets run unchecked. Seasonal shifts or sudden room warmth can
+              spike enclosure temperatures beyond 120°F (49°C), causing fatal heat stroke within hours. A digital thermostat
+              is non-negotiable life-support equipment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         3C. UVB LIGHTING
+         ======================================================== -->
+    <section class="care-section-wrap" id="uvb-lighting">
+      <div class="care-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+
+        <div class="heading-decor-icon decor-pos-1"><i class="fa-solid fa-leaf"></i></div>
+        <div class="heading-decor-icon decor-pos-2"><i class="fa-solid fa-leaf"></i></div>
+        <div class="heading-decor-icon decor-pos-3"><i class="fa-solid fa-leaf"></i></div>
+        <div class="heading-decor-icon decor-pos-4"><i class="fa-solid fa-leaf"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-sun" aria-hidden="true"></i> Full-Spectrum Photobiology
+          </span>
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            UVB Lighting <span>&amp; Photoperiods</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+          <p>
+            Reptiles require ultraviolet radiation (specifically UVB wavelengths 290–315 nm) to synthesize Vitamin D3 in
+            their skin. Without adequate UVB, they cannot absorb dietary calcium, resulting in Metabolic Bone Disease.
+          </p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="feature-grid-3">
+          <!-- 1. Importance of UVB -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-bone" aria-hidden="true"></i>
+              </div>
+              <h4>Calcium Metabolism &amp; Vitality</h4>
+            </div>
+            <p>
+              UVB photochemically converts 7-dehydrocholesterol in the reptile's epidermis into previtamin D3, which thermal
+              energy then transforms into active Vitamin D3. This hormone commands gut receptors to absorb calcium from food.
+            </p>
+          </div>
+
+          <!-- 2. Species Requirements -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-chart-simple" aria-hidden="true"></i>
+              </div>
+              <h4>Ferguson Zone Categories</h4>
+            </div>
+            <p>
+              Match bulb intensity to your pet's Ferguson Zone: Zone 1 (crepuscular shade dwellers e.g. leopard geckos: UVI
+              0.4–0.7), Zone 2 (partial sun e.g. corn snakes: UVI 0.7–1.0), and Zone 3/4 (full sun baskers e.g. bearded dragons
+              and tortoises: UVI 2.9–4.5).
+            </p>
+          </div>
+
+          <!-- 3. Proper Placement -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-arrows-up-down" aria-hidden="true"></i>
+              </div>
+              <h4>Linear Tube Placement</h4>
+            </div>
+            <p>
+              Always mount linear T5 HO fluorescent tubes (e.g., Arcadia D3 or Zoo Med ReptiSun 10.0) alongside your basking
+              heat lamp. The tube must span 50–70% of the terrarium length, allowing a natural UV gradient towards the cool hide.
+            </p>
+          </div>
+
+          <!-- 4. Mesh Distance Penalties -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-border-all" aria-hidden="true"></i>
+              </div>
+              <h4>Mesh Obstruction &amp; Distances</h4>
+            </div>
+            <p>
+              Fine wire terrarium mesh screens block 30% to 50% of beneficial UVB rays. Calibrate basking perch heights
+              (typically 10–14 inches beneath screen lids for 12% T5 tubes; 12–18 inches for 14% tubes) to prevent under-exposure
+              or photo-kerato-conjunctivitis eye burns.
+            </p>
+          </div>
+
+          <!-- 5. Lighting Schedules -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i>
+              </div>
+              <h4>Automated Lighting Cycles</h4>
+            </div>
+            <p>
+              Maintain a consistent circadian rhythm: 12 hours of light and 12 hours of uninterrupted darkness in summer
+              (adjusting to 10 hours day / 14 hours night in winter if cycling for seasonal brumation). Automate this via
+              digital outlet timers.
+            </p>
+          </div>
+
+          <!-- 6. Regular Bulb Replacement -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i>
+              </div>
+              <h4>Scheduled Bulb Replacement</h4>
+            </div>
+            <p>
+              UVB phosphor coatings degrade over time. Even though the bulb still emits bright visible light, its invisible
+              UVB output drops below therapeutic levels. Replace T5 HO tubes every 10–12 months and older T8 tubes every 6
+              months.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         3D. HUMIDITY CONTROL
+         ======================================================== -->
+    <section class="care-section-wrap" id="humidity-control">
+      <div class="care-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+
+        <div class="heading-decor-icon decor-pos-1"><i class="fa-solid fa-leaf"></i></div>
+        <div class="heading-decor-icon decor-pos-2"><i class="fa-solid fa-leaf"></i></div>
+        <div class="heading-decor-icon decor-pos-3"><i class="fa-solid fa-leaf"></i></div>
+        <div class="heading-decor-icon decor-pos-4"><i class="fa-solid fa-leaf"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-droplet" aria-hidden="true"></i> Hydration &amp; Respiratory Wellness
+          </span>
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Humidity <span>&amp; Moisture Control</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+          <p>
+            Correct humidity balances cellular hydration, promotes smooth ecdysis skin release, and keeps delicate mucous
+            membranes healthy without fostering bacterial scale rot or fungal mold.
+          </p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="feature-grid-3">
+          <!-- 1. Understanding Requirements -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-water" aria-hidden="true"></i>
+              </div>
+              <h4>Understanding Humidity Targets</h4>
+            </div>
+            <p>
+              Different reptiles have drastically different native environmental baselines: desert species (bearded dragons)
+              flourish at 30–40% RH, semi-arid geckos require 40–50%, while tropical ball pythons and skinks require 65–80% RH.
+            </p>
+          </div>
+
+          <!-- 2. Digital Hygrometers -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-gauge" aria-hidden="true"></i>
+              </div>
+              <h4>Digital Hygrometer Monitoring</h4>
+            </div>
+            <p>
+              Analog circular dial hygrometers are notorious for 20%+ calibration errors. Install digital probe sensors or
+              battery-operated digital hygrometers situated a few inches above the substrate level on both warm and cool sides.
+            </p>
+          </div>
+
+          <!-- 3. Proper Ventilation -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-wind" aria-hidden="true"></i>
+              </div>
+              <h4>Dynamic Cross-Ventilation</h4>
+            </div>
+            <p>
+              High humidity must never mean stagnant, stuffy air. Ensure the enclosure provides cross-ventilation (vents on
+              lower sides and upper top/back) to circulate fresh air and prevent fungal spores and mold outbreaks.
+            </p>
+          </div>
+
+          <!-- 4. Controlled Misting -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-spray-can" aria-hidden="true"></i>
+              </div>
+              <h4>Controlled Misting Practices</h4>
+            </div>
+            <p>
+              Mist tropical enclosures in the morning and early evening using dechlorinated warm water. Allow substrate
+              surfaces to dry out between mistings so the reptile never rests continuously on soaking, muddy substrate.
+            </p>
+          </div>
+
+          <!-- 5. Humid Hides -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-box" aria-hidden="true"></i>
+              </div>
+              <h4>Dedicated Humid Hides</h4>
+            </div>
+            <p>
+              Provide an enclosed plastic container or commercial rock hide packed with damp, fluffed sphagnum moss. This
+              creates a safe 75–85% microclimate where your reptile can retreat during shedding cycles as needed.
+            </p>
+          </div>
+
+          <!-- 6. Species-Specific Hydration -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-bottle-water" aria-hidden="true"></i>
+              </div>
+              <h4>Water Bowls &amp; Droppers</h4>
+            </div>
+            <p>
+              Provide heavy ceramic water dishes that won't tip over. Arboreal geckos and chameleons refuse to drink from
+              standing water bowls; they lick water droplets directly off terrarium leaves or automated dripper systems.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         3E. CLEANING AND MAINTENANCE
+         ======================================================== -->
+    <section class="care-section-wrap" id="cleaning-maintenance">
+      <div class="care-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+
+        <div class="heading-decor-icon decor-pos-1"><i class="fa-solid fa-leaf"></i></div>
+        <div class="heading-decor-icon decor-pos-2"><i class="fa-solid fa-leaf"></i></div>
+        <div class="heading-decor-icon decor-pos-3"><i class="fa-solid fa-leaf"></i></div>
+        <div class="heading-decor-icon decor-pos-4"><i class="fa-solid fa-leaf"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-spray-can-sparkles" aria-hidden="true"></i> Sanitation &amp; Biosecurity
+          </span>
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Cleaning &amp; <span>Maintenance Routine</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+          <p>
+            Terrariums are enclosed, warm environments where bacteria, protozoa, and fungal colonies multiply rapidly. A
+            disciplined cleaning schedule prevents respiratory illness and enteric infections.
+          </p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="feature-grid-3">
+          <!-- 1. Spot Cleaning -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-poo" aria-hidden="true"></i>
+              </div>
+              <h4>Daily Spot Cleaning</h4>
+            </div>
+            <p>
+              Inspect the enclosure daily. Remove feces, solid urates, shed debris, and uneaten feeder insects immediately to
+              eliminate foul bacterial contamination and insect bites on sleeping reptiles.
+            </p>
+          </div>
+
+          <!-- 2. Substrate Maintenance -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-recycle" aria-hidden="true"></i>
+              </div>
+              <h4>Substrate Cycle Management</h4>
+            </div>
+            <p>
+              In traditional setups, scoop out surrounding soiled substrate daily and perform a complete 100% bedding
+              replacement every 4–6 weeks. In bioactive vivariums, aerate soil and replenish springtail/isopod cleanup crews.
+            </p>
+          </div>
+
+          <!-- 3. Food & Water Dishes -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-faucet-drip" aria-hidden="true"></i>
+              </div>
+              <h4>Dishes &amp; Water Bowls</h4>
+            </div>
+            <p>
+              Slime layers (bacterial biofilms) develop quickly in warm standing water. Scrub water dishes daily with hot
+              water and mild unscented soap, rinse thoroughly, and refill with fresh dechlorinated drinking water.
+            </p>
+          </div>
+
+          <!-- 4. Safe Disinfectants -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-pump-medical" aria-hidden="true"></i>
+              </div>
+              <h4>Veterinary-Grade Disinfection</h4>
+            </div>
+            <p>
+              During monthly deep cleanings, sanitize glass and decor with veterinary disinfectants like F10SC or diluted
+              chlorhexidine (0.5%). <strong>Never use household bleach, aerosol disinfectants, or Pine-Sol</strong>, as toxic
+              fumes cause respiratory failure.
+            </p>
+          </div>
+
+          <!-- 5. Decor Sanitization -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-soap" aria-hidden="true"></i>
+              </div>
+              <h4>Decor &amp; Branch Sterilization</h4>
+            </div>
+            <p>
+              Soak non-porous hides in disinfectant solutions for 20 minutes before air drying. Natural collected branches and
+              rocks must be heat-sterilized (baked in an oven at 250°F / 120°C for 2 hours) before terrarium introduction.
+            </p>
+          </div>
+
+          <!-- 6. Equipment Safety Checks -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-plug-circle-bolt" aria-hidden="true"></i>
+              </div>
+              <h4>Equipment Safety Checks</h4>
+            </div>
+            <p>
+              Inspect wiring, ceramic lamp sockets, heat lamp guards, and thermostat sensor probes weekly. Ensure sensor
+              suction cups have not dislodged and verify that heating fixtures are securely positioned.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         3F. SHEDDING CARE
+         ======================================================== -->
+    <section class="care-section-wrap" id="shedding-care">
+      <div class="care-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+
+        <div class="heading-decor-icon decor-pos-1"><i class="fa-solid fa-leaf"></i></div>
+        <div class="heading-decor-icon decor-pos-2"><i class="fa-solid fa-leaf"></i></div>
+        <div class="heading-decor-icon decor-pos-3"><i class="fa-solid fa-leaf"></i></div>
+        <div class="heading-decor-icon decor-pos-4"><i class="fa-solid fa-leaf"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-layer-group" aria-hidden="true"></i> Ecdysis Support
+          </span>
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Shedding <span>Care &amp; Management</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+          <p>
+            Reptiles do not expand their outer keratin skin layer as they grow; instead, they periodically shed it. Providing
+            proactive humidity and careful observation ensures trouble-free ecdysis.
+          </p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="feature-grid-2">
+          <!-- 1. Natural Shedding -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-repeat" aria-hidden="true"></i>
+              </div>
+              <h4>The Natural Shedding Cycle</h4>
+            </div>
+            <p>
+              During pre-shed, skin turns dull and eyes turn milky opaque (the "blue" phase) as enzymatic lymph fluid
+              separates old and new epidermal layers. After clearing up 2–4 days later, snakes shed their entire skin inside
+              out, while lizards shed in flake patches.
+            </p>
+          </div>
+
+          <!-- 2. Humidity Role -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-droplet" aria-hidden="true"></i>
+              </div>
+              <h4>Role of Humidity &amp; Microclimates</h4>
+            </div>
+            <p>
+              Dehydration and dry air cause the lymphatic separating fluid to dry out prematurely, cementing old skin to the
+              new scales below. Temporarily boost enclosure humidity by 10–15% and keep the humid hide consistently damp
+              during active shed periods.
+            </p>
+          </div>
+
+          <!-- 3. Monitoring Retained Shed -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+              </div>
+              <h4>Monitoring Retained Shed Rings</h4>
+            </div>
+            <p>
+              Conduct a thorough post-shed physical inspection. Check toe tips, tail tips, and eye spectacles. Un-shed rings
+              of dead skin contract tightly as they dry, strangling blood circulation and leading to necrosis and lost digits.
+            </p>
+          </div>
+
+          <!-- 4. Safe Assistance -->
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-hand-holding-medical" aria-hidden="true"></i>
+              </div>
+              <h4>Safe Assistance Protocols</h4>
+            </div>
+            <p>
+              If retained skin is spotted, place the reptile in a lukewarm water bath (80–85°F / 27–29°C) for 15–20 minutes,
+              then gently massage with a moist cotton swab. <strong>Never rip or pull dry shed</strong> with tweezers.
+            </p>
+          </div>
+        </div>
+
+        <div class="alert-banner">
+          <i class="fa-solid fa-stethoscope" aria-hidden="true"></i>
+          <div>
+            <h5>When to Seek Professional Veterinary Help</h5>
+            <p>
+              If retained eye spectacles (retained eye caps) accumulate across multiple shed cycles, attempting removal with
+              tweezers at home can permanently ulcerate the cornea or cause blindness. Consult an ARAV exotic veterinarian
+              for safe ophthalmic lubrication and clinical extraction.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         3G. DAILY REPTILE CARE
+         ======================================================== -->
+    <section class="care-section-wrap" id="daily-care">
+      <div class="care-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+
+        <div class="heading-decor-icon decor-pos-1"><i class="fa-solid fa-leaf"></i></div>
+        <div class="heading-decor-icon decor-pos-2"><i class="fa-solid fa-leaf"></i></div>
+        <div class="heading-decor-icon decor-pos-3"><i class="fa-solid fa-leaf"></i></div>
+        <div class="heading-decor-icon decor-pos-4"><i class="fa-solid fa-leaf"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Daily Husbandry Checklist
+          </span>
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Daily Reptile <span>Care Routine</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+          <p>
+            Dedicate 5 to 10 minutes every single day to verify environmental parameters and observe behavioral signals.
+            Consistency is the single most important factor in keeping exotic reptiles healthy.
+          </p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="routine-checklist-grid">
+          <!-- Column 1: Morning Check -->
+          <div class="routine-card">
+            <h4><i class="fa-solid fa-cloud-sun" aria-hidden="true"></i> Morning Inspection</h4>
+            <ul>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span><strong>Check Temperatures:</strong> Confirm warm basking and cool end read within species parameters.</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span><strong>Check Humidity Levels:</strong> Read digital hygrometers; mist enclosure or damp humid hide if low.</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span><strong>Verify Lights Active:</strong> Ensure timer triggered daytime halogen and linear UVB tubes properly.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 2: Water & Feeding -->
+          <div class="routine-card">
+            <h4><i class="fa-solid fa-bowl-food" aria-hidden="true"></i> Food &amp; Water Check</h4>
+            <ul>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span><strong>Fresh Drinking Water:</strong> Empty, rinse, and refill water dishes with clean dechlorinated water.</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span><strong>Scheduled Feeding:</strong> Provide gut-loaded insects, fresh salads, or scheduled whole prey.</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span><strong>Remove Uneaten Prey:</strong> Discard unconsumed crickets or greens after 2 hours to prevent spoilage.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Health & Security -->
+          <div class="routine-card">
+            <h4><i class="fa-solid fa-eye" aria-hidden="true"></i> Behavior &amp; Enclosure</h4>
+            <ul>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span><strong>Observe Alertness:</strong> Verify tongue flicking, clear eyes, posture, and smooth locomotion.</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span><strong>Spot Clean Waste:</strong> Remove any visible feces, urates, or loose shedding skin immediately.</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span><strong>Check Door Latches:</strong> Confirm all vivarium vents and front glass door locks are securely latched.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         5. FINAL CTA SECTION (Soft Light Pink Background)
+         ======================================================== -->
+    <section class="care-pink-cta" id="reptile-nutrition-cta">
+      <div class="care-pink-cta-blob" aria-hidden="true"></div>
+      <div class="care-pink-cta-blob-left" aria-hidden="true"></div>
+
+      <div class="care-pink-cta-badge">
+        <i class="fa-solid fa-bowl-food" aria-hidden="true"></i> Complete Husbandry
+      </div>
+
+      <h2>Create the Perfect Habitat for Your Reptile</h2>
+      <p>
+        Providing a world-class terrarium is only half the equation—balanced species-specific nutrition completes your
+        companion's care. Explore nutritional requirements, calcium dusting protocols, gut-loading guides, and species
+        feeding schedules.
       </p>
 
-      <div class="hero-category-pills">
-        <div class="hero-cat-tag">
-          <span style="font-size: 1.3rem;">🐹</span>
-          <span>Small Pets & Rodents</span>
-        </div>
-        <div class="hero-cat-tag">
-          <span style="font-size: 1.3rem;">🐠</span>
-          <span>Aquarium Fish & Aquatics</span>
-        </div>
-        <div class="hero-cat-tag">
-          <span style="font-size: 1.3rem;">🦎</span>
-          <span>Reptiles & Amphibians</span>
-        </div>
-      </div>
-
-      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-        <a href="#daily-care" class="button">Explore Daily Care ↓</a>
-        <a href="#care-checklist" class="button button-outline">Interactive Daily Checklist 📋</a>
-        <a href="fish.html" class="button button-light">View Fish Species Guide 🐠</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================
-       INTERACTIVE CATEGORY FILTER STRIP (STICKY)
-       ======================================================== -->
-  <div class="filter-wrapper" id="categoryFilterStrip">
-    <div class="filter-inner">
-      <div class="filter-label">
-        <span>🐾 Filter Guide by Category:</span>
-      </div>
-      <div class="filter-tabs">
-        <button class="filter-btn active" data-filter="all">
-          <span>🐾 All Categories</span>
-        </button>
-        <button class="filter-btn" data-filter="cat-smallpet">
-          <span>🐹 Small Pets</span>
-        </button>
-        <button class="filter-btn" data-filter="cat-fish">
-          <span>🐠 Aquarium Fish</span>
-        </button>
-        <button class="filter-btn" data-filter="cat-reptile">
-          <span>🦎 Reptiles</span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ========================================================
-       SECTION QUICK ANCHOR SUBNAV
-       ======================================================== -->
-  <div class="subnav-strip">
-    <div class="subnav-inner">
-      <a href="#daily-care" class="subnav-link active">
-        <span>1. Daily Care</span>
+      <a href="reptiles.html#reptile-nutrition" class="button-cta" id="btn-explore-nutrition">
+        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i> Explore Reptile Nutrition
       </a>
-      <a href="#housing-environment" class="subnav-link">
-        <span>2. Housing & Environment</span>
-      </a>
-      <a href="#food-nutrition" class="subnav-link">
-        <span>3. Food & Nutrition</span>
-      </a>
-      <a href="#health-wellness" class="subnav-link">
-        <span>4. Health & Wellness</span>
-      </a>
-      <a href="#safety-ownership" class="subnav-link">
-        <span>5. Safety & Ownership</span>
-      </a>
-      <a href="#care-checklist" class="subnav-link">
-        <span>📋 Daily Checklist</span>
-      </a>
-      <a href="#faqs" class="subnav-link">
-        <span>❓ FAQs</span>
-      </a>
-    </div>
-  </div>
-
-  <!-- ========================================================
-       MAIN GUIDE CONTENT
-       ======================================================== -->
-  <main class="care-main-content">
-    <div class="section-wrap">
-
-      <!-- ====================================================
-           SECTION 1: DAILY CARE
-           ==================================================== -->
-      <section class="guide-section" id="daily-care">
-        <div class="section-header-block">
-          <div class="section-tag">
-            <span>☀️ Section 1</span>
-          </div>
-          <h2>Daily Care & Essential Routines</h2>
-          <p class="section-desc">
-            Consistent daily attention is the cornerstone of responsible exotic and aquatic pet parenting. From scheduled feedings to subtle behavioral observation, here is what your companions need every single day.
-          </p>
-        </div>
-
-        <div class="category-cards-grid">
-          <!-- Small Pets Card -->
-          <article class="pet-care-card cat-smallpet" data-category="cat-smallpet">
-            <div class="card-banner">
-              <div class="card-category-title">
-                <span class="cat-icon">🐹</span>
-                <div>
-                  <h3>Small Pets</h3>
-                  <small style="color: var(--muted); font-size: 0.78rem;">Guinea Pigs, Hamsters, Ferrets, Chinchillas</small>
-                </div>
-              </div>
-              <span class="cat-badge badge-smallpet">Small Mammals</span>
-            </div>
-            <div class="card-body">
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🥣</span> Feeding Routines
-                </div>
-                <p class="topic-text">
-                  Provide fresh timothy or orchard hay continuously (80% of guinea pig/chinchilla diet). Offer measured species-specific fortified pellets daily. Supplement guinea pigs daily with high-vitamin C vegetables (bell pepper, cilantro). Feed nocturnal hamsters in the early evening to align with natural waking rhythms.
-                </p>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">💧</span> Fresh Water Requirements
-                </div>
-                <p class="topic-text">
-                  Provide fresh, room-temperature water daily using chew-proof glass or BPA-free bottles with stainless-steel ball bearing nozzles. Always tap the nozzle daily to ensure the ball is not jammed and water flows freely. Heavy ceramic water bowls can also be provided for guinea pigs.
-                </p>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🧹</span> Cleaning & Hygiene
-                </div>
-                <p class="topic-text">
-                  Spot-clean daily by removing soiled bedding from pee corners and litter pans. Discard leftover fresh produce after 3-4 hours to prevent spoilage and fungal growth. Wash food bowls with warm water and pet-safe soap.
-                </p>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🔍</span> Daily Observation
-                </div>
-                <p class="topic-text">
-                  Observe activity level and posture. Inspect faecal output: droppings should be abundant, well-formed, and oval. Check for clear eyes, dry noses, clean fur, and listen for abnormal respiratory clicking or wheezing.
-                </p>
-              </div>
-
-              <div class="highlight-tip">
-                💡 <b>Pro Tip:</b> Guinea pigs and chinchillas are strict hindgut fermenters; even 12 hours without hay intake can trigger life-threatening Gastrointestinal (GI) Stasis.
-              </div>
-            </div>
-          </article>
-
-          <!-- Aquarium Fish Card -->
-          <article class="pet-care-card cat-fish" data-category="cat-fish">
-            <div class="card-banner">
-              <div class="card-category-title">
-                <span class="cat-icon">🐠</span>
-                <div>
-                  <h3>Aquarium Fish</h3>
-                  <small style="color: var(--muted); font-size: 0.78rem;">Freshwater, Bettas, Schooling Species, Tropicals</small>
-                </div>
-              </div>
-              <span class="cat-badge badge-fish">Aquatic Life</span>
-            </div>
-            <div class="card-body">
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🥣</span> Feeding Routines
-                </div>
-                <p class="topic-text">
-                  Feed 1 to 2 times daily, offering only what the fish consume completely within 2 minutes. Overfeeding is the #1 killer of pet fish. Use species-appropriate floating flakes, micro-pellets, or thawed frozen treats (bloodworms, daphnia). Fast fish 1 day a week to assist digestive transit.
-                </p>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">💧</span> Fresh Water Requirements
-                </div>
-                <p class="topic-text">
-                  Monitor water clarity and level daily. Top off evaporated water using dechlorinated, conditioned water. Ensure filter return provides adequate surface agitation for dissolved oxygen exchange. Check heater thermometer daily to ensure stability.
-                </p>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🧹</span> Cleaning & Hygiene
-                </div>
-                <p class="topic-text">
-                  Inspect filter intake grates daily for plant debris or blockage. Use a magnetic glass cleaner to gently wipe viewing panes. Remove uneaten food promptly with a small net or turkey baster before it decomposes into toxic ammonia.
-                </p>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🔍</span> Daily Observation
-                </div>
-                <p class="topic-text">
-                  Watch fish during feeding time. Ensure all fish are swimming upright with spread, unclamped fins. Check gill movements (rapid breathing signals oxygen deprivation or ammonia poisoning). Inspect scales for spots, fuzz, or bloating.
-                </p>
-              </div>
-
-              <div class="highlight-tip">
-                💡 <b>Pro Tip:</b> Never add unconditioned municipal tap water directly to a tank. Chlorine and chloramines destroy the delicate gills of fish within minutes.
-              </div>
-            </div>
-          </article>
-
-          <!-- Reptiles Card -->
-          <article class="pet-care-card cat-reptile" data-category="cat-reptile">
-            <div class="card-banner">
-              <div class="card-category-title">
-                <span class="cat-icon">🦎</span>
-                <div>
-                  <h3>Reptiles</h3>
-                  <small style="color: var(--muted); font-size: 0.78rem;">Bearded Dragons, Leopard Geckos, Snakes, Tortoises</small>
-                </div>
-              </div>
-              <span class="cat-badge badge-reptile">Reptiles & Herps</span>
-            </div>
-            <div class="card-body">
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🥣</span> Feeding Routines
-                </div>
-                <p class="topic-text">
-                  Feeding frequency varies by life stage: juvenile dragons and geckos require daily feeding, adult dragons eat fresh greens daily with feeder insects 2-3x weekly, and adult snakes feed every 7-14 days. Dust live feeder insects with calcium powder.
-                </p>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">💧</span> Fresh Water Requirements
-                </div>
-                <p class="topic-text">
-                  Provide fresh, dechlorinated water in a shallow, tip-proof dish daily. For arboreal species (chameleons, crested geckos) that do not recognize standing water, mist live plants 2-3 times daily or provide a drip system so they can lap water droplets.
-                </p>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🧹</span> Cleaning & Hygiene
-                </div>
-                <p class="topic-text">
-                  Spot-clean feces and white urates immediately to prevent bacterial buildup and odors. Wash and disinfect water and food dishes daily using veterinary-grade disinfectant (like diluted F10 or chlorhexidine) and warm water.
-                </p>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🔍</span> Daily Observation
-                </div>
-                <p class="topic-text">
-                  Verify digital thermometers across both the basking hotspot and cool side. Check alertness, tongue flicking, clear eyes, and assess skin condition for clean shedding (paying special attention to toes and tail tips).
-                </p>
-              </div>
-
-              <div class="highlight-tip">
-                💡 <b>Pro Tip:</b> Reptiles are ectothermic and cannot digest food without adequate basking heat. Feeding without proper heat causes food to ferment inside their gut.
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- ====================================================
-           SECTION 2: HOUSING & ENVIRONMENT
-           ==================================================== -->
-      <section class="guide-section" id="housing-environment">
-        <div class="section-header-block">
-          <div class="section-tag">
-            <span>🏠 Section 2</span>
-          </div>
-          <h2>Housing, Enclosure & Environmental Controls</h2>
-          <p class="section-desc">
-            A secure, spacious, and micro-climate controlled habitat is essential. Small animals need burrowing depth and ventilation, fish require biological filtration, and reptiles depend entirely on artificial thermal and UVB gradients.
-          </p>
-        </div>
-
-        <div class="category-cards-grid">
-          <!-- Small Pets Housing -->
-          <article class="pet-care-card cat-smallpet" data-category="cat-smallpet">
-            <div class="card-banner">
-              <div class="card-category-title">
-                <span class="cat-icon">🐹</span>
-                <div>
-                  <h3>Small Pets Housing</h3>
-                  <small style="color: var(--muted); font-size: 0.78rem;">Cages, Enclosures & Substrate</small>
-                </div>
-              </div>
-              <span class="cat-badge badge-smallpet">Habitat</span>
-            </div>
-            <div class="card-body">
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">📐</span> Suitable Living Spaces
-                </div>
-                <p class="topic-text">
-                  Avoid tiny commercial "critter cages". Hamsters require a minimum of 800-1000 square inches of unbroken floor space with 8-10 inches of bedding for burrowing. Guinea pigs need 8-12+ sq ft of flat floor space (C&C cages). Always provide solid flooring—wire grid floors cause crippling <b>bumblefoot (pododermatitis)</b>.
-                </p>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🧽</span> Enclosure Maintenance
-                </div>
-                <p class="topic-text">
-                  Perform weekly partial substrate refreshes (keep 20% clean scented bedding for hamsters to reduce stress). Deep-clean cage bases every 2-4 weeks with distilled white vinegar and water. Rotate chew toys, cardboard tunnels, and wooden bridges to stimulate foraging minds.
-                </p>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🌡️</span> Temperature & Environment
-                </div>
-                <p class="topic-text">
-                  Maintain a steady ambient temperature of <b>65°F to 75°F (18°C - 24°C)</b> with humidity between 35-50%. Keep cages far away from direct window sunlight, heating vents, drafty AC units, and high-frequency noise sources (TVs and speakers). Chinchillas are prone to fatal heatstroke above 78°F (26°C).
-                </p>
-              </div>
-
-              <div class="highlight-tip">
-                ⚠️ <b>Warning:</b> Never use cedar or untreated pine wood shavings. Their aromatic volatile oils (phenols) cause chronic respiratory distress and liver damage in rodents.
-              </div>
-            </div>
-          </article>
-
-          <!-- Aquarium Fish Housing -->
-          <article class="pet-care-card cat-fish" data-category="cat-fish">
-            <div class="card-banner">
-              <div class="card-category-title">
-                <span class="cat-icon">🐠</span>
-                <div>
-                  <h3>Aquarium Environment</h3>
-                  <small style="color: var(--muted); font-size: 0.78rem;">Tanks, Filtration & Water Quality</small>
-                </div>
-              </div>
-              <span class="cat-badge badge-fish">Aquatic Ecosystem</span>
-            </div>
-            <div class="card-body">
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">📐</span> Suitable Living Spaces
-                </div>
-                <p class="topic-text">
-                  Banish the myth of the "goldfish bowl". Bettas require a minimum of 5-10 gallons with a gentle filter and heater. Schooling tropicals (tetras, danios) require 20+ gallons with ample swimming length. Fancy goldfish need 30-40 gallons for the first fish plus 10-20 gallons per additional fish.
-                </p>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🧽</span> Aquarium Maintenance & Nitrogen Cycle
-                </div>
-                <p class="topic-text">
-                  Maintain the biological cycle (Ammonia 0 ppm, Nitrite 0 ppm, Nitrates &lt; 20 ppm). Perform weekly 20-25% water changes using a gravel siphon vacuum. Clean biological filter sponges in discarded tank water—never tap water, which sterilizes your beneficial nitrifying bacteria.
-                </p>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🌡️</span> Temperature & Environmental Needs
-                </div>
-                <p class="topic-text">
-                  Most tropical species thrive at <b>75°F - 80°F (24°C - 27°C)</b>, regulated by an adjustable submersible aquarium heater and verified with an independent digital probe thermometer. Coldwater fish (fancy goldfish) prefer 65°F - 72°F (18°C - 22°C). Maintain consistent photoperiods (8-10 hours lighting maximum to curb algae).
-                </p>
-              </div>
-
-              <div class="highlight-tip">
-                💡 <b>Pro Tip:</b> Always cycle a new tank for 3-6 weeks without fish before introducing aquatic life to establish robust nitrifying bacterial colonies.
-              </div>
-            </div>
-          </article>
-
-          <!-- Reptiles Housing -->
-          <article class="pet-care-card cat-reptile" data-category="cat-reptile">
-            <div class="card-banner">
-              <div class="card-category-title">
-                <span class="cat-icon">🦎</span>
-                <div>
-                  <h3>Reptile Vivarium</h3>
-                  <small style="color: var(--muted); font-size: 0.78rem;">Terrariums, Thermal Gradients & Lighting</small>
-                </div>
-              </div>
-              <span class="cat-badge badge-reptile">Micro-Climate</span>
-            </div>
-            <div class="card-body">
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">📐</span> Suitable Living Spaces
-                </div>
-                <p class="topic-text">
-                  Enclosure size must match mature size. Adult bearded dragons need a minimum 4x2x2 ft (120-gallon) vivarium. Arboreal geckos require tall vertical terrariums (18x18x36 inches) with branches and vines. Provide at least three distinct hides: a warm-side hide, a cool-side hide, and a moist humid hide for shedding.
-                </p>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🧽</span> Enclosure Maintenance
-                </div>
-                <p class="topic-text">
-                  Use safe substrates: non-adhesive shelf liner, ceramic slate tile, or paper towels for desert species to prevent impaction. Bioactive soil mixtures are suitable for tropical high-humidity species. Disinfect terrarium surfaces monthly with veterinary F10 disinfectant.
-                </p>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🌡️</span> Temperature, UVB & Humidity
-                </div>
-                <p class="topic-text">
-                  Ectotherms need a strict <b>thermal gradient</b>: a basking zone (95°F-105°F for dragons, 88°F-92°F for geckos) and a cool zone (75°F-80°F). Diurnal reptiles must have linear T5 high-output UVB lighting spanning 50-70% of the tank. Replace UVB tubes every 6-12 months as UV output degrades long before the tube burns out.
-                </p>
-              </div>
-
-              <div class="highlight-tip">
-                ⚠️ <b>Warning:</b> Never use heated "hot rocks". They have zero thermal regulation and consistently cause severe, full-thickness belly burns on reptiles.
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <!-- Quick Reference Environmental Specs Table -->
-        <div class="specs-table-wrapper">
-          <table class="specs-table">
-            <thead>
-              <tr>
-                <th>Pet Category</th>
-                <th>Ideal Enclosure Size</th>
-                <th>Target Temperature</th>
-                <th>Optimal Humidity</th>
-                <th>Lighting / Environmental Needs</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><b>🐹 Small Pets</b> (Hamsters & Guinea Pigs)</td>
-                <td>800+ sq in (Hamster) / 8-12 sq ft (Guinea Pigs)</td>
-                <td>65°F - 75°F (18°C - 24°C)</td>
-                <td>40% - 50%</td>
-                <td>Natural indirect day/night cycle; silent, chew-safe deep bedding (8"+)</td>
-              </tr>
-              <tr>
-                <td><b>🐠 Tropical Aquarium Fish</b></td>
-                <td>10 - 55+ gallons (species dependent)</td>
-                <td>75°F - 80°F (24°C - 27°C)</td>
-                <td>Submerged (Water pH 6.8 - 7.6)</td>
-                <td>Gentle filtration, weekly 25% water changes, 8 hrs controlled LED</td>
-              </tr>
-              <tr>
-                <td><b>🦎 Arid Reptiles</b> (Bearded Dragons)</td>
-                <td>120 Gallons (4x2x2 ft) minimum for adults</td>
-                <td>Basking: 100°-105°F | Cool: 75°-80°F</td>
-                <td>30% - 40% (Arid)</td>
-                <td>Linear T5 10.0 or 12% UVB fixture + dimming thermostat heat lamp</td>
-              </tr>
-              <tr>
-                <td><b>🦎 Tropical Reptiles</b> (Crested Geckos)</td>
-                <td>18x18x36 inch vertical vivarium</td>
-                <td>72°F - 78°F (Ambient)</td>
-                <td>70% - 80% (Daily misting)</td>
-                <td>Low-intensity UVB (shade-dwelling), humid hide, vertical foliage</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <!-- ====================================================
-           SECTION 3: FOOD & NUTRITION
-           ==================================================== -->
-      <section class="guide-section" id="food-nutrition">
-        <div class="section-header-block">
-          <div class="section-tag">
-            <span>🥗 Section 3</span>
-          </div>
-          <h2>Food & Nutrition: Species-Specific Diets</h2>
-          <p class="section-desc">
-            Nutrition is not "one size fits all." Providing the precise balance of macronutrients, species-essential vitamins, and avoiding deadly household food hazards is crucial for prolonged longevity.
-          </p>
-        </div>
-
-        <div class="category-cards-grid">
-          <!-- Small Pets Nutrition -->
-          <article class="pet-care-card cat-smallpet" data-category="cat-smallpet">
-            <div class="card-banner">
-              <div class="card-category-title">
-                <span class="cat-icon">🐹</span>
-                <div>
-                  <h3>Small Pet Diets</h3>
-                  <small style="color: var(--muted); font-size: 0.78rem;">Herbivores, Omnivores & Carnivores</small>
-                </div>
-              </div>
-              <span class="cat-badge badge-smallpet">Nutrition</span>
-            </div>
-            <div class="card-body">
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🌾</span> Basic Dietary Requirements
-                </div>
-                <p class="topic-text">
-                  <b>Guinea Pigs & Chinchillas:</b> 80-85% high-fiber grass hay, 10% fortified uniform pellets (no seeds/corn mixes), 5-10% fresh greens. Guinea pigs lack the enzyme to synthesize Vitamin C and require 25-50mg daily from bell peppers or stabilized oxbow tablets.
-                </p>
-                <p class="topic-text" style="margin-top: 6px;">
-                  <b>Hamsters & Fancy Rats:</b> High-protein seed-and-grain mix supplemented with lab blocks, mealworms, pumpkin seeds, and dark leafy greens.
-                </p>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🍽️</span> Safe vs. Unsafe Foods
-                </div>
-                <div class="food-split-grid">
-                  <div class="food-pill-box safe-box">
-                    <div class="food-box-header">✅ Safe Foods</div>
-                    <ul>
-                      <li>Timothy / Orchard hay</li>
-                      <li>Green & yellow bell pepper</li>
-                      <li>Romaine lettuce, cilantro</li>
-                      <li>Cucumber slices & zucchini</li>
-                      <li>Dried mealworms (for hamsters)</li>
-                    </ul>
-                  </div>
-                  <div class="food-pill-box unsafe-box">
-                    <div class="food-box-header">🚫 Lethal / Avoid</div>
-                    <ul>
-                      <li>Onions, garlic & chives</li>
-                      <li>Avocado & potato eyes</li>
-                      <li>Chocolate & caffeine</li>
-                      <li>Apple seeds (contain cyanide)</li>
-                      <li>Citrus (for male rats)</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🔬</span> Importance of Species Diets
-                </div>
-                <p class="topic-text">
-                  Small pet teeth grow continuously throughout life. Coarse long-strand hay fiber is mechanically required to grind down constantly growing incisors and molars. Muesli mixes with dried corn and seeds cause selective eating, leading to severe dental malocclusion and obesity.
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <!-- Aquarium Fish Nutrition -->
-          <article class="pet-care-card cat-fish" data-category="cat-fish">
-            <div class="card-banner">
-              <div class="card-category-title">
-                <span class="cat-icon">🐠</span>
-                <div>
-                  <h3>Aquarium Nutrition</h3>
-                  <small style="color: var(--muted); font-size: 0.78rem;">Flakes, Pellets & Live Treats</small>
-                </div>
-              </div>
-              <span class="cat-badge badge-fish">Nutrition</span>
-            </div>
-            <div class="card-body">
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🌾</span> Basic Dietary Requirements
-                </div>
-                <p class="topic-text">
-                  <b>Omnivores (Tetras, Guppies, Danios):</b> High-quality marine-protein flakes and micro-granules enriched with Spirulina and carotenoids.
-                </p>
-                <p class="topic-text" style="margin-top: 6px;">
-                  <b>Herbivores (Plecos, Otocinclus):</b> Sinking spirulina algae wafers and blanched zucchini/spinach.
-                </p>
-                <p class="topic-text" style="margin-top: 6px;">
-                  <b>Carnivores (Bettas, Cichlids):</b> High-protein floating Betta pellets, freeze-dried bloodworms, brine shrimp, and mysis shrimp.
-                </p>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🍽️</span> Safe vs. Unsafe Foods
-                </div>
-                <div class="food-split-grid">
-                  <div class="food-pill-box safe-box">
-                    <div class="food-box-header">✅ Safe Foods</div>
-                    <ul>
-                      <li>Premium omega-3 pellets</li>
-                      <li>Frozen daphnia & brine shrimp</li>
-                      <li>Blanched peeled green peas</li>
-                      <li>Algae wafers (bottom feeders)</li>
-                      <li>Clean spirulina flakes</li>
-                    </ul>
-                  </div>
-                  <div class="food-pill-box unsafe-box">
-                    <div class="food-box-header">🚫 Lethal / Avoid</div>
-                    <ul>
-                      <li>Breadcrumbs & human crackers</li>
-                      <li>Mammalian meat / chicken fat</li>
-                      <li>Stale flakes (&gt;6 months open)</li>
-                      <li>Wild-caught pond insects</li>
-                      <li>Overdosing freeze-dried food</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🔬</span> Importance of Species Diets
-                </div>
-                <p class="topic-text">
-                  Open fish flake containers lose vital Vitamin C and fatty acids through oxidation within 6 months. Low-grade commercial fillers (high wheat flour/ash content) pass undigested, accelerating water fouling and causing fatal Swim Bladder constipation.
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <!-- Reptiles Nutrition -->
-          <article class="pet-care-card cat-reptile" data-category="cat-reptile">
-            <div class="card-banner">
-              <div class="card-category-title">
-                <span class="cat-icon">🦎</span>
-                <div>
-                  <h3>Reptile Diets</h3>
-                  <small style="color: var(--muted); font-size: 0.78rem;">Gut-Loading, Live Feeders & Greens</small>
-                </div>
-              </div>
-              <span class="cat-badge badge-reptile">Nutrition</span>
-            </div>
-            <div class="card-body">
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🌾</span> Basic Dietary Requirements
-                </div>
-                <p class="topic-text">
-                  <b>Insectivores (Leopard Geckos):</b> 100% live gut-loaded feeder insects (dubia roaches, crickets, black soldier fly larvae, hornworms).
-                </p>
-                <p class="topic-text" style="margin-top: 6px;">
-                  <b>Omnivores (Bearded Dragons):</b> Adults require 80% fresh leafy greens (collards, mustard greens, dandelion) and 20% live insects.
-                </p>
-                <p class="topic-text" style="margin-top: 6px;">
-                  <b>Carnivores (Snakes):</b> Pre-killed, frozen-thawed feeder rodents warmed to 100°F body temperature.
-                </p>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🍽️</span> Safe vs. Unsafe Foods
-                </div>
-                <div class="food-split-grid">
-                  <div class="food-pill-box safe-box">
-                    <div class="food-box-header">✅ Safe Foods</div>
-                    <ul>
-                      <li>Dubia roaches & BSFL</li>
-                      <li>Collard, turnip & mustard greens</li>
-                      <li>Butternut squash & sweet bell peppers</li>
-                      <li>Calcium powder (with/without D3)</li>
-                      <li>Frozen-thawed mice (for snakes)</li>
-                    </ul>
-                  </div>
-                  <div class="food-pill-box unsafe-box">
-                    <div class="food-box-header">🚫 Lethal / Avoid</div>
-                    <ul>
-                      <li><b>Fireflies / Lightning bugs (Lethal!)</b></li>
-                      <li>Wild insects (pesticides & parasites)</li>
-                      <li>Avocado & rhubarb</li>
-                      <li>Iceberg lettuce (zero nutrients)</li>
-                      <li>Live adult mice for snakes (bite risks)</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🔬</span> Calcium-to-Phosphorus & Gut Loading
-                </div>
-                <p class="topic-text">
-                  Reptiles need an ideal <b>2:1 Calcium-to-Phosphorus ratio</b>. Feeder insects naturally have inverted phosphorus levels, so gut-loading insects with nutritious carrots and greens 24-48 hours before feeding, plus dusting with pure calcium carbonate, prevents crippling Metabolic Bone Disease.
-                </p>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- ====================================================
-           SECTION 4: HEALTH & WELLNESS
-           ==================================================== -->
-      <section class="guide-section" id="health-wellness">
-        <div class="section-header-block">
-          <div class="section-tag">
-            <span>🩺 Section 4</span>
-          </div>
-          <h2>Health, Wellness & Recognizing Illness</h2>
-          <p class="section-desc">
-            Small mammals, fish, and reptiles are instinctual prey creatures that hide signs of illness until symptoms become advanced. Early recognition of distress and routine checkups with specialized exotic veterinarians are lifesaving.
-          </p>
-        </div>
-
-        <div class="category-cards-grid">
-          <!-- Small Pets Health -->
-          <article class="pet-care-card cat-smallpet" data-category="cat-smallpet">
-            <div class="card-banner">
-              <div class="card-category-title">
-                <span class="cat-icon">🐹</span>
-                <div>
-                  <h3>Small Mammal Health</h3>
-                  <small style="color: var(--muted); font-size: 0.78rem;">Prey Animal Medicine</small>
-                </div>
-              </div>
-              <span class="cat-badge badge-smallpet">Wellness</span>
-            </div>
-            <div class="card-body">
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">⚠️</span> Common Health Concerns
-                </div>
-                <p class="topic-text">
-                  <b>Wet Tail (Proliferative Ileitis):</b> Severe bacterial diarrheal illness in stressed young hamsters, fatal within 48-72 hours without antibiotics.<br>
-                  <b>Dental Malocclusion:</b> Misaligned, overgrown incisors and molars preventing chewing.<br>
-                  <b>Upper Respiratory Infections (URI):</b> Common in rats and guinea pigs exposed to drafts or dusty bedding.<br>
-                  <b>GI Stasis:</b> Digestive slowdown caused by stress, dehydration, or lack of fiber.
-                </p>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🔍</span> Signs of Stress & Illness
-                </div>
-                <ul class="topic-list">
-                  <li>Hunched posture, sitting isolated in a corner</li>
-                  <li>Dull coat, squinty eyes, or red discharge around eyes/nose (porphyrin in rats)</li>
-                  <li>Sudden drop in droppings or tiny, dry pellets</li>
-                  <li>Teeth grinding in pain, rapid or raspy breathing</li>
-                  <li>Weight loss (weigh weekly on a kitchen gram scale)</li>
-                </ul>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🏥</span> Veterinary Checkups
-                </div>
-                <p class="topic-text">
-                  Standard dog/cat veterinarians are rarely trained in exotic rodent medicine. Seek an <b>Avian & Exotic Board-Certified Veterinarian</b> for initial wellness evaluations, annual molar examinations, and baseline fecal tests.
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <!-- Aquarium Fish Health -->
-          <article class="pet-care-card cat-fish" data-category="cat-fish">
-            <div class="card-banner">
-              <div class="card-category-title">
-                <span class="cat-icon">🐠</span>
-                <div>
-                  <h3>Fish Health & Disease</h3>
-                  <small style="color: var(--muted); font-size: 0.78rem;">Aquatic Pathology & Water Care</small>
-                </div>
-              </div>
-              <span class="cat-badge badge-fish">Wellness</span>
-            </div>
-            <div class="card-body">
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">⚠️</span> Common Health Concerns
-                </div>
-                <p class="topic-text">
-                  <b>Ich (White Spot Disease):</b> Ciliated protozoan parasite appearing like grains of salt sprinkled on fins and body.<br>
-                  <b>Fin Rot:</b> Bacterial or fungal degradation causing fraying, blackened, or melting fin edges.<br>
-                  <b>Dropsy:</b> Internal organ failure and fluid buildup causing scales to stick outwards like a pinecone.<br>
-                  <b>Swim Bladder Disorder:</b> Fish floating uncontrollably at surface or sinking to bottom.
-                </p>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🔍</span> Signs of Stress & Illness
-                </div>
-                <ul class="topic-list">
-                  <li>Clamped fins pressed tightly against the body</li>
-                  <li>"Flashing" (scratching or rubbing against stones and driftwood)</li>
-                  <li>Gasping rapidly at the water surface (indicates ammonia/nitrite spike)</li>
-                  <li>Loss of vibrant color and fading body patterns</li>
-                  <li>Refusal to feed and solitary lethargy</li>
-                </ul>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🏥</span> Quarantine & Water Diagnostics
-                </div>
-                <p class="topic-text">
-                  90% of fish disease originates from poor water quality. Always test parameters with a liquid master test kit before administering medications. Keep a dedicated 5-10 gallon bare-bottom hospital/quarantine tank for 4 weeks for all new arrivals.
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <!-- Reptiles Health -->
-          <article class="pet-care-card cat-reptile" data-category="cat-reptile">
-            <div class="card-banner">
-              <div class="card-category-title">
-                <span class="cat-icon">🦎</span>
-                <div>
-                  <h3>Reptile Health & Medicine</h3>
-                  <small style="color: var(--muted); font-size: 0.78rem;">Herpetological Wellness</small>
-                </div>
-              </div>
-              <span class="cat-badge badge-reptile">Wellness</span>
-            </div>
-            <div class="card-body">
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">⚠️</span> Common Health Concerns
-                </div>
-                <p class="topic-text">
-                  <b>Metabolic Bone Disease (MBD):</b> Weak, soft bones, bowed legs, and twitching caused by insufficient UVB and dietary calcium.<br>
-                  <b>Dysecdysis (Stuck Shed):</b> Incomplete shed skin constricting blood circulation to toes and tail tips, leading to necrosis.<br>
-                  <b>Respiratory Infections (RI):</b> Wheezing, open-mouth breathing, and mucus bubbles due to cold temperatures or wrong humidity.<br>
-                  <b>Impaction:</b> Intestinal blockage from ingesting loose calcium sand or oversized prey.
-                </p>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🔍</span> Signs of Stress & Illness
-                </div>
-                <ul class="topic-list">
-                  <li>Lethargy, refusal to bask or move to warm zones</li>
-                  <li>Dark stress coloration (e.g. pitch black beard in dragons)</li>
-                  <li>Sunken eyes and wrinkled skin (indicates severe dehydration)</li>
-                  <li>Discharge or bubbles around the mouth and nostrils</li>
-                  <li>Muscle tremors, seizures, or rubbery jaw bones</li>
-                </ul>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🏥</span> Exotic Veterinary Care
-                </div>
-                <p class="topic-text">
-                  Schedule an annual checkup with a licensed Herp/Exotic veterinarian. Bring a fresh fecal sample to screen for common internal parasites (coccidia, pinworms, flagellates) which multiply when animals are stressed.
-                </p>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <!-- Interactive Symptom Evaluator Widget -->
-        <div class="symptom-evaluator-card">
-          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
-            <span style="font-size: 1.5rem;">🩺</span>
-            <h3 style="margin: 0; font-size: 1.25rem;">Interactive Symptom Evaluator & First-Aid Guide</h3>
-          </div>
-          <p style="margin: 0; font-size: 0.88rem; color: var(--muted);">
-            Select a visible symptom below to inspect probable causes, first-aid measures, and urgency level:
-          </p>
-
-          <div class="symptom-buttons">
-            <button class="symptom-btn active" data-symptom="lethargy">😴 Lethargy & Loss of Appetite</button>
-            <button class="symptom-btn" data-symptom="breathing">🫁 Wheezing & Heavy Breathing</button>
-            <button class="symptom-btn" data-symptom="swimming">🐠 Clamped Fins / Floating Upside Down</button>
-            <button class="symptom-btn" data-symptom="shedding">🦎 Stuck Shed & Tail Twitches</button>
-            <button class="symptom-btn" data-symptom="diarrhea">💩 Diarrhea or Absence of Droppings</button>
-          </div>
-
-          <!-- Symptom Panels -->
-          <div class="symptom-result-panel visible" id="panel-lethargy">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-              <h4 style="margin: 0; color: var(--ink);">Symptom: Severe Lethargy & Refusal to Eat</h4>
-              <span style="background: #fef2f2; color: #b91c1c; border: 1px solid #fecaca; padding: 4px 10px; border-radius: 999px; font-size: 0.75rem; font-weight: 800;">Urgency: High</span>
-            </div>
-            <p style="font-size: 0.88rem; color: #4b5d52; line-height: 1.6; margin-bottom: 10px;">
-              <b>Probable Causes:</b> Systemic infection, hypothermia (ambient temp dropped below species requirements), GI stasis, or organ failure.
-            </p>
-            <div style="background: white; border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; font-size: 0.84rem; color: #374151;">
-              <b>Immediate First-Aid:</b> Check enclosure thermometers immediately. Ensure animals are kept at species-appropriate warmth without overheating. For small pets, do not force-feed if the belly feels swollen or hard. Contact an exotic veterinarian if fasting exceeds 12-24 hours.
-            </div>
-          </div>
-
-          <div class="symptom-result-panel" id="panel-breathing">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-              <h4 style="margin: 0; color: var(--ink);">Symptom: Wheezing, Mouth Gaping & Mucus Bubbles</h4>
-              <span style="background: #fef2f2; color: #b91c1c; border: 1px solid #fecaca; padding: 4px 10px; border-radius: 999px; font-size: 0.75rem; font-weight: 800;">Urgency: Critical</span>
-            </div>
-            <p style="font-size: 0.88rem; color: #4b5d52; line-height: 1.6; margin-bottom: 10px;">
-              <b>Probable Causes:</b> Upper Respiratory Infection (URI), pneumonia, extreme cold drafts, or aromatic chemical exposure (candles, pine bedding).
-            </p>
-            <div style="background: white; border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; font-size: 0.84rem; color: #374151;">
-              <b>Immediate First-Aid:</b> Elevate reptile terrarium night temperature to the high end of their safe range to support the immune system. Move small pets to clean, dust-free paper bedding away from drafts. Seek prescription antibiotics from an exotic vet immediately.
-            </div>
-          </div>
-
-          <div class="symptom-result-panel" id="panel-swimming">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-              <h4 style="margin: 0; color: var(--ink);">Symptom: Clamped Fins, Floating Uncontrollably or Gasping</h4>
-              <span style="background: #fffbeb; color: #b45309; border: 1px solid #fde68a; padding: 4px 10px; border-radius: 999px; font-size: 0.75rem; font-weight: 800;">Urgency: Moderate to High</span>
-            </div>
-            <p style="font-size: 0.88rem; color: #4b5d52; line-height: 1.6; margin-bottom: 10px;">
-              <b>Probable Causes:</b> Ammonia/nitrite poisoning, low dissolved oxygen, sudden temperature shock, or swim bladder blockage from dry food.
-            </p>
-            <div style="background: white; border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; font-size: 0.84rem; color: #374151;">
-              <b>Immediate First-Aid:</b> Test water parameters right away. Perform an emergency 30% partial water change with conditioned, matched-temperature water. Increase filter surface agitation or add an air stone. Fast the fish for 48 hours, then feed a peeled, boiled green pea.
-            </div>
-          </div>
-
-          <div class="symptom-result-panel" id="panel-shedding">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-              <h4 style="margin: 0; color: var(--ink);">Symptom: Stuck Shed on Toes/Tail or Involuntary Twitches</h4>
-              <span style="background: #fffbeb; color: #b45309; border: 1px solid #fde68a; padding: 4px 10px; border-radius: 999px; font-size: 0.75rem; font-weight: 800;">Urgency: Moderate</span>
-            </div>
-            <p style="font-size: 0.88rem; color: #4b5d52; line-height: 1.6; margin-bottom: 10px;">
-              <b>Probable Causes:</b> Low terrarium humidity, absence of a humid hide, or calcium deficiency / lack of UVB lighting (Metabolic Bone Disease).
-            </p>
-            <div style="background: white; border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; font-size: 0.84rem; color: #374151;">
-              <b>Immediate First-Aid:</b> Give your reptile a 15-minute lukewarm shallow water soak (water level no higher than their shoulders). Gently roll stuck shed off toes with a damp cotton swab—never yank dry shed. Check UVB tube age and dust food with calcium.
-            </div>
-          </div>
-
-          <div class="symptom-result-panel" id="panel-diarrhea">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-              <h4 style="margin: 0; color: var(--ink);">Symptom: Watery Diarrhea or Complete Cessation of Droppings</h4>
-              <span style="background: #fef2f2; color: #b91c1c; border: 1px solid #fecaca; padding: 4px 10px; border-radius: 999px; font-size: 0.75rem; font-weight: 800;">Urgency: Emergency</span>
-            </div>
-            <p style="font-size: 0.88rem; color: #4b5d52; line-height: 1.6; margin-bottom: 10px;">
-              <b>Probable Causes:</b> Wet Tail (hamsters), gut dysbiosis, acute GI Stasis (guinea pigs/chinchillas), or heavy internal parasite infestation.
-            </p>
-            <div style="background: white; border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; font-size: 0.84rem; color: #374151;">
-              <b>Immediate First-Aid:</b> Keep the pet warm and quiet. Withhold watery fresh vegetables and provide unlimited fiber-rich hay. Seek emergency veterinary care immediately—small mammals dehydrate and perish rapidly from diarrhea.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ====================================================
-           SECTION 5: SAFETY & RESPONSIBLE OWNERSHIP
-           ==================================================== -->
-      <section class="guide-section" id="safety-ownership">
-        <div class="section-header-block">
-          <div class="section-tag">
-            <span>🛡️ Section 5</span>
-          </div>
-          <h2>Safety, Handling & Responsible Ownership</h2>
-          <p class="section-desc">
-            Gentle handling techniques, comprehensive hazard-proofing of your home, and an awareness of long-term ecological and financial responsibilities protect both your beloved companion and the natural environment.
-          </p>
-        </div>
-
-        <div class="category-cards-grid">
-          <!-- Small Pets Safety -->
-          <article class="pet-care-card cat-smallpet" data-category="cat-smallpet">
-            <div class="card-banner">
-              <div class="card-category-title">
-                <span class="cat-icon">🐹</span>
-                <div>
-                  <h3>Small Pet Safety</h3>
-                  <small style="color: var(--muted); font-size: 0.78rem;">Handling & Household Hazards</small>
-                </div>
-              </div>
-              <span class="cat-badge badge-smallpet">Safety</span>
-            </div>
-            <div class="card-body">
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🤲</span> Safe Handling Practices
-                </div>
-                <p class="topic-text">
-                  Always use two hands: scoop gently under the chest with one hand while supporting the hindquarters with the other. Never lift small pets by the scruff, ears, or tail. Handle pets while sitting on the floor or over a soft rug to prevent fatal falls from standing heights. Let sleeping pets wake fully before handling to prevent startle bites.
-                </p>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">⚡</span> Household Hazards
-                </div>
-                <ul class="topic-list">
-                  <li><b>Exposed Electrical Cords:</b> Rodents chew relentlessly; protect cables with hard plastic split-tubing cord organizers.</li>
-                  <li><b>Escape Crevices:</b> Small hamsters squeeze through any gap exceeding 0.5 inches (under ovens, refrigerators, baseboards).</li>
-                  <li><b>Predatory Pets:</b> Never leave small pets unattended in rooms with cats, dogs, or ferrets.</li>
-                  <li><b>Air Quality:</b> Keep away from aerosol sprays, essential oil diffusers, and incense.</li>
-                </ul>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🤝</span> Responsible Ownership
-                </div>
-                <p class="topic-text">
-                  Guinea pigs and chinchillas are highly social herd animals that thrive when kept in compatible pairs or bonded groups. Understand lifespans: chinchillas can live 15-20 years, guinea pigs 5-8 years. Prepare for regular veterinary expenses.
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <!-- Aquarium Fish Safety -->
-          <article class="pet-care-card cat-fish" data-category="cat-fish">
-            <div class="card-banner">
-              <div class="card-category-title">
-                <span class="cat-icon">🐠</span>
-                <div>
-                  <h3>Aquarium Safety</h3>
-                  <small style="color: var(--muted); font-size: 0.78rem;">Electrical, Water & Ecological Safety</small>
-                </div>
-              </div>
-              <span class="cat-badge badge-fish">Safety</span>
-            </div>
-            <div class="card-body">
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🤲</span> Safe Handling & Transfer
-                </div>
-                <p class="topic-text">
-                  Never handle fish with dry bare hands; doing so strips their delicate protective slime coat (glycoprotein layer), inviting bacterial infection. When transferring fish, use soft fine-mesh nets or rigid plastic catch cups. Employ the <b>drip-acclimation method</b> over 45-60 minutes so new fish adjust gradually to pH and water hardness.
-                </p>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">⚡</span> Aquarium Hazards
-                </div>
-                <ul class="topic-list">
-                  <li><b>Drip Loops:</b> Always create a downwards hanging "drip loop" on all power cords so water cannot trickle into wall electrical sockets.</li>
-                  <li><b>Airborne Contaminants:</b> Aerosols, room fresheners, bug sprays, and paint fumes settle into open tank water, causing rapid poisoning.</li>
-                  <li><b>Direct Sunlight:</b> Placing aquariums beside sunlit windows causes extreme water temperature spikes and explosive green water blooms.</li>
-                  <li><b>Unsupervised Heaters:</b> Submersible heaters without digital thermostats can stick "on," boiling the aquarium overnight.</li>
-                </ul>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🌍</span> Never Release into the Wild!
-                </div>
-                <p class="topic-text">
-                  <b>Ecological Responsibility:</b> Never flush or release aquarium fish, snails, or aquatic plants into local ponds, lakes, or waterways. Released goldfish, plecos, and invasive waterweeds destroy local waterways, uproot native ecosystems, and spread foreign pathogens.
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <!-- Reptiles Safety -->
-          <article class="pet-care-card cat-reptile" data-category="cat-reptile">
-            <div class="card-banner">
-              <div class="card-category-title">
-                <span class="cat-icon">🦎</span>
-                <div>
-                  <h3>Reptile Safety</h3>
-                  <small style="color: var(--muted); font-size: 0.78rem;">Handling, Hygiene & Burn Prevention</small>
-                </div>
-              </div>
-              <span class="cat-badge badge-reptile">Safety</span>
-            </div>
-            <div class="card-body">
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🤲</span> Safe Handling & Tail Drop Prevention
-                </div>
-                <p class="topic-text">
-                  Support the full body and legs with flat, calm hands. Never grasp, pull, or hold a lizard by its tail; many species (geckos) practice <b>caudal autotomy</b> (shedding their tail when threatened). Always wash your hands thoroughly with warm water and antibacterial soap before and after handling reptiles to prevent zoonotic <b>Salmonella</b> transmission.
-                </p>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">⚡</span> Vivarium Hazards
-                </div>
-                <ul class="topic-list">
-                  <li><b>Thermal Burns:</b> Heat lamps must be installed outside mesh tops or protected with metal wire heat cages inside wooden enclosures.</li>
-                  <li><b>PTFE / Teflon Toxicity:</b> Overheated non-stick cookware emits polytetrafluoroethylene fumes that are instantly fatal to reptiles and birds.</li>
-                  <li><b>Cohabitation Aggression:</b> Most reptiles (bearded dragons, leopard geckos, snakes) are strictly solitary. Housing together leads to severe bite trauma, severed digits, and starvation.</li>
-                  <li><b>Inadequate Escape Latches:</b> Reptiles are muscular escape artists; always install terrarium screen clips or keyed sliding door locks.</li>
-                </ul>
-              </div>
-
-              <div class="topic-item">
-                <div class="topic-title">
-                  <span class="topic-icon">🤝</span> Lifelong Commitment
-                </div>
-                <p class="topic-text">
-                  Many reptiles live remarkably long lives: bearded dragons live 10-15 years, ball pythons live 25-30+ years, and aquatic turtles can live 40-50+ years. Make sure you are prepared for decades of equipment replacement, electricity costs, and fresh diet care.
-                </p>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <!-- When to Consult a Veterinarian Callout Banner -->
-        <div class="alert-banner">
-          <div class="alert-icon">🚨</div>
-          <div class="alert-content">
-            <h4>When to Consult an Exotic Veterinarian Immediately</h4>
-            <p>
-              Prey pets deteriorate in hours once clinical symptoms are visible. Seek immediate emergency veterinary attention if you observe:
-              <b>(1) Small Mammals:</b> Complete lack of eating or fecal production for 12 hours, severe diarrhea, audible respiratory clicking, bleeding, or head tilt;
-              <b>(2) Fish:</b> Multiple sudden unexplained deaths, severe dropsy pineconing, or extensive ulceration;
-              <b>(3) Reptiles:</b> Prolapse (tissue protruding from the vent), traumatic burns, egg-binding in gravid females, open-mouth respiratory gasping, or seizures.
-              Locate a certified specialist through the <b>Association of Exotic Mammal Veterinarians (AEMV)</b> or <b>Association of Reptilian and Amphibian Veterinarians (ARAV)</b>.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ====================================================
-           INTERACTIVE DAILY CARE CHECKLIST TOOL
-           ==================================================== -->
-      <section class="guide-section" id="care-checklist">
-        <div class="section-header-block">
-          <div class="section-tag">
-            <span>📋 Interactive Tool</span>
-          </div>
-          <h2>Daily Pet Care Routine Checklist</h2>
-          <p class="section-desc">
-            Use this interactive tracker during your daily rounds. Select your pet category, check off each completed care item, and track your daily husbandry score.
-          </p>
-        </div>
-
-        <div class="interactive-widget-card">
-          <div class="widget-top">
-            <div class="widget-title">
-              <h3>Daily Husbandry Tracker</h3>
-              <p>Select your pet category and check off your completed routine tasks.</p>
-            </div>
-            <div class="checklist-controls">
-              <select id="checklistPetType" class="checklist-select" aria-label="Select pet category for checklist">
-                <option value="smallpet">🐹 Small Pets Routine</option>
-                <option value="fish">🐠 Aquarium Fish Routine</option>
-                <option value="reptile">🦎 Reptiles Routine</option>
-              </select>
-              <div class="checklist-progress-wrap">
-                <div class="checklist-bar-bg">
-                  <div class="checklist-bar-fill" id="checklistBar"></div>
-                </div>
-                <span class="checklist-count" id="checklistCount">0 / 6 Done</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Dynamic Checklist Items Container -->
-          <div class="checklist-items-grid" id="checklistGrid">
-            <!-- Rendered by JavaScript -->
-          </div>
-
-          <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-            <span style="font-size: 0.84rem; color: var(--muted);" id="checklistFeedback">Keep up the great care for your little companions!</span>
-            <button id="resetChecklistBtn" class="filter-btn" style="background: white; border: 1px solid var(--line);">↺ Reset Tasks</button>
-          </div>
-        </div>
-      </section>
-
-      <!-- ====================================================
-           FREQUENTLY ASKED QUESTIONS (FAQS)
-           ==================================================== -->
-      <section class="guide-section" id="faqs">
-        <div class="section-header-block">
-          <div class="section-tag">
-            <span>❓ Clarifications</span>
-          </div>
-          <h2>Frequently Asked Questions</h2>
-          <p class="section-desc">
-            Direct answers to the most common questions on exotic, aquatic, and small pet care from our PetSathi community.
-          </p>
-        </div>
-
-        <div class="faq-accordion">
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>Can small pets, aquarium fish, and reptiles share the same room?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              Yes, provided their environmental requirements do not clash. Small pets require cool, dry conditions (65°-75°F) and low humidity, whereas tropical reptiles and aquariums produce warmth and humidity. Keep aquariums covered with secure lids, position rodent cages away from high humidity or direct heat lamps, and ensure predatory household pets (cats and dogs) cannot access the room unsupervised.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>Why do guinea pigs require daily Vitamin C supplements?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              Just like humans and primates, guinea pigs lack the active enzyme L-gulonolactone oxidase required to synthesize Vitamin C (ascorbic acid) internally. Without 25 to 50 mg of dietary Vitamin C daily (from fresh yellow/green bell peppers, dark leafy greens, or stabilized tablets), guinea pigs quickly develop scurvy, characterized by painful swollen joints, dental problems, internal hemorrhaging, and lethargy.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>Why do I need to replace UVB lighting tubes when they still emit visible light?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              Fluorescent UVB bulbs and tubes produce both visible light and invisible ultraviolet-B radiation. The internal phosphor coating that emits UVB degrades steadily over 6 to 12 months of use. Even though the tube still glows brightly to the human eye, its UVB wavelength output drops to zero, which leaves your reptile unable to synthesize Vitamin D3 or metabolize dietary calcium.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>What is the safest way to clean a pet enclosure without chemicals?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              A 50/50 mixture of distilled white vinegar and warm water is an outstanding, safe, non-toxic cleaner for glass, acrylic, and plastic cage trays. It breaks down mineral stains and uric acid deposits without releasing toxic fumes. For veterinary-level sterilization against stubborn pathogens, use diluted veterinary chlorhexidine or F10 veterinary disinfectant according to package dilution ratios.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>What should I do if my lizard drops its tail?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              Tail dropping (caudal autotomy) is a natural defense reflex when a lizard feels trapped or grabbed. Move the lizard immediately to a clean, sterile quarantine enclosure lined with dry paper towels (remove loose substrate which can cling to the open wound). Keep temperatures at the optimal warm range and do not apply harsh human antiseptics. While the tail may slowly regenerate over several months (often with a cartilage rod and different scale coloration), the process consumes vast energy reserves, so ensure consistent nutritious feeding.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ====================================================
-           BOTTOM CALL TO ACTION
-           ==================================================== -->
-      <section class="inner-cta" style="border-radius: 24px; margin-top: 60px;">
-        <h2>Ready to Explore More Pet Guidance?</h2>
-        <p>From dedicated dog walking to specialized feline advice and aquarium guides, PetSathi is your trusted pet care companion.</p>
-        <div style="margin-top: 24px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-          <a class="button" href="../index.html">← Explore All Pet Categories</a>
-          <a class="button button-outline" href="fish.html">Discover Aquarium Fish 🐠</a>
-          <a class="button button-light" href="../../services/pet-care.html">Explore Pet Care Services ↗</a>
-        </div>
-      </section>
-
-    </div>
+    </section>
   </main>
 
-  <!-- ========================================================
-       BACK TO TOP FLOATING BUTTON
-       ======================================================== -->
+  <!-- Back to Top Button -->
   <button class="back-to-top" id="backToTopBtn" aria-label="Back to top">
-    ↑
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
   </button>
 
-  <!-- ========================================================
-       STANDARD PETSATHI FOOTER
-       ======================================================== -->
+  <!-- Shared Footer Placeholder -->
   <div id="footer"></div>
 
-  <!-- Core PetSathi Main Script -->
-  <script src="../../../js/main.js"></script>
-
-  <!-- ========================================================
-       INLINE VANILLA JAVASCRIPT FOR PAGE INTERACTIVITY
-       ======================================================== -->
+  <!-- Interactive Scripts -->
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      // 1. Category Filter Switching
-      const filterBtns = document.querySelectorAll(".filter-btn[data-filter]");
-      const petCards = document.querySelectorAll(".pet-care-card");
-
-      filterBtns.forEach(btn => {
-        btn.addEventListener("click", () => {
-          filterBtns.forEach(b => b.classList.remove("active"));
-          btn.classList.add("active");
-
-          const filterVal = btn.getAttribute("data-filter");
-
-          petCards.forEach(card => {
-            if (filterVal === "all" || card.getAttribute("data-category") === filterVal) {
-              card.style.display = "flex";
-              card.style.animation = "fadeIn 0.35s ease";
-            } else {
-              card.style.display = "none";
-            }
-          });
-        });
-      });
-
-      // 2. Interactive Daily Checklist System
-      const checklistData = {
-        smallpet: [
-          { title: "Refill High-Fiber Hay", desc: "Top up unlimited fresh timothy or orchard hay." },
-          { title: "Check Water Bottle Nozzle", desc: "Tap the metal ball to ensure smooth water flow and no clogs." },
-          { title: "Serve Measured Fortified Pellets", desc: "Provide species-specific pellets & high-Vitamin C veg for guinea pigs." },
-          { title: "Spot Clean Soiled Bedding", desc: "Scoop wet pee corners and soiled litter pans." },
-          { title: "Remove Uneaten Fresh Food", desc: "Discard leftover veggies after 3 hours to prevent mold." },
-          { title: "Observe Droppings & Alertness", desc: "Verify active movement and abundant, uniform droppings." }
-        ],
-        fish: [
-          { title: "Feed Measured Micro-Portion", desc: "Feed only what fish consume in 2 minutes; avoid overfeeding." },
-          { title: "Inspect Water Temperature", desc: "Check submersible heater thermometer reading (75°-80°F)." },
-          { title: "Check Filter Flow & Intakes", desc: "Ensure water return creates gentle surface agitation." },
-          { title: "Wipe Front Glass", desc: "Use magnetic glass cleaner to gently clean algae buildup." },
-          { title: "Observe Swimming Patterns", desc: "Confirm all fish display open, unclamped fins and normal gill rate." },
-          { title: "Remove Any Uneaten Debris", desc: "Siphon leftover food to prevent ammonia and nitrite spikes." }
-        ],
-        reptile: [
-          { title: "Inspect Basking & Cool Temps", desc: "Verify digital thermometer probes on both sides of the vivarium." },
-          { title: "Provide Fresh Dechlorinated Water", desc: "Wash and refill drinking dish; mist foliage for arboreal species." },
-          { title: "Offer Scheduled Feeder/Greens", desc: "Feed gut-loaded insects dusted with calcium or fresh leafy greens." },
-          { title: "Spot-Clean Feces & Urates", desc: "Remove waste immediately and sanitize surface spot." },
-          { title: "Verify UVB Tube & Lamp Status", desc: "Ensure linear UVB fixture is energized during daylight photoperiod." },
-          { title: "Check Shedding & Alertness", desc: "Examine toes and tail tips for stuck shed and check responsive tongue flicking." }
-        ]
-      };
-
-      const petTypeSelect = document.getElementById("checklistPetType");
-      const checklistGrid = document.getElementById("checklistGrid");
-      const checklistBar = document.getElementById("checklistBar");
-      const checklistCount = document.getElementById("checklistCount");
-      const checklistFeedback = document.getElementById("checklistFeedback");
-      const resetChecklistBtn = document.getElementById("resetChecklistBtn");
-
-      function renderChecklist(type) {
-        const tasks = checklistData[type] || checklistData.smallpet;
-        checklistGrid.innerHTML = "";
-
-        tasks.forEach((task, idx) => {
-          const label = document.createElement("label");
-          label.className = "check-task-label";
-          label.innerHTML = `
-            <input type="checkbox" data-index="${idx}">
-            <div class="task-meta">
-              <b>${task.title}</b>
-              <span>${task.desc}</span>
-            </div>
-          `;
-          checklistGrid.appendChild(label);
-        });
-
-        updateChecklistProgress();
-
-        // Attach change listeners to new checkboxes
-        checklistGrid.querySelectorAll("input[type='checkbox']").forEach(input => {
-          input.addEventListener("change", (e) => {
-            const parentLabel = e.target.closest(".check-task-label");
-            if (e.target.checked) {
-              parentLabel.classList.add("completed");
-            } else {
-              parentLabel.classList.remove("completed");
-            }
-            updateChecklistProgress();
-          });
-        });
-      }
-
-      function updateChecklistProgress() {
-        const checkboxes = checklistGrid.querySelectorAll("input[type='checkbox']");
-        const total = checkboxes.length;
-        let checked = 0;
-
-        checkboxes.forEach(cb => {
-          if (cb.checked) checked++;
-        });
-
-        const pct = total > 0 ? Math.round((checked / total) * 100) : 0;
-        checklistBar.style.width = pct + "%";
-        checklistCount.textContent = `${checked} / ${total} Done`;
-
-        if (checked === total && total > 0) {
-          checklistFeedback.textContent = "🎉 Excellent job! All daily care responsibilities completed for your pets.";
-          checklistFeedback.style.color = "var(--green)";
-        } else if (checked > 0) {
-          checklistFeedback.textContent = `Great progress! ${checked} task${checked > 1 ? 's' : ''} completed today.`;
-          checklistFeedback.style.color = "#4b5d52";
-        } else {
-          checklistFeedback.textContent = "Keep up the great care for your little companions!";
-          checklistFeedback.style.color = "var(--muted)";
-        }
-      }
-
-      petTypeSelect.addEventListener("change", (e) => {
-        renderChecklist(e.target.value);
-      });
-
-      resetChecklistBtn.addEventListener("click", () => {
-        renderChecklist(petTypeSelect.value);
-      });
-
-      // Initial Checklist render
-      renderChecklist("smallpet");
-
-      // 3. Interactive Symptom Evaluator Switcher
-      const symptomBtns = document.querySelectorAll(".symptom-btn");
-      const symptomPanels = document.querySelectorAll(".symptom-result-panel");
-
-      symptomBtns.forEach(btn => {
-        btn.addEventListener("click", () => {
-          symptomBtns.forEach(b => b.classList.remove("active"));
-          btn.classList.add("active");
-
-          const target = btn.getAttribute("data-symptom");
-          symptomPanels.forEach(panel => {
-            if (panel.id === `panel-${target}`) {
-              panel.classList.add("visible");
-            } else {
-              panel.classList.remove("visible");
-            }
-          });
-        });
-      });
-
-      // 4. FAQ Accordion Interaction
-      const faqQuestions = document.querySelectorAll(".faq-question");
-      faqQuestions.forEach(q => {
-        q.addEventListener("click", () => {
-          const item = q.parentElement;
-          const isActive = item.classList.contains("active");
-
-          // Close other open accordions
-          document.querySelectorAll(".faq-item").forEach(other => {
-            other.classList.remove("active");
-          });
-
-          if (!isActive) {
-            item.classList.add("active");
-          }
-        });
-      });
-
-      // 5. Back to Top Button & Scrollspy Subnav Highlighting
-      const backToTopBtn = document.getElementById("backToTopBtn");
-      const subnavLinks = document.querySelectorAll(".subnav-link");
-      const sections = document.querySelectorAll(".guide-section");
-
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 400) {
-          backToTopBtn.classList.add("show");
-        } else {
-          backToTopBtn.classList.remove("show");
-        }
-
-        // Scrollspy highlight
-        let currentSectionId = "";
-        sections.forEach(sec => {
-          const sectionTop = sec.offsetTop - 180;
-          const sectionHeight = sec.offsetHeight;
-          if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-            currentSectionId = sec.getAttribute("id");
-          }
-        });
-
-        if (currentSectionId) {
-          subnavLinks.forEach(link => {
-            if (link.getAttribute("href") === `#${currentSectionId}`) {
-              link.classList.add("active");
-            } else {
-              link.classList.remove("active");
-            }
-          });
-        }
-      });
-
-      backToTopBtn.addEventListener("click", () => {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth"
-        });
-      });
-
-      // Set current dynamic year in footer if not populated
-      const yearSpan = document.getElementById("year");
-      if (yearSpan && !yearSpan.textContent) {
-        yearSpan.textContent = new Date().getFullYear();
+    // Back to Top Button Functionality
+    const backToTopBtn = document.getElementById("backToTopBtn");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 400) {
+        backToTopBtn.classList.add("visible");
+      } else {
+        backToTopBtn.classList.remove("visible");
       }
     });
-  </script>
-</body>
-</html>
 
+    backToTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+
+    // Smooth Anchor Navigation Offset Handling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        const targetId = this.getAttribute("href");
+        if (targetId.length > 1) {
+          const targetEl = document.querySelector(targetId);
+          if (targetEl) {
+            e.preventDefault();
+            const headerOffset = 90;
+            const elementPosition = targetEl.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth"
+            });
+          }
+        }
+      });
+    });
+  </script>
+
+  <!-- Shared Site Navigation & Components Script -->
+  <script src="../../../js/main.js"></script>
+</body>
+
+</html>
