@@ -1,5 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
 
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.woff2") format("woff2"),
+    url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.ttf") format("truetype");
+}
+
 :root {
   --green: #286849;
   --dark: #1d5039;
@@ -67,9 +76,10 @@ p {
   justify-content: space-between;
   gap: 22px;
   position: relative;
-  z-index: 20;
-  background: var(--dark);
+  z-index: 1000;
+  background: var(--dark, #1d5039);
   color: #ffffff;
+  box-sizing: border-box;
 }
 
 .brand {
@@ -86,72 +96,189 @@ p {
   color: var(--green);
 }
 
+.site-header .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-header .brand-mark {
+  display: block;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  color: #ffffff !important;
+}
+
+.site-header .brand-mark svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .site-header .brand,
 .site-header .brand span,
-.site-header .brand span:last-child span,
-.site-header .brand-mark {
-  color: #ffffff;
+.site-header .brand>span:last-child,
+.site-header .brand>span:last-child span,
+.site-header .brand span:last-child span {
+  color: #ffffff !important;
 }
 
-.brand-mark {
-  font-size: 1.6rem;
-}
-
-.brand-mark svg {
-  display: block;
-  width: 1.25em;
-  height: 1.25em;
-}
-
-.main-nav {
+.site-header .main-nav {
   display: flex;
   align-items: center;
-  gap: 23px;
-  font-size: 0.9rem;
+  gap: 24px;
+  font-size: 0.92rem;
   font-weight: 700;
   color: #ffffff;
 }
 
-.main-nav>a:hover,
-.nav-item>a:hover,
-.main-nav .active {
+.site-header .main-nav>a,
+.site-header .main-nav .nav-item>a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Strict requirement: Main navigation items MUST be text-only. No pseudo-element icons! */
+.site-header .main-nav>a::before,
+.site-header .main-nav .nav-item>a::before,
+.site-header .main-nav>a::after,
+.site-header .main-nav .nav-item>a::after {
+  content: none !important;
+  display: none !important;
+}
+
+.site-header .main-nav>a:hover,
+.site-header .nav-item>a:hover,
+.site-header .main-nav .active,
+.site-header .nav-item.is-open>a {
   color: #dcebdc;
 }
 
-.nav-item {
-  position: relative;
-  padding: 25px 0;
+.site-header .nav-arrow {
+  display: inline-block;
+  margin-left: 4px;
+  font-size: 0.72em;
+  transition: transform 0.25s ease;
+  opacity: 0.85;
+  color: #ffffff;
 }
 
-.dropdown {
+.site-header .nav-item:hover .nav-arrow,
+.site-header .nav-item.is-open .nav-arrow {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+.site-header .nav-item {
+  position: relative;
+  padding: 24px 0;
+}
+
+.site-header .dropdown {
   display: none;
   position: absolute;
-  top: 68px;
-  left: -14px;
-  min-width: 190px;
-  padding: 9px;
-  background: white;
-  border: 1px solid var(--line);
+  top: 72px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 215px;
+  padding: 8px;
+  background: #ffffff;
+  border: 1px solid var(--line, #e8ebe4);
   border-radius: 14px;
-  box-shadow: var(--shadow);
+  box-shadow: 0 12px 32px rgba(25, 45, 33, 0.14);
+  z-index: 1001;
 }
 
-.dropdown a {
+.site-header .nav-item:hover .dropdown,
+.site-header .nav-item:focus-within .dropdown {
   display: block;
-  padding: 10px 12px;
-  border-radius: 8px;
-  font-size: 0.86rem;
-  color: var(--dark);
 }
 
-.dropdown a:hover {
-  background: var(--soft);
-  color: var(--green);
+.site-header .dropdown a::before,
+.site-header .dropdown a::after,
+.dropdown a::before,
+.dropdown a::after {
+  content: none !important;
+  display: none !important;
 }
 
-.nav-item:hover .dropdown,
-.nav-item:focus-within .dropdown {
-  display: block;
+.site-header .dropdown a {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 10px 14px !important;
+  border-radius: 8px !important;
+  font-size: 0.88rem !important;
+  font-weight: 600 !important;
+  color: #1e3325 !important;
+  text-decoration: none !important;
+  transition: background 0.18s ease, color 0.18s ease, transform 0.15s ease;
+  white-space: nowrap !important;
+}
+
+.site-header .dropdown a i {
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900 !important;
+  font-style: normal !important;
+  width: 18px !important;
+  font-size: 0.95rem !important;
+  color: var(--green, #286849) !important;
+  text-align: center !important;
+  flex-shrink: 0 !important;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.site-header .dropdown a span {
+  flex: 1;
+}
+
+.site-header .dropdown a:hover {
+  background: var(--soft, #f1f4ed) !important;
+  color: var(--green, #286849) !important;
+}
+
+.site-header .dropdown a:hover i {
+  color: var(--green, #286849) !important;
+  transform: scale(1.15);
+}
+
+.site-header .main-nav>a.button,
+.site-header .main-nav>a.button.button-small {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 20px;
+  border-radius: 999px;
+  background: var(--green, #286849);
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 0.88rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.site-header .main-nav>a.button:hover,
+.site-header .main-nav>a.button.button-small:hover {
+  background: #1f533a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  color: #ffffff !important;
 }
 
 .button {
@@ -201,27 +328,42 @@ p {
   color: var(--dark);
 }
 
+.site-header .menu-toggle,
 .menu-toggle {
   display: none;
-  border: 1px solid var(--line);
-  background: white;
+  border: 1px solid rgba(215, 230, 217, 0.35);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 50%;
   width: 42px;
   height: 42px;
-  font-size: 1.2rem;
+  align-items: center;
+  justify-content: center;
   color: #ffffff;
-  font-size: 0;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
 }
 
+.site-header .menu-toggle:hover,
+.menu-toggle:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.site-header .menu-toggle::before,
 .menu-toggle::before {
-  content: "\f0c9";
-  font-family: "Font Awesome 6 Free";
-  font-size: 1.2rem;
-  font-weight: 900;
+  content: none !important;
+  display: none !important;
 }
 
+.site-header .menu-toggle i,
 .menu-toggle i {
-  font-size: 1.2rem;
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900 !important;
+  font-style: normal !important;
+  font-size: 1.15rem;
+  color: #ffffff;
+  display: inline-block;
+  line-height: 1;
 }
 
 .eyebrow {
@@ -333,110 +475,21 @@ h2 em {
 }
 
 body,
-body * {
+body *:not(i):not([class*="fa-"]):not(.fa-solid):not(.fa-regular):not(.fa-brands):not(.fa):not(.fab):not(.fas) {
   font-family: "Times New Roman", Times, serif !important;
 }
 
-.site-header .main-nav>a,
-.site-header .main-nav .nav-item>a {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  color: #ffffff;
+i[class*="fa-"],
+.fa-solid,
+.fa-regular,
+.fa-brands,
+.fas,
+.far,
+.fab {
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+  font-style: normal;
 }
 
-.site-header .main-nav>a::before,
-.site-header .main-nav .nav-item>a::before,
-.site-header .dropdown a::before {
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  line-height: 1;
-}
-
-.site-header .main-nav>a[href*="index.html"]::before {
-  content: "\f015";
-}
-
-.site-header .main-nav .nav-item>a[href*="pets"]::before {
-  content: "\f1b0";
-}
-
-.site-header .main-nav .nav-item>a[href*="services"]::before {
-  content: "\f004";
-}
-
-.site-header .main-nav .nav-item>a[href*="walker"]::before {
-  content: "\f554";
-}
-
-.site-header .main-nav>a[href*="about"]::before {
-  content: "\f05a";
-}
-
-.site-header .main-nav>a[href*="login"]::before {
-  content: "\f2f6";
-}
-
-.site-header .main-nav>a.button::before {
-  content: "\f35d";
-}
-
-.site-header .dropdown a::before {
-  margin-right: 8px;
-  color: var(--green);
-}
-
-.site-header .dropdown a[href*="pets"]::before {
-  content: "\f1b0";
-}
-
-.site-header .dropdown a[href*="services"]::before {
-  content: "\f004";
-}
-
-.site-header .dropdown a[href*="walker"]::before {
-  content: "\f554";
-}
-
-.site-header .dropdown a[href*="dog"]::before,
-.site-header .dropdown a[href*="cat"]::before,
-.site-header .dropdown a[href*="bird"]::before,
-.site-header .dropdown a[href*="rabbit"]::before {
-  content: "\f1b0";
-}
-
-.site-header .dropdown a[href*="fish"]::before,
-.site-header .dropdown a[href*="reptile"]::before {
-  content: "\f578";
-}
-
-.site-header .dropdown a[href*="services"]::before,
-.site-header .dropdown a[href*="walker"]::before {
-  content: "\f0c0";
-}
-
-.site-header .dropdown a[href*="dog-walking"]::before {
-  content: "\f554";
-}
-
-.site-header .dropdown a[href*="care"]::before {
-  content: "\f004";
-}
-
-.site-header .dropdown a[href*="guidance"]::before {
-  content: "\f05a";
-}
-
-.site-header .dropdown a[href*="walker"]::before {
-  content: "\f554";
-}
-
-.site-header .dropdown a[href*="dogs.html"]::before,
-.site-header .dropdown a[href*="cats.html"]::before,
-.site-header .dropdown a[href*="birds.html"]::before,
-.site-header .dropdown a[href*="rabbits.html"]::before {
-  content: "\f007";
-}
 
 /* ==========================================================================
    PetSathi Modern Shared Footer Treatment
@@ -829,61 +882,76 @@ body * {
 }
 
 @media (max-width: 1000px) {
+
+  .site-header .main-nav,
   .main-nav {
-    gap: 13px;
-    font-size: 0.82rem;
+    gap: 14px;
+    font-size: 0.85rem;
   }
 }
 
 @media (max-width: 850px) {
   .site-header {
     height: 74px;
-    padding: 0 17px;
+    padding: 0 18px;
   }
 
+  .site-header .menu-toggle,
   .menu-toggle {
-    display: block;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
   }
 
+  .site-header .main-nav,
   .main-nav {
     display: none;
     position: absolute;
-    top: 68px;
+    top: 74px;
     left: 0;
     right: 0;
-    padding: 15px;
-    background: var(--dark);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    box-shadow: var(--shadow);
+    padding: 16px 18px 24px;
+    background: var(--dark, #1d5039);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
     align-items: stretch;
-    gap: 4px;
+    gap: 6px;
     flex-direction: column;
-    max-height: calc(100vh - 90px);
+    max-height: calc(100vh - 85px);
     overflow-y: auto;
+    z-index: 1000;
   }
 
+  .site-header .main-nav.open,
   .main-nav.open {
-    display: flex;
+    display: flex !important;
   }
 
+  .site-header .main-nav>a,
   .main-nav>a {
     display: block;
-    padding: 10px 14px;
+    padding: 11px 16px;
     border-radius: 8px;
-    transition: background 0.2s ease, color 0.2s ease;
+    color: #ffffff;
+    font-size: 0.95rem;
+    transition: background 0.2s ease;
   }
 
+  .site-header .main-nav>a:hover,
   .main-nav>a:hover {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.1);
   }
 
+  .site-header .main-nav>a.button,
   .main-nav>a.button {
-    display: inline-flex;
-    justify-content: center;
-    margin-top: 6px;
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 10px !important;
+    min-height: 44px;
   }
 
+  .site-header .nav-item,
   .nav-item {
     display: flex;
     flex-direction: column;
@@ -891,41 +959,63 @@ body * {
     width: 100%;
   }
 
+  .site-header .nav-item>a,
   .nav-item>a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 14px;
+    padding: 11px 16px;
+    color: #ffffff;
+    font-size: 0.95rem;
     font-weight: 700;
     cursor: pointer;
     border-radius: 8px;
-    transition: background 0.2s ease, color 0.2s ease;
+    transition: background 0.2s ease;
   }
 
+  .site-header .nav-item>a:hover,
   .nav-item>a:hover,
+  .site-header .nav-item.is-open>a,
   .nav-item.is-open>a {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.1);
   }
 
+  .site-header .nav-item:hover .dropdown,
+  .site-header .nav-item:focus-within .dropdown,
   .nav-item:hover .dropdown,
   .nav-item:focus-within .dropdown {
-    display: none;
+    display: none !important;
   }
 
+  .site-header .dropdown,
   .dropdown {
     display: none;
-    position: static;
-    box-shadow: none;
-    border: 0;
-    background: #f7f8f4;
-    margin: 4px 8px 8px;
-    border-radius: 10px;
-    padding: 6px 0;
+    position: static !important;
+    transform: none !important;
+    min-width: 100% !important;
+    left: auto !important;
+    top: auto !important;
+    box-shadow: none !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    background: #ffffff !important;
+    margin: 6px 0 10px !important;
+    border-radius: 12px !important;
+    padding: 8px !important;
+    box-sizing: border-box !important;
   }
 
+  .site-header .nav-item.is-open>.dropdown,
   .nav-item.is-open>.dropdown {
-    display: flex;
-    flex-direction: column;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 3px !important;
+  }
+
+  .site-header .dropdown a,
+  .dropdown a {
+    padding: 9px 14px !important;
+    font-size: 0.9rem !important;
+    color: #1e3325 !important;
   }
 }
 
@@ -969,104 +1059,7 @@ main [class*="page-"] {
   background-image: none !important;
 }
 
-/* Final shared shell rules. Header links remain text-only; icons are reserved
-   for dropdown options and footer links. */
-.site-header .main-nav>a::before,
-.site-header .main-nav .nav-item>a::before {
-  content: none !important;
-  display: none !important;
-}
-
-.site-header .main-nav>a,
-.site-header .main-nav .nav-item>a {
-  gap: 0;
-}
-
-.site-header .nav-arrow {
-  display: inline-block;
-  margin-left: 5px;
-  font-size: 0.75em;
-  transition: transform 0.25s ease;
-}
-
-.nav-item.is-open .nav-arrow {
-  transform: rotate(180deg);
-}
-
-.site-header .dropdown a {
-  display: flex;
-  align-items: center;
-  color: var(--dark) !important;
-  font-weight: 700;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.site-header .dropdown a::before {
-  display: inline-flex;
-  width: 1.25rem;
-  margin-right: 8px;
-  align-items: center;
-  justify-content: center;
-  color: var(--green) !important;
-}
-
-.site-header .dropdown-explore a:nth-child(1)::before {
-  content: "\f6d3";
-}
-
-.site-header .dropdown-explore a:nth-child(2)::before {
-  content: "\f6be";
-}
-
-.site-header .dropdown-explore a:nth-child(3)::before {
-  content: "\f52d";
-}
-
-.site-header .dropdown-explore a:nth-child(4)::before {
-  content: "\f1b0";
-}
-
-.site-header .dropdown-explore a:nth-child(5)::before {
-  content: "\f578";
-}
-
-.site-header .dropdown-explore a:nth-child(6)::before {
-  content: "\f6d5";
-}
-
-.site-header .dropdown-services a:nth-child(1)::before {
-  content: "\f554";
-}
-
-.site-header .dropdown-services a:nth-child(2)::before {
-  content: "\f6be";
-}
-
-.site-header .dropdown-services a:nth-child(3)::before {
-  content: "\f1b0";
-}
-
-.site-header .dropdown-walker a:nth-child(1)::before {
-  content: "\f002";
-}
-
-.site-header .dropdown-walker a:nth-child(2)::before {
-  content: "\f007";
-}
-
-.site-header .dropdown-walker a:nth-child(3)::before {
-  content: "\f274";
-}
-
-.site-header .brand-mark i,
-.footer .brand-mark i {
-  color: #ffffff;
-}
-
-
-
-/* Keep the logo mark identical in both shared shell locations. */
-.site-header .brand,
+/* Keep the logo mark identical in footer */
 .footer .brand {
   display: inline-flex;
   align-items: center;
@@ -1075,7 +1068,6 @@ main [class*="page-"] {
   font-weight: 700;
 }
 
-.site-header .brand-mark,
 .footer .brand-mark {
   display: block;
   width: 24px;
@@ -1084,14 +1076,11 @@ main [class*="page-"] {
   color: #ffffff !important;
 }
 
-.site-header .brand-mark,
-.footer .brand-mark {
-  vertical-align: middle;
+.footer .brand-mark i {
+  color: #ffffff;
 }
 
-.site-header .brand>span:last-child,
 .footer .brand>span:last-child,
-.site-header .brand>span:last-child span,
 .footer .brand>span:last-child span {
   color: #ffffff !important;
 }

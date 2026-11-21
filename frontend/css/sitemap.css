@@ -43,27 +43,6 @@ i[class*="fa-"] {
   line-height: 1 !important;
 }
 
-/* Header Mobile Toggle & Nav Harmonization */
-.site-header .menu-toggle {
-  background: transparent !important;
-  color: #ffffff !important;
-  border: 1px solid rgba(215, 230, 217, 0.35) !important;
-  border-radius: 8px !important;
-  padding: 8px 12px !important;
-  font-size: 1.1rem !important;
-  cursor: pointer !important;
-  line-height: 1 !important;
-}
-
-.site-header .menu-toggle i {
-  color: #ffffff !important;
-  font-size: 1.1rem !important;
-}
-
-.site-header .main-nav.active,
-.site-header .main-nav.open {
-  display: flex !important;
-}
 
 /* ==========================================================================
    Hero Section - Centered Clean Editorial Layout
@@ -1104,8 +1083,8 @@ i[class*="fa-"] {
   box-shadow: none !important;
 }
 
-.cta > div:first-child,
-#sitemapCta > div:first-child {
+.cta>div:first-child,
+#sitemapCta>div:first-child {
   max-width: 650px !important;
   text-align: left !important;
 }

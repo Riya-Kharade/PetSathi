@@ -71,35 +71,35 @@
     <nav class="main-nav" aria-label="Main navigation">
       <a href="index.html">Home</a>
       <div class="nav-item">
-        <a href="frontend/pages/pets/index.html">Explore Pets
-          <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+        <a href="frontend/pages/pets/index.html">Explore Pets <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
         <div class="dropdown dropdown-explore">
-          <a href="frontend/pages/pets/dogs/index.html">Dogs</a><a href="frontend/pages/pets/cats/index.html">Cats</a><a
-            href="frontend/pages/pets/birds/index.html">Birds</a><a
-            href="frontend/pages/pets/rabbits/index.html">Rabbits</a><a
-            href="frontend/pages/pets/other/fish.html">Aquarium Fish</a><a
-            href="frontend/pages/pets/other/reptiles.html">Reptiles</a>
+          <a href="frontend/pages/pets/dogs/index.html"><i class="fa-solid fa-dog" aria-hidden="true"></i> <span>Dogs</span></a>
+          <a href="frontend/pages/pets/cats/index.html"><i class="fa-solid fa-cat" aria-hidden="true"></i> <span>Cats</span></a>
+          <a href="frontend/pages/pets/birds/index.html"><i class="fa-solid fa-dove" aria-hidden="true"></i> <span>Birds</span></a>
+          <a href="frontend/pages/pets/rabbits/index.html"><i class="fa-solid fa-paw" aria-hidden="true"></i> <span>Rabbits</span></a>
+          <a href="frontend/pages/pets/other/fish.html"><i class="fa-solid fa-fish" aria-hidden="true"></i> <span>Aquarium Fish</span></a>
+          <a href="frontend/pages/pets/other/reptiles.html"><i class="fa-solid fa-dragon" aria-hidden="true"></i> <span>Reptiles</span></a>
         </div>
       </div>
       <div class="nav-item">
-        <a href="frontend/pages/services/index.html">Services
-          <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+        <a href="frontend/pages/services/index.html">Services <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
         <div class="dropdown dropdown-services">
-          <a href="frontend/pages/services/dog-walking.html">Dog Walking</a><a
-            href="frontend/pages/services/cat-care.html">Cat Care</a><a href="frontend/pages/services/pet-care.html">Pet
-            Care</a>
+          <a href="frontend/pages/services/dog-walking.html"><i class="fa-solid fa-person-walking" aria-hidden="true"></i> <span>Dog Walking</span></a>
+          <a href="frontend/pages/services/cat-care.html"><i class="fa-solid fa-shield-cat" aria-hidden="true"></i> <span>Cat Care</span></a>
+          <a href="frontend/pages/services/pet-care.html"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> <span>Pet Care</span></a>
         </div>
       </div>
       <div class="nav-item">
-        <a href="frontend/pages/walker/index.html">Find a Walker
-          <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+        <a href="frontend/pages/walker/index.html">Find a Walker <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
         <div class="dropdown dropdown-walker">
-          <a href="frontend/pages/walker/dogs.html">Search Walkers</a><a href="frontend/pages/walker/cats.html">Walker
-            Profiles</a><a href="frontend/pages/walker/index.html#bookings">My Bookings</a>
+          <a href="frontend/pages/walker/dogs.html"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> <span>Search Walkers</span></a>
+          <a href="frontend/pages/walker/cats.html"><i class="fa-solid fa-id-badge" aria-hidden="true"></i> <span>Walker Profiles</span></a>
+          <a href="frontend/pages/walker/index.html#bookings"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> <span>My Bookings</span></a>
         </div>
       </div>
-      <a href="frontend/pages/about.html">About Us</a><a href="frontend/pages/auth/login.html">Log in</a><a
-        class="button button-small" href="frontend/pages/auth/register.html">Get Started</a>
+      <a href="frontend/pages/about.html">About Us</a>
+      <a href="frontend/pages/auth/login.html">Log in</a>
+      <a class="button button-small" href="frontend/pages/auth/register.html">Get Started</a>
     </nav>
   </header>`;
 

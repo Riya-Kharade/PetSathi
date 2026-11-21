@@ -460,22 +460,7 @@ body .fa-brands::before {
   box-shadow: 0 4px 12px rgba(40, 104, 73, 0.1);
 }
 
-/* Mobile navigation toggle
-   global.css renders the toggle as a white circle with a white icon. Use the
-   page's green accent and rely on the <i> icon so it switches to an X when
-   main.js opens the menu. */
-@media (max-width: 850px) {
-  .site-header .menu-toggle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--green);
-  }
 
-  .site-header .menu-toggle::before {
-    content: none;
-  }
-}
 
 /* CTA Section - Matching cats/index.html */
 .cta {
