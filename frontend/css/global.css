@@ -289,11 +289,18 @@ h2 em {
   box-shadow: 0 10px 24px rgba(35, 57, 43, 0.08);
   transform: translateY(-3px);
 }
-
 body,
 body * {
   font-family: "Times New Roman", Times, serif !important;
 }
+
+/* Preserve Font Awesome icon fonts */
+body i.fa-solid,
+body i.fas {
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900;
+}
+
 
 .site-header .main-nav > a,
 .site-header .main-nav .nav-item > a {
