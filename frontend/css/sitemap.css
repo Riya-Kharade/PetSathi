@@ -1297,3 +1297,208 @@ i[class*="fa-"] {
     padding: 24px 16px;
   }
 }
+
+/* Issue #232: responsive sitemap hero and unified sage palette */
+#sitemap-hero.hero {
+  box-sizing: border-box;
+  width: min(1240px, calc(100% - 48px));
+  max-width: 1240px !important;
+  min-height: 0 !important;
+  margin: 38px auto 32px !important;
+  padding: clamp(30px, 5vw, 64px) clamp(24px, 5.2vw, 68px) !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  align-items: center !important;
+  gap: clamp(28px, 5vw, 64px);
+  text-align: left !important;
+  background: linear-gradient(135deg, #f4f8ef 0%, #fffefa 58%, #edf5e9 100%) !important;
+  border: 1px solid #dce8d9;
+  border-radius: 28px;
+  box-shadow: 0 16px 42px rgba(27, 49, 36, 0.07);
+}
+
+#sitemap-hero .hero-copy {
+  min-width: 0;
+  align-items: flex-start !important;
+  text-align: left !important;
+  max-width: 660px !important;
+  margin: 0 !important;
+}
+
+#sitemap-hero .sitemap-badge-strip {
+  gap: 9px !important;
+  padding: 8px 15px !important;
+  margin: 0 0 20px !important;
+  background: #e9f2e5 !important;
+  border-color: #d3e4d0 !important;
+  font-size: 0.76rem !important;
+  letter-spacing: 1px !important;
+}
+
+#sitemap-hero .sitemap-badge-strip i {
+  font-size: 0.9rem;
+}
+
+#sitemap-hero h1 {
+  max-width: 700px !important;
+  margin: 0 0 18px !important;
+  font-size: clamp(2.45rem, 4.25vw, 3.55rem) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.7px !important;
+  text-align: left !important;
+}
+
+#sitemap-hero .hero-copy>p {
+  max-width: 600px !important;
+  margin: 0 0 24px !important;
+  font-size: 1.04rem !important;
+  text-align: left !important;
+}
+
+#sitemap-hero .hero-actions {
+  justify-content: flex-start !important;
+  gap: 12px !important;
+  margin: 0 !important;
+}
+
+#sitemap-hero .hero-actions .button {
+  gap: 9px;
+  padding: 12px 21px !important;
+  font-size: 0.92rem !important;
+}
+
+#sitemap-hero .hero-actions .button-outline {
+  background: #ffffff !important;
+  border-color: #b9d2bd !important;
+}
+
+#sitemap-hero .hero-note {
+  justify-content: flex-start !important;
+  flex-wrap: wrap;
+  gap: 7px !important;
+  margin: 20px 0 0 !important;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  text-align: left !important;
+}
+
+#sitemap-hero .hero-note i,
+.hero-photo-caption i {
+  color: #286849;
+}
+
+#sitemap-hero .hero-visual {
+  display: block !important;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 10px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e0e9dd;
+  border-radius: 24px;
+  box-shadow: 0 14px 32px rgba(27, 49, 36, 0.1);
+}
+
+#sitemap-hero .hero-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: contain;
+  object-position: center;
+  background: #edf4e9;
+  border-radius: 16px;
+}
+
+.hero-photo-caption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 8px 3px;
+  color: #52675a;
+  font-family: 'DM Sans', 'Manrope', sans-serif;
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+#sitemapCta {
+  background: #eef5ec !important;
+  border-color: #d9e7d6 !important;
+}
+
+@media (max-width: 992px) {
+  #sitemap-hero.hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+
+  #sitemap-hero .hero-copy {
+    max-width: 720px !important;
+  }
+
+  #sitemap-hero .hero-visual {
+    width: min(100%, 680px);
+    margin: 0 auto;
+  }
+
+  #sitemap-hero .hero-photo {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  #sitemap-hero.hero {
+    width: calc(100% - 32px);
+    margin-top: 22px !important;
+    margin-bottom: 24px !important;
+    padding: 30px 22px !important;
+    gap: 24px;
+    border-radius: 22px;
+  }
+
+  #sitemap-hero .hero-copy {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  #sitemap-hero h1 {
+    font-size: clamp(2rem, 8vw, 2.8rem) !important;
+    text-align: center !important;
+  }
+
+  #sitemap-hero .hero-copy>p {
+    margin-inline: auto !important;
+    font-size: 0.98rem !important;
+    text-align: center !important;
+  }
+
+  #sitemap-hero .sitemap-badge-strip {
+    margin-inline: auto !important;
+    text-align: center;
+  }
+
+  #sitemap-hero .hero-actions {
+    justify-content: center !important;
+  }
+
+  #sitemap-hero .hero-note {
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  #sitemap-hero .hero-visual {
+    padding: 8px;
+    border-radius: 19px;
+  }
+
+  .hero-photo-caption {
+    font-size: 0.8rem;
+  }
+}
