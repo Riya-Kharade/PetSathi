@@ -5,456 +5,750 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Aquarium fish behaviour, schooling habits, body language, territory management, and stress indicators guide on PetSathi. Learn how fish interact and create a peaceful community.">
-  <title>Aquarium Fish Behaviour &amp; Tank Dynamics | PetSathi</title>
+    content="Understand reptile body language, activity patterns, feeding, stress signals, safe handling, and terrarium enrichment with this practical PetSathi guide.">
+  <title>Understanding Reptile Behaviour | PetSathi</title>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
     rel="stylesheet">
-
-  <!-- Core PetSathi Stylesheets -->
   <link rel="stylesheet" href="../../../css/global.css">
   <link rel="stylesheet" href="../../../css/home.css">
   <link rel="stylesheet" href="../../../css/inner.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
-    .fa-solid, .fa-regular, .fa-brands, [class*="fa-"] {
+    body [class*="fa-"],
+    body [class*="fa-"]::before {
       font-family: "Font Awesome 6 Free" !important;
       font-style: normal !important;
       font-variant: normal !important;
       text-rendering: auto !important;
       line-height: 1 !important;
     }
-    .fa-solid { font-weight: 900 !important; }
-    .fa-regular { font-weight: 400 !important; }
 
-    .fish-badge-strip {
+    body .fa-solid,
+    body .fa-solid::before {
+      font-weight: 900 !important;
+    }
+
+    body .fa-regular,
+    body .fa-regular::before {
+      font-weight: 400 !important;
+    }
+
+    .behaviour-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      margin-bottom: 16px;
       padding: 6px 14px;
-      background: #eaf2e9;
-      color: var(--green);
+      border: 1px solid #cce4d2;
       border-radius: 999px;
+      background: #eaf2e9;
+      color: #246b43;
       font-size: 0.78rem;
       font-weight: 700;
-      letter-spacing: 1px;
+      letter-spacing: 0.8px;
       text-transform: uppercase;
-      margin-bottom: 16px;
     }
 
-    .hero-copy h1 em { color: var(--green); font-style: normal; }
+    .hero-copy h1 em {
+      color: var(--green);
+      font-style: normal;
+    }
+
+    .hero-note i { color: var(--green); }
+
+    .behaviour-page {
+      --behaviour-green: #246b43;
+      --behaviour-ink: #263b30;
+      --behaviour-muted: #55675c;
+      --behaviour-line: #dceade;
+    }
+
+    .quick-nav-section {
+      padding: 42px 0 48px;
+      border-top: 1px solid #e1ece0;
+      border-bottom: 1px solid #e1ece0;
+      background: #f4faf5;
+    }
+
+    .quick-nav-heading {
+      margin: 0 0 24px;
+      color: var(--behaviour-ink);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.5rem, 2.4vw, 2rem);
+      text-align: center;
+    }
+
+    .quick-nav-heading span { color: var(--behaviour-green); }
+
+    .quick-nav-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .quick-nav-link {
+      display: flex;
+      min-height: 54px;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 14px 7px 8px;
+      border: 1px solid #cce4d2;
+      border-radius: 999px;
+      background: #edf7f0;
+      color: #1c2b20;
+      font-size: 0.88rem;
+      font-weight: 700;
+      line-height: 1.25;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .quick-nav-link:hover,
+    .quick-nav-link:focus-visible {
+      transform: translateY(-2px);
+      background: #e4f4e8;
+      box-shadow: 0 6px 18px rgba(35, 100, 55, 0.12);
+    }
+
+    .quick-nav-icon {
+      display: grid;
+      flex: 0 0 38px;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      border-radius: 50%;
+      background: #d1ecda;
+      color: #1e6f43;
+      font-size: 1rem;
+    }
+
+    .behaviour-section {
+      padding: 60px 0 70px;
+    }
 
     .bg-white { background: #ffffff; }
     .bg-cream { background: #fafcf7; }
     .bg-soft-green { background: #f4faf5; }
 
-    .fish-section { padding: 60px 0 70px; }
-
     .section-heading-wrap {
-      position: relative;
-      max-width: 1400px;
-      margin: 0 auto 36px;
-      padding: 44px 35px 38px;
-      overflow: hidden;
-      text-align: center;
-      border-radius: 35px;
+      max-width: 1200px;
+      margin: 0 auto 34px;
+      padding: 36px 28px;
       border: 1px solid #dcebc9;
-      background: #fafcf7;
+      border-radius: 30px;
+      background: #ffffff;
+      text-align: center;
       box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
     }
-
-    .corner-wave { position: absolute; pointer-events: none; z-index: 0; }
-    .wave-tl { top: 0; left: 0; width: 220px; height: 130px; }
-    .wave-br { bottom: 0; right: 0; width: 220px; height: 130px; }
-
-    .heading-content { position: relative; z-index: 2; }
 
     .heading-label {
       display: inline-flex;
       align-items: center;
       gap: 7px;
+      margin-bottom: 12px;
+      padding: 6px 14px;
+      border: 1px solid #cce4d2;
+      border-radius: 999px;
       background: #edf7f0;
       color: #246b43;
-      padding: 6px 16px;
-      border-radius: 9999px;
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 700;
-      letter-spacing: 0.8px;
+      letter-spacing: 0.7px;
       text-transform: uppercase;
-      border: 1px solid #cce4d2;
-      margin-bottom: 12px;
     }
-
-    .heading-label i { color: #246b43; }
 
     .section-heading-wrap h2 {
-      color: #263b30;
-      font-family: Georgia, "Times New Roman", serif !important;
-      font-size: clamp(24px, 3.2vw, 36px);
-      font-weight: 700;
       margin: 0 0 12px;
+      color: #263b30;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.65rem, 3.2vw, 2.2rem);
       line-height: 1.25;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
     }
 
-    .section-heading-wrap h2 em { color: var(--green); font-style: normal; }
+    .section-heading-wrap h2 em {
+      color: var(--behaviour-green);
+      font-style: normal;
+    }
 
-    .section-heading-wrap p {
-      font-size: clamp(0.95rem, 1.6vw, 1.05rem);
-      color: #55675c;
-      max-width: 680px;
+    .section-heading-wrap > p {
+      max-width: 760px;
       margin: 0 auto;
-      line-height: 1.65;
+      color: var(--behaviour-muted);
+      font-size: 0.98rem;
+      line-height: 1.7;
     }
 
-    .cards-grid-3 {
+    .behaviour-intro {
+      max-width: 900px;
+      margin: 0 auto 34px;
+      color: var(--behaviour-muted);
+      font-size: 1rem;
+      line-height: 1.8;
+      text-align: center;
+    }
+
+    .behaviour-card-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-auto-rows: 1fr;
+      align-items: stretch;
+      gap: 20px;
       max-width: 1200px;
       margin: 0 auto;
     }
 
-    .cards-grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .info-card {
-      background: #ffffff;
-      border: 1px solid #dceade;
-      border-radius: 24px;
-      padding: 30px 26px;
-      box-shadow: 0 4px 18px rgba(35, 75, 45, 0.04);
+    .behaviour-card {
       display: flex;
+      min-height: 230px;
       flex-direction: column;
-      transition: all 0.25s ease;
+      align-items: center;
+      padding: 26px 24px;
+      border: 1px solid var(--behaviour-line);
+      border-radius: 22px;
+      background: #ffffff;
+      color: inherit;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(35, 75, 45, 0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     }
 
-    .info-card:hover {
+    .behaviour-card:hover,
+    .behaviour-card:focus-visible {
       transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(35, 75, 45, 0.09);
-      border-color: #246b43;
+      border-color: #8dbb98;
+      box-shadow: 0 12px 30px rgba(35, 75, 45, 0.1);
     }
 
-    .info-card-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 16px;
+    .behaviour-card-icon {
+      display: grid;
+      width: 58px;
+      height: 58px;
+      flex: 0 0 58px;
+      place-items: center;
+      margin-bottom: 16px;
+      border-radius: 18px;
       background: #edf7f0;
       color: #246b43;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      margin-bottom: 20px;
+      font-size: 1.45rem;
     }
 
-    .info-card h3 {
-      font-family: Georgia, "Times New Roman", serif !important;
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #1a251e;
-      margin: 0 0 10px;
+    .behaviour-card h3 {
+      margin: 0 0 9px;
+      color: #263b30;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.18rem;
     }
 
-    .info-card p {
-      font-size: 0.92rem;
-      line-height: 1.62;
-      color: #55665b;
+    .behaviour-card p {
+      max-width: 310px;
       margin: 0;
-    }
-
-    .info-card ul {
-      margin: 12px 0 0 0;
-      padding-left: 20px;
-      color: #55665b;
+      color: var(--behaviour-muted);
       font-size: 0.9rem;
       line-height: 1.6;
     }
 
-    .info-card ul li { margin-bottom: 6px; }
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
-    .fish-cta {
-      background: #fbf1ef !important;
-      border: 1px solid #f2dbd6;
-      border-radius: 28px;
-      padding: 44px 50px !important;
-      margin: 40px auto 60px;
+    .detail-card {
+      padding: 24px;
+      border: 1px solid #dceade;
+      border-radius: 20px;
+      background: #ffffff;
+      box-shadow: 0 4px 18px rgba(35, 75, 45, 0.035);
+    }
+
+    .detail-card h3 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 10px;
+      color: #263b30;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.12rem;
+    }
+
+    .detail-card h3 i {
+      color: var(--behaviour-green);
+      font-size: 1rem;
+    }
+
+    .detail-card p,
+    .detail-card li {
+      color: var(--behaviour-muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .detail-card p { margin: 0; }
+    .detail-card ul { margin: 0; padding-left: 20px; }
+    .detail-card li + li { margin-top: 6px; }
+
+    .behaviour-callout {
+      max-width: 1000px;
+      margin: 22px auto 0;
+      padding: 18px 22px;
+      border-left: 4px solid #6d9d72;
+      border-radius: 0 14px 14px 0;
+      background: #edf7f0;
+      color: #405b48;
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+
+    .behaviour-callout strong { color: #263b30; }
+
+    .behaviour-cta {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 30px;
+      gap: 28px;
+      margin: 40px auto 60px;
+      padding: 42px 48px;
+      border: 1px solid #f2dbd6;
+      border-radius: 28px;
+      background: #fbf1ef;
       box-shadow: 0 10px 30px rgba(180, 80, 60, 0.06);
     }
 
-    .fish-cta .eyebrow {
-      color: #9e4636;
-      font-size: 0.82rem;
-      font-weight: 800;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      margin-bottom: 8px;
+    .behaviour-cta .eyebrow {
       display: flex;
       align-items: center;
       gap: 8px;
+      margin-bottom: 8px;
+      color: #9e4636;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
-    .fish-cta h2 {
-      font-family: Georgia, "Times New Roman", serif !important;
-      font-size: clamp(1.8rem, 2.6vw, 2.3rem);
-      font-weight: 700;
-      color: #2b1d1a;
-      line-height: 1.2;
+    .behaviour-cta h2 {
       margin: 0 0 12px;
+      color: #2b1d1a;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.7rem, 2.6vw, 2.25rem);
+      line-height: 1.2;
     }
 
-    .fish-cta h2 em { color: #b84a39; font-style: italic; }
-
-    .fish-cta p {
-      color: #6d524d;
-      font-size: 0.98rem;
-      line-height: 1.65;
+    .behaviour-cta p {
+      max-width: 650px;
       margin: 0;
-      max-width: 620px;
+      color: #6d524d;
+      font-size: 0.96rem;
+      line-height: 1.7;
     }
 
-    .fish-cta-actions { display: flex; gap: 12px; flex-shrink: 0; }
-
-    .fish-cta .button.button-light {
+    .behaviour-cta .button.button-light {
       display: inline-flex;
+      flex: 0 0 auto;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      padding: 13px 26px;
-      border-radius: 9999px;
+      gap: 9px;
+      padding: 13px 24px;
+      border: 1px solid rgba(0, 0, 0, 0.08) !important;
+      border-radius: 999px;
       background: #ffffff !important;
       color: #1a2e22 !important;
-      font-family: "DM Sans", "Manrope", sans-serif !important;
-      font-weight: 700;
       font-size: 0.92rem;
-      border: 1px solid rgba(0, 0, 0, 0.08) !important;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+      font-weight: 700;
       text-decoration: none;
-      transition: all 0.25s ease;
-      white-space: nowrap;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .fish-cta .button.button-light:hover {
-      background: #fdfdfd !important;
+    .behaviour-cta .button.button-light:hover {
       transform: translateY(-2px);
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
     }
 
     @media (max-width: 900px) {
-      .cards-grid-3 { grid-template-columns: repeat(2, 1fr); }
-      .fish-cta { flex-direction: column; align-items: flex-start; padding: 36px 30px !important; }
-      .fish-cta-actions { width: 100%; flex-wrap: wrap; margin-top: 10px; }
-      .fish-cta-actions .button { width: 100%; }
+      .quick-nav-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .behaviour-cta { flex-direction: column; align-items: flex-start; padding: 36px 30px; }
+    }
+
+    @media (max-width: 700px) {
+      .behaviour-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .detail-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 600px) {
-      .cards-grid-3 { grid-template-columns: 1fr; }
-      .cards-grid-2 { grid-template-columns: 1fr; }
-      .section-heading-wrap { padding: 35px 16px 30px; }
+      .quick-nav-grid,
+      .behaviour-card-grid { grid-template-columns: 1fr; }
+      .quick-nav-section { padding: 32px 0; }
+      .behaviour-section { padding: 44px 0 52px; }
+      .section-heading-wrap { padding: 30px 18px; }
+      .behaviour-card { min-height: 0; }
+      .behaviour-cta { padding: 30px 22px; }
+      .behaviour-cta .button.button-light { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .quick-nav-link,
+      .behaviour-card,
+      .behaviour-cta .button.button-light { transition: none; }
+      .quick-nav-link:hover,
+      .behaviour-card:hover,
+      .behaviour-cta .button.button-light:hover { transform: none; }
     }
   </style>
 </head>
 
-<body>
+<body class="behaviour-page">
   <div id="header"></div>
 
   <main id="main-content">
-    <!-- Hero Section -->
-    <section class="hero section-wrap" id="behaviour-hero">
+    <section class="hero section-wrap" id="behaviour-hero" aria-labelledby="behaviour-hero-title">
       <div class="hero-copy">
-        <div class="fish-badge-strip">
-          <i class="fa-solid fa-water" aria-hidden="true"></i> Aquatic Psychology &amp; Ethology
+        <div class="behaviour-badge">
+          <i class="fa-solid fa-eye" aria-hidden="true"></i>
+          Reptile Behaviour Guide
         </div>
-        <h1>Aquarium Fish <em>Behaviour &amp; Dynamics</em></h1>
+        <h1 id="behaviour-hero-title">Understanding Reptile Behaviour</h1>
         <p>
-          Decode swimming layers, social hierarchies, and stress signals. Learn how fish communicate through body language, why schooling reduces anxiety, and how to structure your aquascape to eliminate territorial friction.
+          Reptiles show how they feel through posture, movement, activity, feeding, and defensive responses.
+          Learning what is natural for your species helps you notice changes, respect boundaries, and provide a
+          habitat where your reptile can feel secure.
         </p>
         <div class="hero-actions">
-          <a class="button" href="#swimming-zones">Swimming Layers <i class="fa-solid fa-arrow-down" style="font-size: 0.82rem; margin-left: 5px;"></i></a>
-          <a class="button button-outline" href="#stress-signals" style="background: transparent; border: 1.5px solid #246b43; color: #246b43;">Stress Indicators</a>
+          <a class="button" href="#understanding-behaviour">
+            Explore Reptile Behaviour <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+          </a>
         </div>
-        <div class="hero-note">♥ &nbsp; Dedicated to vibrant aquariums and thriving aquatic life.</div>
+        <div class="hero-note">
+          <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+          &nbsp; Observe patiently; every reptile has its own rhythms.
+        </div>
       </div>
 
       <div class="hero-visual">
         <div class="hero-blob"></div>
-        <img src="https://images.unsplash.com/photo-1535591273668-578e31182c4f?auto=format&fit=crop&w=1000&q=85"
-          alt="School of colourful aquarium fish swimming in planted tank" class="hero-photo"
-          id="hero-behaviour-photo">
+        <img src="../../../assets/images/reptiles/bearded-dragon.jpg"
+          alt="Bearded dragon calmly exploring a natural-looking habitat" class="hero-photo" id="hero-reptile-image">
         <div class="floating-card card-top">
-          <i class="fa-solid fa-layer-group" style="color: var(--green);"></i>
-          <span><b>3 Swimming Zones</b><small>Surface, Mid &amp; Bottom</small></span>
+          <i class="fa-solid fa-sun" style="color: var(--green);" aria-hidden="true"></i>
+          <span><b>Natural Rhythms</b><small>Activity, rest and basking</small></span>
         </div>
         <div class="floating-card card-bottom">
-          <i class="fa-solid fa-users-viewfinder" style="color: #0284c7;"></i>
-          <span><b>Schooling Safety</b><small>Natural Social Comfort</small></span>
+          <i class="fa-solid fa-shield-heart" style="color: var(--green);" aria-hidden="true"></i>
+          <span><b>Respect Their Signals</b><small>Space to feel secure</small></span>
         </div>
       </div>
     </section>
 
-    <!-- 1. Swimming Layers -->
-    <section class="fish-section bg-cream" id="swimming-zones">
+    <section class="quick-nav-section" id="quick-nav" aria-labelledby="quick-nav-title">
+      <div class="section-wrap">
+        <h2 class="quick-nav-heading" id="quick-nav-title">Quick Navigation <span>Hub</span></h2>
+        <nav class="quick-nav-grid" aria-label="Reptile behaviour topics">
+          <a class="quick-nav-link" href="#understanding-behaviour"><span class="quick-nav-icon"><i class="fa-solid fa-book-open" aria-hidden="true"></i></span>Understanding Reptile Behaviour</a>
+          <a class="quick-nav-link" href="#body-language"><span class="quick-nav-icon"><i class="fa-solid fa-eye" aria-hidden="true"></i></span>Body Language</a>
+          <a class="quick-nav-link" href="#activity-patterns"><span class="quick-nav-icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></span>Activity Patterns</a>
+          <a class="quick-nav-link" href="#defensive-behaviour"><span class="quick-nav-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>Defensive Behaviour</a>
+          <a class="quick-nav-link" href="#feeding-behaviour"><span class="quick-nav-icon"><i class="fa-solid fa-utensils" aria-hidden="true"></i></span>Feeding Behaviour</a>
+          <a class="quick-nav-link" href="#stress-signals"><span class="quick-nav-icon"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i></span>Stress Signals</a>
+          <a class="quick-nav-link" href="#safe-handling"><span class="quick-nav-icon"><i class="fa-solid fa-hand" aria-hidden="true"></i></span>Safe Handling</a>
+          <a class="quick-nav-link" href="#terrarium-enrichment"><span class="quick-nav-icon"><i class="fa-solid fa-tree" aria-hidden="true"></i></span>Terrarium Enrichment</a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="behaviour-section bg-cream" id="understanding-behaviour" aria-labelledby="understanding-title">
       <div class="section-wrap">
         <div class="section-heading-wrap">
-          <div class="heading-content">
-            <span class="heading-label">
-              <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
-              Vertical Space Allocation
-            </span>
-            <h2>
-              Aquarium Swimming <em>Layers &amp; Zones</em>
-            </h2>
-            <p>A well-balanced community tank occupies all three vertical levels of the aquarium, preventing spatial competition.</p>
-          </div>
+          <span class="heading-label"><i class="fa-solid fa-book-open" aria-hidden="true"></i> Start with observation</span>
+          <h2 id="understanding-title">Understanding Reptile <em>Behaviour</em></h2>
+          <p>Behaviour makes more sense when you consider the whole animal and the conditions around it.</p>
         </div>
-
-        <div class="cards-grid-3">
-          <article class="info-card">
-            <div class="info-card-icon"><i class="fa-solid fa-arrow-up-from-bracket"></i></div>
-            <h3>Top / Surface Dwellers</h3>
-            <p>Equipped with upturned mouths and flat backs designed to snatch floating insects. They spend their days patrolling the upper 25% of water.</p>
-            <ul>
-              <li><strong>Species:</strong> Bettas, Hatchetfish, Guppies, Halfbeaks</li>
-              <li><strong>Environment:</strong> Floating plants (Salvinia, Frogbit) provide essential shade and resting perches.</li>
-            </ul>
-          </article>
-
-          <article class="info-card">
-            <div class="info-card-icon"><i class="fa-solid fa-arrows-left-right"></i></div>
-            <h3>Mid-Water Cruisers</h3>
-            <p>Streamlined torpedo-shaped bodies engineered for continuous active swimming. They require broad horizontal open lanes to school gracefully.</p>
-            <ul>
-              <li><strong>Species:</strong> Neon Tetras, Harlequin Rasboras, Zebra Danios, Angelfish</li>
-              <li><strong>Environment:</strong> Planted perimeter with clear central swimming channel.</li>
-            </ul>
-          </article>
-
-          <article class="info-card">
-            <div class="info-card-icon"><i class="fa-solid fa-arrow-down-to-bracket"></i></div>
-            <h3>Bottom Substrate Foragers</h3>
-            <p>Equipped with sensitive downward-facing barbels and sucker mouths to sift substrate, graze biofilm, and vacuum fallen food.</p>
-            <ul>
-              <li><strong>Species:</strong> Corydoras Catfish, Bristlenose Plecos, Kuhli Loaches</li>
-              <li><strong>Environment:</strong> Fine rounded sand substrate to protect delicate sensory barbels.</li>
-            </ul>
-          </article>
+        <p class="behaviour-intro">
+          Reptiles communicate less through facial expressions or sounds than many mammals do. Small changes in body
+          position, movement, activity, appetite, and defensive behaviour can be meaningful. Learn your reptile's
+          usual routine and interpret signals in context: species, age, shedding, temperature, season, and recent
+          changes to its habitat can all affect what you see.
+        </p>
+        <div class="behaviour-card-grid" aria-label="Explore reptile behaviour topics">
+          <a class="behaviour-card" href="#body-language">
+            <span class="behaviour-card-icon"><i class="fa-solid fa-eye" aria-hidden="true"></i></span>
+            <h3>Body Language</h3>
+            <p>Read posture, movement, colour, hiding, and basking as part of the full picture.</p>
+          </a>
+          <a class="behaviour-card" href="#activity-patterns">
+            <span class="behaviour-card-icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></span>
+            <h3>Activity Patterns</h3>
+            <p>Match daily routines and lighting to diurnal, nocturnal, or crepuscular habits.</p>
+          </a>
+          <a class="behaviour-card" href="#defensive-behaviour">
+            <span class="behaviour-card-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
+            <h3>Defensive Behaviour</h3>
+            <p>Recognize protective responses and give your reptile space to settle.</p>
+          </a>
+          <a class="behaviour-card" href="#feeding-behaviour">
+            <span class="behaviour-card-icon"><i class="fa-solid fa-utensils" aria-hidden="true"></i></span>
+            <h3>Feeding Behaviour</h3>
+            <p>Understand hunting, foraging, feeding cues, and changes in appetite.</p>
+          </a>
+          <a class="behaviour-card" href="#stress-signals">
+            <span class="behaviour-card-icon"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i></span>
+            <h3>Stress Signals</h3>
+            <p>Notice behaviour changes that may point to stress, habitat issues, or illness.</p>
+          </a>
+          <a class="behaviour-card" href="#safe-handling">
+            <span class="behaviour-card-icon"><i class="fa-solid fa-hand" aria-hidden="true"></i></span>
+            <h3>Safe Handling</h3>
+            <p>Build calm, brief handling routines that respect species and individual limits.</p>
+          </a>
+          <a class="behaviour-card" href="#terrarium-enrichment">
+            <span class="behaviour-card-icon"><i class="fa-solid fa-tree" aria-hidden="true"></i></span>
+            <h3>Terrarium Enrichment</h3>
+            <p>Create opportunities for climbing, hiding, basking, digging, and exploring.</p>
+          </a>
+        </div>
+        <div class="behaviour-callout">
+          <strong>Look for patterns, not one-off moments.</strong> A single yawn, colour shift, or skipped meal may
+          have several explanations. Compare behaviour over time and seek a reptile-experienced veterinarian for
+          persistent or concerning changes.
         </div>
       </div>
     </section>
 
-    <!-- 2. Schooling vs Shoaling -->
-    <section class="fish-section bg-white" id="social-structures">
+    <section class="behaviour-section bg-white" id="body-language" aria-labelledby="body-language-title">
       <div class="section-wrap">
         <div class="section-heading-wrap">
-          <div class="heading-content">
-            <span class="heading-label">
-              <i class="fa-solid fa-users" aria-hidden="true"></i>
-              Social Dynamics
-            </span>
-            <h2>
-              Schooling vs. <em>Shoaling Instincts</em>
-            </h2>
-            <p>Understanding the difference between tight schooling and relaxed shoaling helps you build safe social groups.</p>
-          </div>
+          <span class="heading-label"><i class="fa-solid fa-eye" aria-hidden="true"></i> Read the signals</span>
+          <h2 id="body-language-title">Reptile <em>Body Language</em></h2>
+          <p>Subtle movements can offer clues, but the same signal can mean different things in different species.</p>
         </div>
-
-        <div class="cards-grid-2">
-          <article class="info-card">
-            <div class="info-card-icon"><i class="fa-solid fa-compass"></i></div>
-            <h3>Schooling Behavior</h3>
-            <p>Fish synchronize their swimming speed, direction, and tight spacing as a single coordinated living organism. In nature, this confuses predators and reduces hydrodynamic drag. In captivity, schooling is triggered by open water and mild water movement.</p>
-            <ul>
-              <li><strong>Key Species:</strong> Rummy-nose Tetras, Neon Tetras, Bloodfin Tetras</li>
-              <li><strong>Rule of Thumb:</strong> Never keep fewer than 6 to 10 individuals; smaller groups experience chronic cortisol elevation.</li>
-            </ul>
+        <div class="detail-grid">
+          <article class="detail-card">
+            <h3><i class="fa-solid fa-arrows-up-down" aria-hidden="true"></i> Head, tail, and posture</h3>
+            <p>Head bobbing, slow head movements, or tongue flicking may relate to exploration, communication, or alertness. Tail waving, twitching, or a tightly curled tail can be species-specific signals. A flattened body, raised front, inflated shape, or rigid stance may indicate alertness or an attempt to appear larger.</p>
           </article>
-
-          <article class="info-card">
-            <div class="info-card-icon"><i class="fa-solid fa-handshake"></i></div>
-            <h3>Shoaling Behavior</h3>
-            <p>Fish remain social and hang out in loose clusters for mutual reassurance, but swim independently rather than in tight synchrony. They forage, play, and explore nearby while keeping eyes on the group.</p>
-            <ul>
-              <li><strong>Key Species:</strong> Corydoras catfish, Guppies, Mollies, Zebra Danios</li>
-              <li><strong>Rule of Thumb:</strong> Groups of 5+ allow individuals to express curious, playful behaviors without timid hiding.</li>
-            </ul>
+          <article class="detail-card">
+            <h3><i class="fa-solid fa-palette" aria-hidden="true"></i> Colour and body condition</h3>
+            <p>Some reptiles change colour with temperature, mood, social signals, or shedding. Notice whether the change is typical for your species and whether it happens with other signs. Persistent unusual colour, weakness, or discomfort deserves veterinary advice.</p>
+          </article>
+          <article class="detail-card">
+            <h3><i class="fa-solid fa-house" aria-hidden="true"></i> Hiding and basking</h3>
+            <p>Hiding provides security, while basking helps many reptiles regulate body temperature. Both are normal when balanced with the animal's usual activity. A reptile that cannot choose between a warm basking spot and cooler retreats may not be able to regulate its temperature effectively.</p>
+          </article>
+          <article class="detail-card">
+            <h3><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Compare with their baseline</h3>
+            <p>Observe from a distance and note when behaviours happen, how long they last, and what changed nearby. Consider shedding, breeding season, recent handling, enclosure conditions, and time of day before drawing conclusions.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- 3. Stress Signals -->
-    <section class="fish-section bg-cream" id="stress-signals">
+    <section class="behaviour-section bg-soft-green" id="activity-patterns" aria-labelledby="activity-patterns-title">
       <div class="section-wrap">
         <div class="section-heading-wrap">
-          <div class="heading-content">
-            <span class="heading-label">
-              <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
-              Body Language
-            </span>
-            <h2>
-              Recognizing Aquarium <em>Stress Signals</em>
-            </h2>
-            <p>Fish communicate distress through unmistakable behavioural shifts long before physical disease symptoms appear.</p>
-          </div>
+          <span class="heading-label"><i class="fa-solid fa-clock" aria-hidden="true"></i> Daily and seasonal rhythms</span>
+          <h2 id="activity-patterns-title">Reptile <em>Activity Patterns</em></h2>
+          <p>When a reptile is active depends on its natural history and the light, temperature, and season it experiences.</p>
         </div>
-
-        <div class="cards-grid-3">
-          <article class="info-card">
-            <div class="info-card-icon" style="background: #fee2e2; color: #b91c1c;"><i class="fa-solid fa-arrows-up-down"></i></div>
-            <h3>Glass Surfing</h3>
-            <p>Pacing frantically up and down the glass pane. Indicates severe water parameter stress, sudden ammonia spike, improper pH, or feeling trapped in too small a volume.</p>
+        <div class="detail-grid">
+          <article class="detail-card">
+            <h3><i class="fa-solid fa-sun" aria-hidden="true"></i> Day-active: diurnal</h3>
+            <p>Diurnal reptiles are generally active during daylight. They may explore, feed, or bask during the day and rest overnight. Provide the species' required basking temperatures and lighting during its active hours.</p>
           </article>
-
-          <article class="info-card">
-            <div class="info-card-icon" style="background: #fee2e2; color: #b91c1c;"><i class="fa-solid fa-compress"></i></div>
-            <h3>Clamped Fins</h3>
-            <p>Holding dorsal, tail, and pelvic fins pinned tightly flat against the body. This is the universal aquatic cry of physical pain, parasite irritation, or cold shock.</p>
+          <article class="detail-card">
+            <h3><i class="fa-solid fa-moon" aria-hidden="true"></i> Night-active: nocturnal</h3>
+            <p>Nocturnal reptiles are usually more active after dark and may rest through much of the day. Keep daytime retreats available and avoid bright lights at night unless a species-specific care plan calls for them.</p>
           </article>
-
-          <article class="info-card">
-            <div class="info-card-icon" style="background: #fee2e2; color: #b91c1c;"><i class="fa-solid fa-wind"></i></div>
-            <h3>Surface Gasping (Piping)</h3>
-            <p>Clustering at the surface film with mouths opening and closing rapidly. Signals critical oxygen depletion or ammonia/nitrite poisoning burning gill tissue.</p>
+          <article class="detail-card">
+            <h3><i class="fa-solid fa-cloud-sun" aria-hidden="true"></i> Twilight-active: crepuscular</h3>
+            <p>Crepuscular animals tend to be most active around dawn and dusk. Offer secure places to retreat during the brighter parts of the day and observe quietly at their natural active times.</p>
+          </article>
+          <article class="detail-card">
+            <h3><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Consistent day and night</h3>
+            <p>Use a regular light schedule that reflects the species' needs and local seasonal cycles. Timers can help keep it consistent. Lighting, UVB, and heat requirements vary; choose equipment and schedules from a trusted species-specific care source.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Subpage Soft Light Pink CTA -->
-    <section class="fish-cta section-wrap">
+    <section class="behaviour-section bg-white" id="defensive-behaviour" aria-labelledby="defensive-title">
+      <div class="section-wrap">
+        <div class="section-heading-wrap">
+          <span class="heading-label"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Give them room</span>
+          <h2 id="defensive-title">Defensive <em>Behaviour</em></h2>
+          <p>Defensive responses are a reptile's way of trying to feel safe; they are not misbehaviour or a challenge.</p>
+        </div>
+        <div class="detail-grid">
+          <article class="detail-card">
+            <h3><i class="fa-solid fa-volume-high" aria-hidden="true"></i> Hissing and biting</h3>
+            <p>Hissing, bluffing, or biting may occur when a reptile feels threatened, startled, unwell, or is protecting itself. Pause, give it space, and check for possible triggers rather than punishing or forcing contact.</p>
+          </article>
+          <article class="detail-card">
+            <h3><i class="fa-solid fa-arrows-left-right" aria-hidden="true"></i> Tail and body responses</h3>
+            <p>Some reptiles lash, curl, vibrate, or use their tails defensively. Others flatten, inflate, coil tightly, turn sideways, or hold a rigid posture. Learn the normal signals and safe distance for your species.</p>
+          </article>
+          <article class="detail-card">
+            <h3><i class="fa-solid fa-eye-slash" aria-hidden="true"></i> Hiding or retreating</h3>
+            <p>Retreating to a hide is a normal way to avoid perceived danger. Make sure the enclosure offers secure hiding options and let the reptile come out on its own rather than pulling it from cover.</p>
+          </article>
+          <article class="detail-card">
+            <h3><i class="fa-solid fa-hand" aria-hidden="true"></i> Respond calmly</h3>
+            <p>Move slowly, reduce noise, and stop the interaction if defensive signals continue. Review enclosure setup and handling frequency, and ask an experienced reptile veterinarian or keeper for species-specific guidance.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="behaviour-section bg-cream" id="feeding-behaviour" aria-labelledby="feeding-title">
+      <div class="section-wrap">
+        <div class="section-heading-wrap">
+          <span class="heading-label"><i class="fa-solid fa-utensils" aria-hidden="true"></i> Food and foraging</span>
+          <h2 id="feeding-title">Reptile <em>Feeding Behaviour</em></h2>
+          <p>Feeding responses differ widely, so use a reliable diet and routine designed for the species you keep.</p>
+        </div>
+        <div class="detail-grid">
+          <article class="detail-card">
+            <h3><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Hunting and foraging</h3>
+            <p>Some reptiles actively pursue moving prey; others wait in ambush, graze, or search for plant foods. Enclosure layout and feeding method can support natural foraging without adding unsafe objects or uneaten prey.</p>
+          </article>
+          <article class="detail-card">
+            <h3><i class="fa-solid fa-utensils" aria-hidden="true"></i> Feeding responses</h3>
+            <p>Interest in food may vary with species, age, temperature, shedding, season, and reproductive state. A quick strike or slow approach can both be normal. Follow an appropriate schedule and portion guidance rather than feeding by response alone.</p>
+          </article>
+          <article class="detail-card">
+            <h3><i class="fa-solid fa-leaf" aria-hidden="true"></i> Species-specific diets</h3>
+            <p>Reptile diets range from plant-based to insect or other prey diets, and some species change needs as they grow. Confirm suitable foods, supplements, prey size, and frequency with a reputable care guide or reptile veterinarian.</p>
+          </article>
+          <article class="detail-card">
+            <h3><i class="fa-solid fa-shield" aria-hidden="true"></i> Safe feeding routine</h3>
+            <p>Use clean feeding tools and appropriately sized food. Supervise live-prey feeding and remove uneaten prey promptly. Avoid handling immediately around meals when the species or individual needs undisturbed feeding and digestion time.</p>
+          </article>
+        </div>
+        <div class="behaviour-callout">
+          <strong>Track appetite changes.</strong> A persistent loss of appetite, weight change, or difficulty eating can signal a husbandry or health problem. Check the habitat and contact a reptile-experienced veterinarian instead of force-feeding.
+        </div>
+      </div>
+    </section>
+
+    <section class="behaviour-section bg-white" id="stress-signals" aria-labelledby="stress-title">
+      <div class="section-wrap">
+        <div class="section-heading-wrap">
+          <span class="heading-label"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Notice changes early</span>
+          <h2 id="stress-title">Signs of <em>Stress</em></h2>
+          <p>Repeated or sudden changes from your reptile's normal behaviour deserve a closer look.</p>
+        </div>
+        <div class="detail-grid">
+          <article class="detail-card">
+            <h3><i class="fa-solid fa-eye-slash" aria-hidden="true"></i> Hiding or unusual inactivity</h3>
+            <p>Frequent hiding, spending much more time withdrawn, or excessive inactivity may relate to stress, unsuitable conditions, seasonal changes, or illness. Compare with the animal's normal schedule.</p>
+          </article>
+          <article class="detail-card">
+            <h3><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Unusual aggression</h3>
+            <p>A sudden increase in defensive behaviour can follow repeated disturbance, a recent change, discomfort, or illness. Reduce handling and review the environment and routine.</p>
+          </article>
+          <article class="detail-card">
+            <h3><i class="fa-solid fa-utensils" aria-hidden="true"></i> Appetite changes</h3>
+            <p>Skipping food can happen for several reasons, but an ongoing appetite change or noticeable weight loss should not be ignored. Check temperatures and other care needs, then seek veterinary guidance.</p>
+          </article>
+          <article class="detail-card">
+            <h3><i class="fa-solid fa-person-running" aria-hidden="true"></i> Repeated escape attempts</h3>
+            <p>Persistent climbing at the glass, digging at corners, or pushing at doors may reflect exploration, breeding behaviour, or a problem with space, security, or habitat conditions.</p>
+          </article>
+          <article class="detail-card">
+            <h3><i class="fa-solid fa-arrows-up-down-left-right" aria-hidden="true"></i> Unusual movements</h3>
+            <p>Repeated pacing, frantic movements, poor coordination, or other unusual motion can indicate stress or a medical concern. Note when it occurs and contact a reptile-experienced veterinarian if it persists.</p>
+          </article>
+          <article class="detail-card">
+            <h3><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i> Check the whole picture</h3>
+            <p>Review enclosure temperature gradients, lighting, humidity, hides, noise, recent handling, and other recent changes. Seek veterinary help for persistent signs or any rapid decline in condition.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="behaviour-section bg-soft-green" id="safe-handling" aria-labelledby="handling-title">
+      <div class="section-wrap">
+        <div class="section-heading-wrap">
+          <span class="heading-label"><i class="fa-solid fa-hand" aria-hidden="true"></i> Calm, considered contact</span>
+          <h2 id="handling-title">Safe <em>Handling</em></h2>
+          <p>Not every reptile enjoys handling. Keep contact purposeful, gentle, and specific to the animal in your care.</p>
+        </div>
+        <div class="detail-grid">
+          <article class="detail-card">
+            <h3><i class="fa-solid fa-hand-holding" aria-hidden="true"></i> Support the whole body</h3>
+            <p>When handling is appropriate, approach calmly and support the reptile's body and limbs. Avoid squeezing, dangling, grabbing the tail, or restraining the head unless trained to do so for a necessary care task.</p>
+          </article>
+          <article class="detail-card">
+            <h3><i class="fa-solid fa-person-walking" aria-hidden="true"></i> Move gently and predictably</h3>
+            <p>Wash and dry your hands, approach where the reptile can see you, and lift with steady movements. Keep handling low over a secure surface and away from other pets or hazards.</p>
+          </article>
+          <article class="detail-card">
+            <h3><i class="fa-solid fa-hourglass-half" aria-hidden="true"></i> Respect limits</h3>
+            <p>Keep sessions brief, return the animal to its enclosure before it becomes distressed, and avoid handling during sensitive periods such as feeding, shedding, or rest when appropriate for that species.</p>
+          </article>
+          <article class="detail-card">
+            <h3><i class="fa-solid fa-list-check" aria-hidden="true"></i> Follow species-specific guidance</h3>
+            <p>Size, temperament, health, and handling needs differ. Some reptiles are best observed rather than regularly handled. Ask a reptile-experienced veterinarian to demonstrate safe techniques when needed.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="behaviour-section bg-white" id="terrarium-enrichment" aria-labelledby="enrichment-title">
+      <div class="section-wrap">
+        <div class="section-heading-wrap">
+          <span class="heading-label"><i class="fa-solid fa-tree" aria-hidden="true"></i> Space to choose and explore</span>
+          <h2 id="enrichment-title">Terrarium <em>Enrichment</em></h2>
+          <p>Good enrichment offers safe choices and opportunities for natural behaviours while meeting habitat needs.</p>
+        </div>
+        <div class="detail-grid">
+          <article class="detail-card">
+            <h3><i class="fa-solid fa-tree" aria-hidden="true"></i> Climbing and basking</h3>
+            <p>Use stable branches, ledges, and basking platforms suited to your reptile's size and climbing ability. Secure furnishings so they cannot tip or fall, and place basking areas within the correct temperature gradient.</p>
+          </article>
+          <article class="detail-card">
+            <h3><i class="fa-solid fa-house" aria-hidden="true"></i> Hiding spaces</h3>
+            <p>Provide snug, secure hides in appropriate warm and cool zones where needed. A choice of cover lets the reptile retreat while still regulating its temperature and choosing when to be visible.</p>
+          </article>
+          <article class="detail-card">
+            <h3><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Digging and exploring</h3>
+            <p>For species that burrow or dig, provide an appropriate, clean substrate at a safe depth. Arrange open areas and cover to support natural movement without blocking ventilation or access to heat and light.</p>
+          </article>
+          <article class="detail-card">
+            <h3><i class="fa-solid fa-seedling" aria-hidden="true"></i> Safe natural décor</h3>
+            <p>Choose non-toxic, cleanable decorations with no sharp edges, loose parts, or unstable weight. Inspect them regularly and tailor every item, substrate, and layout to the species and enclosure conditions.</p>
+          </article>
+        </div>
+        <div class="behaviour-callout">
+          <strong>Enrichment starts with good husbandry.</strong> Branches and décor cannot replace enough usable space, clean water, secure hides, correct heating, suitable lighting, humidity, and ventilation for the species.
+        </div>
+      </div>
+    </section>
+
+    <section class="behaviour-cta section-wrap" aria-labelledby="behaviour-cta-title">
       <div>
-        <div class="eyebrow">HAPPY FISH NEED A HEALTHY HOME</div>
-        <h2>Discover Full <em>Aquarium Care</em></h2>
+        <div class="eyebrow"><i class="fa-solid fa-heart" aria-hidden="true"></i> Comfort begins with a suitable habitat</div>
+        <h2 id="behaviour-cta-title">Create a Safe Home for Your Reptile</h2>
         <p>
-          Harmonious fish behaviour begins with peaceful tank parameters, gentle flow, and proper tank cycling. Explore our comprehensive Fish Care guide.
+          A secure, species-appropriate enclosure supports natural behaviour and helps prevent avoidable hazards.
+          Explore practical guidance on safe setups, heating, lighting, and habitat protection.
         </p>
       </div>
-      <div class="fish-cta-actions">
-        <a class="button button-light" href="care.html">Explore Fish Care <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
+      <a class="button button-light" href="safety.html">
+        Explore Reptile Safety <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+      </a>
     </section>
   </main>
 
   <div id="footer"></div>
-
   <script src="../../../js/main.js"></script>
 </body>
 
