@@ -1,461 +1,1509 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Understanding fish behaviour on PetSathi - swimming patterns, social behaviour, territorial dynamics, feeding habits, stress signals, and aquarium enrichment."
+    />
+    <title>Understanding Fish Behaviour | PetSathi</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Aquarium fish behaviour, schooling habits, body language, territory management, and stress indicators guide on PetSathi. Learn how fish interact and create a peaceful community.">
-  <title>Aquarium Fish Behaviour &amp; Tank Dynamics | PetSathi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
-    rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/global.css" />
+    <link rel="stylesheet" href="../../../css/home.css" />
+    <link rel="stylesheet" href="../../../css/inner.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
 
-  <!-- Core PetSathi Stylesheets -->
-  <link rel="stylesheet" href="../../../css/global.css">
-  <link rel="stylesheet" href="../../../css/home.css">
-  <link rel="stylesheet" href="../../../css/inner.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+      @font-face {
+        font-family: "Font Awesome 6 Free";
+        font-style: normal;
+        font-weight: 900;
+        font-display: block;
+        src:
+          url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.woff2")
+            format("woff2"),
+          url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.ttf")
+            format("truetype");
+      }
 
-  <style>
-    .fa-solid, .fa-regular, .fa-brands, [class*="fa-"] {
-      font-family: "Font Awesome 6 Free" !important;
-      font-style: normal !important;
-      font-variant: normal !important;
-      text-rendering: auto !important;
-      line-height: 1 !important;
-    }
-    .fa-solid { font-weight: 900 !important; }
-    .fa-regular { font-weight: 400 !important; }
+      body [class*="fa-"],
+      body [class*="fa-"]::before {
+        font-family: "Font Awesome 6 Free" !important;
+        font-weight: 900 !important;
+        font-style: normal !important;
+        line-height: 1 !important;
+      }
 
-    .fish-badge-strip {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
-      background: #eaf2e9;
-      color: var(--green);
-      border-radius: 999px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
+      .fa-regular {
+        font-weight: 400 !important;
+      }
 
-    .hero-copy h1 em { color: var(--green); font-style: normal; }
+      html {
+        scroll-behavior: smooth;
+      }
 
-    .bg-white { background: #ffffff; }
-    .bg-cream { background: #fafcf7; }
-    .bg-soft-green { background: #f4faf5; }
+      .fish-badge-strip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 14px;
+        background: #eaf2e9;
+        color: var(--green);
+        border-radius: 999px;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
 
-    .fish-section { padding: 60px 0 70px; }
+      .hero-copy h1 em {
+        color: var(--green);
+        font-style: normal;
+      }
 
-    .section-heading-wrap {
-      position: relative;
-      max-width: 1400px;
-      margin: 0 auto 36px;
-      padding: 44px 35px 38px;
-      overflow: hidden;
-      text-align: center;
-      border-radius: 35px;
-      border: 1px solid #dcebc9;
-      background: #fafcf7;
-      box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
-    }
+      .hero-visual .hero-photo {
+        object-position: center;
+      }
 
-    .corner-wave { position: absolute; pointer-events: none; z-index: 0; }
-    .wave-tl { top: 0; left: 0; width: 220px; height: 130px; }
-    .wave-br { bottom: 0; right: 0; width: 220px; height: 130px; }
+      .bg-white {
+        background: #ffffff;
+      }
 
-    .heading-content { position: relative; z-index: 2; }
+      .bg-cream {
+        background: #fafcf7;
+      }
 
-    .heading-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      background: #edf7f0;
-      color: #246b43;
-      padding: 6px 16px;
-      border-radius: 9999px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      border: 1px solid #cce4d2;
-      margin-bottom: 12px;
-    }
+      .bg-soft-green {
+        background: #f4faf5;
+      }
 
-    .heading-label i { color: #246b43; }
+      .fish-section {
+        padding: 64px 0 72px;
+      }
 
-    .section-heading-wrap h2 {
-      color: #263b30;
-      font-family: Georgia, "Times New Roman", serif !important;
-      font-size: clamp(24px, 3.2vw, 36px);
-      font-weight: 700;
-      margin: 0 0 12px;
-      line-height: 1.25;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
+      .guides-nav-strip {
+        position: relative;
+        background: #ffffff;
+        margin: 28px auto 40px;
+        max-width: 1200px;
+        width: calc(100% - 40px);
+        border: 1px solid #dceade;
+        border-radius: 32px;
+        padding: 38px 32px 34px;
+        box-shadow: 0 4px 24px rgba(35, 80, 50, 0.04);
+        overflow: hidden;
+      }
 
-    .section-heading-wrap h2 em { color: var(--green); font-style: normal; }
+      .quick-nav-decor {
+        position: absolute;
+        pointer-events: none;
+        z-index: 0;
+        color: #cde4d3;
+        opacity: 0.55;
+      }
 
-    .section-heading-wrap p {
-      font-size: clamp(0.95rem, 1.6vw, 1.05rem);
-      color: #55675c;
-      max-width: 680px;
-      margin: 0 auto;
-      line-height: 1.65;
-    }
+      .decor-top-left {
+        top: -8px;
+        left: -8px;
+        width: 130px;
+        height: 130px;
+        background: radial-gradient(
+          circle at 10% 10%,
+          #eaf5ed 0%,
+          rgba(234, 245, 237, 0) 70%
+        );
+        border-radius: 0 0 100% 0;
+      }
 
-    .cards-grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+      .decor-bottom-right {
+        bottom: -8px;
+        right: -8px;
+        width: 130px;
+        height: 130px;
+        background: radial-gradient(
+          circle at 90% 90%,
+          #eaf5ed 0%,
+          rgba(234, 245, 237, 0) 70%
+        );
+        border-radius: 100% 0 0 0;
+      }
 
-    .cards-grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+      .decor-paw {
+        position: absolute;
+        display: inline-block;
+        line-height: 1;
+      }
 
-    .info-card {
-      background: #ffffff;
-      border: 1px solid #dceade;
-      border-radius: 24px;
-      padding: 30px 26px;
-      box-shadow: 0 4px 18px rgba(35, 75, 45, 0.04);
-      display: flex;
-      flex-direction: column;
-      transition: all 0.25s ease;
-    }
+      .decor-paw-1 {
+        top: 14px;
+        left: 28px;
+        font-size: 28px;
+        transform: rotate(-15deg);
+      }
 
-    .info-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(35, 75, 45, 0.09);
-      border-color: #246b43;
-    }
+      .decor-paw-2 {
+        top: 38px;
+        left: 12px;
+        font-size: 19px;
+        transform: rotate(20deg);
+      }
 
-    .info-card-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 16px;
-      background: #edf7f0;
-      color: #246b43;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      margin-bottom: 20px;
-    }
+      .decor-paw-3 {
+        bottom: 36px;
+        right: 14px;
+        font-size: 19px;
+        transform: rotate(-25deg);
+      }
 
-    .info-card h3 {
-      font-family: Georgia, "Times New Roman", serif !important;
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #1a251e;
-      margin: 0 0 10px;
-    }
+      .decor-paw-4 {
+        bottom: 14px;
+        right: 28px;
+        font-size: 28px;
+        transform: rotate(15deg);
+      }
 
-    .info-card p {
-      font-size: 0.92rem;
-      line-height: 1.62;
-      color: #55665b;
-      margin: 0;
-    }
+      .quick-nav-header {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        margin-bottom: 26px;
+      }
 
-    .info-card ul {
-      margin: 12px 0 0 0;
-      padding-left: 20px;
-      color: #55665b;
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
+      .quick-nav-eyebrow-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin-bottom: 12px;
+      }
 
-    .info-card ul li { margin-bottom: 6px; }
+      .quick-nav-line {
+        height: 1px;
+        width: 110px;
+        background: #d6ead9;
+      }
 
-    .fish-cta {
-      background: #fbf1ef !important;
-      border: 1px solid #f2dbd6;
-      border-radius: 28px;
-      padding: 44px 50px !important;
-      margin: 40px auto 60px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-      box-shadow: 0 10px 30px rgba(180, 80, 60, 0.06);
-    }
+      .quick-nav-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 16px;
+        background: #f4faf5;
+        border: 1px solid #b7deb8;
+        border-radius: 9999px;
+        color: #1e6f43;
+        font-family: "DM Sans", "Manrope", sans-serif !important;
+        font-size: 0.74rem;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        box-shadow: 0 1px 4px rgba(35, 100, 55, 0.04);
+      }
 
-    .fish-cta .eyebrow {
-      color: #9e4636;
-      font-size: 0.82rem;
-      font-weight: 800;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+      .quick-nav-title {
+        font-family: "Manrope", sans-serif !important;
+        font-size: clamp(1.4rem, 2.3vw, 1.85rem);
+        font-weight: 800;
+        color: #1a251e;
+        margin: 0;
+        letter-spacing: -0.02em;
+        line-height: 1.25;
+      }
 
-    .fish-cta h2 {
-      font-family: Georgia, "Times New Roman", serif !important;
-      font-size: clamp(1.8rem, 2.6vw, 2.3rem);
-      font-weight: 700;
-      color: #2b1d1a;
-      line-height: 1.2;
-      margin: 0 0 12px;
-    }
+      .quick-nav-title span {
+        color: #1e6f43;
+      }
 
-    .fish-cta h2 em { color: #b84a39; font-style: italic; }
+      .guides-nav-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+      }
 
-    .fish-cta p {
-      color: #6d524d;
-      font-size: 0.98rem;
-      line-height: 1.65;
-      margin: 0;
-      max-width: 620px;
-    }
+      .guide-nav-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 9px 16px 9px 9px;
+        background: #edf7f0;
+        border: 1px solid #cce4d2;
+        border-radius: 9999px;
+        text-decoration: none;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          border-color 0.2s ease,
+          background 0.2s ease;
+        min-width: 0;
+      }
 
-    .fish-cta-actions { display: flex; gap: 12px; flex-shrink: 0; }
+      .guide-nav-item:hover {
+        background: #e4f4e8;
+        border-color: #237847;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 18px rgba(35, 100, 55, 0.12);
+      }
 
-    .fish-cta .button.button-light {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 13px 26px;
-      border-radius: 9999px;
-      background: #ffffff !important;
-      color: #1a2e22 !important;
-      font-family: "DM Sans", "Manrope", sans-serif !important;
-      font-weight: 700;
-      font-size: 0.92rem;
-      border: 1px solid rgba(0, 0, 0, 0.08) !important;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
-      text-decoration: none;
-      transition: all 0.25s ease;
-      white-space: nowrap;
-    }
+      .guide-nav-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: #d1ecda;
+        color: #1e6f43;
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+        font-size: 0.95rem;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+      }
 
-    .fish-cta .button.button-light:hover {
-      background: #fdfdfd !important;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-    }
+      .guide-nav-item:hover .guide-nav-icon {
+        background: #1e6f43;
+        color: #ffffff;
+      }
 
-    @media (max-width: 900px) {
-      .cards-grid-3 { grid-template-columns: repeat(2, 1fr); }
-      .fish-cta { flex-direction: column; align-items: flex-start; padding: 36px 30px !important; }
-      .fish-cta-actions { width: 100%; flex-wrap: wrap; margin-top: 10px; }
-      .fish-cta-actions .button { width: 100%; }
-    }
+      .guide-nav-label {
+        font-family: "DM Sans", "Manrope", sans-serif !important;
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: #1c2b20;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
 
-    @media (max-width: 600px) {
-      .cards-grid-3 { grid-template-columns: 1fr; }
-      .cards-grid-2 { grid-template-columns: 1fr; }
-      .section-heading-wrap { padding: 35px 16px 30px; }
-    }
-  </style>
-</head>
+      .section-heading-wrap {
+        position: relative;
+        max-width: 1400px;
+        margin: 0 auto 36px;
+        padding: 44px 35px 38px;
+        overflow: hidden;
+        text-align: center;
+        border-radius: 35px;
+        border: 1px solid #dcebc9;
+        background: #fafcf7;
+        box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
+      }
 
-<body>
-  <div id="header"></div>
+      .bg-cream .section-heading-wrap {
+        background: #ffffff;
+        border-color: #dcebc9;
+      }
 
-  <main id="main-content">
-    <!-- Hero Section -->
-    <section class="hero section-wrap" id="behaviour-hero">
-      <div class="hero-copy">
-        <div class="fish-badge-strip">
-          <i class="fa-solid fa-water" aria-hidden="true"></i> Aquatic Psychology &amp; Ethology
-        </div>
-        <h1>Aquarium Fish <em>Behaviour &amp; Dynamics</em></h1>
-        <p>
-          Decode swimming layers, social hierarchies, and stress signals. Learn how fish communicate through body language, why schooling reduces anxiety, and how to structure your aquascape to eliminate territorial friction.
-        </p>
-        <div class="hero-actions">
-          <a class="button" href="#swimming-zones">Swimming Layers <i class="fa-solid fa-arrow-down" style="font-size: 0.82rem; margin-left: 5px;"></i></a>
-          <a class="button button-outline" href="#stress-signals" style="background: transparent; border: 1.5px solid #246b43; color: #246b43;">Stress Indicators</a>
-        </div>
-        <div class="hero-note">♥ &nbsp; Dedicated to vibrant aquariums and thriving aquatic life.</div>
-      </div>
+      .bg-soft-green .section-heading-wrap {
+        background: #ffffff;
+        border-color: #d2e4c2;
+      }
 
-      <div class="hero-visual">
-        <div class="hero-blob"></div>
-        <img src="https://images.unsplash.com/photo-1535591273668-578e31182c4f?auto=format&fit=crop&w=1000&q=85"
-          alt="School of colourful aquarium fish swimming in planted tank" class="hero-photo"
-          id="hero-behaviour-photo">
-        <div class="floating-card card-top">
-          <i class="fa-solid fa-layer-group" style="color: var(--green);"></i>
-          <span><b>3 Swimming Zones</b><small>Surface, Mid &amp; Bottom</small></span>
-        </div>
-        <div class="floating-card card-bottom">
-          <i class="fa-solid fa-users-viewfinder" style="color: #0284c7;"></i>
-          <span><b>Schooling Safety</b><small>Natural Social Comfort</small></span>
-        </div>
-      </div>
-    </section>
+      .corner-wave {
+        position: absolute;
+        pointer-events: none;
+        z-index: 0;
+      }
 
-    <!-- 1. Swimming Layers -->
-    <section class="fish-section bg-cream" id="swimming-zones">
-      <div class="section-wrap">
-        <div class="section-heading-wrap">
-          <div class="heading-content">
-            <span class="heading-label">
-              <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
-              Vertical Space Allocation
-            </span>
-            <h2>
-              Aquarium Swimming <em>Layers &amp; Zones</em>
-            </h2>
-            <p>A well-balanced community tank occupies all three vertical levels of the aquarium, preventing spatial competition.</p>
+      .wave-tl {
+        top: 0;
+        left: 0;
+        width: 220px;
+        height: 130px;
+      }
+
+      .wave-br {
+        bottom: 0;
+        right: 0;
+        width: 220px;
+        height: 130px;
+      }
+
+      .heading-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .heading-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #edf7f0;
+        color: #246b43;
+        padding: 6px 16px;
+        border-radius: 9999px;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        border: 1px solid #cce4d2;
+        margin-bottom: 12px;
+      }
+
+      .heading-label i {
+        color: #246b43;
+      }
+
+      .section-heading-wrap h2 {
+        color: #263b30;
+        font-family: Georgia, "Times New Roman", serif !important;
+        font-size: clamp(24px, 3.2vw, 36px);
+        font-weight: 700;
+        margin: 0 0 12px;
+        line-height: 1.25;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .section-heading-wrap h2 em,
+      .section-heading-wrap h2 span {
+        color: var(--green);
+        font-style: normal;
+      }
+
+      .section-heading-wrap p {
+        font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+        color: #55675c;
+        max-width: 720px;
+        margin: 0 auto;
+        line-height: 1.65;
+      }
+
+      .spotlight-panel {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: #ffffff;
+        border: 1px solid #dceade;
+        border-radius: 28px;
+        padding: 32px;
+        box-shadow: 0 6px 24px rgba(35, 75, 45, 0.04);
+        display: grid;
+        grid-template-columns: 1fr 1.15fr;
+        gap: 36px;
+        align-items: center;
+      }
+
+      .spotlight-panel.reverse {
+        grid-template-columns: 1.15fr 1fr;
+      }
+
+      .spotlight-panel.reverse .spotlight-media {
+        order: 2;
+      }
+
+      .spotlight-media {
+        width: 100%;
+        height: 330px;
+        border-radius: 20px;
+        overflow: hidden;
+        background: #edf6ee;
+        box-shadow: 0 10px 26px rgba(35, 75, 45, 0.08);
+      }
+
+      .spotlight-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+      }
+
+      .spotlight-details {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .detail-point {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 14px 16px;
+        background: #fafcf7;
+        border: 1px solid #e5efe1;
+        border-radius: 16px;
+      }
+
+      .detail-point-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        background: #edf7f0;
+        color: #246b43;
+        display: grid;
+        place-items: center;
+        font-size: 1rem;
+        flex-shrink: 0;
+      }
+
+      .detail-point h3 {
+        font-family: "Manrope", sans-serif !important;
+        font-size: 1.02rem;
+        font-weight: 700;
+        color: #1a251e;
+        margin: 0 0 4px;
+      }
+
+      .detail-point p {
+        font-size: 0.9rem;
+        line-height: 1.58;
+        color: #55665b;
+        margin: 0;
+      }
+
+      .cards-grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+        max-width: 1200px;
+        margin: 0 auto;
+        align-items: stretch;
+      }
+
+      .info-card {
+        background: #ffffff;
+        border: 1px solid #dceade;
+        border-radius: 24px;
+        padding: 24px;
+        box-shadow: 0 4px 18px rgba(35, 75, 45, 0.04);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: 100%;
+        box-sizing: border-box;
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease,
+          border-color 0.25s ease;
+      }
+
+      .info-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(35, 75, 45, 0.09);
+        border-color: #246b43;
+      }
+
+      .card-photo-wrap {
+        width: 100%;
+        height: 190px;
+        border-radius: 16px;
+        overflow: hidden;
+        margin-bottom: 18px;
+        background: #edf6ee;
+        flex-shrink: 0;
+      }
+
+      .card-photo-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        transition: transform 0.35s ease;
+      }
+
+      .info-card:hover .card-photo-wrap img {
+        transform: scale(1.04);
+      }
+
+      .info-card-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 16px;
+        background: #edf7f0;
+        color: #246b43;
+        display: grid;
+        place-items: center;
+        font-size: 1.35rem;
+        margin-bottom: 16px;
+        flex-shrink: 0;
+      }
+
+      .info-card h3 {
+        font-family: Georgia, "Times New Roman", serif !important;
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #1a251e;
+        margin: 0 0 10px;
+      }
+
+      .info-card p {
+        font-size: 0.9rem;
+        line-height: 1.62;
+        color: #55665b;
+        margin: 0;
+        max-width: 330px;
+      }
+
+      .fish-cta {
+        background: #fbf1ef !important;
+        border: 1px solid #f2dbd6;
+        border-radius: 28px;
+        padding: 44px 50px !important;
+        margin: 44px auto 64px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        box-shadow: 0 10px 30px rgba(180, 80, 60, 0.06);
+      }
+
+      .fish-cta .eyebrow {
+        color: #9e4636;
+        font-size: 0.82rem;
+        font-weight: 800;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .fish-cta h2 {
+        font-family: Georgia, "Times New Roman", serif !important;
+        font-size: clamp(1.8rem, 2.6vw, 2.3rem);
+        font-weight: 700;
+        color: #2b1d1a;
+        line-height: 1.2;
+        margin: 0 0 12px;
+      }
+
+      .fish-cta h2 em {
+        color: #b84a39;
+        font-style: italic;
+      }
+
+      .fish-cta p {
+        color: #6d524d;
+        font-size: 0.98rem;
+        line-height: 1.65;
+        margin: 0;
+        max-width: 620px;
+      }
+
+      .fish-cta-actions {
+        display: flex;
+        gap: 12px;
+        flex-shrink: 0;
+      }
+
+      .fish-cta .button.button-light {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 13px 26px;
+        border-radius: 9999px;
+        background: #ffffff !important;
+        color: #1a2e22 !important;
+        font-family: "DM Sans", "Manrope", sans-serif !important;
+        font-weight: 700;
+        font-size: 0.92rem;
+        border: 1px solid rgba(0, 0, 0, 0.08) !important;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+        text-decoration: none;
+        transition: all 0.25s ease;
+        white-space: nowrap;
+      }
+
+      .fish-cta .button.button-light:hover {
+        background: #fdfdfd !important;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      }
+
+      @media (max-width: 1024px) {
+        .guides-nav-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .spotlight-panel,
+        .spotlight-panel.reverse {
+          grid-template-columns: 1fr;
+        }
+
+        .spotlight-panel.reverse .spotlight-media {
+          order: 0;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .cards-grid-3 {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .fish-cta {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 36px 30px !important;
+        }
+
+        .fish-cta-actions {
+          width: 100%;
+          flex-wrap: wrap;
+          margin-top: 10px;
+        }
+
+        .fish-cta-actions .button {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .cards-grid-3,
+        .guides-nav-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .guides-nav-strip {
+          padding: 24px 18px;
+          border-radius: 24px;
+        }
+
+        .quick-nav-line {
+          width: 40px;
+        }
+
+        .section-heading-wrap {
+          padding: 35px 16px 30px;
+          border-radius: 24px;
+        }
+
+        .spotlight-panel {
+          padding: 20px;
+        }
+
+        .spotlight-media {
+          height: 230px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="header"></div>
+
+    <main id="main-content">
+      <!-- 1. Main Hero Section -->
+      <section class="hero section-wrap" id="behaviour-hero">
+        <div class="hero-copy">
+          <div class="fish-badge-strip">
+            <i class="fa-solid fa-water" aria-hidden="true"></i> PetSathi •
+            Aquarium Fish Ethology
+          </div>
+          <h1>Understanding Fish <em>Behaviour</em></h1>
+          <p>
+            Fish communicate and express comfort or distress through fin
+            posture, swimming speed, feeding drive, and how they interact with
+            tankmates and surroundings. Observing natural aquarium behaviour
+            helps you spot early health changes and create a calm, engaging
+            aquatic home.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#behaviour-overview">
+              Explore Fish Behaviour
+              <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+            </a>
+          </div>
+          <div class="hero-note">
+            <i
+              class="fa-solid fa-heart"
+              style="color: var(--green)"
+              aria-hidden="true"
+            ></i>
+            &nbsp; Dedicated to calm communities and thriving aquarium fish.
           </div>
         </div>
 
-        <div class="cards-grid-3">
-          <article class="info-card">
-            <div class="info-card-icon"><i class="fa-solid fa-arrow-up-from-bracket"></i></div>
-            <h3>Top / Surface Dwellers</h3>
-            <p>Equipped with upturned mouths and flat backs designed to snatch floating insects. They spend their days patrolling the upper 25% of water.</p>
-            <ul>
-              <li><strong>Species:</strong> Bettas, Hatchetfish, Guppies, Halfbeaks</li>
-              <li><strong>Environment:</strong> Floating plants (Salvinia, Frogbit) provide essential shade and resting perches.</li>
-            </ul>
-          </article>
-
-          <article class="info-card">
-            <div class="info-card-icon"><i class="fa-solid fa-arrows-left-right"></i></div>
-            <h3>Mid-Water Cruisers</h3>
-            <p>Streamlined torpedo-shaped bodies engineered for continuous active swimming. They require broad horizontal open lanes to school gracefully.</p>
-            <ul>
-              <li><strong>Species:</strong> Neon Tetras, Harlequin Rasboras, Zebra Danios, Angelfish</li>
-              <li><strong>Environment:</strong> Planted perimeter with clear central swimming channel.</li>
-            </ul>
-          </article>
-
-          <article class="info-card">
-            <div class="info-card-icon"><i class="fa-solid fa-arrow-down-to-bracket"></i></div>
-            <h3>Bottom Substrate Foragers</h3>
-            <p>Equipped with sensitive downward-facing barbels and sucker mouths to sift substrate, graze biofilm, and vacuum fallen food.</p>
-            <ul>
-              <li><strong>Species:</strong> Corydoras Catfish, Bristlenose Plecos, Kuhli Loaches</li>
-              <li><strong>Environment:</strong> Fine rounded sand substrate to protect delicate sensory barbels.</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- 2. Schooling vs Shoaling -->
-    <section class="fish-section bg-white" id="social-structures">
-      <div class="section-wrap">
-        <div class="section-heading-wrap">
-          <div class="heading-content">
-            <span class="heading-label">
-              <i class="fa-solid fa-users" aria-hidden="true"></i>
-              Social Dynamics
-            </span>
-            <h2>
-              Schooling vs. <em>Shoaling Instincts</em>
-            </h2>
-            <p>Understanding the difference between tight schooling and relaxed shoaling helps you build safe social groups.</p>
+        <div class="hero-visual">
+          <div class="hero-blob"></div>
+          <img
+            src="https://images.unsplash.com/photo-1535591273668-578e31182c4f?auto=format&fit=crop&w=1000&q=85"
+            alt="Colourful aquarium fish swimming through a planted tank"
+            class="hero-photo"
+            id="hero-behaviour-photo"
+          />
+          <div class="floating-card card-top">
+            <i class="fa-solid fa-fish" aria-hidden="true"></i>
+            <span
+              ><b>Natural Tank Habits</b
+              ><small>Movement, social &amp; feeding</small></span
+            >
+          </div>
+          <div class="floating-card card-bottom">
+            <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
+            <span
+              ><b>Early Health Cues</b
+              ><small>Spot stress and comfort</small></span
+            >
           </div>
         </div>
+      </section>
 
-        <div class="cards-grid-2">
-          <article class="info-card">
-            <div class="info-card-icon"><i class="fa-solid fa-compass"></i></div>
-            <h3>Schooling Behavior</h3>
-            <p>Fish synchronize their swimming speed, direction, and tight spacing as a single coordinated living organism. In nature, this confuses predators and reduces hydrodynamic drag. In captivity, schooling is triggered by open water and mild water movement.</p>
-            <ul>
-              <li><strong>Key Species:</strong> Rummy-nose Tetras, Neon Tetras, Bloodfin Tetras</li>
-              <li><strong>Rule of Thumb:</strong> Never keep fewer than 6 to 10 individuals; smaller groups experience chronic cortisol elevation.</li>
-            </ul>
-          </article>
-
-          <article class="info-card">
-            <div class="info-card-icon"><i class="fa-solid fa-handshake"></i></div>
-            <h3>Shoaling Behavior</h3>
-            <p>Fish remain social and hang out in loose clusters for mutual reassurance, but swim independently rather than in tight synchrony. They forage, play, and explore nearby while keeping eyes on the group.</p>
-            <ul>
-              <li><strong>Key Species:</strong> Corydoras catfish, Guppies, Mollies, Zebra Danios</li>
-              <li><strong>Rule of Thumb:</strong> Groups of 5+ allow individuals to express curious, playful behaviors without timid hiding.</li>
-            </ul>
-          </article>
+      <!-- 2. Quick Navigation Hub -->
+      <nav
+        class="guides-nav-strip"
+        aria-label="Quick navigation through fish behaviour sections"
+      >
+        <div class="quick-nav-decor decor-top-left" aria-hidden="true">
+          <i class="fa-solid fa-fish decor-paw decor-paw-1"></i>
+          <i class="fa-solid fa-fish decor-paw decor-paw-2"></i>
         </div>
-      </div>
-    </section>
+        <div class="quick-nav-decor decor-bottom-right" aria-hidden="true">
+          <i class="fa-solid fa-fish decor-paw decor-paw-3"></i>
+          <i class="fa-solid fa-fish decor-paw decor-paw-4"></i>
+        </div>
 
-    <!-- 3. Stress Signals -->
-    <section class="fish-section bg-cream" id="stress-signals">
-      <div class="section-wrap">
-        <div class="section-heading-wrap">
-          <div class="heading-content">
-            <span class="heading-label">
-              <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
-              Body Language
-            </span>
-            <h2>
-              Recognizing Aquarium <em>Stress Signals</em>
-            </h2>
-            <p>Fish communicate distress through unmistakable behavioural shifts long before physical disease symptoms appear.</p>
+        <div class="quick-nav-header">
+          <div class="quick-nav-eyebrow-wrap">
+            <span class="quick-nav-line"></span>
+            <div class="quick-nav-badge">
+              <i class="fa-regular fa-compass" aria-hidden="true"></i>
+              <span>QUICK NAVIGATION</span>
+            </div>
+            <span class="quick-nav-line"></span>
+          </div>
+          <h3 class="quick-nav-title">
+            Explore Fish <span>Behaviour Guide</span>
+          </h3>
+        </div>
+
+        <div class="guides-nav-grid">
+          <a href="#understanding-behaviour" class="guide-nav-item">
+            <span class="guide-nav-icon"
+              ><i class="fa-solid fa-circle-info" aria-hidden="true"></i
+            ></span>
+            <span class="guide-nav-label">Understanding Fish Behaviour</span>
+          </a>
+          <a href="#swimming-patterns" class="guide-nav-item">
+            <span class="guide-nav-icon"
+              ><i class="fa-solid fa-water" aria-hidden="true"></i
+            ></span>
+            <span class="guide-nav-label">Swimming Patterns</span>
+          </a>
+          <a href="#social-behaviour" class="guide-nav-item">
+            <span class="guide-nav-icon"
+              ><i class="fa-solid fa-users" aria-hidden="true"></i
+            ></span>
+            <span class="guide-nav-label">Social Behaviour</span>
+          </a>
+          <a href="#territorial-behaviour" class="guide-nav-item">
+            <span class="guide-nav-icon"
+              ><i class="fa-solid fa-shield-halved" aria-hidden="true"></i
+            ></span>
+            <span class="guide-nav-label">Territorial Behaviour</span>
+          </a>
+          <a href="#feeding-behaviour" class="guide-nav-item">
+            <span class="guide-nav-icon"
+              ><i class="fa-solid fa-bowl-food" aria-hidden="true"></i
+            ></span>
+            <span class="guide-nav-label">Feeding Behaviour</span>
+          </a>
+          <a href="#signs-of-stress" class="guide-nav-item">
+            <span class="guide-nav-icon"
+              ><i
+                class="fa-solid fa-triangle-exclamation"
+                aria-hidden="true"
+              ></i
+            ></span>
+            <span class="guide-nav-label">Signs of Stress</span>
+          </a>
+          <a href="#aquarium-enrichment" class="guide-nav-item">
+            <span class="guide-nav-icon"
+              ><i class="fa-solid fa-seedling" aria-hidden="true"></i
+            ></span>
+            <span class="guide-nav-label">Aquarium Enrichment</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- 3. Behaviour Highlights Cards (6 Core Cards with Verified Topic-Matched Images) -->
+      <section class="fish-section bg-cream" id="behaviour-overview">
+        <div class="section-wrap">
+          <div class="section-heading-wrap">
+            <svg
+              class="corner-wave wave-tl"
+              viewBox="0 0 220 130"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z"
+                fill="#d8e8ce"
+                opacity="0.7"
+              />
+              <path
+                d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z"
+                fill="#edf6e6"
+                opacity="0.95"
+              />
+            </svg>
+            <svg
+              class="corner-wave wave-br"
+              viewBox="0 0 220 130"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z"
+                fill="#d8e8ce"
+                opacity="0.7"
+              />
+              <path
+                d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z"
+                fill="#edf6e6"
+                opacity="0.95"
+              />
+            </svg>
+            <div class="heading-content">
+              <span class="heading-label">
+                <i class="fa-solid fa-compass" aria-hidden="true"></i>
+                Key Behavioural Pillars
+              </span>
+              <h2>Core Aquarium <span>Fish Behaviours</span></h2>
+              <p>
+                Explore the six core areas of daily aquatic life to understand
+                how fish swim, socialize, feed, claim territory, and thrive in a
+                well-arranged tank.
+              </p>
+            </div>
+          </div>
+
+          <div class="cards-grid-3">
+            <article class="info-card">
+              <div class="card-photo-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&fit=crop&w=800&q=80"
+                  alt="Goldfish swimming smoothly in clear aquarium water"
+                  loading="lazy"
+                />
+              </div>
+              <h3>Swimming Patterns</h3>
+              <p>
+                Observe how fish glide across top, middle, and bottom layers to
+                monitor buoyancy, comfort, and daily vitality.
+              </p>
+            </article>
+
+            <article class="info-card">
+              <div class="card-photo-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1535591273668-578e31182c4f?auto=format&fit=crop&w=800&q=80"
+                  alt="Group of aquarium fish swimming together in tank"
+                  loading="lazy"
+                />
+              </div>
+              <h3>Schooling Behaviour</h3>
+              <p>
+                Discover how synchronized schooling and loose shoaling reduce
+                stress and create confident community dynamics.
+              </p>
+            </article>
+
+            <article class="info-card">
+              <div class="card-photo-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1524704654690-b56c05c78a00?auto=format&fit=crop&w=800&q=80"
+                  alt="Betta fish with spread fins in its aquarium zone"
+                  loading="lazy"
+                />
+              </div>
+              <h3>Territorial Behaviour</h3>
+              <p>
+                Learn why certain species defend caves or corners and how
+                adequate space and sight breaks prevent chasing.
+              </p>
+            </article>
+
+            <article class="info-card">
+              <div class="card-photo-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&w=800&q=80"
+                  alt="Fish foraging near underwater rocks in aquarium"
+                  loading="lazy"
+                />
+              </div>
+              <h3>Feeding Behaviour</h3>
+              <p>
+                Match surface and bottom feeding habits with species-appropriate
+                diets while spotting early changes in appetite.
+              </p>
+            </article>
+
+            <article class="info-card">
+              <div class="card-photo-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=800&q=80"
+                  alt="Calm water surface representing tank balance and comfort"
+                  loading="lazy"
+                />
+              </div>
+              <h3>Stress Signals</h3>
+              <p>
+                Recognize frequent hiding, fin clamping, erratic darting, and
+                appetite loss before minor stress becomes illness.
+              </p>
+            </article>
+
+            <article class="info-card">
+              <div class="card-photo-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1520301255226-bf5f144451c1?auto=format&fit=crop&w=800&q=80"
+                  alt="Planted freshwater aquarium with natural foliage and shelter"
+                  loading="lazy"
+                />
+              </div>
+              <h3>Aquarium Enrichment</h3>
+              <p>
+                Use live plants, smooth caves, and species-appropriate tank
+                layouts to encourage natural exploration and rest.
+              </p>
+            </article>
           </div>
         </div>
+      </section>
 
-        <div class="cards-grid-3">
-          <article class="info-card">
-            <div class="info-card-icon" style="background: #fee2e2; color: #b91c1c;"><i class="fa-solid fa-arrows-up-down"></i></div>
-            <h3>Glass Surfing</h3>
-            <p>Pacing frantically up and down the glass pane. Indicates severe water parameter stress, sudden ammonia spike, improper pH, or feeling trapped in too small a volume.</p>
-          </article>
+      <!-- 3A. Understanding Fish Behaviour -->
+      <section class="fish-section bg-white" id="understanding-behaviour">
+        <div class="section-wrap">
+          <div class="section-heading-wrap">
+            <div class="heading-content">
+              <span class="heading-label">
+                <i class="fa-solid fa-eye" aria-hidden="true"></i>
+                Behavioural Foundations
+              </span>
+              <h2>Understanding <span>Fish Behaviour</span></h2>
+              <p>
+                Fish express their physical and emotional state through
+                movement, interaction with tankmates, feeding response, and
+                reactions to their surrounding environment.
+              </p>
+            </div>
+          </div>
 
-          <article class="info-card">
-            <div class="info-card-icon" style="background: #fee2e2; color: #b91c1c;"><i class="fa-solid fa-compress"></i></div>
-            <h3>Clamped Fins</h3>
-            <p>Holding dorsal, tail, and pelvic fins pinned tightly flat against the body. This is the universal aquatic cry of physical pain, parasite irritation, or cold shock.</p>
-          </article>
+          <div class="cards-grid-3">
+            <article class="info-card">
+              <div class="info-card-icon">
+                <i class="fa-solid fa-water" aria-hidden="true"></i>
+              </div>
+              <h3>Movement &amp; Fin Posture</h3>
+              <p>
+                Relaxed, open fins and smooth swimming reflect comfort, while
+                rigid posture or rapid gill movement signals discomfort.
+              </p>
+            </article>
 
-          <article class="info-card">
-            <div class="info-card-icon" style="background: #fee2e2; color: #b91c1c;"><i class="fa-solid fa-wind"></i></div>
-            <h3>Surface Gasping (Piping)</h3>
-            <p>Clustering at the surface film with mouths opening and closing rapidly. Signals critical oxygen depletion or ammonia/nitrite poisoning burning gill tissue.</p>
-          </article>
+            <article class="info-card">
+              <div class="info-card-icon">
+                <i class="fa-solid fa-handshake" aria-hidden="true"></i>
+              </div>
+              <h3>Interaction &amp; Feeding</h3>
+              <p>
+                Curiosity around tankmates and prompt interest during meals
+                indicate healthy energy and acclimation.
+              </p>
+            </article>
+
+            <article class="info-card">
+              <div class="info-card-icon">
+                <i class="fa-solid fa-temperature-half" aria-hidden="true"></i>
+              </div>
+              <h3>Environmental Responses</h3>
+              <p>
+                Changes in water temperature, chemistry, flow, or lighting
+                immediately alter how fish patrol and rest.
+              </p>
+            </article>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Subpage Soft Light Pink CTA -->
-    <section class="fish-cta section-wrap">
-      <div>
-        <div class="eyebrow">HAPPY FISH NEED A HEALTHY HOME</div>
-        <h2>Discover Full <em>Aquarium Care</em></h2>
-        <p>
-          Harmonious fish behaviour begins with peaceful tank parameters, gentle flow, and proper tank cycling. Explore our comprehensive Fish Care guide.
-        </p>
-      </div>
-      <div class="fish-cta-actions">
-        <a class="button button-light" href="care.html">Explore Fish Care <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-    </section>
-  </main>
+      <!-- 3B. Swimming Patterns -->
+      <section class="fish-section bg-cream" id="swimming-patterns">
+        <div class="section-wrap">
+          <div class="section-heading-wrap">
+            <div class="heading-content">
+              <span class="heading-label">
+                <i class="fa-solid fa-water" aria-hidden="true"></i>
+                Movement &amp; Health Observation
+              </span>
+              <h2>Swimming <span>Patterns</span></h2>
+              <p>
+                Observing where and how your fish swim every day is one of the
+                clearest ways to track buoyancy, oxygenation, and overall
+                health.
+              </p>
+            </div>
+          </div>
 
-  <div id="footer"></div>
+          <div class="spotlight-panel">
+            <div class="spotlight-media">
+              <img
+                src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&fit=crop&w=900&q=85"
+                alt="Healthy fish gliding smoothly through mid-water"
+                loading="lazy"
+              />
+            </div>
+            <div class="spotlight-details">
+              <div class="detail-point">
+                <div class="detail-point-icon">
+                  <i class="fa-solid fa-check" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <h3>Normal Swimming</h3>
+                  <p>
+                    Steady, controlled propulsion with upright balance and
+                    relaxed fins shows good energy and healthy swim bladder
+                    function.
+                  </p>
+                </div>
+              </div>
 
-  <script src="../../../js/main.js"></script>
-</body>
+              <div class="detail-point">
+                <div class="detail-point-icon">
+                  <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <h3>Surface Swimming</h3>
+                  <p>
+                    Natural for surface-adapted species like guppies and
+                    hatchetfish, but persistent gasping at the water film by
+                    other fish points to low oxygen.
+                  </p>
+                </div>
+              </div>
 
+              <div class="detail-point">
+                <div class="detail-point-icon">
+                  <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <h3>Bottom-Dwelling Behaviour</h3>
+                  <p>
+                    Catfish and loaches naturally forage along the substrate,
+                    whereas mid-water fish resting heavily on the bottom may be
+                    fatigued or unwell.
+                  </p>
+                </div>
+              </div>
+
+              <div class="detail-point">
+                <div class="detail-point-icon">
+                  <i class="fa-solid fa-wave-square" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <h3>Unusual or Erratic Swimming</h3>
+                  <p>
+                    Sudden darting, spinning, or tilting sideways signals water
+                    parameter shock, fright, or internal buoyancy issues that
+                    require testing.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3C. Social Behaviour -->
+      <section class="fish-section bg-white" id="social-behaviour">
+        <div class="section-wrap">
+          <div class="section-heading-wrap">
+            <div class="heading-content">
+              <span class="heading-label">
+                <i class="fa-solid fa-users" aria-hidden="true"></i>
+                Group &amp; Community Harmony
+              </span>
+              <h2>Social <span>Behaviour</span></h2>
+              <p>
+                Social structure shapes confidence and daily activity. Keeping
+                compatible species in proper group sizes reduces anxiety and
+                prevents bullying.
+              </p>
+            </div>
+          </div>
+
+          <div class="spotlight-panel reverse">
+            <div class="spotlight-media">
+              <img
+                src="https://images.unsplash.com/photo-1535591273668-578e31182c4f?auto=format&fit=crop&w=900&q=85"
+                alt="Group of aquarium fish swimming together in a planted tank"
+                loading="lazy"
+              />
+            </div>
+            <div class="spotlight-details">
+              <div class="detail-point">
+                <div class="detail-point-icon">
+                  <i class="fa-solid fa-users" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <h3>Schooling Fish</h3>
+                  <p>
+                    Species such as neon tetras, rummy-nose tetras, and
+                    harlequin rasboras swim in tight, synchronized formations
+                    that lower stress.
+                  </p>
+                </div>
+              </div>
+
+              <div class="detail-point">
+                <div class="detail-point-icon">
+                  <i class="fa-solid fa-people-group" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <h3>Shoaling Behaviour</h3>
+                  <p>
+                    Corydoras catfish, zebra danios, and mollies stay loosely
+                    clustered for social reassurance while exploring and
+                    foraging independently.
+                  </p>
+                </div>
+              </div>
+
+              <div class="detail-point">
+                <div class="detail-point-icon">
+                  <i class="fa-solid fa-comments" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <h3>Social Interaction</h3>
+                  <p>
+                    Keeping social species in groups of six or more encourages
+                    natural displays, active swimming, and confident interaction
+                    across the tank.
+                  </p>
+                </div>
+              </div>
+
+              <div class="detail-point">
+                <div class="detail-point-icon">
+                  <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <h3>Fish Compatibility</h3>
+                  <p>
+                    Pair peaceful community species with similar temperaments
+                    and water needs, avoiding fin-nippers alongside slow or
+                    long-finned fish.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3D. Territorial Behaviour -->
+      <section class="fish-section bg-cream" id="territorial-behaviour">
+        <div class="section-wrap">
+          <div class="section-heading-wrap">
+            <div class="heading-content">
+              <span class="heading-label">
+                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                Space &amp; Boundaries
+              </span>
+              <h2>Territorial <span>Behaviour</span></h2>
+              <p>
+                Territorial species defend caves, driftwood, or spawning zones.
+                Thoughtful spacing and visual barriers keep aggression low.
+              </p>
+            </div>
+          </div>
+
+          <div class="cards-grid-3">
+            <article class="info-card">
+              <div class="info-card-icon">
+                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+              </div>
+              <h3>Territorial Fish &amp; Aggression</h3>
+              <p>
+                Bettas, many cichlids, and male gouramis claim defined zones and
+                may chase or flare at tankmates that enter their personal space.
+              </p>
+            </article>
+
+            <article class="info-card">
+              <div class="info-card-icon">
+                <i class="fa-solid fa-archway" aria-hidden="true"></i>
+              </div>
+              <h3>Hiding Places &amp; Sight Breaks</h3>
+              <p>
+                Caves, rockwork, and dense plant clusters interrupt direct lines
+                of sight so chased fish can retreat out of view and recover
+                calmly.
+              </p>
+            </article>
+
+            <article class="info-card">
+              <div class="info-card-icon">
+                <i class="fa-solid fa-maximize" aria-hidden="true"></i>
+              </div>
+              <h3>Suitable Aquarium Space</h3>
+              <p>
+                Providing generous tank footprint and avoiding overcrowding
+                allows each fish to establish boundaries without constant
+                conflict.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3E. Feeding Behaviour -->
+      <section class="fish-section bg-white" id="feeding-behaviour">
+        <div class="section-wrap">
+          <div class="section-heading-wrap">
+            <div class="heading-content">
+              <span class="heading-label">
+                <i class="fa-solid fa-bowl-food" aria-hidden="true"></i>
+                Appetite &amp; Feeding Habits
+              </span>
+              <h2>Feeding <span>Behaviour</span></h2>
+              <p>
+                Feeding routines reveal both natural foraging instincts and
+                day-to-day vitality across every level of the aquarium.
+              </p>
+            </div>
+          </div>
+
+          <div class="cards-grid-3">
+            <article class="info-card">
+              <div class="info-card-icon">
+                <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+              </div>
+              <h3>Active Feeding &amp; Preferences</h3>
+              <p>
+                Healthy fish respond promptly at mealtimes. Match herbivorous,
+                omnivorous, or protein-rich diets to each species' natural
+                preferences.
+              </p>
+            </article>
+
+            <article class="info-card">
+              <div class="info-card-icon">
+                <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+              </div>
+              <h3>Surface &amp; Bottom Feeding</h3>
+              <p>
+                Offer floating flakes or micro-pellets for top dwellers
+                alongside sinking wafers or pellets so bottom feeders receive
+                complete nutrition.
+              </p>
+            </article>
+
+            <article class="info-card">
+              <div class="info-card-icon">
+                <i class="fa-solid fa-clipboard-list" aria-hidden="true"></i>
+              </div>
+              <h3>Changes in Appetite</h3>
+              <p>
+                Sudden loss of interest in food or spitting out meals often
+                serves as an early indicator of stress, digestive upset, or
+                water imbalance.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3F. Signs of Stress -->
+      <section class="fish-section bg-cream" id="signs-of-stress">
+        <div class="section-wrap">
+          <div class="section-heading-wrap">
+            <div class="heading-content">
+              <span class="heading-label">
+                <i
+                  class="fa-solid fa-triangle-exclamation"
+                  aria-hidden="true"
+                ></i>
+                Early Warning Cues
+              </span>
+              <h2>Signs of <span>Stress</span></h2>
+              <p>
+                Spotting subtle behavioural changes early lets you resolve
+                water, temperature, or tankmate issues before illness develops.
+              </p>
+            </div>
+          </div>
+
+          <div class="cards-grid-3">
+            <article class="info-card">
+              <div class="info-card-icon">
+                <i class="fa-solid fa-eye-slash" aria-hidden="true"></i>
+              </div>
+              <h3>Hiding &amp; Loss of Appetite</h3>
+              <p>
+                Staying tucked behind decor all day or ignoring favorite foods
+                indicates insecurity, bright-light stress, or underlying
+                discomfort.
+              </p>
+            </article>
+
+            <article class="info-card">
+              <div class="info-card-icon">
+                <i class="fa-solid fa-compress" aria-hidden="true"></i>
+              </div>
+              <h3>Fin Clamping &amp; Erratic Swimming</h3>
+              <p>
+                Fins held tightly against the body, frantic glass surfing, or
+                jerky darting point to water quality irritation or temperature
+                shock.
+              </p>
+            </article>
+
+            <article class="info-card">
+              <div class="info-card-icon">
+                <i class="fa-solid fa-bell" aria-hidden="true"></i>
+              </div>
+              <h3>Aggressive or Unusual Behaviour</h3>
+              <p>
+                Uncharacteristic nipping, lethargy, or surface gasping signals
+                environmental strain or incompatibility requiring prompt
+                attention.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3G. Aquarium Enrichment -->
+      <section class="fish-section bg-soft-green" id="aquarium-enrichment">
+        <div class="section-wrap">
+          <div class="section-heading-wrap">
+            <div class="heading-content">
+              <span class="heading-label">
+                <i class="fa-solid fa-seedling" aria-hidden="true"></i>
+                Stimulating Habitat Design
+              </span>
+              <h2>Aquarium <span>Enrichment</span></h2>
+              <p>
+                A thoughtfully arranged aquarium encourages natural foraging,
+                reduces territorial friction, and gives fish comforting shelter.
+              </p>
+            </div>
+          </div>
+
+          <div class="spotlight-panel">
+            <div class="spotlight-media">
+              <img
+                src="https://images.unsplash.com/photo-1520301255226-bf5f144451c1?auto=format&fit=crop&w=900&q=85"
+                alt="Lush green planted freshwater aquarium providing natural cover"
+                loading="lazy"
+              />
+            </div>
+            <div class="spotlight-details">
+              <div class="detail-point">
+                <div class="detail-point-icon">
+                  <i class="fa-solid fa-seedling" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <h3>Live &amp; Silk Plants</h3>
+                  <p>
+                    Aquatic plants soften bright lighting, absorb excess
+                    nutrients, and provide natural shade and resting leaves
+                    across water levels.
+                  </p>
+                </div>
+              </div>
+
+              <div class="detail-point">
+                <div class="detail-point-icon">
+                  <i class="fa-solid fa-archway" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <h3>Hiding Spaces</h3>
+                  <p>
+                    Caves, driftwood arches, and rock crevices give shy or
+                    resting fish secure retreats whenever they need quiet
+                    shelter.
+                  </p>
+                </div>
+              </div>
+
+              <div class="detail-point">
+                <div class="detail-point-icon">
+                  <i class="fa-solid fa-shield" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <h3>Suitable Decorations</h3>
+                  <p>
+                    Choose inert, aquarium-safe decor with smooth, rounded edges
+                    so flowing fins are never torn during active swimming.
+                  </p>
+                </div>
+              </div>
+
+              <div class="detail-point">
+                <div class="detail-point-icon">
+                  <i class="fa-solid fa-cubes" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <h3>Species-Appropriate Tank Arrangements</h3>
+                  <p>
+                    Balance open central lanes for active schoolers with planted
+                    borders and soft substrate tailored to your specific fish.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Final CTA Section (Soft Light Pink, linking to Fish Safety) -->
+      <section class="fish-cta section-wrap">
+        <div>
+          <div class="eyebrow">
+            <i class="fa-solid fa-shield-heart" aria-hidden="true"></i>
+            PROTECT YOUR AQUARIUM COMMUNITY
+          </div>
+          <h2>Create a Safe Home for <em>Your Fish</em></h2>
+          <p>
+            Learn how to keep your aquarium safe and comfortable with proper
+            water care, tank setup, and hazard prevention.
+          </p>
+        </div>
+        <div class="fish-cta-actions">
+          <a class="button button-light" href="safety.html">
+            Explore Fish Safety
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="../../../js/main.js"></script>
+    <script>
+      const fallbackFishPhoto =
+        "https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&fit=crop&w=900&q=85";
+      document.querySelectorAll("img").forEach((img) => {
+        img.addEventListener("error", function () {
+          if (!this.dataset.fishFallbackApplied) {
+            this.dataset.fishFallbackApplied = "true";
+            this.src = fallbackFishPhoto;
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
