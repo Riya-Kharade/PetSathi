@@ -1,32 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Comprehensive Fish Safety and Aquarium Protection Guide on PetSathi. Learn stable aquarium setup, water parameter safety, equipment maintenance, fish compatibility, safe acclimation, and emergency care.">
-  <title>Fish Safety and Aquarium Protection | PetSathi</title>
-    content="Keep your reptile safe with practical guidance on secure enclosures, heating, lighting, substrate, handling, hygiene and emergency care.">
-  <title>Reptile Safety &amp; Habitat Protection | PetSathi</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Comprehensive Fish Safety and Aquarium Protection Guide on PetSathi. Learn stable aquarium setup, water parameter safety, equipment maintenance, fish compatibility, safe acclimation, and emergency care."
+  />
+  <meta name="theme-color" content="#fafcf7" />
+  <title>Fish Safety &amp; Aquarium Protection | PetSathi</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
-    rel="stylesheet">
-
-  <!-- Font Awesome 6.5.2 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
 
   <!-- Core PetSathi Stylesheets -->
-  <link rel="stylesheet" href="../../../css/global.css">
-  <link rel="stylesheet" href="../../../css/home.css">
-  <link rel="stylesheet" href="../../../css/inner.css">
+  <link rel="stylesheet" href="../../../css/global.css" />
+  <link rel="stylesheet" href="../../../css/home.css" />
+  <link rel="stylesheet" href="../../../css/inner.css" />
+
+  <!-- Font Awesome 6.5.2 -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
 
   <style>
     /* ========================================================
-       FONT AWESOME 6 DEFINITIONS & GLOBAL RESILIENCE GUARDS
+       FONT AWESOME 6 FREE PROTECTION
        ======================================================== */
     @font-face {
       font-family: "Font Awesome 6 Free";
@@ -34,8 +40,10 @@
       font-weight: 900;
       font-display: block;
       src:
-        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.woff2") format("woff2"),
-        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.ttf") format("truetype");
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.woff2")
+          format("woff2"),
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.ttf")
+          format("truetype");
     }
 
     @font-face {
@@ -44,83 +52,47 @@
       font-weight: 400;
       font-display: block;
       src:
-        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-regular-400.woff2") format("woff2"),
-        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-regular-400.ttf") format("truetype");
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-regular-400.woff2")
+          format("woff2"),
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-regular-400.ttf")
+          format("truetype");
     }
 
-    @font-face {
-      font-family: "Font Awesome 6 Brands";
-      font-style: normal;
-      font-weight: 400;
-      font-display: block;
-      src:
-        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-brands-400.woff2") format("woff2"),
-        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-brands-400.ttf") format("truetype");
-    }
-
-    body [class*="fa-"],
-    body [class*="fa-"]::before {
     .fa-solid,
     .fa-regular,
-    [class*="fa-"] {
+    .fa-brands {
       font-family: "Font Awesome 6 Free" !important;
-      font-weight: 900 !important;
       font-style: normal !important;
       font-variant: normal !important;
       text-rendering: auto !important;
       line-height: 1 !important;
     }
 
-    .fa-regular,
-    .fa-regular::before {
+    .fa-solid {
+      font-weight: 900 !important;
+    }
+
+    .fa-regular {
       font-weight: 400 !important;
-    }
-
-    .fa-brands,
-    .fa-brands::before {
-      font-family: "Font Awesome 6 Brands" !important;
-      font-weight: 400 !important;
-    }
-
-    /* Disable global automatic pseudo-element icons inside dropdowns */
-    .dropdown a::before,
-    .dropdown a::after {
-      display: none !important;
-      content: none !important;
-    }
-
-    .dropdown a {
-      display: flex !important;
-      align-items: center !important;
-      gap: 10px !important;
-      padding: 10px 16px !important;
-    }
-
-    .dropdown a i {
-      width: 18px;
-      text-align: center;
     }
 
     /* ========================================================
-       PAGE DESIGN SYSTEM & COLOR PALETTE
+       PETSATHI THEME TOKENS & BASE
        ======================================================== */
     :root {
       --safe-green-dark: #1b3d2b;
-      --safe-green-primary: #286849;
-      --safe-green-hover: #1e5239;
+      --safe-green-primary: #246b43;
+      --safe-green-accent: #28764a;
       --safe-green-light: #edf7f0;
       --safe-green-soft: #f4faf6;
-      --safe-border-green: #cce4d2;
+      --safe-border: #dcebc9;
+      --safe-card-border: #e2eddc;
       --safe-cream: #fafcf7;
       --safe-white: #ffffff;
       --safe-ink: #1a251e;
       --safe-muted: #55665c;
-      --safe-line: #e2eddc;
-      --safe-card-shadow: 0 4px 20px rgba(35, 75, 45, 0.05);
-      --safe-hover-shadow: 0 14px 34px rgba(35, 75, 45, 0.12);
-      --safe-pink-bg: #fdf2f4;
-      --safe-pink-border: #f6d5db;
-      --safe-pink-accent: #b8334a;
+      --safe-shadow: 0 4px 20px rgba(35, 75, 45, 0.05);
+      --safe-hover-shadow: 0 12px 28px rgba(35, 75, 45, 0.1);
     }
 
     html {
@@ -128,87 +100,72 @@
     }
 
     body {
-      background-color: var(--safe-cream);
+      background: var(--safe-cream);
       color: var(--safe-ink);
-      font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      overflow-x: hidden;
-      margin: 0;
-      padding: 0;
+      font-family: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
-    /* Skip Link */
-    .skip-to-content {
-      position: absolute;
-      top: -40px;
-      left: 20px;
-      background: var(--safe-green-primary);
-      color: #fff;
-      padding: 8px 16px;
-      border-radius: 6px;
-      z-index: 10000;
-      transition: top 0.2s ease;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .skip-to-content:focus {
-      top: 15px;
-    }
-
-    /* Section Wrapper */
-    .section-wrap,
-    .safe-section-wrap {
-      width: min(1160px, calc(100% - 48px));
-      margin: 0 auto;
+    [id] {
+      scroll-margin-top: 95px;
     }
 
     /* ========================================================
-       1. HERO SECTION (Fish Safety & Aquarium Protection)
+       1. HERO SECTION (Matches Cat/Dog Index)
        ======================================================== */
-    .safe-hero,
-    .hero.section-wrap {
-      width: min(1160px, calc(100% - 48px));
-      margin: 10px auto 45px;
-      padding: 40px 0 20px;
-      min-height: 480px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-      align-items: center;
-      gap: 50px;
-      background: transparent;
-      border: none;
-      border-radius: 0;
-      box-shadow: none;
-      overflow: visible;
-      position: relative;
-      box-sizing: border-box;
-    }
-
-    /* Badge Strip */
-    .dog-badge-strip,
     .fish-badge-strip {
-
-    .fa-solid { font-weight: 900 !important; }
-    .fa-regular { font-weight: 400 !important; }
-
-    .safety-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       padding: 6px 14px;
-      margin-bottom: 16px;
-      border-radius: 999px;
       background: #eaf2e9;
-      color: var(--green, #286849);
+      color: var(--safe-green-primary);
       border-radius: 999px;
-      color: var(--green);
       font-size: 0.78rem;
       font-weight: 700;
       letter-spacing: 1px;
       text-transform: uppercase;
+      margin-bottom: 16px;
     }
-/* ========================================================
-       2. QUICK NAVIGATION HUB (Matching Dog Index & Cat Index)
+
+    .hero-copy h1 em {
+      color: var(--safe-green-primary);
+      font-style: normal;
+    }
+
+    .hero-actions .button-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 24px;
+      border-radius: 9999px;
+      background: transparent !important;
+      color: var(--safe-green-primary) !important;
+      border: 1.5px solid var(--safe-green-primary) !important;
+      font-family: "DM Sans", "Manrope", sans-serif !important;
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .hero-actions .button-outline:hover {
+      background: var(--safe-green-primary) !important;
+      color: #ffffff !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(36, 107, 67, 0.2);
+    }
+
+    .floating-card i {
+      font-size: 1.25rem;
+      color: var(--safe-green-primary);
+      display: inline-block;
+      line-height: 1;
+    }
+
+    /* ========================================================
+       2. QUICK NAVIGATION HUB (Matches Cat Index)
        ======================================================== */
     .guides-nav-strip {
       position: relative;
@@ -218,10 +175,9 @@
       width: calc(100% - 40px);
       border: 1px solid #dceade;
       border-radius: 32px;
-      padding: 42px 36px 38px;
+      padding: 40px 34px 36px;
       box-shadow: 0 4px 24px rgba(35, 80, 50, 0.04);
       overflow: hidden;
-      box-sizing: border-box;
     }
 
     .quick-nav-decor {
@@ -233,116 +189,65 @@
     }
 
     .decor-top-left {
-      top: -8px;
-      left: -8px;
-      width: 130px;
-      height: 130px;
-      background: radial-gradient(circle at 10% 10%, #eaf5ed 0%, rgba(234, 245, 237, 0) 70%);
-      border-radius: 0 0 100% 0;
+      top: 14px;
+      left: 20px;
     }
 
     .decor-bottom-right {
-      bottom: -8px;
-      right: -8px;
-      width: 130px;
-      height: 130px;
-      background: radial-gradient(circle at 90% 90%, #eaf5ed 0%, rgba(234, 245, 237, 0) 70%);
-      border-radius: 100% 0 0 0;
+      bottom: 14px;
+      right: 20px;
     }
 
     .decor-paw {
-      position: absolute;
-      display: inline-block;
-      line-height: 1;
-    }
-
-    .decor-paw-1 {
-      top: 14px;
-      left: 28px;
       font-size: 28px;
-      transform: rotate(-15deg);
-    }
-
-    .decor-paw-2 {
-      top: 38px;
-      left: 12px;
-      font-size: 19px;
-      transform: rotate(20deg);
-    }
-
-    .decor-paw-3 {
-      bottom: 36px;
-      right: 14px;
-      font-size: 19px;
-      transform: rotate(-25deg);
-    }
-
-    .decor-paw-4 {
-      bottom: 14px;
-      right: 28px;
-      font-size: 28px;
-      transform: rotate(15deg);
+      margin: 0 4px;
     }
 
     .quick-nav-header {
       position: relative;
       z-index: 1;
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 26px;
     }
 
     .quick-nav-eyebrow-wrap {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 16px;
-      margin-bottom: 14px;
+      gap: 14px;
+      margin-bottom: 10px;
     }
 
     .quick-nav-line {
       height: 1px;
-      width: 110px;
-      background: #d6ead9;
+      width: 48px;
+      background: #cde4d3;
     }
 
     .quick-nav-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 6px 16px;
-      background: #f4faf5;
-      border: 1px solid #b7deb8;
-      border-radius: 9999px;
-      color: #1e6f43;
-      font-family: 'DM Sans', 'Manrope', sans-serif !important;
-      font-size: 0.74rem;
+      padding: 5px 14px;
+      border-radius: 999px;
+      background: #edf6df;
+      border: 1px solid var(--safe-border);
+      color: var(--safe-green-primary);
+      font-size: 12px;
       font-weight: 700;
-      letter-spacing: 1.2px;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      box-shadow: 0 1px 4px rgba(35, 100, 55, 0.04);
-    }
-
-    .quick-nav-badge i {
-      font-size: 0.95rem;
-      line-height: 1;
-      color: #1e6f43;
-      flex-shrink: 0;
     }
 
     .quick-nav-title {
-      font-family: 'Manrope', sans-serif !important;
-      font-size: clamp(1.45rem, 2.4vw, 1.95rem);
-      font-weight: 800;
-      color: #1a251e;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(20px, 2.5vw, 28px);
+      color: #263b30;
       margin: 0;
-      letter-spacing: -0.02em;
-      line-height: 1.25;
-      text-align: center;
     }
 
     .quick-nav-title span {
-      color: #1e6f43;
-      font-weight: 800;
+      color: var(--safe-green-accent);
     }
 
     .guides-nav-grid {
@@ -351,150 +256,64 @@
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       gap: 14px;
-      margin: 0;
     }
 
     .guide-nav-item {
       display: flex;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
       gap: 10px;
-      padding: 9px 16px 9px 9px;
-      background: #edf7f0;
-      border: 1px solid #cce4d2;
-      border-radius: 9999px;
+      padding: 18px 12px;
+      border-radius: 20px;
+      background: #f8fbf5;
+      border: 1px solid #e1efe3;
+      color: var(--safe-green-dark);
       text-decoration: none;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-      min-width: 0;
-      cursor: pointer;
+      transition: all 0.22s ease;
+      text-align: center;
     }
 
-    .guide-nav-item:hover,
-    .guide-nav-item.active-filter {
-      background: #e4f4e8;
-      border-color: #237847;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(35, 100, 55, 0.12);
+    .guide-nav-item:hover {
+      background: #edf7f0;
+      border-color: var(--safe-green-primary);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(36, 107, 67, 0.08);
     }
 
     .guide-nav-icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: #d1ecda;
-      color: #1e6f43;
-      display: grid;
-      place-items: center;
-      flex-shrink: 0;
-      font-size: 1rem;
-      line-height: 1;
-      transition: background 0.2s ease, color 0.2s ease;
-    }
-
-    .guide-nav-icon i {
-      display: inline-block;
-      line-height: 1;
-    }
-
-    .guide-nav-item:hover .guide-nav-icon,
-    .guide-nav-item.active-filter .guide-nav-icon {
-      background: #1e6f43;
-      color: #ffffff;
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: #ffffff;
+      border: 1px solid #dceade;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--safe-green-primary);
+      font-size: 18px;
     }
 
     .guide-nav-label {
-      font-family: 'DM Sans', 'Manrope', sans-serif !important;
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       font-weight: 700;
-      color: #1c2b20;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      color: #263b30;
     }
-/* ========================================================
-       SIGNATURE SECTION HEADING CARDS (Matching Dogs/Cats Index)
+
+    /* ========================================================
+       3. SIGNATURE SECTION HEADING CARDS (Matches Cats Index)
        ======================================================== */
-    .safe-topics-heading {
+    .cat-topics-heading {
       position: relative;
-      width: 100%; margin: 45px auto 35px;
+      width: 100%;
+      max-width: 1400px;
+      margin: 45px auto 35px;
       padding: 44px 35px 38px;
       overflow: hidden;
       text-align: center;
       border-radius: 35px;
-    .hero-note i { color: var(--green); }
-
-    .quick-nav-section {
-      padding: 42px 0 52px;
-      background: #f4faf5;
-      border-top: 1px solid #e1ece0;
-      border-bottom: 1px solid #e1ece0;
-    }
-
-    .quick-nav-heading {
-      margin: 0 0 24px;
-      color: #263b30;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.5rem, 2.4vw, 2rem);
-      text-align: center;
-    }
-
-    .quick-nav-heading span { color: var(--green); }
-
-    .quick-nav-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .quick-nav-link {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      min-height: 54px;
-      padding: 7px 16px 7px 8px;
-      border: 1px solid #cce4d2;
-      border-radius: 999px;
-      background: #edf7f0;
-      color: #1c2b20;
-      font-size: 0.92rem;
-      font-weight: 700;
-      text-decoration: none;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    }
-
-    .quick-nav-link:hover,
-    .quick-nav-link:focus-visible {
-      transform: translateY(-2px);
-      background: #e4f4e8;
-      box-shadow: 0 6px 18px rgba(35, 100, 55, 0.12);
-    }
-
-    .quick-nav-icon {
-      display: grid;
-      flex: 0 0 38px;
-      width: 38px;
-      height: 38px;
-      place-items: center;
-      border-radius: 50%;
-      background: #d1ecda;
-      color: #1e6f43;
-      font-size: 1rem;
-    }
-
-    .safety-overview {
-      padding: 64px 0 74px;
-      background: #fafcf7;
-    }
-
-    .section-heading-wrap {
-      max-width: 1400px;
-      margin: 0 auto 34px;
-      padding: 38px 28px;
-      border: 1px solid #dcebc9;
-      border-radius: 30px;
-      background: #ffffff;
-      text-align: center;
+      border: 1px solid var(--safe-border);
+      background: var(--safe-cream);
       box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
       box-sizing: border-box;
     }
@@ -519,36 +338,39 @@
       height: 130px;
     }
 
-    .heading-decor-icon {
+    .paw {
       position: absolute;
-      pointer-events: none;
+      color: rgba(115, 173, 91, 0.28);
       z-index: 1;
-      color: #c9decb;
-      opacity: 0.55;
+      pointer-events: none;
     }
 
-    .decor-pos-1 {
-      left: 35px;
-      top: 25px;
-      font-size: 34px;
+    .paw-left-1 {
+      top: 66px;
+      left: 108px;
+      font-size: 58px;
+      transform: rotate(20deg);
     }
 
-    .decor-pos-2 {
-      left: 18px;
-      bottom: 14px;
-      font-size: 24px;
+    .paw-left-2 {
+      bottom: 24px;
+      left: 82px;
+      font-size: 38px;
+      transform: rotate(-15deg);
     }
 
-    .decor-pos-3 {
-      right: 25px;
-      top: 25px;
-      font-size: 34px;
+    .paw-right-1 {
+      top: 60px;
+      right: 75px;
+      font-size: 56px;
+      transform: rotate(18deg);
     }
 
-    .decor-pos-4 {
-      right: 65px;
-      bottom: 14px;
-      font-size: 24px;
+    .paw-right-2 {
+      bottom: 35px;
+      right: 140px;
+      font-size: 38px;
+      transform: rotate(-15deg);
     }
 
     .heading-content {
@@ -564,53 +386,45 @@
       margin-bottom: 16px;
       border-radius: 50px;
       background: #edf6df;
-      border: 1px solid #dcebc9;
-      color: #246b43;
+      border: 1px solid var(--safe-border);
+      color: var(--safe-green-primary);
+      font-family: "DM Sans", "Manrope", sans-serif !important;
       font-size: 13px;
-    .heading-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 12px;
-      padding: 6px 15px;
-      border: 1px solid #cce4d2;
-      border-radius: 999px;
-      background: #edf7f0;
-      color: #246b43;
-      font-size: 0.76rem;
       font-weight: 700;
       letter-spacing: 1.2px;
       text-transform: uppercase;
+      box-shadow: 0 1px 4px rgba(36, 107, 67, 0.06);
     }
 
-    .safe-topics-heading h2 {
+    .heading-label i {
+      font-size: 14px;
+      color: var(--safe-green-primary);
+      line-height: 1;
+    }
+
+    .cat-topics-heading h2 {
       color: #263b30;
-      font-family: Georgia, serif;
+      font-family: Georgia, "Times New Roman", serif !important;
       font-size: clamp(24px, 3.2vw, 36px);
       font-weight: 700;
       margin: 0 0 12px;
+      line-height: 1.2;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 12px;
       flex-wrap: wrap;
-    .section-heading-wrap h2 {
-      margin: 0 0 10px;
-      color: #263b30;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
-      line-height: 1.25;
     }
 
-    .safe-topics-heading h2 span {
-      color: var(--safe-green-primary);
+    .cat-topics-heading h2 span {
+      color: var(--safe-green-accent);
     }
 
-    .safe-topics-heading p {
-      max-width: 680px;
+    .cat-topics-heading p {
+      max-width: 720px;
       margin: 0 auto;
-      font-size: 0.98rem;
-      color: var(--safe-muted);
+      color: #64736a;
+      font-size: 15px;
       line-height: 1.65;
     }
 
@@ -676,784 +490,189 @@
       bottom: 3px;
       width: 14px;
       height: 2.8px;
+      transform: rotate(35deg);
     }
 
     /* ========================================================
-       4. CARDS DESIGN (Matching Dog & Cat Index Card Design)
+       4. CLEAN ICON CARDS (Consistent Icon -> Title -> Description)
        ======================================================== */
-    .safe-cards-grid {
+    .safe-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+      margin-bottom: 45px;
+    }
+
+    .safe-grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
-      margin-bottom: 50px;
-      align-items: stretch;
+      margin-bottom: 45px;
     }
 
-    .safe-card {
+    .safe-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-bottom: 45px;
+    }
+
+    .safety-card {
       background: var(--safe-white);
-      border: 1px solid var(--safe-line);
-      border-radius: 20px;
-      overflow: hidden;
+      border: 1px solid var(--safe-card-border);
+      border-radius: 22px;
+      padding: 30px 22px;
+      text-align: center;
       display: flex;
       flex-direction: column;
-      text-align: left;
-      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
-      box-shadow: 0 4px 18px rgba(35, 75, 45, 0.05);
-      position: relative;
+      align-items: center;
+      box-shadow: var(--safe-shadow);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
       height: 100%;
     }
 
-    .safe-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(35, 75, 45, 0.12);
-      border-color: #cbd9ce;
+    .safety-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--safe-hover-shadow);
+      border-color: #cce4d2;
     }
 
-    .safe-card-media {
-      position: relative;
-      height: 200px;
-      overflow: hidden;
-      background: #edf5ee;
-    }
-
-    .safe-card-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-      transition: transform 0.35s ease;
-    }
-
-    .safe-card:hover .safe-card-media img {
-      transform: scale(1.05);
-    }
-
-    .safe-card-badge {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(4px);
-      padding: 5px 12px;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--safe-green-dark);
+    .safety-card-icon {
+      width: 62px;
+      height: 62px;
+      border-radius: 18px;
+      background: var(--safe-green-light);
+      color: var(--safe-green-primary);
+      border: 1px solid #d5eadb;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 18px;
+      flex-shrink: 0;
     }
 
-    .safe-card-badge i {
-      color: var(--safe-green-primary);
-    }
-
-    .safe-card-body {
-      padding: 24px 22px 24px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      text-align: left;
-      flex-grow: 1;
-    }
-
-    .safe-card-body h3 {
-      font-family: Georgia, 'Playfair Display', serif;
-      font-size: 1.25rem;
-      color: #22372a;
+    .safety-card h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.14rem;
+      font-weight: 700;
+      color: var(--safe-green-dark);
       margin: 0 0 10px;
       line-height: 1.3;
     }
 
-    .safe-card-body p {
-      font-size: 0.88rem;
-      line-height: 1.55;
-      color: var(--safe-muted);
-      margin: 0 0 18px;
-      flex-grow: 1;
-    }
-
-    .safe-card-link {
-    .section-heading-wrap p {
-      max-width: 700px;
-      margin: 0 auto;
-      color: #55675c;
-      font-size: 0.98rem;
-      line-height: 1.65;
-    }
-
-    .safety-card-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .safety-card {
-      display: flex;
-      min-height: 245px;
-      flex-direction: column;
-      align-items: center;
-      padding: 28px 24px;
-      border: 1px solid #dceade;
-      border-radius: 22px;
-      background: #ffffff;
-      text-align: center;
-      box-shadow: 0 4px 18px rgba(35, 75, 45, 0.04);
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-    }
-
-    .safety-card:hover {
-      transform: translateY(-5px);
-      border-color: #9fc5a7;
-      box-shadow: 0 12px 30px rgba(35, 75, 45, 0.09);
-    }
-
-    .safety-card-icon {
-      display: grid;
-      width: 58px;
-      height: 58px;
-      flex: 0 0 58px;
-      place-items: center;
-      margin-bottom: 17px;
-      border-radius: 18px;
-      background: #edf7f0;
-      color: #246b43;
-      font-size: 1.45rem;
-    }
-
-    .safety-card h3 {
-      margin: 0 0 9px;
-      color: #1a251e;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.17rem;
-    }
-
     .safety-card p {
+      font-size: 0.9rem;
+      color: var(--safe-muted);
+      line-height: 1.62;
       margin: 0;
-      color: #55665b;
-      font-size: 0.91rem;
-      line-height: 1.6;
-    }
-
-    .safety-card a {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: auto;
-      padding-top: 14px;
-      color: var(--green);
-      font-size: 0.88rem;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .safety-section {
-      padding: 58px 0 66px;
-      scroll-margin-top: 24px;
-    }
-
-    .safety-section:nth-of-type(even) { background: #fafcf7; }
-
-    .safety-detail {
-      display: grid;
-      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-      align-items: start;
-      gap: 32px;
-      max-width: 1080px;
-      margin: 0 auto;
-    }
-
-    .safety-detail h3 {
-      margin: 0 0 12px;
-      color: #1a251e;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.3rem;
-    }
-
-    .safety-detail p {
-      margin: 0;
-      color: #55665b;
-      font-size: 0.96rem;
-      line-height: 1.7;
-    }
-
-    .safety-detail ul {
-      display: grid;
-      gap: 11px;
-      margin: 0;
-      padding: 24px 28px 24px 48px;
-      border: 1px solid #dceade;
-      border-radius: 20px;
-      background: #ffffff;
-      color: #45574a;
-      font-size: 0.94rem;
-      line-height: 1.6;
-      box-shadow: 0 4px 18px rgba(35, 75, 45, 0.035);
-    }
-
-    .safety-detail li::marker { color: #287348; }
-
-    .safety-cta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-      margin: 40px auto 60px;
-      padding: 44px 50px !important;
-      border: 1px solid #f2dbd6;
-      border-radius: 28px;
-      background: #fbf1ef !important;
-      box-shadow: 0 10px 30px rgba(180, 80, 60, 0.06);
-    }
-
-    .safety-cta .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 8px;
-      color: #9e4636;
-      font-size: 0.82rem;
-      font-weight: 800;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-    }
-
-    .safety-cta h2 {
-      margin: 0 0 12px;
-      color: #2b1d1a;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.7rem, 2.6vw, 2.25rem);
-      line-height: 1.2;
-    }
-
-    .safety-cta p {
-      max-width: 620px;
-      margin: 0;
-      color: #6d524d;
-      font-size: 0.98rem;
-      line-height: 1.65;
-    }
-
-    .safety-cta .button.button-light {
-      display: inline-flex;
-      flex-shrink: 0;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: var(--safe-green-primary);
-      text-decoration: none;
-      transition: color 0.2s ease, transform 0.2s ease;
-      margin-top: auto;
-    }
-
-    .safe-card-link:hover {
-      color: var(--safe-green-dark);
-      transform: translateX(4px);
     }
 
     /* ========================================================
-       CONTENT SECTIONS STYLING
+       5. FINAL CTA (Matches Cat Index)
        ======================================================== */
-    .content-box {
-      background: var(--safe-white);
-      border-radius: 28px;
-      padding: 38px 34px;
-      margin-bottom: 35px;
-      box-shadow: var(--safe-card-shadow);
-    }
-
-    .feature-grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      margin-top: 24px;
-      justify-content: center;
-      gap: 9px;
-      padding: 13px 26px;
-      border: 1px solid rgba(0, 0, 0, 0.08) !important;
-      border-radius: 999px;
-      background: #ffffff !important;
-      color: #1a2e22 !important;
-      font-family: "DM Sans", "Manrope", sans-serif !important;
-      font-size: 0.92rem;
-      font-weight: 700;
-      text-decoration: none;
-      white-space: nowrap;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .safety-cta .button.button-light:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-    }
-
-    @media (max-width: 900px) {
-      .quick-nav-grid,
-      .safety-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-
-      .safety-cta {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 36px 30px !important;
-      }
-    }
-
-    @media (max-width: 700px) {
-      .safety-detail { grid-template-columns: 1fr; gap: 18px; }
-      .safety-detail ul { padding: 20px 22px 20px 42px; }
-    }
-
-    @media (max-width: 600px) {
-      .quick-nav-grid,
-      .safety-card-grid { grid-template-columns: 1fr; }
-
-      .quick-nav-link { min-height: 50px; }
-      .safety-overview { padding: 46px 0 54px; }
-      .section-heading-wrap { padding: 30px 18px; }
-      .safety-section { padding: 42px 0 50px; }
-      .safety-card { min-height: 0; }
-      .safety-cta { padding: 30px 22px !important; }
-      .safety-cta .button.button-light { width: 100%; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .quick-nav-link,
-      .safety-card,
-      .safety-cta .button.button-light { transition: none; }
-
-      .quick-nav-link:hover,
-      .safety-card:hover,
-      .safety-cta .button.button-light:hover { transform: none; }
-    }
-
-    .feature-grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 22px;
-      margin-top: 24px;
-    }
-
-    .feature-card {
-      background: #fafcf8;
-      border: 1px solid #e1ecde;
-      border-radius: 20px;
-      padding: 24px 20px;
+    .cta-actions {
       display: flex;
-      flex-direction: column;
-      gap: 12px;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .cta .button.button-outline {
+      background: transparent !important;
+      color: #ffffff !important;
+      border: 1.5px solid rgba(255, 255, 255, 0.65) !important;
+      padding: 13px 24px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.92rem;
       transition: all 0.25s ease;
     }
 
-    .feature-card:hover {
-      background: #ffffff;
-      border-color: #cbd9ce;
-      box-shadow: 0 8px 22px rgba(35, 75, 45, 0.08);
-      transform: translateY(-3px);
-    }
-
-    .feature-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .feature-icon-wrap {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      background: var(--safe-green-light);
-      border: 1px solid var(--safe-border-green);
-      color: var(--safe-green-primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.05rem;
-      flex-shrink: 0;
-    }
-
-    .feature-header h4 {
-      font-size: 1.06rem;
-      margin: 0;
-      color: var(--safe-ink);
-      font-weight: 700;
-    }
-
-    .feature-card p {
-      font-size: 0.9rem;
-      line-height: 1.6;
-      margin: 0;
-      color: var(--safe-muted);
-    }
-
-    /* Warning Alert Box */
-    .alert-banner {
-      background: #fff8f5;
-      border: 1px solid #f6ded5;
-      border-left: 5px solid #d9534f;
-      border-radius: 16px;
-      padding: 20px 24px;
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      margin-top: 28px;
-    }
-
-    .alert-banner i {
-      color: #d9534f;
-      font-size: 1.4rem;
-      margin-top: 2px;
-      flex-shrink: 0;
-    }
-
-    .alert-banner h5 {
-      margin: 0 0 6px;
-      font-size: 1rem;
-      color: #8c251f;
-      font-weight: 700;
-    }
-
-    .alert-banner p {
-      margin: 0;
-      font-size: 0.88rem;
-      line-height: 1.55;
-      color: #6d413b;
-    }
-
-    /* Info Tip Box */
-    .tip-banner {
-      background: #f4faf6;
-      border: 1px solid var(--safe-border-green);
-      border-left: 5px solid var(--safe-green-primary);
-      border-radius: 16px;
-      padding: 20px 24px;
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      margin-top: 24px;
-    }
-
-    .tip-banner i {
-      color: var(--safe-green-primary);
-      font-size: 1.35rem;
-      margin-top: 2px;
-      flex-shrink: 0;
-    }
-
-    .tip-banner h5 {
-      margin: 0 0 6px;
-      font-size: 1rem;
-      color: var(--safe-green-dark);
-      font-weight: 700;
-    }
-
-    .tip-banner p {
-      margin: 0;
-      font-size: 0.88rem;
-      line-height: 1.55;
-      color: var(--safe-muted);
-    }
-
-    /* Process / Steps Grid */
-    .process-steps {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-      margin-top: 26px;
-    }
-
-    .step-card {
-      background: #ffffff;
-      border: 1px solid var(--safe-line);
-      border-radius: 18px;
-      padding: 20px;
-      position: relative;
-    }
-
-    .step-number {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: var(--safe-green-primary);
-      color: #fff;
-      font-size: 0.85rem;
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-
-    .step-card h4 {
-      font-size: 0.98rem;
-      margin: 0 0 8px;
-      color: var(--safe-ink);
-    }
-
-    .step-card p {
-      font-size: 0.86rem;
-      margin: 0;
-      color: var(--safe-muted);
-      line-height: 1.55;
-    }
-
-    /* Comparison / Dos & Don'ts Grid */
-    .compare-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-top: 26px;
-    }
-
-    .compare-card {
-      border-radius: 20px;
-      padding: 26px;
-      border: 1px solid;
-    }
-
-    .compare-card.positive {
-      background: #f7fbf8;
-      border-color: #d2e7d6;
-    }
-
-    .compare-card.negative {
-      background: #fdf7f7;
-      border-color: #f6d4d4;
-    }
-
-    .compare-card h4 {
-      margin: 0 0 16px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 1.1rem;
-    }
-
-    .compare-card.positive h4 {
-      color: #1e6f43;
-    }
-
-    .compare-card.negative h4 {
-      color: #b52c2c;
-    }
-
-    .compare-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .compare-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 0.9rem;
-      line-height: 1.55;
-    }
-
-    .compare-card.positive .compare-list li i {
-      color: #28764a;
-      margin-top: 3px;
-    }
-
-    .compare-card.negative .compare-list li i {
-      color: #c94a5e;
-      margin-top: 3px;
+    .cta .button.button-outline:hover {
+      background: #ffffff !important;
+      color: var(--safe-green-primary) !important;
+      border-color: #ffffff !important;
     }
 
     /* ========================================================
-       5. FINAL CTA SECTION (Matching Cat, Dog, & Rabbit Index)
+       6. RESPONSIVE BREAKPOINTS
        ======================================================== */
-    .cta {
-      margin-top: 0;
-      margin-bottom: 92px;
-      border: 1px solid #e6d6c6;
-      text-align: left;
-    }
-
-    .cta h2 {
-      text-align: left !important;
-    }
-
-    .cta div {
-      text-align: left;
-    }
-
-    .cta p {
-      text-align: left !important;
-    }
-
-    .cta-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      flex-shrink: 0;
-    }
-
-    .cta .button-outline {
-      background: transparent;
-      color: var(--green, #286849);
-      border-color: var(--green, #286849);
-    }
-
-    .cta .button-outline:hover {
-      background: var(--green, #286849);
-      color: white;
-    }
-@media (max-width: 900px) {
-      .safe-hero {
-        grid-template-columns: 1fr;
-        padding: 45px 5%;
-        gap: 36px;
-        text-align: center;
+    @media (max-width: 1100px) {
+      .guides-nav-grid {
+        grid-template-columns: repeat(3, 1fr);
       }
 
-      .safe-hero-copy {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .safe-hero-actions {
-        justify-content: center;
-      }
-
-      .safe-hero-note {
-        justify-content: center;
-      }
-
-      .safe-hero-visual {
-        min-height: 320px;
-      }
-
-      .safe-hero-frame {
-        height: 320px;
-      }
-
-      .compare-grid {
-        grid-template-columns: 1fr;
+      .safe-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (max-width: 680px) {
-      .cta {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        padding: 34px 24px !important;
+    @media (max-width: 900px) {
+      .safe-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
       }
+    }
 
-      .cta-actions {
-        width: 100% !important;
-        flex-direction: column !important;
-        margin-top: 18px !important;
-      }
-
-      .cta-actions .button,
-      .cta-actions .button-light,
-      .cta-actions .button-outline {
-        width: 100% !important;
-        text-align: center !important;
-        justify-content: center !important;
-      }
-      .safe-hero {
-        width: calc(100% - 24px);
-        padding: 36px 20px;
-        margin: 20px auto 35px;
-      }
-
-      .safe-floating-badge {
+    @media (max-width: 768px) {
+      .paw {
         display: none;
       }
 
+      .guides-nav-grid,
+      .safe-grid-4,
+      .safe-grid-3,
+      .safe-grid-2 {
+        grid-template-columns: 1fr;
+      }
+
       .guides-nav-strip {
-        width: calc(100% - 24px);
-        padding: 28px 18px;
-        margin: 30px auto 45px;
+        padding: 26px 18px;
       }
 
-      .guides-nav-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-
-      .guide-nav-item {
-        justify-content: flex-start;
-      }
-
-      .safe-cards-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .feature-grid-3,
-      .feature-grid-2,
-      .process-steps {
-        grid-template-columns: 1fr;
-      }
-
-      .content-box {
-        padding: 26px 20px;
-      }
-
-      .safe-topics-heading {
-        padding: 36px 20px;
-        margin: 40px auto 25px;
-      }
-
-      
-
-      .safe-hero-actions {
+      .cta-actions {
         width: 100%;
         flex-direction: column;
+        margin-top: 18px;
       }
 
-      .safe-hero-actions .button,
-      .safe-hero-actions .button-outline {
+      .cta-actions .button {
         width: 100%;
-        justify-content: center;
+        text-align: center;
       }
     }
   </style>
 </head>
 
 <body>
-  <!-- Accessible Skip Link -->
-  <a href="#main-content" class="skip-to-content">Skip to content</a>
-
-  <!-- Shared Header Placeholder -->
+  <!-- Reusable Header Placeholder -->
   <div id="header"></div>
-
-  
 
   <main id="main-content">
     <!-- ========================================================
-         1. HERO SECTION (Fish Safety & Aquarium Protection)
+         1. MAIN HERO SECTION
          ======================================================== -->
     <section class="hero section-wrap" id="fish-safety-hero">
       <div class="hero-copy">
         <div class="fish-badge-strip">
-          🐠 PetSathi • Aquatic Safety &amp; Biosecurity
+          <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+          <span>PETSATHI &bull; AQUATIC SAFETY &amp; BIOSECURITY</span>
         </div>
         <h1>Fish Safety and <em>Aquarium Protection</em></h1>
-        <p>
-          Maintaining a thriving aquarium demands vigilant protection against invisible hazards—from catastrophic ammonia
-          spikes and heater malfunctions to toxic household aerosols and species incompatibility. Explore essential
-          aquatic safety protocols, equipment safeguards, acclimation steps, and emergency rescue techniques.
+        <p class="hero-lead">
+          Maintaining a thriving aquarium demands proactive protection against invisible hazards—from sudden ammonia spikes and heater malfunctions to toxic household sprays and species incompatibility. Explore essential aquatic safety protocols, equipment safeguards, acclimation steps, and emergency readiness.
         </p>
         <div class="hero-actions">
           <a class="button" href="#safety-cards-overview" id="hero-cta-explore">
-            Explore Fish Safety Tips <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            Explore Safety Topics <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
           </a>
           <a class="button button-outline" href="#quick-nav" id="hero-cta-nav">
-            <i class="fa-solid fa-compass" aria-hidden="true"></i> Quick Navigation
+            Quick Navigation
           </a>
         </div>
         <div class="hero-note">
-          <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Dedicated to healthy aquatic ecosystems and biosecurity.
+          <i class="fa-solid fa-circle-check" style="color: var(--safe-green-primary);" aria-hidden="true"></i>
+          &nbsp; Dedicated to healthy aquatic ecosystems and stress-free fishkeeping.
         </div>
       </div>
 
@@ -1461,52 +680,23 @@
         <div class="hero-blob"></div>
         <img
           src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&fit=crop&w=1000&q=85"
-          alt="Pristine freshwater community aquarium with thriving tropical fish and lush aquatic vegetation"
+          alt="Vibrant tropical fish swimming safely inside a well-maintained planted aquarium"
           class="hero-photo"
           id="hero-fish-image"
         />
         <div class="floating-card card-top">
-          💧
-          <span><b>Water Quality</b><small>0 ppm Ammonia &amp; Nitrite</small></span>
+          <i class="fa-solid fa-droplet" aria-hidden="true"></i>
+          <span>
+            <b>Zero Ammonia &amp; Nitrite</b>
+            <small>Stable water chemistry</small>
+          </span>
         </div>
         <div class="floating-card card-bottom">
-          🔌
-          <span><b>Drip Loop Safety</b><small>Protected electrical cords</small></span>
-  <main id="main-content">
-    <section class="hero section-wrap" id="safety-hero">
-      <div class="hero-copy">
-        <div class="safety-badge">
-          <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
-          Reptile Safety &amp; Habitat Protection
-        </div>
-        <h1>Reptile Safety and <em>Habitat Protection</em></h1>
-        <p>
-          A secure, carefully monitored habitat helps reptiles stay healthy and prevents avoidable escapes and injuries.
-          Learn how to make every part of your terrarium safer, from heating and substrate to gentle handling and
-          emergency readiness.
-        </p>
-        <div class="hero-actions">
-          <a class="button" href="#safe-terrarium-setup">
-            Explore Safety Tips <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
-          </a>
-        </div>
-        <div class="hero-note">
-          <i class="fa-solid fa-leaf" aria-hidden="true"></i>
-          &nbsp; Thoughtful habitats help reptiles thrive.
-        </div>
-      </div>
-
-      <div class="hero-visual">
-        <div class="hero-blob"></div>
-        <img src="../../../assets/images/reptiles/bearded-dragon.jpg"
-          alt="Bearded dragon resting safely in a natural terrarium habitat" class="hero-photo">
-        <div class="floating-card card-top">
-          <i class="fa-solid fa-temperature-half" style="color: var(--green);" aria-hidden="true"></i>
-          <span><b>Safe Heat</b><small>Thermostat controlled</small></span>
-        </div>
-        <div class="floating-card card-bottom">
-          <i class="fa-solid fa-shield-halved" style="color: var(--green);" aria-hidden="true"></i>
-          <span><b>Secure Habitat</b><small>Checked and escape-proof</small></span>
+          <i class="fa-solid fa-temperature-half" aria-hidden="true"></i>
+          <span>
+            <b>Equipment Safeguards</b>
+            <small>Drip loops &amp; steady heat</small>
+          </span>
         </div>
       </div>
     </section>
@@ -1514,284 +704,163 @@
     <!-- ========================================================
          2. QUICK NAVIGATION HUB
          ======================================================== -->
-    <div class="guides-nav-strip" id="quick-nav">
+    <nav class="guides-nav-strip" id="quick-nav" aria-label="Quick Navigation">
       <div class="quick-nav-decor decor-top-left" aria-hidden="true">
-        <i class="fa-solid fa-paw decor-paw decor-paw-1"></i>
-        <i class="fa-solid fa-paw decor-paw decor-paw-2"></i>
+        <i class="fa-solid fa-paw decor-paw"></i>
+        <i class="fa-solid fa-paw decor-paw"></i>
       </div>
-
       <div class="quick-nav-decor decor-bottom-right" aria-hidden="true">
-        <i class="fa-solid fa-paw decor-paw decor-paw-3"></i>
-        <i class="fa-solid fa-paw decor-paw decor-paw-4"></i>
+        <i class="fa-solid fa-paw decor-paw"></i>
+        <i class="fa-solid fa-paw decor-paw"></i>
       </div>
 
       <div class="quick-nav-header">
         <div class="quick-nav-eyebrow-wrap">
           <span class="quick-nav-line"></span>
           <div class="quick-nav-badge">
-            <i class="fa-regular fa-compass quick-nav-badge-icon" aria-hidden="true"></i>
+            <i class="fa-regular fa-compass" aria-hidden="true"></i>
             <span>QUICK NAVIGATION</span>
           </div>
           <span class="quick-nav-line"></span>
         </div>
-        <h3 class="quick-nav-title">
+        <h2 class="quick-nav-title">
           Explore Dedicated <span>Aquarium Safety Chapters</span>
-        </h3>
+        </h2>
       </div>
 
       <div class="guides-nav-grid">
         <a class="guide-nav-item" href="#aquarium-setup" id="hub-link-setup">
           <span class="guide-nav-icon"><i class="fa-solid fa-cube" aria-hidden="true"></i></span>
-          <span class="guide-nav-label">Setup</span>
+          <span class="guide-nav-label">Aquarium Setup</span>
         </a>
-
         <a class="guide-nav-item" href="#water-chemical-safety" id="hub-link-water">
-          <span class="guide-nav-icon"><i class="fa-solid fa-droplet" aria-hidden="true"></i></span>
-          <span class="guide-nav-label">Water Care</span>
+          <span class="guide-nav-icon"><i class="fa-solid fa-flask" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Water &amp; Chemicals</span>
         </a>
-
         <a class="guide-nav-item" href="#equipment-safety" id="hub-link-equipment">
-          <span class="guide-nav-icon"><i class="fa-solid fa-plug-circle-bolt" aria-hidden="true"></i></span>
-          <span class="guide-nav-label">Equipment</span>
+          <span class="guide-nav-icon"><i class="fa-solid fa-plug-circle-check" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Equipment Safety</span>
         </a>
-
         <a class="guide-nav-item" href="#fish-compatibility" id="hub-link-compatibility">
           <span class="guide-nav-icon"><i class="fa-solid fa-fish-fins" aria-hidden="true"></i></span>
-          <span class="guide-nav-label">Harmony</span>
+          <span class="guide-nav-label">Compatibility</span>
         </a>
-
-        <a class="guide-nav-item" href="#handling-transportation" id="hub-link-transport">
-          <span class="guide-nav-icon"><i class="fa-solid fa-truck" aria-hidden="true"></i></span>
-          <span class="guide-nav-label">Transport</span>
+        <a class="guide-nav-item" href="#introducing-fish" id="hub-link-transport">
+          <span class="guide-nav-icon"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Safe Acclimation</span>
         </a>
-
         <a class="guide-nav-item" href="#emergency-care" id="hub-link-emergency">
-          <span class="guide-nav-icon"><i class="fa-solid fa-life-ring" aria-hidden="true"></i></span>
-          <span class="guide-nav-label">Emergency</span>
+          <span class="guide-nav-icon"><i class="fa-solid fa-kit-medical" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Emergency Care</span>
         </a>
       </div>
-    </div>
+    </nav>
 
     <!-- ========================================================
-         4. CARDS DESIGN (8 Safety Cards Grid)
+         3. AQUARIUM SAFETY OVERVIEW (8 Cards)
          ======================================================== -->
-    <section class="safe-section-wrap section-wrap" id="safety-cards-overview">
-      <div class="safe-topics-heading">
-        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true">
+    <section class="section-wrap" id="safety-cards-overview">
+      <div class="cat-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
-          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
-            opacity="0.95" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
         </svg>
-        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true">
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
-          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
-            opacity="0.95" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
         </svg>
-
-        <div class="heading-decor-icon decor-pos-1"><i class="fa-solid fa-leaf"></i></div>
-        <div class="heading-decor-icon decor-pos-2"><i class="fa-solid fa-leaf"></i></div>
-        <div class="heading-decor-icon decor-pos-3"><i class="fa-solid fa-leaf"></i></div>
-        <div class="heading-decor-icon decor-pos-4"><i class="fa-solid fa-leaf"></i></div>
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
 
         <div class="heading-content">
           <span class="heading-label">
-            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Protection Overview
+            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Core Protection
           </span>
           <h2>
             <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
-            Aquarium Safety <span>Cards</span>
+            Aquarium <span>Safety Pillars</span>
             <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
           </h2>
           <p>
-            Quickly navigate the core pillars of aquarium biosecurity. Select any card below to jump directly into detailed
-            husbandry protocols, equipment checks, and water management procedures.
+            Eight foundational safeguards that protect your aquatic companions from water toxicity, electrical risks, and preventable tank stress.
           </p>
         </div>
       </div>
 
-      <div class="safe-cards-grid">
-        <!-- Card 1: Aquarium Setup Safety -->
-        <article class="safe-card" id="card-setup-safety">
-          <div class="safe-card-media">
-            <span class="safe-card-badge">
-              <i class="fa-solid fa-cube" aria-hidden="true"></i> Physical Base
-            </span>
-            <img src="https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?auto=format&fit=crop&w=700&q=80"
-              alt="Properly balanced aquarium setup with stable stand and level base" loading="lazy">
-          </div>
-          <div class="safe-card-body">
-            
-            <h3>Aquarium Setup Safety</h3>
-            <p>
-              Reinforced load-bearing stands, level placement, escape-proof glass canopies, and smooth, non-sharp decor.
-            </p>
-            <a href="#aquarium-setup" class="safe-card-link">Explore Setup ↗</a>
-          </div>
+      <div class="safe-grid-4">
+        <article class="safety-card" id="card-setup-safety">
+          <div class="safety-card-icon"><i class="fa-solid fa-cube" aria-hidden="true"></i></div>
+          <h3>Aquarium Setup Safety</h3>
+          <p>Reinforced load-bearing stands, level placement, escape-proof glass canopies, and smooth, non-sharp decor.</p>
         </article>
 
-        <!-- Card 2: Water Safety -->
-        <article class="safe-card" id="card-water-safety">
-          <div class="safe-card-media">
-            <span class="safe-card-badge">
-              <i class="fa-solid fa-droplet" aria-hidden="true"></i> Water Quality
-            </span>
-            <img src="https://images.unsplash.com/photo-1524704654690-b56c05c78a00?auto=format&fit=crop&w=700&q=80"
-              alt="Clear healthy aquarium water with schooling tropical fish" loading="lazy">
-          </div>
-          <div class="safe-card-body">
-            
-            <h3>Water Safety</h3>
-            <p>
-              Maintaining 0 ppm ammonia and nitrite, tracking nitrate levels, and running weekly test kit diagnostics.
-            </p>
-            <a href="#water-chemical-safety" class="safe-card-link">Water Checks ↗</a>
-          </div>
+        <article class="safety-card" id="card-water-safety">
+          <div class="safety-card-icon"><i class="fa-solid fa-droplet" aria-hidden="true"></i></div>
+          <h3>Water Safety</h3>
+          <p>Maintaining 0 ppm ammonia and nitrite, tracking nitrate levels, and running weekly liquid test kit diagnostics.</p>
         </article>
 
-        <!-- Card 3: Chemical Safety -->
-        <article class="safe-card" id="card-chemical-safety">
-          <div class="safe-card-media">
-            <span class="safe-card-badge">
-              <i class="fa-solid fa-flask" aria-hidden="true"></i> Toxin Shield
-            </span>
-            <img src="https://images.unsplash.com/photo-1571752726703-5e7d1f6a986d?auto=format&fit=crop&w=700&q=80"
-              alt="Planted aquarium ecosystem kept free from chemical contaminations" loading="lazy">
-          </div>
-          <div class="safe-card-body">
-            
-            <h3>Chemical Safety</h3>
-            <p>
-              Neutralizing tap water chloramines, eliminating toxic soaps and sprays, and using dedicated aquarium buckets.
-            </p>
-            <a href="#water-chemical-safety" class="safe-card-link">Chemical Rules ↗</a>
-          </div>
+        <article class="safety-card" id="card-chemical-safety">
+          <div class="safety-card-icon"><i class="fa-solid fa-flask" aria-hidden="true"></i></div>
+          <h3>Chemical Safety</h3>
+          <p>Neutralizing tap water chloramines, eliminating toxic soaps and sprays, and using dedicated aquarium buckets.</p>
         </article>
 
-        <!-- Card 4: Equipment Safety -->
-        <article class="safe-card" id="card-equipment-safety">
-          <div class="safe-card-media">
-            <span class="safe-card-badge">
-              <i class="fa-solid fa-plug-circle-bolt" aria-hidden="true"></i> Hardware Check
-            </span>
-            <img src="https://images.unsplash.com/photo-1516683037151-9a17603a8dc7?auto=format&fit=crop&w=700&q=80"
-              alt="Submerged heater and mechanical filter installation inside aquarium" loading="lazy">
-          </div>
-          <div class="safe-card-body">
-            
-            <h3>Equipment Safety</h3>
-            <p>
-              Electrical drip loops, shatterproof quartz heaters, intake filter sponges, and weekly electrical inspections.
-            </p>
-            <a href="#equipment-safety" class="safe-card-link">Hardware Safety ↗</a>
-          </div>
+        <article class="safety-card" id="card-equipment-safety">
+          <div class="safety-card-icon"><i class="fa-solid fa-plug-circle-check" aria-hidden="true"></i></div>
+          <h3>Equipment Safety</h3>
+          <p>Electrical drip loops, shatterproof quartz heaters, intake filter sponges, and regular electrical inspections.</p>
         </article>
 
-        <!-- Card 5: Fish Compatibility -->
-        <article class="safe-card" id="card-fish-compatibility">
-          <div class="safe-card-media">
-            <span class="safe-card-badge">
-              <i class="fa-solid fa-fish-fins" aria-hidden="true"></i> Harmony
-            </span>
-            <img src="https://images.unsplash.com/photo-1711826949355-30acbe1b385a?q=80&w=870&auto=format&fit=crop"
-              alt="Peaceful community tropical fish schooling together" loading="lazy">
-          </div>
-          <div class="safe-card-body">
-            
-            <h3>Fish Compatibility</h3>
-            <p>
-              Matching pH and thermal needs, preventing fin nipping, diffusing territorial aggression, and avoiding overcrowding.
-            </p>
-            <a href="#fish-compatibility" class="safe-card-link">Species Matches ↗</a>
-          </div>
+        <article class="safety-card" id="card-fish-compatibility">
+          <div class="safety-card-icon"><i class="fa-solid fa-fish-fins" aria-hidden="true"></i></div>
+          <h3>Fish Compatibility</h3>
+          <p>Matching pH and thermal needs, preventing fin nipping, diffusing territorial aggression, and avoiding overcrowding.</p>
         </article>
 
-        <!-- Card 6: Safe Transportation -->
-        <article class="safe-card" id="card-safe-transportation">
-          <div class="safe-card-media">
-            <span class="safe-card-badge">
-              <i class="fa-solid fa-truck" aria-hidden="true"></i> Relocation
-            </span>
-            <img src="https://images.unsplash.com/photo-1785822387462-1b8dd36804be?q=80&w=774&auto=format&fit=crop"
-              alt="Healthy goldfish ready for safe acclimation and transport" loading="lazy">
-          </div>
-          <div class="safe-card-body">
-            
-            <h3>Safe Transportation</h3>
-            <p>
-              Oxygenated transit bags, insulated thermal coolers, low-stress netting, and gradual drip acclimation protocols.
-            </p>
-            <a href="#handling-transportation" class="safe-card-link">Transit Steps ↗</a>
-          </div>
+        <article class="safety-card" id="card-safe-transportation">
+          <div class="safety-card-icon"><i class="fa-solid fa-truck-fast" aria-hidden="true"></i></div>
+          <h3>Safe Transportation</h3>
+          <p>Oxygenated transit bags, insulated thermal coolers, low-stress netting, and gradual drip acclimation protocols.</p>
         </article>
 
-        <!-- Card 7: Common Hazards -->
-        <article class="safe-card" id="card-common-hazards">
-          <div class="safe-card-media">
-            <span class="safe-card-badge">
-              <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Hazard Alert
-            </span>
-            <img src="https://images.unsplash.com/photo-1769006604234-8f6e32bb0d77?q=80&w=774&auto=format&fit=crop"
-              alt="Betta fish protected from overfeeding and sharp tank decorations" loading="lazy">
-          </div>
-          <div class="safe-card-body">
-            
-            <h3>Common Hazards</h3>
-            <p>
-              Preventing overfeeding ammonia spikes, sharp plastic fin tears, temperature crashes, and sudden power outages.
-            </p>
-            <a href="#common-hazards" class="safe-card-link">Hazard Guide ↗</a>
-          </div>
+        <article class="safety-card" id="card-common-hazards">
+          <div class="safety-card-icon"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i></div>
+          <h3>Common Hazards</h3>
+          <p>Preventing overfeeding ammonia spikes, sharp plastic fin tears, temperature crashes, and sudden power outages.</p>
         </article>
 
-        <!-- Card 8: Emergency Preparedness -->
-        <article class="safe-card" id="card-emergency-care">
-          <div class="safe-card-media">
-            <span class="safe-card-badge">
-              <i class="fa-solid fa-life-ring" aria-hidden="true"></i> Rescue
-            </span>
-            <img src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&fit=crop&w=700&q=80"
-              alt="Aquarium fish responding to immediate emergency aeration and water change" loading="lazy">
-          </div>
-          <div class="safe-card-body">
-            
-            <h3>Emergency Preparedness</h3>
-            <p>
-              Battery aerators for blackouts, emergency 50% water detox changes, hospital tank setup, and vet contacts.
-            </p>
-            <a href="#emergency-care" class="safe-card-link">Emergency Plan ↗</a>
-          </div>
+        <article class="safety-card" id="card-emergency-care">
+          <div class="safety-card-icon"><i class="fa-solid fa-kit-medical" aria-hidden="true"></i></div>
+          <h3>Emergency Preparedness</h3>
+          <p>Battery aerators for blackouts, emergency 50% water detox changes, hospital tank setup, and aquatic vet contacts.</p>
         </article>
       </div>
     </section>
 
     <!-- ========================================================
-         3A. SAFE AQUARIUM SETUP
+         4. SAFE AQUARIUM SETUP & PLACEMENT
          ======================================================== -->
-    <section class="safe-section-wrap section-wrap" id="aquarium-setup">
-      <div class="safe-topics-heading">
-        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true">
+    <section class="section-wrap" id="aquarium-setup">
+      <div class="cat-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
-          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
-            opacity="0.95" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
         </svg>
-        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true">
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
-          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
-            opacity="0.95" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
         </svg>
-
-        <div class="heading-decor-icon decor-pos-1"><i class="fa-solid fa-leaf"></i></div>
-        <div class="heading-decor-icon decor-pos-2"><i class="fa-solid fa-leaf"></i></div>
-        <div class="heading-decor-icon decor-pos-3"><i class="fa-solid fa-leaf"></i></div>
-        <div class="heading-decor-icon decor-pos-4"><i class="fa-solid fa-leaf"></i></div>
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
 
         <div class="heading-content">
           <span class="heading-label">
-            <i class="fa-solid fa-cube" aria-hidden="true"></i> Structural Foundation
+            <i class="fa-solid fa-cube" aria-hidden="true"></i> Structural Stability
           </span>
           <h2>
             <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -1799,212 +868,59 @@
             <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
           </h2>
           <p>
-            A safe aquarium begins with structural stability. Water is exceptionally heavy (approx. 8.34 lbs per gallon),
-            meaning a 20-gallon tank weighs over 200 lbs with substrate and equipment.
+            A filled tank weighs roughly 10 lbs per gallon. Choosing the right stand, location, and interior decor prevents structural stress and physical injury.
           </p>
         </div>
       </div>
 
-      <div class="content-box">
-        <div class="feature-grid-3">
-          <!-- 1. Stable Placement -->
-          <div class="feature-card">
-            <div class="feature-header">
-              <div class="feature-icon-wrap">
-                <i class="fa-solid fa-building" aria-hidden="true"></i>
-              </div>
-              <h4>Stable Load-Bearing Placement</h4>
-            </div>
-            <p>
-              Always position aquariums on purpose-built stands or reinforced furniture rated for the filled weight. Never
-              place tanks on unstable coffee tables. Position away from direct sunlight (which triggers runaway algae and heat
-              spikes) and high-traffic drafty doorways.
-            </p>
-          </div>
+      <div class="safe-grid-4">
+        <article class="safety-card">
+          <div class="safety-card-icon"><i class="fa-solid fa-weight-hanging" aria-hidden="true"></i></div>
+          <h3>Level Load-Bearing Stand</h3>
+          <p>Place tanks only on dedicated aquarium stands rated above total filled weight, checking with a spirit level to prevent glass seam stress.</p>
+        </article>
 
-          <!-- 2. Suitable Tank Size -->
-          <div class="feature-card">
-            <div class="feature-header">
-              <div class="feature-icon-wrap">
-                <i class="fa-solid fa-ruler-combined" aria-hidden="true"></i>
-              </div>
-              <h4>Suitable Tank Volume</h4>
-            </div>
-            <p>
-              Contrary to popular belief, small bowls (1–2 gallons) are the hardest to maintain safely because toxins
-              concentrate rapidly. A 15 to 20-gallon tank provides biological buffer stability, diluting organic waste and
-              preventing sudden temperature fluctuations.
-            </p>
-          </div>
+        <article class="safety-card">
+          <div class="safety-card-icon"><i class="fa-solid fa-sun" aria-hidden="true"></i></div>
+          <h3>Away from Sunlight &amp; Drafts</h3>
+          <p>Position the aquarium away from direct windows, radiators, and AC vents to prevent overheating, algae blooms, and rapid temperature swings.</p>
+        </article>
 
-          <!-- 3. Secure Covers -->
-          <div class="feature-card">
-            <div class="feature-header">
-              <div class="feature-icon-wrap">
-                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
-              </div>
-              <h4>Secure Aquarium Canopies</h4>
-            </div>
-            <p>
-              Many popular species (Bettas, Danios, Swordtails, Hatchetfish) are agile jumpers when startled. Install a
-              tight-fitting glass canopy or hooded lid with covered filter cutouts to eliminate jumping fatalities and reduce
-              excessive evaporation.
-            </p>
-          </div>
+        <article class="safety-card">
+          <div class="safety-card-icon"><i class="fa-solid fa-shield" aria-hidden="true"></i></div>
+          <h3>Secure Tank Lids</h3>
+          <p>Use fitted glass canopies or mesh lids to stop agile jumpers from escaping, reduce evaporation, and keep dust or pets out of the water.</p>
+        </article>
 
-          <!-- 4. Safe Decorations -->
-          <div class="feature-card">
-            <div class="feature-header">
-              <div class="feature-icon-wrap">
-                <i class="fa-solid fa-gem" aria-hidden="true"></i>
-              </div>
-              <h4>Non-Toxic Aquarium Decor</h4>
-            </div>
-            <p>
-              Use only 100% aquarium-safe polyresin ornaments, inert river gravel, and pre-soaked natural driftwood (such as
-              Mopani or Malaysian driftwood). Avoid collected roadside rocks that contain calcareous lime or toxic metal veins
-              which leach into the water column.
-            </p>
-          </div>
-
-          <!-- 5. Avoiding Sharp Objects -->
-          <div class="feature-card">
-            <div class="feature-header">
-              <div class="feature-icon-wrap">
-                <i class="fa-solid fa-scissors" aria-hidden="true"></i>
-              </div>
-              <h4>Avoiding Sharp Fin Hazards</h4>
-            </div>
-            <p>
-              Inspect all artificial ornaments for rough mold seams or needle-sharp edges. Long-finned fish (Bettas, fancy
-              Goldfish, Angelfish) will snag and tear their delicate fin rays. Perform the <em>pantyhose test</em>: if decor
-              snags nylon hose, it is too sharp for fish.
-            </p>
-          </div>
-
-          <!-- 6. Foam Leveling Mats -->
-          <div class="feature-card">
-            <div class="feature-header">
-              <div class="feature-icon-wrap">
-                <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
-              </div>
-              <h4>Level Base &amp; Padding</h4>
-            </div>
-            <p>
-              Use a spirit level across all four edges during setup. For rimless glass tanks, always lay a high-density
-              closed-cell leveling foam mat underneath to absorb micro-pressure points and prevent devastating glass stress
-              cracks.
-            </p>
-          </div>
-    <section class="quick-nav-section" id="quick-navigation" aria-labelledby="quick-nav-title">
-      <div class="section-wrap">
-        <h2 class="quick-nav-heading" id="quick-nav-title">Quick Navigation <span>Hub</span></h2>
-        <nav class="quick-nav-grid" aria-label="Reptile safety topics">
-          <a class="quick-nav-link" href="#safe-terrarium-setup"><span class="quick-nav-icon"><i class="fa-solid fa-house" aria-hidden="true"></i></span>Safe Terrarium Setup</a>
-          <a class="quick-nav-link" href="#enclosure-security"><span class="quick-nav-icon"><i class="fa-solid fa-lock" aria-hidden="true"></i></span>Enclosure Security</a>
-          <a class="quick-nav-link" href="#heating-lighting-safety"><span class="quick-nav-icon"><i class="fa-solid fa-temperature-three-quarters" aria-hidden="true"></i></span>Heating and Lighting Safety</a>
-          <a class="quick-nav-link" href="#substrate-safety"><span class="quick-nav-icon"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></span>Substrate Safety</a>
-          <a class="quick-nav-link" href="#humidity-ventilation"><span class="quick-nav-icon"><i class="fa-solid fa-droplet" aria-hidden="true"></i></span>Humidity and Ventilation</a>
-          <a class="quick-nav-link" href="#safe-handling"><span class="quick-nav-icon"><i class="fa-solid fa-hand" aria-hidden="true"></i></span>Safe Handling</a>
-          <a class="quick-nav-link" href="#hygiene-cleaning"><span class="quick-nav-icon"><i class="fa-solid fa-hands-bubbles" aria-hidden="true"></i></span>Hygiene and Cleaning</a>
-          <a class="quick-nav-link" href="#common-habitat-hazards"><span class="quick-nav-icon"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i></span>Common Habitat Hazards</a>
-          <a class="quick-nav-link" href="#emergency-care"><span class="quick-nav-icon"><i class="fa-solid fa-kit-medical" aria-hidden="true"></i></span>Emergency Care</a>
-        </nav>
-      </div>
-    </section>
-
-    <section class="safety-overview" aria-labelledby="safety-overview-title">
-      <div class="section-wrap">
-        <div class="section-heading-wrap">
-          <span class="heading-label"><i class="fa-solid fa-shield-heart" aria-hidden="true"></i> A safer habitat, step by step</span>
-          <h2 id="safety-overview-title">Reptile Safety <em>Essentials</em></h2>
-          <p>Use these quick guides to spot the key safeguards, then explore each topic below for practical details.</p>
-        </div>
-        <div class="safety-card-grid">
-          <article class="safety-card">
-            <div class="safety-card-icon"><i class="fa-solid fa-house" aria-hidden="true"></i></div>
-            <h3>Terrarium Safety</h3>
-            <p>Choose a roomy, stable enclosure with safe furnishings, good airflow, and places to hide and bask.</p>
-            <a href="#safe-terrarium-setup">Setup essentials <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-          </article>
-          <article class="safety-card">
-            <div class="safety-card-icon"><i class="fa-solid fa-lock" aria-hidden="true"></i></div>
-            <h3>Enclosure Security</h3>
-            <p>Secure doors and lids with reliable closures and make quick checks part of your routine.</p>
-            <a href="#enclosure-security">Secure the enclosure <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-          </article>
-          <article class="safety-card">
-            <div class="safety-card-icon"><i class="fa-solid fa-temperature-half" aria-hidden="true"></i></div>
-            <h3>Heating Safety</h3>
-            <p>Use thermostats and safe equipment placement to prevent burns, overheating, and cold spots.</p>
-            <a href="#heating-lighting-safety">Manage heat safely <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-          </article>
-          <article class="safety-card">
-            <div class="safety-card-icon"><i class="fa-solid fa-sun" aria-hidden="true"></i></div>
-            <h3>UVB Lighting Safety</h3>
-            <p>Install the correct UVB lamp at the species-appropriate distance and check it regularly.</p>
-            <a href="#heating-lighting-safety">Check lighting setup <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-          </article>
-          <article class="safety-card">
-            <div class="safety-card-icon"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></div>
-            <h3>Substrate Safety</h3>
-            <p>Match flooring to the species and life stage, and reduce the chance of accidental ingestion.</p>
-            <a href="#substrate-safety">Choose safe substrate <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-          </article>
-          <article class="safety-card">
-            <div class="safety-card-icon"><i class="fa-solid fa-droplet" aria-hidden="true"></i></div>
-            <h3>Humidity Management</h3>
-            <p>Monitor humidity and airflow to avoid conditions that are too dry, damp, or stagnant.</p>
-            <a href="#humidity-ventilation">Monitor habitat air <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-          </article>
-          <article class="safety-card">
-            <div class="safety-card-icon"><i class="fa-solid fa-hand" aria-hidden="true"></i></div>
-            <h3>Safe Handling</h3>
-            <p>Handle calmly, support the whole body, and recognize when your reptile needs space.</p>
-            <a href="#safe-handling">Handle with care <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-          </article>
-          <article class="safety-card">
-            <div class="safety-card-icon"><i class="fa-solid fa-hands-bubbles" aria-hidden="true"></i></div>
-            <h3>Hygiene and Cleaning</h3>
-            <p>Follow consistent handwashing and cleaning routines to protect people and pets.</p>
-            <a href="#hygiene-cleaning">Keep clean safely <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-          </article>
-          <article class="safety-card">
-            <div class="safety-card-icon"><i class="fa-solid fa-kit-medical" aria-hidden="true"></i></div>
-            <h3>Emergency Preparedness</h3>
-            <p>Know what to do if equipment fails, your reptile escapes, or an injury occurs.</p>
-            <a href="#emergency-care">Prepare for emergencies <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-          </article>
-        </div>
+        <article class="safety-card">
+          <div class="safety-card-icon"><i class="fa-solid fa-gem" aria-hidden="true"></i></div>
+          <h3>Smooth, Non-Sharp Decor</h3>
+          <p>Smooth rough rock edges and avoid rigid plastic plants that can tear delicate betta or goldfish fins; prefer silk or live aquatic plants.</p>
+        </article>
       </div>
     </section>
 
     <!-- ========================================================
-         3B. WATER AND CHEMICAL SAFETY
+         5. WATER & CHEMICAL SAFETY
          ======================================================== -->
-    <section class="safe-section-wrap section-wrap" id="water-chemical-safety">
-      <div class="safe-topics-heading">
-        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true">
+    <section class="section-wrap" id="water-chemical-safety">
+      <div class="cat-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
-          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
-            opacity="0.95" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
         </svg>
-        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true">
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
-          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
-            opacity="0.95" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
         </svg>
-
-        <div class="heading-decor-icon decor-pos-1"><i class="fa-solid fa-leaf"></i></div>
-        <div class="heading-decor-icon decor-pos-2"><i class="fa-solid fa-leaf"></i></div>
-        <div class="heading-decor-icon decor-pos-3"><i class="fa-solid fa-leaf"></i></div>
-        <div class="heading-decor-icon decor-pos-4"><i class="fa-solid fa-leaf"></i></div>
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
 
         <div class="heading-content">
           <span class="heading-label">
-            <i class="fa-solid fa-flask" aria-hidden="true"></i> Water Quality Management
+            <i class="fa-solid fa-flask" aria-hidden="true"></i> Water Chemistry
           </span>
           <h2>
             <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -2012,149 +928,59 @@
             <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
           </h2>
           <p>
-            Fish live, breathe, and excrete within the same closed water body. Maintaining pristine, toxin-free water through
-            biological cycling and proper chemical neutralization is the single most critical aspect of fishkeeping.
+            Clean, cycled water is your fish's entire atmosphere. Guard against municipal chlorine, ammonia buildup, and accidental household chemical contamination.
           </p>
         </div>
       </div>
 
-      <div class="content-box">
-        <div class="feature-grid-3">
-          <!-- 1. Safe Water Prep -->
-          <div class="feature-card">
-            <div class="feature-header">
-              <div class="feature-icon-wrap">
-                <i class="fa-solid fa-faucet-drip" aria-hidden="true"></i>
-              </div>
-              <h4>Safe Tap Water Conditioning</h4>
-            </div>
-            <p>
-              Municipal tap water contains disinfectant chlorine and chloramines designed to kill microbes. Always dose water
-              with a high-grade dechlorinator (e.g. Seachem Prime) before adding new water to detoxify chlorine, chloramines,
-              and trace heavy metals.
-            </p>
-          </div>
+      <div class="safe-grid-4">
+        <article class="safety-card">
+          <div class="safety-card-icon"><i class="fa-solid fa-faucet-drip" aria-hidden="true"></i></div>
+          <h3>Dechlorinate Tap Water</h3>
+          <p>Always treat new tap water with a reliable water conditioner before adding it to the tank to neutralize toxic chlorine, chloramines, and heavy metals.</p>
+        </article>
 
-          <!-- 2. The Nitrogen Cycle -->
-          <div class="feature-card">
-            <div class="feature-header">
-              <div class="feature-icon-wrap">
-                <i class="fa-solid fa-recycle" aria-hidden="true"></i>
-              </div>
-              <h4>Complete Nitrogen Cycling</h4>
-            </div>
-            <p>
-              Never add fish to a brand-new uncycled aquarium. Establish beneficial nitrifying colonies (<em>Nitrosomonas</em>
-              and <em>Nitrospira</em>) over 3–5 weeks to convert lethal ammonia into nitrite, and then into less harmful
-              nitrate.
-            </p>
-          </div>
+        <article class="safety-card">
+          <div class="safety-card-icon"><i class="fa-solid fa-arrows-spin" aria-hidden="true"></i></div>
+          <h3>Zero Ammonia &amp; Nitrite</h3>
+          <p>Cycle your filter fully before stocking fish so beneficial bacteria convert toxic ammonia and nitrite into less harmful nitrate.</p>
+        </article>
 
-          <!-- 3. Avoiding Chemicals -->
-          <div class="feature-card">
-            <div class="feature-header">
-              <div class="feature-icon-wrap">
-                <i class="fa-solid fa-ban" aria-hidden="true"></i>
-              </div>
-              <h4>Zero Aerosol &amp; Lotion Policy</h4>
-            </div>
-            <p>
-              Airborne particles settle directly into surface water. Never spray air fresheners, insect sprays, perfumes, or
-              harsh household cleaning chemicals in the same room as an aquarium. Always wash and rinse hands thoroughly
-              without soap before maintenance.
-            </p>
-          </div>
+        <article class="safety-card">
+          <div class="safety-card-icon"><i class="fa-solid fa-vial" aria-hidden="true"></i></div>
+          <h3>Weekly Water Testing</h3>
+          <p>Test ammonia, nitrite, nitrate, and pH weekly with liquid reagent kits—especially in new setups or after adding new livestock.</p>
+        </article>
 
-          <!-- 4. Safe Cleaning Products -->
-          <div class="feature-card">
-            <div class="feature-header">
-              <div class="feature-icon-wrap">
-                <i class="fa-solid fa-soap" aria-hidden="true"></i>
-              </div>
-              <h4>Safe Enclosure Cleaning</h4>
-            </div>
-            <p>
-              <strong>Never use household soaps or bleach inside an aquarium</strong>. Use dedicated magnetic algae scrapers
-              and clean exterior glass with warm water and dilute white vinegar. Designate specific buckets and siphons used
-              exclusively for fish.
-            </p>
-          </div>
-
-          <!-- 5. Monitoring Water Conditions -->
-          <div class="feature-card">
-            <div class="feature-header">
-              <div class="feature-icon-wrap">
-                <i class="fa-solid fa-vials" aria-hidden="true"></i>
-              </div>
-              <h4>Routine Parameter Testing</h4>
-            </div>
-            <p>
-              Test water weekly using a liquid reagent test kit (API Freshwater Master Test Kit). Target parameters:
-              <strong>Ammonia: 0 ppm</strong>, <strong>Nitrite: 0 ppm</strong>, <strong>Nitrate: &lt; 20–40 ppm</strong>, and a
-              stable species-appropriate pH.
-            </p>
-          </div>
-
-          <!-- 6. Temperature Matching -->
-          <div class="feature-card">
-            <div class="feature-header">
-              <div class="feature-icon-wrap">
-                <i class="fa-solid fa-temperature-half" aria-hidden="true"></i>
-              </div>
-              <h4>Temperature-Matched Refills</h4>
-            </div>
-            <p>
-              During 20–25% weekly water changes, always match the replacement water temperature to within 1°C (2°F) of the
-              tank water. Dumping cold water induces thermal osmotic shock and weakens fish immune systems against Ich.
-            </p>
-    <section class="safety-section" id="safe-terrarium-setup">
-      <div class="section-wrap">
-        <div class="section-heading-wrap">
-          <span class="heading-label"><i class="fa-solid fa-house" aria-hidden="true"></i> Start with the habitat</span>
-          <h2>Safe Terrarium <em>Setup</em></h2>
-          <p>A thoughtfully planned enclosure gives your reptile room to move while reducing risks from unstable equipment and unsuitable furnishings.</p>
-        </div>
-        <div class="safety-detail">
-          <div>
-            <h3>Build around your species</h3>
-            <p>Research adult size, activity, and environmental needs before choosing an enclosure. It should allow a healthy temperature gradient and enough usable space for normal movement and natural behaviours.</p>
-          </div>
-          <ul>
-            <li>Place the enclosure on a level, sturdy stand away from direct sun, drafts, busy walkways, and other pets.</li>
-            <li>Use a species-appropriate substrate and stable decorations without sharp edges, narrow traps, or toxic materials.</li>
-            <li>Provide secure hiding areas and correctly positioned basking space so the reptile can choose its preferred conditions.</li>
-            <li>Keep ventilation unobstructed and ensure décor cannot fall or block access to water and shelter.</li>
-          </ul>
-        </div>
+        <article class="safety-card">
+          <div class="safety-card-icon"><i class="fa-solid fa-spray-can" aria-hidden="true"></i></div>
+          <h3>Soap &amp; Aerosol Free</h3>
+          <p>Never use household glass cleaners, soaps, or air fresheners near open aquariums, and keep dedicated fish-only buckets and sponges.</p>
+        </article>
       </div>
     </section>
 
     <!-- ========================================================
-         3C. EQUIPMENT SAFETY
+         6. EQUIPMENT SAFETY & MAINTENANCE
          ======================================================== -->
-    <section class="safe-section-wrap section-wrap" id="equipment-safety">
-      <div class="safe-topics-heading">
-        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true">
+    <section class="section-wrap" id="equipment-safety">
+      <div class="cat-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
-          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
-            opacity="0.95" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
         </svg>
-        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true">
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
-          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
-            opacity="0.95" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
         </svg>
-
-        <div class="heading-decor-icon decor-pos-1"><i class="fa-solid fa-leaf"></i></div>
-        <div class="heading-decor-icon decor-pos-2"><i class="fa-solid fa-leaf"></i></div>
-        <div class="heading-decor-icon decor-pos-3"><i class="fa-solid fa-leaf"></i></div>
-        <div class="heading-decor-icon decor-pos-4"><i class="fa-solid fa-leaf"></i></div>
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
 
         <div class="heading-content">
           <span class="heading-label">
-            <i class="fa-solid fa-plug-circle-bolt" aria-hidden="true"></i> Hardware &amp; Electrical Safety
+            <i class="fa-solid fa-plug-circle-check" aria-hidden="true"></i> Electrical &amp; Gear
           </span>
           <h2>
             <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -2162,174 +988,59 @@
             <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
           </h2>
           <p>
-            Aquarium hardware blends high-voltage electricity with water. Implementing proper cord routing, filter guards,
-            and heater safety controls protects both aquatic life and your home from electrical hazards.
+            Water and electricity demand strict precautions. Simple routing habits and routine gear checks keep both you and your fish completely safe.
           </p>
         </div>
       </div>
 
-      <div class="content-box">
-        <div class="feature-grid-3">
-          <!-- 1. Filter Safety -->
-          <div class="feature-card">
-            <div class="feature-header">
-              <div class="feature-icon-wrap">
-                <i class="fa-solid fa-filter" aria-hidden="true"></i>
-              </div>
-              <h4>Safe Filter Intake Screens</h4>
-            </div>
-            <p>
-              High-powered hang-on-back (HOB) or canister filter intake tubes can trap slow-swimming bettas, small tetras, or
-              shrimp against the grate. Fit a coarse cylindrical pre-filter intake sponge over the tube to safeguard delicate
-              fins and fry.
-            </p>
-          </div>
+      <div class="safe-grid-4">
+        <article class="safety-card">
+          <div class="safety-card-icon"><i class="fa-solid fa-plug" aria-hidden="true"></i></div>
+          <h3>Drip Loops &amp; GFCI</h3>
+          <p>Form a U-shaped drip loop in every power cord below the wall outlet so spilled water drips away from sockets, ideally paired with GFCI protection.</p>
+        </article>
 
-          <!-- 2. Heater Safety -->
-          <div class="feature-card">
-            <div class="feature-header">
-              <div class="feature-icon-wrap">
-                <i class="fa-solid fa-temperature-arrow-up" aria-hidden="true"></i>
-              </div>
-              <h4>Submersible Heater Protocols</h4>
-            </div>
-            <p>
-              Heaters are the #1 piece of failing aquarium equipment. Use shatterproof titanium or thick quartz heaters.
-              Always unplug heaters 15 minutes before water changes so the element cools before air exposure, preventing
-              shattering.
-            </p>
-          </div>
+        <article class="safety-card">
+          <div class="safety-card-icon"><i class="fa-solid fa-temperature-half" aria-hidden="true"></i></div>
+          <h3>Heater Safeguards</h3>
+          <p>Use shatterproof heaters with protective guards, pair with an external temperature controller, and unplug heaters before draining water.</p>
+        </article>
 
-          <!-- 3. Electrical Drip Loops -->
-          <div class="feature-card">
-            <div class="feature-header">
-              <div class="feature-icon-wrap">
-                <i class="fa-solid fa-plug" aria-hidden="true"></i>
-              </div>
-              <h4>Mandatory Electrical Drip Loops</h4>
-            </div>
-            <p>
-              Every power cord emerging from the aquarium must dip below the electrical wall outlet before rising into the
-              plug. This prevents stray water droplets or condensation from tracking along cords directly into electrical
-              sockets.
-            </p>
-          </div>
+        <article class="safety-card">
+          <div class="safety-card-icon"><i class="fa-solid fa-filter" aria-hidden="true"></i></div>
+          <h3>Filter Intake Sponges</h3>
+          <p>Slip pre-filter foam sponges over filter intake tubes to protect small fish, fry, and long-finned species from strong suction currents.</p>
+        </article>
 
-          <!-- 4. GFCI Outlets -->
-          <div class="feature-card">
-            <div class="feature-header">
-              <div class="feature-icon-wrap">
-                <i class="fa-solid fa-bolt" aria-hidden="true"></i>
-              </div>
-              <h4>GFCI Protection &amp; Controllers</h4>
-            </div>
-            <p>
-              Plug aquarium equipment into Ground Fault Circuit Interrupter (GFCI) outlets that instantly cut power in the
-              event of a short. Consider an external digital temperature controller (e.g. Inkbird) to act as a failsafe
-              shutoff if heater contacts weld stuck.
-            </p>
-          </div>
-
-          <!-- 5. Routine Maintenance -->
-          <div class="feature-card">
-            <div class="feature-header">
-              <div class="feature-icon-wrap">
-                <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
-              </div>
-              <h4>Biological Filter Preservation</h4>
-            </div>
-            <p>
-              Never wash filter sponges or bio-media in chlorinated tap water. Gently squeeze sponges inside a bucket of
-              siphoned aquarium water during routine maintenance to remove sludge without destroying delicate beneficial
-              nitrifying bacteria.
-            </p>
-          </div>
-
-          <!-- 6. Check Valves for Air Pumps -->
-          <div class="feature-card">
-            <div class="feature-header">
-              <div class="feature-icon-wrap">
-                <i class="fa-solid fa-arrow-turn-down" aria-hidden="true"></i>
-              </div>
-              <h4>Anti-Siphon Check Valves</h4>
-            </div>
-            <p>
-              When an air pump sits below the water level and power cuts out, water can back-siphon through the airline tubing
-              onto the floor. Install a simple one-way plastic check valve in every airline line to eliminate siphoning.
-            </p>
-          </div>
-
-    <section class="safety-section" id="enclosure-security">
-      <div class="section-wrap">
-        <div class="section-heading-wrap">
-          <span class="heading-label"><i class="fa-solid fa-lock" aria-hidden="true"></i> Prevent escapes</span>
-          <h2>Enclosure <em>Security</em></h2>
-          <p>Reptiles can squeeze through small gaps, push light lids, or find unsecured doors. Make every opening secure before leaving the habitat unattended.</p>
-        </div>
-        <div class="safety-detail">
-          <div>
-            <h3>Make closure checks routine</h3>
-            <p>Choose closures designed for your enclosure and species. Re-check them after feeding, cleaning, or maintenance, when doors and lids are most likely to be left ajar.</p>
-          </div>
-          <ul>
-            <li>Close and latch doors fully; add a suitable lock or clip if your reptile can push or lift the door.</li>
-            <li>Use a strong, correctly fitted lid that cannot slide, bow, or be lifted by the animal.</li>
-            <li>Check corners, cable ports, ventilation panels, and damaged seals for escape-sized gaps.</li>
-            <li>Inspect hinges, mesh, latches, and the enclosure frame regularly, and repair wear promptly.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="safety-section" id="heating-lighting-safety">
-      <div class="section-wrap">
-        <div class="section-heading-wrap">
-          <span class="heading-label"><i class="fa-solid fa-temperature-three-quarters" aria-hidden="true"></i> Monitor every source</span>
-          <h2>Heating and Lighting <em>Safety</em></h2>
-          <p>Heat and UVB equipment are essential for many reptiles, but incorrect placement or failed controls can cause burns, overheating, or inadequate exposure.</p>
-        </div>
-        <div class="safety-detail">
-          <div>
-            <h3>Control heat, verify light</h3>
-            <p>Follow reputable, species-specific husbandry guidance for temperatures, UVB strength, distance, and photoperiod. Measure conditions at the animal's level rather than relying on a device dial alone.</p>
-          </div>
-          <ul>
-            <li>Connect heat sources to a correctly rated thermostat and position its probe as instructed by the equipment maker.</li>
-            <li>Secure heaters and guards so the reptile cannot touch a hot element, and keep equipment clear of flammable materials.</li>
-            <li>Create a temperature gradient and use reliable thermometers to check both warm and cool areas.</li>
-            <li>Install UVB lamps at the specified distance without glass or plastic blocking the output; replace and inspect them on schedule.</li>
-            <li>Check cables, plugs, guards, timers, thermostats, and lights for damage or unusual heat during regular inspections.</li>
-          </ul>
-        </div>
+        <article class="safety-card">
+          <div class="safety-card-icon"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></div>
+          <h3>Routine Cord Checks</h3>
+          <p>Inspect power cords, heater seals, and air-line check valves monthly for cracks or wear, and rinse filter media only in old tank water.</p>
+        </article>
       </div>
     </section>
 
     <!-- ========================================================
-         3D. FISH COMPATIBILITY
+         7. FISH COMPATIBILITY & STOCKING SAFETY
          ======================================================== -->
-    <section class="safe-section-wrap section-wrap" id="fish-compatibility">
-      <div class="safe-topics-heading">
-        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true">
+    <section class="section-wrap" id="fish-compatibility">
+      <div class="cat-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
-          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
-            opacity="0.95" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
         </svg>
-        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true">
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
-          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
-            opacity="0.95" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
         </svg>
-
-        <div class="heading-decor-icon decor-pos-1"><i class="fa-solid fa-leaf"></i></div>
-        <div class="heading-decor-icon decor-pos-2"><i class="fa-solid fa-leaf"></i></div>
-        <div class="heading-decor-icon decor-pos-3"><i class="fa-solid fa-leaf"></i></div>
-        <div class="heading-decor-icon decor-pos-4"><i class="fa-solid fa-leaf"></i></div>
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
 
         <div class="heading-content">
           <span class="heading-label">
-            <i class="fa-solid fa-fish-fins" aria-hidden="true"></i> Community Harmony
+            <i class="fa-solid fa-fish-fins" aria-hidden="true"></i> Peaceful Communities
           </span>
           <h2>
             <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -2337,296 +1048,119 @@
             <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
           </h2>
           <p>
-            An overcrowded or incompatible aquarium creates chronic social stress, weakened immune responses, territorial
-            violence, and rapid water parameter deterioration.
+            Peaceful community tanks start with careful species research—matching water chemistry, adult size, and temperament before bringing tankmates home.
           </p>
         </div>
       </div>
 
-      <div class="content-box">
-        <div class="feature-grid-2">
-          <!-- 1. Choosing Species -->
-          <div class="feature-card">
-            <div class="feature-header">
-              <div class="feature-icon-wrap">
-                <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i>
-              </div>
-              <h4>Matching Environmental Parameters</h4>
-            </div>
-            <p>
-              Fish from vastly different wild habitats cannot be safely cohoused. Do not mix coldwater Goldfish (18°–22°C /
-              pH 7.5) with tropical warm-water Discus or Bettas (26°–28°C / soft acidic water). Ensure all tankmates share
-              overlapping temperature, pH, and hardness requirements.
-            </p>
-          </div>
+      <div class="safe-grid-4">
+        <article class="safety-card">
+          <div class="safety-card-icon"><i class="fa-solid fa-sliders" aria-hidden="true"></i></div>
+          <h3>Match Water &amp; Heat Needs</h3>
+          <p>House together only species that share compatible temperature, pH, and water hardness ranges rather than mixing coldwater and tropical fish.</p>
+        </article>
 
-          <!-- 2. Avoiding Overcrowding -->
-          <div class="feature-card">
-            <div class="feature-header">
-              <div class="feature-icon-wrap">
-                <i class="fa-solid fa-users" aria-hidden="true"></i>
-              </div>
-              <h4>Stocking Density &amp; Bioload</h4>
-            </div>
-            <p>
-              The old rule of "one inch of fish per gallon" is flawed because a heavy-bodied 4-inch goldfish produces 10 times
-              the waste of ten slender 1-inch neon tetras. Factor in adult body mass, swimming activity, and filter volume to
-              prevent oxygen starvation and waste spikes.
-            </p>
-          </div>
+        <article class="safety-card">
+          <div class="safety-card-icon"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></div>
+          <h3>Avoid Overcrowding</h3>
+          <p>Stock conservatively according to adult fish size and filtration capacity so oxygen levels stay high and bio-load remains manageable.</p>
+        </article>
 
-          <!-- 3. Territorial Aggression -->
-          <div class="feature-card">
-            <div class="feature-header">
-              <div class="feature-icon-wrap">
-                <i class="fa-solid fa-shield-virus" aria-hidden="true"></i>
-              </div>
-              <h4>Managing Territorial Fish</h4>
-            </div>
-            <p>
-              Cichlids, aggressive gouramis, and tiger barbs establish defined territorial zones. Never house fin-nipping
-              species alongside slow, flowing-finned fish like Bettas or Guppies. Break up open swimming sightlines with dense
-              live plants, tall driftwood, and rock caves.
-            </p>
-          </div>
+        <article class="safety-card">
+          <div class="safety-card-icon"><i class="fa-solid fa-handshake" aria-hidden="true"></i></div>
+          <h3>Pair Peaceful Temperaments</h3>
+          <p>Avoid keeping fin-nippers with slow long-finned fish, and never house large predatory species with small tankmates that fit in their mouths.</p>
+        </article>
 
-          <!-- 4. Vertical Space Distribution -->
-          <div class="feature-card">
-            <div class="feature-header">
-              <div class="feature-icon-wrap">
-                <i class="fa-solid fa-water" aria-hidden="true"></i>
-              </div>
-              <h4>Swimming Layer Distribution</h4>
-            </div>
-            <p>
-              Promote peaceful community dynamics by stocking species that inhabit distinct vertical layers: surface dwellers
-              (hatchetfish), mid-water schooling fish (tetras, rasboras), and bottom dwellers (corydoras catfish, bristlenose
-              plecos).
-            </p>
-          </div>
-        </div>
+        <article class="safety-card">
+          <div class="safety-card-icon"><i class="fa-solid fa-tree" aria-hidden="true"></i></div>
+          <h3>Provide Sightline Breaks</h3>
+          <p>Arrange driftwood, caves, and tall plants to break lines of sight, reduce territorial chasing, and give shy fish secure resting spots.</p>
+        </article>
       </div>
     </section>
 
     <!-- ========================================================
-         3E. INTRODUCING NEW FISH
+         8. INTRODUCING NEW FISH & SAFE TRANSPORTATION
          ======================================================== -->
-    <section class="safe-section-wrap section-wrap" id="introducing-fish">
-      <div class="safe-topics-heading">
-        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true">
+    <section class="section-wrap" id="introducing-fish">
+      <div class="cat-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
-          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
-            opacity="0.95" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
         </svg>
-        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true">
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
-          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
-            opacity="0.95" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
         </svg>
-
-        <div class="heading-decor-icon decor-pos-1"><i class="fa-solid fa-leaf"></i></div>
-        <div class="heading-decor-icon decor-pos-2"><i class="fa-solid fa-leaf"></i></div>
-        <div class="heading-decor-icon decor-pos-3"><i class="fa-solid fa-leaf"></i></div>
-        <div class="heading-decor-icon decor-pos-4"><i class="fa-solid fa-leaf"></i></div>
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
 
         <div class="heading-content">
           <span class="heading-label">
-            <i class="fa-solid fa-hand-holding-hand" aria-hidden="true"></i> Acclimation &amp; Quarantine
+            <i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i> Transition Protocol
           </span>
           <h2>
             <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
-            Introducing <span>New Aquarium Fish</span>
+            Handling, Transit <span>&amp; Safe Acclimation</span>
             <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
           </h2>
           <p>
-            Rushing new fish directly from the pet store bag into your main display tank is the primary route for introducing
-            devastating pathogens like Ich (White Spot Disease), velvet, and internal parasites.
+            Follow this calm 4-step transition process to protect new arrivals from temperature and osmotic shock while safeguarding your existing community.
           </p>
         </div>
       </div>
 
-      <div class="content-box">
-        <h3 style="margin: 0 0 16px; color: var(--safe-ink); font-size: 1.25rem;">
-          The 4-Step Safe Acclimation Protocol
-        </h3>
-        <p style="color: var(--safe-muted); font-size: 0.92rem; margin-bottom: 24px;">
-          Follow this proven transition process to protect your new arrival from osmotic shock and preserve existing community health:
-        </p>
+      <div class="safe-grid-4" id="handling-transportation">
+        <article class="safety-card">
+          <div class="safety-card-icon"><i class="fa-solid fa-box-open" aria-hidden="true"></i></div>
+          <h3>1. Insulated Transit</h3>
+          <p>Transport fish in spacious, oxygenated bags placed upright inside a dark, insulated cooler to keep temperatures steady and minimize stress.</p>
+        </article>
 
-        <div class="process-steps">
-          <div class="step-card">
-            <span class="step-number">1</span>
-            <h4>Quarantine Tank (2–3 Wks)</h4>
-            <p>
-              House new arrivals in a dedicated 10-gallon bare-bottom quarantine tank equipped with a cycled sponge filter and
-              PVC hiding pipes. Screen for white spots, clamped fins, and parasites.
-            </p>
-          </div>
+        <article class="safety-card">
+          <div class="safety-card-icon"><i class="fa-solid fa-water" aria-hidden="true"></i></div>
+          <h3>2. Temperature Equalize</h3>
+          <p>Dim aquarium lights and float the sealed bag on the water surface for 15–20 minutes so the bag water gently matches your tank's temperature.</p>
+        </article>
 
-          <div class="step-card">
-            <span class="step-number">2</span>
-            <h4>Floating Bag Equalization</h4>
-            <p>
-              Float the sealed transport bag on the surface of the aquarium for 15–20 minutes. This slowly equalizes water
-              temperatures without allowing store water into the tank.
-            </p>
-          </div>
+        <article class="safety-card">
+          <div class="safety-card-icon"><i class="fa-solid fa-droplet" aria-hidden="true"></i></div>
+          <h3>3. Gradual Water Mixing</h3>
+          <p>Slowly add small amounts of tank water into the bag or bucket over 30–45 minutes so fish adjust smoothly to pH and mineral levels.</p>
+        </article>
 
-          <div class="step-card">
-            <span class="step-number">3</span>
-            <h4>Gradual Drip Acclimation</h4>
-            <p>
-              Transfer fish and bag water into a bucket. Use airline tubing with a loose knot to drip 2–3 drops per second of
-              aquarium water over 30–45 minutes, slowly balancing pH and TDS.
-            </p>
-          </div>
-
-          <div class="step-card">
-            <span class="step-number">4</span>
-            <h4>Netting &amp; Lights Out</h4>
-            <p>
-              Gently net the fish into the tank. <strong>Never pour pet store bag water into your aquarium</strong>. Keep
-              aquarium lights turned off for the first 12 hours to reduce territorial harassment.
-            </p>
-          </div>
-        </div>
+        <article class="safety-card">
+          <div class="safety-card-icon"><i class="fa-solid fa-shield-virus" aria-hidden="true"></i></div>
+          <h3>4. Net &amp; Quarantine</h3>
+          <p>Gently net fish into a quarantine or display tank without pouring store bag water inside, keeping potential parasites out of your main tank.</p>
+        </article>
       </div>
     </section>
 
     <!-- ========================================================
-         3F. HANDLING AND TRANSPORTATION
+         9. COMMON AQUARIUM HAZARDS TO AVOID
          ======================================================== -->
-    <section class="safe-section-wrap section-wrap" id="handling-transportation">
-      <div class="safe-topics-heading">
-        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true">
+    <section class="section-wrap" id="common-hazards">
+      <div class="cat-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
-          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
-            opacity="0.95" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
         </svg>
-        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true">
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
-          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
-            opacity="0.95" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
         </svg>
-
-        <div class="heading-decor-icon decor-pos-1"><i class="fa-solid fa-leaf"></i></div>
-        <div class="heading-decor-icon decor-pos-2"><i class="fa-solid fa-leaf"></i></div>
-        <div class="heading-decor-icon decor-pos-3"><i class="fa-solid fa-leaf"></i></div>
-        <div class="heading-decor-icon decor-pos-4"><i class="fa-solid fa-leaf"></i></div>
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
 
         <div class="heading-content">
           <span class="heading-label">
-            <i class="fa-solid fa-truck" aria-hidden="true"></i> Stress Reduction &amp; Logistics
-          </span>
-          <h2>
-            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
-            Handling <span>&amp; Transportation</span>
-            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
-          </h2>
-          <p>
-            Fish are delicate vertebrates whose skin is shielded by a fragile protective slime coat. Unnecessary handling or
-            rough transport fractures fins, strips mucous membranes, and elevates stress cortisol to dangerous levels.
-          </p>
-        </div>
-      </div>
-
-      <div class="content-box">
-        <div class="feature-grid-3">
-          <!-- 1. Minimizing Handling -->
-          <div class="feature-card">
-            <div class="feature-header">
-              <div class="feature-icon-wrap">
-                <i class="fa-solid fa-hand-dots" aria-hidden="true"></i>
-              </div>
-              <h4>Minimizing Physical Netting</h4>
-            </div>
-            <p>
-              Handle fish only when strictly moving tanks or administering emergency medical dips. Use soft, knotless fine
-              mesh nets or clear plastic specimen containers ("catch cups") so the fish remains submerged in water throughout
-              the transfer.
-            </p>
-          </div>
-
-          <!-- 2. Suitable Containers -->
-          <div class="feature-card">
-            <div class="feature-header">
-              <div class="feature-icon-wrap">
-                <i class="fa-solid fa-box-archive" aria-hidden="true"></i>
-              </div>
-              <h4>Insulated Transport Coolers</h4>
-            </div>
-            <p>
-              During travel, pack fish bags inside an insulated styrofoam cooler or thermal lunch box. The dark environment
-              calms the fish, prevents visual motion panic, and protects against sudden car air conditioning or outdoor
-              chills.
-            </p>
-          </div>
-
-          <!-- 3. Maintaining Water Conditions -->
-          <div class="feature-card">
-            <div class="feature-header">
-              <div class="feature-icon-wrap">
-                <i class="fa-solid fa-wind" aria-hidden="true"></i>
-              </div>
-              <h4>Air-to-Water Transport Ratios</h4>
-            </div>
-            <p>
-              When bagging fish, maintain a ratio of <strong>1/3 water and 2/3 air (or pure oxygen)</strong>. Fish breathe
-              oxygen that dissolves from the air pocket into the water; filling the bag with too much water starves them of
-              oxygen.
-            </p>
-    <section class="safety-section" id="substrate-safety">
-      <div class="section-wrap">
-        <div class="section-heading-wrap">
-          <span class="heading-label"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Choose safe flooring</span>
-          <h2>Substrate <em>Safety</em></h2>
-          <p>The right flooring depends on species, age, health, and habitat conditions. When unsure, ask a reptile-experienced veterinarian about the safest option.</p>
-        </div>
-        <div class="safety-detail">
-          <div>
-            <h3>Reduce ingestion risks</h3>
-            <p>Some loose substrates may be swallowed with food, especially when feeding directly on the floor. Ingestion can contribute to impaction, so consider the animal's feeding behaviour and health history when selecting substrate.</p>
-          </div>
-          <ul>
-            <li>Use a substrate appropriate for the species' natural habitat and husbandry needs.</li>
-            <li>For reptiles prone to eating bedding, juveniles, or animals recovering from illness, discuss a safe, easy-to-clean surface with a veterinarian.</li>
-            <li>Avoid materials with sharp particles, harmful chemicals, strong fragrances, or excessive dust.</li>
-            <li>Remove soiled material promptly and keep the enclosure floor clean and dry as appropriate to the species.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================
-         3G. COMMON AQUARIUM HAZARDS
-         ======================================================== -->
-    <section class="safe-section-wrap section-wrap" id="common-hazards">
-      <div class="safe-topics-heading">
-        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true">
-          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
-          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
-            opacity="0.95" />
-        </svg>
-        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true">
-          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
-          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
-            opacity="0.95" />
-        </svg>
-
-        <div class="heading-decor-icon decor-pos-1"><i class="fa-solid fa-leaf"></i></div>
-        <div class="heading-decor-icon decor-pos-2"><i class="fa-solid fa-leaf"></i></div>
-        <div class="heading-decor-icon decor-pos-3"><i class="fa-solid fa-leaf"></i></div>
-        <div class="heading-decor-icon decor-pos-4"><i class="fa-solid fa-leaf"></i></div>
-
-        <div class="heading-content">
-          <span class="heading-label">
-            <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Threat Prevention
+            <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Risk Prevention
           </span>
           <h2>
             <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -2634,114 +1168,59 @@
             <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
           </h2>
           <p>
-            Understanding the five most common pitfalls in home aquariums helps prevent unexpected disease outbreaks, mass
-            die-offs, and chronic environmental stress.
+            Most aquarium emergencies stem from a few preventable mistakes. Spot and eliminate these common hazards early.
           </p>
         </div>
       </div>
 
-      <div class="content-box">
-        <div class="compare-grid">
-          <div class="compare-card negative">
-            <h4><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> The 5 Major Aquarium Hazards</h4>
-            <ul class="compare-list">
-              <li>
-                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-                <span><strong>Overfeeding (#1 Cause of Tank Crashes):</strong> Uneaten food decomposes within hours, creating massive toxic ammonia and nitrite spikes that suffocate fish.</span>
-              </li>
-              <li>
-                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-                <span><strong>Sudden Temperature Swings:</strong> A failure of heater thermostats or drafty room placement shocks ectothermic metabolism, triggering fungal and protozoan infections.</span>
-              </li>
-              <li>
-                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-                <span><strong>Infrequent Water Changes:</strong> Evaporation only removes pure water, leaving nitrates, heavy metals, and organic toxins behind in increasingly concentrated doses.</span>
-              </li>
-              <li>
-                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-                <span><strong>Unsafe Craft Decorations:</strong> Painted figurines, non-aquarium plastics, and unglazed ceramics leach heavy metals and toxic pigments directly into the water.</span>
-              </li>
-              <li>
-                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-                <span><strong>Over-Cleaning Filters with Tap Water:</strong> Scrubbing bio-rings in chlorinated water kills billions of beneficial bacteria, collapsing the nitrogen cycle overnight.</span>
-              </li>
-            </ul>
-          </div>
+      <div class="safe-grid-4">
+        <article class="safety-card">
+          <div class="safety-card-icon"><i class="fa-solid fa-utensils" aria-hidden="true"></i></div>
+          <h3>Overfeeding</h3>
+          <p>Uneaten food decays rapidly into lethal ammonia; feed only what your fish finish in 1–2 minutes and siphon leftovers promptly.</p>
+        </article>
 
-          <div class="compare-card positive">
-            <h4><i class="fa-solid fa-shield-check" aria-hidden="true"></i> The Safe Husbandry Countermeasures</h4>
-            <ul class="compare-list">
-              <li>
-                <i class="fa-solid fa-check" aria-hidden="true"></i>
-                <span><strong>The 2-Minute Feeding Rule:</strong> Feed only what fish completely consume in 2 minutes. Scoop out any floating uneaten flakes with a net immediately.</span>
-              </li>
-              <li>
-                <i class="fa-solid fa-check" aria-hidden="true"></i>
-                <span><strong>Dual Redundant Heaters:</strong> Use two lower-wattage heaters (e.g. two 50W heaters instead of one 100W). If one fails ON, it cannot boil the tank.</span>
-              </li>
-              <li>
-                <i class="fa-solid fa-check" aria-hidden="true"></i>
-                <span><strong>Weekly 20–25% Siphoning:</strong> Regular gravel-vacuuming removes decomposing mulm and keeps nitrates steadily below 20 ppm.</span>
-              </li>
-              <li>
-                <i class="fa-solid fa-check" aria-hidden="true"></i>
-                <span><strong>Pure Inert Materials:</strong> Select real live plants (Anubias, Java Fern) and aquarium-certified inert slate, quartz, and river driftwood.</span>
-              </li>
-              <li>
-                <i class="fa-solid fa-check" aria-hidden="true"></i>
-                <span><strong>Rinsing Sponges in Tank Water:</strong> Squeeze mechanical foam gently in discarded aquarium change water to maintain biological filtration integrity.</span>
-              </li>
-            </ul>
-          </div>
+        <article class="safety-card">
+          <div class="safety-card-icon"><i class="fa-solid fa-ban" aria-hidden="true"></i></div>
+          <h3>Untreated Tap Water</h3>
+          <p>Never top off or refill a tank with untreated municipal water; chlorine burns delicate gills and wipes out beneficial filter bacteria.</p>
+        </article>
 
-    <section class="safety-section" id="humidity-ventilation">
-      <div class="section-wrap">
-        <div class="section-heading-wrap">
-          <span class="heading-label"><i class="fa-solid fa-droplet" aria-hidden="true"></i> Keep conditions in balance</span>
-          <h2>Humidity and <em>Ventilation</em></h2>
-          <p>Humidity requirements vary widely between reptiles. Good measurement and airflow help maintain a suitable habitat without letting surfaces stay excessively damp.</p>
-        </div>
-        <div class="safety-detail">
-          <div>
-            <h3>Measure, then adjust</h3>
-            <p>Use species-specific care guidance to set a humidity range and monitor it across the enclosure. A digital hygrometer is more useful than judging moisture by appearance alone.</p>
-          </div>
-          <ul>
-            <li>Position a digital hygrometer where it represents the reptile's environment and check it regularly.</li>
-            <li>Maintain unobstructed air circulation while providing the humidity level and local moist areas the species needs.</li>
-            <li>Address persistent condensation, wet bedding, or stagnant air; excessive moisture can encourage mould and poor air quality.</li>
-            <li>Review readings after misting, changing water, or adjusting heating and ventilation.</li>
-          </ul>
-        </div>
+        <article class="safety-card">
+          <div class="safety-card-icon"><i class="fa-solid fa-soap" aria-hidden="true"></i></div>
+          <h3>Washing Filter Media in Tap</h3>
+          <p>Avoid rinsing bio-media under chlorinated tap water or replacing all cartridges at once, which crashes your tank's nitrogen cycle.</p>
+        </article>
+
+        <article class="safety-card">
+          <div class="safety-card-icon"><i class="fa-solid fa-bolt" aria-hidden="true"></i></div>
+          <h3>Dry-Running Heaters</h3>
+          <p>Always switch off heaters and filters before lowering the water line during maintenance so exposed glass tubes never overheat or crack.</p>
+        </article>
       </div>
     </section>
 
     <!-- ========================================================
-         3H. EMERGENCY CARE
+         10. AQUARIUM EMERGENCY CARE
          ======================================================== -->
-    <section class="safe-section-wrap section-wrap" id="emergency-care">
-      <div class="safe-topics-heading">
-        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true">
+    <section class="section-wrap" id="emergency-care">
+      <div class="cat-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
-          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
-            opacity="0.95" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
         </svg>
-        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true">
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
-          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
-            opacity="0.95" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
         </svg>
-
-        <div class="heading-decor-icon decor-pos-1"><i class="fa-solid fa-leaf"></i></div>
-        <div class="heading-decor-icon decor-pos-2"><i class="fa-solid fa-leaf"></i></div>
-        <div class="heading-decor-icon decor-pos-3"><i class="fa-solid fa-leaf"></i></div>
-        <div class="heading-decor-icon decor-pos-4"><i class="fa-solid fa-leaf"></i></div>
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
 
         <div class="heading-content">
           <span class="heading-label">
-            <i class="fa-solid fa-life-ring" aria-hidden="true"></i> Rapid Response Protocols
+            <i class="fa-solid fa-kit-medical" aria-hidden="true"></i> Rapid Response
           </span>
           <h2>
             <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -2749,213 +1228,64 @@
             <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
           </h2>
           <p>
-            When catastrophic equipment failures strike or fish display severe distress, rapid and calculated intervention
-            saves lives. Follow these established emergency action steps.
+            Fast, calm action during power outages or sudden water quality spikes can save your fish when minutes matter most.
           </p>
         </div>
       </div>
 
-      <div class="content-box">
-        <div class="feature-grid-3">
-          <!-- 1. Signs of Distress -->
-          <div class="feature-card">
-            <div class="feature-header">
-              <div class="feature-icon-wrap" style="color: #c94a5e; background: #fdf2f4; border-color: #f6d5db;">
-                <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
-              </div>
-              <h4>Recognizing Acute Distress</h4>
-            </div>
-            <p>
-              Fish gasping at the water surface (oxygen depletion or gill burn from ammonia), clamped fins held tight against
-              the body, erratic darting or flashing against gravel, and loss of buoyancy indicate an immediate toxic emergency.
-            </p>
-          </div>
+      <div class="safe-grid-4">
+        <article class="safety-card">
+          <div class="safety-card-icon"><i class="fa-solid fa-battery-full" aria-hidden="true"></i></div>
+          <h3>Power Outage Aeration</h3>
+          <p>Keep battery-powered air pumps and airstones on hand to maintain oxygen circulation during blackouts and wrap tanks in blankets to retain heat.</p>
+        </article>
 
-          <!-- 2. Immediate Water Change -->
-          <div class="feature-card">
-            <div class="feature-header">
-              <div class="feature-icon-wrap" style="color: #c94a5e; background: #fdf2f4; border-color: #f6d5db;">
-                <i class="fa-solid fa-droplet" aria-hidden="true"></i>
-              </div>
-              <h4>Emergency 50% Water Change</h4>
-            </div>
-            <p>
-              In acute ammonia spikes or chemical spills, immediately perform a 50% water change with temperature-matched,
-              heavily conditioned tap water. Dose double the standard amount of Seachem Prime to bind toxic free ammonia into
-              non-toxic ammonium for 24–48 hours.
-            </p>
-          </div>
+        <article class="safety-card">
+          <div class="safety-card-icon"><i class="fa-solid fa-bucket" aria-hidden="true"></i></div>
+          <h3>Emergency Water Change</h3>
+          <p>If fish gasp at the surface or tests show ammonia/nitrite spikes, immediately perform a temperature-matched, dechlorinated 40–50% water change.</p>
+        </article>
 
-          <!-- 3. Power Outages -->
-          <div class="feature-card">
-            <div class="feature-header">
-              <div class="feature-icon-wrap" style="color: #c94a5e; background: #fdf2f4; border-color: #f6d5db;">
-                <i class="fa-solid fa-power-off" aria-hidden="true"></i>
-              </div>
-              <h4>Power Outage Survival</h4>
-            </div>
-            <p>
-              Wrap the tank in thick blankets or bubble wrap to conserve heat. Deploy a battery-operated portable aerator with
-              an airstone. If power stays off for hours, manually scoop and pour tank water from 6 inches above every 30
-              minutes to replenish dissolved oxygen.
-            </p>
-          </div>
-        </div>
+        <article class="safety-card">
+          <div class="safety-card-icon"><i class="fa-solid fa-house-medical" aria-hidden="true"></i></div>
+          <h3>Hospital Tank Isolation</h3>
+          <p>Move injured or symptomatic fish into a cycled, bare-bottom quarantine tank for quiet observation and targeted treatment without stressing healthy fish.</p>
+        </article>
 
-        <div class="alert-banner" style="margin-top: 30px;">
-          <i class="fa-solid fa-user-doctor" aria-hidden="true"></i>
-          <div>
-            <h5>When to Consult an Aquatic Veterinarian</h5>
-            <p>
-              If fish present with severe dropsy (protruding pinecone scales), rapid ulcerations, body sores, or persistent
-              swim bladder dysfunction unresponsive to water changes and fasting, contact a licensed veterinarian certified
-              by the <em>World Aquatic Veterinary Medical Association (WAVMA)</em> for prescription antimicrobial treatment.
-            </p>
-          </div>
-    <section class="safety-section" id="safe-handling">
-      <div class="section-wrap">
-        <div class="section-heading-wrap">
-          <span class="heading-label"><i class="fa-solid fa-hand" aria-hidden="true"></i> Handle calmly</span>
-          <h2>Safe <em>Handling</em></h2>
-          <p>Gentle, brief handling reduces stress and lowers the chance of a fall, bite, scratch, or defensive reaction. Some reptiles prefer minimal handling.</p>
-        </div>
-        <div class="safety-detail">
-          <div>
-            <h3>Read the reptile's signals</h3>
-            <p>Approach slowly and support the body securely rather than grabbing, squeezing, or restraining the tail. If the animal appears distressed or defensive, return it calmly to its enclosure and give it space.</p>
-          </div>
-          <ul>
-            <li>Support the body and limbs with both hands as appropriate; keep the reptile low over a secure surface.</li>
-            <li>Avoid sudden movements, loud disturbances, and handling during vulnerable or stressful periods.</li>
-            <li>Learn the species' defensive signals and never force interaction when it is trying to retreat.</li>
-            <li>Keep handling short and necessary, especially while an animal is new, ill, shedding, or recovering.</li>
-            <li>Supervise children closely and never allow handling near stairs, other pets, or places where the reptile could fall.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="safety-section" id="hygiene-cleaning">
-      <div class="section-wrap">
-        <div class="section-heading-wrap">
-          <span class="heading-label"><i class="fa-solid fa-hands-bubbles" aria-hidden="true"></i> Protect people and pets</span>
-          <h2>Hygiene and <em>Cleaning</em></h2>
-          <p>Reptiles and their environments can carry germs even when they look healthy. Simple hygiene habits reduce the risk of spreading them around your home.</p>
-        </div>
-        <div class="safety-detail">
-          <div>
-            <h3>Clean with care</h3>
-            <p>Keep reptile supplies separate from kitchen and household items. Use cleaning products suitable for animal enclosures, follow label directions, and rinse or ventilate as directed before returning the reptile.</p>
-          </div>
-          <ul>
-            <li>Wash hands thoroughly with soap and water before and after handling reptiles, food, bowls, or enclosure items.</li>
-            <li>Clean food and water bowls frequently and refresh water with clean, appropriate supplies.</li>
-            <li>Remove waste promptly and perform regular enclosure cleaning on a consistent schedule.</li>
-            <li>Do not use harsh, scented, or unapproved products around the reptile; never mix cleaning chemicals.</li>
-            <li>Use dedicated tools and avoid cross-contamination between reptiles, their food, and household surfaces.</li>
-          </ul>
-        </div>
+        <article class="safety-card">
+          <div class="safety-card-icon"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i></div>
+          <h3>Aquatic Vet Readiness</h3>
+          <p>Keep your local aquatic veterinarian's contact info and a recent log of water test parameters ready for fast, accurate diagnosis.</p>
+        </article>
       </div>
     </section>
 
     <!-- ========================================================
-         5. FINAL CTA SECTION (Matching Cat, Dog, & Rabbit Index)
+         11. FINAL CTA SECTION (Matches Cat Index)
          ======================================================== -->
     <section class="cta section-wrap" id="fish-safety-cta">
       <div>
-        <div class="eyebrow">START YOUR PET'S JOURNEY</div>
-        <h2 style="text-align: left;">Ready to Give Your Pet the <em>Best Care?</em></h2>
+        <div class="eyebrow">AQUATIC PROTECTION &amp; CARE</div>
+        <h2>Keep Every Swim <em>Safe &amp; Thriving.</em></h2>
         <p>
-          Whether you are preparing to welcome a new companion or looking to give your faithful pet the best daily walks, nutrition, and wellness support, PetSathi is here to guide and support you every step of the way.
+          Pair stable water chemistry and reliable equipment safeguards with attentive daily observation. Explore our other fish care guides to support a healthy, peaceful aquarium community.
         </p>
       </div>
       <div class="cta-actions">
-        <a class="button button-light" href="care.html" id="cta-get-started">Get Started Free ↗</a>
-        <a class="button button-outline" href="fish.html" id="cta-explore-services">Explore Services</a>
-    <section class="safety-section" id="common-habitat-hazards">
-      <div class="section-wrap">
-        <div class="section-heading-wrap">
-          <span class="heading-label"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Notice problems early</span>
-          <h2>Common Habitat <em>Hazards</em></h2>
-          <p>A quick daily look around the enclosure can catch loose fittings, unsafe materials, and environmental changes before they become emergencies.</p>
-        </div>
-        <div class="safety-detail">
-          <div>
-            <h3>Check the whole setup</h3>
-            <p>Keep a simple routine for checking the enclosure, equipment, and recorded conditions. Correct problems promptly and seek expert advice if safe settings are unclear for your species.</p>
-          </div>
-          <ul>
-            <li>Uncontrolled heating equipment, exposed hot surfaces, damaged cords, and overheating.</li>
-            <li>Loose lids, unlatched doors, gaps around cables, or weakened enclosure panels.</li>
-            <li>Toxic plants or materials, sharp or unstable decorations, and items that could trap or injure the reptile.</li>
-            <li>Poor ventilation, mould, standing water, or substrate that remains too wet.</li>
-            <li>Incorrect temperatures or humidity, including sudden changes after equipment failure or room-temperature shifts.</li>
-          </ul>
-        </div>
+        <a class="button button-light" href="health.html" id="cta-fish-health">
+          Explore Fish Health <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+        </a>
+        <a class="button button-outline" href="fish.html" id="cta-fish-hub">
+          Back to Fish Hub
+        </a>
       </div>
-    </section>
-
-    <section class="safety-section" id="emergency-care">
-      <div class="section-wrap">
-        <div class="section-heading-wrap">
-          <span class="heading-label"><i class="fa-solid fa-kit-medical" aria-hidden="true"></i> Be ready to respond</span>
-          <h2>Emergency <em>Care</em></h2>
-          <p>Act calmly, make the immediate environment safe, and contact a reptile-experienced veterinarian when your reptile is injured, unwell, or exposed to unsafe conditions.</p>
-        </div>
-        <div class="safety-detail">
-          <div>
-            <h3>Prioritize safety and expert help</h3>
-            <p>Keep your veterinarian's contact details and an appropriate transport carrier accessible. Do not attempt home treatment for serious injuries or use medications unless a veterinarian directs you.</p>
-          </div>
-          <ul>
-            <li><strong>Equipment failure:</strong> Check the animal's conditions with a reliable thermometer, move it only to a secure suitable backup habitat if needed, and arrange safe replacement or repair.</li>
-            <li><strong>Overheating:</strong> Remove the heat source or reduce it safely, move the reptile from immediate danger without chilling it abruptly, and call a veterinarian for guidance.</li>
-            <li><strong>Escape:</strong> Secure other pets and exterior doors, search nearby warm, dark hiding places carefully, and return the reptile to its enclosure once found.</li>
-            <li><strong>Visible injury or distress:</strong> Minimize handling, keep the reptile secure and appropriately warm, and contact a reptile-experienced veterinarian promptly.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="safety-cta section-wrap">
-      <div>
-        <div class="eyebrow"><i class="fa-solid fa-leaf" aria-hidden="true"></i> SAFE HABITATS SUPPORT HEALTHY REPTILES</div>
-        <h2>A Safe Habitat Makes a Happy Reptile</h2>
-        <p>Explore PetSathi's reptile care guide for more help with species, habitat, nutrition, and everyday wellbeing—and give your reptile a safe foundation to thrive.</p>
-      </div>
-      <a class="button button-light" href="reptiles.html">
-        Explore Reptile Care <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-      </a>
     </section>
   </main>
 
-  <!-- Shared Footer Placeholder -->
+  <!-- Reusable Footer Placeholder -->
   <div id="footer"></div>
 
-  <!-- Interactive Scripts -->
-  <script>
-    // Smooth Anchor Navigation Offset Handling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener("click", function (e) {
-        const targetId = this.getAttribute("href");
-        if (targetId.length > 1) {
-          const targetEl = document.querySelector(targetId);
-          if (targetEl) {
-            e.preventDefault();
-            const headerOffset = 90;
-            const elementPosition = targetEl.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: "smooth"
-            });
-          }
-        }
-      });
-    });
-  </script>
-
-  <!-- Shared Site Navigation & Components Script -->
+  <!-- Shared PetSathi Script -->
   <script src="../../../js/main.js"></script>
 </body>
 
