@@ -250,54 +250,126 @@
       color: var(--nut-green-accent);
     }
 
+    .guides-nav-search-wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+      margin: 0 auto 28px;
+    }
+
+    .guides-nav-search-bar {
+      display: flex;
+      align-items: center;
+      background: #fafcf7;
+      border: 1.5px solid #cce4d2;
+      border-radius: 9999px;
+      padding: 6px 18px;
+      box-shadow: 0 2px 10px rgba(35, 80, 50, 0.05);
+      transition: all 0.25s ease;
+    }
+
+    .guides-nav-search-bar:focus-within {
+      background: #ffffff;
+      border-color: #237847;
+      box-shadow: 0 4px 18px rgba(35, 120, 71, 0.16);
+    }
+
+    .guides-nav-search-icon {
+      color: #237847;
+      font-size: 1rem;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+
+    .guides-nav-search-input {
+      flex: 1;
+      border: none;
+      background: transparent;
+      outline: none;
+      font-family: "DM Sans", "Manrope", sans-serif;
+      font-size: 0.95rem;
+      color: #1a251e;
+      padding: 8px 0;
+    }
+
+    .guides-nav-search-input::placeholder {
+      color: #7a8c80;
+    }
+
     .guides-nav-grid {
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 14px;
+      margin: 0;
     }
 
     .guide-nav-item {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 18px 12px;
-      border-radius: 20px;
-      background: #f8fbf5;
-      border: 1px solid #e1efe3;
-      color: var(--nut-green-dark);
+      gap: 12px;
+      padding: 9px 18px 9px 9px;
+      background: #edf7f0;
+      border: 1px solid #cce4d2;
+      border-radius: 9999px;
       text-decoration: none;
-      transition: all 0.22s ease;
-      text-align: center;
+      cursor: pointer;
+      font-family: inherit;
+      width: 100%;
+      text-align: left;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+      min-width: 0;
     }
 
     .guide-nav-item:hover {
-      background: #edf7f0;
-      border-color: var(--nut-green-primary);
-      transform: translateY(-3px);
-      box-shadow: 0 6px 16px rgba(36, 107, 67, 0.08);
+      background: #e4f4e8;
+      border-color: #237847;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(35, 100, 55, 0.12);
+    }
+
+    .guide-nav-item.active {
+      background: #237847;
+      border-color: #237847;
+      box-shadow: 0 6px 18px rgba(35, 100, 55, 0.2);
     }
 
     .guide-nav-icon {
       width: 42px;
       height: 42px;
-      border-radius: 14px;
+      border-radius: 50%;
+      background: #d1ecda;
+      color: #1e6f43;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      font-size: 1.15rem;
+      line-height: 1;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .guide-nav-item:hover .guide-nav-icon {
+      background: #1e6f43;
+      color: #ffffff;
+    }
+
+    .guide-nav-item.active .guide-nav-icon {
       background: #ffffff;
-      border: 1px solid #dceade;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--nut-green-primary);
-      font-size: 18px;
+      color: #237847;
     }
 
     .guide-nav-label {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       font-weight: 700;
-      color: #263b30;
+      color: #1c2b20;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .guide-nav-item.active .guide-nav-label {
+      color: #ffffff;
     }
 
     /* ========================================================
@@ -608,17 +680,46 @@
     /* ========================================================
        6. FINAL CTA (Matches Cat Index)
        ======================================================== */
+    .cta {
+      margin-top: 0;
+      margin-bottom: 92px;
+      border: 1px solid #e6d6c6;
+    }
+
+    .cta > div:first-child {
+      text-align: left;
+    }
+
+    .cta > div:first-child .eyebrow,
+    .cta > div:first-child h2,
+    .cta > div:first-child p {
+      text-align: left;
+    }
+
     .cta-actions {
       display: flex;
       align-items: center;
       gap: 14px;
       flex-wrap: wrap;
+      flex-shrink: 0;
+    }
+
+    .cta .button-light {
+      background: var(--nut-green-primary);
+      color: #ffffff;
+      border-color: var(--nut-green-primary);
+    }
+
+    .cta .button-light:hover {
+      background: var(--nut-green-dark);
+      border-color: var(--nut-green-dark);
+      color: #ffffff;
     }
 
     .cta .button.button-outline {
       background: transparent !important;
-      color: #ffffff !important;
-      border: 1.5px solid rgba(255, 255, 255, 0.65) !important;
+      color: var(--nut-green-primary) !important;
+      border: 1.5px solid var(--nut-green-primary) !important;
       padding: 13px 24px;
       border-radius: 9999px;
       font-weight: 700;
@@ -627,9 +728,9 @@
     }
 
     .cta .button.button-outline:hover {
-      background: #ffffff !important;
-      color: var(--nut-green-primary) !important;
-      border-color: #ffffff !important;
+      background: var(--nut-green-primary) !important;
+      color: #ffffff !important;
+      border-color: var(--nut-green-primary) !important;
     }
 
     /* ========================================================
@@ -746,7 +847,7 @@
     <!-- ========================================================
          QUICK NAVIGATION HUB
          ======================================================== -->
-    <nav class="guides-nav-strip" aria-label="Quick Navigation">
+    <nav class="guides-nav-strip" id="quick-nav" aria-label="Quick Navigation and Filter">
       <div class="quick-nav-decor decor-top-left" aria-hidden="true">
         <i class="fa-solid fa-paw decor-paw"></i>
         <i class="fa-solid fa-paw decor-paw"></i>
@@ -761,39 +862,52 @@
           <span class="quick-nav-line"></span>
           <div class="quick-nav-badge">
             <i class="fa-regular fa-compass" aria-hidden="true"></i>
-            <span>QUICK NAVIGATION</span>
+            <span>QUICK NAVIGATION &amp; FILTER</span>
           </div>
           <span class="quick-nav-line"></span>
         </div>
         <h2 class="quick-nav-title">
-          Jump to <span>Fish Nutrition Sections</span>
+          Explore Aquatic <span>Nutrition &amp; Diet Guide</span>
         </h2>
       </div>
 
+      <div class="guides-nav-search-wrap">
+        <div class="guides-nav-search-bar">
+          <i class="fa-solid fa-magnifying-glass guides-nav-search-icon" aria-hidden="true"></i>
+          <input
+            type="search"
+            id="fishNutritionSearch"
+            class="guides-nav-search-input"
+            placeholder="Search fish food types, diets, schedules, tips..."
+            aria-label="Search Fish Nutrition Guide"
+          />
+        </div>
+      </div>
+
       <div class="guides-nav-grid">
-        <a class="guide-nav-item" href="#fish-food-types">
+        <button type="button" class="guide-nav-item active" data-target="all">
+          <span class="guide-nav-icon"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">All Topics</span>
+        </button>
+        <a class="guide-nav-item" href="#fish-food-types" data-target="fish-food-types">
           <span class="guide-nav-icon"><i class="fa-solid fa-bowl-food" aria-hidden="true"></i></span>
           <span class="guide-nav-label">Food Types</span>
         </a>
-        <a class="guide-nav-item" href="#feeding-by-type">
+        <a class="guide-nav-item" href="#feeding-by-type" data-target="feeding-by-type">
           <span class="guide-nav-icon"><i class="fa-solid fa-fish-fins" aria-hidden="true"></i></span>
           <span class="guide-nav-label">Feeding by Type</span>
         </a>
-        <a class="guide-nav-item" href="#daily-feeding-schedule">
+        <a class="guide-nav-item" href="#daily-feeding-schedule" data-target="daily-feeding-schedule">
           <span class="guide-nav-icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></span>
           <span class="guide-nav-label">Daily Schedule</span>
         </a>
-        <a class="guide-nav-item" href="#foods-to-avoid">
+        <a class="guide-nav-item" href="#foods-to-avoid" data-target="foods-to-avoid">
           <span class="guide-nav-icon"><i class="fa-solid fa-ban" aria-hidden="true"></i></span>
           <span class="guide-nav-label">Foods to Avoid</span>
         </a>
-        <a class="guide-nav-item" href="#fish-nutrition-tips">
+        <a class="guide-nav-item" href="#fish-nutrition-tips" data-target="fish-nutrition-tips">
           <span class="guide-nav-icon"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></span>
           <span class="guide-nav-label">Nutrition Tips</span>
-        </a>
-        <a class="guide-nav-item" href="safety.html">
-          <span class="guide-nav-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
-          <span class="guide-nav-label">Fish Safety</span>
         </a>
       </div>
     </nav>
@@ -1148,6 +1262,36 @@
   <div id="footer"></div>
 
   <!-- Shared PetSathi Script -->
+  <script>
+    (function () {
+      const searchInput = document.getElementById("fishNutritionSearch");
+      const cards = document.querySelectorAll(".nut-card");
+      const navPills = document.querySelectorAll(".guide-nav-item");
+
+      if (searchInput) {
+        searchInput.addEventListener("input", function (e) {
+          const query = e.target.value.toLowerCase().trim();
+          cards.forEach((card) => {
+            const text = card.textContent.toLowerCase();
+            card.style.display = !query || text.includes(query) ? "flex" : "none";
+          });
+        });
+      }
+
+      navPills.forEach((pill) => {
+        pill.addEventListener("click", function () {
+          navPills.forEach((p) => p.classList.remove("active"));
+          this.classList.add("active");
+          if (this.getAttribute("data-target") === "all") {
+            if (searchInput) searchInput.value = "";
+            cards.forEach((card) => {
+              card.style.display = "flex";
+            });
+          }
+        });
+      });
+    })();
+  </script>
   <script src="../../../js/main.js"></script>
 </body>
 
