@@ -15,6 +15,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../../../css/global.css" />
+    <link rel="stylesheet" href="../../../css/home.css" />
     <link rel="stylesheet" href="../../../css/inner.css" />
     <link
       rel="stylesheet"
@@ -289,12 +290,53 @@
       .quick-nav-title span {
         color: var(--green);
       }
+      .guides-nav-search-wrap {
+        position: relative;
+        z-index: 1;
+        max-width: 640px;
+        margin: 0 auto 28px;
+      }
+      .guides-nav-search-bar {
+        display: flex;
+        align-items: center;
+        background: #fafcf7;
+        border: 1.5px solid #cce4d2;
+        border-radius: 9999px;
+        padding: 6px 18px;
+        box-shadow: 0 2px 10px rgba(35, 80, 50, 0.05);
+        transition: all 0.25s ease;
+      }
+      .guides-nav-search-bar:focus-within {
+        background: #ffffff;
+        border-color: #237847;
+        box-shadow: 0 4px 18px rgba(35, 120, 71, 0.16);
+      }
+      .guides-nav-search-icon {
+        color: #237847;
+        font-size: 1rem;
+        margin-right: 12px;
+        flex-shrink: 0;
+      }
+      .guides-nav-search-input {
+        flex: 1;
+        border: none;
+        background: transparent;
+        outline: none;
+        font-family: "DM Sans", "Manrope", sans-serif;
+        font-size: 0.95rem;
+        color: #1a251e;
+        padding: 8px 0;
+      }
+      .guides-nav-search-input::placeholder {
+        color: #7a8c80;
+      }
       .guides-nav-grid {
         position: relative;
         z-index: 1;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
         gap: 14px;
+        margin: 0;
       }
       .guide-nav-item {
         display: flex;
@@ -305,44 +347,55 @@
         border: 1px solid #cce4d2;
         border-radius: 9999px;
         text-decoration: none;
-        transition:
-          transform 0.2s ease,
-          box-shadow 0.2s ease,
-          border-color 0.2s ease,
-          background 0.2s ease;
+        cursor: pointer;
+        font-family: inherit;
+        width: 100%;
+        text-align: left;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
         min-width: 0;
       }
       .guide-nav-item:hover {
         background: #e4f4e8;
-        border-color: var(--green);
+        border-color: #237847;
         transform: translateY(-2px);
         box-shadow: 0 6px 18px rgba(35, 100, 55, 0.12);
+      }
+      .guide-nav-item.active {
+        background: #237847;
+        border-color: #237847;
+        box-shadow: 0 6px 18px rgba(35, 100, 55, 0.2);
       }
       .guide-nav-icon {
         width: 42px;
         height: 42px;
         border-radius: 50%;
         background: #d1ecda;
-        color: var(--green);
+        color: #1e6f43;
         display: grid;
         place-items: center;
         flex-shrink: 0;
         font-size: 1.15rem;
-        transition:
-          background 0.2s ease,
-          color 0.2s ease;
+        line-height: 1;
+        transition: background 0.2s ease, color 0.2s ease;
       }
       .guide-nav-item:hover .guide-nav-icon {
-        background: var(--green);
+        background: #1e6f43;
         color: #ffffff;
+      }
+      .guide-nav-item.active .guide-nav-icon {
+        background: #ffffff;
+        color: #237847;
       }
       .guide-nav-label {
         font-size: 0.9rem;
         font-weight: 700;
-        color: var(--ink);
+        color: #1c2b20;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+      }
+      .guide-nav-item.active .guide-nav-label {
+        color: #ffffff;
       }
 
       .dog-topics-heading {
@@ -1057,21 +1110,44 @@
         color: var(--dark);
       }
 
+      .cta {
+        margin-top: 0;
+        margin-bottom: 92px;
+        border: 1px solid #e6d6c6;
+        background: #fafcf7 !important;
+      }
       .cta-actions {
         display: flex;
-        align-items: center;
         gap: 14px;
         flex-wrap: wrap;
+        flex-shrink: 0;
+      }
+      .cta .button-light {
+        background: var(--green);
+        color: #ffffff;
+        border-color: var(--green);
+      }
+      .cta .button-light:hover {
+        background: var(--dark);
+        border-color: var(--dark);
+        color: #ffffff;
       }
       .cta .button.button-outline {
         background: transparent !important;
-        color: #ffffff !important;
-        border: 1.5px solid rgba(255, 255, 255, 0.65) !important;
+        color: var(--green) !important;
+        border: 1.5px solid var(--green) !important;
       }
       .cta .button.button-outline:hover {
-        background: #ffffff !important;
-        color: var(--green) !important;
-        border-color: #ffffff !important;
+        background: var(--green) !important;
+        color: #ffffff !important;
+      }
+      .cta > div:first-child {
+        text-align: left;
+      }
+      .cta > div:first-child .eyebrow,
+      .cta > div:first-child h2,
+      .cta > div:first-child p {
+        text-align: left;
       }
       .dog-cta-actions .button {
         white-space: nowrap;
@@ -1369,7 +1445,7 @@
         </div>
       </section>
 
-      <div class="guides-nav-strip">
+      <div class="guides-nav-strip" id="quick-nav">
         <div class="quick-nav-decor decor-top-left" aria-hidden="true">
           <i class="fa-solid fa-paw decor-paw decor-paw-1"></i>
           <i class="fa-solid fa-paw decor-paw decor-paw-2"></i>
@@ -1383,31 +1459,49 @@
             <span class="quick-nav-line"></span>
             <div class="quick-nav-badge">
               <i class="fa-regular fa-compass" aria-hidden="true"></i>
-              <span>QUICK NAVIGATION</span>
+              <span>QUICK NAVIGATION &amp; FILTER</span>
             </div>
             <span class="quick-nav-line"></span>
           </div>
           <h3 class="quick-nav-title">
-            Explore Canine <span>Breeds Hub</span>
+            Explore Canine <span>Breeds &amp; Care Guide</span>
           </h3>
         </div>
+        <div class="guides-nav-search-wrap">
+          <div class="guides-nav-search-bar">
+            <i class="fa-solid fa-magnifying-glass guides-nav-search-icon" aria-hidden="true"></i>
+            <input
+              type="search"
+              id="breedSearchInput"
+              class="guides-nav-search-input"
+              placeholder="Search dog breeds, origins, or traits..."
+              aria-label="Search dog breeds"
+            />
+          </div>
+        </div>
         <div class="guides-nav-grid">
+          <button type="button" class="guide-nav-item filter-btn active" data-category="all" onclick="setBreedFilter('all', true)">
+            <span class="guide-nav-icon"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></span>
+            <span class="guide-nav-label">All Breeds</span>
+          </button>
+          <button type="button" class="guide-nav-item filter-btn" data-category="small" onclick="setBreedFilter('small', true)">
+            <span class="guide-nav-icon"><i class="fa-solid fa-dog" aria-hidden="true"></i></span>
+            <span class="guide-nav-label">Small Breeds</span>
+          </button>
+          <button type="button" class="guide-nav-item filter-btn" data-category="medium" onclick="setBreedFilter('medium', true)">
+            <span class="guide-nav-icon"><i class="fa-solid fa-paw" aria-hidden="true"></i></span>
+            <span class="guide-nav-label">Medium Breeds</span>
+          </button>
+          <button type="button" class="guide-nav-item filter-btn" data-category="large" onclick="setBreedFilter('large', true)">
+            <span class="guide-nav-icon"><i class="fa-solid fa-shield-dog" aria-hidden="true"></i></span>
+            <span class="guide-nav-label">Large Breeds</span>
+          </button>
           <a href="#categories" class="guide-nav-item">
-            <span class="guide-nav-icon"
-              ><i class="fa-solid fa-layer-group" aria-hidden="true"></i
-            ></span>
-            <span class="guide-nav-label">Breed Categories</span>
-          </a>
-          <a href="#popular-breeds" class="guide-nav-item">
-            <span class="guide-nav-icon"
-              ><i class="fa-solid fa-dog" aria-hidden="true"></i
-            ></span>
-            <span class="guide-nav-label">Popular Breeds</span>
+            <span class="guide-nav-icon"><i class="fa-solid fa-list-check" aria-hidden="true"></i></span>
+            <span class="guide-nav-label">Categories</span>
           </a>
           <a href="#comparison" class="guide-nav-item">
-            <span class="guide-nav-icon"
-              ><i class="fa-solid fa-code-compare" aria-hidden="true"></i
-            ></span>
+            <span class="guide-nav-icon"><i class="fa-solid fa-code-compare" aria-hidden="true"></i></span>
             <span class="guide-nav-label">Compare Breeds</span>
           </a>
         </div>
@@ -1616,79 +1710,6 @@
               <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
             </h2>
             <p>Explore in-depth profiles of 10 popular dog breeds with physical characteristics, temperaments, lifespans, and grooming routines.</p>
-          </div>
-        </div>
-
-        <div class="filter-section">
-          <div class="filter-header">
-            <div class="filter-title">
-              <i class="fa-solid fa-sliders" aria-hidden="true"></i>
-              <span>Filter by category</span>
-            </div>
-            <div class="filter-search-wrap">
-              <i
-                class="filter-search-icon fa-solid fa-magnifying-glass"
-                aria-hidden="true"
-              ></i>
-              <input
-                type="search"
-                id="breedSearchInput"
-                class="filter-search-input"
-                placeholder="Search breeds, origins, or traits"
-                aria-label="Search dog breeds"
-              />
-            </div>
-          </div>
-
-          <div class="filter-pills" role="tablist">
-            <button
-              class="filter-btn active"
-              data-category="all"
-              onclick="setBreedFilter('all')"
-            >
-              <i class="fa-solid fa-paw" aria-hidden="true"></i> All Breeds
-              <span class="filter-count-badge">10</span>
-            </button>
-            <button
-              class="filter-btn"
-              data-category="small"
-              onclick="setBreedFilter('small')"
-            >
-              <i class="fa-solid fa-dog" aria-hidden="true"></i> Small
-              <span class="filter-count-badge">3</span>
-            </button>
-            <button
-              class="filter-btn"
-              data-category="medium"
-              onclick="setBreedFilter('medium')"
-            >
-              <i class="fa-solid fa-dog" aria-hidden="true"></i> Medium
-              <span class="filter-count-badge">3</span>
-            </button>
-            <button
-              class="filter-btn"
-              data-category="large"
-              onclick="setBreedFilter('large')"
-            >
-              <i class="fa-solid fa-shield-dog" aria-hidden="true"></i> Large
-              <span class="filter-count-badge">4</span>
-            </button>
-            <button
-              class="filter-btn"
-              data-category="family"
-              onclick="setBreedFilter('family')"
-            >
-              <i class="fa-solid fa-heart" aria-hidden="true"></i> Family Dogs
-              <span class="filter-count-badge">4</span>
-            </button>
-            <button
-              class="filter-btn"
-              data-category="indian"
-              onclick="setBreedFilter('indian')"
-            >
-              <i class="fa-solid fa-earth-asia" aria-hidden="true"></i> Indian
-              Breeds <span class="filter-count-badge">1</span>
-            </button>
           </div>
         </div>
 
@@ -2962,7 +2983,7 @@
           : " View Details";
       }
 
-      function setBreedFilter(category) {
+      function setBreedFilter(category, shouldScroll) {
         currentCategory = category;
 
         document.querySelectorAll(".filter-btn").forEach((btn) => {
