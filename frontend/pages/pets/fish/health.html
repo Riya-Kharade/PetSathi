@@ -1,0 +1,2123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Comprehensive aquarium fish health and wellness guide on PetSathi. Learn signs of healthy fish, identify common diseases like Ich and fin rot, recognize illness warning signs, maintain optimal water quality, and practice preventive aquatic care.">
+  <title>Fish Health and Wellness Guide | PetSathi</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome 6.5.2 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Core PetSathi Stylesheets -->
+  <link rel="stylesheet" href="../../../css/global.css">
+  <link rel="stylesheet" href="../../../css/home.css">
+  <link rel="stylesheet" href="../../../css/inner.css">
+
+  <style>
+    /* ========================================================
+       FONT AWESOME 6 DEFINITIONS & RESILIENCE GUARDS
+       ======================================================== */
+    @font-face {
+      font-family: "Font Awesome 6 Free";
+      font-style: normal;
+      font-weight: 900;
+      font-display: block;
+      src:
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.woff2") format("woff2"),
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.ttf") format("truetype");
+    }
+
+    @font-face {
+      font-family: "Font Awesome 6 Free";
+      font-style: normal;
+      font-weight: 400;
+      font-display: block;
+      src:
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-regular-400.woff2") format("woff2"),
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-regular-400.ttf") format("truetype");
+    }
+
+    @font-face {
+      font-family: "Font Awesome 6 Brands";
+      font-style: normal;
+      font-weight: 400;
+      font-display: block;
+      src:
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-brands-400.woff2") format("woff2"),
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-brands-400.ttf") format("truetype");
+    }
+
+    body [class*="fa-"],
+    body [class*="fa-"]::before {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900 !important;
+      font-style: normal !important;
+      font-variant: normal !important;
+      text-rendering: auto !important;
+      line-height: 1 !important;
+    }
+
+    .fa-regular,
+    .fa-regular::before {
+      font-weight: 400 !important;
+    }
+
+    .fa-brands,
+    .fa-brands::before {
+      font-family: "Font Awesome 6 Brands" !important;
+      font-weight: 400 !important;
+    }
+
+    /* Disable global automatic pseudo-element icons inside dropdowns */
+    .dropdown a::before,
+    .dropdown a::after {
+      display: none !important;
+      content: none !important;
+    }
+
+    .dropdown a {
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      padding: 10px 16px !important;
+    }
+
+    .dropdown a i {
+      width: 18px;
+      text-align: center;
+    }
+
+    /* ========================================================
+       PAGE FOUNDATIONS & TYPOGRAPHY
+       ======================================================== */
+    :root {
+      --green: #246b43;
+      --green-dark: #194f31;
+      --green-light: #edf7f0;
+      --green-border: #d2e8d7;
+      --cream: #fafcf7;
+      --cream-card: #f4f8f3;
+      --soft-green: #f4faf5;
+      --text-dark: #1b2e23;
+      --text-muted: #5e6f64;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", "Manrope", sans-serif;
+      color: var(--text-dark);
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    .section-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* ========================================================
+       HERO SECTION (2 Columns, Matching Dog/Cat/Reptile Index)
+       ======================================================== */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+      padding: 60px 20px 48px;
+      max-width: 1200px;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .fish-badge-strip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 18px;
+      background: #edf7f0;
+      border: 1px solid #d0e7d5;
+      border-radius: 9999px;
+      color: #246b43;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .fish-badge-strip i {
+      font-size: 0.95rem;
+      color: #246b43;
+    }
+
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(2.3rem, 3.8vw, 3.4rem);
+      line-height: 1.18;
+      color: #16261c;
+      margin: 0 0 18px;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+    }
+
+    .hero h1 em {
+      color: #246b43;
+      font-style: normal;
+    }
+
+    .hero-lead {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #55675c;
+      margin: 0 0 28px;
+      max-width: 580px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .hero-actions .button {
+      background: #246b43;
+      color: #ffffff;
+      border: 1.5px solid #246b43;
+      border-radius: 9999px;
+      padding: 13px 26px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .hero-actions .button:hover {
+      background: #194f31;
+      border-color: #194f31;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(36, 107, 67, 0.2);
+    }
+
+    .hero-actions .button-outline {
+      background: transparent !important;
+      color: #246b43 !important;
+      border: 1.5px solid #246b43 !important;
+    }
+
+    .hero-actions .button-outline:hover {
+      background: #246b43 !important;
+      color: #ffffff !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(36, 107, 67, 0.2);
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.86rem;
+      color: #66786d;
+    }
+
+    .hero-note i {
+      color: #246b43;
+    }
+
+    /* Hero Visual & Floating Cards */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-blob {
+      position: absolute;
+      width: 95%;
+      height: 95%;
+      background: radial-gradient(circle, #edf7f0 0%, #d8ebd9 70%, transparent 100%);
+      border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
+      z-index: 0;
+      filter: blur(8px);
+    }
+
+    .hero-photo {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 460px;
+      height: 380px;
+      object-fit: cover;
+      border-radius: 42% 58% 52% 48% / 46% 44% 56% 54%;
+      box-shadow: 0 16px 40px rgba(36, 107, 67, 0.12);
+      border: 4px solid #ffffff;
+    }
+
+    .floating-card {
+      position: absolute;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      padding: 12px 18px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 8px 24px rgba(20, 60, 35, 0.1);
+      border: 1px solid #dce8dd;
+    }
+
+    .floating-card i {
+      font-size: 1.3rem;
+    }
+
+    .floating-card span {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .floating-card span b {
+      font-size: 0.88rem;
+      color: #192a1f;
+    }
+
+    .floating-card span small {
+      font-size: 0.74rem;
+      color: #617367;
+    }
+
+    .card-top {
+      top: 14px;
+      right: -8px;
+    }
+
+    .card-bottom {
+      bottom: 18px;
+      left: -8px;
+    }
+
+    /* ========================================================
+       QUICK NAVIGATION HUB (Single Horizontal Row Desktop)
+       ======================================================== */
+    .guides-nav-strip {
+      position: relative;
+      background: #ffffff;
+      margin: 30px auto 55px;
+      max-width: 1200px;
+      width: calc(100% - 40px);
+      border: 1px solid #dceade;
+      border-radius: 32px;
+      padding: 38px 32px 34px;
+      box-shadow: 0 4px 24px rgba(35, 80, 50, 0.04);
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .quick-nav-decor {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.35;
+      color: #9ac2a3;
+    }
+
+    .decor-top-left {
+      top: 14px;
+      left: 18px;
+    }
+
+    .decor-bottom-right {
+      bottom: 14px;
+      right: 18px;
+    }
+
+    .decor-paw {
+      font-size: 16px;
+      display: inline-block;
+      margin: 0 3px;
+    }
+
+    .decor-paw-1 { transform: rotate(-15deg); }
+    .decor-paw-2 { transform: rotate(20deg); font-size: 20px; }
+    .decor-paw-3 { transform: rotate(15deg); font-size: 20px; }
+    .decor-paw-4 { transform: rotate(-25deg); }
+
+    .quick-nav-header {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .quick-nav-eyebrow-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 8px;
+    }
+
+    .quick-nav-line {
+      display: inline-block;
+      width: 40px;
+      height: 1px;
+      background: #cce2d1;
+    }
+
+    .quick-nav-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #edf7f0;
+      color: #246b43;
+      padding: 5px 16px;
+      border-radius: 9999px;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border: 1px solid #d0e7d5;
+    }
+
+    .quick-nav-header h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+      color: #17291d;
+      margin: 6px 0 0;
+      font-weight: 700;
+    }
+
+    .quick-nav-header h2 span {
+      color: #246b43;
+    }
+
+    /* Six Navigation Buttons (Single Horizontal Row Desktop) */
+    .guides-nav-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+      margin: 0;
+    }
+
+    .guide-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 12px;
+      border-radius: 999px;
+      background: #fafcf8;
+      border: 1.5px solid #dbe8dd;
+      color: #2d4536;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 12.5px;
+      transition: all 0.25s ease;
+      box-shadow: 0 2px 6px rgba(35, 80, 50, 0.02);
+      box-sizing: border-box;
+    }
+
+    .guide-nav-item:hover {
+      background: #246b43;
+      border-color: #246b43;
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(36, 107, 67, 0.18);
+    }
+
+    .guide-nav-icon {
+      display: grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #eaf3eb;
+      color: #246b43;
+      font-size: 13px;
+      flex-shrink: 0;
+      transition: all 0.25s ease;
+    }
+
+    .guide-nav-item:hover .guide-nav-icon {
+      background: #ffffff;
+      color: #246b43;
+    }
+
+    .guide-nav-label {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 0.82rem;
+    }
+
+    /* ========================================================
+       SECTION RHYTHM & FOUNDATIONS (NO Horizontal Dividers)
+       ======================================================== */
+    .fish-section {
+      padding: 68px 0 78px;
+    }
+
+    .bg-cream {
+      background: #fafcf7;
+    }
+
+    .bg-white {
+      background: #ffffff;
+    }
+
+    .bg-soft-green {
+      background: #f4faf5;
+    }
+
+    /* ========================================================
+       SIGNATURE SECTION HEADING CARDS (Exact Match to reptiles.html & dogs/index.html)
+       ======================================================== */
+    .section-heading-wrap {
+      position: relative;
+      max-width: 1400px;
+      margin: 0 auto 36px;
+      padding: 44px 35px 38px;
+      overflow: hidden;
+      text-align: center;
+      border-radius: 35px;
+      border: 1px solid #dcebc9;
+      background: #fafcf7;
+      box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
+      box-sizing: border-box;
+    }
+
+    .bg-cream .section-heading-wrap {
+      background: #ffffff;
+    }
+
+    .corner-wave {
+      position: absolute;
+      width: 190px;
+      height: 110px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wave-tl {
+      top: 0;
+      left: 0;
+    }
+
+    .wave-br {
+      bottom: 0;
+      right: 0;
+    }
+
+    /* Floating Paw Background Accents (Exact match) */
+    .paw {
+      position: absolute;
+      color: rgba(115, 173, 91, 0.28);
+      z-index: 1;
+      pointer-events: none;
+      line-height: 1;
+    }
+
+    .paw-left-1 {
+      top: 66px;
+      left: 108px;
+      font-size: 58px;
+      transform: rotate(20deg);
+    }
+
+    .paw-left-2 {
+      bottom: 24px;
+      left: 82px;
+      font-size: 38px;
+      transform: rotate(-15deg);
+    }
+
+    .paw-right-1 {
+      top: 60px;
+      right: 75px;
+      font-size: 56px;
+      transform: rotate(18deg);
+    }
+
+    .paw-right-2 {
+      bottom: 35px;
+      right: 140px;
+      font-size: 38px;
+      transform: rotate(-15deg);
+    }
+
+    .heading-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .heading-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 20px;
+      margin-bottom: 16px;
+      border-radius: 50px;
+      background: #edf6df;
+      border: 1px solid #dcebc9;
+      color: #246b43;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .heading-label i {
+      font-size: 14px;
+      color: #246b43;
+      line-height: 1;
+    }
+
+    .heading-content h2,
+    .section-heading-wrap h2 {
+      color: #263b30;
+      font-family: Georgia, serif !important;
+      font-size: clamp(24px, 3.2vw, 36px);
+      font-weight: 700;
+      margin: 0 0 12px;
+      line-height: 1.2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .heading-content h2 span,
+    .heading-content h2 em,
+    .section-heading-wrap h2 span,
+    .section-heading-wrap h2 em {
+      color: #28764a !important;
+      font-style: normal !important;
+    }
+
+    .heading-burst {
+      display: inline-block;
+      position: relative;
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      vertical-align: middle;
+    }
+
+    .heading-burst span {
+      position: absolute;
+      background: #60a872;
+      border-radius: 9999px;
+    }
+
+    .heading-burst.left span {
+      right: 0;
+      transform-origin: right center;
+    }
+
+    .heading-burst.left span:nth-child(1) {
+      top: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(35deg);
+    }
+
+    .heading-burst.left span:nth-child(2) {
+      top: 11px;
+      width: 18px;
+      height: 2.8px;
+    }
+
+    .heading-burst.left span:nth-child(3) {
+      bottom: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(-35deg);
+    }
+
+    .heading-burst.right span {
+      left: 0;
+      transform-origin: left center;
+    }
+
+    .heading-burst.right span:nth-child(1) {
+      top: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(-35deg);
+    }
+
+    .heading-burst.right span:nth-child(2) {
+      top: 11px;
+      width: 18px;
+      height: 2.8px;
+    }
+
+    .heading-burst.right span:nth-child(3) {
+      bottom: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(35deg);
+    }
+
+    .section-heading-wrap p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: #64736a;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    /* Disclaimer Alert Strip */
+    .disclaimer-banner {
+      background: #edf7f0;
+      border: 1px solid #d0e7d5;
+      border-radius: 16px;
+      padding: 14px 20px;
+      margin: 0 auto 32px;
+      max-width: 1000px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 0.88rem;
+      color: #246b43;
+      line-height: 1.5;
+    }
+
+    .disclaimer-banner i {
+      font-size: 1.25rem;
+      color: #246b43;
+      flex-shrink: 0;
+    }
+
+    /* ========================================================
+       HEALTH CARDS GRID (3 Columns Desktop, Centered, Equal Dimensions)
+       ======================================================== */
+    .health-card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+
+    .health-card {
+      background: #ffffff;
+      border: 1.5px solid #dce8dd;
+      border-radius: 24px;
+      padding: 34px 26px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 18px rgba(35, 75, 45, 0.03);
+      position: relative;
+      box-sizing: border-box;
+    }
+
+    .bg-white .health-card {
+      background: #fafcf8;
+    }
+
+    .health-card:hover {
+      transform: translateY(-6px);
+      border-color: #246b43;
+      box-shadow: 0 12px 30px rgba(36, 107, 67, 0.12);
+    }
+
+    .card-icon-bubble {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #eaf3eb;
+      color: #246b43;
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      margin-bottom: 18px;
+      border: 1.5px solid #d5ead9;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .health-card:hover .card-icon-bubble {
+      background: #246b43;
+      color: #ffffff;
+      transform: scale(1.08);
+      border-color: #246b43;
+    }
+
+    .card-tag {
+      background: #edf7f0;
+      color: #246b43;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+      border: 1px solid #d0e7d5;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      display: inline-block;
+    }
+
+    .health-card h3 {
+      font-family: Georgia, serif;
+      font-size: 1.25rem;
+      color: #1a2a1f;
+      margin: 0 0 10px;
+      line-height: 1.3;
+    }
+
+    .health-card p {
+      color: #55665b;
+      font-size: 0.92rem;
+      line-height: 1.65;
+      margin: 0 0 18px;
+      flex-grow: 1;
+    }
+
+    /* Key Specs Highlight Table inside cards */
+    .card-specs-box {
+      width: 100%;
+      background: #f7faf7;
+      border: 1px solid #e4ede6;
+      border-radius: 14px;
+      padding: 12px 14px;
+      margin-top: auto;
+      text-align: left;
+      font-size: 0.82rem;
+      box-sizing: border-box;
+    }
+
+    .card-specs-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 3px 0;
+    }
+
+    .card-specs-item:not(:last-child) {
+      border-bottom: 1px dashed #e1eae3;
+    }
+
+    .card-specs-label {
+      font-weight: 700;
+      color: #6b7e72;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card-specs-val {
+      font-weight: 700;
+      color: #246b43;
+    }
+
+    .card-action-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: #246b43;
+      text-decoration: none;
+      transition: gap 0.2s ease, color 0.2s ease;
+      margin-top: 14px;
+    }
+
+    .health-card:hover .card-action-link {
+      gap: 10px;
+      color: #194f31;
+    }
+
+    /* ========================================================
+       WATER CHEMISTRY PARAMETERS COMPACT MATRIX
+       ======================================================== */
+    .param-highlight-wrap {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .param-card {
+      background: #ffffff;
+      border: 1.5px solid #dce8dd;
+      border-radius: 22px;
+      padding: 30px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 18px rgba(35, 75, 45, 0.03);
+      box-sizing: border-box;
+    }
+
+    .param-card:hover {
+      transform: translateY(-5px);
+      border-color: #246b43;
+      box-shadow: 0 10px 26px rgba(36, 107, 67, 0.1);
+    }
+
+    .param-metric {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 4px;
+      background: #edf7f0;
+      color: #246b43;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+      border: 1px solid #d0e7d5;
+    }
+
+    .param-card h3 {
+      font-family: Georgia, serif;
+      font-size: 1.2rem;
+      color: #18281d;
+      margin: 0 0 8px;
+    }
+
+    .param-card p {
+      color: #55665b;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin: 0;
+      flex-grow: 1;
+    }
+
+    /* ========================================================
+       FINAL LIGHT PINK CTA SECTION (Single card matching other pages)
+       ======================================================== */
+    main > .cta {
+      position: relative;
+      background: #fdf2f4 !important;
+      border: 1px solid #f8d7da !important;
+      border-radius: 30px !important;
+      padding: 44px 48px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 32px !important;
+      box-shadow: 0 4px 24px rgba(214, 51, 108, 0.04) !important;
+      overflow: hidden;
+      box-sizing: border-box;
+      margin-bottom: 75px !important;
+    }
+
+    .cta .eyebrow {
+      display: block !important;
+      background: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+      padding: 0 !important;
+      margin: 0 0 12px 0 !important;
+      width: auto !important;
+      color: #246b43 !important;
+      font-size: 0.76rem !important;
+      font-weight: 700 !important;
+      letter-spacing: 1.6px !important;
+      text-transform: uppercase !important;
+      text-align: left !important;
+      justify-content: flex-start !important;
+      box-shadow: none !important;
+      text-shadow: none !important;
+      filter: none !important;
+    }
+
+    .cta h2 {
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: clamp(1.7rem, 2.7vw, 2.25rem) !important;
+      margin: 0 0 10px !important;
+      color: #1a251e !important;
+      line-height: 1.25 !important;
+      text-align: left !important;
+    }
+
+    .cta h2 em {
+      color: #246b43 !important;
+      font-style: normal !important;
+    }
+
+    .cta p {
+      color: #55665b !important;
+      font-size: 0.95rem !important;
+      max-width: 620px !important;
+      margin: 0 !important;
+      line-height: 1.65 !important;
+      text-align: left !important;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+    }
+
+    .cta-actions .button,
+    .cta-actions .button.button-light,
+    .cta .button-light {
+      background: #246b43 !important;
+      color: #ffffff !important;
+      border: 1.5px solid #246b43 !important;
+      border-radius: 9999px !important;
+      padding: 13px 26px !important;
+      font-weight: 700 !important;
+      text-decoration: none !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      transition: all 0.25s ease !important;
+      white-space: nowrap !important;
+    }
+
+    .cta-actions .button:hover,
+    .cta-actions .button.button-light:hover,
+    .cta .button-light:hover {
+      background: #194f31 !important;
+      border-color: #194f31 !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 18px rgba(36, 107, 67, 0.2) !important;
+    }
+
+    .cta-actions .button-outline,
+    .cta .button-outline {
+      background: #ffffff !important;
+      color: #246b43 !important;
+      border: 1.5px solid #246b43 !important;
+      border-radius: 9999px !important;
+      padding: 13px 24px !important;
+      font-weight: 700 !important;
+      text-decoration: none !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      transition: all 0.25s ease !important;
+      white-space: nowrap !important;
+    }
+
+    .cta-actions .button-outline:hover,
+    .cta .button-outline:hover {
+      background: #246b43 !important;
+      color: #ffffff !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 18px rgba(36, 107, 67, 0.2) !important;
+    }
+
+    /* ========================================================
+       RESPONSIVE DESIGN (Desktop 3, Tablet 2, Mobile 1)
+       ======================================================== */
+    @media (max-width: 1100px) {
+      .guides-nav-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 960px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .health-card-grid,
+      .param-highlight-wrap {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      main > .cta {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding: 34px 28px !important;
+      }
+
+      .section-heading-wrap {
+        padding: 35px 20px 30px;
+      }
+
+      .paw-left-1,
+      .paw-right-1 {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .health-card-grid,
+      .param-highlight-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .guides-nav-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-photo {
+        height: 280px;
+      }
+
+      main > .cta {
+        padding: 26px 20px !important;
+      }
+
+      .cta-actions {
+        width: 100% !important;
+      }
+
+      .cta-actions .button {
+        width: 100% !important;
+        text-align: center !important;
+        justify-content: center !important;
+      }
+
+      .guides-nav-strip {
+        padding: 24px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Reusable Site Header Placeholder -->
+  <div id="header"></div>
+
+  <main id="main-content">
+
+    <!-- ========================================================
+         1. MAIN HERO SECTION
+         ======================================================== -->
+    <div class="section-wrap">
+      <section class="hero" id="fish-health-hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="fish-badge-strip">
+            <i class="fa-solid fa-fish" aria-hidden="true"></i>
+            <span>FISH HEALTH &bull; WELLNESS &amp; AQUATIC MEDICINE</span>
+          </div>
+          <h1 id="hero-title">Fish Health and <em>Wellness Guide</em></h1>
+          <p class="hero-lead">
+            Aquarium fish are delicate, vibrant companions whose vitality mirrors the biological stability of their aquatic world. Master early illness detection, recognize signs of robust health, resolve common parasites and infections, and establish proactive water quality disciplines that keep your aquatic ecosystem thriving for years.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#healthy-signs" id="hero-cta-health">
+              Explore Fish Health Tips &rarr;
+            </a>
+            <a class="button button-outline" href="fish.html" id="hero-cta-guides">
+              Explore Fish Guides
+            </a>
+          </div>
+          <div class="hero-note">
+            <i class="fa-solid fa-heart" aria-hidden="true"></i>
+            <span>Dedicated to pristine aquariums, balanced water parameters, and thriving fish vitality.</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-blob" aria-hidden="true"></div>
+          <img
+            src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&fit=crop&w=1000&q=85"
+            alt="Healthy colorful tropical aquarium fish swimming actively in clear planted tank"
+            class="hero-photo" id="hero-fish-image" loading="eager" />
+          <div class="floating-card card-top">
+            <i class="fa-solid fa-water" style="color: #246b43;" aria-hidden="true"></i>
+            <span>
+              <b>Pristine Water</b>
+              <small>0 ppm ammonia &amp; nitrite</small>
+            </span>
+          </div>
+          <div class="floating-card card-bottom">
+            <i class="fa-solid fa-shield-heart" style="color: #246b43;" aria-hidden="true"></i>
+            <span>
+              <b>Active Vitality</b>
+              <small>Fluid swimming &amp; clear fins</small>
+            </span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ========================================================
+         2. QUICK NAVIGATION HUB (Single Horizontal Row on Desktop)
+         ======================================================== -->
+    <div class="guides-nav-strip" id="quick-nav">
+      <!-- Decorative Corner Accents -->
+      <div class="quick-nav-decor decor-top-left" aria-hidden="true">
+        <i class="fa-solid fa-paw decor-paw decor-paw-1"></i>
+        <i class="fa-solid fa-paw decor-paw decor-paw-2"></i>
+      </div>
+      <div class="quick-nav-decor decor-bottom-right" aria-hidden="true">
+        <i class="fa-solid fa-paw decor-paw decor-paw-3"></i>
+        <i class="fa-solid fa-paw decor-paw decor-paw-4"></i>
+      </div>
+
+      <div class="quick-nav-header">
+        <div class="quick-nav-eyebrow-wrap">
+          <span class="quick-nav-line"></span>
+          <div class="quick-nav-badge">
+            <i class="fa-solid fa-compass" aria-hidden="true"></i>
+            <span>Quick Navigation</span>
+          </div>
+          <span class="quick-nav-line"></span>
+        </div>
+        <h2>Explore Dedicated <span>Fish Health Chapters</span></h2>
+      </div>
+
+      <!-- Six Navigation Buttons Required by Issue #253 -->
+      <div class="guides-nav-grid">
+        <a href="#healthy-signs" class="guide-nav-item" id="hub-link-healthy">
+          <span class="guide-nav-icon"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Signs of Healthy Fish</span>
+        </a>
+        <a href="#common-diseases" class="guide-nav-item" id="hub-link-diseases">
+          <span class="guide-nav-icon"><i class="fa-solid fa-bacterium" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Common Fish Diseases</span>
+        </a>
+        <a href="#illness-signs" class="guide-nav-item" id="hub-link-illness">
+          <span class="guide-nav-icon"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Signs of Illness</span>
+        </a>
+        <a href="#water-quality" class="guide-nav-item" id="hub-link-water">
+          <span class="guide-nav-icon"><i class="fa-solid fa-droplet" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Water Quality &amp; Health</span>
+        </a>
+        <a href="#preventive-care" class="guide-nav-item" id="hub-link-preventive">
+          <span class="guide-nav-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Preventive Care</span>
+        </a>
+        <a href="#veterinary-care" class="guide-nav-item" id="hub-link-veterinary">
+          <span class="guide-nav-icon"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Veterinary Care</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         3. SECTION A: SIGNS OF HEALTHY FISH
+         ======================================================== -->
+    <section id="healthy-signs" class="fish-section bg-cream" aria-labelledby="heading-healthy">
+      <div class="section-wrap">
+        <div class="section-heading-wrap">
+          <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+            <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+          </svg>
+          <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+            <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+          </svg>
+
+          <!-- Floating Paws Accents -->
+          <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+          <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+          <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+          <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+
+          <div class="heading-content">
+            <span class="heading-label">
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <span>Vitality Indicators</span>
+            </span>
+            <h2 id="heading-healthy">
+              <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+              Signs of a <span>Healthy Fish</span>
+              <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+            </h2>
+            <p>Vibrant aquatic life begins with baseline health observations. A thriving fish displays confident buoyancy, keen feeding instincts, crystal-clear eyes, and completely intact, untorn fin structures.</p>
+          </div>
+        </div>
+
+        <!-- 6 Cards: Healthy Fish Signs -->
+        <div class="health-card-grid">
+
+          <!-- Card 1 -->
+          <article class="health-card">
+            <div class="card-icon-bubble">
+              <i class="fa-solid fa-person-swimming" aria-hidden="true"></i>
+            </div>
+            <span class="card-tag">Active Locomotion</span>
+            <h3>Active &amp; Fluid Swimming</h3>
+            <p>Swims effortlessly at its species-appropriate tank depth without listing, wobbling, spinning, or resting listlessly on the substrate gravel.</p>
+            <div class="card-specs-box">
+              <div class="card-specs-item">
+                <span class="card-specs-label">Posture</span>
+                <span class="card-specs-val">Upright &amp; Level</span>
+              </div>
+              <div class="card-specs-item">
+                <span class="card-specs-label">Buoyancy</span>
+                <span class="card-specs-val">Effortless Float</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="health-card">
+            <div class="card-icon-bubble">
+              <i class="fa-solid fa-bowl-food" aria-hidden="true"></i>
+            </div>
+            <span class="card-tag">Nutritional Vigor</span>
+            <h3>Normal, Eager Appetite</h3>
+            <p>Rushes forward proactively during scheduled daily feeding times and vigorously consumes flake, pellet, or frozen food within 2 to 3 minutes without spitting it out.</p>
+            <div class="card-specs-box">
+              <div class="card-specs-item">
+                <span class="card-specs-label">Feeding Response</span>
+                <span class="card-specs-val">Immediate &amp; Keen</span>
+              </div>
+              <div class="card-specs-item">
+                <span class="card-specs-label">Digestion</span>
+                <span class="card-specs-val">Short, Normal Waste</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="health-card">
+            <div class="card-icon-bubble">
+              <i class="fa-solid fa-eye" aria-hidden="true"></i>
+            </div>
+            <span class="card-tag">Ocular Clarity</span>
+            <h3>Clear, Bright Eyes</h3>
+            <p>Lenses and corneas are lustrous and translucent without cloudy films, white rings, redness, sunken hollows, or bulging pop-eye fluid distension.</p>
+            <div class="card-specs-box">
+              <div class="card-specs-item">
+                <span class="card-specs-label">Cornea</span>
+                <span class="card-specs-val">Translucent</span>
+              </div>
+              <div class="card-specs-item">
+                <span class="card-specs-label">Symmetry</span>
+                <span class="card-specs-val">Flush with Skull</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="health-card">
+            <div class="card-icon-bubble">
+              <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+            </div>
+            <span class="card-tag">Epithelial Health</span>
+            <h3>Healthy Fins &amp; Scales</h3>
+            <p>Dorsal, caudal, and pectoral fins are held open and proud. Body scales form an unbroken, glossy, protective armored sheath without missing patches or red veins.</p>
+            <div class="card-specs-box">
+              <div class="card-specs-item">
+                <span class="card-specs-label">Fin Condition</span>
+                <span class="card-specs-val">Fully Extended</span>
+              </div>
+              <div class="card-specs-item">
+                <span class="card-specs-label">Coat</span>
+                <span class="card-specs-val">Natural Slime Barrier</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="health-card">
+            <div class="card-icon-bubble">
+              <i class="fa-solid fa-lungs" aria-hidden="true"></i>
+            </div>
+            <span class="card-tag">Respiratory Pace</span>
+            <h3>Normal, Calm Breathing</h3>
+            <p>Operculum (gill covers) open and close in a rhythmic, measured cadence. Gills appear vibrant red inside without flared distension or surface gasping.</p>
+            <div class="card-specs-box">
+              <div class="card-specs-item">
+                <span class="card-specs-label">Gill Movement</span>
+                <span class="card-specs-val">Rhythmic &amp; Steady</span>
+              </div>
+              <div class="card-specs-item">
+                <span class="card-specs-label">Oxygen Draw</span>
+                <span class="card-specs-val">Mid-Water Inhalation</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="health-card">
+            <div class="card-icon-bubble">
+              <i class="fa-solid fa-palette" aria-hidden="true"></i>
+            </div>
+            <span class="card-tag">Chromatophores</span>
+            <h3>Vivid Natural Coloration</h3>
+            <p>Displays rich, saturated, species-true color patterns. Scales sparkle under aquarium lighting without pale gray fading, dark stress bands, or velvety coatings.</p>
+            <div class="card-specs-box">
+              <div class="card-specs-item">
+                <span class="card-specs-label">Color Depth</span>
+                <span class="card-specs-val">Vivid &amp; Defined</span>
+              </div>
+              <div class="card-specs-item">
+                <span class="card-specs-label">Stress Bars</span>
+                <span class="card-specs-val">Completely Absent</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         4. SECTION B: COMMON FISH DISEASES
+         ======================================================== -->
+    <section id="common-diseases" class="fish-section bg-white" aria-labelledby="heading-diseases">
+      <div class="section-wrap">
+        <div class="section-heading-wrap">
+          <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+            <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+          </svg>
+          <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+            <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+          </svg>
+
+          <!-- Floating Paws Accents -->
+          <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+          <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+          <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+          <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+
+          <div class="heading-content">
+            <span class="heading-label">
+              <i class="fa-solid fa-bacterium" aria-hidden="true"></i>
+              <span>Pathogen Guide</span>
+            </span>
+            <h2 id="heading-diseases">
+              <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+              Common <span>Fish Diseases</span>
+              <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+            </h2>
+            <p>Aquatic illnesses usually strike when immune defenses drop due to environmental stressors. Familiarize yourself with key pathogen profiles, biological vectors, and safe preliminary treatment pathways.</p>
+          </div>
+        </div>
+
+        <!-- Veterinary Disclaimer Banner -->
+        <div class="disclaimer-banner" role="note">
+          <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+          <div>
+            <b>Aquatic Care Notice:</b> This health guide is provided for keeper education and early symptom recognition only. It is not a substitute for clinical diagnosis by a licensed aquatic veterinarian. Always test water chemistry before initiating medications.
+          </div>
+        </div>
+
+        <!-- 6 Cards: Common Diseases -->
+        <div class="health-card-grid">
+
+          <!-- Disease 1: Ich -->
+          <article class="health-card">
+            <div class="card-icon-bubble">
+              <i class="fa-solid fa-viruses" aria-hidden="true"></i>
+            </div>
+            <span class="card-tag">Ciliated Ectoparasite</span>
+            <h3>Ich (White Spot Disease)</h3>
+            <p>Caused by <i>Ichthyophthirius multifiliis</i>. Trophonts burrow beneath the outer slime layer, creating distinctive salt-grain white dots, heavy scratching against decor, and rapid gill pumping.</p>
+            <div class="card-specs-box">
+              <div class="card-specs-item">
+                <span class="card-specs-label">Key Indicator</span>
+                <span class="card-specs-val">Salt-Grain Specks</span>
+              </div>
+              <div class="card-specs-item">
+                <span class="card-specs-label">Remedy</span>
+                <span class="card-specs-val">Heat (82–86°F) &amp; Salt</span>
+              </div>
+            </div>
+            <a href="#water-quality" class="card-action-link">Treatment Protocol &rarr;</a>
+          </article>
+
+          <!-- Disease 2: Fin Rot -->
+          <article class="health-card">
+            <div class="card-icon-bubble">
+              <i class="fa-solid fa-scissors" aria-hidden="true"></i>
+            </div>
+            <span class="card-tag">Bacterial Erosion</span>
+            <h3>Fin &amp; Tail Rot</h3>
+            <p>Opportunistic bacterial infection (<i>Aeromonas</i> or <i>Pseudomonas</i>). Fin margins turn frayed, milky-white, or ragged, progressing downward toward the body peduncle with bloody red streaks.</p>
+            <div class="card-specs-box">
+              <div class="card-specs-item">
+                <span class="card-specs-label">Key Indicator</span>
+                <span class="card-specs-val">Ragged, Frayed Edges</span>
+              </div>
+              <div class="card-specs-item">
+                <span class="card-specs-label">Remedy</span>
+                <span class="card-specs-val">Pristine Water &amp; Antibacterials</span>
+              </div>
+            </div>
+            <a href="#preventive-care" class="card-action-link">Hygiene Guide &rarr;</a>
+          </article>
+
+          <!-- Disease 3: Fungal Infections -->
+          <article class="health-card">
+            <div class="card-icon-bubble">
+              <i class="fa-solid fa-disease" aria-hidden="true"></i>
+            </div>
+            <span class="card-tag">Secondary Water Mold</span>
+            <h3>Fungal Cotton Wool</h3>
+            <p>Caused primarily by <i>Saprolegnia</i> fungus colonizing preexisting skin wounds, nipped fins, or parasite punctures. Appears as fluffy, raised, cotton-like tufts across the epidermis.</p>
+            <div class="card-specs-box">
+              <div class="card-specs-item">
+                <span class="card-specs-label">Key Indicator</span>
+                <span class="card-specs-val">Cottony White Tufts</span>
+              </div>
+              <div class="card-specs-item">
+                <span class="card-specs-label">Remedy</span>
+                <span class="card-specs-val">Antifungal / Salt Dip</span>
+              </div>
+            </div>
+            <a href="#veterinary-care" class="card-action-link">Isolation Steps &rarr;</a>
+          </article>
+
+          <!-- Disease 4: Velvet Disease -->
+          <article class="health-card">
+            <div class="card-icon-bubble">
+              <i class="fa-solid fa-sun" aria-hidden="true"></i>
+            </div>
+            <span class="card-tag">Dinoflagellate Parasite</span>
+            <h3>Velvet (Oodinium)</h3>
+            <p>Microscopic dinoflagellates attach to the skin and gills, casting a fine golden-yellow, amber, or rust-colored powder dusting over the scales. Fish exhibit intense rubbing, clamped fins, and lethargy.</p>
+            <div class="card-specs-box">
+              <div class="card-specs-item">
+                <span class="card-specs-label">Key Indicator</span>
+                <span class="card-specs-val">Gold / Rust Sheen</span>
+              </div>
+              <div class="card-specs-item">
+                <span class="card-specs-label">Remedy</span>
+                <span class="card-specs-val">Blackout &amp; Copper Salts</span>
+              </div>
+            </div>
+            <a href="#water-quality" class="card-action-link">Quarantine Steps &rarr;</a>
+          </article>
+
+          <!-- Disease 5: Dropsy -->
+          <article class="health-card">
+            <div class="card-icon-bubble">
+              <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+            </div>
+            <span class="card-tag">Systemic Internal Edema</span>
+            <h3>Dropsy (Ascites)</h3>
+            <p>Symptom of severe internal organ or kidney failure causing fluid accumulation in the body cavity. Scales protrude outward like a pinecone, accompanied by bulging eyes and severe lethargy.</p>
+            <div class="card-specs-box">
+              <div class="card-specs-item">
+                <span class="card-specs-label">Key Indicator</span>
+                <span class="card-specs-val">Pinecone Scale Sticking</span>
+              </div>
+              <div class="card-specs-item">
+                <span class="card-specs-label">Remedy</span>
+                <span class="card-specs-val">Epsom Salt &amp; Antibiotics</span>
+              </div>
+            </div>
+            <a href="#veterinary-care" class="card-action-link">Clinical Action &rarr;</a>
+          </article>
+
+          <!-- Disease 6: Swim Bladder Disorder -->
+          <article class="health-card">
+            <div class="card-icon-bubble">
+              <i class="fa-solid fa-arrows-up-down" aria-hidden="true"></i>
+            </div>
+            <span class="card-tag">Buoyancy Malfunction</span>
+            <h3>Swim Bladder Disorder</h3>
+            <p>Occurs when the hydrostatic organ is compressed by constipation, bacterial infection, or physical injury. Fish struggle to maintain level swimming, floating upside down or sinking to the bottom.</p>
+            <div class="card-specs-box">
+              <div class="card-specs-item">
+                <span class="card-specs-label">Key Indicator</span>
+                <span class="card-specs-val">Upside Down / Sinking</span>
+              </div>
+              <div class="card-specs-item">
+                <span class="card-specs-label">Remedy</span>
+                <span class="card-specs-val">Fasting &amp; Blanched Peas</span>
+              </div>
+            </div>
+            <a href="#preventive-care" class="card-action-link">Dietary Adjustments &rarr;</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         5. SECTION C: SIGNS OF ILLNESS
+         ======================================================== -->
+    <section id="illness-signs" class="fish-section bg-soft-green" aria-labelledby="heading-illness">
+      <div class="section-wrap">
+        <div class="section-heading-wrap">
+          <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+            <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+          </svg>
+          <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+            <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+          </svg>
+
+          <!-- Floating Paws Accents -->
+          <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+          <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+          <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+          <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+
+          <div class="heading-content">
+            <span class="heading-label">
+              <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+              <span>Early Diagnostics</span>
+            </span>
+            <h2 id="heading-illness">
+              <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+              Warning Signs of <span>Fish Illness</span>
+              <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+            </h2>
+            <p>Fish cannot vocalize pain or discomfort. Recognizing subtle behavioral changes and physiological anomalies allows keepers to isolate afflicted fish and treat ailments before widespread contagion occurs.</p>
+          </div>
+        </div>
+
+        <!-- 6 Cards: Warning Signs -->
+        <div class="health-card-grid">
+
+          <!-- Sign 1 -->
+          <article class="health-card">
+            <div class="card-icon-bubble">
+              <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+            </div>
+            <span class="card-tag">Appetite Failure</span>
+            <h3>Loss of Appetite</h3>
+            <p>Ignoring meals, swimming past offered food, or repeatedly taking flakes into the mouth and spitting them out signals severe stress, gastrointestinal distress, or systemic infection.</p>
+            <div class="card-specs-box">
+              <div class="card-specs-item">
+                <span class="card-specs-label">Severity</span>
+                <span class="card-specs-val">High Priority</span>
+              </div>
+              <div class="card-specs-item">
+                <span class="card-specs-label">Immediate Step</span>
+                <span class="card-specs-val">Check Water Parameters</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Sign 2 -->
+          <article class="health-card">
+            <div class="card-icon-bubble">
+              <i class="fa-solid fa-water" aria-hidden="true"></i>
+            </div>
+            <span class="card-tag">Locomotion Alert</span>
+            <h3>Unusual Swimming &amp; Shimmying</h3>
+            <p>Darting erratically against glass, spinning along the vertical axis, shimmying in place without forward progress, or bouncing off substrate points to neurological or parasite irritation.</p>
+            <div class="card-specs-box">
+              <div class="card-specs-item">
+                <span class="card-specs-label">Severity</span>
+                <span class="card-specs-val">Critical Alert</span>
+              </div>
+              <div class="card-specs-item">
+                <span class="card-specs-label">Immediate Step</span>
+                <span class="card-specs-val">Inspect for Velvet/Ich</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Sign 3 -->
+          <article class="health-card">
+            <div class="card-icon-bubble">
+              <i class="fa-solid fa-compress" aria-hidden="true"></i>
+            </div>
+            <span class="card-tag">Posture Warning</span>
+            <h3>Clamped Fins</h3>
+            <p>Holding dorsal, pelvic, or anal fins tightly clamped flat against the torso rather than gracefully spread. This is a universal stress reaction to chilling, ammonia burn, or ectoparasites.</p>
+            <div class="card-specs-box">
+              <div class="card-specs-item">
+                <span class="card-specs-label">Severity</span>
+                <span class="card-specs-val">Early Warning</span>
+              </div>
+              <div class="card-specs-item">
+                <span class="card-specs-label">Immediate Step</span>
+                <span class="card-specs-val">Verify Temperature &amp; pH</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Sign 4 -->
+          <article class="health-card">
+            <div class="card-icon-bubble">
+              <i class="fa-solid fa-circle-dot" aria-hidden="true"></i>
+            </div>
+            <span class="card-tag">Epithelial Lesions</span>
+            <h3>White Spots &amp; Unusual Patches</h3>
+            <p>Appearance of salt specks, velvety films, cottony growths, red sores, open ulcers, or excess slime coating indicates an active parasitic or bacterial colony taking hold on the epidermis.</p>
+            <div class="card-specs-box">
+              <div class="card-specs-item">
+                <span class="card-specs-label">Severity</span>
+                <span class="card-specs-val">Contagious Risk</span>
+              </div>
+              <div class="card-specs-item">
+                <span class="card-specs-label">Immediate Step</span>
+                <span class="card-specs-val">Move to Hospital Tank</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Sign 5 -->
+          <article class="health-card">
+            <div class="card-icon-bubble">
+              <i class="fa-solid fa-wind" aria-hidden="true"></i>
+            </div>
+            <span class="card-tag">Asphyxiation Risk</span>
+            <h3>Rapid Surface Breathing</h3>
+            <p>"Piping" or gasping continuously at the water surface with flared, hyperventilating opercula signals severe gill damage from ammonia, elevated nitrites, or depleted dissolved oxygen.</p>
+            <div class="card-specs-box">
+              <div class="card-specs-item">
+                <span class="card-specs-label">Severity</span>
+                <span class="card-specs-val">Emergency</span>
+              </div>
+              <div class="card-specs-item">
+                <span class="card-specs-label">Immediate Step</span>
+                <span class="card-specs-val">Maximize Surface Aeration</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Sign 6 -->
+          <article class="health-card">
+            <div class="card-icon-bubble">
+              <i class="fa-solid fa-eye-slash" aria-hidden="true"></i>
+            </div>
+            <span class="card-tag">Social Withdrawal</span>
+            <h3>Chronic Hiding &amp; Inactivity</h3>
+            <p>Retreating continuously behind internal filters, inside dark caves, or wedging motionless between plants away from the school signals vulnerability, bullying, or advancing sickness.</p>
+            <div class="card-specs-box">
+              <div class="card-specs-item">
+                <span class="card-specs-label">Severity</span>
+                <span class="card-specs-val">Moderate Risk</span>
+              </div>
+              <div class="card-specs-item">
+                <span class="card-specs-label">Immediate Step</span>
+                <span class="card-specs-val">Observe Tank Compatibility</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         6. SECTION D: WATER QUALITY AND FISH HEALTH
+         ======================================================== -->
+    <section id="water-quality" class="fish-section bg-cream" aria-labelledby="heading-water">
+      <div class="section-wrap">
+        <div class="section-heading-wrap">
+          <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+            <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+          </svg>
+          <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+            <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+          </svg>
+
+          <!-- Floating Paws Accents -->
+          <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+          <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+          <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+          <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+
+          <div class="heading-content">
+            <span class="heading-label">
+              <i class="fa-solid fa-droplet" aria-hidden="true"></i>
+              <span>Water Chemistry</span>
+            </span>
+            <h2 id="heading-water">
+              <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+              Water Quality &amp; <span>Fish Health</span>
+              <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+            </h2>
+            <p>Over 90% of captive fish diseases originate directly from degraded water chemistry. Because fish breathe and excrete directly within their environment, strict parameters form their primary immune barrier.</p>
+          </div>
+        </div>
+
+        <!-- 6 Water Parameter Metric Cards -->
+        <div class="param-highlight-wrap">
+
+          <!-- Param 1: Ammonia -->
+          <article class="param-card">
+            <div class="param-metric">
+              <i class="fa-solid fa-flask" aria-hidden="true"></i>
+              <span>0.0 ppm</span>
+            </div>
+            <h3>Ammonia (NH₃ / NH₄⁺)</h3>
+            <p>Primary toxic excretion from fish gills and decomposing organic debris. Even traces above 0.25 ppm corrode delicate gill lamellae, induce chemical burns, and lead to rapid respiratory failure.</p>
+          </article>
+
+          <!-- Param 2: Nitrite -->
+          <article class="param-card">
+            <div class="param-metric">
+              <i class="fa-solid fa-vial" aria-hidden="true"></i>
+              <span>0.0 ppm</span>
+            </div>
+            <h3>Nitrite (NO₂⁻)</h3>
+            <p>Intermediate byproduct of nitrifying bacteria. Absorbed through the gills into the bloodstream, it converts hemoglobin into methemoglobin ("brown blood disease"), starving vital internal organs of oxygen.</p>
+          </article>
+
+          <!-- Param 3: Nitrate -->
+          <article class="param-card">
+            <div class="param-metric">
+              <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+              <span>&lt; 20 ppm</span>
+            </div>
+            <h3>Nitrate (NO₃⁻)</h3>
+            <p>End product of the biological nitrogen cycle. While significantly less toxic than ammonia, chronic accumulation above 40 ppm severely suppresses fish immunity, stunts growth, and fuels algae outbreaks.</p>
+          </article>
+
+          <!-- Param 4: Temperature -->
+          <article class="param-card">
+            <div class="param-metric">
+              <i class="fa-solid fa-temperature-half" aria-hidden="true"></i>
+              <span>75–80°F</span>
+            </div>
+            <h3>Thermal Stability</h3>
+            <p>Fish are ectothermic poikilotherms whose metabolic enzyme kinetics depend on surrounding temperature. Sudden fluctuations greater than 2°F cause acute physiological shock and invite pathogens.</p>
+          </article>
+
+          <!-- Param 5: Testing -->
+          <article class="param-card">
+            <div class="param-metric">
+              <i class="fa-solid fa-clipboard-check" aria-hidden="true"></i>
+              <span>Weekly Test</span>
+            </div>
+            <h3>Regular Water Testing</h3>
+            <p>Water can look crystal clear while carrying lethal invisible toxins. Conduct weekly chemical testing with liquid dropper reagent kits rather than inaccurate dipping paper test strips.</p>
+          </article>
+
+          <!-- Param 6: Maintenance -->
+          <article class="param-card">
+            <div class="param-metric">
+              <i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i>
+              <span>20–25% / Wk</span>
+            </div>
+            <h3>Proper Water Maintenance</h3>
+            <p>Perform partial water changes weekly using a gravel vacuum to remove uneaten food and fish waste from the substrate. Always condition tap water with quality dechlorinator before adding.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         7. SECTION E: PREVENTIVE CARE
+         ======================================================== -->
+    <section id="preventive-care" class="fish-section bg-white" aria-labelledby="heading-preventive">
+      <div class="section-wrap">
+        <div class="section-heading-wrap">
+          <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+            <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+          </svg>
+          <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+            <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+          </svg>
+
+          <!-- Floating Paws Accents -->
+          <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+          <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+          <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+          <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+
+          <div class="heading-content">
+            <span class="heading-label">
+              <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+              <span>Proactive Husbandry</span>
+            </span>
+            <h2 id="heading-preventive">
+              <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+              Preventive Aquatic <span>Care Practices</span>
+              <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+            </h2>
+            <p>Preventing an aquarium outbreak is vastly easier and more humane than administering medication after the tank ecosystem collapses. Integrate these six proactive care habits into your weekly routine.</p>
+          </div>
+        </div>
+
+        <!-- 6 Cards: Preventive Care -->
+        <div class="health-card-grid">
+
+          <!-- Card 1: Maintenance -->
+          <article class="health-card">
+            <div class="card-icon-bubble">
+              <i class="fa-solid fa-filter" aria-hidden="true"></i>
+            </div>
+            <span class="card-tag">Filtration Guard</span>
+            <h3>Regular Aquarium Maintenance</h3>
+            <p>Rinse mechanical filter foams and bio-media exclusively in old tank water siphoned during water changes. Never use untreated tap water, as chlorine instantly obliterates beneficial nitrifying colonies.</p>
+            <div class="card-specs-box">
+              <div class="card-specs-item">
+                <span class="card-specs-label">Filter Rinse</span>
+                <span class="card-specs-val">Monthly in Tank Water</span>
+              </div>
+              <div class="card-specs-item">
+                <span class="card-specs-label">Impeller Care</span>
+                <span class="card-specs-val">Inspect Every 90 Days</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Suitable Feeding -->
+          <article class="health-card">
+            <div class="card-icon-bubble">
+              <i class="fa-solid fa-cookie-bite" aria-hidden="true"></i>
+            </div>
+            <span class="card-tag">Dietary Health</span>
+            <h3>Suitable, Measured Feeding</h3>
+            <p>Feed only what fish consume fully within 2 minutes once or twice daily. Alternate high-grade flakes, micropellets, freeze-dried daphnia, and bloodworms to provide varied trace nutrients without polluting water.</p>
+            <div class="card-specs-box">
+              <div class="card-specs-item">
+                <span class="card-specs-label">Portion Rule</span>
+                <span class="card-specs-val">Consume in 2 Minutes</span>
+              </div>
+              <div class="card-specs-item">
+                <span class="card-specs-label">Fasting</span>
+                <span class="card-specs-val">1 Day Weekly Fast</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Behaviour Monitoring -->
+          <article class="health-card">
+            <div class="card-icon-bubble">
+              <i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i>
+            </div>
+            <span class="card-tag">Daily Vigilance</span>
+            <h3>Monitoring Fish Behaviour</h3>
+            <p>Dedicate 3 to 5 minutes daily before feeding to watch individual fish swimming styles, eye clarity, schooling cohesion, and fin extension. Early detection allows successful isolation before tank transmission.</p>
+            <div class="card-specs-box">
+              <div class="card-specs-item">
+                <span class="card-specs-label">Observation</span>
+                <span class="card-specs-val">Daily at Feeding</span>
+              </div>
+              <div class="card-specs-item">
+                <span class="card-specs-label">Focus Area</span>
+                <span class="card-specs-val">Fin Edges &amp; Gills</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: Quarantine -->
+          <article class="health-card">
+            <div class="card-icon-bubble">
+              <i class="fa-solid fa-hospital" aria-hidden="true"></i>
+            </div>
+            <span class="card-tag">Biosecurity</span>
+            <h3>Quarantining New Fish</h3>
+            <p>Never introduce new store-bought fish directly into your main community display. House new arrivals in a dedicated 10-gallon bare-bottom quarantine tank for 2 to 4 weeks to intercept latent parasites.</p>
+            <div class="card-specs-box">
+              <div class="card-specs-item">
+                <span class="card-specs-label">Duration</span>
+                <span class="card-specs-val">14 to 28 Days</span>
+              </div>
+              <div class="card-specs-item">
+                <span class="card-specs-label">Hospital Setup</span>
+                <span class="card-specs-val">Sponge Filter &amp; Heater</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5: Overcrowding -->
+          <article class="health-card">
+            <div class="card-icon-bubble">
+              <i class="fa-solid fa-users-slash" aria-hidden="true"></i>
+            </div>
+            <span class="card-tag">Bioload Balance</span>
+            <h3>Avoiding Overcrowding</h3>
+            <p>Overstocked aquariums suffer rapid oxygen depletion, heightened territorial aggression, stress-induced immunosuppression, and sudden ammonia spikes that overwhelm biological filtration.</p>
+            <div class="card-specs-box">
+              <div class="card-specs-item">
+                <span class="card-specs-label">Stocking Metric</span>
+                <span class="card-specs-val">Adult Bioload Sizing</span>
+              </div>
+              <div class="card-specs-item">
+                <span class="card-specs-label">Oxygenation</span>
+                <span class="card-specs-val">Spacious Swim Zones</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6: Hygiene -->
+          <article class="health-card">
+            <div class="card-icon-bubble">
+              <i class="fa-solid fa-hand-sparkles" aria-hidden="true"></i>
+            </div>
+            <span class="card-tag">Aquarium Hygiene</span>
+            <h3>Sterilization &amp; Tool Hygiene</h3>
+            <p>Dedicate separate nets, buckets, and siphon hoses for quarantine and display tanks. Always rinse hands thoroughly without soap before tank maintenance to avoid introducing cosmetic chemicals.</p>
+            <div class="card-specs-box">
+              <div class="card-specs-item">
+                <span class="card-specs-label">Equipment</span>
+                <span class="card-specs-val">Dedicated Nets &amp; Hoses</span>
+              </div>
+              <div class="card-specs-item">
+                <span class="card-specs-label">Chemical Risk</span>
+                <span class="card-specs-val">Soap &amp; Lotion Free</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         8. SECTION F: WHEN TO CONSULT AN AQUATIC VETERINARIAN
+         ======================================================== -->
+    <section id="veterinary-care" class="fish-section bg-soft-green" aria-labelledby="heading-veterinary">
+      <div class="section-wrap">
+        <div class="section-heading-wrap">
+          <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+            <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+          </svg>
+          <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+            <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+          </svg>
+
+          <!-- Floating Paws Accents -->
+          <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+          <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+          <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+          <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+
+          <div class="heading-content">
+            <span class="heading-label">
+              <i class="fa-solid fa-user-doctor" aria-hidden="true"></i>
+              <span>Professional Medicine</span>
+            </span>
+            <h2 id="heading-veterinary">
+              <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+              When to Consult an <span>Aquatic Veterinarian</span>
+              <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+            </h2>
+            <p>While minor scrapes and water adjustments are handled at home, severe systemic epidemics, complex bacterial ulcers, and unresponsive parasites require professional veterinary diagnostics and pathology.</p>
+          </div>
+        </div>
+
+        <!-- 3 Cards: Veterinary Scenarios -->
+        <div class="health-card-grid">
+
+          <!-- Card 1 -->
+          <article class="health-card">
+            <div class="card-icon-bubble">
+              <i class="fa-solid fa-skull-crossbones" aria-hidden="true"></i>
+            </div>
+            <span class="card-tag">Severe Colony Loss</span>
+            <h3>Unexplained Colony Die-Offs</h3>
+            <p>When multiple tank inhabitants perish rapidly over 48 to 72 hours despite verified 0 ppm ammonia, 0 ppm nitrite, and stable pH, an aggressive viral or resistant bacterial pathogen requires clinical necropsy.</p>
+            <div class="card-specs-box">
+              <div class="card-specs-item">
+                <span class="card-specs-label">Response Time</span>
+                <span class="card-specs-val">Immediate Consultation</span>
+              </div>
+              <div class="card-specs-item">
+                <span class="card-specs-label">Procedure</span>
+                <span class="card-specs-val">Water &amp; Tissue Sample</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="health-card">
+            <div class="card-icon-bubble">
+              <i class="fa-solid fa-biohazard" aria-hidden="true"></i>
+            </div>
+            <span class="card-tag">Ulcerative Sepsis</span>
+            <h3>Deep Ulcers &amp; Sepsis</h3>
+            <p>Open bleeding sores, exposed muscle tissue, or internal hemorrhaging (septicemia) cannot be cured with mild over-the-counter salt baths. Certified aquatic vets can prescribe targeted antibiotic injections or medicated feed.</p>
+            <div class="card-specs-box">
+              <div class="card-specs-item">
+                <span class="card-specs-label">Clinical Need</span>
+                <span class="card-specs-val">Prescription Antibiotics</span>
+              </div>
+              <div class="card-specs-item">
+                <span class="card-specs-label">Delivery</span>
+                <span class="card-specs-val">Medicated Feed / Gel</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="health-card">
+            <div class="card-icon-bubble">
+              <i class="fa-solid fa-microscope" aria-hidden="true"></i>
+            </div>
+            <span class="card-tag">Resistant Pathogens</span>
+            <h3>Medication-Resistant Parasites</h3>
+            <p>If persistent flashing, gill flukes, or anchor worms endure after standard quarantine treatments, veterinary skin scrapes, gill biopsies, and microscopic identification pinpoint the exact resistant organism.</p>
+            <div class="card-specs-box">
+              <div class="card-specs-item">
+                <span class="card-specs-label">Diagnostic</span>
+                <span class="card-specs-val">Microscopic Scrapes</span>
+              </div>
+              <div class="card-specs-item">
+                <span class="card-specs-label">Registry</span>
+                <span class="card-specs-val">WAVMA / AAFV Vets</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         9. FINAL LIGHT PINK CTA SECTION (Encourage Learning Fish Behaviour)
+         ======================================================== -->
+    <section class="cta section-wrap" id="fish-health-cta" aria-labelledby="cta-heading">
+      <div>
+        <div class="eyebrow">START YOUR AQUATIC JOURNEY</div>
+        <h2 id="cta-heading">Keep Your Fish <em>Healthy and Happy</em></h2>
+        <p>
+          Encourage vibrant longevity in your aquarium by observing natural fish behavior, swimming rituals, and social dynamics. Deepen your understanding of your aquatic companions today.
+        </p>
+      </div>
+      <div class="cta-actions">
+        <a class="button button-light" href="behaviour.html" id="cta-explore-behaviour">
+          Explore Fish Behaviour &rarr;
+        </a>
+        <a class="button button-outline" href="fish.html" id="cta-back-fish">
+          Back to Fish Guide
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Reusable Site Footer Placeholder -->
+  <div id="footer"></div>
+
+  <!-- Main JavaScript (Loads header & footer) -->
+  <script src="../../../js/main.js"></script>
+
+</body>
+
+</html>

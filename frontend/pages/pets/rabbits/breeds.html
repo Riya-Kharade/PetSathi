@@ -1,870 +1,2532 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore ten popular rabbit breeds, their size, appearance, coat types, temperaments and care needs with PetSathi.">
-    <meta name="theme-color" content="#f7f8f2">
-    <title>Rabbit Breeds & Characteristics | PetSathi</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Discover the wonderful world of rabbit breeds with PetSathi. Explore popular breeds, size categories, coat types, grooming routines, temperament profiles, and side-by-side breed comparisons.">
+  <meta name="theme-color" content="#f7f8f2">
+  <title>Rabbit Breeds &amp; Characteristics | PetSathi</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+    rel="stylesheet">
 
-    <link rel="stylesheet" href="../../../css/global.css">
-    <link rel="stylesheet" href="../../../css/home.css">
-    <link rel="stylesheet" href="../../../css/inner.css">
-
-    <style>
-        /* =====================================================
-           PETSATHI — RABBIT BREEDS
-           Visual language aligned with birds/species.html
-        ===================================================== */
-        :root {
-            --rabbit-ink: var(--ink, #26352c);
-            --rabbit-green: var(--green, #286849);
-            --rabbit-muted: var(--muted, #718078);
-            --rabbit-line: var(--line, #e2e9df);
-            --rabbit-cream: var(--cream, #fbfaf5);
-        }
-
-        html { scroll-behavior: smooth; }
-        body {
-            margin: 0;
-            background: var(--rabbit-cream);
-            color: var(--rabbit-ink);
-            overflow-x: hidden;
-            font-family: "DM Sans", sans-serif;
-        }
-        a { text-underline-offset: 3px; }
-        .rabbit-breadcrumb {
-            width: min(1160px, calc(100% - 48px));
-            margin: 19px auto;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 9px;
-            color: var(--rabbit-muted);
-            font-size: .82rem;
-        }
-        .rabbit-breadcrumb a { color: var(--rabbit-green); font-weight: 700; }
-        .rabbit-breadcrumb span[aria-current="page"] { color: var(--rabbit-ink); font-weight: 700; }
-
-        /* Hero */
-        .rabbit-hero {
-            position: relative;
-            isolation: isolate;
-            overflow: hidden;
-            padding: 68px 24px 62px;
-            text-align: center;
-            background: linear-gradient(135deg, #edf4e9 0%, #fbfaf5 54%, #f5efe4 100%);
-            border-top: 1px solid var(--rabbit-line);
-            border-bottom: 1px solid var(--rabbit-line);
-        }
-        .rabbit-hero::before,
-        .rabbit-hero::after {
-            position: absolute;
-            z-index: -1;
-            content: "";
-            border-radius: 50%;
-            background: rgba(211, 226, 205, .35);
-        }
-        .rabbit-hero::before { width: 270px; height: 270px; left: -110px; top: -125px; }
-        .rabbit-hero::after { width: 330px; height: 330px; right: -145px; bottom: -220px; }
-        .rabbit-hero-inner { max-width: 900px; margin: 0 auto; }
-        .rabbit-eyebrow,
-        .section-kicker {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 7px 15px;
-            border-radius: 40px;
-            background: #e5eee2;
-            color: var(--rabbit-green);
-            font-size: .7rem;
-            font-weight: 800;
-            letter-spacing: 1.4px;
-            text-transform: uppercase;
-        }
-        .rabbit-hero-icon { display: block; margin: 17px auto 2px; font-size: 2.25rem; }
-        .rabbit-hero h1 {
-            max-width: 850px;
-            margin: 12px auto 15px;
-            color: var(--rabbit-ink);
-            font-family: Manrope, sans-serif;
-            font-size: clamp(2.45rem, 5vw, 4.1rem);
-            line-height: 1.12;
-            letter-spacing: -2px;
-        }
-        .rabbit-hero h1 em { color: var(--rabbit-green); font-style: normal; }
-        .rabbit-hero-copy {
-            max-width: 740px;
-            margin: 0 auto;
-            color: #68766d;
-            font-size: 1rem;
-            line-height: 1.85;
-        }
-        .hero-divider { width: 55px; height: 3px; margin: 27px auto 0; border-radius: 8px; background: var(--rabbit-green); }
-        .hero-shortcuts { display: flex; justify-content: center; flex-wrap: wrap; gap: 11px; margin-top: 25px; }
-        .hero-shortcuts a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 42px;
-            padding: 10px 17px;
-            border: 1px solid #cbdac9;
-            border-radius: 30px;
-            color: var(--rabbit-green);
-            background: rgba(255,255,255,.72);
-            font-size: .82rem;
-            font-weight: 800;
-            text-decoration: none;
-            transition: .2s ease;
-        }
-        .hero-shortcuts a:hover { transform: translateY(-2px); background: white; box-shadow: 0 7px 17px rgba(35,57,43,.08); }
-
-        /* Breed section */
-        .rabbit-section { width: min(1160px, calc(100% - 48px)); margin: 0 auto; padding: 66px 0 84px; }
-        .rabbit-section-heading { max-width: 760px; margin: 0 auto 32px; text-align: center; }
-        .rabbit-section-heading h2,
-        .comparison-heading h2 {
-            margin: 12px 0 11px;
-            color: var(--rabbit-ink);
-            font-family: Manrope, sans-serif;
-            font-size: clamp(1.85rem, 3.2vw, 2.55rem);
-            line-height: 1.2;
-            letter-spacing: -1px;
-        }
-        .rabbit-section-heading p,
-        .comparison-heading p { margin: 0; color: #68766d; font-size: .94rem; line-height: 1.8; }
-        .breed-tools {
-            display: flex;
-            justify-content: space-between;
-            align-items: end;
-            gap: 15px;
-            margin: 0 0 25px;
-            padding: 17px;
-            border: 1px solid var(--rabbit-line);
-            border-radius: 14px;
-            background: #fff;
-        }
-        .breed-search { flex: 1 1 320px; }
-        .breed-filter { flex: 0 1 210px; }
-        .breed-tools label { display: block; margin: 0 0 7px; color: var(--rabbit-ink); font-size: .76rem; font-weight: 800; }
-        .breed-tools input,
-        .breed-tools select,
-        .compare-controls select {
-            width: 100%;
-            min-height: 43px;
-            padding: 10px 12px;
-            border: 1px solid #dbe4d9;
-            border-radius: 9px;
-            outline: none;
-            background: #fbfcf9;
-            color: var(--rabbit-ink);
-            font: inherit;
-            font-size: .85rem;
-        }
-        .breed-tools input:focus,
-        .breed-tools select:focus,
-        .compare-controls select:focus { border-color: var(--rabbit-green); box-shadow: 0 0 0 3px rgba(40,104,73,.1); }
-        .results-count { margin: 0 0 0 auto; color: var(--rabbit-muted); font-size: .76rem; white-space: nowrap; }
-        .rabbit-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; gap: 24px; }
-        .rabbit-card {
-            min-width: 0;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            border: 1px solid var(--rabbit-line);
-            border-radius: 17px;
-            background: #fff;
-            transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-        }
-        .rabbit-card:hover { transform: translateY(-5px); border-color: #bfd1c0; box-shadow: 0 13px 30px rgba(35,57,43,.09); }
-        .rabbit-card[hidden] { display: none !important; }
-        .rabbit-image-wrap { position: relative; height: 190px; flex-shrink: 0; overflow: hidden; background: #edf2e9; }
-        .rabbit-image { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
-        .rabbit-card:hover .rabbit-image { transform: scale(1.045); }
-        .rabbit-image-fallback {
-            position: absolute;
-            inset: 0;
-            display: grid;
-            place-content: center;
-            gap: 5px;
-            color: #65806c;
-            background: linear-gradient(135deg, #e8f0e5, #f7f3e9);
-            text-align: center;
-        }
-        .rabbit-image-fallback[hidden] { display: none; }
-        .rabbit-image-fallback span { font-size: 2.5rem; }
-        .rabbit-image-fallback small { font-size: .72rem; font-weight: 700; }
-        .rabbit-number {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            display: grid;
-            place-items: center;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: rgba(255,255,255,.95);
-            color: var(--rabbit-green);
-            font-size: .76rem;
-            font-weight: 800;
-            box-shadow: 0 3px 10px rgba(0,0,0,.08);
-        }
-        .rabbit-card-body { display: flex; flex: 1; flex-direction: column; padding: 18px; }
-        .breed-tag {
-            align-self: flex-start;
-            margin: 0 0 9px;
-            padding: 5px 10px;
-            border-radius: 30px;
-            background: #edf4ec;
-            color: var(--rabbit-green);
-            font-size: .64rem;
-            font-weight: 800;
-            letter-spacing: .7px;
-            text-transform: uppercase;
-        }
-        .rabbit-card h3 { min-height: 43px; margin: 0 0 9px; color: var(--rabbit-ink); font-family: Manrope,sans-serif; font-size: 1.05rem; line-height: 1.35; }
-        .rabbit-description { flex-grow: 1; margin: 0 0 14px; color: #68766d; font-size: .82rem; line-height: 1.68; text-align: left; }
-        .rabbit-facts { display: grid; gap: 8px; margin-top: auto; padding: 12px; border: 1px solid #edf0e9; border-radius: 11px; background: #f5f7f2; }
-        .rabbit-fact { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; font-size: .75rem; line-height: 1.45; }
-        .rabbit-fact span { flex-shrink: 0; color: var(--rabbit-muted); }
-        .rabbit-fact strong { color: var(--rabbit-ink); text-align: right; font-weight: 700; }
-        .rabbit-traits { margin: 12px 0 0; padding-top: 11px; border-top: 1px solid var(--rabbit-line); color: #68766d; font-size: .77rem; line-height: 1.6; }
-        .rabbit-traits strong { color: var(--rabbit-green); }
-        .image-credit { margin: 11px 0 0; color: #839087; font-size: .66rem; line-height: 1.45; }
-        .image-credit a { color: #61776a; text-decoration: underline; }
-        .no-results { display: none; padding: 28px; border: 1px dashed #c8d7c7; border-radius: 14px; color: var(--rabbit-muted); background: #fff; text-align: center; }
-        .no-results.visible { display: block; }
-
-        /* Static comparison */
-        .comparison-section { width: 100%; padding: 74px 24px 78px; background: #f0f4ed; border-top: 1px solid #e2e9df; border-bottom: 1px solid #e2e9df; }
-        .comparison-inner { width: min(1160px, 100%); margin: 0 auto; }
-        .comparison-heading { max-width: 770px; margin: 0 auto 33px; text-align: center; }
-        .comparison-kicker { display: inline-flex; padding: 7px 15px; border-radius: 30px; background: #e0ebdf; color: var(--rabbit-green); font-size: .7rem; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; }
-        .comparison-table-wrap { width: 100%; overflow-x: auto; border: 1px solid var(--rabbit-line); border-radius: 16px; background: #fff; box-shadow: 0 9px 28px rgba(35,57,43,.05); -webkit-overflow-scrolling: touch; }
-        .comparison-table { width: 100%; min-width: 850px; border-collapse: collapse; text-align: left; }
-        .comparison-table th { padding: 16px 18px; background: var(--rabbit-green); color: #fff; font-size: .8rem; white-space: nowrap; }
-        .comparison-table td { padding: 14px 18px; border-bottom: 1px solid #e9eee7; color: #59675e; font-size: .79rem; line-height: 1.5; vertical-align: top; }
-        .comparison-table td:first-child { color: var(--rabbit-ink); font-weight: 800; }
-        .comparison-table tbody tr:nth-child(even) { background: #fafbf8; }
-        .comparison-table tbody tr:hover { background: #edf4ec; }
-        .comparison-table tbody tr:last-child td { border-bottom: 0; }
-        .table-scroll-hint { display: none; margin: 11px 0 0; color: var(--rabbit-muted); font-size: .74rem; text-align: center; }
-        .comparison-note { margin: 15px 0 0; color: #718078; font-size: .78rem; line-height: 1.7; }
-
-        /* Interactive comparison */
-        .interactive-compare { margin-top: 36px; padding: 25px; border: 1px solid #dce6d9; border-radius: 17px; background: rgba(255,255,255,.82); }
-        .interactive-compare h3 { margin: 0 0 7px; color: var(--rabbit-ink); font-family: Manrope,sans-serif; font-size: 1.25rem; }
-        .interactive-compare > p { margin: 0 0 19px; color: #68766d; font-size: .85rem; line-height: 1.7; }
-        .compare-controls { display: grid; grid-template-columns: 1fr 1fr auto; align-items: end; gap: 13px; }
-        .compare-controls label { display: block; margin: 0 0 7px; color: var(--rabbit-ink); font-size: .75rem; font-weight: 800; }
-        .compare-controls button { min-height: 43px; padding: 10px 18px; border: 1px solid var(--rabbit-green); border-radius: 9px; background: var(--rabbit-green); color: #fff; font: inherit; font-size: .82rem; font-weight: 800; cursor: pointer; transition: .2s ease; }
-        .compare-controls button:hover { background: #1d5039; transform: translateY(-1px); }
-        .dynamic-table-wrap { margin-top: 19px; overflow-x: auto; border: 1px solid var(--rabbit-line); border-radius: 12px; background: white; }
-        .dynamic-table { width: 100%; min-width: 620px; border-collapse: collapse; text-align: left; }
-        .dynamic-table th { padding: 13px 15px; background: #e9f0e6; color: var(--rabbit-green); font-size: .78rem; }
-        .dynamic-table td { padding: 13px 15px; border-top: 1px solid #edf0e9; color: #59675e; font-size: .8rem; line-height: 1.6; vertical-align: top; }
-        .dynamic-table td:first-child { width: 20%; color: var(--rabbit-ink); font-weight: 800; }
-        .compare-status { min-height: 18px; margin: 9px 0 0; color: var(--rabbit-muted); font-size: .72rem; }
-
-        /* Responsible ownership */
-        .ownership-section { width: min(1000px, calc(100% - 48px)); margin: 70px auto; padding: 36px; border: 1px solid var(--rabbit-line); border-radius: 19px; background: #fff; text-align: center; }
-        .ownership-icon { font-size: 2.25rem; }
-        .ownership-section h2 { margin: 12px 0; color: var(--rabbit-ink); font-family: Manrope,sans-serif; font-size: 1.75rem; letter-spacing: -.5px; }
-        .ownership-section > p { max-width: 810px; margin: 0 auto; color: #68766d; font-size: .89rem; line-height: 1.85; }
-        .care-reminder { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 25px 0 0; text-align: left; }
-        .care-reminder article { padding: 15px; border: 1px solid #e8eee5; border-radius: 12px; background: #f7f9f5; }
-        .care-reminder b { display: block; margin-bottom: 5px; color: var(--rabbit-green); font-size: .8rem; }
-        .care-reminder span { color: #68766d; font-size: .75rem; line-height: 1.6; }
-        .legal-note { margin-top: 20px; padding: 14px 16px; border-left: 3px solid var(--rabbit-green); border-radius: 7px; background: #f1f5ef; color: #59675e; text-align: left; font-size: .8rem; line-height: 1.7; }
-        .legal-note a { color: var(--rabbit-green); font-weight: 700; }
-        .references { margin-top: 17px !important; font-size: .77rem !important; }
-        .references a { color: var(--rabbit-green); font-weight: 700; }
-
-        /* CTA and footer */
-        .rabbit-cta { padding: 64px 24px; background: linear-gradient(135deg, #1d5039, #286849); color: #fff; text-align: center; }
-        .rabbit-cta h2 { max-width: 760px; margin: 0 auto 12px; color: #fff; font-family: Manrope,sans-serif; font-size: clamp(1.8rem, 3vw, 2.5rem); }
-        .rabbit-cta p { max-width: 640px; margin: 0 auto 23px; color: #e0eee3; font-size: .93rem; line-height: 1.8; }
-        .rabbit-cta .button { border-color: #fff; background: #fff; color: var(--rabbit-green); }
-        .rabbit-cta .button:hover { background: #edf4ec; color: #1d5039; }
-        .footer .footer-bottom { display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; gap: 16px; padding: 20px 0; border-top: 1px solid #dfe5dc; color: #839087; font-size: .82rem; }
-        .footer-copyright { text-align: left; }
-        .footer-credit { text-align: center; }
-        .footer-tagline { text-align: right; }
-        .back-to-top { position: fixed; right: 20px; bottom: 20px; z-index: 20; display: grid; place-items: center; width: 42px; height: 42px; border: 0; border-radius: 50%; background: var(--rabbit-green); color: #fff; font-size: 1.1rem; box-shadow: 0 5px 16px rgba(0,0,0,.18); cursor: pointer; opacity: 0; visibility: hidden; transform: translateY(8px); transition: .2s ease; }
-        .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
-
-        @media (max-width: 1050px) { .rabbit-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; } }
-        @media (max-width: 820px) {
-            .rabbit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-            .rabbit-hero { padding: 56px 20px 50px; }
-            .rabbit-section { padding: 55px 0 65px; }
-            .comparison-section { padding: 60px 18px; }
-            .rabbit-image-wrap { height: 175px; }
-            .breed-tools { flex-wrap: wrap; }
-            .results-count { margin-left: 0; }
-        }
-        @media (max-width: 560px) {
-            .rabbit-breadcrumb, .rabbit-section, .ownership-section { width: calc(100% - 34px); }
-            .rabbit-grid { grid-template-columns: 1fr; gap: 19px; }
-            .rabbit-image-wrap { height: 215px; }
-            .rabbit-card-body { padding: 18px; }
-            .rabbit-card h3 { min-height: auto; font-size: 1.12rem; }
-            .rabbit-description { font-size: .86rem; }
-            .breed-tools { display: grid; grid-template-columns: 1fr; padding: 15px; }
-            .breed-search, .breed-filter { width: 100%; }
-            .comparison-heading h2 { font-size: 2rem; }
-            .table-scroll-hint { display: block; }
-            .interactive-compare { padding: 18px 14px; }
-            .compare-controls { grid-template-columns: 1fr; }
-            .compare-controls button { width: 100%; }
-            .care-reminder { grid-template-columns: 1fr; }
-            .ownership-section { padding: 27px 19px; }
-            .ownership-section h2 { font-size: 1.45rem; }
-            .rabbit-cta { padding: 52px 18px; }
-            .footer .footer-bottom { grid-template-columns: 1fr; justify-items: center; gap: 9px; text-align: center; }
-            .footer-copyright, .footer-credit, .footer-tagline { text-align: center; }
-        }
-        @media (prefers-reduced-motion: reduce) {
-            html { scroll-behavior: auto; }
-            *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
-        }
-    </style>
+  <!-- Font Awesome 6.5.2 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Core PetSathi Stylesheets -->
+  <link rel="stylesheet" href="../../../css/global.css">
+  <link rel="stylesheet" href="../../../css/home.css">
+  <link rel="stylesheet" href="../../../css/inner.css">
+
+  <style>
+    /* ========================================================
+       FONT AWESOME 6 DEFINITIONS & RESILIENCE GUARDS
+       ======================================================== */
+    @font-face {
+      font-family: "Font Awesome 6 Free";
+      font-style: normal;
+      font-weight: 900;
+      font-display: block;
+      src:
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.woff2") format("woff2"),
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.ttf") format("truetype");
+    }
+
+    @font-face {
+      font-family: "Font Awesome 6 Free";
+      font-style: normal;
+      font-weight: 400;
+      font-display: block;
+      src:
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-regular-400.woff2") format("woff2"),
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-regular-400.ttf") format("truetype");
+    }
+
+    body [class*="fa-"],
+    body [class*="fa-"]::before {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900 !important;
+      font-style: normal !important;
+      font-variant: normal !important;
+      text-rendering: auto !important;
+      line-height: 1 !important;
+    }
+
+    .fa-regular,
+    .fa-regular::before {
+      font-weight: 400 !important;
+    }
+
+    .fa-brands,
+    .fa-brands::before {
+      font-family: "Font Awesome 6 Brands" !important;
+      font-weight: 400 !important;
+    }
+
+    /* ========================================================
+       PETSATHI THEME PALETTE & GLOBAL PAGE RESET
+       ======================================================== */
+    :root {
+      --rab-green-dark: #1b3d2b;
+      --rab-green-primary: #286849;
+      --rab-green-hover: #1e5239;
+      --rab-green-light: #edf7f0;
+      --rab-green-soft: #f4faf6;
+      --rab-border-green: #cce4d2;
+      --rab-cream: #fafcf7;
+      --rab-white: #ffffff;
+      --rab-ink: #1a251e;
+      --rab-muted: #55665c;
+      --rab-line: #e2eddc;
+      --rab-card-shadow: 0 4px 20px rgba(35, 75, 45, 0.05);
+      --rab-hover-shadow: 0 12px 28px rgba(35, 75, 45, 0.10);
+      --rab-pink-bg: #fdf2f4;
+      --rab-pink-border: #f6d5db;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--rab-cream);
+      color: var(--rab-ink);
+      font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    .section-wrap {
+      width: min(1200px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* ========================================================
+       1. HERO SECTION (Matching Dog Index & Cat Index)
+       ======================================================== */
+    #rabbit-breeds-hero.hero {
+      min-height: 540px;
+      padding-block: 55px 75px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 40px;
+    }
+
+    #rabbit-breeds-hero .hero-copy h1 {
+      max-width: 620px;
+      margin: 0 0 18px;
+      font-family: Georgia, "Playfair Display", serif;
+      font-size: clamp(2.3rem, 4vw, 3.6rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      color: #22372a;
+    }
+
+    #rabbit-breeds-hero .hero-copy h1 em {
+      color: var(--rab-green-primary);
+      font-style: normal;
+    }
+
+    #rabbit-breeds-hero .hero-copy > p {
+      max-width: 540px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--rab-muted);
+      margin: 0 0 24px;
+    }
+
+    .rabbit-badge-strip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 18px;
+      background: #eaf3df;
+      color: var(--rab-green-primary);
+      border: 1px solid var(--rab-border-green);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    #rabbit-breeds-hero .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    #rabbit-breeds-hero .hero-note {
+      margin-top: 24px;
+      color: var(--rab-muted);
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    #rabbit-breeds-hero .hero-visual {
+      min-height: 440px;
+      position: relative;
+      display: grid;
+      place-items: center;
+    }
+
+    #rabbit-breeds-hero .hero-blob {
+      position: absolute;
+      width: 86%;
+      height: 90%;
+      background: #e8f0e4;
+      border-radius: 48% 52% 42% 58%;
+    }
+
+    #rabbit-breeds-hero .hero-photo {
+      position: relative;
+      width: 80%;
+      height: 380px;
+      object-fit: cover;
+      border-radius: 48% 48% 28px 28px;
+      box-shadow: 0 10px 30px rgba(35, 75, 45, 0.12);
+    }
+
+    #rabbit-breeds-hero .floating-card {
+      position: absolute;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #ffffff;
+      padding: 13px 18px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(35, 75, 45, 0.08);
+      font-size: 1.25rem;
+    }
+
+    #rabbit-breeds-hero .floating-card span {
+      display: grid;
+    }
+
+    #rabbit-breeds-hero .floating-card b {
+      font-size: 0.84rem;
+      color: var(--rab-ink);
+    }
+
+    #rabbit-breeds-hero .floating-card small {
+      font-size: 0.72rem;
+      color: var(--rab-muted);
+    }
+
+    #rabbit-breeds-hero .card-top {
+      top: 36px;
+      right: 0;
+    }
+
+    #rabbit-breeds-hero .card-bottom {
+      bottom: 24px;
+      left: 0;
+    }
+
+    /* ========================================================
+       2. QUICK NAVIGATION HUB (Matching Dog Index & Cat Index)
+       ======================================================== */
+    .guides-nav-strip {
+      position: relative;
+      background: #ffffff;
+      margin: 40px auto;
+      max-width: 1200px;
+      width: calc(100% - 40px);
+      border: 1px solid #dceade;
+      border-radius: 32px;
+      padding: 42px 36px 38px;
+      box-shadow: 0 4px 24px rgba(35, 80, 50, 0.04);
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .quick-nav-decor {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+      color: #cde4d3;
+      opacity: 0.55;
+    }
+
+    .decor-top-left {
+      top: -8px;
+      left: -8px;
+      width: 130px;
+      height: 130px;
+      background: radial-gradient(circle at 10% 10%, #eaf5ed 0%, rgba(234, 245, 237, 0) 70%);
+      border-radius: 0 0 100% 0;
+    }
+
+    .decor-bottom-right {
+      bottom: -8px;
+      right: -8px;
+      width: 130px;
+      height: 130px;
+      background: radial-gradient(circle at 90% 90%, #eaf5ed 0%, rgba(234, 245, 237, 0) 70%);
+      border-radius: 100% 0 0 0;
+    }
+
+    .decor-paw {
+      position: absolute;
+      display: inline-block;
+    }
+
+    .decor-paw-1 {
+      top: 24px;
+      left: 28px;
+      font-size: 26px;
+      transform: rotate(-18deg);
+    }
+
+    .decor-paw-2 {
+      top: 60px;
+      left: 64px;
+      font-size: 18px;
+      transform: rotate(14deg);
+    }
+
+    .decor-paw-3 {
+      bottom: 24px;
+      right: 28px;
+      font-size: 26px;
+      transform: rotate(20deg);
+    }
+
+    .decor-paw-4 {
+      bottom: 60px;
+      right: 64px;
+      font-size: 18px;
+      transform: rotate(-12deg);
+    }
+
+    .quick-nav-header {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .quick-nav-eyebrow-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    .quick-nav-line {
+      display: inline-block;
+      width: 44px;
+      height: 1px;
+      background: #c8dfcf;
+    }
+
+    .quick-nav-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: #edf7f0;
+      border: 1px solid #cce4d2;
+      border-radius: 9999px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: #1e6f43;
+      text-transform: uppercase;
+    }
+
+    .quick-nav-badge-icon {
+      font-size: 13px;
+      color: #1e6f43;
+    }
+
+    .quick-nav-title {
+      font-family: Georgia, serif;
+      font-size: clamp(1.45rem, 2.4vw, 1.95rem);
+      font-weight: 800;
+      color: #1a251e;
+      margin: 0;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      text-align: center;
+    }
+
+    .quick-nav-title span {
+      color: var(--rab-green-primary);
+      font-weight: 800;
+    }
+
+    .guides-nav-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+      margin: 0;
+    }
+
+    .guide-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 16px 9px 9px;
+      background: #edf7f0;
+      border: 1px solid #cce4d2;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+      min-width: 0;
+      cursor: pointer;
+    }
+
+    .guide-nav-item:hover {
+      transform: translateY(-2px);
+      background: #e2f2e6;
+      border-color: #a8d5b4;
+      box-shadow: 0 6px 16px rgba(30, 111, 67, 0.12);
+    }
+
+    .guide-nav-icon {
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0;
+      border-radius: 9999px;
+      background: #ffffff;
+      color: #1e6f43;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .guide-nav-item:hover .guide-nav-icon {
+      background: #1e6f43;
+      color: #ffffff;
+    }
+
+    .guide-nav-label {
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: #1a251e;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* ========================================================
+       3. SIGNATURE SECTION HEADING CARDS (Matching Dogs/Cats Index)
+       ======================================================== */
+    .dog-topics-heading,
+    .rabbit-topics-heading {
+      position: relative;
+      max-width: 1400px;
+      margin: 45px auto 35px;
+      padding: 44px 35px 38px;
+      overflow: hidden;
+      text-align: center;
+      border-radius: 35px;
+      border: 1px solid #dcebc9;
+      background: #fafcf7;
+      box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
+      box-sizing: border-box;
+    }
+
+    .corner-wave {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wave-tl {
+      top: 0;
+      left: 0;
+      width: 220px;
+      height: 130px;
+    }
+
+    .wave-br {
+      bottom: 0;
+      right: 0;
+      width: 220px;
+      height: 130px;
+    }
+
+    .paw {
+      position: absolute;
+      color: rgba(115, 173, 91, 0.28);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .paw-left-1 {
+      top: 66px;
+      left: 108px;
+      font-size: 58px;
+      transform: rotate(20deg);
+    }
+
+    .paw-left-2 {
+      bottom: 24px;
+      left: 82px;
+      font-size: 38px;
+      transform: rotate(-15deg);
+    }
+
+    .paw-right-1 {
+      top: 60px;
+      right: 75px;
+      font-size: 56px;
+      transform: rotate(18deg);
+    }
+
+    .paw-right-2 {
+      bottom: 35px;
+      right: 140px;
+      font-size: 38px;
+      transform: rotate(-15deg);
+    }
+
+    .heading-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .heading-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 20px;
+      margin-bottom: 16px;
+      border-radius: 50px;
+      background: #edf6df;
+      border: 1px solid #dcebc9;
+      color: #246b43;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .dog-topics-heading h2,
+    .rabbit-topics-heading h2 {
+      color: #263b30;
+      font-family: Georgia, serif;
+      font-size: clamp(24px, 3.2vw, 36px);
+      font-weight: 700;
+      margin: 0 0 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .dog-topics-heading h2 span,
+    .rabbit-topics-heading h2 span {
+      color: #28764a;
+    }
+
+    .dog-topics-heading p,
+    .rabbit-topics-heading p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: #64736a;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .heading-burst {
+      display: inline-block;
+      position: relative;
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      vertical-align: middle;
+    }
+
+    .heading-burst span {
+      position: absolute;
+      background: #60a872;
+      border-radius: 9999px;
+    }
+
+    .heading-burst.left span {
+      right: 0;
+      transform-origin: right center;
+    }
+
+    .heading-burst.left span:nth-child(1) {
+      top: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(35deg);
+    }
+
+    .heading-burst.left span:nth-child(2) {
+      top: 11px;
+      width: 18px;
+      height: 2.8px;
+    }
+
+    .heading-burst.left span:nth-child(3) {
+      bottom: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(-35deg);
+    }
+
+    .heading-burst.right span {
+      left: 0;
+      transform-origin: left center;
+    }
+
+    .heading-burst.right span:nth-child(1) {
+      top: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(-35deg);
+    }
+
+    .heading-burst.right span:nth-child(2) {
+      top: 11px;
+      width: 18px;
+      height: 2.8px;
+    }
+
+    .heading-burst.right span:nth-child(3) {
+      bottom: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(35deg);
+    }
+
+    @media (max-width: 768px) {
+      .paw {
+        display: none;
+      }
+    }
+
+    /* Scroll Margin Guard */
+    [id] {
+      scroll-margin-top: 90px;
+    }
+
+    /* ========================================================
+       4. INTERACTIVE BREED SEARCH & FILTER BAR
+       ======================================================== */
+    .breed-filter-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 32px;
+      background: #ffffff;
+      padding: 16px 24px;
+      border-radius: 20px;
+      border: 1px solid var(--rab-border-green);
+      box-shadow: var(--rab-card-shadow);
+    }
+
+    .search-input-wrap {
+      position: relative;
+      flex: 1 1 280px;
+      max-width: 440px;
+    }
+
+    .search-input-wrap i {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--rab-green-primary);
+      font-size: 15px;
+    }
+
+    .search-input-wrap input {
+      width: 100%;
+      padding: 11px 16px 11px 40px;
+      border-radius: 50px;
+      border: 1px solid #d4e2d6;
+      background: #fbfdfa;
+      font-size: 0.92rem;
+      font-family: inherit;
+      color: var(--rab-ink);
+      box-sizing: border-box;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .search-input-wrap input:focus {
+      border-color: var(--rab-green-primary);
+      box-shadow: 0 0 0 3px rgba(40, 104, 73, 0.12);
+      background: #ffffff;
+    }
+
+    .filter-chips-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .filter-chip {
+      padding: 7px 16px;
+      border-radius: 50px;
+      border: 1px solid #cde0d2;
+      background: #f4faf6;
+      color: var(--rab-ink);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-chip:hover,
+    .filter-chip.active {
+      background: var(--rab-green-primary);
+      color: #ffffff;
+      border-color: var(--rab-green-primary);
+    }
+
+    /* ========================================================
+       5. BREED IMAGE CARDS GRID (Center-Aligned, Responsive 3-col)
+       ======================================================== */
+    .rabbit-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-bottom: 45px;
+    }
+
+    .rabbit-breed-card {
+      background: #ffffff;
+      border: 1px solid var(--rab-line);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--rab-card-shadow);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .rabbit-breed-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--rab-hover-shadow);
+      border-color: var(--rab-border-green);
+    }
+
+    .rabbit-card-media {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      background: #eef4eb;
+    }
+
+    .rabbit-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .rabbit-breed-card:hover .rabbit-card-media img {
+      transform: scale(1.05);
+    }
+
+    .rabbit-size-tag {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(4px);
+      color: var(--rab-green-primary);
+      border: 1px solid #cce4d2;
+      padding: 4px 14px;
+      border-radius: 50px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .rabbit-card-content {
+      padding: 24px 22px 26px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      align-items: center;
+      text-align: center;
+    }
+
+    .rabbit-card-content h3 {
+      margin: 0 0 10px;
+      font-family: Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #22372a;
+    }
+
+    .rabbit-card-content p {
+      margin: 0 0 16px;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--rab-muted);
+      flex: 1;
+    }
+
+    .rabbit-spec-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      justify-content: center;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+
+    .spec-chip {
+      background: #edf7f0;
+      border: 1px solid #cce4d2;
+      color: #1e6f43;
+      padding: 4px 11px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .rabbit-card-action {
+      margin-top: auto;
+      width: 100%;
+    }
+
+    .rabbit-card-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 10px 18px;
+      border-radius: 50px;
+      background: #f4faf6;
+      border: 1px solid #cce4d2;
+      color: var(--rab-green-primary);
+      font-weight: 700;
+      font-size: 0.86rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .rabbit-card-btn:hover {
+      background: var(--rab-green-primary);
+      color: #ffffff;
+      border-color: var(--rab-green-primary);
+    }
+
+    /* ========================================================
+       6. SIZE CATEGORY SHOWCASE SECTIONS
+       ======================================================== */
+    .size-category-group {
+      margin-bottom: 40px;
+    }
+
+    .size-group-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 24px;
+      background: #edf7f0;
+      border: 1px solid #cce4d2;
+      border-radius: 18px;
+      margin-bottom: 24px;
+    }
+
+    .size-group-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #22372a;
+      margin: 0;
+    }
+
+    .size-group-title i {
+      color: var(--rab-green-primary);
+    }
+
+    .size-group-badge {
+      background: #ffffff;
+      border: 1px solid #cce4d2;
+      color: var(--rab-green-primary);
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    /* ========================================================
+       7. COAT TYPES & GROOMING NEEDS CARDS
+       ======================================================== */
+    .coat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+      margin-bottom: 45px;
+    }
+
+    .coat-card {
+      background: #ffffff;
+      border: 1px solid var(--rab-line);
+      border-radius: 22px;
+      padding: 30px 20px 24px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: var(--rab-card-shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .coat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--rab-hover-shadow);
+      border-color: var(--rab-border-green);
+    }
+
+    .coat-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      background: #edf7f0;
+      color: var(--rab-green-primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+
+    .coat-card h3 {
+      font-family: Georgia, serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #22372a;
+      margin: 0 0 8px;
+    }
+
+    .coat-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      background: #eaf3df;
+      color: var(--rab-green-primary);
+      border: 1px solid #d4e8be;
+      border-radius: 50px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .coat-card p {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--rab-muted);
+      margin: 0 0 16px;
+      flex: 1;
+    }
+
+    .coat-grooming-box {
+      width: 100%;
+      background: #f8faf6;
+      border: 1px dashed #cce4d2;
+      border-radius: 14px;
+      padding: 10px 12px;
+      font-size: 0.8rem;
+      color: #245738;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    /* ========================================================
+       8. CHOOSING THE RIGHT RABBIT BREED (5 Info Cards)
+       ======================================================== */
+    .choosing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 45px;
+    }
+
+    .choosing-card {
+      background: #ffffff;
+      border: 1px solid var(--rab-line);
+      border-radius: 22px;
+      padding: 32px 24px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: var(--rab-card-shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .choosing-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--rab-hover-shadow);
+      border-color: var(--rab-border-green);
+    }
+
+    .choosing-icon {
+      width: 62px;
+      height: 62px;
+      border-radius: 20px;
+      background: #edf7f0;
+      color: var(--rab-green-primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin-bottom: 18px;
+    }
+
+    .choosing-card h3 {
+      font-family: Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #22372a;
+      margin: 0 0 12px;
+    }
+
+    .choosing-card p {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: var(--rab-muted);
+      margin: 0 0 16px;
+      flex: 1;
+    }
+
+    .choosing-tip {
+      width: 100%;
+      background: #edf7f0;
+      border-radius: 12px;
+      padding: 8px 12px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #1e6f43;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    /* ========================================================
+       9. RABBIT BREED COMPARISON (Responsive Table & Interactive)
+       ======================================================== */
+    .table-container {
+      background: #ffffff;
+      border: 1px solid var(--rab-line);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--rab-card-shadow);
+      margin-bottom: 35px;
+    }
+
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .breed-comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+
+    .breed-comparison-table th {
+      background: #286849;
+      color: #ffffff;
+      padding: 16px 20px;
+      font-weight: 700;
+      font-family: Georgia, serif;
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+    }
+
+    .breed-comparison-table td {
+      padding: 15px 20px;
+      border-bottom: 1px solid #eef2ec;
+      color: var(--rab-ink);
+      line-height: 1.5;
+    }
+
+    .breed-comparison-table tbody tr:nth-child(even) {
+      background: #fbfdf9;
+    }
+
+    .breed-comparison-table tbody tr:hover {
+      background: #edf7f0;
+    }
+
+    .table-breed-name {
+      font-weight: 700;
+      color: #22372a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .table-breed-name i {
+      color: var(--rab-green-primary);
+    }
+
+    /* Head-to-Head Interactive Tool */
+    .interactive-compare-box {
+      background: #ffffff;
+      border: 1px solid var(--rab-border-green);
+      border-radius: 24px;
+      padding: 32px 28px;
+      box-shadow: var(--rab-card-shadow);
+      margin-bottom: 50px;
+    }
+
+    .compare-controls-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .compare-select-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-width: 220px;
+    }
+
+    .compare-select-wrap label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--rab-muted);
+      letter-spacing: 0.5px;
+    }
+
+    .compare-select-wrap select {
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid #cce4d2;
+      background: #fbfdfa;
+      font-family: inherit;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--rab-ink);
+      outline: none;
+      cursor: pointer;
+    }
+
+    .compare-select-wrap select:focus {
+      border-color: var(--rab-green-primary);
+    }
+
+    .compare-vs-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #edf7f0;
+      color: var(--rab-green-primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.85rem;
+      border: 1px solid #cce4d2;
+      margin-top: 18px;
+    }
+
+    .dynamic-compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+    }
+
+    .dynamic-compare-table th,
+    .dynamic-compare-table td {
+      padding: 13px 18px;
+      border: 1px solid #e2eddc;
+      font-size: 0.9rem;
+    }
+
+    .dynamic-compare-table th {
+      background: #edf7f0;
+      color: #1b3d2b;
+      font-family: Georgia, serif;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .dynamic-compare-table td:first-child {
+      font-weight: 700;
+      color: var(--rab-green-primary);
+      background: #fafcf7;
+      width: 28%;
+    }
+
+    .dynamic-compare-table td:nth-child(2),
+    .dynamic-compare-table td:nth-child(3) {
+      text-align: center;
+    }
+
+    /* ========================================================
+       10. FINAL CTA (Soft Light Pink Background as required)
+       ======================================================== */
+    .cta.rabbit-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      margin-top: 20px;
+      margin-bottom: 92px;
+      padding: 42px 48px;
+      border-radius: 28px;
+      background: var(--rab-pink-bg);
+      border: 1px solid var(--rab-pink-border);
+      box-shadow: 0 6px 24px rgba(184, 51, 74, 0.04);
+      box-sizing: border-box;
+    }
+
+    .cta.rabbit-cta h2 {
+      margin: 0 0 10px;
+      font-family: Georgia, serif;
+      font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+      font-weight: 700;
+      color: #3b2226;
+      line-height: 1.25;
+      text-align: left;
+    }
+
+    .cta.rabbit-cta h2 em {
+      color: var(--rab-green-primary);
+      font-style: normal;
+    }
+
+    .cta.rabbit-cta p {
+      margin: 0;
+      max-width: 600px;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #63454b;
+      text-align: left;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+    }
+
+    .cta.rabbit-cta .button.button-light {
+      background: var(--rab-green-primary);
+      color: #ffffff;
+      border-color: var(--rab-green-primary);
+    }
+
+    .cta.rabbit-cta .button.button-light:hover {
+      background: var(--rab-green-hover);
+    }
+
+    .cta.rabbit-cta .button-outline {
+      background: transparent;
+      color: var(--rab-green-primary);
+      border-color: var(--rab-green-primary);
+    }
+
+    .cta.rabbit-cta .button-outline:hover {
+      background: var(--rab-green-primary);
+      color: #ffffff;
+    }
+
+    /* ========================================================
+       11. BACK TO TOP BUTTON
+       ======================================================== */
+    .back-to-top {
+      position: fixed;
+      right: 28px;
+      bottom: 28px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--rab-green-primary);
+      color: #ffffff;
+      border: none;
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(12px);
+      transition: all 0.25s ease;
+      z-index: 999;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      background: var(--rab-green-hover);
+      transform: translateY(-3px);
+    }
+
+    /* ========================================================
+       12. RESPONSIVE DESIGN (Desktop 3, Tablet 2, Mobile 1)
+       ======================================================== */
+    @media (max-width: 1024px) {
+      .guides-nav-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .coat-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .choosing-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      #rabbit-breeds-hero.hero {
+        grid-template-columns: 1fr;
+        padding-top: 35px;
+        gap: 32px;
+        text-align: center;
+      }
+
+      #rabbit-breeds-hero .hero-copy {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #rabbit-breeds-hero .hero-copy h1 {
+        text-align: center;
+      }
+
+      #rabbit-breeds-hero .hero-actions {
+        justify-content: center;
+      }
+
+      #rabbit-breeds-hero .hero-note {
+        justify-content: center;
+      }
+
+      .rabbit-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .cta.rabbit-cta {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        padding: 36px 28px;
+      }
+
+      .cta.rabbit-cta h2,
+      .cta.rabbit-cta p {
+        text-align: center;
+      }
+
+      .cta-actions {
+        justify-content: center;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .guides-nav-strip {
+        padding: 28px 18px;
+      }
+
+      .guides-nav-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .rabbit-cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .coat-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .choosing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .breed-filter-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .search-input-wrap {
+        max-width: 100%;
+      }
+
+      .rabbit-topics-heading {
+        padding: 34px 20px 28px;
+      }
+
+      .size-group-header {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Site header: links follow the existing PetSathi page structure -->
+  <!-- Header Placeholder -->
   <div id="header"></div>
 
-    <main>
-        <nav class="rabbit-breadcrumb" aria-label="Breadcrumb">
-            <a href="../../../../index.html">Home</a><span aria-hidden="true">›</span>
-            <a href="../index.html">Explore Pets</a><span aria-hidden="true">›</span>
-            <a href="index.html">Rabbits</a><span aria-hidden="true">›</span>
-            <span aria-current="page">Breeds</span>
-        </nav>
+  <main>
+    <!-- ========================================================
+         1. HERO SECTION (Matching Dog Index & Cat Index)
+         ======================================================== -->
+    <section class="hero section-wrap" id="rabbit-breeds-hero">
+      <div class="hero-copy">
+        <div class="rabbit-badge-strip">
+          <i class="fa-solid fa-paw" aria-hidden="true"></i> PetSathi • Rabbit Breeds &amp; Varieties
+        </div>
+        <h1>Discover the Wonderful World of <em>Rabbit Breeds</em></h1>
+        <p>
+          From tiny spirited Netherland Dwarfs and plush velvety Mini Rexes to majestic gentle giant Flemish Giants, explore distinctive sizes, coat types, care needs, and unique temperaments to find the perfect companion for your home.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="#popular-breeds" id="hero-cta-explore">
+            Explore Breeds ↗
+          </a>
+          <a class="button button-outline" href="index.html" id="hero-cta-home">
+            Rabbits Home
+          </a>
+        </div>
+        <div class="hero-note">
+          <i class="fa-solid fa-heart" style="color: #e25563;" aria-hidden="true"></i>
+          <span>Compassionate care, verified guidance &amp; happy bunny homes.</span>
+        </div>
+      </div>
 
-        <!-- Intro / hero -->
-        <section class="rabbit-hero">
-            <div class="rabbit-hero-inner">
-                <div class="rabbit-eyebrow"><span>✦</span> PetSathi • Rabbit Guide</div>
-                <span class="rabbit-hero-icon" aria-hidden="true">🐇</span>
-                <h1>Meet the Wonderful World of <em>Rabbit Breeds</em></h1>
-                <p class="rabbit-hero-copy">
-                    From tiny, alert Netherland Dwarfs to gentle, giant Flemish rabbits, every breed has its own look and grooming needs. Explore ten popular breeds and learn what responsible everyday care involves before welcoming a rabbit home.
-                </p>
-                <div class="hero-divider"></div>
-                <div class="hero-shortcuts">
-                    <a href="#rabbit-breeds">Explore 10 Breeds ↓</a>
-                    <a href="#rabbit-comparison">Compare Breeds</a>
-                </div>
+      <div class="hero-visual">
+        <div class="hero-blob"></div>
+        <img
+          class="hero-photo"
+          src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&fit=crop&w=1000&q=85"
+          alt="Adorable domestic rabbit enjoying a safe, loving environment"
+        />
+        <div class="floating-card card-top">
+          ✨
+          <span><b>Gentle &amp; Curious</b><small>Loving indoor companions</small></span>
+        </div>
+        <div class="floating-card card-bottom">
+          🐾
+          <span><b>Playful &amp; Unique</b><small>Distinct breeds &amp; care</small></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         2. QUICK NAVIGATION HUB (Matching Dog Index & Cat Index)
+         ======================================================== -->
+    <section class="guides-nav-strip section-wrap" id="quick-nav" aria-label="Quick Navigation Hub">
+      <div class="quick-nav-decor decor-top-left" aria-hidden="true">
+        <i class="fa-solid fa-paw decor-paw decor-paw-1"></i>
+        <i class="fa-solid fa-paw decor-paw decor-paw-2"></i>
+      </div>
+
+      <div class="quick-nav-decor decor-bottom-right" aria-hidden="true">
+        <i class="fa-solid fa-paw decor-paw decor-paw-3"></i>
+        <i class="fa-solid fa-paw decor-paw decor-paw-4"></i>
+      </div>
+
+      <div class="quick-nav-header">
+        <div class="quick-nav-eyebrow-wrap">
+          <span class="quick-nav-line"></span>
+          <div class="quick-nav-badge">
+            <i class="fa-regular fa-compass quick-nav-badge-icon" aria-hidden="true"></i>
+            <span>QUICK NAVIGATION</span>
+          </div>
+          <span class="quick-nav-line"></span>
+        </div>
+        <h2 class="quick-nav-title">
+          Explore Dedicated <span>Rabbit Breed Chapters</span>
+        </h2>
+      </div>
+
+      <div class="guides-nav-grid">
+        <a href="#popular-breeds" class="guide-nav-item">
+          <span class="guide-nav-icon"><i class="fa-solid fa-star" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Popular Breeds</span>
+        </a>
+        <a href="#small-breeds" class="guide-nav-item">
+          <span class="guide-nav-icon"><i class="fa-solid fa-carrot" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Small Breeds</span>
+        </a>
+        <a href="#medium-breeds" class="guide-nav-item">
+          <span class="guide-nav-icon"><i class="fa-solid fa-shield-cat" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Medium Breeds</span>
+        </a>
+        <a href="#large-breeds" class="guide-nav-item">
+          <span class="guide-nav-icon"><i class="fa-solid fa-paw" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Large Breeds</span>
+        </a>
+        <a href="#coat-types" class="guide-nav-item">
+          <span class="guide-nav-icon"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Coat &amp; Grooming</span>
+        </a>
+        <a href="#breed-comparison" class="guide-nav-item">
+          <span class="guide-nav-icon"><i class="fa-solid fa-table-list" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Breed Comparison</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         3. EXPLORE POPULAR RABBIT BREEDS (8 Cards + Filter Toolbar)
+         ======================================================== -->
+    <div class="section-wrap" id="popular-breeds">
+      <div class="dog-topics-heading rabbit-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1">
+          <i class="fa-solid fa-paw" aria-hidden="true"></i>
+        </div>
+        <div class="paw paw-left-2">
+          <i class="fa-solid fa-paw" aria-hidden="true"></i>
+        </div>
+        <div class="paw paw-right-1">
+          <i class="fa-solid fa-paw" aria-hidden="true"></i>
+        </div>
+        <div class="paw paw-right-2">
+          <i class="fa-solid fa-paw" aria-hidden="true"></i>
+        </div>
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-fire" aria-hidden="true"></i> Popular Companions
+          </span>
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Explore <span>Popular Rabbit Breeds</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+          <p>
+            Meet 8 of the most beloved companion rabbit breeds worldwide, each with distinctive body shapes, coat characteristics, and engaging personality traits.
+          </p>
+        </div>
+      </div>
+
+      <!-- Search and Filter Toolbar -->
+      <div class="breed-filter-toolbar" aria-label="Filter rabbit breeds">
+        <div class="search-input-wrap">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <input type="text" id="breedSearchInput" placeholder="Search by name, size or coat type..." autocomplete="off">
+        </div>
+        <div class="filter-chips-wrap">
+          <button class="filter-chip active" data-filter="all">All Sizes</button>
+          <button class="filter-chip" data-filter="small">Small / Dwarf</button>
+          <button class="filter-chip" data-filter="medium">Medium</button>
+          <button class="filter-chip" data-filter="large">Large / Giant</button>
+        </div>
+      </div>
+
+      <!-- 8 Popular Breed Cards Grid -->
+      <div class="rabbit-cards-grid" id="popularCardsGrid">
+        <!-- 1. Holland Lop -->
+        <article class="rabbit-breed-card" data-size="small" data-name="holland lop">
+          <div class="rabbit-card-media">
+            <img src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&fit=crop&w=800&q=80" alt="Holland Lop rabbit with drooping ears" loading="lazy">
+            <span class="rabbit-size-tag">Small • Lop-Eared</span>
+          </div>
+          <div class="rabbit-card-content">
+            <h3>Holland Lop</h3>
+            <p>Compact, gentle, and widely cherished for its distinctive drooping ears, round flat crown, and friendly, inquisitive personality.</p>
+            <div class="rabbit-spec-chips">
+              <span class="spec-chip"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i> 0.9 – 1.8 kg</span>
+              <span class="spec-chip"><i class="fa-solid fa-paw" aria-hidden="true"></i> Dense Rollback</span>
+              <span class="spec-chip"><i class="fa-solid fa-heart" aria-hidden="true"></i> Affectionate</span>
             </div>
-        </section>
-
-        <!-- Breed cards -->
-        <section class="rabbit-section" id="rabbit-breeds">
-            <div class="rabbit-section-heading">
-                <span class="section-kicker">10 Popular Breeds</span>
-                <h2>Find the Bunny Behind the Ears</h2>
-                <p>Each profile covers approximate adult size, appearance, coat type, temperament tendencies and breed-specific care. Individual rabbits can differ, so meet the rabbit rather than choosing by breed description alone.</p>
+            <div class="rabbit-card-action">
+              <a href="#rabbit-comparison" class="rabbit-card-btn">Compare Breed <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
+          </div>
+        </article>
 
-            <div class="breed-tools" aria-label="Find a rabbit breed">
-                <div class="breed-search">
-                    <label for="breedSearch">Search breeds</label>
-                    <input id="breedSearch" type="search" placeholder="Try “Lop”, “giant” or “wool”..." autocomplete="off">
-                </div>
-                <div class="breed-filter">
-                    <label for="sizeFilter">Filter by size</label>
-                    <select id="sizeFilter">
-                        <option value="all">All sizes</option>
-                        <option value="small">Small / dwarf</option>
-                        <option value="medium">Medium</option>
-                        <option value="large">Large</option>
-                        <option value="giant">Giant</option>
-                    </select>
-                </div>
-                <p class="results-count" id="resultsCount" aria-live="polite">Showing 10 breeds</p>
+        <!-- 2. Netherland Dwarf -->
+        <article class="rabbit-breed-card" data-size="small" data-name="netherland dwarf">
+          <div class="rabbit-card-media">
+            <img src="https://images.unsplash.com/photo-1577741314755-048d8525d31e?auto=format&fit=crop&w=800&q=80" alt="Netherland Dwarf rabbit with short upright ears" loading="lazy">
+            <span class="rabbit-size-tag">Dwarf • Upright Ears</span>
+          </div>
+          <div class="rabbit-card-content">
+            <h3>Netherland Dwarf</h3>
+            <p>One of the smallest rabbit breeds in existence, famous for its tiny rounded body, short erect ears, and lively, alert temperament.</p>
+            <div class="rabbit-spec-chips">
+              <span class="spec-chip"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i> 0.5 – 1.1 kg</span>
+              <span class="spec-chip"><i class="fa-solid fa-paw" aria-hidden="true"></i> Short Fine Fur</span>
+              <span class="spec-chip"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Energetic</span>
             </div>
-
-            <div class="rabbit-grid" id="rabbitGrid">
-                <!-- 01 Holland Lop -->
-                <article class="rabbit-card" data-breed="holland-lop" data-size-class="small" data-search="holland lop small floppy ears lop short coat friendly">
-                    <div class="rabbit-image-wrap">
-                        <img class="rabbit-image" src="https://commons.wikimedia.org/wiki/Special:FilePath/Holland_lop_rabbit.jpg?width=1000" alt="Holland Lop rabbit with characteristic drooping ears" loading="lazy" decoding="async">
-                        <div class="rabbit-image-fallback" hidden><span>🐰</span><small>Holland Lop</small></div>
-                        <span class="rabbit-number">01</span>
-                    </div>
-                    <div class="rabbit-card-body">
-                        <span class="breed-tag">Small • Lop-eared</span>
-                        <h3>Holland Lop</h3>
-                        <p class="rabbit-description">A compact rabbit with a broad head, short ears that hang down and a rounded body. Holland Lops are often described as curious and people-friendly, but each rabbit has an individual personality and preferred way of interacting.</p>
-                        <div class="rabbit-facts">
-                            <div class="rabbit-fact"><span>Adult size</span><strong>About 0.9–1.8 kg</strong></div>
-                            <div class="rabbit-fact"><span>Appearance</span><strong>Compact, drooping ears</strong></div>
-                            <div class="rabbit-fact"><span>Coat type</span><strong>Short, dense, normal fur</strong></div>
-                        </div>
-                        <p class="rabbit-traits"><strong>Temperament:</strong> Often curious, playful and affectionate when handled gently.</p>
-                        <p class="rabbit-traits"><strong>Care:</strong> Brush weekly and more during shedding. Check ears and teeth regularly; provide unlimited grass hay, fresh water and daily room to move.</p>
-                        <p class="image-credit">Photo: Harold Cecchetti · <a href="https://commons.wikimedia.org/wiki/File:Holland_lop_rabbit.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons · CC BY-SA 4.0</a></p>
-                    </div>
-                </article>
-
-                <!-- 02 Netherland Dwarf -->
-                <article class="rabbit-card" data-breed="netherland-dwarf" data-size-class="small" data-search="netherland dwarf tiny small upright ears short coat alert">
-                    <div class="rabbit-image-wrap">
-                        <img class="rabbit-image" src="https://commons.wikimedia.org/wiki/Special:FilePath/Netherland_Dwarf.jpg?width=1000" alt="Netherland Dwarf rabbit with a compact body and upright ears" loading="lazy" decoding="async">
-                        <div class="rabbit-image-fallback" hidden><span>🐰</span><small>Netherland Dwarf</small></div>
-                        <span class="rabbit-number">02</span>
-                    </div>
-                    <div class="rabbit-card-body">
-                        <span class="breed-tag">Dwarf • Smallest type</span>
-                        <h3>Netherland Dwarf</h3>
-                        <p class="rabbit-description">One of the smallest domestic rabbit breeds, recognised by its very compact body, rounded head and short upright ears. These rabbits are often lively and alert; some may be more cautious around unfamiliar people and need patient, floor-level interaction.</p>
-                        <div class="rabbit-facts">
-                            <div class="rabbit-fact"><span>Adult size</span><strong>About 0.5–1.1 kg</strong></div>
-                            <div class="rabbit-fact"><span>Appearance</span><strong>Round head, upright ears</strong></div>
-                            <div class="rabbit-fact"><span>Coat type</span><strong>Short, fine fur</strong></div>
-                        </div>
-                        <p class="rabbit-traits"><strong>Temperament:</strong> Alert, energetic and sometimes reserved until trust develops.</p>
-                        <p class="rabbit-traits"><strong>Care:</strong> A short coat needs light weekly brushing. Handle calmly, support the whole body and never assume a tiny rabbit needs less exercise space.</p>
-                        <p class="image-credit">Photo: Nandhiniraji · <a href="https://commons.wikimedia.org/wiki/File:Netherland_Dwarf.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons · CC BY-SA 4.0</a></p>
-                    </div>
-                </article>
-
-                <!-- 03 Lionhead -->
-                <article class="rabbit-card" data-breed="lionhead" data-size-class="small" data-search="lionhead mane wool fluffy small upright ears grooming">
-                    <div class="rabbit-image-wrap">
-                        <img class="rabbit-image" src="https://commons.wikimedia.org/wiki/Special:FilePath/Rabbit_-_Lionhead_breed.jpg?width=1000" alt="Lionhead rabbit with a distinctive mane of longer fur around its head" loading="lazy" decoding="async">
-                        <div class="rabbit-image-fallback" hidden><span>🐰</span><small>Lionhead</small></div>
-                        <span class="rabbit-number">03</span>
-                    </div>
-                    <div class="rabbit-card-body">
-                        <span class="breed-tag">Small • Mane coat</span>
-                        <h3>Lionhead</h3>
-                        <p class="rabbit-description">The Lionhead is named for the woolly mane that frames its head, giving it a distinctive lion-like outline. It has a compact body and upright ears. Many are curious and playful, while comfort with handling varies from rabbit to rabbit.</p>
-                        <div class="rabbit-facts">
-                            <div class="rabbit-fact"><span>Adult size</span><strong>About 1.1–1.7 kg</strong></div>
-                            <div class="rabbit-fact"><span>Appearance</span><strong>Head-framing mane</strong></div>
-                            <div class="rabbit-fact"><span>Coat type</span><strong>Short coat + wool mane</strong></div>
-                        </div>
-                        <p class="rabbit-traits"><strong>Temperament:</strong> Often active, inquisitive and sociable with patient care.</p>
-                        <p class="rabbit-traits"><strong>Care:</strong> Gently comb the mane several times a week and more often during moulting. Check for tangles around the face, eyes and hindquarters.</p>
-                        <p class="image-credit">Photo: HutchRock · <a href="https://commons.wikimedia.org/wiki/File:Rabbit_-_Lionhead_breed.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons · CC0</a></p>
-                    </div>
-                </article>
-
-                <!-- 04 Mini Rex -->
-                <article class="rabbit-card" data-breed="mini-rex" data-size-class="small" data-search="mini rex velvety plush coat small rabbit rex">
-                    <div class="rabbit-image-wrap">
-                        <img class="rabbit-image" src="https://commons.wikimedia.org/wiki/Special:FilePath/Daisy_the_Mini_Rex_Rabbit.jpg?width=900" alt="Mini Rex rabbit displaying its short plush coat" loading="lazy" decoding="async">
-                        <div class="rabbit-image-fallback" hidden><span>🐰</span><small>Mini Rex</small></div>
-                        <span class="rabbit-number">04</span>
-                    </div>
-                    <div class="rabbit-card-body">
-                        <span class="breed-tag">Small • Plush coat</span>
-                        <h3>Mini Rex</h3>
-                        <p class="rabbit-description">Mini Rex rabbits are known for a dense, springy coat that feels unusually soft and velvety. They have a compact, well-rounded body and upright ears. They are often curious and calm, and usually enjoy exploring a safe space at their own pace.</p>
-                        <div class="rabbit-facts">
-                            <div class="rabbit-fact"><span>Adult size</span><strong>About 1.4–2.0 kg</strong></div>
-                            <div class="rabbit-fact"><span>Appearance</span><strong>Compact, rounded body</strong></div>
-                            <div class="rabbit-fact"><span>Coat type</span><strong>Short, plush Rex fur</strong></div>
-                        </div>
-                        <p class="rabbit-traits"><strong>Temperament:</strong> Commonly curious, gentle and easy to observe during play.</p>
-                        <p class="rabbit-traits"><strong>Care:</strong> Use gentle, occasional brushing rather than aggressive grooming. Provide safe flooring, enrichment and daily exercise; check skin and paws during routine handling.</p>
-                        <p class="image-credit">Photo: Samantha Luckett · <a href="https://commons.wikimedia.org/wiki/File:Daisy_the_Mini_Rex_Rabbit.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons · CC BY-SA 4.0</a></p>
-                    </div>
-                </article>
-
-                <!-- 05 Dutch -->
-                <article class="rabbit-card" data-breed="dutch" data-size-class="medium" data-search="dutch rabbit white markings blaze saddle medium short coat">
-                    <div class="rabbit-image-wrap">
-                        <img class="rabbit-image" src="https://commons.wikimedia.org/wiki/Special:FilePath/Dutch_rabbit.jpg?width=1000" alt="Dutch rabbit with characteristic white and coloured coat markings" loading="lazy" decoding="async">
-                        <div class="rabbit-image-fallback" hidden><span>🐰</span><small>Dutch Rabbit</small></div>
-                        <span class="rabbit-number">05</span>
-                    </div>
-                    <div class="rabbit-card-body">
-                        <span class="breed-tag">Small to medium • Marked coat</span>
-                        <h3>Dutch Rabbit</h3>
-                        <p class="rabbit-description">The Dutch rabbit is recognised by its distinctive pattern: a white blaze on the face, white front, and a clear band separating the coloured rear section. Its neat, compact shape and classic markings make it easy to recognise.</p>
-                        <div class="rabbit-facts">
-                            <div class="rabbit-fact"><span>Adult size</span><strong>About 1.6–2.5 kg</strong></div>
-                            <div class="rabbit-fact"><span>Appearance</span><strong>White blaze and saddle</strong></div>
-                            <div class="rabbit-fact"><span>Coat type</span><strong>Short, smooth fur</strong></div>
-                        </div>
-                        <p class="rabbit-traits"><strong>Temperament:</strong> Often sociable and adaptable; early gentle socialisation helps build trust.</p>
-                        <p class="rabbit-traits"><strong>Care:</strong> Brush weekly, keep nails trimmed and provide daily exercise. Like every rabbit, it needs hay, fresh water, a suitable diet and a spacious safe area.</p>
-                        <p class="image-credit">Photo: Sahrazad · <a href="https://commons.wikimedia.org/wiki/File:Dutch_rabbit.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons · Public domain</a></p>
-                    </div>
-                </article>
-
-                <!-- 06 Flemish Giant -->
-                <article class="rabbit-card" data-breed="flemish-giant" data-size-class="giant" data-search="flemish giant very large giant rabbit big short coat">
-                    <div class="rabbit-image-wrap">
-                        <img class="rabbit-image" src="https://commons.wikimedia.org/wiki/Special:FilePath/A_Flemish_Giant_rabbit.jpg?width=1000" alt="Flemish Giant rabbit with a large, broad build" loading="lazy" decoding="async">
-                        <div class="rabbit-image-fallback" hidden><span>🐇</span><small>Flemish Giant</small></div>
-                        <span class="rabbit-number">06</span>
-                    </div>
-                    <div class="rabbit-card-body">
-                        <span class="breed-tag">Giant • Large companion</span>
-                        <h3>Flemish Giant</h3>
-                        <p class="rabbit-description">One of the largest domestic rabbit breeds, the Flemish Giant has a long, powerful body, broad head and upright ears. The breed is often described as docile and steady, but its size makes suitable housing and confident, careful handling essential.</p>
-                        <div class="rabbit-facts">
-                            <div class="rabbit-fact"><span>Adult size</span><strong>13 lb / 5.9 kg and above</strong></div>
-                            <div class="rabbit-fact"><span>Appearance</span><strong>Very large, long body</strong></div>
-                            <div class="rabbit-fact"><span>Coat type</span><strong>Short, dense fur</strong></div>
-                        </div>
-                        <p class="rabbit-traits"><strong>Temperament:</strong> Commonly gentle and calm when handled respectfully.</p>
-                        <p class="rabbit-traits"><strong>Care:</strong> Plan for a much larger exercise area, sturdy hideouts and an appropriately sized litter area. Support the chest and hindquarters when lifting; never pick up by the ears.</p>
-                        <p class="image-credit">Photo: Oleg Yunakov · <a href="https://commons.wikimedia.org/wiki/File:A_Flemish_Giant_rabbit.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons · CC BY-SA 4.0</a></p>
-                    </div>
-                </article>
-
-                <!-- 07 English Angora -->
-                <article class="rabbit-card" data-breed="english-angora" data-size-class="medium" data-search="english angora wool long fluffy coat grooming medium rabbit">
-                    <div class="rabbit-image-wrap">
-                        <img class="rabbit-image" src="https://commons.wikimedia.org/wiki/Special:FilePath/EnglishAngoraRabbit.jpg?width=1000" alt="English Angora rabbit with a long woolly coat" loading="lazy" decoding="async">
-                        <div class="rabbit-image-fallback" hidden><span>🐰</span><small>English Angora</small></div>
-                        <span class="rabbit-number">07</span>
-                    </div>
-                    <div class="rabbit-card-body">
-                        <span class="breed-tag">Medium • Wool coat</span>
-                        <h3>English Angora</h3>
-                        <p class="rabbit-description">The English Angora is covered in long, fine wool, including around its face and ears. Its soft, fluffy appearance is striking, but the coat is a serious daily-care commitment and can hide tangles or skin problems if neglected.</p>
-                        <div class="rabbit-facts">
-                            <div class="rabbit-fact"><span>Adult size</span><strong>About 2.3–3.2 kg</strong></div>
-                            <div class="rabbit-fact"><span>Appearance</span><strong>Woolly face and body</strong></div>
-                            <div class="rabbit-fact"><span>Coat type</span><strong>Long, dense wool</strong></div>
-                        </div>
-                        <p class="rabbit-traits"><strong>Temperament:</strong> Often calm and gentle, though handling preferences vary.</p>
-                        <p class="rabbit-traits"><strong>Care:</strong> Requires thorough daily grooming and a planned clipping routine. Keep the face clear, check the skin and seek rabbit-experienced grooming or veterinary help when mats form.</p>
-                        <p class="image-credit">Photo: Betty Chu · <a href="https://commons.wikimedia.org/wiki/File:EnglishAngoraRabbit.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons · CC BY-SA 3.0 / GFDL</a></p>
-                    </div>
-                </article>
-
-                <!-- 08 Himalayan -->
-                <article class="rabbit-card" data-breed="himalayan" data-size-class="small" data-search="himalayan white dark points nose ears feet tail short coat">
-                    <div class="rabbit-image-wrap">
-                        <img class="rabbit-image" src="https://commons.wikimedia.org/wiki/Special:FilePath/Baby_Himalayan_rabbit_Compared_to_adult.JPG?width=1000" alt="Himalayan rabbit showing a pale coat with darker colour points" loading="lazy" decoding="async">
-                        <div class="rabbit-image-fallback" hidden><span>🐰</span><small>Himalayan Rabbit</small></div>
-                        <span class="rabbit-number">08</span>
-                    </div>
-                    <div class="rabbit-card-body">
-                        <span class="breed-tag">Small • Colour-point</span>
-                        <h3>Himalayan Rabbit</h3>
-                        <p class="rabbit-description">Himalayans have a distinctive slender, cylindrical body and a mostly white coat with darker colour on the nose, ears, feet and tail. This colour-point pattern makes the breed recognisable; the coat is short and close lying.</p>
-                        <div class="rabbit-facts">
-                            <div class="rabbit-fact"><span>Adult size</span><strong>About 1.1–2.0 kg</strong></div>
-                            <div class="rabbit-fact"><span>Appearance</span><strong>White with dark points</strong></div>
-                            <div class="rabbit-fact"><span>Coat type</span><strong>Short, fine fur</strong></div>
-                        </div>
-                        <p class="rabbit-traits"><strong>Temperament:</strong> Often described as gentle and patient; personality is individual.</p>
-                        <p class="rabbit-traits"><strong>Care:</strong> Light weekly brushing is usually enough outside moulting periods. Keep the living area cool, dry and well ventilated, and provide daily movement and hiding places.</p>
-                        <p class="image-credit">Photo: SableSteel · <a href="https://commons.wikimedia.org/wiki/File:Baby_Himalayan_rabbit_Compared_to_adult.JPG" target="_blank" rel="noopener noreferrer">Wikimedia Commons · CC BY-SA 3.0</a></p>
-                    </div>
-                </article>
-
-                <!-- 09 Harlequin -->
-                <article class="rabbit-card" data-breed="harlequin" data-size-class="medium" data-search="harlequin japanese magpie orange black patches banded coat">
-                    <div class="rabbit-image-wrap">
-                        <img class="rabbit-image" src="https://commons.wikimedia.org/wiki/Special:FilePath/Harlequin_rabbit.jpg?width=1000" alt="Harlequin rabbit with alternating coloured patches" loading="lazy" decoding="async">
-                        <div class="rabbit-image-fallback" hidden><span>🐰</span><small>Harlequin Rabbit</small></div>
-                        <span class="rabbit-number">09</span>
-                    </div>
-                    <div class="rabbit-card-body">
-                        <span class="breed-tag">Medium • Patterned coat</span>
-                        <h3>Harlequin Rabbit</h3>
-                        <p class="rabbit-description">Harlequins stand out for their contrasting colour pattern, often arranged in alternating bands or patches. The Japanese variety combines orange with a darker colour, while magpie varieties use white in place of orange.</p>
-                        <div class="rabbit-facts">
-                            <div class="rabbit-fact"><span>Adult size</span><strong>About 2.7–4.1 kg</strong></div>
-                            <div class="rabbit-fact"><span>Appearance</span><strong>Distinct two-colour pattern</strong></div>
-                            <div class="rabbit-fact"><span>Coat type</span><strong>Short, rollback fur</strong></div>
-                        </div>
-                        <p class="rabbit-traits"><strong>Temperament:</strong> Often active and curious; regular enrichment supports natural exploration.</p>
-                        <p class="rabbit-traits"><strong>Care:</strong> Brush weekly and increase grooming during shedding. Offer safe toys, tunnels, digging opportunities and a secure area for daily exercise.</p>
-                        <p class="image-credit">Photo: Meltingangels · <a href="https://commons.wikimedia.org/wiki/File:Harlequin_rabbit.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons · CC BY-SA 4.0</a></p>
-                    </div>
-                </article>
-
-                <!-- 10 New Zealand -->
-                <article class="rabbit-card" data-breed="new-zealand" data-size-class="large" data-search="new zealand white rabbit large short dense coat muscular">
-                    <div class="rabbit-image-wrap">
-                        <img class="rabbit-image" src="https://commons.wikimedia.org/wiki/Special:FilePath/NewZealandWhiteRabbit.jpg?width=1000" alt="New Zealand White rabbit, a white variety of the New Zealand breed" loading="lazy" decoding="async">
-                        <div class="rabbit-image-fallback" hidden><span>🐰</span><small>New Zealand Rabbit</small></div>
-                        <span class="rabbit-number">10</span>
-                    </div>
-                    <div class="rabbit-card-body">
-                        <span class="breed-tag">Large • Powerful build</span>
-                        <h3>New Zealand Rabbit</h3>
-                        <p class="rabbit-description">New Zealand rabbits have a broad, muscular body and upright ears. White is a familiar variety, but the breed also appears in other recognised colours. They are often described as steady and calm, although no breed guarantees a particular personality.</p>
-                        <div class="rabbit-facts">
-                            <div class="rabbit-fact"><span>Adult size</span><strong>About 4.1–5.0 kg</strong></div>
-                            <div class="rabbit-fact"><span>Appearance</span><strong>Broad, muscular body</strong></div>
-                            <div class="rabbit-fact"><span>Coat type</span><strong>Short, dense fur</strong></div>
-                        </div>
-                        <p class="rabbit-traits"><strong>Temperament:</strong> Commonly calm and steady when socialised gently.</p>
-                        <p class="rabbit-traits"><strong>Care:</strong> Brush weekly and provide ample floor space for running and stretching. Use a large, stable litter area and monitor weight with a rabbit-savvy vet.</p>
-                        <p class="image-credit">Photo: Gb1 · <a href="https://commons.wikimedia.org/wiki/File:NewZealandWhiteRabbit.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons · CC BY-SA 3.0</a></p>
-                    </div>
-                </article>
+            <div class="rabbit-card-action">
+              <a href="#rabbit-comparison" class="rabbit-card-btn">Compare Breed <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
-            <div class="no-results" id="noResults" role="status">No breeds match that search. Try a different name or select “All sizes”.</div>
-        </section>
+          </div>
+        </article>
 
-        <!-- Comparison: full ten-breed overview plus interactive two-breed tool -->
-        <section class="comparison-section" id="rabbit-comparison">
-            <div class="comparison-inner">
-                <div class="comparison-heading">
-                    <span class="comparison-kicker">Compare Your Options</span>
-                    <h2>Rabbit Breed Comparison</h2>
-                    <p>Compare common size ranges, coat types, temperament tendencies and grooming needs. This is a quick reference, not a substitute for meeting a rabbit or speaking with a rabbit-experienced veterinarian.</p>
-                </div>
-
-                <div class="comparison-table-wrap">
-                    <table class="comparison-table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Breed</th>
-                                <th scope="col">Approx. adult weight</th>
-                                <th scope="col">Coat</th>
-                                <th scope="col">Temperament tendency</th>
-                                <th scope="col">Grooming</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Holland Lop</td><td>0.9–1.8 kg</td><td>Short, dense</td><td>Curious, playful</td><td>Weekly; more when moulting</td></tr>
-                            <tr><td>Netherland Dwarf</td><td>0.5–1.1 kg</td><td>Short, fine</td><td>Alert, sometimes cautious</td><td>Weekly; more when moulting</td></tr>
-                            <tr><td>Lionhead</td><td>1.1–1.7 kg</td><td>Short coat with wool mane</td><td>Active, inquisitive</td><td>Several times weekly</td></tr>
-                            <tr><td>Mini Rex</td><td>1.4–2.0 kg</td><td>Short, plush Rex fur</td><td>Curious, gentle</td><td>Light, occasional brushing</td></tr>
-                            <tr><td>Dutch Rabbit</td><td>1.6–2.5 kg</td><td>Short, smooth</td><td>Sociable, adaptable</td><td>Weekly</td></tr>
-                            <tr><td>Flemish Giant</td><td>5.9 kg and above</td><td>Short, dense</td><td>Often calm, docile</td><td>Weekly; space needs are high</td></tr>
-                            <tr><td>English Angora</td><td>2.3–3.2 kg</td><td>Long wool</td><td>Often calm, gentle</td><td>Daily grooming</td></tr>
-                            <tr><td>Himalayan</td><td>1.1–2.0 kg</td><td>Short, fine</td><td>Often gentle, patient</td><td>Weekly</td></tr>
-                            <tr><td>Harlequin</td><td>2.7–4.1 kg</td><td>Short, rollback</td><td>Active, curious</td><td>Weekly</td></tr>
-                            <tr><td>New Zealand</td><td>4.1–5.0 kg</td><td>Short, dense</td><td>Often steady, calm</td><td>Weekly</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <p class="table-scroll-hint">← Swipe horizontally to view all comparison details →</p>
-                <p class="comparison-note">*Adult weights are approximate guide ranges drawn from breed references and may vary by sex, line, body condition and country-specific breed standards. Temperament descriptions are tendencies, not promises. Grooming needs increase during seasonal moulting; English Angora and Lionhead coats require extra attention.</p>
-
-                <div class="interactive-compare">
-                    <h3>Compare Any Two Breeds</h3>
-                    <p>Choose two rabbits to see their size, appearance, coat, temperament and care needs side by side.</p>
-                    <div class="compare-controls">
-                        <div>
-                            <label for="compareBreedA">First breed</label>
-                            <select id="compareBreedA">
-                                <option value="holland-lop">Holland Lop</option>
-                                <option value="netherland-dwarf">Netherland Dwarf</option>
-                                <option value="lionhead">Lionhead</option>
-                                <option value="mini-rex">Mini Rex</option>
-                                <option value="dutch">Dutch Rabbit</option>
-                                <option value="flemish-giant">Flemish Giant</option>
-                                <option value="english-angora">English Angora</option>
-                                <option value="himalayan">Himalayan Rabbit</option>
-                                <option value="harlequin">Harlequin Rabbit</option>
-                                <option value="new-zealand">New Zealand Rabbit</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="compareBreedB">Second breed</label>
-                            <select id="compareBreedB">
-                                <option value="flemish-giant">Flemish Giant</option>
-                                <option value="holland-lop">Holland Lop</option>
-                                <option value="netherland-dwarf">Netherland Dwarf</option>
-                                <option value="lionhead">Lionhead</option>
-                                <option value="mini-rex">Mini Rex</option>
-                                <option value="dutch">Dutch Rabbit</option>
-                                <option value="english-angora">English Angora</option>
-                                <option value="himalayan">Himalayan Rabbit</option>
-                                <option value="harlequin">Harlequin Rabbit</option>
-                                <option value="new-zealand">New Zealand Rabbit</option>
-                            </select>
-                        </div>
-                        <button type="button" id="compareButton">Compare breeds ↗</button>
-                    </div>
-                    <div class="dynamic-table-wrap">
-                        <table class="dynamic-table" aria-live="polite">
-                            <thead><tr><th scope="col">Feature</th><th scope="col" id="compareHeadingA">Holland Lop</th><th scope="col" id="compareHeadingB">Flemish Giant</th></tr></thead>
-                            <tbody id="dynamicCompareBody">
-                                <tr><td>Adult size</td><td>About 0.9–1.8 kg</td><td>13 lb / 5.9 kg and above</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <p class="compare-status" id="compareStatus" role="status">Showing Holland Lop and Flemish Giant.</p>
-                </div>
+        <!-- 3. Mini Rex -->
+        <article class="rabbit-breed-card" data-size="small" data-name="mini rex">
+          <div class="rabbit-card-media">
+            <img src="https://images.unsplash.com/photo-1591382696684-38c427c7547a?auto=format&fit=crop&w=800&q=80" alt="Mini Rex rabbit with velvety plush coat" loading="lazy">
+            <span class="rabbit-size-tag">Small • Rex Plush</span>
+          </div>
+          <div class="rabbit-card-content">
+            <h3>Mini Rex</h3>
+            <p>Celebrated for its signature velvety plush coat where guard hairs are the same length as the undercoat, paired with a calm, sweet disposition.</p>
+            <div class="rabbit-spec-chips">
+              <span class="spec-chip"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i> 1.4 – 2.0 kg</span>
+              <span class="spec-chip"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Velvet Rex</span>
+              <span class="spec-chip"><i class="fa-solid fa-heart" aria-hidden="true"></i> Docile &amp; Calm</span>
             </div>
-        </section>
-
-        <!-- Responsible rabbit ownership -->
-        <section class="ownership-section">
-            <div class="ownership-icon" aria-hidden="true">💚</div>
-            <h2>A Happy Rabbit Needs More Than a Cute Face</h2>
-            <p>Breed can help you anticipate size and grooming, but every domestic rabbit needs a safe, spacious home, a suitable high-fibre diet, daily activity and calm interaction. Rabbits are prey animals: many feel safer being approached at floor level than being picked up.</p>
-            <div class="care-reminder">
-                <article><b>🥬 Food & water</b><span>Provide unlimited grass hay, fresh drinking water, suitable leafy greens and measured rabbit pellets.</span></article>
-                <article><b>🏡 Space & enrichment</b><span>Use a roomy, secure living area with space to stretch, run, hide, dig and chew safe materials.</span></article>
-                <article><b>🩺 Health & company</b><span>Arrange rabbit-savvy veterinary care, routine checks and carefully planned companionship with a compatible rabbit.</span></article>
+            <div class="rabbit-card-action">
+              <a href="#rabbit-comparison" class="rabbit-card-btn">Compare Breed <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
-            <div class="legal-note"><strong>Important:</strong> Never choose a rabbit only because of its breed or appearance. Meet the individual animal, ask about its health history and daily needs, and consider adoption from a responsible rescue. In warm climates, provide shade, ventilation and a reliably cool environment; rabbits can be vulnerable to overheating.</div>
-            <p class="references">Further reading: <a href="https://www.merckvetmanual.com/all-other-pets/rabbits/description-and-physical-characteristics-of-rabbits" target="_blank" rel="noopener noreferrer">Merck Veterinary Manual — Rabbit characteristics</a> · <a href="https://woodgreen.org.uk/pet-advice/rabbit/popular-pet-rabbit-breeds-a-guide-for-new-owners/" target="_blank" rel="noopener noreferrer">Woodgreen — Popular pet rabbit breeds</a> · <a href="https://www.petplan.co.uk/rabbit-insurance/rabbit-care-and-advice/healthy-weight-for-rabbits.html" target="_blank" rel="noopener noreferrer">Petplan — Rabbit weight guide</a> · <a href="https://rabbitwelfare.co.uk/" target="_blank" rel="noopener noreferrer">Rabbit Welfare Association & Fund</a></p>
-        </section>
+          </div>
+        </article>
 
-        <section class="rabbit-cta">
-            <h2>Every Bunny Deserves a Safe, Happy Home 🐇</h2>
-            <p>Learning about a rabbit's needs is the first step toward a thoughtful and responsible bond. Continue exploring rabbit care with PetSathi.</p>
-            <a class="button" href="index.html">← Back to Rabbit Guide</a>
-        </section>
-    </main>
+        <!-- 4. Dutch Rabbit -->
+        <article class="rabbit-breed-card" data-size="medium" data-name="dutch rabbit">
+          <div class="rabbit-card-media">
+            <img src="https://images.unsplash.com/photo-1559214369-a6b1d7919865?auto=format&fit=crop&w=800&q=80" alt="Dutch rabbit with iconic white blaze and saddle pattern" loading="lazy">
+            <span class="rabbit-size-tag">Medium • Two-Tone</span>
+          </div>
+          <div class="rabbit-card-content">
+            <h3>Dutch Rabbit</h3>
+            <p>Instantly recognisable by its clean white blaze, collar, and saddle pattern. Highly sociable, gentle, and widely recommended for families.</p>
+            <div class="rabbit-spec-chips">
+              <span class="spec-chip"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i> 1.8 – 2.5 kg</span>
+              <span class="spec-chip"><i class="fa-solid fa-paw" aria-hidden="true"></i> Short Flyback</span>
+              <span class="spec-chip"><i class="fa-solid fa-users" aria-hidden="true"></i> Sociable</span>
+            </div>
+            <div class="rabbit-card-action">
+              <a href="#rabbit-comparison" class="rabbit-card-btn">Compare Breed <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </article>
 
+        <!-- 5. Lionhead -->
+        <article class="rabbit-breed-card" data-size="small" data-name="lionhead">
+          <div class="rabbit-card-media">
+            <img src="https://images.unsplash.com/photo-1535241749838-299277b6305f?auto=format&fit=crop&w=800&q=80" alt="Lionhead rabbit with fluffy woolly mane" loading="lazy">
+            <span class="rabbit-size-tag">Small • Wool Mane</span>
+          </div>
+          <div class="rabbit-card-content">
+            <h3>Lionhead</h3>
+            <p>Named after its majestic wool mane framing the head and chin. Intelligent, spirited, and playful, requiring regular gentle mane detangling.</p>
+            <div class="rabbit-spec-chips">
+              <span class="spec-chip"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i> 1.1 – 1.7 kg</span>
+              <span class="spec-chip"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Long Mane Wool</span>
+              <span class="spec-chip"><i class="fa-solid fa-brain" aria-hidden="true"></i> Inquisitive</span>
+            </div>
+            <div class="rabbit-card-action">
+              <a href="#rabbit-comparison" class="rabbit-card-btn">Compare Breed <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. English Angora -->
+        <article class="rabbit-breed-card" data-size="medium" data-name="english angora">
+          <div class="rabbit-card-media">
+            <img src="https://images.unsplash.com/photo-1452857297128-d9c29adba80b?auto=format&fit=crop&w=800&q=80" alt="English Angora rabbit with full wool coverage and facial furnishings" loading="lazy">
+            <span class="rabbit-size-tag">Medium • Full Wool</span>
+          </div>
+          <div class="rabbit-card-content">
+            <h3>English Angora</h3>
+            <p>Possesses ultra-soft, voluminous wool covering its entire body, face, and ears. Remarkably patient and docile, suited for dedicated groomers.</p>
+            <div class="rabbit-spec-chips">
+              <span class="spec-chip"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i> 2.3 – 3.2 kg</span>
+              <span class="spec-chip"><i class="fa-solid fa-scissors" aria-hidden="true"></i> Dense Angora Wool</span>
+              <span class="spec-chip"><i class="fa-solid fa-spa" aria-hidden="true"></i> Gentle &amp; Patient</span>
+            </div>
+            <div class="rabbit-card-action">
+              <a href="#rabbit-comparison" class="rabbit-card-btn">Compare Breed <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. Flemish Giant -->
+        <article class="rabbit-breed-card" data-size="large" data-name="flemish giant">
+          <div class="rabbit-card-media">
+            <img src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?auto=format&fit=crop&w=800&q=80" alt="Flemish Giant rabbit with large powerful build" loading="lazy">
+            <span class="rabbit-size-tag">Giant • King of Rabbits</span>
+          </div>
+          <div class="rabbit-card-content">
+            <h3>Flemish Giant</h3>
+            <p>The gentle giant of the bunny world, admired for its immense muscular body, large upright ears, and dog-like calm, steady companionship.</p>
+            <div class="rabbit-spec-chips">
+              <span class="spec-chip"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i> 6.0 – 10.0+ kg</span>
+              <span class="spec-chip"><i class="fa-solid fa-paw" aria-hidden="true"></i> Glossy Dense Fur</span>
+              <span class="spec-chip"><i class="fa-solid fa-shield-heart" aria-hidden="true"></i> Gentle Giant</span>
+            </div>
+            <div class="rabbit-card-action">
+              <a href="#rabbit-comparison" class="rabbit-card-btn">Compare Breed <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8. New Zealand White -->
+        <article class="rabbit-breed-card" data-size="large" data-name="new zealand white">
+          <div class="rabbit-card-media">
+            <img src="https://images.unsplash.com/photo-1518796745738-41048802f99a?auto=format&fit=crop&w=800&q=80" alt="New Zealand White rabbit with dense flyback fur" loading="lazy">
+            <span class="rabbit-size-tag">Large • Broad Build</span>
+          </div>
+          <div class="rabbit-card-content">
+            <h3>New Zealand White</h3>
+            <p>A broad, muscular rabbit with a snowy flyback coat and ruby eyes. Extremely friendly, relaxed, and adaptable to peaceful home settings.</p>
+            <div class="rabbit-spec-chips">
+              <span class="spec-chip"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i> 4.1 – 5.4 kg</span>
+              <span class="spec-chip"><i class="fa-solid fa-paw" aria-hidden="true"></i> Dense Flyback</span>
+              <span class="spec-chip"><i class="fa-solid fa-face-smile" aria-hidden="true"></i> Calm &amp; Even</span>
+            </div>
+            <div class="rabbit-card-action">
+              <a href="#rabbit-comparison" class="rabbit-card-btn">Compare Breed <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         4. RABBIT BREEDS BY SIZE (Small, Medium, Large Sections)
+         ======================================================== -->
+    <div class="section-wrap" id="breeds-by-size">
+      <div class="dog-topics-heading rabbit-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1">
+          <i class="fa-solid fa-paw" aria-hidden="true"></i>
+        </div>
+        <div class="paw paw-left-2">
+          <i class="fa-solid fa-paw" aria-hidden="true"></i>
+        </div>
+        <div class="paw paw-right-1">
+          <i class="fa-solid fa-paw" aria-hidden="true"></i>
+        </div>
+        <div class="paw paw-right-2">
+          <i class="fa-solid fa-paw" aria-hidden="true"></i>
+        </div>
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-arrows-left-right-to-line" aria-hidden="true"></i> Size Classifications
+          </span>
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Rabbit Breeds <span>by Size Category</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+          <p>
+            Adult body mass strongly influences enclosure requirements, dietary volume, and daily handling techniques. Choose a size category suited to your living quarters.
+          </p>
+        </div>
+      </div>
+
+      <!-- Small Breeds Section -->
+      <div class="size-category-group" id="small-breeds">
+        <div class="size-group-header">
+          <h3 class="size-group-title">
+            <i class="fa-solid fa-carrot" aria-hidden="true"></i> Small &amp; Dwarf Breeds
+          </h3>
+          <span class="size-group-badge">Under 2.0 kg (4.4 lbs)</span>
+        </div>
+        <div class="rabbit-cards-grid">
+          <article class="rabbit-breed-card">
+            <div class="rabbit-card-media">
+              <img src="https://images.unsplash.com/photo-1577741314755-048d8525d31e?auto=format&fit=crop&w=800&q=80" alt="Netherland Dwarf rabbit" loading="lazy">
+              <span class="rabbit-size-tag">Dwarf • ~0.5–1.1 kg</span>
+            </div>
+            <div class="rabbit-card-content">
+              <h3>Netherland Dwarf</h3>
+              <p>Tiny proportions with round faces and perky ears. Highly curious and rapid runners who love exploring rabbit-proofed rooms.</p>
+              <div class="rabbit-spec-chips">
+                <span class="spec-chip">Upright Ears</span>
+                <span class="spec-chip">Active Mind</span>
+                <span class="spec-chip">Low Shedding</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="rabbit-breed-card">
+            <div class="rabbit-card-media">
+              <img src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&fit=crop&w=800&q=80" alt="Holland Lop rabbit" loading="lazy">
+              <span class="rabbit-size-tag">Small • ~0.9–1.8 kg</span>
+            </div>
+            <div class="rabbit-card-content">
+              <h3>Holland Lop</h3>
+              <p>Stout, muscular dwarf with sweet floppy ears and gentle social manners. Excellent companions for careful indoor households.</p>
+              <div class="rabbit-spec-chips">
+                <span class="spec-chip">Crown &amp; Lop Ears</span>
+                <span class="spec-chip">Sweet Nature</span>
+                <span class="spec-chip">Weekly Brush</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="rabbit-breed-card">
+            <div class="rabbit-card-media">
+              <img src="https://images.unsplash.com/photo-1591382696684-38c427c7547a?auto=format&fit=crop&w=800&q=80" alt="Mini Rex rabbit" loading="lazy">
+              <span class="rabbit-size-tag">Small • ~1.4–2.0 kg</span>
+            </div>
+            <div class="rabbit-card-content">
+              <h3>Mini Rex</h3>
+              <p>Equipped with hypoallergenic plush velvet fur and a relaxed demeanor. Requires soft bedding to protect delicate hocks.</p>
+              <div class="rabbit-spec-chips">
+                <span class="spec-chip">Velvet Texture</span>
+                <span class="spec-chip">Docile Demeanor</span>
+                <span class="spec-chip">Soft Paws</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Medium Breeds Section -->
+      <div class="size-category-group" id="medium-breeds">
+        <div class="size-group-header">
+          <h3 class="size-group-title">
+            <i class="fa-solid fa-shield-cat" aria-hidden="true"></i> Medium Breeds
+          </h3>
+          <span class="size-group-badge">2.0 kg – 3.8 kg (4.4 – 8.4 lbs)</span>
+        </div>
+        <div class="rabbit-cards-grid">
+          <article class="rabbit-breed-card">
+            <div class="rabbit-card-media">
+              <img src="https://images.unsplash.com/photo-1559214369-a6b1d7919865?auto=format&fit=crop&w=800&q=80" alt="Dutch rabbit" loading="lazy">
+              <span class="rabbit-size-tag">Medium • ~1.8–2.5 kg</span>
+            </div>
+            <div class="rabbit-card-content">
+              <h3>Dutch Rabbit</h3>
+              <p>Historic show and pet breed with iconic tuxedo markings. Highly intelligent, adaptable, and naturally interactive.</p>
+              <div class="rabbit-spec-chips">
+                <span class="spec-chip">Blaze Markings</span>
+                <span class="spec-chip">Friendly &amp; Alert</span>
+                <span class="spec-chip">Easy Care</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="rabbit-breed-card">
+            <div class="rabbit-card-media">
+              <img src="https://images.unsplash.com/photo-1535241749838-299277b6305f?auto=format&fit=crop&w=800&q=80" alt="Lionhead rabbit" loading="lazy">
+              <span class="rabbit-size-tag">Medium • ~1.1–1.7 kg</span>
+            </div>
+            <div class="rabbit-card-content">
+              <h3>Lionhead</h3>
+              <p>Fluffy mane framing the face with a compact build. Sprightly and interactive, requiring routine mane grooming.</p>
+              <div class="rabbit-spec-chips">
+                <span class="spec-chip">Mane Gene</span>
+                <span class="spec-chip">Playful Spirit</span>
+                <span class="spec-chip">3x Week Groom</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="rabbit-breed-card">
+            <div class="rabbit-card-media">
+              <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=800&q=80" alt="English Spot rabbit" loading="lazy">
+              <span class="rabbit-size-tag">Medium • ~2.3–3.6 kg</span>
+            </div>
+            <div class="rabbit-card-content">
+              <h3>English Spot</h3>
+              <p>Athletic arch-type rabbit featuring a distinctive spine herringbone stripe, eye circles, and flank spots. Extremely energetic.</p>
+              <div class="rabbit-spec-chips">
+                <span class="spec-chip">Spotted Pattern</span>
+                <span class="spec-chip">High Energy</span>
+                <span class="spec-chip">Curious Explorer</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Large Breeds Section -->
+      <div class="size-category-group" id="large-breeds">
+        <div class="size-group-header">
+          <h3 class="size-group-title">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i> Large &amp; Giant Breeds
+          </h3>
+          <span class="size-group-badge">4.0 kg – 10.0+ kg (8.8 – 22+ lbs)</span>
+        </div>
+        <div class="rabbit-cards-grid">
+          <article class="rabbit-breed-card">
+            <div class="rabbit-card-media">
+              <img src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?auto=format&fit=crop&w=800&q=80" alt="Flemish Giant rabbit" loading="lazy">
+              <span class="rabbit-size-tag">Giant • ~6.0–10.0+ kg</span>
+            </div>
+            <div class="rabbit-card-content">
+              <h3>Flemish Giant</h3>
+              <p>The largest domestic rabbit breed with powerful hindquarters and placid temperament. Requires dog-sized exercise and care.</p>
+              <div class="rabbit-spec-chips">
+                <span class="spec-chip">Gentle Giant</span>
+                <span class="spec-chip">Large Pen Space</span>
+                <span class="spec-chip">Heart of Gold</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="rabbit-breed-card">
+            <div class="rabbit-card-media">
+              <img src="https://images.unsplash.com/photo-1518796745738-41048802f99a?auto=format&fit=crop&w=800&q=80" alt="New Zealand White rabbit" loading="lazy">
+              <span class="rabbit-size-tag">Large • ~4.1–5.4 kg</span>
+            </div>
+            <div class="rabbit-card-content">
+              <h3>New Zealand White</h3>
+              <p>Substantial, calm, and friendly with pure white flyback fur. Very robust health profile and comfortable with patient human bonding.</p>
+              <div class="rabbit-spec-chips">
+                <span class="spec-chip">Flyback Coat</span>
+                <span class="spec-chip">Steady Temper</span>
+                <span class="spec-chip">Resilient Health</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="rabbit-breed-card">
+            <div class="rabbit-card-media">
+              <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=800&q=80" alt="Checkered Giant rabbit" loading="lazy">
+              <span class="rabbit-size-tag">Giant • ~5.0–6.5 kg</span>
+            </div>
+            <div class="rabbit-card-content">
+              <h3>Checkered Giant</h3>
+              <p>Impressive arched giant with butterfly nose marking and contrasting spine spots. Majestic, confident, and active runner.</p>
+              <div class="rabbit-spec-chips">
+                <span class="spec-chip">Butterfly Markings</span>
+                <span class="spec-chip">Bold Demeanor</span>
+                <span class="spec-chip">Ample Exercise</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         5. COAT TYPES & GROOMING NEEDS
+         ======================================================== -->
+    <div class="section-wrap" id="coat-types">
+      <div class="dog-topics-heading rabbit-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1">
+          <i class="fa-solid fa-paw" aria-hidden="true"></i>
+        </div>
+        <div class="paw paw-left-2">
+          <i class="fa-solid fa-paw" aria-hidden="true"></i>
+        </div>
+        <div class="paw paw-right-1">
+          <i class="fa-solid fa-paw" aria-hidden="true"></i>
+        </div>
+        <div class="paw paw-right-2">
+          <i class="fa-solid fa-paw" aria-hidden="true"></i>
+        </div>
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-sparkles" aria-hidden="true"></i> Fur Care & Textures
+          </span>
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Coat Types & <span>Grooming Needs</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+          <p>
+            Rabbits cannot vomit; grooming prevents wool ingestion and life-threatening GI stasis. Learn how coat textures dictate care routines.
+          </p>
+        </div>
+      </div>
+
+      <div class="coat-grid">
+        <!-- 1. Short-Haired -->
+        <article class="coat-card">
+          <div class="coat-icon"><i class="fa-solid fa-shield-dog" aria-hidden="true"></i></div>
+          <h3>Short-Haired</h3>
+          <span class="coat-badge">Flyback &amp; Rollback</span>
+          <p>Standard sleek coats where guard hairs protect a dense undercoat. Fur naturally returns to place when stroked backwards.</p>
+          <div class="coat-grooming-box">
+            <i class="fa-regular fa-calendar-check" aria-hidden="true"></i>
+            <span>Weekly brush (2–3x during molt)</span>
+          </div>
+        </article>
+
+        <!-- 2. Long-Haired -->
+        <article class="coat-card">
+          <div class="coat-icon"><i class="fa-solid fa-crown" aria-hidden="true"></i></div>
+          <h3>Long-Haired</h3>
+          <span class="coat-badge">Wool &amp; Mane Breeds</span>
+          <p>Features long strands around the crown (Lionheads) or full-body wool. Highly prone to debris accumulation and mats.</p>
+          <div class="coat-grooming-box">
+            <i class="fa-solid fa-scissors" aria-hidden="true"></i>
+            <span>3–4 times weekly detangling</span>
+          </div>
+        </article>
+
+        <!-- 3. Rex-Coated -->
+        <article class="coat-card">
+          <div class="coat-icon"><i class="fa-solid fa-gem" aria-hidden="true"></i></div>
+          <h3>Rex-Coated</h3>
+          <span class="coat-badge">Velveteen Plush</span>
+          <p>Short, perpendicular guard hairs create an incomparable plush velvet feel. Sensitive skin requires gentle rubber grooming.</p>
+          <div class="coat-grooming-box">
+            <i class="fa-solid fa-hand" aria-hidden="true"></i>
+            <span>Gentle hand-wipes &amp; soft brush</span>
+          </div>
+        </article>
+
+        <!-- 4. Angora Wool -->
+        <article class="coat-card">
+          <div class="coat-icon"><i class="fa-solid fa-cloud" aria-hidden="true"></i></div>
+          <h3>Angora Wool</h3>
+          <span class="coat-badge">High Maintenance</span>
+          <p>Abundant, fine specialty wool covering the entire bunny. Requires high dedication to prevent matting and wool block.</p>
+          <div class="coat-grooming-box">
+            <i class="fa-solid fa-clock" aria-hidden="true"></i>
+            <span>Daily combing + 90-day shears</span>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         6. CHOOSING THE RIGHT RABBIT BREED (5 Cards)
+         ======================================================== -->
+    <div class="section-wrap" id="choosing-guide">
+      <div class="dog-topics-heading rabbit-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1">
+          <i class="fa-solid fa-paw" aria-hidden="true"></i>
+        </div>
+        <div class="paw paw-left-2">
+          <i class="fa-solid fa-paw" aria-hidden="true"></i>
+        </div>
+        <div class="paw paw-right-1">
+          <i class="fa-solid fa-paw" aria-hidden="true"></i>
+        </div>
+        <div class="paw paw-right-2">
+          <i class="fa-solid fa-paw" aria-hidden="true"></i>
+        </div>
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-circle-question" aria-hidden="true"></i> Adoption & Compatibility
+          </span>
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Choosing the <span>Right Rabbit Breed</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+          <p>
+            Consider how each breed's spatial, physical, and behavioral tendencies fit into your daily home routine before welcoming your companion.
+          </p>
+        </div>
+      </div>
+
+      <div class="choosing-grid">
+        <!-- 1. Living Space -->
+        <article class="choosing-card">
+          <div class="choosing-icon"><i class="fa-solid fa-house-chimney" aria-hidden="true"></i></div>
+          <h3>Living Space</h3>
+          <p>Giant breeds like Flemish Giants need large exercise pens or full rabbit-proofed rooms, while dwarfs still require 12+ sq. ft. of roaming space.</p>
+          <div class="choosing-tip"><i class="fa-solid fa-check" aria-hidden="true"></i> Ensure ample floor clearance</div>
+        </article>
+
+        <!-- 2. Grooming Requirements -->
+        <article class="choosing-card">
+          <div class="choosing-icon"><i class="fa-solid fa-scissors" aria-hidden="true"></i></div>
+          <h3>Grooming Needs</h3>
+          <p>Assess your daily availability: Angoras and Lionheads demand consistent combing, whereas short-haired Dutch or Rex rabbits require simple weekly upkeep.</p>
+          <div class="choosing-tip"><i class="fa-solid fa-check" aria-hidden="true"></i> Prevent painful coat mats</div>
+        </article>
+
+        <!-- 3. Activity Levels -->
+        <article class="choosing-card">
+          <div class="choosing-icon"><i class="fa-solid fa-bolt-lightning" aria-hidden="true"></i></div>
+          <h3>Activity Levels</h3>
+          <p>Energetic athletic breeds like English Spots thrive on tunnels and puzzle toys, whereas mature Flemish Giants often prefer relaxing lounging sessions.</p>
+          <div class="choosing-tip"><i class="fa-solid fa-check" aria-hidden="true"></i> Match household energy</div>
+        </article>
+
+        <!-- 4. Temperament -->
+        <article class="choosing-card">
+          <div class="choosing-icon"><i class="fa-solid fa-heart-circle-check" aria-hidden="true"></i></div>
+          <h3>Temperament</h3>
+          <p>While handling comfort varies individually, Holland Lops and Dutch Rabbits are frequently celebrated for gentle curiosity and affectionate social habits.</p>
+          <div class="choosing-tip"><i class="fa-solid fa-check" aria-hidden="true"></i> Prioritize floor-level trust</div>
+        </article>
+
+        <!-- 5. Time & Commitment -->
+        <article class="choosing-card">
+          <div class="choosing-icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></div>
+          <h3>Care Commitment</h3>
+          <p>Domestic rabbits live 8 to 12+ years. Daily replenishment of unlimited fresh timothy hay, clean water, litter box upkeep, and exotic vet care are vital.</p>
+          <div class="choosing-tip"><i class="fa-solid fa-check" aria-hidden="true"></i> Long-term 10+ year journey</div>
+        </article>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         7. RABBIT BREED COMPARISON (Responsive Table & Interactive)
+         ======================================================== -->
+    <div class="section-wrap" id="breed-comparison">
+      <div class="dog-topics-heading rabbit-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1">
+          <i class="fa-solid fa-paw" aria-hidden="true"></i>
+        </div>
+        <div class="paw paw-left-2">
+          <i class="fa-solid fa-paw" aria-hidden="true"></i>
+        </div>
+        <div class="paw paw-right-1">
+          <i class="fa-solid fa-paw" aria-hidden="true"></i>
+        </div>
+        <div class="paw paw-right-2">
+          <i class="fa-solid fa-paw" aria-hidden="true"></i>
+        </div>
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i> Comparative Overview
+          </span>
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Rabbit Breed <span>Comparison Guide</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+          <p>
+            Evaluate adult weight ranges, coat textures, grooming commitments, and general personality tendencies across major domestic breeds.
+          </p>
+        </div>
+      </div>
+
+      <!-- Full Comparison Table -->
+      <div class="table-container">
+        <div class="table-responsive">
+          <table class="breed-comparison-table">
+            <thead>
+              <tr>
+                <th>Breed Name</th>
+                <th>Size Category</th>
+                <th>Coat Type</th>
+                <th>Grooming Needs</th>
+                <th>General Characteristics</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="table-breed-name"><i class="fa-solid fa-carrot" aria-hidden="true"></i> Holland Lop</td>
+                <td>Small (0.9 – 1.8 kg)</td>
+                <td>Short, dense rollback fur</td>
+                <td>Weekly brushing</td>
+                <td>Curious, playful, floppy ears, people-friendly</td>
+              </tr>
+              <tr>
+                <td class="table-breed-name"><i class="fa-solid fa-carrot" aria-hidden="true"></i> Netherland Dwarf</td>
+                <td>Dwarf (0.5 – 1.1 kg)</td>
+                <td>Short, fine fur</td>
+                <td>Weekly brushing</td>
+                <td>Energetic, alert, petite upright ears, spirited</td>
+              </tr>
+              <tr>
+                <td class="table-breed-name"><i class="fa-solid fa-carrot" aria-hidden="true"></i> Mini Rex</td>
+                <td>Small (1.4 – 2.0 kg)</td>
+                <td>Velvety Rex plush fur</td>
+                <td>Gentle occasional wipe</td>
+                <td>Calm, docile, plush texture, affectionate</td>
+              </tr>
+              <tr>
+                <td class="table-breed-name"><i class="fa-solid fa-shield-cat" aria-hidden="true"></i> Dutch Rabbit</td>
+                <td>Medium (1.8 – 2.5 kg)</td>
+                <td>Short, glossy flyback fur</td>
+                <td>Weekly brushing</td>
+                <td>Gentle, sociable, iconic tuxedo blaze pattern</td>
+              </tr>
+              <tr>
+                <td class="table-breed-name"><i class="fa-solid fa-shield-cat" aria-hidden="true"></i> Lionhead</td>
+                <td>Small (1.1 – 1.7 kg)</td>
+                <td>Short coat + wool mane</td>
+                <td>3x weekly mane combing</td>
+                <td>Inquisitive, smart, playful, royal mane collar</td>
+              </tr>
+              <tr>
+                <td class="table-breed-name"><i class="fa-solid fa-shield-cat" aria-hidden="true"></i> English Angora</td>
+                <td>Medium (2.3 – 3.2 kg)</td>
+                <td>Dense specialty wool</td>
+                <td>Daily combing &amp; trimming</td>
+                <td>Placid, patient, needs dedicated coat keeper</td>
+              </tr>
+              <tr>
+                <td class="table-breed-name"><i class="fa-solid fa-paw" aria-hidden="true"></i> Flemish Giant</td>
+                <td>Giant (6.0 – 10.0+ kg)</td>
+                <td>Dense, glossy fur</td>
+                <td>Weekly brushing</td>
+                <td>Gentle giant, docile, companionable, large room needed</td>
+              </tr>
+              <tr>
+                <td class="table-breed-name"><i class="fa-solid fa-paw" aria-hidden="true"></i> New Zealand White</td>
+                <td>Large (4.1 – 5.4 kg)</td>
+                <td>Dense flyback fur</td>
+                <td>Weekly brushing</td>
+                <td>Steady, calm, robust health, relaxed nature</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Interactive Head-to-Head Comparison Tool -->
+      <div class="interactive-compare-box">
+        <h3 style="text-align: center; margin: 0 0 10px; font-family: Georgia, serif; font-size: 1.35rem; color: #22372a;">
+          <i class="fa-solid fa-code-compare" style="color: var(--rab-green-primary); margin-right: 8px;" aria-hidden="true"></i>
+          Head-to-Head Breed Comparator
+        </h3>
+        <p style="text-align: center; color: var(--rab-muted); margin: 0 0 24px; font-size: 0.9rem;">
+          Select any two rabbit breeds to examine their specific traits, adult size, coat type, and care requirements side by side.
+        </p>
+
+        <div class="compare-controls-row">
+          <div class="compare-select-wrap">
+            <label for="compareBreedA">First Breed</label>
+            <select id="compareBreedA">
+              <option value="holland-lop" selected>Holland Lop</option>
+              <option value="netherland-dwarf">Netherland Dwarf</option>
+              <option value="mini-rex">Mini Rex</option>
+              <option value="dutch">Dutch Rabbit</option>
+              <option value="lionhead">Lionhead</option>
+              <option value="flemish-giant">Flemish Giant</option>
+              <option value="english-angora">English Angora</option>
+              <option value="new-zealand">New Zealand White</option>
+            </select>
+          </div>
+
+          <div class="compare-vs-badge" aria-hidden="true">VS</div>
+
+          <div class="compare-select-wrap">
+            <label for="compareBreedB">Second Breed</label>
+            <select id="compareBreedB">
+              <option value="holland-lop">Holland Lop</option>
+              <option value="netherland-dwarf">Netherland Dwarf</option>
+              <option value="mini-rex">Mini Rex</option>
+              <option value="dutch">Dutch Rabbit</option>
+              <option value="lionhead">Lionhead</option>
+              <option value="flemish-giant" selected>Flemish Giant</option>
+              <option value="english-angora">English Angora</option>
+              <option value="new-zealand">New Zealand White</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="dynamic-compare-table">
+            <thead>
+              <tr>
+                <th>Trait</th>
+                <th id="compareHeadingA">Holland Lop</th>
+                <th id="compareHeadingB">Flemish Giant</th>
+              </tr>
+            </thead>
+            <tbody id="dynamicCompareBody">
+              <!-- Dynamically populated via JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         8. FINAL CTA (Soft Light Pink Background as required)
+         ======================================================== -->
+    <section class="cta section-wrap rabbit-cta" id="rabbit-cta">
+      <div>
+        <div class="eyebrow" style="color: #8c4451; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; font-size: 0.78rem; margin-bottom: 8px;">
+          START YOUR BUNNY JOURNEY
+        </div>
+        <h2>Every Bunny Deserves a <em>Loving Home.</em></h2>
+        <p>
+          Whether you are preparing to welcome an active young lop or caring for a faithful senior giant, PetSathi is here to guide and support you every step of the way with trusted care routines and nutrition advice.
+        </p>
+      </div>
+      <div class="cta-actions">
+        <a class="button button-light" href="care.html" id="cta-rabbit-care">
+          Explore Rabbit Care ↗
+        </a>
+        <a class="button button-outline" href="nutrition.html" id="cta-rabbit-nutrition">
+          Rabbit Nutrition Guide
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <!-- Footer Placeholder -->
   <div id="footer"></div>
 
-    <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">↑</button>
+  <!-- Main Site Scripts -->
+  <script src="../../../js/main.js"></script>
 
-    <script src="../../../js/main.js"></script>
-    <script>
-        // -----------------------------------------------------
-        // Breed search + size filter
-        // -----------------------------------------------------
-        (function () {
-            const searchInput = document.getElementById("breedSearch");
-            const sizeFilter = document.getElementById("sizeFilter");
-            const cards = Array.from(document.querySelectorAll(".rabbit-card"));
-            const resultsCount = document.getElementById("resultsCount");
-            const noResults = document.getElementById("noResults");
+  <!-- Page Interactivity Script -->
+  <script>
+    (function () {
+      // 1. Breed Database for Interactive Comparison
+      const breedData = {
+        "holland-lop": {
+          name: "Holland Lop",
+          size: "Small (~0.9 – 1.8 kg)",
+          appearance: "Compact rounded body, broad crown, drooping lop ears",
+          coat: "Short, dense rollback fur",
+          temperament: "Curious, affectionate, playful, people-friendly",
+          care: "Weekly brushing; periodic ear cleaning; daily floor exercise."
+        },
+        "netherland-dwarf": {
+          name: "Netherland Dwarf",
+          size: "Dwarf (~0.5 – 1.1 kg)",
+          appearance: "Tiny compact body, rounded head, short erect ears",
+          coat: "Short, fine, low-shedding fur",
+          temperament: "Alert, energetic, spirited, occasionally cautious",
+          care: "Light weekly brush; gentle floor handling; safe climbing tunnels."
+        },
+        "mini-rex": {
+          name: "Mini Rex",
+          size: "Small (~1.4 – 2.0 kg)",
+          appearance: "Compact, well-proportioned body with upright ears",
+          coat: "Velvety plush Rex fur (guard hairs equal undercoat)",
+          temperament: "Docile, calm, affectionate, easy-going",
+          care: "Soft cloth or gentle hand grooming; provide cushioned soft resting pads."
+        },
+        "dutch": {
+          name: "Dutch Rabbit",
+          size: "Medium (~1.8 – 2.5 kg)",
+          appearance: "White blaze on face, white neck collar and coloured saddle",
+          coat: "Short, glossy flyback fur",
+          temperament: "Intelligent, gentle, sociable, highly trainable",
+          care: "Regular weekly brushing; interactive foraging toys and mental puzzle games."
+        },
+        "lionhead": {
+          name: "Lionhead",
+          size: "Small (~1.1 – 1.7 kg)",
+          appearance: "Prominent wool mane encircling the head and chest",
+          coat: "Short body fur paired with long woolly mane",
+          temperament: "Inquisitive, lively, friendly, responsive",
+          care: "Comb mane 3x weekly to avoid tangles and accidental wool swallowing."
+        },
+        "english-angora": {
+          name: "English Angora",
+          size: "Medium (~2.3 – 3.2 kg)",
+          appearance: "Full-body wool covering face, ears, feet and tail",
+          coat: "Extremely soft, continuous-growth specialty wool",
+          temperament: "Placid, patient, exceptionally docile",
+          care: "Daily thorough combing; planned clipping or shearing every 90 days."
+        },
+        "flemish-giant": {
+          name: "Flemish Giant",
+          size: "Giant (~6.0 – 10.0+ kg)",
+          appearance: "Long, powerful muscular body with large V-shaped ears",
+          coat: "Dense, glossy rollback fur",
+          temperament: "Gentle giant, serene, patient, dog-like companionship",
+          care: "Substantial room-sized enclosure; heavy ceramic bowls; full-body lifting support."
+        },
+        "new-zealand": {
+          name: "New Zealand White",
+          size: "Large (~4.1 – 5.4 kg)",
+          appearance: "Deep, muscular frame with snowy coat and ruby eyes",
+          coat: "Dense flyback coat",
+          temperament: "Calm, steady, friendly, resilient",
+          care: "Weekly brushing; spacious exercise pen; plenty of clean fresh timothy hay."
+        }
+      };
 
-            function filterBreeds() {
-                const query = searchInput.value.trim().toLowerCase();
-                const selectedSize = sizeFilter.value;
-                let visibleCount = 0;
+      const selectA = document.getElementById("compareBreedA");
+      const selectB = document.getElementById("compareBreedB");
+      const headingA = document.getElementById("compareHeadingA");
+      const headingB = document.getElementById("compareHeadingB");
+      const tableBody = document.getElementById("dynamicCompareBody");
 
-                cards.forEach((card) => {
-                    const matchesText = card.dataset.search.toLowerCase().includes(query) ||
-                        card.querySelector("h3").textContent.toLowerCase().includes(query);
-                    const matchesSize = selectedSize === "all" || card.dataset.sizeClass === selectedSize;
-                    const visible = matchesText && matchesSize;
-                    card.hidden = !visible;
-                    if (visible) visibleCount += 1;
-                });
+      const features = [
+        ["Adult Size", "size"],
+        ["Appearance", "appearance"],
+        ["Coat Type", "coat"],
+        ["Temperament", "temperament"],
+        ["Care Needs", "care"]
+      ];
 
-                resultsCount.textContent = `Showing ${visibleCount} of ${cards.length} breeds`;
-                noResults.classList.toggle("visible", visibleCount === 0);
-            }
+      function updateComparison() {
+        if (!selectA || !selectB || !tableBody) return;
+        const breedA = breedData[selectA.value];
+        const breedB = breedData[selectB.value];
 
-            searchInput.addEventListener("input", filterBreeds);
-            sizeFilter.addEventListener("change", filterBreeds);
-        })();
+        headingA.textContent = breedA.name;
+        headingB.textContent = breedB.name;
+        tableBody.innerHTML = "";
 
-        // -----------------------------------------------------
-        // Side-by-side comparison data and rendering
-        // -----------------------------------------------------
-        (function () {
-            const breedData = {
-                "holland-lop": {
-                    name: "Holland Lop", size: "About 0.9–1.8 kg", appearance: "Compact body, broad head and drooping ears", coat: "Short, dense, normal fur", temperament: "Often curious, playful and affectionate", care: "Weekly brushing; check ears and teeth; provide ample exercise space."
-                },
-                "netherland-dwarf": {
-                    name: "Netherland Dwarf", size: "About 0.5–1.1 kg", appearance: "Very compact body, rounded head and upright ears", coat: "Short, fine fur", temperament: "Alert, energetic and sometimes cautious", care: "Light weekly brushing; gentle handling; full-size exercise space despite small body."
-                },
-                "lionhead": {
-                    name: "Lionhead", size: "About 1.1–1.7 kg", appearance: "Small body with a woolly mane around the head", coat: "Short coat plus longer wool mane", temperament: "Often active, inquisitive and sociable", care: "Comb mane several times weekly and check for tangles during moulting."
-                },
-                "mini-rex": {
-                    name: "Mini Rex", size: "About 1.4–2.0 kg", appearance: "Compact, rounded body", coat: "Short, dense and velvety Rex fur", temperament: "Often curious and gentle", care: "Light occasional brushing; check skin and paws; provide daily activity."
-                },
-                "dutch": {
-                    name: "Dutch Rabbit", size: "About 1.6–2.5 kg", appearance: "White blaze, white front and coloured saddle pattern", coat: "Short, smooth fur", temperament: "Often sociable and adaptable", care: "Weekly brushing, nail care and daily exercise."
-                },
-                "flemish-giant": {
-                    name: "Flemish Giant", size: "13 lb / 5.9 kg and above", appearance: "Very large, long and powerful body", coat: "Short, dense fur", temperament: "Often gentle, steady and docile", care: "Much larger floor space and equipment; careful handling with full body support."
-                },
-                "english-angora": {
-                    name: "English Angora", size: "About 2.3–3.2 kg", appearance: "Long wool covering body, face and ears", coat: "Dense, long wool", temperament: "Often calm and gentle", care: "Daily grooming and a planned clipping routine; prevent mats and keep the face clear."
-                },
-                "himalayan": {
-                    name: "Himalayan Rabbit", size: "About 1.1–2.0 kg", appearance: "Slender body; pale coat with dark nose, ears, feet and tail", coat: "Short, fine fur", temperament: "Often gentle and patient", care: "Weekly brushing; provide cool, well-ventilated housing and daily movement."
-                },
-                "harlequin": {
-                    name: "Harlequin Rabbit", size: "About 2.7–4.1 kg", appearance: "Contrasting two-colour bands or patches", coat: "Short, rollback fur", temperament: "Often active and curious", care: "Weekly brushing plus daily exercise, tunnels, toys and safe digging opportunities."
-                },
-                "new-zealand": {
-                    name: "New Zealand Rabbit", size: "About 4.1–5.0 kg", appearance: "Broad, muscular body; several recognised colours", coat: "Short, dense fur", temperament: "Often steady and calm", care: "Weekly brushing, ample floor space and a suitably large litter area."
-                }
-            };
+        features.forEach(([label, key]) => {
+          const row = document.createElement("tr");
 
-            const selectA = document.getElementById("compareBreedA");
-            const selectB = document.getElementById("compareBreedB");
-            const button = document.getElementById("compareButton");
-            const headingA = document.getElementById("compareHeadingA");
-            const headingB = document.getElementById("compareHeadingB");
-            const tableBody = document.getElementById("dynamicCompareBody");
-            const status = document.getElementById("compareStatus");
-            const features = [
-                ["Adult size", "size"],
-                ["Appearance", "appearance"],
-                ["Coat type", "coat"],
-                ["Temperament", "temperament"],
-                ["Care requirements", "care"]
-            ];
+          const featureCell = document.createElement("td");
+          featureCell.textContent = label;
 
-            function renderComparison() {
-                const first = breedData[selectA.value];
-                const second = breedData[selectB.value];
-                headingA.textContent = first.name;
-                headingB.textContent = second.name;
-                tableBody.replaceChildren();
+          const cellA = document.createElement("td");
+          cellA.textContent = breedA[key];
 
-                features.forEach(([label, key]) => {
-                    const row = document.createElement("tr");
-                    const featureCell = document.createElement("td");
-                    const firstCell = document.createElement("td");
-                    const secondCell = document.createElement("td");
-                    featureCell.textContent = label;
-                    firstCell.textContent = first[key];
-                    secondCell.textContent = second[key];
-                    row.append(featureCell, firstCell, secondCell);
-                    tableBody.appendChild(row);
-                });
+          const cellB = document.createElement("td");
+          cellB.textContent = breedB[key];
 
-                status.textContent = first.name === second.name
-                    ? `You selected ${first.name} twice. Choose two different breeds to compare them.`
-                    : `Showing ${first.name} and ${second.name}.`;
-            }
-
-            button.addEventListener("click", renderComparison);
-            selectA.addEventListener("change", renderComparison);
-            selectB.addEventListener("change", renderComparison);
-            renderComparison();
-        })();
-
-        // -----------------------------------------------------
-        // Image fallback: avoid broken-image icons if a source
-        // becomes unavailable. Source credits remain clickable.
-        // -----------------------------------------------------
-        document.querySelectorAll(".rabbit-image").forEach((image) => {
-            image.addEventListener("error", function () {
-                this.hidden = true;
-                const fallback = this.parentElement.querySelector(".rabbit-image-fallback");
-                if (fallback) fallback.hidden = false;
-            });
+          row.appendChild(featureCell);
+          row.appendChild(cellA);
+          row.appendChild(cellB);
+          tableBody.appendChild(row);
         });
+      }
 
-        // Back-to-top control
-        (function () {
-            const button = document.getElementById("backToTop");
-            function updateButton() {
-                button.classList.toggle("visible", window.scrollY > 450);
-            }
-            window.addEventListener("scroll", updateButton, { passive: true });
-            button.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
-            updateButton();
-        })();
-    </script>
+      if (selectA && selectB) {
+        selectA.addEventListener("change", updateComparison);
+        selectB.addEventListener("change", updateComparison);
+        updateComparison();
+      }
+
+      // 2. Interactive Search and Filter Functionality
+      const searchInput = document.getElementById("breedSearchInput");
+      const filterChips = document.querySelectorAll(".filter-chip");
+      const breedCards = document.querySelectorAll("#popularCardsGrid .rabbit-breed-card");
+
+      let currentFilter = "all";
+      let currentQuery = "";
+
+      function filterCards() {
+        breedCards.forEach((card) => {
+          const cardSize = card.getAttribute("data-size");
+          const cardName = card.getAttribute("data-name");
+          const cardText = card.textContent.toLowerCase();
+
+          const matchesFilter = (currentFilter === "all") || (cardSize === currentFilter);
+          const matchesQuery = !currentQuery || cardText.includes(currentQuery) || cardName.includes(currentQuery);
+
+          if (matchesFilter && matchesQuery) {
+            card.style.display = "flex";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener("input", function (e) {
+          currentQuery = e.target.value.trim().toLowerCase();
+          filterCards();
+        });
+      }
+
+      filterChips.forEach((chip) => {
+        chip.addEventListener("click", function () {
+          filterChips.forEach((c) => c.classList.remove("active"));
+          this.classList.add("active");
+          currentFilter = this.getAttribute("data-filter");
+          filterCards();
+        });
+      });
+
+      // 3. Back to Top Button Control
+      const backToTopBtn = document.getElementById("backToTop");
+      if (backToTopBtn) {
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 400) {
+            backToTopBtn.classList.add("visible");
+          } else {
+            backToTopBtn.classList.remove("visible");
+          }
+        }, { passive: true });
+
+        backToTopBtn.addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+    })();
+  </script>
 </body>
+
 </html>

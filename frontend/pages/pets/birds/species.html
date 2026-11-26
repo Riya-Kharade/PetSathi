@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,262 +19,573 @@
     <link rel="stylesheet" href="../../../css/global.css">
     <link rel="stylesheet" href="../../../css/home.css">
     <link rel="stylesheet" href="../../../css/inner.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
         /* =========================================
-           BIRD SPECIES PAGE
+           FONT AWESOME & BASE STYLES
         ========================================= */
+        @font-face {
+            font-family: "Font Awesome 6 Free";
+            font-style: normal;
+            font-weight: 900;
+            font-display: block;
+            src:
+                url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.woff2") format("woff2"),
+                url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.ttf") format("truetype");
+        }
+
+        :root {
+            --bird-pink-bg: #fdf2f4;
+            --bird-pink-border: #f5d5db;
+            --bird-pink-badge: #fce4e8;
+            --bird-pink-text: #9d2b45;
+        }
 
         body {
-            background: var(--cream);
+            background: #ffffff;
             overflow-x: hidden;
         }
 
-        /* Breadcrumb */
-
-        .bird-breadcrumb {
-            width: min(1160px, calc(100% - 48px));
-            margin: 20px auto;
-            display: flex;
-            align-items: center;
-            gap: 9px;
-            flex-wrap: wrap;
-            font-size: 0.82rem;
-            color: var(--muted);
+        /* Protect Font Awesome Icons */
+        body i[class*="fa-"],
+        body [class*="fa-"],
+        body .fa-solid,
+        body .fa-regular {
+            font-family: "Font Awesome 6 Free" !important;
+            font-style: normal !important;
+            line-height: 1 !important;
         }
-
-        .bird-breadcrumb a {
-            color: var(--green);
-            font-weight: 600;
+        body .fa-solid {
+            font-weight: 900 !important;
+        }
+        body .fa-regular {
+            font-weight: 400 !important;
         }
 
         /* =========================================
-           INTRO / HERO
+           HERO SECTION (Matching Dog & Cat Index)
         ========================================= */
-
-        .species-intro {
-            padding: 65px 24px 58px;
-            text-align: center;
-            background: linear-gradient(
-                135deg,
-                #f1f5ed 0%,
-                #fbfaf5 55%,
-                #f5f0e7 100%
-            );
-            border-top: 1px solid var(--line);
-            border-bottom: 1px solid var(--line);
+        .hero {
+            min-height: 540px;
+            padding-block: 45px 65px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 40px;
         }
 
-        .species-eyebrow {
+        .hero h1 {
+            max-width: 600px;
+            margin: 0 0 20px;
+        }
+
+        .hero-copy > p {
+            max-width: 550px;
+            font-size: 1.05rem;
+            line-height: 1.85;
+            color: var(--muted);
+        }
+
+        .bird-badge-strip {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
             gap: 8px;
-            padding: 7px 16px;
-            border-radius: 50px;
-            background: #e7efe5;
+            padding: 6px 14px;
+            background: #eaf2e9;
             color: var(--green);
-            font-size: 0.72rem;
-            font-weight: 800;
-            letter-spacing: 1.6px;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 1px;
             text-transform: uppercase;
+            margin-bottom: 16px;
         }
 
-        .species-intro h1 {
-            margin: 20px auto 16px;
-            max-width: 900px;
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            line-height: 1.13;
-            letter-spacing: -2px;
-            color: var(--ink);
+        .hero-actions {
+            display: flex;
+            gap: 13px;
+            flex-wrap: wrap;
+            margin-top: 27px;
         }
 
-        .species-intro h1 em {
+        .hero-note {
+            margin-top: 24px;
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        .hero-visual {
+            min-height: 430px;
+            position: relative;
+            display: grid;
+            place-items: center;
+        }
+
+        .hero-blob {
+            position: absolute;
+            width: 102%;
+            height: 104%;
+            background: radial-gradient(circle at 40% 40%, #d8ebd2 0%, #e8f4e5 55%, #daf0d7 100%);
+            border-radius: 48% 52% 42% 58%;
+            transform: scale(1.12) translate(14px, -10px);
+            z-index: 0;
+            box-shadow: inset 0 0 35px rgba(40, 104, 73, 0.08);
+        }
+
+        .hero-photo {
+            position: relative;
+            z-index: 1;
+            width: 82%;
+            height: 380px;
+            object-fit: cover;
+            object-position: center 25%;
+            border-radius: 48% 48% 24px 24px;
+            box-shadow: 0 18px 45px rgba(35, 57, 43, 0.15);
+        }
+
+        .floating-card {
+            position: absolute;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            padding: 12px 18px;
+            border-radius: 16px;
+            box-shadow: 0 10px 28px rgba(35, 57, 43, 0.12);
+            font-size: 1.15rem;
+            border: 1px solid rgba(220, 235, 201, 0.8);
+        }
+
+        .floating-card i {
             color: var(--green);
-            font-style: normal;
+            font-size: 1.25rem;
         }
 
-        .species-intro-description {
-            max-width: 760px;
-            margin: 0 auto;
-            color: #68766d;
-            font-size: 1.04rem;
-            line-height: 1.85;
+        .floating-card span {
+            display: grid;
+            text-align: left;
         }
 
-        .intro-divider {
-            width: 54px;
-            height: 3px;
-            margin: 27px auto 0;
-            border-radius: 10px;
-            background: var(--green);
-        }
-
-        /* =========================================
-           SPECIES SECTION
-        ========================================= */
-
-        .species-section {
-            width: min(1160px, calc(100% - 48px));
-            margin: auto;
-            padding: 66px 0 85px;
-        }
-
-        .species-section-heading {
-            text-align: center;
-            max-width: 720px;
-            margin: 0 auto 38px;
-        }
-
-        .species-section-heading h2 {
-            font-size: clamp(1.8rem, 3vw, 2.45rem);
-            margin: 10px 0;
+        .floating-card b {
+            font-size: 0.85rem;
             color: var(--ink);
         }
 
-        .species-section-heading p {
-            font-size: 0.94rem;
-            line-height: 1.75;
+        .floating-card small {
+            font-size: 0.72rem;
             color: var(--muted);
         }
 
+        .card-top {
+            top: 25px;
+            right: -10px;
+        }
+
+        .card-bottom {
+            bottom: 20px;
+            left: -10px;
+        }
+
         /* =========================================
-           BIRD GRID
+           SIGNATURE SECTION HEADING CARDS (Matching Dog & Cat Index)
         ========================================= */
+        main .species-topics-heading,
+        .species-topics-heading {
+            position: relative;
+            max-width: 1400px;
+            margin: 45px auto 35px;
+            padding: 44px 35px 38px;
+            overflow: hidden;
+            text-align: center;
+            border-radius: 35px;
+            border: 1px solid #dcebc9;
+            background: #fafcf7 !important;
+            box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
+        }
+
+        .corner-wave {
+            position: absolute;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .wave-tl {
+            top: 0;
+            left: 0;
+            width: 220px;
+            height: 130px;
+        }
+
+        .wave-br {
+            bottom: 0;
+            right: 0;
+            width: 220px;
+            height: 130px;
+        }
+
+        .heading-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .heading-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 7px 20px;
+            margin-bottom: 16px;
+            border-radius: 50px;
+            background: #edf6df;
+            border: 1px solid #dcebc9;
+            color: #246b43;
+            font-family: "DM Sans", "Manrope", sans-serif !important;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            box-shadow: 0 1px 4px rgba(36, 107, 67, 0.06);
+        }
+
+        .heading-label i {
+            font-size: 14px;
+            color: #246b43;
+            line-height: 1;
+        }
+
+        .species-topics-heading h2 {
+            color: #263b30;
+            font-family: Georgia, "Times New Roman", serif !important;
+            font-size: clamp(24px, 3.2vw, 36px);
+            font-weight: 700;
+            margin: 0 0 12px;
+            line-height: 1.2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .species-topics-heading h2 span {
+            color: #28764a;
+        }
+
+        .heading-burst {
+            display: inline-block;
+            position: relative;
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            vertical-align: middle;
+        }
+
+        .heading-burst span {
+            position: absolute;
+            background: #60a872;
+            border-radius: 9999px;
+        }
+
+        .heading-burst.left span {
+            right: 0;
+            transform-origin: right center;
+        }
+
+        .heading-burst.left span:nth-child(1) {
+            top: 3px;
+            width: 14px;
+            height: 2.8px;
+            transform: rotate(35deg);
+        }
+
+        .heading-burst.left span:nth-child(2) {
+            top: 11px;
+            width: 18px;
+            height: 2.8px;
+        }
+
+        .heading-burst.left span:nth-child(3) {
+            bottom: 3px;
+            width: 14px;
+            height: 2.8px;
+            transform: rotate(-35deg);
+        }
+
+        .heading-burst.right span {
+            left: 0;
+            transform-origin: left center;
+        }
+
+        .heading-burst.right span:nth-child(1) {
+            top: 3px;
+            width: 14px;
+            height: 2.8px;
+            transform: rotate(-35deg);
+        }
+
+        .heading-burst.right span:nth-child(2) {
+            top: 11px;
+            width: 18px;
+            height: 2.8px;
+        }
+
+        .heading-burst.right span:nth-child(3) {
+            bottom: 3px;
+            width: 14px;
+            height: 2.8px;
+            transform: rotate(35deg);
+        }
+
+        .species-topics-heading p {
+            max-width: 720px;
+            margin: 0 auto;
+            color: #64736a;
+            font-family: "DM Sans", "Manrope", sans-serif !important;
+            font-size: 15px;
+            line-height: 1.65;
+        }
+
+        .paw {
+            position: absolute;
+            color: rgba(115, 173, 91, 0.28);
+            z-index: 1;
+            pointer-events: none;
+            display: inline-block;
+            line-height: 1;
+        }
+
+        .paw-left-1 {
+            top: 66px;
+            left: 108px;
+            font-size: 58px;
+            transform: rotate(20deg);
+        }
+
+        .paw-left-2 {
+            bottom: 24px;
+            left: 82px;
+            font-size: 38px;
+            transform: rotate(-15deg);
+        }
+
+        .paw-right-1 {
+            top: 60px;
+            right: 75px;
+            font-size: 56px;
+            transform: rotate(18deg);
+        }
+
+        .paw-right-2 {
+            bottom: 35px;
+            right: 140px;
+            font-size: 38px;
+            transform: rotate(-15deg);
+        }
+
+        /* Filter Controls */
+        .species-filter-strip {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 0 auto 30px;
+            max-width: 1160px;
+            padding: 0 24px;
+        }
+
+        .species-filter-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            border-radius: 999px;
+            background: #ffffff;
+            border: 1px solid #d0ded1;
+            color: #3b5042;
+            font-size: 0.86rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .species-filter-btn:hover {
+            border-color: var(--green);
+            color: var(--green);
+            background: #f4faf5;
+        }
+
+        .species-filter-btn.active {
+            background: var(--green);
+            border-color: var(--green);
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(40, 104, 73, 0.16);
+        }
+
+        .filter-count {
+            display: inline-block;
+            font-size: 0.72rem;
+            padding: 2px 7px;
+            border-radius: 999px;
+            background: #edf5eb;
+            color: var(--green);
+        }
+
+        .species-filter-btn.active .filter-count {
+            background: rgba(255, 255, 255, 0.25);
+            color: #ffffff;
+        }
+
+        /* =========================================
+           SPECIES SECTION & CARDS GRID
+        ========================================= */
+        .species-section {
+            padding: 10px 0 70px;
+        }
 
         .bird-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 24px;
-        align-items: stretch;
-}
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            align-items: stretch;
+        }
 
         .bird-card {
-            min-width: 0;
+            background: white;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
-            background: #ffffff;
-            border: 1px solid var(--line);
-            border-radius: 17px;
-            overflow: hidden;
             transition:
-                transform 0.25s ease,
-                box-shadow 0.25s ease,
-                border-color 0.25s ease;
+                transform 0.28s ease,
+                box-shadow 0.28s ease,
+                border-color 0.28s ease;
         }
 
         .bird-card:hover {
-            transform: translateY(-5px);
-            border-color: #bfd1c0;
-            box-shadow: 0 13px 30px rgba(35, 57, 43, 0.09);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow);
+            border-color: #cbd9ce;
         }
 
-        /* Medium-height image */
-
-        .bird-image-wrap {
+        .bird-card-media {
             position: relative;
-            height: 165px;
-            flex-shrink: 0;
+            height: 200px;
             overflow: hidden;
-            background: #edf2e9;
+            background: #f0f3eb;
+            flex-shrink: 0;
         }
 
-        .bird-image {
-            display: block;
+        .bird-card-media img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.4s ease;
+            transition: transform 0.35s ease;
         }
 
-        .bird-card:hover .bird-image {
-            transform: scale(1.045);
+        .bird-card:hover .bird-card-media img {
+            transform: scale(1.05);
         }
 
-        .bird-number {
+        .bird-card-badge {
             position: absolute;
-            top: 12px;
-            left: 12px;
-            display: grid;
-            place-items: center;
-            width: 32px;
-            height: 32px;
+            top: 14px;
+            left: 14px;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(4px);
+            padding: 5px 12px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .bird-card-badge i {
+            color: var(--green);
+            font-size: 0.85rem;
+        }
+
+        .bird-card-number {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(4px);
             color: var(--green);
-            font-size: 0.76rem;
+            font-size: 0.74rem;
             font-weight: 800;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            display: grid;
+            place-items: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
         }
 
-        /* Card content */
-
         .bird-card-body {
-            padding: 17px;
+            padding: 24px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
+            text-align: center;
         }
 
-        .bird-category {
-            align-self: flex-start;
-            margin: 0 0 9px;
-            padding: 5px 10px;
-            background: #edf4ec;
-            color: var(--green);
-            border-radius: 30px;
-            font-size: 0.65rem;
-            font-weight: 800;
-            letter-spacing: 0.7px;
-            text-transform: uppercase;
-        }
-
-        .bird-card h3 {
+        .bird-card-body h3 {
+            font-size: 1.25rem;
+            margin: 0 0 6px;
             color: var(--ink);
-            font-size: 1.05rem;
-            line-height: 1.35;
-            letter-spacing: -0.3px;
-            margin: 0 0 10px;
-            min-height: 43px;
+            line-height: 1.3;
         }
-
-        /* Justified bird descriptions */
 
         .bird-description {
-            color: #68766d;
-            font-size: 0.82rem;
-            line-height: 1.65;
-            text-align: justify;
-            text-justify: inter-word;
-            hyphens: auto;
-            margin: 0 0 15px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0 0 16px;
+            color: var(--muted);
+            text-align: center;
             flex-grow: 1;
         }
 
-        /* Facts */
-
+        /* Facts Box */
         .bird-facts {
             display: grid;
-            gap: 8px;
-            padding: 12px;
-            background: #f5f7f2;
-            border-radius: 11px;
+            gap: 7px;
+            padding: 12px 14px;
+            background: #f7faf5;
+            border-radius: 12px;
             border: 1px solid #edf0e9;
             margin-top: auto;
+            margin-bottom: 14px;
+            text-align: left;
         }
 
         .bird-fact {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
+            align-items: center;
             gap: 8px;
-            font-size: 0.75rem;
-            line-height: 1.45;
+            font-size: 0.78rem;
+            line-height: 1.4;
         }
 
         .bird-fact span {
             color: var(--muted);
-            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .bird-fact span i {
+            color: var(--green);
+            font-size: 0.8rem;
+            width: 14px;
+            text-align: center;
         }
 
         .bird-fact strong {
@@ -285,28 +595,69 @@
         }
 
         .bird-traits {
-            color: #68766d;
-            font-size: 0.77rem;
-            line-height: 1.55;
-            margin: 13px 0 0;
-            padding-top: 11px;
+            color: #5d6d62;
+            font-size: 0.78rem;
+            line-height: 1.5;
+            margin: 0 0 16px;
+            padding-top: 10px;
             border-top: 1px solid var(--line);
+            text-align: center;
         }
 
         .bird-traits strong {
             color: var(--green);
         }
 
-        /* =========================================
-           COMPARISON SECTION
-        ========================================= */
+        /* Card Button matching Dog & Cat index style */
+        .bird-card-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 40px;
+            padding: 8px 18px;
+            border-radius: 999px;
+            background: #ffffff;
+            border: 1px solid #c9d8cb;
+            color: var(--green);
+            font-size: 0.86rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.22s ease;
+            align-self: center;
+            margin-top: auto;
+            box-shadow: 0 2px 6px rgba(40, 104, 73, 0.05);
+        }
 
+        .bird-card-btn:hover {
+            background: var(--green);
+            border-color: var(--green);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(40, 104, 73, 0.18);
+        }
+
+        .bird-card-btn i {
+            font-size: 0.78rem;
+            transition: transform 0.2s ease;
+        }
+
+        .bird-card-btn:hover i {
+            transform: translateX(3px);
+        }
+
+        /* =========================================
+           COMPARISON SECTION (Matching Darshan's recommendation)
+        ========================================= */
+        main section.comparison-section,
+        main .comparison-section,
+        section.comparison-section,
         .comparison-section {
             width: 100%;
-            padding: 75px 24px 80px;
-            background: #f0f4ed;
-            border-top: 1px solid #e2e9df;
-            border-bottom: 1px solid #e2e9df;
+            padding: 60px 0 75px;
+            background-color: #fafcf8 !important;
+            background: #fafcf8 !important;
+            border: none !important;
         }
 
         .comparison-inner {
@@ -314,56 +665,59 @@
             margin: 0 auto;
         }
 
-        .comparison-heading {
-            display: block;
-            width: 100%;
-            max-width: 760px;
-            margin: 0 auto 38px;
-            text-align: center;
-        }
-
-        .comparison-kicker {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 7px 15px;
-            border-radius: 30px;
-            background: #e0ebdf;
-            color: var(--green);
-            font-size: 0.72rem;
-            font-weight: 800;
-            letter-spacing: 1.6px;
-            text-transform: uppercase;
-            margin-bottom: 14px;
-        }
-
-        .comparison-heading h2 {
-            margin: 0 0 13px;
-            color: var(--ink);
-            font-size: clamp(2rem, 3.5vw, 2.85rem);
-            line-height: 1.2;
-            letter-spacing: -1.5px;
-        }
-
-        .comparison-heading p {
-            max-width: 690px;
-            margin: 0 auto;
-            color: #68766d;
-            font-size: 0.98rem;
-            line-height: 1.8;
-        }
-
-        /* Table container */
-
         .comparison-table-wrap {
             width: 100%;
             max-width: 100%;
             overflow-x: auto;
             background: white;
             border: 1px solid var(--line);
-            border-radius: 17px;
+            border-radius: 20px;
             box-shadow: 0 9px 28px rgba(35, 57, 43, 0.05);
             -webkit-overflow-scrolling: touch;
+        }
+
+        .comparison-table-controls {
+            padding: 16px 20px;
+            background: #f4faf5;
+            border-bottom: 1px solid var(--line);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .table-search-input-wrap {
+            position: relative;
+            flex: 1;
+            max-width: 320px;
+        }
+
+        .table-search-input-wrap i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        .table-search-input {
+            width: 100%;
+            padding: 8px 12px 8px 34px;
+            border: 1px solid #d3ded2;
+            border-radius: 999px;
+            font-size: 0.84rem;
+            outline: none;
+            font-family: inherit;
+            background: #ffffff;
+            color: var(--ink);
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .table-search-input:focus {
+            border-color: var(--green);
+            box-shadow: 0 0 0 3px rgba(40, 104, 73, 0.1);
         }
 
         .comparison-table {
@@ -375,33 +729,80 @@
         }
 
         .comparison-table th {
-            padding: 17px 19px;
+            padding: 16px 20px;
             background: var(--green);
             color: white;
-            font-size: 0.82rem;
+            font-size: 0.84rem;
             font-weight: 700;
             white-space: nowrap;
         }
 
-        .comparison-table td {
-            padding: 15px 19px;
-            color: #59675e;
-            font-size: 0.82rem;
-            border-bottom: 1px solid #e9eee7;
-            line-height: 1.5;
+        .comparison-table th i {
+            margin-right: 6px;
         }
 
-        .comparison-table td:first-child {
+        .comparison-table td {
+            padding: 14px 20px;
+            color: #59675e;
+            font-size: 0.84rem;
+            border-bottom: 1px solid #e9eee7;
+            line-height: 1.5;
+            vertical-align: middle;
+        }
+
+        .table-bird-name-cell {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             font-weight: 700;
             color: var(--ink);
         }
 
+        .table-bird-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+            flex-shrink: 0;
+        }
+
+        .care-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 0.74rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .care-badge.moderate {
+            background: #edf6df;
+            color: var(--green);
+            border: 1px solid #dcebc9;
+        }
+
+        .care-badge.intermediate {
+            background: #eef4fb;
+            color: #1e5a8a;
+            border: 1px solid #d4e3f3;
+        }
+
+        .care-badge.advanced {
+            background: #fdf2f4;
+            color: #9d2b45;
+            border: 1px solid #f5d5db;
+        }
+
         .comparison-table tbody tr:nth-child(even) {
-            background: #fafbf8;
+            background: #fafcf8;
         }
 
         .comparison-table tbody tr:hover {
-            background: #edf4ec;
+            background: #edf5eb;
         }
 
         .comparison-table tbody tr:last-child td {
@@ -412,61 +813,86 @@
             display: none;
             margin: 12px 0 0;
             color: var(--muted);
-            font-size: 0.76rem;
+            font-size: 0.78rem;
             text-align: center;
         }
 
         .comparison-note {
-            margin: 17px 0 0;
+            margin: 18px 0 0;
             color: #718078;
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             line-height: 1.7;
             text-align: left;
         }
 
         /* =========================================
-           RESPONSIBLE OWNERSHIP
+           RESPONSIBLE BIRD OWNERSHIP (Matching Dog & Cat Index)
         ========================================= */
+        main section.ownership-section-wrap,
+        main .ownership-section-wrap,
+        section.ownership-section-wrap,
+        .ownership-section-wrap {
+            padding: 40px 0 75px;
+            background-color: #ffffff !important;
+            background: #ffffff !important;
+        }
 
-        .ownership-section {
-            width: min(1000px, calc(100% - 48px));
-            margin: 70px auto;
-            padding: 36px;
+        /* 3 Structured Pillars */
+        .ownership-pillars {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .ownership-pillar {
+            background: #ffffff;
             border: 1px solid var(--line);
-            border-radius: 19px;
-            background: white;
-            text-align: center;
+            border-radius: 16px;
+            padding: 22px 20px;
+            box-shadow: 0 2px 10px rgba(35, 75, 45, 0.03);
         }
 
-        .ownership-icon {
-            font-size: 2.2rem;
+        .ownership-pillar-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: #edf6df;
+            color: var(--green);
+            display: grid;
+            place-items: center;
+            font-size: 1.1rem;
+            margin-bottom: 14px;
         }
 
-        .ownership-section h2 {
-            margin: 12px 0;
+        .ownership-pillar h4 {
+            margin: 0 0 8px;
+            font-size: 1.05rem;
             color: var(--ink);
-            font-size: 1.7rem;
-            letter-spacing: -0.5px;
+            font-family: Georgia, "Times New Roman", serif;
         }
 
-        .ownership-section p {
-            max-width: 790px;
-            margin: 0 auto;
-            color: #68766d;
-            font-size: 0.9rem;
-            line-height: 1.85;
+        .ownership-pillar p {
+            margin: 0;
+            color: #64736a;
+            font-size: 0.85rem;
+            line-height: 1.6;
         }
 
         .legal-note {
-            margin-top: 18px;
-            padding: 14px 16px;
-            border-left: 3px solid var(--green);
-            border-radius: 7px;
-            background: #f1f5ef;
-            color: #59675e;
+            padding: 18px 22px;
+            border-left: 4px solid var(--green);
+            border-radius: 10px;
+            background: #edf4ec;
+            color: #4f5f54;
             text-align: left;
-            font-size: 0.83rem;
-            line-height: 1.7;
+            font-size: 0.86rem;
+            line-height: 1.75;
+        }
+
+        .legal-note strong {
+            color: var(--ink);
         }
 
         .legal-note a {
@@ -475,944 +901,1030 @@
             text-decoration: underline;
         }
 
-        /* =========================================
-           CTA
-        ========================================= */
-
-        .bird-cta {
-            padding: 65px 24px;
-            text-align: center;
-            background: linear-gradient(135deg, #1d5039, #286849);
-            color: white;
+        .ownership-links {
+            margin-top: 24px;
+            font-size: 0.86rem;
+            color: var(--muted);
         }
 
-        .bird-cta h2 {
-            margin: 0 auto 12px;
-            max-width: 750px;
-            color: white;
-            font-size: clamp(1.8rem, 3vw, 2.5rem);
-        }
-
-        .bird-cta p {
-            max-width: 620px;
-            margin: 0 auto 24px;
-            color: #e0eee3;
-            font-size: 0.95rem;
-            line-height: 1.8;
-        }
-
-        .bird-cta .button {
-            background: white;
+        .ownership-links a {
             color: var(--green);
-            border-color: white;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: color 0.2s;
         }
 
-        .bird-cta .button:hover {
-            background: #edf4ec;
+        .ownership-links a:hover {
             color: var(--dark);
         }
 
         /* =========================================
-           RESPONSIVE
+           FINAL LIGHT PINK CTA SECTION
         ========================================= */
+        main section.species-pink-cta-wrap,
+        main .species-pink-cta-wrap,
+        section.species-pink-cta-wrap,
+        .species-pink-cta-wrap {
+            padding: 20px 0 80px;
+            background-color: transparent !important;
+            background: transparent !important;
+        }
 
-        @media (max-width: 1050px) {
+        main .bird-pink-cta,
+        .bird-pink-cta {
+            position: relative;
+            background-color: var(--bird-pink-bg) !important;
+            background: var(--bird-pink-bg) !important;
+            border: 1px solid var(--bird-pink-border);
+            border-radius: 32px;
+            padding: 44px 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 32px;
+            margin: 0 auto;
+            max-width: 1160px;
+            width: calc(100% - 48px);
+            box-shadow: none !important;
+            overflow: hidden;
+        }
+
+        .bird-pink-cta .eyebrow {
+            display: block !important;
+            background: transparent !important;
+            border: none !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            text-shadow: none !important;
+            padding: 0 !important;
+            margin: 0 0 12px 0 !important;
+            width: auto !important;
+            color: var(--bird-pink-text) !important;
+            font-size: 0.75rem !important;
+            font-weight: 700 !important;
+            letter-spacing: 1.5px !important;
+            text-transform: uppercase !important;
+            text-align: left !important;
+            justify-content: flex-start !important;
+        }
+
+        .bird-pink-cta h2 {
+            font-family: Georgia, "Times New Roman", serif !important;
+            font-size: clamp(1.7rem, 2.7vw, 2.25rem);
+            margin: 0 0 10px;
+            color: #1a251e;
+            line-height: 1.25;
+            text-align: left !important;
+        }
+
+        .bird-pink-cta h2 em {
+            color: var(--green);
+            font-style: normal;
+        }
+
+        .bird-pink-cta p {
+            color: #55665b;
+            font-size: 0.95rem;
+            max-width: 620px;
+            margin: 0;
+            line-height: 1.65;
+            text-align: left !important;
+        }
+
+        .bird-pink-cta-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            flex-shrink: 0;
+        }
+
+        .bird-pink-cta-actions .button {
+            background: var(--green);
+            color: white;
+            border-color: var(--green);
+        }
+
+        .bird-pink-cta-actions .button:hover {
+            background: var(--dark);
+            border-color: var(--dark);
+        }
+
+        .bird-pink-cta-actions .button-outline {
+            background: white;
+            color: var(--green);
+            border-color: var(--green);
+        }
+
+        .bird-pink-cta-actions .button-outline:hover {
+            background: #edf7f0;
+            color: var(--dark);
+        }
+
+        /* =========================================
+           RESPONSIVE DESIGN BREAKPOINTS
+        ========================================= */
+        @media (max-width: 1100px) {
             .bird-grid {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
+                grid-template-columns: repeat(3, 1fr);
+                gap: 18px;
             }
         }
 
-        @media (max-width: 780px) {
+        @media (max-width: 960px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 36px;
+                padding-block: 35px 50px;
+            }
+
+            .hero-copy {
+                text-align: center;
+            }
+
+            .hero-copy > p {
+                margin-inline: auto;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
             .bird-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 17px;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
             }
 
-            .species-intro {
-                padding: 55px 20px 48px;
+            .species-topics-heading {
+                padding: 35px 20px 30px;
             }
 
-            .species-section {
-                padding: 55px 0 65px;
+            .paw-left-1, .paw-left-2, .paw-right-1, .paw-right-2 {
+                display: none;
             }
 
-            .comparison-section {
-                padding: 60px 18px;
+            .ownership-pillars {
+                grid-template-columns: 1fr;
+                gap: 14px;
             }
 
-            .bird-image-wrap {
-                height: 155px;
+            .bird-pink-cta {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 34px 28px;
             }
         }
 
-        @media (max-width: 520px) {
-            .bird-breadcrumb,
-            .species-section,
-            .ownership-section {
-                width: calc(100% - 34px);
-            }
-
+        @media (max-width: 640px) {
             .bird-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
 
-            .bird-image-wrap {
-                height: 205px;
+            .bird-card-media {
+                height: 190px;
             }
 
             .bird-card-body {
-                padding: 18px;
+                padding: 20px 18px;
             }
 
-            .bird-card h3 {
-                min-height: auto;
-                font-size: 1.12rem;
+            .hero-photo {
+                width: 90%;
+                height: 300px;
             }
 
-            .bird-description {
-                font-size: 0.86rem;
+            .card-top {
+                top: 20px;
+                right: 0;
             }
 
-            .comparison-heading h2 {
-                font-size: 2rem;
+            .card-bottom {
+                bottom: 15px;
+                left: 0;
+            }
+
+            .ownership-card {
+                padding: 28px 20px;
             }
 
             .table-scroll-hint {
                 display: block;
             }
 
-            .ownership-section {
-                padding: 27px 20px;
+            .bird-pink-cta {
+                padding: 26px 20px;
+                width: calc(100% - 32px);
             }
 
-            .ownership-section h2 {
-                font-size: 1.45rem;
+            .bird-pink-cta-actions {
+                width: 100%;
+                flex-direction: column;
             }
 
-            .bird-cta {
-                padding: 52px 18px;
+            .bird-pink-cta-actions .button {
+                width: 100%;
+                text-align: center;
+                justify-content: center;
             }
         }
-
-                    /* =========================================
-                FOOTER ALIGNMENT
-                ========================================= */
-
-                .footer .footer-bottom {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr 1fr;
-                    align-items: center;
-                    gap: 16px;
-                    padding: 20px 0;
-                    border-top: 1px solid #dfe5dc;
-                    font-size: 0.82rem;
-                    color: #839087;
-                }
-
-                .footer-copyright {
-                    text-align: left;
-                }
-
-                .footer-credit {
-                    text-align: center;
-                }
-
-                .footer-tagline {
-                    text-align: right;
-                }
-
-                /* Mobile footer */
-
-                @media (max-width: 620px) {
-                    .footer .footer-bottom {
-                        grid-template-columns: 1fr;
-                        justify-items: center;
-                        gap: 9px;
-                        text-align: center;
-                    }
-
-                    .footer-copyright,
-                    .footer-credit,
-                    .footer-tagline {
-                        text-align: center;
-                    }
-                }
     </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
 
-    <!-- =========================================
-         HEADER - PETSATHI HOMEPAGE STYLE
-    ========================================= -->
+    <!-- Header -->
+    <div id="header"></div>
 
-  <div id="header"></div>
-
-
-    <main>
-
-
-
+    <main id="main-content">
 
         <!-- =========================================
-             INTRODUCTION
+             1. MAIN HERO SECTION (Matching Dog & Cat Index)
         ========================================= -->
-
-        <section class="species-intro">
-
-            <div class="species-eyebrow">
-                <span>✦</span>
-                Explore the Bird World
+        <section class="hero section-wrap" id="bird-hero">
+            <div class="hero-copy">
+                <div class="bird-badge-strip">
+                    <i class="fa-solid fa-feather-pointed" aria-hidden="true"></i> PetSathi • Avian Species Directory
+                </div>
+                <h1>Explore Popular Pet Bird <em>Species</em></h1>
+                <p>
+                    From cheerful whistling budgies and affectionate cockatiels to intelligent parrots and songful canaries, discover the unique personalities, lifespans, approximate adult sizes, and care needs of 10 popular companion bird species.
+                </p>
+                <div class="hero-actions">
+                    <a class="button" href="#bird-species" id="hero-cta-species">Explore Bird Species ↓</a>
+                    <a class="button button-outline" href="#comparison" id="hero-cta-compare">Compare Species ↗</a>
+                </div>
+                <div class="hero-note">
+                    <i class="fa-solid fa-heart" aria-hidden="true"></i> &nbsp; Dedicated to happy wings and healthy feathers.
+                </div>
             </div>
 
-            <h1>
-                Popular Pet Bird <em>Species</em>
-            </h1>
-
-            <p class="species-intro-description">
-                Every bird has different social, dietary, environmental
-                and enrichment needs. Learn about these popular companion
-                birds, their unique personalities and care requirements
-                before deciding which species may suit your household.
-            </p>
-
-            <div class="intro-divider"></div>
-
+            <div class="hero-visual">
+                <div class="hero-blob"></div>
+                <img
+                    src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=1000&q=85"
+                    alt="Colourful companion parrot perched elegantly with vibrant plumage"
+                    class="hero-photo"
+                    id="hero-bird-image"
+                />
+                <div class="floating-card card-top">
+                    <i class="fa-solid fa-sun" aria-hidden="true"></i>
+                    <span>
+                        <b>Vibrant & Melodic</b>
+                        <small>Playful feathered friends</small>
+                    </span>
+                </div>
+                <div class="floating-card card-bottom">
+                    <i class="fa-solid fa-seedling" aria-hidden="true"></i>
+                    <span>
+                        <b>Care & Companionship</b>
+                        <small>Lifelong joyful bonding</small>
+                    </span>
+                </div>
+            </div>
         </section>
 
-
         <!-- =========================================
-             BIRD SPECIES CARDS
+             2. SECTION TITLE: BIRD SPECIES CARDS
         ========================================= -->
-
-        <section class="species-section" id="bird-species">
-
-            <div class="species-section-heading">
-
-                <div class="species-eyebrow">
-                    10 Popular Species
+        <div class="section-wrap">
+            <div class="species-topics-heading" id="bird-species">
+                <svg
+                    class="corner-wave wave-tl"
+                    viewBox="0 0 220 130"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                >
+                    <path
+                        d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z"
+                        fill="#d8e8ce"
+                        opacity="0.7"
+                    />
+                    <path
+                        d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z"
+                        fill="#edf6e6"
+                        opacity="0.95"
+                    />
+                </svg>
+                <svg
+                    class="corner-wave wave-br"
+                    viewBox="0 0 220 130"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                >
+                    <path
+                        d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z"
+                        fill="#d8e8ce"
+                        opacity="0.7"
+                    />
+                    <path
+                        d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z"
+                        fill="#edf6e6"
+                        opacity="0.95"
+                    />
+                </svg>
+                <div class="paw paw-left-1">
+                    <i class="fa-solid fa-paw" aria-hidden="true"></i>
+                </div>
+                <div class="paw paw-left-2">
+                    <i class="fa-solid fa-paw" aria-hidden="true"></i>
+                </div>
+                <div class="paw paw-right-1">
+                    <i class="fa-solid fa-paw" aria-hidden="true"></i>
+                </div>
+                <div class="paw paw-right-2">
+                    <i class="fa-solid fa-paw" aria-hidden="true"></i>
                 </div>
 
-                <h2>Meet Our Feathered Companions</h2>
-
-                <p>
-                    Explore the characteristics, approximate adult size,
-                    lifespan and care needs of different companion birds.
-                </p>
-
+                <div class="heading-content">
+                    <div class="heading-label">
+                        <i class="fa-solid fa-dove" aria-hidden="true"></i>
+                        <span>10 POPULAR SPECIES</span>
+                    </div>
+                    <h2>
+                        <div class="heading-burst left" aria-hidden="true">
+                            <span></span><span></span><span></span>
+                        </div>
+                        Meet Our <span>Feathered Companions</span>
+                        <div class="heading-burst right" aria-hidden="true">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </h2>
+                    <p>
+                        Every bird has unique social, dietary, environmental, and enrichment needs. Explore each companion bird profile below to understand their personality, lifespan, size, and care level.
+                    </p>
+                </div>
             </div>
+        </div>
 
+        <!-- Filter Buttons -->
+        <div class="species-filter-strip">
+            <button class="species-filter-btn active" data-filter="all">
+                <i class="fa-solid fa-border-all"></i> All Birds <span class="filter-count">10</span>
+            </button>
+            <button class="species-filter-btn" data-filter="parakeet">
+                <i class="fa-solid fa-feather"></i> Parakeets <span class="filter-count">3</span>
+            </button>
+            <button class="species-filter-btn" data-filter="parrot">
+                <i class="fa-solid fa-dove"></i> Parrots <span class="filter-count">5</span>
+            </button>
+            <button class="species-filter-btn" data-filter="songbird">
+                <i class="fa-solid fa-music"></i> Songbirds <span class="filter-count">2</span>
+            </button>
+        </div>
 
+        <!-- =========================================
+             3. BIRD SPECIES CARDS (Consistent Dog & Cat Card Structure)
+        ========================================= -->
+        <section class="section-wrap species-section">
             <div class="bird-grid">
 
                 <!-- 01 BUDGERIGAR -->
-
-                <article class="bird-card">
-
-                    <div class="bird-image-wrap">
-
-                        <img class="bird-image"
+                <article class="bird-card" data-category="parakeet">
+                    <div class="bird-card-media">
+                        <img
                             src="https://images.unsplash.com/photo-1470662061953-318cd8c6c152?auto=format&fit=crop&w=900&q=85"
                             alt="Budgerigar perched on a branch"
                             loading="lazy"
-                            decoding="async">
-
-                        <span class="bird-number">01</span>
-
+                            decoding="async"
+                        />
+                        <span class="bird-card-badge">
+                            <i class="fa-solid fa-feather-pointed" aria-hidden="true"></i> Small Parakeet
+                        </span>
+                        <span class="bird-card-number">01</span>
                     </div>
-
                     <div class="bird-card-body">
-
-                        <span class="bird-category">Small Parakeet</span>
-
                         <h3>Budgerigar (Budgie)</h3>
-
                         <p class="bird-description">
-                            Budgerigars are small Australian parakeets
-                            known for their colourful feathers, cheerful
-                            chirping and curious personalities. They can
-                            learn whistles and may mimic simple words.
+                            Small, cheerful Australian parakeets celebrated for their playful spirit, vocal whistles, and sociable nature.
                         </p>
-
                         <div class="bird-facts">
-
                             <div class="bird-fact">
-                                <span>Size</span>
+                                <span><i class="fa-solid fa-ruler-vertical" aria-hidden="true"></i> Adult Size</span>
                                 <strong>About 18 cm</strong>
                             </div>
-
                             <div class="bird-fact">
-                                <span>Lifespan</span>
+                                <span><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Lifespan</span>
                                 <strong>5–10 years</strong>
                             </div>
-
                             <div class="bird-fact">
-                                <span>Care difficulty</span>
+                                <span><i class="fa-solid fa-gauge" aria-hidden="true"></i> Care Level</span>
                                 <strong>Moderate</strong>
                             </div>
-
                         </div>
-
                         <p class="bird-traits">
-                            <strong>Personality:</strong>
-                            Social, playful, active and curious.
+                            <strong>Personality:</strong> Social, playful, active, and curious.
                         </p>
-
+                        <a class="bird-card-btn" href="care.html">
+                            Explore Care Guide <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </article>
 
-
                 <!-- 02 COCKATIEL -->
-
-                <article class="bird-card">
-
-                    <div class="bird-image-wrap">
-
-                        <img class="bird-image"
+                <article class="bird-card" data-category="parrot">
+                    <div class="bird-card-media">
+                        <img
                             src="https://images.unsplash.com/photo-1759384278309-cef132b5db63?auto=format&fit=crop&w=900&q=85"
                             alt="Cockatiel with a distinctive crest"
                             loading="lazy"
-                            decoding="async">
-
-                        <span class="bird-number">02</span>
-
+                            decoding="async"
+                        />
+                        <span class="bird-card-badge">
+                            <i class="fa-solid fa-feather-pointed" aria-hidden="true"></i> Small Parrot
+                        </span>
+                        <span class="bird-card-number">02</span>
                     </div>
-
                     <div class="bird-card-body">
-
-                        <span class="bird-category">Small Parrot</span>
-
                         <h3>Cockatiel</h3>
-
                         <p class="bird-description">
-                            Cockatiels are Australian parrots recognised
-                            by their expressive crests and orange cheek
-                            patches. They often enjoy whistling, gentle
-                            interaction and spending time with familiar people.
+                            Recognised by expressive crests and orange cheeks, cockatiels enjoy gentle interaction, whistling, and human company.
                         </p>
-
                         <div class="bird-facts">
-
                             <div class="bird-fact">
-                                <span>Size</span>
+                                <span><i class="fa-solid fa-ruler-vertical" aria-hidden="true"></i> Adult Size</span>
                                 <strong>30–33 cm</strong>
                             </div>
-
                             <div class="bird-fact">
-                                <span>Lifespan</span>
+                                <span><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Lifespan</span>
                                 <strong>15–20 years</strong>
                             </div>
-
                             <div class="bird-fact">
-                                <span>Care difficulty</span>
+                                <span><i class="fa-solid fa-gauge" aria-hidden="true"></i> Care Level</span>
                                 <strong>Moderate</strong>
                             </div>
-
                         </div>
-
                         <p class="bird-traits">
-                            <strong>Personality:</strong>
-                            Gentle, affectionate, expressive and social.
+                            <strong>Personality:</strong> Gentle, affectionate, expressive, and social.
                         </p>
-
+                        <a class="bird-card-btn" href="care.html">
+                            Explore Care Guide <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </article>
 
-
                 <!-- 03 LOVEBIRD -->
-
-                <article class="bird-card">
-
-                    <div class="bird-image-wrap">
-
-                        <img class="bird-image"
+                <article class="bird-card" data-category="parrot">
+                    <div class="bird-card-media">
+                        <img
                             src="https://images.unsplash.com/photo-1748693783835-12e6d1cddbf1?auto=format&fit=crop&w=900&q=85"
                             alt="Colourful lovebird perched on a branch"
                             loading="lazy"
-                            decoding="async">
-
-                        <span class="bird-number">03</span>
-
+                            decoding="async"
+                        />
+                        <span class="bird-card-badge">
+                            <i class="fa-solid fa-feather-pointed" aria-hidden="true"></i> Small Parrot
+                        </span>
+                        <span class="bird-card-number">03</span>
                     </div>
-
                     <div class="bird-card-body">
-
-                        <span class="bird-category">Small Parrot</span>
-
                         <h3>Lovebird</h3>
-
                         <p class="bird-description">
-                            Lovebirds are small African parrots known for
-                            their colourful plumage and strong social bonds.
-                            They are energetic birds that need regular
-                            interaction, toys and mental stimulation.
+                            Small African parrots renowned for intense bonds, brilliant colour palettes, curiosity, and vibrant energy.
                         </p>
-
                         <div class="bird-facts">
-
                             <div class="bird-fact">
-                                <span>Size</span>
+                                <span><i class="fa-solid fa-ruler-vertical" aria-hidden="true"></i> Adult Size</span>
                                 <strong>13–17 cm</strong>
                             </div>
-
                             <div class="bird-fact">
-                                <span>Lifespan</span>
+                                <span><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Lifespan</span>
                                 <strong>10–20 years</strong>
                             </div>
-
                             <div class="bird-fact">
-                                <span>Care difficulty</span>
+                                <span><i class="fa-solid fa-gauge" aria-hidden="true"></i> Care Level</span>
                                 <strong>Intermediate</strong>
                             </div>
-
                         </div>
-
                         <p class="bird-traits">
-                            <strong>Personality:</strong>
-                            Energetic, bold, playful and affectionate.
+                            <strong>Personality:</strong> Energetic, bold, playful, and affectionate.
                         </p>
-
+                        <a class="bird-card-btn" href="care.html">
+                            Explore Care Guide <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </article>
-
 
                 <!-- 04 AFRICAN GREY -->
-
-                <article class="bird-card">
-
-                    <div class="bird-image-wrap">
-
-                        <img class="bird-image"
-                            src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=900&q=85"
-                            alt="African grey parrot"
+                <article class="bird-card" data-category="parrot">
+                    <div class="bird-card-media">
+                        <img
+                            src="https://images.unsplash.com/photo-1557001232-8b87133123dc?auto=format&fit=crop&w=900&q=85"
+                            alt="African grey parrot perched with distinctive grey plumage"
                             loading="lazy"
-                            decoding="async">
-
-                        <span class="bird-number">04</span>
-
+                            decoding="async"
+                        />
+                        <span class="bird-card-badge">
+                            <i class="fa-solid fa-feather-pointed" aria-hidden="true"></i> Large Parrot
+                        </span>
+                        <span class="bird-card-number">04</span>
                     </div>
-
                     <div class="bird-card-body">
-
-                        <span class="bird-category">Large Parrot</span>
-
                         <h3>African Grey Parrot</h3>
-
                         <p class="bird-description">
-                            African Grey Parrots are highly intelligent
-                            birds known for their vocal mimicry and
-                            problem-solving abilities. They require
-                            substantial mental stimulation, social
-                            interaction and long-term commitment.
+                            Extraordinarily intelligent avian companions famous for cognitive problem-solving, speech mimicry, and sensitivity.
                         </p>
-
                         <div class="bird-facts">
-
                             <div class="bird-fact">
-                                <span>Size</span>
+                                <span><i class="fa-solid fa-ruler-vertical" aria-hidden="true"></i> Adult Size</span>
                                 <strong>30–40 cm</strong>
                             </div>
-
                             <div class="bird-fact">
-                                <span>Lifespan</span>
+                                <span><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Lifespan</span>
                                 <strong>40–60 years</strong>
                             </div>
-
                             <div class="bird-fact">
-                                <span>Care difficulty</span>
+                                <span><i class="fa-solid fa-gauge" aria-hidden="true"></i> Care Level</span>
                                 <strong>Advanced</strong>
                             </div>
-
                         </div>
-
                         <p class="bird-traits">
-                            <strong>Personality:</strong>
-                            Intelligent, sensitive, observant and vocal.
+                            <strong>Personality:</strong> Intelligent, sensitive, observant, and vocal.
                         </p>
-
+                        <a class="bird-card-btn" href="care.html">
+                            Explore Care Guide <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </article>
 
-
                 <!-- 05 MACAW -->
-
-                <article class="bird-card">
-
-                    <div class="bird-image-wrap">
-
-                        <img class="bird-image"
+                <article class="bird-card" data-category="parrot">
+                    <div class="bird-card-media">
+                        <img
                             src="https://images.unsplash.com/photo-1706859686040-35c1fb6bf2dd?auto=format&fit=crop&w=900&q=85"
                             alt="Blue and yellow macaw perched on a branch"
                             loading="lazy"
-                            decoding="async">
-
-                        <span class="bird-number">05</span>
-
+                            decoding="async"
+                        />
+                        <span class="bird-card-badge">
+                            <i class="fa-solid fa-feather-pointed" aria-hidden="true"></i> Large Parrot
+                        </span>
+                        <span class="bird-card-number">05</span>
                     </div>
-
                     <div class="bird-card-body">
-
-                        <span class="bird-category">Large Parrot</span>
-
                         <h3>Macaw</h3>
-
                         <p class="bird-description">
-                            Macaws are large, colourful parrots native
-                            to Central and South America. Their striking
-                            plumage and intelligence make them fascinating
-                            birds, but they need substantial space,
-                            enrichment and experienced care.
+                            Magnificent, colourful parrots native to tropical Americas demanding spacious aviaries, foraging toys, and devotion.
                         </p>
-
                         <div class="bird-facts">
-
                             <div class="bird-fact">
-                                <span>Size</span>
+                                <span><i class="fa-solid fa-ruler-vertical" aria-hidden="true"></i> Adult Size</span>
                                 <strong>Up to 86 cm*</strong>
                             </div>
-
                             <div class="bird-fact">
-                                <span>Lifespan</span>
+                                <span><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Lifespan</span>
                                 <strong>30–60 years</strong>
                             </div>
-
                             <div class="bird-fact">
-                                <span>Care difficulty</span>
+                                <span><i class="fa-solid fa-gauge" aria-hidden="true"></i> Care Level</span>
                                 <strong>Advanced</strong>
                             </div>
-
                         </div>
-
                         <p class="bird-traits">
-                            <strong>Personality:</strong>
-                            Playful, intelligent, expressive and loud.
+                            <strong>Personality:</strong> Playful, intelligent, expressive, and loud.
                         </p>
-
+                        <a class="bird-card-btn" href="care.html">
+                            Explore Care Guide <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </article>
 
-
                 <!-- 06 COCKATOO -->
-
-                <article class="bird-card">
-
-                    <div class="bird-image-wrap">
-
-                        <img class="bird-image"
+                <article class="bird-card" data-category="parrot">
+                    <div class="bird-card-media">
+                        <img
                             src="https://images.unsplash.com/photo-1611081915537-f2991009d941?auto=format&fit=crop&w=900&q=85"
                             alt="White cockatoo with an expressive crest"
                             loading="lazy"
-                            decoding="async">
-
-                        <span class="bird-number">06</span>
-
+                            decoding="async"
+                        />
+                        <span class="bird-card-badge">
+                            <i class="fa-solid fa-feather-pointed" aria-hidden="true"></i> Large Parrot
+                        </span>
+                        <span class="bird-card-number">06</span>
                     </div>
-
                     <div class="bird-card-body">
-
-                        <span class="bird-category">Large Parrot</span>
-
                         <h3>Cockatoo</h3>
-
                         <p class="bird-description">
-                            Cockatoos are recognisable by their expressive
-                            crests and powerful beaks. Many form strong
-                            bonds with caregivers and require extensive
-                            interaction, exercise and safe chewing activities.
+                            Charismatic birds with mobile crests requiring substantial attention, active enrichment, and affectionate routine care.
                         </p>
-
                         <div class="bird-facts">
-
                             <div class="bird-fact">
-                                <span>Size</span>
+                                <span><i class="fa-solid fa-ruler-vertical" aria-hidden="true"></i> Adult Size</span>
                                 <strong>30–60 cm*</strong>
                             </div>
-
                             <div class="bird-fact">
-                                <span>Lifespan</span>
+                                <span><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Lifespan</span>
                                 <strong>25–50 years</strong>
                             </div>
-
                             <div class="bird-fact">
-                                <span>Care difficulty</span>
+                                <span><i class="fa-solid fa-gauge" aria-hidden="true"></i> Care Level</span>
                                 <strong>Advanced</strong>
                             </div>
-
                         </div>
-
                         <p class="bird-traits">
-                            <strong>Personality:</strong>
-                            Social, expressive, affectionate and demanding.
+                            <strong>Personality:</strong> Social, expressive, affectionate, and demanding.
                         </p>
-
+                        <a class="bird-card-btn" href="care.html">
+                            Explore Care Guide <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </article>
 
-
                 <!-- 07 CANARY -->
-
-                <article class="bird-card">
-
-                    <div class="bird-image-wrap">
-
-                        <img class="bird-image"
+                <article class="bird-card" data-category="songbird">
+                    <div class="bird-card-media">
+                        <img
                             src="https://images.unsplash.com/photo-1591198936750-16d8e15edb9e?auto=format&fit=crop&w=900&q=85"
                             alt="Yellow canary perched on a branch"
                             loading="lazy"
-                            decoding="async">
-
-                        <span class="bird-number">07</span>
-
+                            decoding="async"
+                        />
+                        <span class="bird-card-badge">
+                            <i class="fa-solid fa-feather-pointed" aria-hidden="true"></i> Songbird
+                        </span>
+                        <span class="bird-card-number">07</span>
                     </div>
-
                     <div class="bird-card-body">
-
-                        <span class="bird-category">Songbird</span>
-
                         <h3>Canary</h3>
-
                         <p class="bird-description">
-                            Canaries are small songbirds well known
-                            for their beautiful singing and bright
-                            plumage. They are often enjoyed for their
-                            activity and varied songs, although many
-                            prefer gentle observation over handling.
+                            Delightful songbirds famous for their melodious singing, cheerful dispositions, and preference for gentle observation.
                         </p>
-
                         <div class="bird-facts">
-
                             <div class="bird-fact">
-                                <span>Size</span>
+                                <span><i class="fa-solid fa-ruler-vertical" aria-hidden="true"></i> Adult Size</span>
                                 <strong>12–13 cm</strong>
                             </div>
-
                             <div class="bird-fact">
-                                <span>Lifespan</span>
+                                <span><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Lifespan</span>
                                 <strong>10–15 years</strong>
                             </div>
-
                             <div class="bird-fact">
-                                <span>Care difficulty</span>
+                                <span><i class="fa-solid fa-gauge" aria-hidden="true"></i> Care Level</span>
                                 <strong>Intermediate</strong>
                             </div>
-
                         </div>
-
                         <p class="bird-traits">
-                            <strong>Personality:</strong>
-                            Active, alert, independent and musical.
+                            <strong>Personality:</strong> Active, alert, independent, and musical.
                         </p>
-
+                        <a class="bird-card-btn" href="care.html">
+                            Explore Care Guide <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </article>
-
 
                 <!-- 08 FINCH -->
-
-                <article class="bird-card">
-
-                    <div class="bird-image-wrap">
-
-                        <img class="bird-image"
-                            src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=900&q=85"
-                            alt="Small finch-like bird perched on a branch"
+                <article class="bird-card" data-category="songbird">
+                    <div class="bird-card-media">
+                        <img
+                            src="https://images.unsplash.com/photo-1757955242837-8ab07990f8aa?auto=format&fit=crop&w=900&q=85"
+                            alt="Small zebra finches perched on a branch"
                             loading="lazy"
-                            decoding="async">
-
-                        <span class="bird-number">08</span>
-
+                            decoding="async"
+                        />
+                        <span class="bird-card-badge">
+                            <i class="fa-solid fa-feather-pointed" aria-hidden="true"></i> Small Songbird
+                        </span>
+                        <span class="bird-card-number">08</span>
                     </div>
-
                     <div class="bird-card-body">
-
-                        <span class="bird-category">Small Songbird</span>
-
                         <h3>Finch (Zebra Finch)</h3>
-
                         <p class="bird-description">
-                            Finches are small, lively birds often kept
-                            in compatible groups. Zebra finches are
-                            popular for their cheerful calls and active
-                            social behaviour. They usually prefer
-                            observing rather than being handled.
+                            Tiny, active flock birds popular for gentle beeping chirps, bustling social activities, and low-handling lifestyles.
                         </p>
-
                         <div class="bird-facts">
-
                             <div class="bird-fact">
-                                <span>Size</span>
+                                <span><i class="fa-solid fa-ruler-vertical" aria-hidden="true"></i> Adult Size</span>
                                 <strong>10–12 cm</strong>
                             </div>
-
                             <div class="bird-fact">
-                                <span>Lifespan</span>
+                                <span><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Lifespan</span>
                                 <strong>5–10 years</strong>
                             </div>
-
                             <div class="bird-fact">
-                                <span>Care difficulty</span>
+                                <span><i class="fa-solid fa-gauge" aria-hidden="true"></i> Care Level</span>
                                 <strong>Intermediate</strong>
                             </div>
-
                         </div>
-
                         <p class="bird-traits">
-                            <strong>Personality:</strong>
-                            Social, active, alert and gentle.
+                            <strong>Personality:</strong> Social, active, alert, and gentle.
                         </p>
-
+                        <a class="bird-card-btn" href="care.html">
+                            Explore Care Guide <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </article>
-
 
                 <!-- 09 CONURE -->
-
-                <article class="bird-card">
-
-                    <div class="bird-image-wrap">
-
-                        <img class="bird-image"
+                <article class="bird-card" data-category="parrot">
+                    <div class="bird-card-media">
+                        <img
                             src="https://images.unsplash.com/photo-1705603476680-1d87835e8850?auto=format&fit=crop&w=900&q=85"
-                            alt="Green conure perched on a branch"
+                            alt="Green-cheeked conure perched on a branch"
                             loading="lazy"
-                            decoding="async">
-
-                        <span class="bird-number">09</span>
-
+                            decoding="async"
+                        />
+                        <span class="bird-card-badge">
+                            <i class="fa-solid fa-feather-pointed" aria-hidden="true"></i> Small Parrot
+                        </span>
+                        <span class="bird-card-number">09</span>
                     </div>
-
                     <div class="bird-card-body">
-
-                        <span class="bird-category">Small Parrot</span>
-
                         <h3>Green-cheeked Conure</h3>
-
                         <p class="bird-description">
-                            Green-cheeked conures are playful small
-                            parrots known for their curious nature.
-                            They enjoy climbing, exploring toys,
-                            learning simple activities and interacting
-                            with familiar caregivers.
+                            Inquisitive, acrobatic small parrots that thrive on puzzle toys, playful interaction, and warm companionship.
                         </p>
-
                         <div class="bird-facts">
-
                             <div class="bird-fact">
-                                <span>Size</span>
+                                <span><i class="fa-solid fa-ruler-vertical" aria-hidden="true"></i> Adult Size</span>
                                 <strong>25–27 cm</strong>
                             </div>
-
                             <div class="bird-fact">
-                                <span>Lifespan</span>
+                                <span><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Lifespan</span>
                                 <strong>15–25 years</strong>
                             </div>
-
                             <div class="bird-fact">
-                                <span>Care difficulty</span>
+                                <span><i class="fa-solid fa-gauge" aria-hidden="true"></i> Care Level</span>
                                 <strong>Intermediate</strong>
                             </div>
-
                         </div>
-
                         <p class="bird-traits">
-                            <strong>Personality:</strong>
-                            Curious, energetic, playful and affectionate.
+                            <strong>Personality:</strong> Curious, energetic, playful, and affectionate.
                         </p>
-
+                        <a class="bird-card-btn" href="care.html">
+                            Explore Care Guide <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </article>
 
-
                 <!-- 10 INDIAN RINGNECK -->
-
-                <article class="bird-card">
-
-                    <div class="bird-image-wrap">
-
-                        <img class="bird-image"
+                <article class="bird-card" data-category="parakeet">
+                    <div class="bird-card-media">
+                        <img
                             src="https://images.unsplash.com/photo-1628083371314-729e1291a595?auto=format&fit=crop&w=900&q=85"
                             alt="Green rose-ringed parakeet perched on a branch"
                             loading="lazy"
-                            decoding="async">
-
-                        <span class="bird-number">10</span>
-
+                            decoding="async"
+                        />
+                        <span class="bird-card-badge">
+                            <i class="fa-solid fa-feather-pointed" aria-hidden="true"></i> Parakeet
+                        </span>
+                        <span class="bird-card-number">10</span>
                     </div>
-
                     <div class="bird-card-body">
-
-                        <span class="bird-category">Parakeet</span>
-
                         <h3>Indian Ringneck Parakeet</h3>
-
                         <p class="bird-description">
-                            Indian Ringneck Parakeets are recognised
-                            by their long tails and curved beaks.
-                            They are intelligent, active birds known
-                            for their vocal abilities and distinctive
-                            appearance.
+                            Graceful, intelligent parakeets celebrated for long tail plumes, vocal clarity, and curious independent minds.
                         </p>
-
                         <div class="bird-facts">
-
                             <div class="bird-fact">
-                                <span>Size</span>
+                                <span><i class="fa-solid fa-ruler-vertical" aria-hidden="true"></i> Adult Size</span>
                                 <strong>38–42 cm*</strong>
                             </div>
-
                             <div class="bird-fact">
-                                <span>Lifespan</span>
+                                <span><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Lifespan</span>
                                 <strong>25–30 years</strong>
                             </div>
-
                             <div class="bird-fact">
-                                <span>Care difficulty</span>
+                                <span><i class="fa-solid fa-gauge" aria-hidden="true"></i> Care Level</span>
                                 <strong>Advanced</strong>
                             </div>
-
                         </div>
-
                         <p class="bird-traits">
-                            <strong>Personality:</strong>
-                            Independent, intelligent, active and vocal.
+                            <strong>Personality:</strong> Independent, intelligent, active, and vocal.
                         </p>
-
+                        <a class="bird-card-btn" href="care.html">
+                            Explore Care Guide <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </article>
 
             </div>
-
         </section>
 
-
         <!-- =========================================
-             SPECIES COMPARISON
+             4. SPECIES COMPARISON SECTION
         ========================================= -->
-
         <section class="comparison-section" id="comparison">
+            <div class="section-wrap">
 
-            <div class="comparison-inner">
-
-                <div class="comparison-heading">
-
-                    <div class="comparison-kicker">
-                        Compare Your Options
+                <div class="species-topics-heading" style="margin-top: 0;">
+                    <svg
+                        class="corner-wave wave-tl"
+                        viewBox="0 0 220 130"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                    >
+                        <path
+                            d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z"
+                            fill="#d8e8ce"
+                            opacity="0.7"
+                        />
+                        <path
+                            d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z"
+                            fill="#edf6e6"
+                            opacity="0.95"
+                        />
+                    </svg>
+                    <svg
+                        class="corner-wave wave-br"
+                        viewBox="0 0 220 130"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                    >
+                        <path
+                            d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z"
+                            fill="#d8e8ce"
+                            opacity="0.7"
+                        />
+                        <path
+                            d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z"
+                            fill="#edf6e6"
+                            opacity="0.95"
+                        />
+                    </svg>
+                    <div class="paw paw-left-1">
+                        <i class="fa-solid fa-paw" aria-hidden="true"></i>
+                    </div>
+                    <div class="paw paw-left-2">
+                        <i class="fa-solid fa-paw" aria-hidden="true"></i>
+                    </div>
+                    <div class="paw paw-right-1">
+                        <i class="fa-solid fa-paw" aria-hidden="true"></i>
+                    </div>
+                    <div class="paw paw-right-2">
+                        <i class="fa-solid fa-paw" aria-hidden="true"></i>
                     </div>
 
-                    <h2>Bird Species Comparison</h2>
-
-                    <p>
-                        Compare approximate sizes, lifespans and care
-                        requirements to better understand the differences
-                        between companion birds. Use this overview as
-                        a starting point when researching their individual needs.
-                    </p>
-
+                    <div class="heading-content">
+                        <div class="heading-label">
+                            <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i>
+                            <span>QUICK COMPARISON</span>
+                        </div>
+                        <h2>
+                            <div class="heading-burst left" aria-hidden="true">
+                                <span></span><span></span><span></span>
+                            </div>
+                            Companion Birds <span>Comparison Table</span>
+                            <div class="heading-burst right" aria-hidden="true">
+                                <span></span><span></span><span></span>
+                            </div>
+                        </h2>
+                        <p>
+                            Compare approximate adult sizes, typical lifespans, personality traits, and overall care levels across species at a glance.
+                        </p>
+                    </div>
                 </div>
 
-
                 <div class="comparison-table-wrap">
+                    <div class="comparison-table-controls">
+                        <div style="font-size: 0.84rem; color: var(--muted); font-weight: 600;">
+                            <i class="fa-solid fa-table-list" aria-hidden="true"></i> Showing <span id="table-row-count">10</span> companion bird species
+                        </div>
+                        <div class="table-search-input-wrap">
+                            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                            <input type="text" id="tableSearchInput" class="table-search-input" placeholder="Filter species comparison table..." aria-label="Filter comparison table" />
+                        </div>
+                    </div>
 
-                    <table class="comparison-table">
-
+                    <table class="comparison-table" id="speciesComparisonTable">
                         <thead>
                             <tr>
-                                <th scope="col">Bird Species</th>
-                                <th scope="col">Size</th>
-                                <th scope="col">Lifespan</th>
-                                <th scope="col">Personality</th>
-                                <th scope="col">Care Level</th>
+                                <th scope="col"><i class="fa-solid fa-dove" aria-hidden="true"></i> Bird Species</th>
+                                <th scope="col"><i class="fa-solid fa-ruler-vertical" aria-hidden="true"></i> Approximate Size</th>
+                                <th scope="col"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Lifespan</th>
+                                <th scope="col"><i class="fa-solid fa-face-smile" aria-hidden="true"></i> Personality</th>
+                                <th scope="col"><i class="fa-solid fa-gauge" aria-hidden="true"></i> Care Level</th>
                             </tr>
                         </thead>
-
                         <tbody>
-
                             <tr>
-                                <td>Budgerigar</td>
+                                <td>
+                                    <div class="table-bird-name-cell">
+                                        <img class="table-bird-avatar" src="https://images.unsplash.com/photo-1470662061953-318cd8c6c152?auto=format&fit=crop&w=120&q=80" alt="Budgerigar" loading="lazy" />
+                                        <span>Budgerigar (Budgie)</span>
+                                    </div>
+                                </td>
                                 <td>18 cm</td>
                                 <td>5–10 years</td>
                                 <td>Social and playful</td>
-                                <td>Moderate</td>
+                                <td><span class="care-badge moderate"><i class="fa-solid fa-check" aria-hidden="true"></i> Moderate</span></td>
                             </tr>
-
                             <tr>
-                                <td>Cockatiel</td>
+                                <td>
+                                    <div class="table-bird-name-cell">
+                                        <img class="table-bird-avatar" src="https://images.unsplash.com/photo-1759384278309-cef132b5db63?auto=format&fit=crop&w=120&q=80" alt="Cockatiel" loading="lazy" />
+                                        <span>Cockatiel</span>
+                                    </div>
+                                </td>
                                 <td>30–33 cm</td>
                                 <td>15–20 years</td>
                                 <td>Gentle and expressive</td>
-                                <td>Moderate</td>
+                                <td><span class="care-badge moderate"><i class="fa-solid fa-check" aria-hidden="true"></i> Moderate</span></td>
                             </tr>
-
                             <tr>
-                                <td>Lovebird</td>
+                                <td>
+                                    <div class="table-bird-name-cell">
+                                        <img class="table-bird-avatar" src="https://images.unsplash.com/photo-1748693783835-12e6d1cddbf1?auto=format&fit=crop&w=120&q=80" alt="Lovebird" loading="lazy" />
+                                        <span>Lovebird</span>
+                                    </div>
+                                </td>
                                 <td>13–17 cm</td>
                                 <td>10–20 years</td>
                                 <td>Energetic and affectionate</td>
-                                <td>Intermediate</td>
+                                <td><span class="care-badge intermediate"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> Intermediate</span></td>
                             </tr>
-
                             <tr>
-                                <td>African Grey</td>
+                                <td>
+                                    <div class="table-bird-name-cell">
+                                        <img class="table-bird-avatar" src="https://images.unsplash.com/photo-1557001232-8b87133123dc?auto=format&fit=crop&w=120&q=80" alt="African Grey" loading="lazy" />
+                                        <span>African Grey Parrot</span>
+                                    </div>
+                                </td>
                                 <td>30–40 cm</td>
                                 <td>40–60 years</td>
                                 <td>Intelligent and sensitive</td>
-                                <td>Advanced</td>
+                                <td><span class="care-badge advanced"><i class="fa-solid fa-star" aria-hidden="true"></i> Advanced</span></td>
                             </tr>
-
                             <tr>
-                                <td>Macaw</td>
-                                <td>Varies by species</td>
+                                <td>
+                                    <div class="table-bird-name-cell">
+                                        <img class="table-bird-avatar" src="https://images.unsplash.com/photo-1706859686040-35c1fb6bf2dd?auto=format&fit=crop&w=120&q=80" alt="Macaw" loading="lazy" />
+                                        <span>Macaw</span>
+                                    </div>
+                                </td>
+                                <td>Up to 86 cm*</td>
                                 <td>30–60 years</td>
                                 <td>Playful and expressive</td>
-                                <td>Advanced</td>
+                                <td><span class="care-badge advanced"><i class="fa-solid fa-star" aria-hidden="true"></i> Advanced</span></td>
                             </tr>
-
                             <tr>
-                                <td>Cockatoo</td>
-                                <td>Varies by species</td>
+                                <td>
+                                    <div class="table-bird-name-cell">
+                                        <img class="table-bird-avatar" src="https://images.unsplash.com/photo-1611081915537-f2991009d941?auto=format&fit=crop&w=120&q=80" alt="Cockatoo" loading="lazy" />
+                                        <span>Cockatoo</span>
+                                    </div>
+                                </td>
+                                <td>30–60 cm*</td>
                                 <td>25–50 years</td>
                                 <td>Affectionate and social</td>
-                                <td>Advanced</td>
+                                <td><span class="care-badge advanced"><i class="fa-solid fa-star" aria-hidden="true"></i> Advanced</span></td>
                             </tr>
-
                             <tr>
-                                <td>Canary</td>
+                                <td>
+                                    <div class="table-bird-name-cell">
+                                        <img class="table-bird-avatar" src="https://images.unsplash.com/photo-1591198936750-16d8e15edb9e?auto=format&fit=crop&w=120&q=80" alt="Canary" loading="lazy" />
+                                        <span>Canary</span>
+                                    </div>
+                                </td>
                                 <td>12–13 cm</td>
                                 <td>10–15 years</td>
                                 <td>Active and musical</td>
-                                <td>Intermediate</td>
+                                <td><span class="care-badge intermediate"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> Intermediate</span></td>
                             </tr>
-
                             <tr>
-                                <td>Zebra Finch</td>
+                                <td>
+                                    <div class="table-bird-name-cell">
+                                        <img class="table-bird-avatar" src="https://images.unsplash.com/photo-1757955242837-8ab07990f8aa?auto=format&fit=crop&w=120&q=80" alt="Zebra Finch" loading="lazy" />
+                                        <span>Zebra Finch</span>
+                                    </div>
+                                </td>
                                 <td>10–12 cm</td>
                                 <td>5–10 years</td>
                                 <td>Social and active</td>
-                                <td>Intermediate</td>
+                                <td><span class="care-badge intermediate"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> Intermediate</span></td>
                             </tr>
-
                             <tr>
-                                <td>Green-cheeked Conure</td>
+                                <td>
+                                    <div class="table-bird-name-cell">
+                                        <img class="table-bird-avatar" src="https://images.unsplash.com/photo-1705603476680-1d87835e8850?auto=format&fit=crop&w=120&q=80" alt="Conure" loading="lazy" />
+                                        <span>Green-cheeked Conure</span>
+                                    </div>
+                                </td>
                                 <td>25–27 cm</td>
                                 <td>15–25 years</td>
                                 <td>Curious and playful</td>
-                                <td>Intermediate</td>
+                                <td><span class="care-badge intermediate"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> Intermediate</span></td>
                             </tr>
-
                             <tr>
-                                <td>Indian Ringneck</td>
+                                <td>
+                                    <div class="table-bird-name-cell">
+                                        <img class="table-bird-avatar" src="https://images.unsplash.com/photo-1628083371314-729e1291a595?auto=format&fit=crop&w=120&q=80" alt="Indian Ringneck" loading="lazy" />
+                                        <span>Indian Ringneck Parakeet</span>
+                                    </div>
+                                </td>
                                 <td>38–42 cm*</td>
                                 <td>25–30 years</td>
                                 <td>Independent and intelligent</td>
-                                <td>Advanced</td>
+                                <td><span class="care-badge advanced"><i class="fa-solid fa-star" aria-hidden="true"></i> Advanced</span></td>
                             </tr>
-
                         </tbody>
-
                     </table>
-
                 </div>
 
                 <p class="table-scroll-hint">
@@ -1420,101 +1932,209 @@
                 </p>
 
                 <p class="comparison-note">
-                    *All measurements are approximate adult estimates.
-                    Size and lifespan vary by species, subspecies, individual
-                    health and living conditions. Care levels are general
-                    guidance rather than a measure of how easy a bird is to keep.
+                    *All measurements are approximate adult estimates. Size and lifespan vary by species, subspecies, individual health, and living conditions. Care levels are general guidance rather than a measure of how easy a bird is to keep.
+                </p>
+            </div>
+        </section>
+
+        <!-- =========================================
+             5. RESPONSIBLE BIRD OWNERSHIP SECTION
+        ========================================= -->
+        <section class="ownership-section-wrap" id="bird-care-pillars">
+            <div class="section-wrap">
+
+                <div class="species-topics-heading">
+                    <svg
+                        class="corner-wave wave-tl"
+                        viewBox="0 0 220 130"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                    >
+                        <path
+                            d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z"
+                            fill="#d8e8ce"
+                            opacity="0.7"
+                        />
+                        <path
+                            d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z"
+                            fill="#edf6e6"
+                            opacity="0.95"
+                        />
+                    </svg>
+                    <svg
+                        class="corner-wave wave-br"
+                        viewBox="0 0 220 130"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                    >
+                        <path
+                            d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z"
+                            fill="#d8e8ce"
+                            opacity="0.7"
+                        />
+                        <path
+                            d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z"
+                            fill="#edf6e6"
+                            opacity="0.95"
+                        />
+                    </svg>
+                    <div class="paw paw-left-1">
+                        <i class="fa-solid fa-paw" aria-hidden="true"></i>
+                    </div>
+                    <div class="paw paw-left-2">
+                        <i class="fa-solid fa-paw" aria-hidden="true"></i>
+                    </div>
+                    <div class="paw paw-right-1">
+                        <i class="fa-solid fa-paw" aria-hidden="true"></i>
+                    </div>
+                    <div class="paw paw-right-2">
+                        <i class="fa-solid fa-paw" aria-hidden="true"></i>
+                    </div>
+
+                    <div class="heading-content">
+                        <div class="heading-label">
+                            <i class="fa-solid fa-heart" aria-hidden="true"></i>
+                            <span>LIFELONG STEWARDSHIP</span>
+                        </div>
+                        <h2>
+                            <div class="heading-burst left" aria-hidden="true">
+                                <span></span><span></span><span></span>
+                            </div>
+                            Responsible <span>Bird Ownership Matters</span>
+                            <div class="heading-burst right" aria-hidden="true">
+                                <span></span><span></span><span></span>
+                            </div>
+                        </h2>
+                        <p>
+                            Birds require specialized knowledge, long-term commitment, and daily environmental enrichment. True care extends far beyond food and cage maintenance:
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 3 Pillars Grid -->
+                <div class="ownership-pillars">
+                    <div class="ownership-pillar">
+                        <div class="ownership-pillar-icon">
+                            <i class="fa-solid fa-house-chimney-window" aria-hidden="true"></i>
+                        </div>
+                        <h4>Spacious Flight & Safety</h4>
+                        <p>Provide the largest enclosure possible with varied natural perches, bird-proofed free-flight space, and freedom from toxic fumes (non-stick cookware, aerosol sprays).</p>
+                    </div>
+
+                    <div class="ownership-pillar">
+                        <div class="ownership-pillar-icon">
+                            <i class="fa-solid fa-bowl-rice" aria-hidden="true"></i>
+                        </div>
+                        <h4>Species-Tailored Nutrition</h4>
+                        <p>Supplement formulated pellets with vitamin-rich fresh vegetables, leafy chop, sprouted seeds, and clean drinking water daily to prevent deficiency disease.</p>
+                    </div>
+
+                    <div class="ownership-pillar">
+                        <div class="ownership-pillar-icon">
+                            <i class="fa-solid fa-user-doctor" aria-hidden="true"></i>
+                        </div>
+                        <h4>Enrichment & Avian Care</h4>
+                        <p>Birds mask symptoms of illness instinctively. Schedule annual checkups with an experienced avian veterinarian and rotate stimulating foraging and puzzle toys.</p>
+                    </div>
+                </div>
+
+                <div class="legal-note">
+                    <strong><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Important for readers in India:</strong>
+                    The Indian Ringneck profile is included for educational identification, not as a recommendation to keep one. The Rose-ringed Parakeet is listed under Schedule II of India's Wildlife (Protection) Act. Never capture wild birds. Always adhere to official Forest Department guidelines and legal mandates.
+                    <a href="https://stateofindiasbirds.in/species/rorpar/" target="_blank" rel="noopener noreferrer">
+                        View conservation information ↗
+                    </a>
+                </div>
+
+                <p class="ownership-links">
+                    Learn more about avian health:
+                    <a href="https://www.aav.org/" target="_blank" rel="noopener noreferrer">
+                        Association of Avian Veterinarians ↗
+                    </a>
+                    ·
+                    <a href="https://www.merckvetmanual.com/bird-owners" target="_blank" rel="noopener noreferrer">
+                        Merck Veterinary Manual ↗
+                    </a>
                 </p>
 
             </div>
-
         </section>
 
-
         <!-- =========================================
-             RESPONSIBLE BIRD OWNERSHIP
+             6. FINAL LIGHT PINK CTA SECTION
+             Heading: "Every Feathered Friend Deserves Care"
         ========================================= -->
-
-        <section class="ownership-section">
-
-            <div class="ownership-icon">💚</div>
-
-            <h2>Responsible Bird Ownership Matters</h2>
-
-            <p>
-                Birds need much more than food and a cage. They require
-                suitable living space, a balanced species-appropriate diet,
-                safe enrichment, daily observation and access to an
-                experienced avian veterinarian. Some parrots can live
-                for several decades, so their care is a serious
-                long-term commitment. Responsible adoption and legal,
-                ethical sourcing are important.
-            </p>
-
-            <div class="legal-note">
-                <strong>Important for readers in India:</strong>
-                The Indian Ringneck profile is included for educational
-                identification, not as a recommendation to keep one.
-                The Rose-ringed Parakeet is listed under Schedule II of
-                India's Wildlife (Protection) Act. Never capture a wild
-                bird. Check current requirements with the relevant
-                Forest Department.
-                <a href="https://stateofindiasbirds.in/species/rorpar/"
-                    target="_blank" rel="noopener noreferrer">
-                    View conservation information.
-                </a>
+        <section class="species-pink-cta-wrap" aria-labelledby="cta-heading">
+            <div class="bird-pink-cta">
+                <div>
+                    <div class="eyebrow">COMPASSIONATE BIRD CARE & COMPANIONSHIP</div>
+                    <h2 id="cta-heading">Every Feathered Friend Deserves <em>Care</em></h2>
+                    <p>
+                        From balanced daily nutrition and engaging foraging activities to proper cage hygiene and regular veterinary wellness checks, explore PetSathi's dedicated resources to give your companion birds the happiest, healthiest life.
+                    </p>
+                </div>
+                <div class="bird-pink-cta-actions">
+                    <a class="button" href="care.html" id="cta-bird-care">Explore Bird Care Guide ↗</a>
+                    <a class="button button-outline" href="index.html" id="cta-birds-index">Birds Overview</a>
+                </div>
             </div>
-
-            <p style="margin-top: 18px; font-size: 0.82rem;">
-                Learn more about bird care:
-                <a href="https://www.aav.org/"
-                    target="_blank" rel="noopener noreferrer"
-                    style="color: var(--green); font-weight: 700;">
-                    Association of Avian Veterinarians
-                </a>
-                ·
-                <a href="https://www.merckvetmanual.com/bird-owners"
-                    target="_blank" rel="noopener noreferrer"
-                    style="color: var(--green); font-weight: 700;">
-                    Merck Veterinary Manual
-                </a>
-            </p>
-
-        </section>
-
-
-        <!-- =========================================
-             CTA
-        ========================================= -->
-
-        <section class="bird-cta">
-
-            <h2>Every Feathered Friend Deserves Care 🐦</h2>
-
-            <p>
-                Understanding a bird's unique needs is the first
-                step towards responsible care. Explore more helpful
-                information with PetSathi.
-            </p>
-
-            <a class="button" href="index.html">
-                Explore Bird Care & Information ↗
-            </a>
-
         </section>
 
     </main>
 
-
-    <!-- =========================================
-         FOOTER - PETSATHI HOMEPAGE STYLE
-    ========================================= -->
-
-  <div id="footer"></div>
-
+    <!-- Footer -->
+    <div id="footer"></div>
 
     <script src="../../../js/main.js"></script>
+    <script>
+        // Category Filter for Bird Cards
+        const filterBtns = document.querySelectorAll('.species-filter-btn');
+        const birdCards = document.querySelectorAll('.bird-card');
 
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+                birdCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    if (filter === 'all' || category === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Filter for Comparison Table
+        const searchInput = document.getElementById('tableSearchInput');
+        const tableRows = document.querySelectorAll('#speciesComparisonTable tbody tr');
+        const countSpan = document.getElementById('table-row-count');
+
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase().trim();
+                let visibleCount = 0;
+
+                tableRows.forEach(row => {
+                    const text = row.textContent.toLowerCase();
+                    if (text.includes(query)) {
+                        row.style.display = '';
+                        visibleCount++;
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+
+                if (countSpan) {
+                    countSpan.textContent = visibleCount;
+                }
+            });
+        }
+    </script>
 </body>
 </html>
-

@@ -18,6 +18,7 @@
   <!-- Core PetSathi Stylesheets -->
   <link rel="stylesheet" href="../css/global.css">
   <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/inner.css">
   <link rel="stylesheet" href="../css/sitemap.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
@@ -64,38 +65,56 @@
   <main class="sitemap-main">
 
     <!-- ========================================================
-         2. HERO SECTION (Centered Clean Editorial Layout)
+         2. MAIN HERO SECTION (Matching Dog Index & Cat Index)
          ======================================================== -->
-    <section class="hero sitemap-hero-centered" id="sitemap-hero">
+    <section class="hero section-wrap" id="sitemap-hero">
       <div class="hero-copy">
-        <div class="cat-badge-strip sitemap-badge-strip">
-          🐾 PetSathi • Website Architecture &amp; Directory
+        <div class="sitemap-badge-strip">
+          <i class="fa-solid fa-compass" aria-hidden="true"></i>
+          <span>PetSathi • Complete Website Directory</span>
         </div>
-        <h1>Complete Website <span>Sitemap &amp; Directory</span></h1>
+        <h1>Complete Website <em>Sitemap &amp; Directory</em></h1>
         <p>
           Easily browse and explore all 47 verified pages across PetSathi. From species companion guides and daily
           walking networks to specialized care solutions, community stories, and account resources.
         </p>
         <div class="hero-actions">
           <a class="button" href="#sitemapHeadingWrap" id="hero-cta-search">
-            Explore 47 Pages ↓
+            Explore 47 Pages <i class="fa fa-arrow-right" aria-hidden="true"></i>
+
           </a>
           <a class="button button-outline" href="#sec-pet-info" id="hero-cta-guides">
-            Browse Care Guides ↗
+            Browse Care Guides
           </a>
         </div>
         <div class="hero-note">
-          ♥ &nbsp; 47 Active Pages • Verified Routes • Complete Platform Directory
+          <i class="fa-solid fa-circle-check" style="color: var(--green);" aria-hidden="true"></i> &nbsp; 47 Active
+          Pages • Verified Routes • Complete Platform Directory
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-blob"></div>
+        <img
+          src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"
+          alt="Loving companion dog and cat resting together peacefully representing PetSathi platform"
+          class="hero-photo" id="hero-sitemap-image" />
+        <div class="floating-card card-top">
+          <i class="fa-solid fa-paw" style="color: var(--green); font-size: 1.25rem;" aria-hidden="true"></i>
+          <span><b>All Pets &amp; Breeds</b><small>Complete species hubs</small></span>
+        </div>
+        <div class="floating-card card-bottom">
+          <i class="fa-solid fa-network-wired" style="color: var(--green); font-size: 1.25rem;" aria-hidden="true"></i>
+          <span><b>47 Verified Pages</b><small>100% interconnected</small></span>
         </div>
       </div>
     </section>
 
     <!-- ========================================================
-         SECTION HEADING CARD (Matching cats/index.html Exactly)
-         Two paws on left, two paws on right, corner waves, bursts, label
+         3. SECTION HEADING CARD (Matching dogs/index.html Exactly)
          ======================================================== -->
     <div class="section-wrap sitemap-heading-wrap" id="sitemapHeadingWrap">
-      <div class="cat-topics-heading sitemap-topics-heading">
+      <div class="dog-topics-heading sitemap-topics-heading">
         <!-- Curvy decorative corner shapes matching reference image -->
         <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true">
@@ -137,32 +156,34 @@
     </div>
 
     <!-- ========================================================
-         3. SEARCH SECTION
+         4. SEARCH SECTION (Compact, Centered, Responsive)
          ======================================================== -->
-    <section class="sitemap-control-band" id="sitemapSearchWrap">
-      <div class="sitemap-control-inner">
-        <!-- Live Search Box -->
-        <div class="sitemap-search-wrap">
-          <div class="sitemap-search-box">
-            <i class="fa-solid fa-magnifying-glass sitemap-search-icon" aria-hidden="true"></i>
-            <input type="text" id="sitemapSearchInput" class="sitemap-search-input"
-              placeholder="Search pages (e.g. dog walking, nutrition, breeds, login, health)..." autocomplete="off"
-              aria-label="Search pages in sitemap">
-            <button id="sitemapSearchClear" class="sitemap-search-clear" aria-label="Clear search">&times;</button>
-          </div>
-        </div>
+    <div class="sitemap-search-filter-wrap" id="sitemapSearchWrap">
+      <div class="sitemap-search-bar">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <input type="text" id="sitemapSearchInput" class="sitemap-search-input"
+          placeholder="Search all 47 pages (e.g. dog walking, nutrition, breeds, login, health)..." autocomplete="off"
+          aria-label="Search pages in sitemap">
+        <button id="sitemapSearchClear" class="sitemap-search-clear" aria-label="Clear search input" type="button"
+          style="display: none;">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <span id="sitemapSearchCount" class="sitemap-search-count" style="display: none;"></span>
       </div>
-    </section>
+      <button class="sitemap-filter-btn" id="sitemapResetFilterBtn" type="button">
+        <i class="fa-solid fa-rotate-left" aria-hidden="true"></i> Reset Search
+      </button>
+    </div>
 
     <!-- ========================================================
-         4. SITEMAP DIRECTORY GROUP CARDS
+         5. SITEMAP DIRECTORY GROUP CARDS
          ======================================================== -->
-    <div id="sitemapHubsView" class="sitemap-content-wrap">
+    <div id="sitemapHubsView" class="section-wrap sitemap-content-wrap">
 
       <!-- Row 1: Core Hub, Species Portals, Services (3 Cards) -->
       <div class="sitemap-row-3" id="sitemapRow1">
 
-        <!-- Card 1: Core Hub -->
+        <!-- Card 1: Core Hub (6 Pages) -->
         <div class="sitemap-group-card" data-group="core">
           <div class="group-card-header">
             <div class="group-card-title-wrap">
@@ -196,7 +217,7 @@
           </ul>
         </div>
 
-        <!-- Card 2: Species Portals -->
+        <!-- Card 2: Species Portals (6 Pages) -->
         <div class="sitemap-group-card" data-group="species-portals">
           <div class="group-card-header">
             <div class="group-card-title-wrap">
@@ -227,7 +248,7 @@
           </ul>
         </div>
 
-        <!-- Card 3: Services -->
+        <!-- Card 3: Services (6 Pages) -->
         <div class="sitemap-group-card" data-group="services">
           <div class="group-card-header">
             <div class="group-card-title-wrap">
@@ -271,8 +292,12 @@
             <span class="group-badge">20 Pages</span>
           </div>
           <div class="care-subgrid">
+            <!-- Sub-column 1: Dogs (3 Pages) -->
             <div class="care-col" data-species="dogs">
-              <div class="care-subcol-title"><i class="fa-solid fa-dog" aria-hidden="true"></i> Dogs</div>
+              <div class="care-subcol-title">
+                <span class="subcol-label"><i class="fa-solid fa-dog" aria-hidden="true"></i> Dogs</span>
+                <span class="subcol-count">3 Guides</span>
+              </div>
               <ul class="group-links-list">
                 <li><a href="pets/dogs/breeds.html" data-keywords="dog breeds canine puppy sizes coats"><span
                       class="link-left"><span class="link-dot"></span>Breeds Guide</span><i
@@ -285,8 +310,12 @@
                       class="fa-solid fa-arrow-right link-icon" aria-hidden="true"></i></a></li>
               </ul>
             </div>
+            <!-- Sub-column 2: Cats (4 Pages) -->
             <div class="care-col" data-species="cats">
-              <div class="care-subcol-title"><i class="fa-solid fa-cat" aria-hidden="true"></i> Cats</div>
+              <div class="care-subcol-title">
+                <span class="subcol-label"><i class="fa-solid fa-cat" aria-hidden="true"></i> Cats</span>
+                <span class="subcol-count">4 Guides</span>
+              </div>
               <ul class="group-links-list">
                 <li><a href="pets/cats/breeds.html" data-keywords="cat breeds feline coats short hair long hair"><span
                       class="link-left"><span class="link-dot"></span>Breeds &amp; Coats</span><i
@@ -303,8 +332,12 @@
                       class="fa-solid fa-arrow-right link-icon" aria-hidden="true"></i></a></li>
               </ul>
             </div>
+            <!-- Sub-column 3: Birds (4 Pages) -->
             <div class="care-col" data-species="birds">
-              <div class="care-subcol-title"><i class="fa-solid fa-dove" aria-hidden="true"></i> Birds</div>
+              <div class="care-subcol-title">
+                <span class="subcol-label"><i class="fa-solid fa-dove" aria-hidden="true"></i> Birds</span>
+                <span class="subcol-count">4 Guides</span>
+              </div>
               <ul class="group-links-list">
                 <li><a href="pets/birds/species.html"
                     data-keywords="bird species parrot parakeet cockatiel canaries"><span class="link-left"><span
@@ -321,8 +354,12 @@
                       class="fa-solid fa-arrow-right link-icon" aria-hidden="true"></i></a></li>
               </ul>
             </div>
+            <!-- Sub-column 4: Rabbits (4 Pages) -->
             <div class="care-col" data-species="rabbits">
-              <div class="care-subcol-title"><i class="fa-solid fa-carrot" aria-hidden="true"></i> Rabbits</div>
+              <div class="care-subcol-title">
+                <span class="subcol-label"><i class="fa-solid fa-carrot" aria-hidden="true"></i> Rabbits</span>
+                <span class="subcol-count">4 Guides</span>
+              </div>
               <ul class="group-links-list">
                 <li><a href="pets/rabbits/breeds.html" data-keywords="rabbit breeds bunny sizes lop dwarf"><span
                       class="link-left"><span class="link-dot"></span>Breeds &amp; Sizes</span><i
@@ -340,8 +377,12 @@
                       class="fa-solid fa-arrow-right link-icon" aria-hidden="true"></i></a></li>
               </ul>
             </div>
+            <!-- Sub-column 5: Exotics (5 Pages) -->
             <div class="care-col" data-species="other">
-              <div class="care-subcol-title"><i class="fa-solid fa-fish" aria-hidden="true"></i> Exotics</div>
+              <div class="care-subcol-title">
+                <span class="subcol-label"><i class="fa-solid fa-fish" aria-hidden="true"></i> Exotics</span>
+                <span class="subcol-count">5 Guides</span>
+              </div>
               <ul class="group-links-list">
                 <li><a href="pets/other/small-pets.html" data-keywords="small pets guinea pig hamster ferret"><span
                       class="link-left"><span class="link-dot"></span>Small Pets Guide</span><i
@@ -369,7 +410,7 @@
       <!-- Row 3: Walkers (5 Links) & Accounts & Help (4 Links) -->
       <div class="sitemap-row-2" id="sitemapRow3">
 
-        <!-- Card 5: Walkers -->
+        <!-- Card 5: Walkers (5 Pages) -->
         <div class="sitemap-group-card" data-group="walkers">
           <div class="group-card-header">
             <div class="group-card-title-wrap">
@@ -397,7 +438,7 @@
           </ul>
         </div>
 
-        <!-- Card 6: Accounts & Help -->
+        <!-- Card 6: Accounts & Help (4 Pages) -->
         <div class="sitemap-group-card" data-group="account">
           <div class="group-card-header">
             <div class="group-card-title-wrap">
@@ -425,29 +466,29 @@
       </div>
 
       <!-- Search Empty State -->
-      <div id="sitemapEmptyState" class="sitemap-empty-state" style="display: none;">
+      <div id="sitemapEmptyState" class="sitemap-empty-state" style="display: none;" role="status" aria-live="polite">
         <div class="sitemap-empty-icon">
-          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
         </div>
         <h3 class="sitemap-empty-title">No matching pages found</h3>
         <p class="sitemap-empty-desc">
-          We couldn't find any page matching your keywords. Try searching for broader terms like <em>dog, cat, walking,
-            nutrition, breeds, login,</em> or <em>care</em>.
+          We couldn't find any directory page matching your search. Try checking for typos or searching for broader
+          terms like <em>dog, cat, rabbit, walking, nutrition, health,</em> or <em>login</em>.
         </p>
         <button id="sitemapResetBtn" class="sitemap-empty-reset" type="button">
-          <i class="fa-solid fa-rotate-left"></i> Clear Search Filter
+          <i class="fa-solid fa-rotate-left" aria-hidden="true"></i> Clear Search Filter
         </button>
       </div>
 
     </div>
 
     <!-- ========================================================
-         6. CALL TO ACTION (Matching cats/index.html Exactly)
+         6. CALL TO ACTION (Matching dogs/index.html & cats/index.html Exactly)
          ======================================================== -->
     <section class="cta section-wrap" id="sitemapCta">
       <div>
         <div class="eyebrow">START YOUR PET CARE JOURNEY</div>
-        <h2>Looking for Something <em>Specific?</em></h2>
+        <h2 style="text-align: left !important;">Looking for Something <em>Specific?</em></h2>
         <p>
           Need help navigating our services, finding a trusted pet companion in your area, or accessing specialized pet
           care guidance? PetSathi is here to assist you every step of the way.
@@ -471,7 +512,7 @@
   <div id="footer"></div>
 
   <!-- ========================================================
-       10. JAVASCRIPT: LIVE FILTER, VIEW SWITCHER, A-Z BUILDER
+       8. JAVASCRIPT: LIVE FILTER, ESCAPE KEY, COUNT BADGE
        ======================================================== -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -490,6 +531,8 @@
       // Elements
       const searchInput = document.getElementById('sitemapSearchInput');
       const searchClear = document.getElementById('sitemapSearchClear');
+      const searchCount = document.getElementById('sitemapSearchCount');
+      const resetFilterBtn = document.getElementById('sitemapResetFilterBtn');
       const emptyState = document.getElementById('sitemapEmptyState');
       const resetBtn = document.getElementById('sitemapResetBtn');
       const cards = Array.from(document.querySelectorAll('.sitemap-group-card'));
@@ -499,17 +542,28 @@
         document.getElementById('sitemapRow3')
       ].filter(Boolean);
 
+      function clearSearch() {
+        if (!searchInput) return;
+        searchInput.value = '';
+        searchInput.focus();
+        filterPages();
+      }
+
       function filterPages() {
-        const query = searchInput.value.trim().toLowerCase();
+        const rawQuery = searchInput ? searchInput.value.trim() : '';
+        const query = rawQuery.toLowerCase();
+        const terms = query.split(/\s+/).filter(Boolean);
         let totalVisibleLinks = 0;
 
         if (query.length > 0) {
           if (searchClear) searchClear.style.display = 'inline-flex';
         } else {
           if (searchClear) searchClear.style.display = 'none';
+          if (searchCount) searchCount.style.display = 'none';
         }
 
         cards.forEach(card => {
+          const cardTitle = (card.querySelector('.group-card-title')?.textContent || '').toLowerCase();
           const links = Array.from(card.querySelectorAll('.group-links-list li'));
           let cardVisibleLinks = 0;
 
@@ -519,11 +573,11 @@
             const text = a.textContent.toLowerCase();
             const href = (a.getAttribute('href') || '').toLowerCase();
             const keywords = (a.getAttribute('data-keywords') || '').toLowerCase();
+            const subcolLabel = (li.closest('.care-col')?.querySelector('.subcol-label')?.textContent || '').toLowerCase();
 
-            const matches = !query ||
-              text.includes(query) ||
-              href.includes(query) ||
-              keywords.includes(query);
+            const searchableText = `${text} ${href} ${keywords} ${cardTitle} ${subcolLabel}`;
+
+            const matches = terms.length === 0 || terms.every(t => searchableText.includes(t));
 
             if (matches) {
               li.style.display = 'block';
@@ -534,13 +588,13 @@
             }
           });
 
-          // Also check care sub-columns visibility
+          // Check care sub-columns visibility
           const careCols = card.querySelectorAll('.care-col');
           if (careCols.length > 0) {
             careCols.forEach(col => {
               const colLinks = Array.from(col.querySelectorAll('li'));
               const hasVisible = colLinks.some(li => li.style.display !== 'none');
-              col.style.display = hasVisible ? 'block' : 'none';
+              col.style.display = hasVisible ? 'flex' : 'none';
             });
           }
 
@@ -562,26 +616,33 @@
         if (emptyState) {
           emptyState.style.display = (totalVisibleLinks === 0) ? 'block' : 'none';
         }
+
+        // Update live result count badge
+        if (searchCount && query.length > 0) {
+          searchCount.style.display = 'inline-block';
+          searchCount.textContent = totalVisibleLinks === 1 ? '1 page found' : `${totalVisibleLinks} found`;
+        }
       }
 
       if (searchInput) {
         searchInput.addEventListener('input', filterPages);
+        searchInput.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            clearSearch();
+          }
+        });
       }
 
       if (searchClear) {
-        searchClear.addEventListener('click', () => {
-          searchInput.value = '';
-          searchInput.focus();
-          filterPages();
-        });
+        searchClear.addEventListener('click', clearSearch);
+      }
+
+      if (resetFilterBtn) {
+        resetFilterBtn.addEventListener('click', clearSearch);
       }
 
       if (resetBtn) {
-        resetBtn.addEventListener('click', () => {
-          searchInput.value = '';
-          searchInput.focus();
-          filterPages();
-        });
+        resetBtn.addEventListener('click', clearSearch);
       }
     });
   </script>

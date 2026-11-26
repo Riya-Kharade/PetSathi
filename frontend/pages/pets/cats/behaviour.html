@@ -80,10 +80,24 @@
       z-index: 0;
     }
 
-    .wave-tl { top: 0; left: 0; width: 220px; height: 130px; }
-    .wave-br { bottom: 0; right: 0; width: 220px; height: 130px; }
+    .wave-tl {
+      top: 0;
+      left: 0;
+      width: 220px;
+      height: 130px;
+    }
 
-    .heading-content { position: relative; z-index: 2; }
+    .wave-br {
+      bottom: 0;
+      right: 0;
+      width: 220px;
+      height: 130px;
+    }
+
+    .heading-content {
+      position: relative;
+      z-index: 2;
+    }
 
     .heading-label {
       display: inline-flex;
@@ -103,7 +117,11 @@
       box-shadow: 0 1px 4px rgba(36, 107, 67, 0.06);
     }
 
-    .heading-label i { font-size: 14px; color: #246b43; line-height: 1; }
+    .heading-label i {
+      font-size: 14px;
+      color: #246b43;
+      line-height: 1;
+    }
 
     .cat-topics-heading h2 {
       color: #263b30;
@@ -119,7 +137,9 @@
       flex-wrap: wrap;
     }
 
-    .cat-topics-heading h2 span { color: #28764a; }
+    .cat-topics-heading h2 span {
+      color: #28764a;
+    }
 
     .heading-burst {
       display: inline-block;
@@ -136,14 +156,55 @@
       border-radius: 9999px;
     }
 
-    .heading-burst.left span { right: 0; transform-origin: right center; }
-    .heading-burst.left span:nth-child(1) { top: 3px; width: 14px; height: 2.8px; transform: rotate(35deg); }
-    .heading-burst.left span:nth-child(2) { top: 11px; width: 18px; height: 2.8px; }
-    .heading-burst.left span:nth-child(3) { bottom: 3px; width: 14px; height: 2.8px; transform: rotate(-35deg); }
-    .heading-burst.right span { left: 0; transform-origin: left center; }
-    .heading-burst.right span:nth-child(1) { top: 3px; width: 14px; height: 2.8px; transform: rotate(-35deg); }
-    .heading-burst.right span:nth-child(2) { top: 11px; width: 18px; height: 2.8px; }
-    .heading-burst.right span:nth-child(3) { bottom: 3px; width: 14px; height: 2.8px; transform: rotate(35deg); }
+    .heading-burst.left span {
+      right: 0;
+      transform-origin: right center;
+    }
+
+    .heading-burst.left span:nth-child(1) {
+      top: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(35deg);
+    }
+
+    .heading-burst.left span:nth-child(2) {
+      top: 11px;
+      width: 18px;
+      height: 2.8px;
+    }
+
+    .heading-burst.left span:nth-child(3) {
+      bottom: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(-35deg);
+    }
+
+    .heading-burst.right span {
+      left: 0;
+      transform-origin: left center;
+    }
+
+    .heading-burst.right span:nth-child(1) {
+      top: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(-35deg);
+    }
+
+    .heading-burst.right span:nth-child(2) {
+      top: 11px;
+      width: 18px;
+      height: 2.8px;
+    }
+
+    .heading-burst.right span:nth-child(3) {
+      bottom: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(35deg);
+    }
 
     .cat-topics-heading p {
       max-width: 720px;
@@ -163,10 +224,33 @@
       line-height: 1;
     }
 
-    .paw-left-1  { top: 66px;  left: 108px; font-size: 58px; transform: rotate(20deg); }
-    .paw-left-2  { bottom: 24px; left: 82px; font-size: 38px; transform: rotate(-15deg); }
-    .paw-right-1 { top: 60px;  right: 75px; font-size: 56px; transform: rotate(18deg); }
-    .paw-right-2 { bottom: 35px; right: 140px; font-size: 38px; transform: rotate(-15deg); }
+    .paw-left-1 {
+      top: 66px;
+      left: 108px;
+      font-size: 58px;
+      transform: rotate(20deg);
+    }
+
+    .paw-left-2 {
+      bottom: 24px;
+      left: 82px;
+      font-size: 38px;
+      transform: rotate(-15deg);
+    }
+
+    .paw-right-1 {
+      top: 60px;
+      right: 75px;
+      font-size: 56px;
+      transform: rotate(18deg);
+    }
+
+    .paw-right-2 {
+      bottom: 35px;
+      right: 140px;
+      font-size: 38px;
+      transform: rotate(-15deg);
+    }
 
     .paw i,
     .cat-topics-heading i,
@@ -308,7 +392,9 @@
       box-shadow: 0 4px 12px rgba(36, 107, 67, 0.2);
     }
 
-    .filter-btn i { font-size: 0.88rem; }
+    .filter-btn i {
+      font-size: 0.88rem;
+    }
 
     /* =============================================
        BEHAVIOUR CARDS GRID (Image-Based)
@@ -373,7 +459,10 @@
       z-index: 2;
     }
 
-    .beh-card-badge i { color: var(--green, #28764a); font-size: 0.85rem; }
+    .beh-card-badge i {
+      color: var(--green, #28764a);
+      font-size: 0.85rem;
+    }
 
     .beh-card-body {
       padding: 24px;
@@ -514,7 +603,6 @@
        FAQ ACCORDION SECTION
        ============================================= */
     .faq-list {
-      max-width: 900px;
       width: 100%;
       margin: 0 auto;
       display: flex;
@@ -615,34 +703,77 @@
     }
 
     .decor-top-left {
-      top: -8px; left: -8px; width: 130px; height: 130px;
-      background: radial-gradient(circle at 10% 10%, #eaf5ed 0%, rgba(234,245,237,0) 70%);
+      top: -8px;
+      left: -8px;
+      width: 130px;
+      height: 130px;
+      background: radial-gradient(circle at 10% 10%, #eaf5ed 0%, rgba(234, 245, 237, 0) 70%);
       border-radius: 0 0 100% 0;
     }
 
     .decor-bottom-right {
-      bottom: -8px; right: -8px; width: 130px; height: 130px;
-      background: radial-gradient(circle at 90% 90%, #eaf5ed 0%, rgba(234,245,237,0) 70%);
+      bottom: -8px;
+      right: -8px;
+      width: 130px;
+      height: 130px;
+      background: radial-gradient(circle at 90% 90%, #eaf5ed 0%, rgba(234, 245, 237, 0) 70%);
       border-radius: 100% 0 0 0;
     }
 
-    .decor-paw { position: absolute; display: inline-block; line-height: 1; }
-    .decor-paw-1 { top: 14px; left: 28px; font-size: 28px; transform: rotate(-15deg); }
-    .decor-paw-2 { top: 38px; left: 12px; font-size: 19px; transform: rotate(20deg); }
-    .decor-paw-3 { bottom: 36px; right: 14px; font-size: 19px; transform: rotate(-25deg); }
-    .decor-paw-4 { bottom: 14px; right: 28px; font-size: 28px; transform: rotate(15deg); }
+    .decor-paw {
+      position: absolute;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .decor-paw-1 {
+      top: 14px;
+      left: 28px;
+      font-size: 28px;
+      transform: rotate(-15deg);
+    }
+
+    .decor-paw-2 {
+      top: 38px;
+      left: 12px;
+      font-size: 19px;
+      transform: rotate(20deg);
+    }
+
+    .decor-paw-3 {
+      bottom: 36px;
+      right: 14px;
+      font-size: 19px;
+      transform: rotate(-25deg);
+    }
+
+    .decor-paw-4 {
+      bottom: 14px;
+      right: 28px;
+      font-size: 28px;
+      transform: rotate(15deg);
+    }
 
     .quick-nav-header {
-      position: relative; z-index: 1;
-      text-align: center; margin-bottom: 30px;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      margin-bottom: 30px;
     }
 
     .quick-nav-eyebrow-wrap {
-      display: flex; align-items: center; justify-content: center;
-      gap: 16px; margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 14px;
     }
 
-    .quick-nav-line { height: 1px; width: 110px; background: #d6ead9; }
+    .quick-nav-line {
+      height: 1px;
+      width: 110px;
+      background: #d6ead9;
+    }
 
     .quick-nav-badge {
       display: inline-flex;
@@ -661,7 +792,12 @@
       box-shadow: 0 1px 4px rgba(35, 100, 55, 0.04);
     }
 
-    .quick-nav-badge i { font-size: 0.95rem; line-height: 1; color: #1e6f43; flex-shrink: 0; }
+    .quick-nav-badge i {
+      font-size: 0.95rem;
+      line-height: 1;
+      color: #1e6f43;
+      flex-shrink: 0;
+    }
 
     .quick-nav-title {
       font-family: 'Manrope', sans-serif !important;
@@ -674,13 +810,18 @@
       text-align: center;
     }
 
-    .quick-nav-title span { color: #1e6f43; font-weight: 800; }
+    .quick-nav-title span {
+      color: #1e6f43;
+      font-weight: 800;
+    }
 
     .guides-nav-grid {
-      position: relative; z-index: 1;
+      position: relative;
+      z-index: 1;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 16px; margin: 0;
+      gap: 16px;
+      margin: 0;
     }
 
     .guide-nav-item {
@@ -703,7 +844,8 @@
     }
 
     .guide-nav-icon {
-      width: 42px; height: 42px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
       background: #d1ecda;
       color: #1e6f43;
@@ -715,7 +857,10 @@
       transition: background 0.2s ease, color 0.2s ease;
     }
 
-    .guide-nav-item:hover .guide-nav-icon { background: #1e6f43; color: #ffffff; }
+    .guide-nav-item:hover .guide-nav-icon {
+      background: #1e6f43;
+      color: #ffffff;
+    }
 
     .guide-nav-label {
       font-family: 'DM Sans', 'Manrope', sans-serif !important;
@@ -771,14 +916,13 @@
     .beh-section-alt {
       background: #f7faf5;
       padding: 60px 0;
-      border-top: 1px solid #e7efe9;
-      border-bottom: 1px solid #e7efe9;
     }
 
     /* =============================================
        RESPONSIVE BREAKPOINTS
        ============================================= */
     @media (max-width: 960px) {
+
       .behaviour-cards-grid,
       .info-cards-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -796,34 +940,88 @@
         border-radius: 24px;
       }
 
-      .cat-topics-heading h2 { font-size: clamp(20px, 5vw, 26px); gap: 8px; }
-      .cat-topics-heading p { font-size: 14px; }
-      .heading-label { font-size: 11px; padding: 6px 14px; margin-bottom: 12px; }
+      .cat-topics-heading h2 {
+        font-size: clamp(20px, 5vw, 26px);
+        gap: 8px;
+      }
 
-      .paw-left-1  { left: 35px;  top: 25px;    font-size: 34px; }
-      .paw-left-2  { left: 18px;  bottom: 14px; font-size: 24px; }
-      .paw-right-1 { right: 25px; top: 25px;    font-size: 34px; }
-      .paw-right-2 { right: 65px; bottom: 14px; font-size: 24px; }
+      .cat-topics-heading p {
+        font-size: 14px;
+      }
 
-      .guides-nav-strip { padding: 22px 18px; }
+      .heading-label {
+        font-size: 11px;
+        padding: 6px 14px;
+        margin-bottom: 12px;
+      }
+
+      .paw-left-1 {
+        left: 35px;
+        top: 25px;
+        font-size: 34px;
+      }
+
+      .paw-left-2 {
+        left: 18px;
+        bottom: 14px;
+        font-size: 24px;
+      }
+
+      .paw-right-1 {
+        right: 25px;
+        top: 25px;
+        font-size: 34px;
+      }
+
+      .paw-right-2 {
+        right: 65px;
+        bottom: 14px;
+        font-size: 24px;
+      }
+
+      .guides-nav-strip {
+        padding: 22px 18px;
+      }
     }
 
     @media (max-width: 600px) {
+
       .behaviour-cards-grid,
       .info-cards-grid {
         grid-template-columns: 1fr;
       }
 
-      .beh-card-media { height: 185px; }
+      .beh-card-media {
+        height: 185px;
+      }
 
-      .guides-nav-grid { grid-template-columns: 1fr; }
+      .guides-nav-grid {
+        grid-template-columns: 1fr;
+      }
 
-      .cta-actions { width: 100%; flex-direction: column; margin-top: 18px; }
-      .cta-actions .button { width: 100%; }
+      .cta-actions {
+        width: 100%;
+        flex-direction: column;
+        margin-top: 18px;
+      }
 
-      .search-filter-container { align-items: stretch; }
-      .search-input-wrap { max-width: 100%; }
-      .filter-pills-row { justify-content: flex-start; overflow-x: auto; padding-bottom: 6px; }
+      .cta-actions .button {
+        width: 100%;
+      }
+
+      .search-filter-container {
+        align-items: stretch;
+      }
+
+      .search-input-wrap {
+        max-width: 100%;
+      }
+
+      .filter-pills-row {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 6px;
+      }
     }
   </style>
 </head>
@@ -838,7 +1036,8 @@
     <!-- ===== 1. HERO SECTION: UNDERSTANDING CAT BEHAVIOUR ===== -->
     <section class="hero section-wrap" id="behaviour-hero">
       <div class="hero-copy">
-        <div class="cat-badge-strip">🐾 PetSathi • Understanding Cat Behaviour</div>
+        <div class="cat-badge-strip"><i class="fa-solid fa-cat" aria-hidden="true"></i> PetSathi • Understanding Cat
+          Behaviour</div>
         <h1>Understanding <em>Cat Behaviour</em></h1>
         <p>
           Discover what your cat's gestures, sounds, and habits really mean.
@@ -846,24 +1045,26 @@
           and build a lasting bond of trust and companionship.
         </p>
         <div class="hero-actions">
-          <a class="button" href="#habits-section">Explore Cat Habits ↓</a>
-          <a class="button button-outline" href="#solutions-section">Behaviour Solutions ↓</a>
+          <a class="button" href="#habits-section">Explore Cat Habits <i class="fa fa-arrow-right"
+              aria-hidden="true"></i>
+          </a>
+          <a class="button button-outline" href="#solutions-section">Behaviour Solutions</a>
         </div>
-        <div class="hero-note">♥ &nbsp; Dedicated to decoding every purr, tail twitch, and slow blink.</div>
+        <div class="hero-note"><i class="fa-solid fa-heart" style="color: var(--green);" aria-hidden="true"></i> &nbsp;
+          Dedicated to decoding every purr, tail twitch, and slow blink.</div>
       </div>
 
       <div class="hero-visual">
         <div class="hero-blob"></div>
-        <img
-          src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1000&q=85"
-          alt="Playful cat engaging with interactive curiosity"
-          class="hero-photo"
-          id="hero-behaviour-image">
+        <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1000&q=85"
+          alt="Playful cat engaging with interactive curiosity" class="hero-photo" id="hero-behaviour-image">
         <div class="floating-card card-top">
-          🧠 <span><b>Body Language</b><small>Read every signal clearly</small></span>
+          <i class="fa-solid fa-brain" style="color: var(--green); font-size: 1.25rem;" aria-hidden="true"></i>
+          <span><b>Body Language</b><small>Read every signal clearly</small></span>
         </div>
         <div class="floating-card card-bottom">
-          🐾 <span><b>Positive Training</b><small>Patience &amp; gentle trust</small></span>
+          <i class="fa-solid fa-graduation-cap" style="color: var(--green); font-size: 1.25rem;" aria-hidden="true"></i>
+          <span><b>Positive Training</b><small>Patience &amp; gentle trust</small></span>
         </div>
       </div>
     </section>
@@ -934,13 +1135,17 @@
     <!-- ===== 2. COMMON CAT HABITS (With Search & Filter) ===== -->
     <section class="beh-section section-wrap" id="habits-section">
       <div class="cat-topics-heading">
-        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
           <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
-          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
         </svg>
-        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
           <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
-          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
         </svg>
 
         <div class="paw paw-left-1"><i class="fa-solid fa-paw"></i></div>
@@ -959,7 +1164,8 @@
             <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
           </h2>
           <p>
-            From soothing purrs to curious tail movements, learn the emotional and instinctual meaning behind your cat's everyday rituals.
+            From soothing purrs to curious tail movements, learn the emotional and instinctual meaning behind your cat's
+            everyday rituals.
           </p>
         </div>
       </div>
@@ -968,9 +1174,7 @@
       <div class="search-filter-container" role="search" aria-label="Filter cat behaviours">
         <div class="search-input-wrap">
           <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
-          <input
-            type="search"
-            id="behaviour-search"
+          <input type="search" id="behaviour-search"
             placeholder="Search a habit (e.g. purring, kneading, tail, scratching)..."
             aria-label="Search cat behaviours">
         </div>
@@ -1002,19 +1206,22 @@
           </div>
           <div class="beh-card-body">
             <h3>Purring</h3>
-            <p>Cats purr primarily when feeling relaxed and secure, but may also purr to soothe themselves when stressed or hurt.</p>
+            <p>Cats purr primarily when feeling relaxed and secure, but may also purr to soothe themselves when stressed
+              or hurt.</p>
           </div>
         </article>
 
         <!-- 2. Kneading -->
         <article class="beh-card" data-category="emotion">
           <div class="beh-card-media">
-            <span class="beh-card-badge"><i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i> Affection</span>
+            <span class="beh-card-badge"><i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i>
+              Affection</span>
             <img src="../../../assets/images/cats/cat-kneading.png" alt="Cat rhythmically kneading paws" loading="lazy">
           </div>
           <div class="beh-card-body">
             <h3>Kneading</h3>
-            <p>Rhythmically pushing paws against blankets or laps stems from kitten nursing instincts and signifies deep relaxation.</p>
+            <p>Rhythmically pushing paws against blankets or laps stems from kitten nursing instincts and signifies deep
+              relaxation.</p>
           </div>
         </article>
 
@@ -1026,7 +1233,8 @@
           </div>
           <div class="beh-card-body">
             <h3>Tail Movements</h3>
-            <p>An upright tail indicates friendliness and confidence, while a rapid twitch or thrash signals growing irritation.</p>
+            <p>An upright tail indicates friendliness and confidence, while a rapid twitch or thrash signals growing
+              irritation.</p>
           </div>
         </article>
 
@@ -1038,7 +1246,8 @@
           </div>
           <div class="beh-card-body">
             <h3>Scratching</h3>
-            <p>Scratching maintains sharp claws, stretches back muscles, and leaves visual and scent markers across territory.</p>
+            <p>Scratching maintains sharp claws, stretches back muscles, and leaves visual and scent markers across
+              territory.</p>
           </div>
         </article>
 
@@ -1050,7 +1259,8 @@
           </div>
           <div class="beh-card-body">
             <h3>Hiding</h3>
-            <p>Cats naturally seek quiet, sheltered nooks when overwhelmed, frightened, or simply recharging in peaceful solitude.</p>
+            <p>Cats naturally seek quiet, sheltered nooks when overwhelmed, frightened, or simply recharging in peaceful
+              solitude.</p>
           </div>
         </article>
 
@@ -1062,7 +1272,8 @@
           </div>
           <div class="beh-card-body">
             <h3>Rubbing &amp; Bunting</h3>
-            <p>Rubbing cheeks against people or furniture deposits facial pheromones, expressing trust and marking family territory.</p>
+            <p>Rubbing cheeks against people or furniture deposits facial pheromones, expressing trust and marking
+              family territory.</p>
           </div>
         </article>
 
@@ -1074,13 +1285,15 @@
           </div>
           <div class="beh-card-body">
             <h3>Meowing</h3>
-            <p>Adult cats rarely meow at other cats; they vocalise specifically to ask humans for meals, greetings, and attention.</p>
+            <p>Adult cats rarely meow at other cats; they vocalise specifically to ask humans for meals, greetings, and
+              attention.</p>
           </div>
         </article>
 
         <!-- No Results Fallback -->
         <div id="no-results-msg" class="no-results-card" style="display: none;">
-          <div class="no-results-icon">😿</div>
+          <div class="no-results-icon"><i class="fa-solid fa-magnifying-glass" style="color: var(--green);"
+              aria-hidden="true"></i></div>
           <h3>No matching cat habits found</h3>
           <p>Try searching for a different keyword like "purr", "scratch", or reset the category filter.</p>
           <button class="button button-small" id="reset-filter-btn" type="button">Reset Filters</button>
@@ -1092,47 +1305,84 @@
     <!-- ===== 3. BODY LANGUAGE & COMMUNICATION ===== -->
     <section class="beh-section-alt" id="communication-section">
       <div class="section-wrap">
-        <div class="section-heading-wrap">
-          <span class="section-heading-label"><i class="fa-solid fa-comment-dots"></i> Body Language &amp; Communication</span>
-          <h2>Reading Feline <span>Body Language &amp; Signals</span></h2>
-          <p>Cats express emotion through posture, ear angles, pupil size, and tail movements. Learn their subtle visual vocabulary.</p>
+        <div class="cat-topics-heading">
+          <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+            <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+            <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+              opacity="0.95" />
+          </svg>
+          <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+            <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+            <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+              opacity="0.95" />
+          </svg>
+
+          <div class="paw paw-left-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+          <div class="paw paw-left-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+          <div class="paw paw-right-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+          <div class="paw paw-right-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+
+          <div class="heading-content">
+            <span class="heading-label">
+              <i class="fa-solid fa-comment-dots"></i>
+              Body Language &amp; Communication
+            </span>
+            <h2>
+              <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+              Reading Feline <span>Body Language &amp; Signals</span>
+              <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+            </h2>
+            <p>
+              Cats express emotion through posture, ear angles, pupil size, and tail movements. Learn their subtle
+              visual
+              vocabulary.
+            </p>
+          </div>
         </div>
 
         <div class="info-cards-grid">
           <article class="info-card">
             <div class="info-card-icon"><i class="fa-solid fa-person" aria-hidden="true"></i></div>
             <h3>Body Posture</h3>
-            <p>A loose, side-lying posture indicates complete safety, while an arched back or rigid crouch signals apprehension.</p>
+            <p>A loose, side-lying posture indicates complete safety, while an arched back or rigid crouch signals
+              apprehension.</p>
           </article>
 
           <article class="info-card">
             <div class="info-card-icon"><i class="fa-solid fa-ear-listen" aria-hidden="true"></i></div>
             <h3>Ear Positions</h3>
-            <p>Forward-facing ears demonstrate active curiosity; sideways or flattened airplane ears indicate fear or irritation.</p>
+            <p>Forward-facing ears demonstrate active curiosity; sideways or flattened airplane ears indicate fear or
+              irritation.</p>
           </article>
 
           <article class="info-card">
             <div class="info-card-icon"><i class="fa-solid fa-eye" aria-hidden="true"></i></div>
             <h3>Eye Contact &amp; Slow Blinks</h3>
-            <p>A relaxed slow blink is the ultimate feline kiss of trust. Direct, unblinking stares can be perceived as confrontation.</p>
+            <p>A relaxed slow blink is the ultimate feline kiss of trust. Direct, unblinking stares can be perceived as
+              confrontation.</p>
           </article>
 
           <article class="info-card">
             <div class="info-card-icon"><i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i></div>
             <h3>Tail Expressions</h3>
-            <p>A tail held high with a questioning curved tip signals a happy greeting, while a puffed bottlebrush tail signals fear.</p>
+            <p>A tail held high with a questioning curved tip signals a happy greeting, while a puffed bottlebrush tail
+              signals fear.</p>
           </article>
 
           <article class="info-card">
             <div class="info-card-icon"><i class="fa-solid fa-volume-high" aria-hidden="true"></i></div>
             <h3>Vocal Repertoire</h3>
-            <p>Friendly chirps, contented purrs, assertive yowls, and defensive hisses each communicate distinct emotional states.</p>
+            <p>Friendly chirps, contented purrs, assertive yowls, and defensive hisses each communicate distinct
+              emotional states.</p>
           </article>
 
           <article class="info-card">
             <div class="info-card-icon"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></div>
             <h3>Whisker Positioning</h3>
-            <p>Relaxed whiskers pointing outward show calm curiosity; tightly pulled-back whiskers signify stress or defensive focus.</p>
+            <p>Relaxed whiskers pointing outward show calm curiosity; tightly pulled-back whiskers signify stress or
+              defensive focus.</p>
           </article>
         </div>
       </div>
@@ -1140,10 +1390,40 @@
 
     <!-- ===== 4. SOCIAL BEHAVIOUR ===== -->
     <section class="beh-section section-wrap" id="social-section">
-      <div class="section-heading-wrap">
-        <span class="section-heading-label"><i class="fa-solid fa-heart"></i> Social Behaviour</span>
-        <h2>Understanding Feline <span>Social Behaviour &amp; Bonding</span></h2>
-        <p>Cats form deep relationships on their own terms. Discover how they interact with companions, humans, and other pets.</p>
+      <div class="cat-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+
+        <div class="paw paw-left-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-heart"></i>
+            Social Behaviour &amp; Bonding
+          </span>
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Understanding Feline <span>Social Behaviour &amp; Bonding</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+          <p>
+            Cats form deep relationships on their own terms. Discover how they interact with companions, humans, and
+            other pets.
+          </p>
+        </div>
       </div>
 
       <div class="info-cards-grid">
@@ -1156,31 +1436,36 @@
         <article class="info-card">
           <div class="info-card-icon"><i class="fa-solid fa-gamepad" aria-hidden="true"></i></div>
           <h3>Daily Play Sessions</h3>
-          <p>Interactive wand sessions mimic hunting rhythms, burn off nervous energy, and build strong owner camaraderie.</p>
+          <p>Interactive wand sessions mimic hunting rhythms, burn off nervous energy, and build strong owner
+            camaraderie.</p>
         </article>
 
         <article class="info-card">
           <div class="info-card-icon"><i class="fa-solid fa-users" aria-hidden="true"></i></div>
           <h3>Multi-Cat Harmony</h3>
-          <p>Prevent tension by providing multiple food bowls, water stations, and litter boxes across different rooms.</p>
+          <p>Prevent tension by providing multiple food bowls, water stations, and litter boxes across different rooms.
+          </p>
         </article>
 
         <article class="info-card">
           <div class="info-card-icon"><i class="fa-solid fa-house-chimney" aria-hidden="true"></i></div>
           <h3>Secure Safe Territory</h3>
-          <p>Cats thrive when their home environment offers predictable resting spaces, elevated perches, and quiet corners.</p>
+          <p>Cats thrive when their home environment offers predictable resting spaces, elevated perches, and quiet
+            corners.</p>
         </article>
 
         <article class="info-card">
           <div class="info-card-icon"><i class="fa-solid fa-people-arrows" aria-hidden="true"></i></div>
           <h3>Gentle Scent Sharing</h3>
-          <p>Introduce new house guests, blankets, or other pets gradually by sharing scents before visual face-to-face contact.</p>
+          <p>Introduce new house guests, blankets, or other pets gradually by sharing scents before visual face-to-face
+            contact.</p>
         </article>
 
         <article class="info-card">
           <div class="info-card-icon"><i class="fa-solid fa-shield-heart" aria-hidden="true"></i></div>
           <h3>Trust Through Predictability</h3>
-          <p>Consistent feeding times, calm speech, and gentle handling reassure cautious cats that their surroundings are safe.</p>
+          <p>Consistent feeding times, calm speech, and gentle handling reassure cautious cats that their surroundings
+            are safe.</p>
         </article>
       </div>
     </section>
@@ -1189,13 +1474,17 @@
     <section class="beh-section-alt" id="stress-section">
       <div class="section-wrap">
         <div class="cat-topics-heading">
-          <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
             <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
-            <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+            <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+              opacity="0.95" />
           </svg>
-          <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
             <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
-            <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+            <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+              opacity="0.95" />
           </svg>
 
           <div class="paw paw-left-1"><i class="fa-solid fa-paw"></i></div>
@@ -1214,7 +1503,8 @@
               <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
             </h2>
             <p>
-              Cats are sensitive to sudden environmental disruptions. Recognize subtle stress markers early to protect their emotional well-being.
+              Cats are sensitive to sudden environmental disruptions. Recognize subtle stress markers early to protect
+              their emotional well-being.
             </p>
           </div>
         </div>
@@ -1223,37 +1513,43 @@
           <article class="info-card">
             <div class="info-card-icon"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i></div>
             <h3>Environmental Triggers</h3>
-            <p>Loud vacuum noises, sudden furniture rearrangement, construction, or unfamiliar outdoor scents can spark anxiety.</p>
+            <p>Loud vacuum noises, sudden furniture rearrangement, construction, or unfamiliar outdoor scents can spark
+              anxiety.</p>
           </article>
 
           <article class="info-card">
             <div class="info-card-icon"><i class="fa-solid fa-heart-crack" aria-hidden="true"></i></div>
             <h3>Subtle Anxiety Signs</h3>
-            <p>Excessive fur licking, changes in appetite, frequent hiding, or sudden litter box avoidance indicate distress.</p>
+            <p>Excessive fur licking, changes in appetite, frequent hiding, or sudden litter box avoidance indicate
+              distress.</p>
           </article>
 
           <article class="info-card">
             <div class="info-card-icon"><i class="fa-solid fa-feather-pointed" aria-hidden="true"></i></div>
             <h3>Safe Retreat Sanctuaries</h3>
-            <p>Provide vertical cat trees, covered cubbies, and high shelving where anxious cats can safely view their environment.</p>
+            <p>Provide vertical cat trees, covered cubbies, and high shelving where anxious cats can safely view their
+              environment.</p>
           </article>
 
           <article class="info-card">
             <div class="info-card-icon"><i class="fa-solid fa-spray-can-sparkles" aria-hidden="true"></i></div>
             <h3>Calming Interventions</h3>
-            <p>Feline pheromone diffusers, quiet background music, and consistent daily schedules significantly ease nervousness.</p>
+            <p>Feline pheromone diffusers, quiet background music, and consistent daily schedules significantly ease
+              nervousness.</p>
           </article>
 
           <article class="info-card">
             <div class="info-card-icon"><i class="fa-solid fa-toilet" aria-hidden="true"></i></div>
             <h3>Stress &amp; Litter Box Habits</h3>
-            <p>Stress often triggers urinary distress or avoidance. Ensure multiple clean boxes in quiet, low-traffic areas.</p>
+            <p>Stress often triggers urinary distress or avoidance. Ensure multiple clean boxes in quiet, low-traffic
+              areas.</p>
           </article>
 
           <article class="info-card">
             <div class="info-card-icon"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i></div>
             <h3>Medical vs Emotional Stress</h3>
-            <p>Sudden behaviour shifts often stem from physical pain like urinary tract infections, arthritis, or dental issues.</p>
+            <p>Sudden behaviour shifts often stem from physical pain like urinary tract infections, arthritis, or dental
+              issues.</p>
           </article>
         </div>
       </div>
@@ -1261,47 +1557,83 @@
 
     <!-- ===== 6. AGGRESSION & FEAR ===== -->
     <section class="beh-section section-wrap" id="aggression-section">
-      <div class="section-heading-wrap">
-        <span class="section-heading-label"><i class="fa-solid fa-shield-halved"></i> Aggression &amp; Fear</span>
-        <h2>Decoding &amp; De-escalating <span>Aggression &amp; Fear</span></h2>
-        <p>Most aggression in cats is rooted in fear, pain, or overstimulation. Learn the triggers and how to handle them safely.</p>
+      <div class="cat-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+
+        <div class="paw paw-left-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-shield-halved"></i>
+            Aggression &amp; Fear Management
+          </span>
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Decoding &amp; De-escalating <span>Aggression &amp; Fear</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+          <p>
+            Most aggression in cats is rooted in fear, pain, or overstimulation. Learn the triggers and how to handle
+            them safely.
+          </p>
+        </div>
       </div>
 
       <div class="info-cards-grid">
         <article class="info-card">
           <div class="info-card-icon"><i class="fa-solid fa-shield-cat" aria-hidden="true"></i></div>
           <h3>Fear-Based Defensiveness</h3>
-          <p>Hissing and swatting usually occur when a frightened cat feels trapped without an escape route. Give them distance.</p>
+          <p>Hissing and swatting usually occur when a frightened cat feels trapped without an escape route. Give them
+            distance.</p>
         </article>
 
         <article class="info-card">
           <div class="info-card-icon"><i class="fa-solid fa-hand-holding" aria-hidden="true"></i></div>
           <h3>Petting Overstimulation</h3>
-          <p>Notice subtle cues like a twitching tail or shifting ears. Stop petting before the cat feels compelled to swat or nip.</p>
+          <p>Notice subtle cues like a twitching tail or shifting ears. Stop petting before the cat feels compelled to
+            swat or nip.</p>
         </article>
 
         <article class="info-card">
           <div class="info-card-icon"><i class="fa-solid fa-window-maximize" aria-hidden="true"></i></div>
           <h3>Redirected Aggression</h3>
-          <p>Agitation from seeing a stray cat through a window can cause a cat to snap at family members. Close blinds to calm them.</p>
+          <p>Agitation from seeing a stray cat through a window can cause a cat to snap at family members. Close blinds
+            to calm them.</p>
         </article>
 
         <article class="info-card">
           <div class="info-card-icon"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
           <h3>Play-Aggression &amp; Ambush</h3>
-          <p>Ankle-pouncing happens when predatory play is misdirected. Redirect their instincts onto wand toys and kickaroo pillows.</p>
+          <p>Ankle-pouncing happens when predatory play is misdirected. Redirect their instincts onto wand toys and
+            kickaroo pillows.</p>
         </article>
 
         <article class="info-card">
           <div class="info-card-icon"><i class="fa-solid fa-arrows-split-up-and-left" aria-hidden="true"></i></div>
           <h3>Territorial Disputes</h3>
-          <p>Inter-cat staring contests and corridor blocking signal tension. Provide multiple vertical escape routes and resources.</p>
+          <p>Inter-cat staring contests and corridor blocking signal tension. Provide multiple vertical escape routes
+            and resources.</p>
         </article>
 
         <article class="info-card">
           <div class="info-card-icon"><i class="fa-solid fa-peace" aria-hidden="true"></i></div>
           <h3>Safe De-escalation</h3>
-          <p>Never shout or physically intervene during cat disputes. Use a blanket, cushion, or clap to break visual focus safely.</p>
+          <p>Never shout or physically intervene during cat disputes. Use a blanket, cushion, or clap to break visual
+            focus safely.</p>
         </article>
       </div>
     </section>
@@ -1309,17 +1641,48 @@
     <!-- ===== 7. POSITIVE BEHAVIOUR TRAINING ===== -->
     <section class="beh-section-alt" id="training-section">
       <div class="section-wrap">
-        <div class="section-heading-wrap">
-          <span class="section-heading-label"><i class="fa-solid fa-graduation-cap"></i> Positive Behaviour Training</span>
-          <h2>Positive Reinforcement &amp; <span>Gentle Training</span></h2>
-          <p>Cats learn through patience, immediate rewards, and consistency. Gentle encouragement builds lasting confidence.</p>
+        <div class="cat-topics-heading">
+          <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+            <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+            <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+              opacity="0.95" />
+          </svg>
+          <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+            <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+            <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+              opacity="0.95" />
+          </svg>
+
+          <div class="paw paw-left-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+          <div class="paw paw-left-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+          <div class="paw paw-right-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+          <div class="paw paw-right-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+
+          <div class="heading-content">
+            <span class="heading-label">
+              <i class="fa-solid fa-graduation-cap"></i>
+              Positive Behaviour Training
+            </span>
+            <h2>
+              <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+              Positive Reinforcement &amp; <span>Gentle Training</span>
+              <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+            </h2>
+            <p>
+              Cats learn through patience, immediate rewards, and consistency. Gentle encouragement builds lasting
+              confidence.
+            </p>
+          </div>
         </div>
 
         <div class="info-cards-grid">
           <article class="info-card">
             <div class="info-card-icon"><i class="fa-solid fa-box" aria-hidden="true"></i></div>
             <h3>Litter Box Routine</h3>
-            <p>Place boxes in quiet, accessible spots. Scoop daily, keep boxes clean, and reward consistent usage gently.</p>
+            <p>Place boxes in quiet, accessible spots. Scoop daily, keep boxes clean, and reward consistent usage
+              gently.</p>
           </article>
 
           <article class="info-card">
@@ -1331,25 +1694,29 @@
           <article class="info-card">
             <div class="info-card-icon"><i class="fa-solid fa-tree" aria-hidden="true"></i></div>
             <h3>Scratching Post Redirection</h3>
-            <p>Position sturdy sisal posts near rest zones. Rub with catnip and praise your cat enthusiastically when used.</p>
+            <p>Position sturdy sisal posts near rest zones. Rub with catnip and praise your cat enthusiastically when
+              used.</p>
           </article>
 
           <article class="info-card">
             <div class="info-card-icon"><i class="fa-solid fa-suitcase-rolling" aria-hidden="true"></i></div>
             <h3>Carrier Acclimatization</h3>
-            <p>Leave travel carriers open in the living room with soft bedding and treats so carriers represent comfort, not vet visits.</p>
+            <p>Leave travel carriers open in the living room with soft bedding and treats so carriers represent comfort,
+              not vet visits.</p>
           </article>
 
           <article class="info-card">
             <div class="info-card-icon"><i class="fa-solid fa-bell" aria-hidden="true"></i></div>
             <h3>Target &amp; Clicker Training</h3>
-            <p>Teach your cat to touch a target stick or come when called using clicker sounds paired with high-value treats.</p>
+            <p>Teach your cat to touch a target stick or come when called using clicker sounds paired with high-value
+              treats.</p>
           </article>
 
           <article class="info-card">
             <div class="info-card-icon"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i></div>
             <h3>Consistent Routines</h3>
-            <p>Keep meal times, play sessions, and lights-out schedules regular to build confidence and reduce behavioral confusion.</p>
+            <p>Keep meal times, play sessions, and lights-out schedules regular to build confidence and reduce
+              behavioral confusion.</p>
           </article>
         </div>
       </div>
@@ -1357,47 +1724,82 @@
 
     <!-- ===== 8. BEHAVIOUR PROBLEMS & SOLUTIONS ===== -->
     <section class="beh-section section-wrap" id="solutions-section">
-      <div class="section-heading-wrap">
-        <span class="section-heading-label"><i class="fa-solid fa-lightbulb"></i> Behaviour Problems &amp; Solutions</span>
-        <h2>Common Feline <span>Problems &amp; Practical Solutions</span></h2>
-        <p>Solve unwanted feline habits with simple, compassionate, science-backed environmental adjustments.</p>
+      <div class="cat-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+
+        <div class="paw paw-left-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-lightbulb"></i>
+            Behaviour Problems &amp; Solutions
+          </span>
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Common Feline <span>Problems &amp; Practical Solutions</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+          <p>
+            Solve unwanted feline habits with simple, compassionate, science-backed environmental adjustments.
+          </p>
+        </div>
       </div>
 
       <div class="info-cards-grid">
         <article class="info-card">
           <div class="info-card-icon"><i class="fa-solid fa-couch" aria-hidden="true"></i></div>
           <h3>Scratching Furniture</h3>
-          <p><strong>Solution:</strong> Place tall sisal scratching posts directly next to targeted furniture and apply double-sided tape temporarily.</p>
+          <p><strong>Solution:</strong> Place tall sisal scratching posts directly next to targeted furniture and apply
+            double-sided tape temporarily.</p>
         </article>
 
         <article class="info-card">
           <div class="info-card-icon"><i class="fa-solid fa-toilet" aria-hidden="true"></i></div>
           <h3>Litter Box Avoidance</h3>
-          <p><strong>Solution:</strong> Ensure litter is unscented, scoop twice daily, add extra boxes (N+1 rule), and check for urinary pain at the vet.</p>
+          <p><strong>Solution:</strong> Ensure litter is unscented, scoop twice daily, add extra boxes (N+1 rule), and
+            check for urinary pain at the vet.</p>
         </article>
 
         <article class="info-card">
           <div class="info-card-icon"><i class="fa-solid fa-moon" aria-hidden="true"></i></div>
           <h3>Night Zoomies &amp; Meowing</h3>
-          <p><strong>Solution:</strong> Conduct a 15-minute vigorous play hunt right before bedtime, followed immediately by a hearty protein meal.</p>
+          <p><strong>Solution:</strong> Conduct a 15-minute vigorous play hunt right before bedtime, followed
+            immediately by a hearty protein meal.</p>
         </article>
 
         <article class="info-card">
           <div class="info-card-icon"><i class="fa-solid fa-hand-holding" aria-hidden="true"></i></div>
           <h3>Petting Overstimulation</h3>
-          <p><strong>Solution:</strong> Watch for twitching skin or swishing tails. Keep petting sessions brief and stick to cheeks, chin, and head.</p>
+          <p><strong>Solution:</strong> Watch for twitching skin or swishing tails. Keep petting sessions brief and
+            stick to cheeks, chin, and head.</p>
         </article>
 
         <article class="info-card">
           <div class="info-card-icon"><i class="fa-solid fa-stairs" aria-hidden="true"></i></div>
           <h3>Counter Surfing &amp; Jumping</h3>
-          <p><strong>Solution:</strong> Provide a taller alternative cat tree right next to the kitchen counter so they have an approved viewing perch.</p>
+          <p><strong>Solution:</strong> Provide a taller alternative cat tree right next to the kitchen counter so they
+            have an approved viewing perch.</p>
         </article>
 
         <article class="info-card">
           <div class="info-card-icon"><i class="fa-solid fa-peace" aria-hidden="true"></i></div>
           <h3>Inter-Cat Friction</h3>
-          <p><strong>Solution:</strong> Re-separate cats temporarily and conduct gradual scent-swapping and meal feedings across closed doors.</p>
+          <p><strong>Solution:</strong> Re-separate cats temporarily and conduct gradual scent-swapping and meal
+            feedings across closed doors.</p>
         </article>
       </div>
     </section>
@@ -1405,10 +1807,39 @@
     <!-- ===== 9. INDOOR ACTIVITIES & ENRICHMENT ===== -->
     <section class="beh-section-alt" id="enrichment-section">
       <div class="section-wrap">
-        <div class="section-heading-wrap">
-          <span class="section-heading-label"><i class="fa-solid fa-gamepad"></i> Indoor Activities &amp; Enrichment</span>
-          <h2>Stimulating <span>Indoor Activities &amp; Enrichment</span></h2>
-          <p>Keep your indoor cat physically active, mentally engaged, and fulfilled with simple daily games.</p>
+        <div class="cat-topics-heading">
+          <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+            <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+            <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+              opacity="0.95" />
+          </svg>
+          <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+            <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+            <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+              opacity="0.95" />
+          </svg>
+
+          <div class="paw paw-left-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+          <div class="paw paw-left-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+          <div class="paw paw-right-1" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+          <div class="paw paw-right-2" aria-hidden="true"><i class="fa-solid fa-paw"></i></div>
+
+          <div class="heading-content">
+            <span class="heading-label">
+              <i class="fa-solid fa-gamepad"></i>
+              Indoor Activities &amp; Enrichment
+            </span>
+            <h2>
+              <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+              Stimulating <span>Indoor Activities &amp; Enrichment</span>
+              <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+            </h2>
+            <p>
+              Keep your indoor cat physically active, mentally engaged, and fulfilled with simple daily games.
+            </p>
+          </div>
         </div>
 
         <div class="info-cards-grid">
@@ -1433,19 +1864,22 @@
           <article class="info-card">
             <div class="activity-number-badge">04</div>
             <h3>Varied Scratching Posts</h3>
-            <p>Provide both vertical posts and horizontal cardboard scratchers to accommodate individual claw preferences.</p>
+            <p>Provide both vertical posts and horizontal cardboard scratchers to accommodate individual claw
+              preferences.</p>
           </article>
 
           <article class="info-card">
             <div class="activity-number-badge">05</div>
             <h3>Tunnels &amp; Hideaways</h3>
-            <p>Cardboard boxes, pop-up tunnels, and paper bags (without handles) offer endless exploratory entertainment.</p>
+            <p>Cardboard boxes, pop-up tunnels, and paper bags (without handles) offer endless exploratory
+              entertainment.</p>
           </article>
 
           <article class="info-card">
             <div class="activity-number-badge">06</div>
             <h3>Daily Interactive Play</h3>
-            <p>Dedicate 15 minutes twice a day to focused one-on-one play to relieve pent-up energy and deepen affection.</p>
+            <p>Dedicate 15 minutes twice a day to focused one-on-one play to relieve pent-up energy and deepen
+              affection.</p>
           </article>
         </div>
       </div>
@@ -1454,13 +1888,17 @@
     <!-- ===== 10. FREQUENTLY ASKED QUESTIONS ===== -->
     <section class="beh-section section-wrap" id="faq-section">
       <div class="cat-topics-heading">
-        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
           <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
-          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
         </svg>
-        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
           <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
-          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
         </svg>
 
         <div class="paw paw-left-1"><i class="fa-solid fa-paw"></i></div>
@@ -1493,7 +1931,9 @@
           </button>
           <div class="faq-answer">
             <p>
-              This is known as petting-induced overstimulation. While cats enjoy affection, their nerve endings can become overwhelmed quickly. Look out for early warning signs such as a twitching tail tip, rippling back skin, or ears turning backwards, and pause petting immediately before they feel the need to bite.
+              This is known as petting-induced overstimulation. While cats enjoy affection, their nerve endings can
+              become overwhelmed quickly. Look out for early warning signs such as a twitching tail tip, rippling back
+              skin, or ears turning backwards, and pause petting immediately before they feel the need to bite.
             </p>
           </div>
         </div>
@@ -1506,7 +1946,9 @@
           </button>
           <div class="faq-answer">
             <p>
-              Scratching is a natural instinct to shed claw husks, mark scent, and stretch muscles. Never punish scratching; instead, place a sturdy sisal post right in front of the scratched area, rub it with organic catnip, and apply double-sided pet tape to the furniture temporarily to deter them.
+              Scratching is a natural instinct to shed claw husks, mark scent, and stretch muscles. Never punish
+              scratching; instead, place a sturdy sisal post right in front of the scratched area, rub it with organic
+              catnip, and apply double-sided pet tape to the furniture temporarily to deter them.
             </p>
           </div>
         </div>
@@ -1519,7 +1961,9 @@
           </button>
           <div class="faq-answer">
             <p>
-              Cats are naturally crepuscular (most active at dusk and dawn). Night zoomies happen when cats have unspent energy. You can shift their schedule by playing vigorously with a wand toy for 15 to 20 minutes before bedtime, followed immediately by their evening meal to trigger their natural hunt-eat-sleep cycle.
+              Cats are naturally crepuscular (most active at dusk and dawn). Night zoomies happen when cats have unspent
+              energy. You can shift their schedule by playing vigorously with a wand toy for 15 to 20 minutes before
+              bedtime, followed immediately by their evening meal to trigger their natural hunt-eat-sleep cycle.
             </p>
           </div>
         </div>
@@ -1532,7 +1976,9 @@
           </button>
           <div class="faq-answer">
             <p>
-              In cat language, slow blinking is an unmistakable sign of comfort, peace, and trust. Because closing their eyes in your presence indicates they do not view you as a threat, slow-blinking back at your cat communicates reciprocal affection and safety.
+              In cat language, slow blinking is an unmistakable sign of comfort, peace, and trust. Because closing their
+              eyes in your presence indicates they do not view you as a threat, slow-blinking back at your cat
+              communicates reciprocal affection and safety.
             </p>
           </div>
         </div>
@@ -1545,7 +1991,9 @@
           </button>
           <div class="faq-answer">
             <p>
-              Never introduce cats face-to-face immediately. Keep the newcomer in a separate "safe room" for several days. Swap blankets and toys so they learn each other's scent, feed them on opposite sides of a closed door, and proceed to supervised, positive visual introductions gradually over 1 to 2 weeks.
+              Never introduce cats face-to-face immediately. Keep the newcomer in a separate "safe room" for several
+              days. Swap blankets and toys so they learn each other's scent, feed them on opposite sides of a closed
+              door, and proceed to supervised, positive visual introductions gradually over 1 to 2 weeks.
             </p>
           </div>
         </div>
@@ -1556,14 +2004,15 @@
     <section class="cta section-wrap">
       <div>
         <div class="eyebrow">CONTINUE YOUR CAT CARE JOURNEY</div>
-        <h2>Every Paw Deserves a <em>Loving Home.</em></h2>
+        <h2 style="text-align: left !important;">Every Paw Deserves a <em>Loving Home.</em></h2>
         <p>
-          Understanding your cat's mind is the foundation of lifelong friendship. Explore our breed library, nutrition guides, and grooming advice to give your cat their happiest life.
+          Understanding your cat's mind is the foundation of lifelong friendship. Explore our breed library, nutrition
+          guides, and grooming advice to give your cat their happiest life.
         </p>
       </div>
       <div class="cta-actions">
         <a class="button button-light" href="care.html" id="cta-care-guide">Explore Cat Care Guide ↗</a>
-        <a class="button button-outline" href="breeds.html" id="cta-breeds">Browse Cat Breeds ↗</a>
+        <a class="button button-outline" href="breeds.html" id="cta-breeds">Browse Cat Breeds</a>
       </div>
     </section>
 
@@ -1676,4 +2125,5 @@
   </script>
 
 </body>
+
 </html>

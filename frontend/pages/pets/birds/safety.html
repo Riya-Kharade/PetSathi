@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Practical ways to protect pet birds from common household hazards.">
+  <title>Bird Safety Guide | PetSathi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/global.css">
+  <link rel="stylesheet" href="../../../css/home.css">
+  <link rel="stylesheet" href="../../../css/inner.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+      .safety-heading {
+        position: relative;
+        max-width: 1400px;
+        margin: 45px auto 35px;
+        padding: 44px 35px 38px;
+        overflow: hidden;
+        text-align: center;
+        border-radius: 35px;
+        border: 1px solid #dcebc9;
+        background: #fafcf7;
+        box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
+      }
+      .corner-wave {
+        position: absolute;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .wave-tl {
+        top: 0;
+        left: 0;
+        width: 220px;
+        height: 130px;
+      }
+      .wave-br {
+        bottom: 0;
+        right: 0;
+        width: 220px;
+        height: 130px;
+      }
+      .heading-content {
+        position: relative;
+        z-index: 2;
+      }
+      .heading-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 7px 20px;
+        margin-bottom: 16px;
+        border-radius: 50px;
+        background: #edf6df;
+        border: 1px solid #dcebc9;
+        color: #246b43;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+      }
+      .safety-heading h2 {
+        color: #263b30;
+        font-size: clamp(24px, 3.2vw, 36px);
+        font-weight: 700;
+        margin: 0 0 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .safety-heading h2 span {
+        color: #28764a;
+      }
+      .heading-burst {
+        display: inline-block;
+        position: relative;
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        vertical-align: middle;
+      }
+      .heading-burst span {
+        position: absolute;
+        background: #60a872;
+        border-radius: 9999px;
+      }
+      .heading-burst.left span {
+        right: 0;
+        transform-origin: right center;
+      }
+      .heading-burst.left span:nth-child(1) {
+        top: 3px;
+        width: 14px;
+        height: 2.8px;
+        transform: rotate(35deg);
+      }
+      .heading-burst.left span:nth-child(2) {
+        top: 11px;
+        width: 18px;
+        height: 2.8px;
+      }
+      .heading-burst.left span:nth-child(3) {
+        bottom: 3px;
+        width: 14px;
+        height: 2.8px;
+        transform: rotate(-35deg);
+      }
+      .heading-burst.right span {
+        left: 0;
+        transform-origin: left center;
+      }
+      .heading-burst.right span:nth-child(1) {
+        top: 3px;
+        width: 14px;
+        height: 2.8px;
+        transform: rotate(-35deg);
+      }
+      .heading-burst.right span:nth-child(2) {
+        top: 11px;
+        width: 18px;
+        height: 2.8px;
+      }
+      .heading-burst.right span:nth-child(3) {
+        bottom: 3px;
+        width: 14px;
+        height: 2.8px;
+        transform: rotate(35deg);
+      }
+      .safety-heading p {
+        max-width: 720px;
+        margin: 0 auto;
+        color: #64736a;
+        font-size: 15px;
+        line-height: 1.65;
+      }
+      .paw {
+        position: absolute;
+        color: rgba(115, 173, 91, 0.28);
+        z-index: 1;
+        pointer-events: none;
+      }
+      .paw-left-1 {
+        top: 66px;
+        left: 108px;
+        font-size: 58px;
+        transform: rotate(20deg);
+      }
+      .paw-left-2 {
+        bottom: 24px;
+        left: 82px;
+        font-size: 38px;
+        transform: rotate(-15deg);
+      }
+      .paw-right-1 {
+        top: 60px;
+        right: 75px;
+        font-size: 56px;
+        transform: rotate(18deg);
+      }
+      .paw-right-2 {
+        bottom: 35px;
+        right: 140px;
+        font-size: 38px;
+        transform: rotate(-15deg);
+      }      .guides-nav-strip {
+        position: relative;
+        background: #ffffff;
+        margin: 40px auto;
+        max-width: 1200px;
+        width: calc(100% - 40px);
+        border: 1px solid #dceade;
+        border-radius: 32px;
+        padding: 42px 36px 38px;
+        box-shadow: 0 4px 24px rgba(35, 80, 50, 0.04);
+        overflow: hidden;
+      }
+
+      .quick-nav-decor {
+        position: absolute;
+        pointer-events: none;
+        z-index: 0;
+        color: #cde4d3;
+        opacity: 0.55;
+      }
+
+      .decor-top-left {
+        top: -8px;
+        left: -8px;
+        width: 130px;
+        height: 130px;
+        background: radial-gradient(
+          circle at 10% 10%,
+          #eaf5ed 0%,
+          rgba(234, 245, 237, 0) 70%
+        );
+        border-radius: 0 0 100% 0;
+      }
+
+      .decor-bottom-right {
+        bottom: -8px;
+        right: -8px;
+        width: 130px;
+        height: 130px;
+        background: radial-gradient(
+          circle at 90% 90%,
+          #eaf5ed 0%,
+          rgba(234, 245, 237, 0) 70%
+        );
+        border-radius: 100% 0 0 0;
+      }
+
+      .decor-paw {
+        position: absolute;
+        display: inline-block;
+        line-height: 1;
+      }
+
+      .decor-paw-1 {
+        top: 14px;
+        left: 28px;
+        font-size: 28px;
+        transform: rotate(-15deg);
+      }
+
+      .decor-paw-2 {
+        top: 38px;
+        left: 12px;
+        font-size: 19px;
+        transform: rotate(20deg);
+      }
+
+      .decor-paw-3 {
+        bottom: 36px;
+        right: 14px;
+        font-size: 19px;
+        transform: rotate(-25deg);
+      }
+
+      .decor-paw-4 {
+        bottom: 14px;
+        right: 28px;
+        font-size: 28px;
+        transform: rotate(15deg);
+      }
+
+      .quick-nav-header {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .quick-nav-eyebrow-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin-bottom: 14px;
+      }
+
+      .quick-nav-line {
+        height: 1px;
+        width: 110px;
+        background: #d6ead9;
+      }
+
+      .quick-nav-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 16px;
+        background: #f4faf5;
+        border: 1px solid #b7deb8;
+        border-radius: 9999px;
+        color: #1e6f43;
+        font-size: 0.74rem;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        box-shadow: 0 1px 4px rgba(35, 100, 55, 0.04);
+      }
+
+      .quick-nav-badge i {
+        font-size: 0.95rem;
+        line-height: 1;
+        color: #1e6f43;
+        flex-shrink: 0;
+      }
+
+      .quick-nav-title {
+        font-size: clamp(1.45rem, 2.4vw, 1.95rem);
+        font-weight: 800;
+        color: #1a251e;
+        margin: 0;
+        letter-spacing: -0.02em;
+        line-height: 1.25;
+        text-align: center;
+      }
+
+      .quick-nav-title span {
+        color: #1e6f43;
+        font-weight: 800;
+      }
+
+      .guides-nav-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 14px;
+        margin: 0;
+      }
+
+      .guide-nav-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 9px 16px 9px 9px;
+        background: #edf7f0;
+        border: 1px solid #cce4d2;
+        border-radius: 9999px;
+        text-decoration: none;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          border-color 0.2s ease,
+          background 0.2s ease;
+        min-width: 0;
+        cursor: pointer;
+      }
+
+      .guide-nav-item:hover,
+      .guide-nav-item:focus-visible {
+        background: #e4f4e8;
+        border-color: #237847;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 18px rgba(35, 100, 55, 0.12);
+      }
+
+      .guide-nav-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: #d1ecda;
+        color: #1e6f43;
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+        font-size: 1rem;
+        line-height: 1;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+      }
+
+      .guide-nav-icon i {
+        display: inline-block;
+        line-height: 1;
+      }
+
+      .guide-nav-item:hover .guide-nav-icon,
+      .guide-nav-item:focus-visible .guide-nav-icon {
+        background: #1e6f43;
+        color: #ffffff;
+      }
+
+      .guide-nav-label {
+        font-size: 0.88rem;
+        font-weight: 700;
+        color: #1c2b20;
+        white-space: normal;
+        overflow-wrap: anywhere;
+      }      @media (max-width: 768px) {
+        .safety-heading {
+          margin: 25px 0;
+          padding: 35px 16px 30px;
+          border-radius: 24px;
+        }
+
+        .corner-wave {
+          width: 170px;
+          height: 110px;
+        }
+
+        .safety-heading h2 {
+          font-size: clamp(20px, 5vw, 26px);
+          gap: 8px;
+        }
+
+        .safety-heading p {
+          font-size: 14px;
+        }
+
+        .heading-label {
+          font-size: 11px;
+          padding: 6px 14px;
+          margin-bottom: 12px;
+        }
+
+        .paw-left-1 {
+          left: 35px;
+          top: 25px;
+          font-size: 34px;
+        }
+
+        .paw-left-2 {
+          left: 18px;
+          bottom: 14px;
+          font-size: 24px;
+        }
+
+        .paw-right-1 {
+          right: 25px;
+          top: 25px;
+          font-size: 34px;
+        }
+
+        .paw-right-2 {
+          right: 65px;
+          bottom: 14px;
+          font-size: 24px;
+        }
+
+        .heading-burst {
+          width: 16px;
+          height: 18px;
+        }
+
+        .heading-burst span:nth-child(1),
+        .heading-burst span:nth-child(3) {
+          width: 10px;
+        }
+
+        .heading-burst span:nth-child(2) {
+          width: 13px;
+        }
+      }    .safety-page :focus-visible { outline: 3px solid #286849; outline-offset: 4px; }
+    .safety-hero { min-height: 0; }
+    .safety-hero .hero-visual { min-height: 360px; }
+    .safety-hero img { width: 100%; max-width: 500px; height: auto; display: block; border-radius: 48% 48% 24px 24px; box-shadow: var(--shadow); }
+    .safety-hero .eyebrow { margin-bottom: 15px; }
+    .safety-section { scroll-margin-top: 100px; }
+    .safety-soft { background: #fbfbf8; }
+    .safety-page .safety-soft > .section-wrap { background: transparent !important; }
+    .safety-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+    .safety-card, .safety-panel { background: white; border: 1px solid var(--line); border-radius: 20px; padding: 30px; }
+    .safety-card { display: flex; flex-direction: column; transition: transform .25s ease, box-shadow .25s ease; }
+    .safety-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .safety-card > i { display: grid; place-items: center; flex: none; width: 56px; height: 56px; border-radius: 16px; margin-bottom: 18px; background: #eaf2e9; color: var(--green); font-size: 1.4rem; }
+    .safety-card h3, .safety-panel h3 { margin: 0 0 12px; font-size: 1.25rem; color: var(--ink); }
+    .safety-card p { margin: 0 0 16px; font-size: .9rem; line-height: 1.65; color: var(--muted); }
+    .safety-panel { max-width: 850px; margin: auto; }
+    .safety-panel ul { margin: 0; padding-left: 1.3rem; }
+    .safety-panel li { margin: 0 0 10px; font-size: .85rem; line-height: 1.5; }
+    .safety-panel li:last-child { margin-bottom: 0; }
+    .safety-panel p { font-size: .9rem; color: var(--muted); line-height: 1.65; }
+    .safety-panel p:last-child { margin-bottom: 0; }
+    .safety-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+    .safety-columns .safety-panel { width: 100%; height: 100%; }
+    .safety-checklist fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+    .safety-checklist legend { font-weight: 700; margin-bottom: 14px; }
+    .safety-checklist label { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; line-height: 1.5; cursor: pointer; }
+    .safety-checklist label:has(input:checked) { color: var(--dark); font-weight: 700; }
+    .safety-checklist input { width: 19px; height: 19px; flex: none; accent-color: var(--green); margin-top: 3px; }
+    #emergency .safety-panel li:last-child { color: var(--dark); font-weight: 700; }
+    .safety-checklist button { margin-top: 18px; cursor: pointer; }
+    .safety-cta { width: 85%; max-width: 1350px; margin: 0 auto 75px; padding: 48px 56px; text-align: center; }
+    .safety-page .safety-cta { background: #f9e9e8 !important; }
+    .safety-cta h2 { margin: 0 0 8px; }
+    .safety-cta p { margin: 0 auto; max-width: 600px; }
+    .safety-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; margin-top: 18px; }
+    .safety-actions .button-outline { border: 1px solid var(--green); color: var(--dark); background: transparent; }
+    .safety-actions .button-outline:hover { background: var(--green); color: white; }
+    @media (max-width: 1100px) { .guides-nav-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    @media (max-width: 960px) { .safety-grid, .guides-nav-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 640px) {
+      .safety-grid, .safety-columns, .guides-nav-grid { grid-template-columns: 1fr; }
+      .guides-nav-strip { padding: 22px 18px; }
+      .safety-actions { flex-direction: column; }
+      .safety-actions .button { width: 100%; }
+    }
+    @media (max-width: 620px) { .safety-hero .hero-visual { min-height: 0; } }
+    @media (min-width: 601px) and (max-width: 1000px) { .safety-cta { width: calc(100% - 64px); } }
+    @media (max-width: 600px) { .safety-cta { width: calc(100% - 34px); max-width: none; padding: 34px 24px; margin-bottom: 65px; } }
+    @media (prefers-reduced-motion: reduce) { .safety-page *, .safety-page *::before, .safety-page *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; } }
+  </style>
+</head>
+<body>
+  <div id="header"></div>
+  <main class="safety-page">
+    <section class="hero section-wrap safety-hero">
+      <div class="hero-copy">
+        <div class="eyebrow">PETSATHI &bull; BIRD SAFETY GUIDE</div>
+        <h1>A Safe Home for Every <em>Feathered Friend</em></h1>
+        <p>Small changes can make a big difference. Learn how to spot everyday hazards and give your bird a safer place to explore.</p>
+        <div class="hero-actions"><a class="button" href="#household-hazards">Explore safety tips</a></div>
+      </div>
+      <div class="hero-visual">
+        <img src="../../../assets/images/birds/bird-perching.png" alt="A small bird perched on a tree branch" width="2048" height="1362" fetchpriority="high" decoding="async">
+      </div>
+    </section>
+
+    <nav class="guides-nav-strip" aria-labelledby="quick-nav-heading">
+<div class="quick-nav-decor decor-top-left" aria-hidden="true">
+          <i class="fa-solid fa-paw decor-paw decor-paw-1"></i>
+          <i class="fa-solid fa-paw decor-paw decor-paw-2"></i>
+        </div>
+
+        <div class="quick-nav-decor decor-bottom-right" aria-hidden="true">
+          <i class="fa-solid fa-paw decor-paw decor-paw-3"></i>
+          <i class="fa-solid fa-paw decor-paw decor-paw-4"></i>
+        </div>
+
+        <div class="quick-nav-header">
+          <div class="quick-nav-eyebrow-wrap">
+            <span class="quick-nav-line"></span>
+            <div class="quick-nav-badge">
+              <i
+                class="fa-solid fa-compass quick-nav-badge-icon"
+                aria-hidden="true"
+              ></i>
+              <span>QUICK NAVIGATION</span>
+            </div>
+            <span class="quick-nav-line"></span>
+          </div>
+          <h2 class="quick-nav-title" id="quick-nav-heading">
+            Explore Dedicated <span>Bird Safety Guides</span>
+          </h2>
+        </div>
+        <div class="guides-nav-grid">
+          <a class="guide-nav-item" href="#household-hazards"><span class="guide-nav-icon"><i class="fa-solid fa-house" aria-hidden="true"></i></span><span class="guide-nav-label">Household Hazards</span></a>
+          <a class="guide-nav-item" href="#kitchen-safety"><span class="guide-nav-icon"><i class="fa-solid fa-kitchen-set" aria-hidden="true"></i></span><span class="guide-nav-label">Kitchen Safety</span></a>
+          <a class="guide-nav-item" href="#air-quality"><span class="guide-nav-icon"><i class="fa-solid fa-wind" aria-hidden="true"></i></span><span class="guide-nav-label">Air Quality</span></a>
+          <a class="guide-nav-item" href="#windows-fans"><span class="guide-nav-icon"><i class="fa-solid fa-fan" aria-hidden="true"></i></span><span class="guide-nav-label">Windows &amp; Fans</span></a>
+          <a class="guide-nav-item" href="#toxic-foods"><span class="guide-nav-icon"><i class="fa-solid fa-apple-whole" aria-hidden="true"></i></span><span class="guide-nav-label">Toxic Foods</span></a>
+          <a class="guide-nav-item" href="#safe-toys"><span class="guide-nav-icon"><i class="fa-solid fa-shapes" aria-hidden="true"></i></span><span class="guide-nav-label">Safe Toys</span></a>
+          <a class="guide-nav-item" href="#outdoor-safety"><span class="guide-nav-icon"><i class="fa-solid fa-tree" aria-hidden="true"></i></span><span class="guide-nav-label">Outdoor Safety</span></a>
+          <a class="guide-nav-item" href="#emergency"><span class="guide-nav-icon"><i class="fa-solid fa-kit-medical" aria-hidden="true"></i></span><span class="guide-nav-label">Emergency Preparedness</span></a>
+        </div>
+    </nav>
+
+    <section class="section safety-section" id="household-hazards">
+      <div class="section-wrap">
+        <div class="safety-heading">
+          <svg
+            class="corner-wave wave-tl"
+            viewBox="0 0 220 130"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z"
+              fill="#d8e8ce"
+              opacity="0.7"
+            />
+            <path
+              d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z"
+              fill="#edf6e6"
+              opacity="0.95"
+            />
+          </svg>
+          <svg
+            class="corner-wave wave-br"
+            viewBox="0 0 220 130"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z"
+              fill="#d8e8ce"
+              opacity="0.7"
+            />
+            <path
+              d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z"
+              fill="#edf6e6"
+              opacity="0.95"
+            />
+          </svg>
+          <div class="paw paw-left-1" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="paw paw-left-2" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="paw paw-right-1" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="paw paw-right-2" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="heading-content">
+            <span class="heading-label"><i class="fa-solid fa-house" aria-hidden="true"></i> A SAFER HOME</span>
+            <h2><span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>Household <span>Hazards</span><span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span></h2>
+            <p>Look around from your bird's point of view before allowing them to explore.</p>
+          </div>
+        </div>
+        <div class="safety-grid">
+          <article class="safety-card">
+            <i class="fa-solid fa-plug" aria-hidden="true"></i>
+            <h3>Electrical Wires</h3>
+            <p>Keep wires covered and out of reach so curious beaks cannot chew them.</p>
+          </article>
+          <article class="safety-card">
+            <i class="fa-solid fa-pump-soap" aria-hidden="true"></i>
+            <h3>Cleaning Products</h3>
+            <p>Store chemicals securely and keep birds away from cleaning products and their fumes.</p>
+          </article>
+          <article class="safety-card">
+            <i class="fa-solid fa-fire-burner" aria-hidden="true"></i>
+            <h3>Non-Stick Cookware</h3>
+            <p>Overheated non-stick coatings can release fumes dangerous to birds. Keep birds away from cooking areas and fumes.</p>
+          </article>
+          <article class="safety-card">
+            <i class="fa-solid fa-door-open" aria-hidden="true"></i>
+            <h3>Open Windows</h3>
+            <p>Secure windows and doors before your bird leaves the cage to prevent escapes and injuries.</p>
+          </article>
+          <article class="safety-card">
+            <i class="fa-solid fa-fan" aria-hidden="true"></i>
+            <h3>Ceiling Fans</h3>
+            <p>Switch fans off whenever your bird is flying freely.</p>
+          </article>
+          <article class="safety-card">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+            <h3>Other Pets</h3>
+            <p>Supervise interactions and keep birds safely separated from cats, dogs and other animals.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section safety-section safety-soft" id="kitchen-safety">
+      <div class="section-wrap">
+        <div class="safety-heading">
+          <svg
+            class="corner-wave wave-tl"
+            viewBox="0 0 220 130"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z"
+              fill="#d8e8ce"
+              opacity="0.7"
+            />
+            <path
+              d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z"
+              fill="#edf6e6"
+              opacity="0.95"
+            />
+          </svg>
+          <svg
+            class="corner-wave wave-br"
+            viewBox="0 0 220 130"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z"
+              fill="#d8e8ce"
+              opacity="0.7"
+            />
+            <path
+              d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z"
+              fill="#edf6e6"
+              opacity="0.95"
+            />
+          </svg>
+          <div class="paw paw-left-1" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="paw paw-left-2" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="paw paw-right-1" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="paw paw-right-2" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="heading-content">
+            <span class="heading-label"><i class="fa-solid fa-kitchen-set" aria-hidden="true"></i> EVERYDAY PRECAUTIONS</span>
+            <h2><span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>Kitchen <span>Safety</span><span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span></h2>
+            <p>The kitchen contains heat, fumes and foods that can put birds at risk.</p>
+          </div>
+        </div>
+        <div class="safety-panel">
+          <ul>
+            <li>Keep birds away from hot stoves, cookware and cooking areas.</li>
+            <li>Avoid exposure to cooking fumes and smoke; keep the cage out of the kitchen.</li>
+            <li>Store unsafe foods and chemicals securely, beyond your bird's reach.</li>
+            <li>Never leave a bird unattended in the kitchen.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section safety-section" id="air-quality">
+      <div class="section-wrap">
+        <div class="safety-heading">
+          <svg
+            class="corner-wave wave-tl"
+            viewBox="0 0 220 130"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z"
+              fill="#d8e8ce"
+              opacity="0.7"
+            />
+            <path
+              d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z"
+              fill="#edf6e6"
+              opacity="0.95"
+            />
+          </svg>
+          <svg
+            class="corner-wave wave-br"
+            viewBox="0 0 220 130"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z"
+              fill="#d8e8ce"
+              opacity="0.7"
+            />
+            <path
+              d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z"
+              fill="#edf6e6"
+              opacity="0.95"
+            />
+          </svg>
+          <div class="paw paw-left-1" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="paw paw-left-2" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="paw paw-right-1" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="paw paw-right-2" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="heading-content">
+            <span class="heading-label"><i class="fa-solid fa-wind" aria-hidden="true"></i> BREATHE EASY</span>
+            <h2><span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>Air Quality &amp; <span>Environment</span><span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span></h2>
+            <p>Birds are sensitive to airborne irritants, so clean air is essential.</p>
+          </div>
+        </div>
+        <div class="safety-panel">
+          <ul>
+            <li>Avoid smoke, aerosols, perfumes and strong fragrances around birds.</li>
+            <li>Keep birds away from harmful fumes, including cooking and cleaning fumes.</li>
+            <li>Maintain good ventilation without exposing your bird to fumes.</li>
+            <li>Keep birds away from pesticides and chemical sprays.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section safety-section safety-soft" id="windows-fans">
+      <div class="section-wrap">
+        <div class="safety-heading">
+          <svg
+            class="corner-wave wave-tl"
+            viewBox="0 0 220 130"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z"
+              fill="#d8e8ce"
+              opacity="0.7"
+            />
+            <path
+              d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z"
+              fill="#edf6e6"
+              opacity="0.95"
+            />
+          </svg>
+          <svg
+            class="corner-wave wave-br"
+            viewBox="0 0 220 130"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z"
+              fill="#d8e8ce"
+              opacity="0.7"
+            />
+            <path
+              d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z"
+              fill="#edf6e6"
+              opacity="0.95"
+            />
+          </svg>
+          <div class="paw paw-left-1" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="paw paw-left-2" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="paw paw-right-1" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="paw paw-right-2" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="heading-content">
+            <span class="heading-label"><i class="fa-solid fa-fan" aria-hidden="true"></i> ROOM TO EXPLORE</span>
+            <h2><span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>Windows, Doors &amp; <span>Fans</span><span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span></h2>
+            <p>Prepare the room before supervised time outside the cage.</p>
+          </div>
+        </div>
+        <div class="safety-panel">
+          <ul>
+            <li>Secure windows and doors; use suitable window screens where possible.</li>
+            <li>Switch off ceiling fans during free flight.</li>
+            <li>Cover large glass surfaces or make them visible to help prevent collisions.</li>
+            <li>Supervise your bird whenever they are outside the cage.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section safety-section" id="toxic-foods">
+      <div class="section-wrap">
+        <div class="safety-heading">
+          <svg
+            class="corner-wave wave-tl"
+            viewBox="0 0 220 130"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z"
+              fill="#d8e8ce"
+              opacity="0.7"
+            />
+            <path
+              d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z"
+              fill="#edf6e6"
+              opacity="0.95"
+            />
+          </svg>
+          <svg
+            class="corner-wave wave-br"
+            viewBox="0 0 220 130"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z"
+              fill="#d8e8ce"
+              opacity="0.7"
+            />
+            <path
+              d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z"
+              fill="#edf6e6"
+              opacity="0.95"
+            />
+          </svg>
+          <div class="paw paw-left-1" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="paw paw-left-2" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="paw paw-right-1" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="paw paw-right-2" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="heading-content">
+            <span class="heading-label"><i class="fa-solid fa-apple-whole" aria-hidden="true"></i> KEEP OUT OF REACH</span>
+            <h2><span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>Toxic Foods &amp; <span>Plants</span><span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span></h2>
+            <p>Some everyday foods and household products are unsafe for birds.</p>
+          </div>
+        </div>
+        <div class="safety-columns">
+          <div class="safety-panel">
+            <h3>Foods to avoid</h3>
+            <ul>
+              <li>Chocolate</li>
+              <li>Avocado</li>
+              <li>Caffeine</li>
+              <li>Alcohol</li>
+              <li>Excessively salty foods</li>
+            </ul>
+          </div>
+          <div class="safety-panel">
+            <h3>Other hazards</h3>
+            <ul>
+              <li>Toxic household plants</li>
+              <li>Pesticides</li>
+              <li>Chemical sprays</li>
+            </ul>
+            <p>Check with an avian veterinarian whether a food or plant is safe for your bird before allowing access.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section safety-section safety-soft" id="safe-toys">
+      <div class="section-wrap">
+        <div class="safety-heading">
+          <svg
+            class="corner-wave wave-tl"
+            viewBox="0 0 220 130"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z"
+              fill="#d8e8ce"
+              opacity="0.7"
+            />
+            <path
+              d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z"
+              fill="#edf6e6"
+              opacity="0.95"
+            />
+          </svg>
+          <svg
+            class="corner-wave wave-br"
+            viewBox="0 0 220 130"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z"
+              fill="#d8e8ce"
+              opacity="0.7"
+            />
+            <path
+              d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z"
+              fill="#edf6e6"
+              opacity="0.95"
+            />
+          </svg>
+          <div class="paw paw-left-1" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="paw paw-left-2" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="paw paw-right-1" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="paw paw-right-2" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="heading-content">
+            <span class="heading-label"><i class="fa-solid fa-shapes" aria-hidden="true"></i> SAFE PLAY</span>
+            <h2><span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>Safe Toys &amp; <span>Accessories</span><span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span></h2>
+            <p>Choose appropriately sized, bird-safe materials and inspect them often.</p>
+          </div>
+        </div>
+        <div class="safety-panel">
+          <ul>
+            <li>Avoid loose threads and small detachable parts that could cause injury or be swallowed.</li>
+            <li>Check toys regularly for damage and remove unsafe items.</li>
+            <li>Provide suitable perches for your bird's size and species.</li>
+            <li>Keep cage accessories clean and securely attached.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section safety-section" id="outdoor-safety">
+      <div class="section-wrap">
+        <div class="safety-heading">
+          <svg
+            class="corner-wave wave-tl"
+            viewBox="0 0 220 130"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z"
+              fill="#d8e8ce"
+              opacity="0.7"
+            />
+            <path
+              d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z"
+              fill="#edf6e6"
+              opacity="0.95"
+            />
+          </svg>
+          <svg
+            class="corner-wave wave-br"
+            viewBox="0 0 220 130"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z"
+              fill="#d8e8ce"
+              opacity="0.7"
+            />
+            <path
+              d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z"
+              fill="#edf6e6"
+              opacity="0.95"
+            />
+          </svg>
+          <div class="paw paw-left-1" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="paw paw-left-2" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="paw paw-right-1" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="paw paw-right-2" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="heading-content">
+            <span class="heading-label"><i class="fa-solid fa-tree" aria-hidden="true"></i> BEYOND THE HOME</span>
+            <h2><span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>Outdoor <span>Safety</span><span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span></h2>
+            <p>Plan ahead to keep outings secure and comfortable.</p>
+          </div>
+        </div>
+        <div class="safety-panel">
+          <ul>
+            <li>Use a secure bird carrier for travel and never allow unsupervised outdoor access.</li>
+            <li>Protect your bird from extreme weather and keep them away from predators.</li>
+            <li>Use a secure harness only when appropriate for your bird and after a gradual, proper introduction.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section safety-section safety-soft" id="emergency">
+      <div class="section-wrap">
+        <div class="safety-heading">
+          <svg
+            class="corner-wave wave-tl"
+            viewBox="0 0 220 130"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z"
+              fill="#d8e8ce"
+              opacity="0.7"
+            />
+            <path
+              d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z"
+              fill="#edf6e6"
+              opacity="0.95"
+            />
+          </svg>
+          <svg
+            class="corner-wave wave-br"
+            viewBox="0 0 220 130"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z"
+              fill="#d8e8ce"
+              opacity="0.7"
+            />
+            <path
+              d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z"
+              fill="#edf6e6"
+              opacity="0.95"
+            />
+          </svg>
+          <div class="paw paw-left-1" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="paw paw-left-2" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="paw paw-right-1" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="paw paw-right-2" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="heading-content">
+            <span class="heading-label"><i class="fa-solid fa-kit-medical" aria-hidden="true"></i> BE PREPARED</span>
+            <h2><span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>Emergency <span>Preparedness</span><span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span></h2>
+            <p>Knowing whom to call can save valuable time.</p>
+          </div>
+        </div>
+        <div class="safety-panel">
+          <ul>
+            <li>Keep your avian veterinarian's contact details and the location of the nearest emergency veterinary clinic handy.</li>
+            <li>Keep a suitable bird carrier accessible.</li>
+            <li>Watch for unusual behaviour, breathing difficulties, injuries or possible poisoning.</li>
+            <li>For a serious exposure or emergency, seek veterinary help immediately. Call your avian veterinarian or an emergency clinic for guidance.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section safety-section">
+      <div class="section-wrap">
+        <div class="safety-heading">
+          <svg
+            class="corner-wave wave-tl"
+            viewBox="0 0 220 130"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z"
+              fill="#d8e8ce"
+              opacity="0.7"
+            />
+            <path
+              d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z"
+              fill="#edf6e6"
+              opacity="0.95"
+            />
+          </svg>
+          <svg
+            class="corner-wave wave-br"
+            viewBox="0 0 220 130"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z"
+              fill="#d8e8ce"
+              opacity="0.7"
+            />
+            <path
+              d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z"
+              fill="#edf6e6"
+              opacity="0.95"
+            />
+          </svg>
+          <div class="paw paw-left-1" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="paw paw-left-2" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="paw paw-right-1" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="paw paw-right-2" aria-hidden="true">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="heading-content">
+            <span class="heading-label"><i class="fa-solid fa-list-check" aria-hidden="true"></i> A QUICK CHECK</span>
+            <h2><span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>Bird Safety <span>Checklist</span><span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span></h2>
+            <p>Use this list to review your bird's environment.</p>
+          </div>
+        </div>
+        <form class="safety-panel safety-checklist">
+          <fieldset>
+            <legend>Check each step you have completed</legend>
+            <label><input type="checkbox"> Windows and doors are secure.</label>
+            <label><input type="checkbox"> Ceiling fans are switched off during free flight.</label>
+            <label><input type="checkbox"> Electrical wires are inaccessible.</label>
+            <label><input type="checkbox"> Harmful chemicals are stored safely.</label>
+            <label><input type="checkbox"> Unsafe foods are kept away.</label>
+            <label><input type="checkbox"> Toys and cage accessories are checked regularly.</label>
+            <label><input type="checkbox"> Emergency veterinary details are available.</label>
+          </fieldset>
+          <button class="button" type="reset">Reset checklist</button>
+        </form>
+      </div>
+    </section>
+    <section class="safety-cta">
+      <h2>Keep Your Birds Safe, Healthy &amp; Happy</h2>
+      <p>Explore more practical guidance to help your feathered companion thrive.</p>
+      <div class="safety-actions">
+        <a class="button" href="care.html">Bird Care</a>
+        <a class="button button-outline" href="care.html#health">Bird Health &amp; Wellness</a>
+      </div>
+    </section>
+  </main>
+  <div id="footer"></div>
+  <script src="../../../js/main.js"></script>
+</body>
+</html>

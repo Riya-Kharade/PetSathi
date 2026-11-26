@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Complete Fish Care Guide on PetSathi - aquarium setup, water quality, filtration, cleaning, temperature, daily fish care and safe acclimation.">
+  <title>Complete Fish Care Guide | PetSathi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/global.css">
+  <link rel="stylesheet" href="../../../css/home.css">
+  <link rel="stylesheet" href="../../../css/inner.css">
+  <style>
+    /* Font Awesome protection */
+    .fa-solid, .fa-regular, .fa-brands, [class*="fa-"] {
+      font-family: "Font Awesome 6 Free" !important;
+      font-style: normal !important;
+      font-variant: normal !important;
+      text-rendering: auto !important;
+      line-height: 1 !important;
+    }
+    .fa-solid { font-weight: 900 !important; }
+    .fa-regular { font-weight: 400 !important; }
+
+    /* Hero:*/
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 48px;
+      padding-top: 24px;
+      padding-bottom: 60px;
+    }
+    #fish-care-hero {
+      width: 100%;
+      box-sizing: border-box;
+      padding-inline: max(24px, calc((100% - 1160px) / 2));
+    }
+    @media (min-width: 961px) {
+      #fish-care-hero { min-height: calc(100vh - 84px); }
+    }
+    .fish-badge-strip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: #eaf2e9;
+      color: var(--green);
+      border-radius: 999px;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .hero-copy h1 em { color: var(--green); font-style: normal; }
+
+    /* Fish care quick navigation */
+    .guides-nav-strip {
+      position: relative;
+      background: #ffffff;
+      margin: 40px auto;
+      max-width: 1200px;
+      width: calc(100% - 40px);
+      border: 1px solid #dceade;
+      border-radius: 32px;
+      padding: 42px 36px 38px;
+      box-shadow: 0 4px 24px rgba(35, 80, 50, 0.04);
+      overflow: hidden;
+    }
+
+    .quick-nav-decor {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+      color: #cde4d3;
+      opacity: 0.55;
+    }
+
+    .decor-top-left {
+      top: -8px;
+      left: -8px;
+      width: 130px;
+      height: 130px;
+      background: radial-gradient(circle at 10% 10%, #eaf5ed 0%, rgba(234, 245, 237, 0) 70%);
+      border-radius: 0 0 100% 0;
+    }
+
+    .decor-bottom-right {
+      bottom: -8px;
+      right: -8px;
+      width: 130px;
+      height: 130px;
+      background: radial-gradient(circle at 90% 90%, #eaf5ed 0%, rgba(234, 245, 237, 0) 70%);
+      border-radius: 100% 0 0 0;
+    }
+
+    .decor-fish {
+      position: absolute;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .decor-fish-1 {
+      top: 18px;
+      left: 27px;
+      font-size: 25px;
+      transform: rotate(-15deg);
+    }
+
+    .decor-fish-2 {
+      top: 48px;
+      left: 13px;
+      font-size: 17px;
+      transform: rotate(15deg);
+    }
+
+    .decor-fish-3 {
+      bottom: 42px;
+      right: 13px;
+      font-size: 17px;
+      transform: rotate(-20deg);
+    }
+
+    .decor-fish-4 {
+      bottom: 16px;
+      right: 27px;
+      font-size: 25px;
+      transform: rotate(15deg);
+    }
+
+    .quick-nav-header {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .quick-nav-eyebrow-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .quick-nav-line {
+      height: 1px;
+      width: 110px;
+      background: #d6ead9;
+    }
+
+    .quick-nav-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: #f4faf5;
+      border: 1px solid #b7deb8;
+      border-radius: 9999px;
+      color: #1e6f43;
+      font-family: "DM Sans", "Manrope", sans-serif !important;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      box-shadow: 0 1px 4px rgba(35, 100, 55, 0.04);
+    }
+
+    .quick-nav-badge i {
+      font-size: 0.95rem;
+      line-height: 1;
+      color: #1e6f43;
+      flex-shrink: 0;
+    }
+
+    .quick-nav-title {
+      font-family: "Manrope", sans-serif !important;
+      font-size: clamp(1.45rem, 2.4vw, 1.95rem);
+      font-weight: 800;
+      color: #1a251e;
+      margin: 0;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      text-align: center;
+    }
+
+    .quick-nav-title span {
+      color: #1e6f43;
+      font-weight: 800;
+    }
+
+    .guides-nav-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 0;
+    }
+
+    .guide-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 16px 9px 9px;
+      background: #edf7f0;
+      border: 1px solid #cce4d2;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+      min-width: 0;
+      cursor: pointer;
+    }
+
+    .guide-nav-item:hover,
+    .guide-nav-item:focus-visible {
+      background: #e4f4e8;
+      border-color: #237847;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(35, 100, 55, 0.12);
+    }
+
+    .guide-nav-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #d1ecda;
+      color: #1e6f43;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      font-size: 1rem;
+      line-height: 1;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .guide-nav-icon i {
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .guide-nav-item:hover .guide-nav-icon,
+    .guide-nav-item:focus-visible .guide-nav-icon {
+      background: #1e6f43;
+      color: #ffffff;
+    }
+
+    .guide-nav-label {
+      font-family: "DM Sans", "Manrope", sans-serif !important;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #1c2b20;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .guides-nav-strip i,
+    .guides-nav-strip [class*="fa-"] {
+      font-family: "Font Awesome 6 Free" !important;
+      font-style: normal !important;
+      font-variant: normal !important;
+      text-rendering: auto !important;
+      line-height: 1 !important;
+    }
+
+    .guides-nav-strip .fa-solid {
+      font-weight: 900 !important;
+    }
+
+    .guides-nav-strip .fa-regular {
+      font-weight: 400 !important;
+    }
+
+    @media (max-width: 900px) {
+      .guides-nav-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 560px) {
+      .guides-nav-strip {
+        width: calc(100% - 28px);
+        padding: 32px 18px 26px;
+        border-radius: 24px;
+      }
+      .quick-nav-line { width: 42px; }
+      .quick-nav-eyebrow-wrap { gap: 9px; }
+      .quick-nav-header { margin-bottom: 22px; }
+      .guides-nav-grid { grid-template-columns: 1fr; gap: 10px; }
+      .guide-nav-item { padding-right: 14px; }
+    }
+
+    /* Content sections and heading banners */
+    .fish-care-section { padding: 58px 0 64px; scroll-margin-top: 24px; }
+    .fish-bg-white { background: #fff; }
+    .fish-bg-cream { background: #fafcf7; }
+    .fish-bg-green { background: #f4faf5; }
+    .fish-section-heading {
+      max-width: 900px;
+      margin: 0 auto 34px;
+      text-align: center;
+    }
+    .fish-section-heading .heading-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 15px;
+      border-radius: 999px;
+      background: #edf7f0;
+      border: 1px solid #cce4d2;
+      color: #246b43;
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+      margin-bottom: 13px;
+    }
+    .fish-section-heading h2 {
+      margin: 0 0 12px;
+      color: #263b30;
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: clamp(1.8rem, 3.2vw, 2.35rem);
+      line-height: 1.2;
+    }
+    .fish-section-heading h2 span { color: #28764a; }
+    .fish-section-heading p {
+      max-width: 760px;
+      margin: 0 auto;
+      color: #64736a;
+      font-size: .98rem;
+      line-height: 1.7;
+    }
+    .fish-content-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(260px, .85fr);
+      gap: 30px;
+      align-items: center;
+      padding: 30px;
+      background: #fff;
+      border: 1px solid #e0eadf;
+      border-radius: 24px;
+      box-shadow: 0 5px 20px rgba(35, 75, 45, .045);
+    }
+    .fish-content-panel h3 {
+      margin: 0 0 12px;
+      color: #24392c;
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: 1.35rem;
+    }
+    .fish-content-panel p {
+      margin: 0 0 12px;
+      color: #58695e;
+      font-size: .94rem;
+      line-height: 1.75;
+    }
+    .fish-content-panel p:last-child { margin-bottom: 0; }
+    .fish-content-panel img {
+      display: block;
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 18px;
+    }
+    .fish-info-list {
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 9px;
+    }
+    .fish-info-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #34483a;
+      font-size: .91rem;
+      line-height: 1.55;
+    }
+    .fish-info-list i { color: #28764a; margin-top: 4px; }
+
+    /* Six matching care-tip cards */
+    .fish-tip-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 36px;
+    }
+    .fish-tip-card {
+      min-height: 230px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 28px 24px;
+      text-align: center;
+      background: #fff;
+      border: 1px solid #dceade;
+      border-radius: 22px;
+      box-shadow: 0 4px 18px rgba(35, 75, 45, .045);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .fish-tip-card:hover {
+      transform: translateY(-6px);
+      border-color: #8fbd9b;
+      box-shadow: 0 12px 30px rgba(35, 120, 71, .12);
+    }
+    .fish-tip-icon {
+      width: 58px;
+      height: 58px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 17px;
+      border-radius: 18px;
+      background: #eaf4e9;
+      color: #286849;
+      font-size: 1.45rem;
+    }
+    .fish-tip-card h3 {
+      margin: 0 0 10px;
+      color: #20372a;
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: 1.2rem;
+    }
+    .fish-tip-card p {
+      margin: 0;
+      color: #5b6c61;
+      font-size: .91rem;
+      line-height: 1.65;
+    }
+
+    /* Final CTA */
+    .fish-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      margin: 30px auto 85px !important;
+      padding: 34px 38px !important;
+      border: 1px solid #e6d7c3 !important;
+      border-radius: 30px !important;
+      background: #fcecef !important;
+      box-shadow: 0 10px 30px rgba(70, 50, 20, .05);
+    }
+    .fish-cta .eyebrow {
+      display: block;
+      margin-bottom: 12px;
+      color: #286849 !important;
+      font-size: .76rem !important;
+      font-weight: 700 !important;
+      letter-spacing: 1.5px !important;
+      text-transform: uppercase !important;
+    }
+    .fish-cta h2 {
+      margin: 0 0 12px !important;
+      color: #1a2e22 !important;
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: clamp(1.8rem, 3vw, 2.4rem) !important;
+      line-height: 1.2 !important;
+      text-align: left !important;
+    }
+    .fish-cta p {
+      max-width: 650px !important;
+      margin: 0 !important;
+      color: #4a5c51 !important;
+      font-size: .97rem !important;
+      line-height: 1.7 !important;
+      text-align: left !important;
+    }
+    .fish-cta .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 25px;
+      border-radius: 999px;
+      background: #fff !important;
+      color: #1a2e22 !important;
+      border: 1px solid rgba(0, 0, 0, .08) !important;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .06);
+      text-decoration: none;
+      font-weight: 700;
+      white-space: nowrap;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .fish-cta .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 18px rgba(0, 0, 0, .1);
+    }
+
+    @media (max-width: 960px) {
+      .hero { grid-template-columns: 1fr; gap: 30px; }
+      .fish-hero-photo { height: 380px; }
+      .fish-tip-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .fish-content-panel { grid-template-columns: 1fr  .8fr; }
+      .fish-cta { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 640px) {
+      #fish-care-hero { padding-inline: 20px; }
+      .fish-hero-photo { height: 280px; }
+      .fish-tip-grid { grid-template-columns: 1fr; gap: 16px; }
+      .fish-content-panel { grid-template-columns: 1fr; padding: 22px; }
+      .fish-content-panel img { height: 210px; }
+      .fish-nav-links { align-items: stretch; flex-direction: column; }
+      .fish-nav-links a { width: 100%; box-sizing: border-box; }
+      .fish-care-section { padding: 44px 0 50px; }
+      .fish-cta { padding: 28px 21px !important; }
+      .fish-cta .button { width: 100%; box-sizing: border-box; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Header and Navigation -->
+  <div id="header"></div>
+
+  <main>
+    <!-- Main Hero Section: aligned with the Dog and Cat index layout -->
+    <section class="hero section-wrap" id="fish-care-hero">
+      <div class="hero-copy">
+        <div class="fish-badge-strip"><i class="fa-solid fa-fish"></i> PetSathi • Aquatic Care Guide</div>
+        <h1>Complete <em>Fish Care Guide</em></h1>
+        <p>
+          Create a safe, balanced home for your fish with practical guidance on aquarium setup,
+          water quality, filtration, temperature, feeding routines and introducing new fish.
+          Responsible fish care starts with understanding the environment your aquatic companions need.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="#aquarium-setup">Explore Care Tips <i class="fa-solid fa-arrow-down"></i></a>
+          <a class="button button-outline" href="fish.html">Fish Overview <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="hero-note">♥ &nbsp; Clear water, a stable habitat and attentive care help fish thrive.</div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-blob"></div>
+        <img
+          src="https://images.unsplash.com/photo-1524704654690-b56c05c78a00?auto=format&amp;fit=crop&amp;w=1200&amp;q=90"
+          alt="Colourful tropical fish swimming in a planted aquarium"
+          class="hero-photo"
+          id="hero-care-fish-image">
+        <div class="floating-card card-top">
+          <i class="fa-solid fa-droplet" style="color: #3b9ac5;"></i>
+          <span><b>Balanced Water</b><small>Stable aquarium conditions</small></span>
+        </div>
+        <div class="floating-card card-bottom">
+          <i class="fa-solid fa-leaf" style="color: var(--green);"></i>
+          <span><b>Healthy Habitat</b><small>Space to explore and thrive</small></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fish Care Quick Navigation Hub-->
+    <nav class="guides-nav-strip" aria-label="Fish care quick navigation">
+      <div class="quick-nav-decor decor-top-left" aria-hidden="true">
+        <i class="fa-solid fa-fish decor-fish decor-fish-1"></i>
+        <i class="fa-solid fa-fish-fins decor-fish decor-fish-2"></i>
+      </div>
+
+      <div class="quick-nav-decor decor-bottom-right" aria-hidden="true">
+        <i class="fa-solid fa-fish-fins decor-fish decor-fish-3"></i>
+        <i class="fa-solid fa-fish decor-fish decor-fish-4"></i>
+      </div>
+
+      <div class="quick-nav-header">
+        <div class="quick-nav-eyebrow-wrap">
+          <span class="quick-nav-line"></span>
+          <div class="quick-nav-badge">
+            <i class="fa-regular fa-compass quick-nav-badge-icon" aria-hidden="true"></i>
+            <span>QUICK NAVIGATION</span>
+          </div>
+          <span class="quick-nav-line"></span>
+        </div>
+        <h3 class="quick-nav-title">
+          Explore Dedicated <span>Fish Care Chapters</span>
+        </h3>
+      </div>
+
+      <div class="guides-nav-grid">
+        <a class="guide-nav-item" href="#aquarium-setup">
+          <span class="guide-nav-icon"><i class="fa-solid fa-fish-fins" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Aquarium Setup</span>
+        </a>
+
+        <a class="guide-nav-item" href="#water-quality">
+          <span class="guide-nav-icon"><i class="fa-solid fa-droplet" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Water Quality</span>
+        </a>
+
+        <a class="guide-nav-item" href="#filtration-cleaning">
+          <span class="guide-nav-icon"><i class="fa-solid fa-filter" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Filtration &amp; Cleaning</span>
+        </a>
+
+        <a class="guide-nav-item" href="#temperature-lighting">
+          <span class="guide-nav-icon"><i class="fa-solid fa-temperature-half" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Temperature &amp; Lighting</span>
+        </a>
+
+        <a class="guide-nav-item" href="#daily-fish-care">
+          <span class="guide-nav-icon"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Daily Fish Care</span>
+        </a>
+
+        <a class="guide-nav-item" href="#fish-acclimation">
+          <span class="guide-nav-icon"><i class="fa-solid fa-water" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Fish Acclimation</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- A. Aquarium Setup -->
+    <section class="fish-care-section fish-bg-white" id="aquarium-setup">
+      <div class="section-wrap">
+        <div class="fish-section-heading">
+          <span class="heading-label"><i class="fa-solid fa-fish-fins"></i> Start with the Habitat</span>
+          <h2>Aquarium <span>Setup</span></h2>
+          <p>A thoughtfully planned aquarium gives fish room to swim, places to shelter and a stable environment that is easier to maintain.</p>
+        </div>
+        <div class="fish-content-panel">
+          <div>
+            <h3>Build a safe, suitable home</h3>
+            <p>Choose an aquarium based on the adult size, number and needs of the species you plan to keep. A larger volume of water is generally more stable than a very small tank, but stocking levels and swimming space must still suit the fish.</p>
+            <p>Place the aquarium on a level, sturdy stand that can support its filled weight. Keep it away from direct sunlight, heaters, loud vibrations and busy areas where repeated disturbances may stress fish.</p>
+            <ul class="fish-info-list">
+              <li><i class="fa-solid fa-check-circle"></i> Rinse aquarium-safe substrate before adding it; avoid soaps and household cleaners.</li>
+              <li><i class="fa-solid fa-check-circle"></i> Use aquarium-safe rocks, driftwood and decorations with no sharp edges.</li>
+              <li><i class="fa-solid fa-check-circle"></i> Add suitable live or artificial plants and hiding spaces without overcrowding swimming areas.</li>
+              <li><i class="fa-solid fa-check-circle"></i> Set up and cycle the aquarium before adding fish; do not treat clear-looking water as proof that it is ready.</li>
+            </ul>
+          </div>
+          <img src="https://images.unsplash.com/photo-1546026423-cc4642628d2b?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
+            alt="Aquarium with aquatic plants, rocks and open swimming space" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- B. Water Quality -->
+    <section class="fish-care-section fish-bg-cream" id="water-quality">
+      <div class="section-wrap">
+        <div class="fish-section-heading">
+          <span class="heading-label"><i class="fa-solid fa-droplet"></i> The Foundation of Fish Health</span>
+          <h2>Water <span>Quality</span></h2>
+          <p>Fish live in the water around them, so regular testing and careful water changes are essential even when the aquarium looks clean.</p>
+        </div>
+        <div class="fish-content-panel">
+          <div>
+            <h3>Test, prepare and refresh the water</h3>
+            <p>Use a reliable aquarium test kit to monitor ammonia, nitrite, nitrate and pH. In a healthy, established freshwater aquarium, ammonia and nitrite should read zero. Nitrate is managed through appropriate water changes, plant growth and sensible stocking; acceptable levels vary with the species and setup.</p>
+            <p>When changing water, use a dechlorinator suitable for the tap water and match the replacement water's temperature as closely as practical. Make partial, regular water changes rather than replacing all the aquarium water at once.</p>
+            <ul class="fish-info-list">
+              <li><i class="fa-solid fa-check-circle"></i> Ammonia and nitrite are toxic to fish and should not be detectable in a stable, cycled tank.</li>
+              <li><i class="fa-solid fa-check-circle"></i> Nitrate is a product of the aquarium nitrogen cycle and can build up over time.</li>
+              <li><i class="fa-solid fa-check-circle"></i> Test more often when establishing a tank, adding fish or investigating unusual behaviour.</li>
+              <li><i class="fa-solid fa-check-circle"></i> Never add untreated tap water directly to an aquarium.</li>
+            </ul>
+          </div>
+          <img src="https://images.unsplash.com/photo-1691387824643-227cc84127cf?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
+            alt="Freshwater aquarium with clear water and healthy fish" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- C. Filtration and Cleaning -->
+    <section class="fish-care-section fish-bg-green" id="filtration-cleaning">
+      <div class="section-wrap">
+        <div class="fish-section-heading">
+          <span class="heading-label"><i class="fa-solid fa-filter"></i> Keep the Aquarium Balanced</span>
+          <h2>Filtration <span>and Cleaning</span></h2>
+          <p>Filtration supports the aquarium's biological balance, while gentle routine cleaning removes debris without disrupting the beneficial bacteria.</p>
+        </div>
+        <div class="fish-content-panel">
+          <div>
+            <h3>Clean without disturbing the ecosystem</h3>
+            <p>Select a filter suited to the aquarium's volume and inhabitants. Filters provide mechanical filtration to trap particles and biological filtration that supports beneficial bacteria. Some setups also use chemical media for specific purposes.</p>
+            <p>Maintain the filter according to its manufacturer's instructions. If filter media needs rinsing, use removed aquarium water rather than untreated tap water, and avoid replacing all biological media at once.</p>
+            <ul class="fish-info-list">
+              <li><i class="fa-solid fa-check-circle"></i> Check that the filter is running and water is flowing properly every day.</li>
+              <li><i class="fa-solid fa-check-circle"></i> Use an aquarium-safe algae pad to clean the inside glass; avoid household detergents.</li>
+              <li><i class="fa-solid fa-check-circle"></i> Siphon visible waste and debris from the substrate during water changes.</li>
+              <li><i class="fa-solid fa-check-circle"></i> Keep the filter intake clear and clean equipment gently to preserve beneficial bacteria.</li>
+            </ul>
+          </div>
+          <img src="https://images.unsplash.com/photo-1784766029024-fe0adb02c313?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
+            alt="Aquarium filter equipment and a clean planted fish tank" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- D. Temperature and Lighting -->
+    <section class="fish-care-section fish-bg-white" id="temperature-lighting">
+      <div class="section-wrap">
+        <div class="fish-section-heading">
+          <span class="heading-label"><i class="fa-solid fa-temperature-half"></i> Keep Conditions Consistent</span>
+          <h2>Temperature <span>and Lighting</span></h2>
+          <p>Different fish species have different temperature and lighting needs. Research the requirements of every species in the aquarium and keep conditions consistent.</p>
+        </div>
+        <div class="fish-content-panel">
+          <div>
+            <h3>Prevent sudden environmental changes</h3>
+            <p>Use an appropriately sized aquarium heater when required and place a reliable thermometer where it can be checked easily. Set the temperature for the needs of the fish rather than relying on a one-size-fits-all setting.</p>
+            <p>Provide a consistent lighting schedule with a regular dark period so fish and plants have a predictable day-and-night cycle. A timer can help keep the schedule steady. Avoid placing the aquarium in direct sunlight, which can encourage excess algae and cause temperature swings.</p>
+            <ul class="fish-info-list">
+              <li><i class="fa-solid fa-check-circle"></i> Check the thermometer daily and confirm the heater is operating normally.</li>
+              <li><i class="fa-solid fa-check-circle"></i> Match the temperature range to the species you keep.</li>
+              <li><i class="fa-solid fa-check-circle"></i> Use a consistent lighting period and avoid leaving aquarium lights on continuously.</li>
+              <li><i class="fa-solid fa-check-circle"></i> Make temperature adjustments gradually; sudden changes can stress fish.</li>
+            </ul>
+          </div>
+          <img src="https://images.unsplash.com/photo-1535591273668-578e31182c4f?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
+            alt="Aquarium illuminated to show fish and aquatic plants" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- E. Daily and Weekly Fish Care -->
+    <section class="fish-care-section fish-bg-cream" id="daily-fish-care">
+      <div class="section-wrap">
+        <div class="fish-section-heading">
+          <span class="heading-label"><i class="fa-solid fa-calendar-check"></i> Consistent Attention</span>
+          <h2>Daily and Weekly <span>Fish Care</span></h2>
+          <p>Short, regular checks help you notice changes early and keep feeding, equipment and maintenance routines on track.</p>
+        </div>
+        <div class="fish-content-panel">
+          <div>
+            <h3>Make observation part of your routine</h3>
+            <p>Observe fish during feeding and at other times of day. Look for normal swimming, breathing, appetite and interaction. Clamped fins, unusual hiding, gasping, loss of appetite or erratic swimming can signal stress or a water-quality problem and should not be ignored.</p>
+            <p>Feed an appropriate, varied diet in amounts the fish can consume promptly. Remove uneaten food so it does not decompose and affect water quality. Follow species-specific feeding needs rather than overfeeding.</p>
+            <ul class="fish-info-list">
+              <li><i class="fa-solid fa-check-circle"></i> Daily: observe behaviour, check temperature, confirm filter and heater operation, and feed appropriately.</li>
+              <li><i class="fa-solid fa-check-circle"></i> Daily: check for uneaten food, dead plant matter and visible waste.</li>
+              <li><i class="fa-solid fa-check-circle"></i> Weekly: test water as appropriate for the tank's stability and recent changes.</li>
+              <li><i class="fa-solid fa-check-circle"></i> Weekly: perform a suitable partial water change and clean accessible surfaces as needed.</li>
+            </ul>
+          </div>
+          <img src="https://plus.unsplash.com/premium_photo-1682091918487-033a8ea72ce7?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
+            alt="Person observing fish in a home aquarium" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- F. Fish Acclimation -->
+    <section class="fish-care-section fish-bg-green" id="fish-acclimation">
+      <div class="section-wrap">
+        <div class="fish-section-heading">
+          <span class="heading-label"><i class="fa-solid fa-water"></i> A Gentle Introduction</span>
+          <h2>Fish <span>Acclimation</span></h2>
+          <p>Introducing new fish gradually helps reduce the stress caused by differences in water temperature and chemistry.</p>
+        </div>
+        <div class="fish-content-panel">
+          <div>
+            <h3>Introduce new fish safely</h3>
+            <p>Before purchasing fish, check that the aquarium is cycled, appropriately sized and compatible with the species. Avoid adding too many fish at once. If possible, quarantine new arrivals in a separate, properly equipped tank to observe their health before introducing them to an established community.</p>
+            <p>To acclimate, follow guidance suited to the species and the seller's transport method. A common starting step is to float the closed transport bag in the aquarium briefly to equalise temperature. Then gradually mix small amounts of aquarium water into the bag or use a suitable drip-acclimation method when appropriate. Avoid prolonged exposure to transport water, and do not pour shop or transport water into the aquarium.</p>
+            <ul class="fish-info-list">
+              <li><i class="fa-solid fa-check-circle"></i> Dim the aquarium lights and minimise noise and disturbance.</li>
+              <li><i class="fa-solid fa-check-circle"></i> Match temperature gradually and account for species-specific water needs.</li>
+              <li><i class="fa-solid fa-check-circle"></i> Transfer fish gently with a net or suitable container; leave transport water out of the tank.</li>
+              <li><i class="fa-solid fa-check-circle"></i> Monitor new arrivals closely for stress, illness and compatibility issues.</li>
+            </ul>
+          </div>
+          <img src="https://images.unsplash.com/photo-1530053969600-caed2596d242?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
+            alt="Small tropical fish swimming in a calm aquarium" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Fish care-tip cards -->
+    <section class="fish-care-section fish-bg-white" id="fish-care-tips">
+      <div class="section-wrap">
+        <div class="fish-section-heading">
+          <span class="heading-label"><i class="fa-solid fa-lightbulb"></i> Quick Reminders</span>
+          <h2>Six Essential <span>Fish Care Tips</span></h2>
+          <p>Keep these practical reminders in mind as you build a healthy, stable aquarium routine.</p>
+        </div>
+        <div class="fish-tip-grid">
+          <article class="fish-tip-card">
+            <div class="fish-tip-icon"><i class="fa-solid fa-fish-fins"></i></div>
+            <h3>Aquarium Setup Tips</h3>
+            <p>Choose a tank suited to adult fish size, provide open swimming space and hiding places, and cycle the aquarium before stocking it.</p>
+          </article>
+          <article class="fish-tip-card">
+            <div class="fish-tip-icon"><i class="fa-solid fa-droplet"></i></div>
+            <h3>Water Quality Tips</h3>
+            <p>Test ammonia, nitrite and nitrate, prepare replacement water with a suitable conditioner, and make regular partial water changes.</p>
+          </article>
+          <article class="fish-tip-card">
+            <div class="fish-tip-icon"><i class="fa-solid fa-broom"></i></div>
+            <h3>Cleaning Tips</h3>
+            <p>Remove waste and uneaten food, clean aquarium glass with safe tools, and maintain filter media without stripping away beneficial bacteria.</p>
+          </article>
+          <article class="fish-tip-card">
+            <div class="fish-tip-icon"><i class="fa-solid fa-temperature-half"></i></div>
+            <h3>Temperature Tips</h3>
+            <p>Use a thermometer, set the heater for your species and maintain a regular lighting schedule while avoiding sudden changes.</p>
+          </article>
+          <article class="fish-tip-card">
+            <div class="fish-tip-icon"><i class="fa-solid fa-calendar-check"></i></div>
+            <h3>Daily Care Tips</h3>
+            <p>Observe fish behaviour, check equipment, feed suitable portions and keep a simple schedule for water testing and tank maintenance.</p>
+          </article>
+          <article class="fish-tip-card">
+            <div class="fish-tip-icon"><i class="fa-solid fa-water"></i></div>
+            <h3>Acclimation Tips</h3>
+            <p>Prepare the aquarium first, equalise temperature gradually, avoid adding transport water and monitor new fish after introduction.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta section-wrap fish-cta">
+      <div>
+        <div class="eyebrow">HEALTHY HABITS FOR HEALTHY FISH</div>
+        <h2>Give Your Fish a <em>Healthy Environment</em></h2>
+        <p>
+          Good aquarium care goes hand in hand with suitable nutrition and early attention to health.
+          Explore fish nutrition guidance to learn about balanced feeding choices for your aquatic companions.
+        </p>
+      </div>
+      <div class="cta-actions">
+        <a class="button" href="nutrition.html" id="cta-fish-nutrition">
+          Explore Fish Nutrition <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <script src="../../../js/main.js"></script>
+</body>
+</html>
