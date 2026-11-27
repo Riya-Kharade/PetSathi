@@ -15,6 +15,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../../../css/global.css" />
+    <link rel="stylesheet" href="../../../css/home.css" />
     <link rel="stylesheet" href="../../../css/inner.css" />
     <link
       rel="stylesheet"
@@ -289,12 +290,53 @@
       .quick-nav-title span {
         color: var(--green);
       }
+      .guides-nav-search-wrap {
+        position: relative;
+        z-index: 1;
+        max-width: 640px;
+        margin: 0 auto 28px;
+      }
+      .guides-nav-search-bar {
+        display: flex;
+        align-items: center;
+        background: #fafcf7;
+        border: 1.5px solid #cce4d2;
+        border-radius: 9999px;
+        padding: 6px 18px;
+        box-shadow: 0 2px 10px rgba(35, 80, 50, 0.05);
+        transition: all 0.25s ease;
+      }
+      .guides-nav-search-bar:focus-within {
+        background: #ffffff;
+        border-color: #237847;
+        box-shadow: 0 4px 18px rgba(35, 120, 71, 0.16);
+      }
+      .guides-nav-search-icon {
+        color: #237847;
+        font-size: 1rem;
+        margin-right: 12px;
+        flex-shrink: 0;
+      }
+      .guides-nav-search-input {
+        flex: 1;
+        border: none;
+        background: transparent;
+        outline: none;
+        font-family: "DM Sans", "Manrope", sans-serif;
+        font-size: 0.95rem;
+        color: #1a251e;
+        padding: 8px 0;
+      }
+      .guides-nav-search-input::placeholder {
+        color: #7a8c80;
+      }
       .guides-nav-grid {
         position: relative;
         z-index: 1;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
         gap: 14px;
+        margin: 0;
       }
       .guide-nav-item {
         display: flex;
@@ -305,60 +347,217 @@
         border: 1px solid #cce4d2;
         border-radius: 9999px;
         text-decoration: none;
-        transition:
-          transform 0.2s ease,
-          box-shadow 0.2s ease,
-          border-color 0.2s ease,
-          background 0.2s ease;
+        cursor: pointer;
+        font-family: inherit;
+        width: 100%;
+        text-align: left;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
         min-width: 0;
       }
       .guide-nav-item:hover {
         background: #e4f4e8;
-        border-color: var(--green);
+        border-color: #237847;
         transform: translateY(-2px);
         box-shadow: 0 6px 18px rgba(35, 100, 55, 0.12);
       }
+      .guide-nav-item.active {
+        background: #237847;
+        border-color: #237847;
+        box-shadow: 0 6px 18px rgba(35, 100, 55, 0.2);
+      }
       .guide-nav-icon {
-        width: 38px;
-        height: 38px;
+        width: 42px;
+        height: 42px;
         border-radius: 50%;
         background: #d1ecda;
-        color: var(--green);
+        color: #1e6f43;
         display: grid;
         place-items: center;
         flex-shrink: 0;
-        font-size: 1rem;
-        transition:
-          background 0.2s ease,
-          color 0.2s ease;
+        font-size: 1.15rem;
+        line-height: 1;
+        transition: background 0.2s ease, color 0.2s ease;
       }
       .guide-nav-item:hover .guide-nav-icon {
-        background: var(--green);
+        background: #1e6f43;
         color: #ffffff;
+      }
+      .guide-nav-item.active .guide-nav-icon {
+        background: #ffffff;
+        color: #237847;
       }
       .guide-nav-label {
         font-size: 0.9rem;
         font-weight: 700;
-        color: var(--ink);
+        color: #1c2b20;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
       }
+      .guide-nav-item.active .guide-nav-label {
+        color: #ffffff;
+      }
 
-      .section-title-wrap {
+      .dog-topics-heading {
+        position: relative;
+        max-width: 1400px;
+        margin: 45px auto 35px;
+        padding: 44px 35px 38px;
+        overflow: hidden;
         text-align: center;
+        border-radius: 35px;
+        border: 1px solid #dcebc9;
+        background: #fafcf7;
+        box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
+        box-sizing: border-box;
+      }
+      .corner-wave {
+        position: absolute;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .wave-tl {
+        top: 0;
+        left: 0;
+        width: 220px;
+        height: 130px;
+      }
+      .wave-br {
+        bottom: 0;
+        right: 0;
+        width: 220px;
+        height: 130px;
+      }
+      .paw {
+        position: absolute;
+        color: rgba(115, 173, 91, 0.28);
+        z-index: 1;
+        pointer-events: none;
+      }
+      .paw-left-1 {
+        top: 66px;
+        left: 108px;
+        font-size: 58px;
+        transform: rotate(20deg);
+      }
+      .paw-left-2 {
+        bottom: 24px;
+        left: 82px;
+        font-size: 38px;
+        transform: rotate(-15deg);
+      }
+      .paw-right-1 {
+        top: 60px;
+        right: 75px;
+        font-size: 56px;
+        transform: rotate(18deg);
+      }
+      .paw-right-2 {
+        bottom: 35px;
+        right: 140px;
+        font-size: 38px;
+        transform: rotate(-15deg);
+      }
+      .heading-content {
+        position: relative;
+        z-index: 2;
+      }
+      .heading-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 7px 20px;
+        margin-bottom: 16px;
+        border-radius: 50px;
+        background: #edf6df;
+        border: 1px solid #dcebc9;
+        color: #246b43;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+      }
+      .dog-topics-heading h2 {
+        color: #263b30;
+        font-family: Georgia, serif;
+        font-size: clamp(24px, 3.2vw, 36px);
+        font-weight: 700;
+        margin: 0 0 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .dog-topics-heading h2 span {
+        color: #28764a;
+      }
+      .dog-topics-heading p {
         max-width: 720px;
-        margin: 0 auto 40px;
+        margin: 0 auto;
+        color: #64736a;
+        font-size: 15px;
+        line-height: 1.65;
       }
-      .section-title-wrap h2 {
-        margin: 8px 0 14px;
+      .heading-burst {
+        display: inline-block;
+        position: relative;
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        vertical-align: middle;
       }
-      .section-title-wrap p {
-        margin: 0;
-        font-size: 0.98rem;
+      .heading-burst span {
+        position: absolute;
+        background: #60a872;
+        border-radius: 9999px;
       }
-      .section-title-wrap .eyebrow {
-        margin-bottom: 8px;
+      .heading-burst.left span {
+        right: 0;
+        transform-origin: right center;
+      }
+      .heading-burst.left span:nth-child(1) {
+        top: 3px;
+        width: 14px;
+        height: 2.8px;
+        transform: rotate(35deg);
+      }
+      .heading-burst.left span:nth-child(2) {
+        top: 11px;
+        width: 18px;
+        height: 2.8px;
+      }
+      .heading-burst.left span:nth-child(3) {
+        bottom: 3px;
+        width: 14px;
+        height: 2.8px;
+        transform: rotate(-35deg);
+      }
+      .heading-burst.right span {
+        left: 0;
+        transform-origin: left center;
+      }
+      .heading-burst.right span:nth-child(1) {
+        top: 3px;
+        width: 14px;
+        height: 2.8px;
+        transform: rotate(-35deg);
+      }
+      .heading-burst.right span:nth-child(2) {
+        top: 11px;
+        width: 18px;
+        height: 2.8px;
+      }
+      .heading-burst.right span:nth-child(3) {
+        bottom: 3px;
+        width: 14px;
+        height: 2.8px;
+        transform: rotate(35deg);
+      }
+      @media (max-width: 768px) {
+        .paw {
+          display: none;
+        }
       }
 
       .categories-grid {
@@ -594,15 +793,16 @@
       }
       .breed-image-wrap {
         position: relative;
-        height: 200px;
+        height: 220px;
         overflow: hidden;
         background: #f0f3eb;
       }
       .breed-image {
         width: 100%;
         height: 100%;
+        display: block;
         object-fit: cover;
-        object-position: center 22%;
+        object-position: center 25%;
         transition: transform 0.4s ease;
       }
             /* Individual breed image positioning */
@@ -940,7 +1140,48 @@
         color: var(--dark);
       }
 
-      
+      .cta {
+        margin-top: 0;
+        margin-bottom: 92px;
+        border: 1px solid #e6d6c6;
+        background: #fafcf7 !important;
+      }
+      .cta-actions {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        flex-shrink: 0;
+      }
+      .cta .button-light {
+        background: var(--green);
+        color: #ffffff;
+        border-color: var(--green);
+      }
+      .cta .button-light:hover {
+        background: var(--dark);
+        border-color: var(--dark);
+        color: #ffffff;
+      }
+      .cta .button.button-outline {
+        background: transparent !important;
+        color: var(--green) !important;
+        border: 1.5px solid var(--green) !important;
+      }
+      .cta .button.button-outline:hover {
+        background: var(--green) !important;
+        color: #ffffff !important;
+      }
+      .cta > div:first-child {
+        text-align: left;
+      }
+      .cta > div:first-child .eyebrow,
+      .cta > div:first-child h2,
+      .cta > div:first-child p {
+        text-align: left;
+      }
+      .dog-cta-actions .button {
+        white-space: nowrap;
+      }
 
       .no-results-msg {
         grid-column: 1 / -1;
@@ -1351,7 +1592,7 @@
         </div>
       </section>
 
-      <div class="guides-nav-strip">
+      <div class="guides-nav-strip" id="quick-nav">
         <div class="quick-nav-decor decor-top-left" aria-hidden="true">
           <i class="fa-solid fa-paw decor-paw decor-paw-1"></i>
           <i class="fa-solid fa-paw decor-paw decor-paw-2"></i>
@@ -1365,45 +1606,77 @@
             <span class="quick-nav-line"></span>
             <div class="quick-nav-badge">
               <i class="fa-regular fa-compass" aria-hidden="true"></i>
-              <span>QUICK NAVIGATION</span>
+              <span>QUICK NAVIGATION &amp; FILTER</span>
             </div>
             <span class="quick-nav-line"></span>
           </div>
           <h3 class="quick-nav-title">
-            Explore Canine <span>Breeds Hub</span>
+            Explore Canine <span>Breeds &amp; Care Guide</span>
           </h3>
         </div>
+        <div class="guides-nav-search-wrap">
+          <div class="guides-nav-search-bar">
+            <i class="fa-solid fa-magnifying-glass guides-nav-search-icon" aria-hidden="true"></i>
+            <input
+              type="search"
+              id="breedSearchInput"
+              class="guides-nav-search-input"
+              placeholder="Search dog breeds, origins, or traits..."
+              aria-label="Search dog breeds"
+            />
+          </div>
+        </div>
         <div class="guides-nav-grid">
+          <button type="button" class="guide-nav-item filter-btn active" data-category="all" onclick="setBreedFilter('all', true)">
+            <span class="guide-nav-icon"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></span>
+            <span class="guide-nav-label">All Breeds</span>
+          </button>
+          <button type="button" class="guide-nav-item filter-btn" data-category="small" onclick="setBreedFilter('small', true)">
+            <span class="guide-nav-icon"><i class="fa-solid fa-dog" aria-hidden="true"></i></span>
+            <span class="guide-nav-label">Small Breeds</span>
+          </button>
+          <button type="button" class="guide-nav-item filter-btn" data-category="medium" onclick="setBreedFilter('medium', true)">
+            <span class="guide-nav-icon"><i class="fa-solid fa-paw" aria-hidden="true"></i></span>
+            <span class="guide-nav-label">Medium Breeds</span>
+          </button>
+          <button type="button" class="guide-nav-item filter-btn" data-category="large" onclick="setBreedFilter('large', true)">
+            <span class="guide-nav-icon"><i class="fa-solid fa-shield-dog" aria-hidden="true"></i></span>
+            <span class="guide-nav-label">Large Breeds</span>
+          </button>
           <a href="#categories" class="guide-nav-item">
-            <span class="guide-nav-icon"
-              ><i class="fa-solid fa-layer-group" aria-hidden="true"></i
-            ></span>
-            <span class="guide-nav-label">Breed Categories</span>
-          </a>
-          <a href="#popular-breeds" class="guide-nav-item">
-            <span class="guide-nav-icon"
-              ><i class="fa-solid fa-dog" aria-hidden="true"></i
-            ></span>
-            <span class="guide-nav-label">Popular Breeds</span>
+            <span class="guide-nav-icon"><i class="fa-solid fa-list-check" aria-hidden="true"></i></span>
+            <span class="guide-nav-label">Categories</span>
           </a>
           <a href="#comparison" class="guide-nav-item">
-            <span class="guide-nav-icon"
-              ><i class="fa-solid fa-code-compare" aria-hidden="true"></i
-            ></span>
+            <span class="guide-nav-icon"><i class="fa-solid fa-code-compare" aria-hidden="true"></i></span>
             <span class="guide-nav-label">Compare Breeds</span>
           </a>
         </div>
       </div>
 
       <section class="section section-wrap" id="categories">
-        <div class="section-title-wrap">
-          <div class="eyebrow">Classification &amp; Lifestyle</div>
-          <h2>Dog Breed <em>Categories</em></h2>
-          <p>
-            Dogs come in a wide range of coat types, activity styles, and home
-            preferences. Explore these categories to understand what makes each
-            group distinct.
-          </p>
+        <div class="dog-topics-heading">
+          <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+            <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+          </svg>
+          <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+            <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+          </svg>
+          <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+          <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+          <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+          <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+          <div class="heading-content">
+            <span class="heading-label"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Classification &amp; Lifestyle</span>
+            <h2>
+              <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+              Dog Breed <span>Categories</span>
+              <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+            </h2>
+            <p>Dogs come in a wide range of coat types, activity styles, and home preferences. Explore these categories to understand what makes each group distinct.</p>
+          </div>
         </div>
 
         <div class="categories-grid">
@@ -1563,85 +1836,27 @@
       </section>
 
       <section class="section section-wrap" id="popular-breeds">
-        <div class="section-title-wrap">
-          <div class="eyebrow">Canine Directory</div>
-          <h2>Popular <em>Dog Breeds</em></h2>
-          <p>
-            Explore in-depth profiles of 10 popular dog breeds with physical
-            characteristics, temperaments, lifespans, and grooming routines.
-          </p>
-        </div>
-
-        <div class="filter-section">
-          <div class="filter-header">
-            <div class="filter-title">
-              <i class="fa-solid fa-sliders" aria-hidden="true"></i>
-              <span>Filter by category</span>
-            </div>
-            <div class="filter-search-wrap">
-              <i
-                class="filter-search-icon fa-solid fa-magnifying-glass"
-                aria-hidden="true"
-              ></i>
-              <input
-                type="search"
-                id="breedSearchInput"
-                class="filter-search-input"
-                placeholder="Search breeds, origins, or traits"
-                aria-label="Search dog breeds"
-              />
-            </div>
-          </div>
-
-          <div class="filter-pills" role="tablist">
-            <button
-              class="filter-btn active"
-              data-category="all"
-              onclick="setBreedFilter('all')"
-            >
-              <i class="fa-solid fa-paw" aria-hidden="true"></i> All Breeds
-              <span class="filter-count-badge">10</span>
-            </button>
-            <button
-              class="filter-btn"
-              data-category="small"
-              onclick="setBreedFilter('small')"
-            >
-              <i class="fa-solid fa-dog" aria-hidden="true"></i> Small
-              <span class="filter-count-badge">3</span>
-            </button>
-            <button
-              class="filter-btn"
-              data-category="medium"
-              onclick="setBreedFilter('medium')"
-            >
-              <i class="fa-solid fa-dog" aria-hidden="true"></i> Medium
-              <span class="filter-count-badge">3</span>
-            </button>
-            <button
-              class="filter-btn"
-              data-category="large"
-              onclick="setBreedFilter('large')"
-            >
-              <i class="fa-solid fa-shield-dog" aria-hidden="true"></i> Large
-              <span class="filter-count-badge">4</span>
-            </button>
-            <button
-              class="filter-btn"
-              data-category="family"
-              onclick="setBreedFilter('family')"
-            >
-              <i class="fa-solid fa-heart" aria-hidden="true"></i> Family Dogs
-              <span class="filter-count-badge">4</span>
-            </button>
-            <button
-              class="filter-btn"
-              data-category="indian"
-              onclick="setBreedFilter('indian')"
-            >
-              <i class="fa-solid fa-earth-asia" aria-hidden="true"></i> Indian
-              Breeds <span class="filter-count-badge">1</span>
-            </button>
+        <div class="dog-topics-heading">
+          <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+            <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+          </svg>
+          <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+            <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+          </svg>
+          <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+          <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+          <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+          <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+          <div class="heading-content">
+            <span class="heading-label"><i class="fa-solid fa-dog" aria-hidden="true"></i> Canine Directory</span>
+            <h2>
+              <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+              Popular <span>Dog Breeds</span>
+              <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+            </h2>
+            <p>Explore in-depth profiles of 10 popular dog breeds with physical characteristics, temperaments, lifespans, and grooming routines.</p>
           </div>
         </div>
 
@@ -1802,7 +2017,7 @@
           >
             <div class="breed-image-wrap">
               <img
-                src="https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?auto=format&fit=crop&w=800&q=80"
+                src="https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?auto=format&fit=crop&w=800&h=600&crop=faces,entropy&q=80"
                 alt="German Shepherd"
                 class="breed-image"
                 loading="lazy"
@@ -1875,7 +2090,7 @@
           >
             <div class="breed-image-wrap">
               <img
-                src="https://images.unsplash.com/photo-1756995509988-84b5e5126031?auto=format&fit=crop&w=800&q=80"
+                src="https://images.dog.ceo/breeds/beagle/n02088364_11147.jpg"
                 alt="Beagle"
                 class="breed-image"
                 loading="lazy"
@@ -2023,7 +2238,7 @@
           >
             <div class="breed-image-wrap">
               <img
-                src="https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=800&q=80"
+                src="https://images.dog.ceo/breeds/shihtzu/n02086240_9551.jpg"
                 alt="Shih Tzu"
                 class="breed-image"
                 loading="lazy"
@@ -2093,7 +2308,7 @@
           <article class="breed-card" data-categories="small" data-name="Pug">
             <div class="breed-image-wrap">
               <img
-                src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=800&q=80"
+                src="https://images.dog.ceo/breeds/pug/n02110958_16330.jpg"
                 alt="Pug"
                 class="breed-image"
                 loading="lazy"
@@ -2398,14 +2613,28 @@
       </section>
 
       <section class="section section-wrap" id="comparison">
-        <div class="section-title-wrap">
-          <div class="eyebrow">Side-by-Side Analysis</div>
-          <h2>Dog Breed <em>Comparison</em></h2>
-          <p>
-            Compare general size, origin, energy levels, grooming commitments,
-            and temperaments across all 10 breeds to find the right fit for your
-            home.
-          </p>
+        <div class="dog-topics-heading">
+          <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+            <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+          </svg>
+          <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+            <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+          </svg>
+          <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+          <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+          <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+          <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+          <div class="heading-content">
+            <span class="heading-label"><i class="fa-solid fa-code-compare" aria-hidden="true"></i> Side-by-Side Analysis</span>
+            <h2>
+              <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+              Dog Breed <span>Comparison</span>
+              <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+            </h2>
+            <p>Compare general size, origin, energy levels, grooming commitments, and temperaments across all 10 breeds to find the right fit for your home.</p>
+          </div>
         </div>
 
         <div class="comparison-wrapper">
@@ -2567,7 +2796,7 @@
                   <td>
                     <div class="table-breed-cell">
                       <img
-                        src="https://images.unsplash.com/photo-1756995509988-84b5e5126031?auto=format&fit=crop&w=120&q=80"
+                        src="https://images.dog.ceo/breeds/beagle/n02088364_11147.jpg"
                         alt="Beagle"
                         class="table-breed-img"
                       />
@@ -2655,7 +2884,7 @@
                   <td>
                     <div class="table-breed-cell">
                       <img
-                        src="https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=120&q=80"
+                        src="https://images.dog.ceo/breeds/shihtzu/n02086240_9551.jpg"
                         alt="Shih Tzu"
                         class="table-breed-img"
                       />
@@ -2698,7 +2927,7 @@
                   <td>
                     <div class="table-breed-cell">
                       <img
-                        src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=120&q=80"
+                        src="https://images.dog.ceo/breeds/pug/n02110958_16330.jpg"
                         alt="Pug"
                         class="table-breed-img"
                       />
@@ -2867,29 +3096,24 @@
         </div>
       </section>
 
-    <section class="cta section-wrap">
-  <div>
-    <div class="eyebrow">CANINE WELLNESS &amp; EXERCISE</div>
-    <h2>Every Paw Deserves a <em>Loving Home.</em></h2>
-    <p>
-      Understanding your dog's needs is the first step toward a happy,
-      healthy life. PetSathi is here to guide you with trusted care advice,
-      daily exercise tips, and loving support every step of the way.
-    </p>
-  </div>
-
-  <div class="cta-actions">
-    <a class="button button-light" href="../index.html">
-      Explore Dog Care Guide ↗
-    </a>
-    <a class="button button-outline" href="../../walker/dogs.html">
-      Find a Dog Walker
-    </a>
-  </div>
-</section>
+      <section class="cta section-wrap">
+        <div>
+          <div class="eyebrow">Canine Wellness &amp; Exercise</div>
+          <h2>Ready to Explore <em>Dog Care &amp; Walking?</em></h2>
+          <p>
+            Understanding breed characteristics is only the first step. Keep
+            your canine companion vibrant and healthy with daily walks,
+            balanced care routines, and trusted walker support.
+          </p>
+        </div>
+        <div class="cta-actions">
+          <a class="button button-light" href="index.html">← Back to Dogs Landing Page</a>
+          <a class="button button-outline" href="../../walker/dogs.html">Find a Dog Walker ↗</a>
+        </div>
+      </section>
     </main>
 
-   <div id="footer"></div>
+    <div id="footer"></div>
 
     <script src="../../../js/main.js"></script>
     <script>
@@ -2906,7 +3130,7 @@
           : " View Details";
       }
 
-      function setBreedFilter(category) {
+      function setBreedFilter(category, shouldScroll) {
         currentCategory = category;
 
         document.querySelectorAll(".filter-btn").forEach((btn) => {
