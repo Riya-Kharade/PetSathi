@@ -1,0 +1,1298 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Complete Fish Nutrition Guide on PetSathi. Learn about types of fish food, herbivorous, carnivorous, and omnivorous diets, daily feeding schedules, foods to avoid, and healthy feeding tips."
+  />
+  <meta name="theme-color" content="#fafcf7" />
+  <title>Complete Fish Nutrition Guide | PetSathi</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Core PetSathi Stylesheets -->
+  <link rel="stylesheet" href="../../../css/global.css" />
+  <link rel="stylesheet" href="../../../css/home.css" />
+  <link rel="stylesheet" href="../../../css/inner.css" />
+
+  <!-- Font Awesome 6.5.2 -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <style>
+    /* ========================================================
+       FONT AWESOME 6 FREE PROTECTION
+       ======================================================== */
+    @font-face {
+      font-family: "Font Awesome 6 Free";
+      font-style: normal;
+      font-weight: 900;
+      font-display: block;
+      src:
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.woff2")
+          format("woff2"),
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.ttf")
+          format("truetype");
+    }
+
+    @font-face {
+      font-family: "Font Awesome 6 Free";
+      font-style: normal;
+      font-weight: 400;
+      font-display: block;
+      src:
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-regular-400.woff2")
+          format("woff2"),
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-regular-400.ttf")
+          format("truetype");
+    }
+
+    .fa-solid,
+    .fa-regular,
+    .fa-brands {
+      font-family: "Font Awesome 6 Free" !important;
+      font-style: normal !important;
+      font-variant: normal !important;
+      text-rendering: auto !important;
+      line-height: 1 !important;
+    }
+
+    .fa-solid {
+      font-weight: 900 !important;
+    }
+
+    .fa-regular {
+      font-weight: 400 !important;
+    }
+
+    /* ========================================================
+       PETSATHI THEME TOKENS & BASE
+       ======================================================== */
+    :root {
+      --nut-green-dark: #1b3d2b;
+      --nut-green-primary: #246b43;
+      --nut-green-accent: #28764a;
+      --nut-green-light: #edf7f0;
+      --nut-green-soft: #f4faf6;
+      --nut-border: #dcebc9;
+      --nut-card-border: #e2eddc;
+      --nut-cream: #fafcf7;
+      --nut-white: #ffffff;
+      --nut-ink: #1a251e;
+      --nut-muted: #55665c;
+      --nut-shadow: 0 4px 20px rgba(35, 75, 45, 0.05);
+      --nut-hover-shadow: 0 12px 28px rgba(35, 75, 45, 0.1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--nut-cream);
+      color: var(--nut-ink);
+      font-family: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    [id] {
+      scroll-margin-top: 95px;
+    }
+
+    /* ========================================================
+       1. HERO SECTION (Matches Cat/Dog Index)
+       ======================================================== */
+    .fish-badge-strip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: #eaf2e9;
+      color: var(--nut-green-primary);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .hero-copy h1 em {
+      color: var(--nut-green-primary);
+      font-style: normal;
+    }
+
+    .hero-actions .button-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 24px;
+      border-radius: 9999px;
+      background: transparent !important;
+      color: var(--nut-green-primary) !important;
+      border: 1.5px solid var(--nut-green-primary) !important;
+      font-family: "DM Sans", "Manrope", sans-serif !important;
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .hero-actions .button-outline:hover {
+      background: var(--nut-green-primary) !important;
+      color: #ffffff !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(36, 107, 67, 0.2);
+    }
+
+    .floating-card i {
+      font-size: 1.25rem;
+      color: var(--nut-green-primary);
+      display: inline-block;
+      line-height: 1;
+    }
+
+    /* ========================================================
+       2. QUICK NAVIGATION HUB (Matches Cat Index)
+       ======================================================== */
+    .guides-nav-strip {
+      position: relative;
+      background: #ffffff;
+      margin: 40px auto;
+      max-width: 1200px;
+      width: calc(100% - 40px);
+      border: 1px solid #dceade;
+      border-radius: 32px;
+      padding: 40px 34px 36px;
+      box-shadow: 0 4px 24px rgba(35, 80, 50, 0.04);
+      overflow: hidden;
+    }
+
+    .quick-nav-decor {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+      color: #cde4d3;
+      opacity: 0.55;
+    }
+
+    .decor-top-left {
+      top: 14px;
+      left: 20px;
+    }
+
+    .decor-bottom-right {
+      bottom: 14px;
+      right: 20px;
+    }
+
+    .decor-paw {
+      font-size: 28px;
+      margin: 0 4px;
+    }
+
+    .quick-nav-header {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      margin-bottom: 26px;
+    }
+
+    .quick-nav-eyebrow-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+
+    .quick-nav-line {
+      height: 1px;
+      width: 48px;
+      background: #cde4d3;
+    }
+
+    .quick-nav-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 14px;
+      border-radius: 999px;
+      background: #edf6df;
+      border: 1px solid var(--nut-border);
+      color: var(--nut-green-primary);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .quick-nav-title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(20px, 2.5vw, 28px);
+      color: #263b30;
+      margin: 0;
+    }
+
+    .quick-nav-title span {
+      color: var(--nut-green-accent);
+    }
+
+    .guides-nav-search-wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+      margin: 0 auto 28px;
+    }
+
+    .guides-nav-search-bar {
+      display: flex;
+      align-items: center;
+      background: #fafcf7;
+      border: 1.5px solid #cce4d2;
+      border-radius: 9999px;
+      padding: 6px 18px;
+      box-shadow: 0 2px 10px rgba(35, 80, 50, 0.05);
+      transition: all 0.25s ease;
+    }
+
+    .guides-nav-search-bar:focus-within {
+      background: #ffffff;
+      border-color: #237847;
+      box-shadow: 0 4px 18px rgba(35, 120, 71, 0.16);
+    }
+
+    .guides-nav-search-icon {
+      color: #237847;
+      font-size: 1rem;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+
+    .guides-nav-search-input {
+      flex: 1;
+      border: none;
+      background: transparent;
+      outline: none;
+      font-family: "DM Sans", "Manrope", sans-serif;
+      font-size: 0.95rem;
+      color: #1a251e;
+      padding: 8px 0;
+    }
+
+    .guides-nav-search-input::placeholder {
+      color: #7a8c80;
+    }
+
+    .guides-nav-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
+      margin: 0;
+    }
+
+    .guide-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 9px 18px 9px 9px;
+      background: #edf7f0;
+      border: 1px solid #cce4d2;
+      border-radius: 9999px;
+      text-decoration: none;
+      cursor: pointer;
+      font-family: inherit;
+      width: 100%;
+      text-align: left;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+      min-width: 0;
+    }
+
+    .guide-nav-item:hover {
+      background: #e4f4e8;
+      border-color: #237847;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(35, 100, 55, 0.12);
+    }
+
+    .guide-nav-item.active {
+      background: #237847;
+      border-color: #237847;
+      box-shadow: 0 6px 18px rgba(35, 100, 55, 0.2);
+    }
+
+    .guide-nav-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #d1ecda;
+      color: #1e6f43;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      font-size: 1.15rem;
+      line-height: 1;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .guide-nav-item:hover .guide-nav-icon {
+      background: #1e6f43;
+      color: #ffffff;
+    }
+
+    .guide-nav-item.active .guide-nav-icon {
+      background: #ffffff;
+      color: #237847;
+    }
+
+    .guide-nav-label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #1c2b20;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .guide-nav-item.active .guide-nav-label {
+      color: #ffffff;
+    }
+
+    /* ========================================================
+       3. SIGNATURE SECTION HEADING CARDS (Matches Cats Index)
+       ======================================================== */
+    .cat-topics-heading {
+      position: relative;
+      width: 100%;
+      max-width: 1400px;
+      margin: 45px auto 35px;
+      padding: 44px 35px 38px;
+      overflow: hidden;
+      text-align: center;
+      border-radius: 35px;
+      border: 1px solid var(--nut-border);
+      background: var(--nut-cream);
+      box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
+      box-sizing: border-box;
+    }
+
+    .corner-wave {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wave-tl {
+      top: 0;
+      left: 0;
+      width: 220px;
+      height: 130px;
+    }
+
+    .wave-br {
+      bottom: 0;
+      right: 0;
+      width: 220px;
+      height: 130px;
+    }
+
+    .paw {
+      position: absolute;
+      color: rgba(115, 173, 91, 0.28);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .paw-left-1 {
+      top: 66px;
+      left: 108px;
+      font-size: 58px;
+      transform: rotate(20deg);
+    }
+
+    .paw-left-2 {
+      bottom: 24px;
+      left: 82px;
+      font-size: 38px;
+      transform: rotate(-15deg);
+    }
+
+    .paw-right-1 {
+      top: 60px;
+      right: 75px;
+      font-size: 56px;
+      transform: rotate(18deg);
+    }
+
+    .paw-right-2 {
+      bottom: 35px;
+      right: 140px;
+      font-size: 38px;
+      transform: rotate(-15deg);
+    }
+
+    .heading-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .heading-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 20px;
+      margin-bottom: 16px;
+      border-radius: 50px;
+      background: #edf6df;
+      border: 1px solid var(--nut-border);
+      color: var(--nut-green-primary);
+      font-family: "DM Sans", "Manrope", sans-serif !important;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      box-shadow: 0 1px 4px rgba(36, 107, 67, 0.06);
+    }
+
+    .heading-label i {
+      font-size: 14px;
+      color: var(--nut-green-primary);
+      line-height: 1;
+    }
+
+    .cat-topics-heading h2 {
+      color: #263b30;
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: clamp(24px, 3.2vw, 36px);
+      font-weight: 700;
+      margin: 0 0 12px;
+      line-height: 1.2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .cat-topics-heading h2 span {
+      color: var(--nut-green-accent);
+    }
+
+    .cat-topics-heading p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: #64736a;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .heading-burst {
+      display: inline-block;
+      position: relative;
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      vertical-align: middle;
+    }
+
+    .heading-burst span {
+      position: absolute;
+      background: #60a872;
+      border-radius: 9999px;
+    }
+
+    .heading-burst.left span {
+      right: 0;
+      transform-origin: right center;
+    }
+
+    .heading-burst.left span:nth-child(1) {
+      top: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(35deg);
+    }
+
+    .heading-burst.left span:nth-child(2) {
+      top: 11px;
+      width: 18px;
+      height: 2.8px;
+    }
+
+    .heading-burst.left span:nth-child(3) {
+      bottom: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(-35deg);
+    }
+
+    .heading-burst.right span {
+      left: 0;
+      transform-origin: left center;
+    }
+
+    .heading-burst.right span:nth-child(1) {
+      top: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(-35deg);
+    }
+
+    .heading-burst.right span:nth-child(2) {
+      top: 11px;
+      width: 18px;
+      height: 2.8px;
+    }
+
+    .heading-burst.right span:nth-child(3) {
+      bottom: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(35deg);
+    }
+
+    /* ========================================================
+       4. CLEAN ICON CARDS (Icon -> Title -> Description)
+       ======================================================== */
+    .nut-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+      margin-bottom: 45px;
+    }
+
+    .nut-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 45px;
+    }
+
+    .nut-card {
+      background: var(--nut-white);
+      border: 1px solid var(--nut-card-border);
+      border-radius: 22px;
+      padding: 30px 22px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: var(--nut-shadow);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+      height: 100%;
+    }
+
+    .nut-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--nut-hover-shadow);
+      border-color: #cce4d2;
+    }
+
+    .nut-card-icon {
+      width: 62px;
+      height: 62px;
+      border-radius: 18px;
+      background: var(--nut-green-light);
+      color: var(--nut-green-primary);
+      border: 1px solid #d5eadb;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 18px;
+      flex-shrink: 0;
+    }
+
+    .nut-card h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--nut-green-dark);
+      margin: 0 0 10px;
+      line-height: 1.3;
+    }
+
+    .nut-card p {
+      font-size: 0.9rem;
+      color: var(--nut-muted);
+      line-height: 1.62;
+      margin: 0;
+    }
+
+    /* ========================================================
+       5. NOTICE CALLOUT BANNER
+       ======================================================== */
+    .nut-notice-banner {
+      background: linear-gradient(135deg, #f3f8f1 0%, #ebf5ea 100%);
+      border: 1px solid #cce4d2;
+      border-radius: 24px;
+      padding: 28px 32px;
+      margin-bottom: 45px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      box-shadow: 0 4px 18px rgba(35, 75, 45, 0.04);
+    }
+
+    .nut-notice-icon {
+      width: 68px;
+      height: 68px;
+      flex-shrink: 0;
+      border-radius: 20px;
+      background: #ffffff;
+      border: 1px solid #cce4d2;
+      color: var(--nut-green-primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 4px 12px rgba(35, 75, 45, 0.06);
+    }
+
+    .nut-notice-text h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.25rem;
+      color: var(--nut-green-dark);
+      margin: 0 0 6px;
+    }
+
+    .nut-notice-text p {
+      margin: 0;
+      color: #405748;
+      font-size: 0.94rem;
+      line-height: 1.62;
+    }
+
+    /* ========================================================
+       6. FINAL CTA (Matches Cat Index)
+       ======================================================== */
+    .cta {
+      margin-top: 0;
+      margin-bottom: 92px;
+      border: 1px solid #e6d6c6;
+    }
+
+    .cta > div:first-child {
+      text-align: left;
+    }
+
+    .cta > div:first-child .eyebrow,
+    .cta > div:first-child h2,
+    .cta > div:first-child p {
+      text-align: left;
+    }
+
+    .cta-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+    }
+
+    .cta .button-light {
+      background: var(--nut-green-primary);
+      color: #ffffff;
+      border-color: var(--nut-green-primary);
+    }
+
+    .cta .button-light:hover {
+      background: var(--nut-green-dark);
+      border-color: var(--nut-green-dark);
+      color: #ffffff;
+    }
+
+    .cta .button.button-outline {
+      background: transparent !important;
+      color: var(--nut-green-primary) !important;
+      border: 1.5px solid var(--nut-green-primary) !important;
+      padding: 13px 24px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      transition: all 0.25s ease;
+    }
+
+    .cta .button.button-outline:hover {
+      background: var(--nut-green-primary) !important;
+      color: #ffffff !important;
+      border-color: var(--nut-green-primary) !important;
+    }
+
+    /* ========================================================
+       7. RESPONSIVE BREAKPOINTS
+       ======================================================== */
+    @media (max-width: 1100px) {
+      .guides-nav-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .nut-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .nut-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nut-notice-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 26px 22px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .paw {
+        display: none;
+      }
+
+      .guides-nav-grid,
+      .nut-grid-4,
+      .nut-grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .guides-nav-strip {
+        padding: 26px 18px;
+      }
+
+      .cta-actions {
+        width: 100%;
+        flex-direction: column;
+        margin-top: 18px;
+      }
+
+      .cta-actions .button {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Reusable Header Placeholder -->
+  <div id="header"></div>
+
+  <main>
+    <!-- ========================================================
+         1. MAIN HERO SECTION
+         ======================================================== -->
+    <section class="hero section-wrap" id="fish-nutrition-hero">
+      <div class="hero-copy">
+        <div class="fish-badge-strip">
+          <i class="fa-solid fa-bowl-food" aria-hidden="true"></i>
+          <span>PETSATHI &bull; AQUATIC DIET &amp; NUTRITION</span>
+        </div>
+        <h1>Complete <em>Fish Nutrition</em> Guide</h1>
+        <p class="hero-lead">
+          Proper nutrition is the foundation of fish vitality, vibrant coloration, strong immunity, and crystal-clear water. Because aquarium species range from strict algae grazers to specialized predators, feeding the right food types in measured portions keeps both your fish and tank ecosystem thriving.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="#fish-food-types" id="hero-cta-foods">
+            Explore Food Types <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+          </a>
+          <a class="button button-outline" href="fish.html" id="hero-cta-hub">
+            Fish Overview
+          </a>
+        </div>
+        <div class="hero-note">
+          <i class="fa-solid fa-circle-check" style="color: var(--nut-green-primary);" aria-hidden="true"></i>
+          &nbsp; Balanced, species-appropriate feeding for freshwater &amp; marine fish.
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-blob"></div>
+        <img
+          src="https://images.unsplash.com/photo-1546026423-cc4642628d2b?auto=format&fit=crop&w=1000&q=85"
+          alt="Colorful aquarium fish swimming in clean water with healthy nutrition"
+          class="hero-photo"
+          id="hero-fish-nutrition-image"
+        />
+        <div class="floating-card card-top">
+          <i class="fa-solid fa-fish-fins" aria-hidden="true"></i>
+          <span>
+            <b>Species-Tailored Diets</b>
+            <small>Herbivores, carnivores &amp; omnivores</small>
+          </span>
+        </div>
+        <div class="floating-card card-bottom">
+          <i class="fa-solid fa-clock" aria-hidden="true"></i>
+          <span>
+            <b>Measured Portions</b>
+            <small>Healthy growth &amp; clean water</small>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         QUICK NAVIGATION HUB
+         ======================================================== -->
+    <nav class="guides-nav-strip" id="quick-nav" aria-label="Quick Navigation and Filter">
+      <div class="quick-nav-decor decor-top-left" aria-hidden="true">
+        <i class="fa-solid fa-paw decor-paw"></i>
+        <i class="fa-solid fa-paw decor-paw"></i>
+      </div>
+      <div class="quick-nav-decor decor-bottom-right" aria-hidden="true">
+        <i class="fa-solid fa-paw decor-paw"></i>
+        <i class="fa-solid fa-paw decor-paw"></i>
+      </div>
+
+      <div class="quick-nav-header">
+        <div class="quick-nav-eyebrow-wrap">
+          <span class="quick-nav-line"></span>
+          <div class="quick-nav-badge">
+            <i class="fa-regular fa-compass" aria-hidden="true"></i>
+            <span>QUICK NAVIGATION &amp; FILTER</span>
+          </div>
+          <span class="quick-nav-line"></span>
+        </div>
+        <h2 class="quick-nav-title">
+          Explore Aquatic <span>Nutrition &amp; Diet Guide</span>
+        </h2>
+      </div>
+
+      <div class="guides-nav-search-wrap">
+        <div class="guides-nav-search-bar">
+          <i class="fa-solid fa-magnifying-glass guides-nav-search-icon" aria-hidden="true"></i>
+          <input
+            type="search"
+            id="fishNutritionSearch"
+            class="guides-nav-search-input"
+            placeholder="Search fish food types, diets, schedules, tips..."
+            aria-label="Search Fish Nutrition Guide"
+          />
+        </div>
+      </div>
+
+      <div class="guides-nav-grid">
+        <button type="button" class="guide-nav-item active" data-target="all">
+          <span class="guide-nav-icon"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">All Topics</span>
+        </button>
+        <a class="guide-nav-item" href="#fish-food-types" data-target="fish-food-types">
+          <span class="guide-nav-icon"><i class="fa-solid fa-bowl-food" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Food Types</span>
+        </a>
+        <a class="guide-nav-item" href="#feeding-by-type" data-target="feeding-by-type">
+          <span class="guide-nav-icon"><i class="fa-solid fa-fish-fins" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Feeding by Type</span>
+        </a>
+        <a class="guide-nav-item" href="#daily-feeding-schedule" data-target="daily-feeding-schedule">
+          <span class="guide-nav-icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Daily Schedule</span>
+        </a>
+        <a class="guide-nav-item" href="#foods-to-avoid" data-target="foods-to-avoid">
+          <span class="guide-nav-icon"><i class="fa-solid fa-ban" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Foods to Avoid</span>
+        </a>
+        <a class="guide-nav-item" href="#fish-nutrition-tips" data-target="fish-nutrition-tips">
+          <span class="guide-nav-icon"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></span>
+          <span class="guide-nav-label">Nutrition Tips</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- ========================================================
+         2. TYPES OF FISH FOOD (6 Cards)
+         ======================================================== -->
+    <section class="section-wrap" id="fish-food-types">
+      <div class="cat-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-bowl-food" aria-hidden="true"></i> Staple &amp; Supplemental Foods
+          </span>
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Types of <span>Fish Food</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+          <p>
+            Combining a high-quality staple diet with targeted supplemental foods ensures complete amino acids, vitamins, and natural foraging enrichment.
+          </p>
+        </div>
+      </div>
+
+      <div class="nut-grid-3">
+        <article class="nut-card">
+          <div class="nut-card-icon"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></div>
+          <h3>Flakes</h3>
+          <p>Common everyday food for surface- and mid-water-dwelling aquarium fish such as tetras, guppies, and danios. Easy to crumble for smaller mouths.</p>
+        </article>
+
+        <article class="nut-card">
+          <div class="nut-card-icon"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i></div>
+          <h3>Pellets</h3>
+          <p>Nutrient-rich, low-waste food available in floating, slow-sinking, and bottom-wafer sizes to match different fish sizes and swimming zones.</p>
+        </article>
+
+        <article class="nut-card">
+          <div class="nut-card-icon"><i class="fa-solid fa-wind" aria-hidden="true"></i></div>
+          <h3>Freeze-Dried Food</h3>
+          <p>Convenient, shelf-stable treats such as bloodworms, tubifex, and brine shrimp. Presoaking briefly in tank water helps prevent air swallowing.</p>
+        </article>
+
+        <article class="nut-card">
+          <div class="nut-card-icon"><i class="fa-solid fa-snowflake" aria-hidden="true"></i></div>
+          <h3>Frozen Food</h3>
+          <p>Suitable supplementary protein options like frozen mysis shrimp, daphnia, and bloodworms that retain natural moisture and nutrients without live-parasite risk.</p>
+        </article>
+
+        <article class="nut-card">
+          <div class="nut-card-icon"><i class="fa-solid fa-bug" aria-hidden="true"></i></div>
+          <h3>Live Food</h3>
+          <p>Natural, movement-rich food options such as daphnia and newly hatched brine shrimp that stimulate natural hunting instincts and condition breeding fish.</p>
+        </article>
+
+        <article class="nut-card">
+          <div class="nut-card-icon"><i class="fa-solid fa-leaf" aria-hidden="true"></i></div>
+          <h3>Vegetable-Based Food</h3>
+          <p>Spirulina algae wafers, kelp flakes, and blanched zucchini or spinach designed for herbivorous grazers, plecos, and plant-loving community fish.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         3. FEEDING GUIDE BY FISH TYPE (3 Cards)
+         ======================================================== -->
+    <section class="section-wrap" id="feeding-by-type">
+      <div class="cat-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-fish-fins" aria-hidden="true"></i> Dietary Profiles
+          </span>
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Feeding Guide <span>by Fish Type</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+          <p>
+            Every fish species has a digestive tract adapted to its natural diet. Match food composition to your fish's biological feeding group.
+          </p>
+        </div>
+      </div>
+
+      <div class="nut-grid-3">
+        <article class="nut-card">
+          <div class="nut-card-icon"><i class="fa-solid fa-seedling" aria-hidden="true"></i></div>
+          <h3>Herbivorous Fish</h3>
+          <p><strong>Examples:</strong> Mollies, Otocinclus, Bristlenose Plecos, and Tangs. Feed spirulina wafers, algae sheets, and blanched greens in small, frequent grazing portions.</p>
+        </article>
+
+        <article class="nut-card">
+          <div class="nut-card-icon"><i class="fa-solid fa-drumstick-bite" aria-hidden="true"></i></div>
+          <h3>Carnivorous Fish</h3>
+          <p><strong>Examples:</strong> Bettas, Oscars, Pufferfish, and Cichlids. Offer high-protein pellets, frozen bloodworms, krill, or brine shrimp in controlled portions to avoid digestive strain.</p>
+        </article>
+
+        <article class="nut-card">
+          <div class="nut-card-icon"><i class="fa-solid fa-utensils" aria-hidden="true"></i></div>
+          <h3>Omnivorous Fish</h3>
+          <p><strong>Examples:</strong> Goldfish, Guppies, Tetras, Angelfish, and Corydoras. Provide a balanced rotation of staple flakes or pellets paired with veggies and protein treats.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         4. DAILY FEEDING SCHEDULE (3 Cards + Notice Banner)
+         ======================================================== -->
+    <section class="section-wrap" id="daily-feeding-schedule">
+      <div class="cat-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-clock" aria-hidden="true"></i> Routine &amp; Portions
+          </span>
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Daily <span>Feeding Schedule</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+          <p>
+            Consistent feeding intervals and the 2-minute portion rule keep fish energized while protecting your aquarium's biological filter.
+          </p>
+        </div>
+      </div>
+
+      <div class="nut-grid-3">
+        <article class="nut-card">
+          <div class="nut-card-icon"><i class="fa-solid fa-sun" aria-hidden="true"></i></div>
+          <h3>Adult Community Fish</h3>
+          <p>Feed once or twice daily, offering only as much food as your fish actively consume within 1 to 2 minutes. An occasional weekly fast day supports healthy digestion.</p>
+        </article>
+
+        <article class="nut-card">
+          <div class="nut-card-icon"><i class="fa-solid fa-fish" aria-hidden="true"></i></div>
+          <h3>Juveniles &amp; Fry</h3>
+          <p>Growing young fish have high metabolisms and benefit from 3 to 4 tiny, finely crushed meals spaced evenly throughout the day.</p>
+        </article>
+
+        <article class="nut-card">
+          <div class="nut-card-icon"><i class="fa-solid fa-moon" aria-hidden="true"></i></div>
+          <h3>Bottom &amp; Nocturnal Feeders</h3>
+          <p>Drop sinking wafers or pellets for plecos, loaches, and corydoras shortly after tank lights dim so daytime swimmers do not intercept their meal.</p>
+        </article>
+      </div>
+
+      <div class="nut-notice-banner">
+        <div class="nut-notice-icon">
+          <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i>
+        </div>
+        <div class="nut-notice-text">
+          <h3>Frequency &amp; Quantity Depend on Species, Age &amp; Tank Conditions</h3>
+          <p>
+            Warmer tropical water increases fish metabolism, while cooler setups slow digestion down. Always adjust meal frequency and portion sizes based on your specific fish species, age, activity level, and current water parameters.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         5. FOODS TO AVOID (4 Cards)
+         ======================================================== -->
+    <section class="section-wrap" id="foods-to-avoid">
+      <div class="cat-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-ban" aria-hidden="true"></i> Feeding Hazards
+          </span>
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Foods &amp; Practices <span>to Avoid</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+          <p>
+            Protect your fish from digestive blockages, nutritional deficiencies, and sudden water pollution by steering clear of these harmful practices.
+          </p>
+        </div>
+      </div>
+
+      <div class="nut-grid-4">
+        <article class="nut-card">
+          <div class="nut-card-icon"><i class="fa-solid fa-bread-slice" aria-hidden="true"></i></div>
+          <h3>Unsuitable Human Food</h3>
+          <p>Never feed bread, crackers, dairy, processed meats, or seasoned scraps—they cannot be digested properly and rapidly foul aquarium water.</p>
+        </article>
+
+        <article class="nut-card">
+          <div class="nut-card-icon"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i></div>
+          <h3>Excessive Feeding</h3>
+          <p>Dumping too much food at once causes uneaten decay, lethal ammonia spikes, cloudy water, and swim bladder or obesity issues.</p>
+        </article>
+
+        <article class="nut-card">
+          <div class="nut-card-icon"><i class="fa-solid fa-biohazard" aria-hidden="true"></i></div>
+          <h3>Spoiled or Contaminated Food</h3>
+          <p>Discard damp, clumped, or expired fish food, and never feed wild-caught insects exposed to lawn pesticides or pollutants.</p>
+        </article>
+
+        <article class="nut-card">
+          <div class="nut-card-icon"><i class="fa-solid fa-ruler-horizontal" aria-hidden="true"></i></div>
+          <h3>Incorrect Food Sizes</h3>
+          <p>Oversized pellets cause choking or spitting, while overly powdery food drifts into gravel uneaten by larger fish.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         6. FISH NUTRITION TIPS (6 Cards)
+         ======================================================== -->
+    <section class="section-wrap" id="fish-nutrition-tips">
+      <div class="cat-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Best Practices
+          </span>
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Practical <span>Fish Nutrition Tips</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+          <p>
+            Six simple habits to keep your fish energetic, colorful, and healthy while keeping aquarium maintenance effortless.
+          </p>
+        </div>
+      </div>
+
+      <div class="nut-grid-3">
+        <article class="nut-card">
+          <div class="nut-card-icon"><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i></div>
+          <h3>Provide a Balanced Diet</h3>
+          <p>Rotate high-quality staple flakes or pellets with frozen, live, or vegetable foods so your fish receive complete nutrients and variety.</p>
+        </article>
+
+        <article class="nut-card">
+          <div class="nut-card-icon"><i class="fa-solid fa-hand" aria-hidden="true"></i></div>
+          <h3>Avoid Overfeeding</h3>
+          <p>Stick to small pinches consumed within 1–2 minutes; hungry fish looking active at the glass does not mean they are underfed.</p>
+        </article>
+
+        <article class="nut-card">
+          <div class="nut-card-icon"><i class="fa-solid fa-broom" aria-hidden="true"></i></div>
+          <h3>Remove Uneaten Food</h3>
+          <p>Use a siphon or turkey baster to remove leftover pellets and decaying vegetable slices promptly before they release ammonia.</p>
+        </article>
+
+        <article class="nut-card">
+          <div class="nut-card-icon"><i class="fa-solid fa-check-double" aria-hidden="true"></i></div>
+          <h3>Choose Species-Appropriate Food</h3>
+          <p>Match food type and sinking speed to each species' feeding zone—surface flakes for top swimmers and wafers for bottom dwellers.</p>
+        </article>
+
+        <article class="nut-card">
+          <div class="nut-card-icon"><i class="fa-solid fa-droplet" aria-hidden="true"></i></div>
+          <h3>Maintain Water Quality</h3>
+          <p>Clean, oxygenated water supports proper digestion and nutrient absorption; pair good feeding habits with regular weekly water changes.</p>
+        </article>
+
+        <article class="nut-card">
+          <div class="nut-card-icon"><i class="fa-solid fa-box-archive" aria-hidden="true"></i></div>
+          <h3>Store Food Properly</h3>
+          <p>Keep dry fish food sealed tightly in a cool, dark cabinet away from tank humidity and heat to preserve delicate vitamins.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         7. FINAL CTA SECTION (Matches Cat Index)
+         ======================================================== -->
+    <section class="cta section-wrap" id="fish-nutrition-cta">
+      <div>
+        <div class="eyebrow">HEALTHY FEEDING, THRIVING AQUARIUMS</div>
+        <h2>Nourish Every Fin with <em>Balanced Care.</em></h2>
+        <p>
+          Great nutrition works hand-in-hand with clean water and safe tank conditions. Explore our fish safety and health guides to build a thriving aquatic home.
+        </p>
+      </div>
+      <div class="cta-actions">
+        <a class="button button-light" href="safety.html" id="cta-fish-safety">
+          Explore Fish Safety <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+        </a>
+        <a class="button button-outline" href="fish.html" id="cta-fish-hub">
+          Back to Fish Hub
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Reusable Footer Placeholder -->
+  <div id="footer"></div>
+
+  <!-- Shared PetSathi Script -->
+  <script>
+    (function () {
+      const searchInput = document.getElementById("fishNutritionSearch");
+      const cards = document.querySelectorAll(".nut-card");
+      const navPills = document.querySelectorAll(".guide-nav-item");
+
+      if (searchInput) {
+        searchInput.addEventListener("input", function (e) {
+          const query = e.target.value.toLowerCase().trim();
+          cards.forEach((card) => {
+            const text = card.textContent.toLowerCase();
+            card.style.display = !query || text.includes(query) ? "flex" : "none";
+          });
+        });
+      }
+
+      navPills.forEach((pill) => {
+        pill.addEventListener("click", function () {
+          navPills.forEach((p) => p.classList.remove("active"));
+          this.classList.add("active");
+          if (this.getAttribute("data-target") === "all") {
+            if (searchInput) searchInput.value = "";
+            cards.forEach((card) => {
+              card.style.display = "flex";
+            });
+          }
+        });
+      });
+    })();
+  </script>
+  <script src="../../../js/main.js"></script>
+</body>
+
+</html>
