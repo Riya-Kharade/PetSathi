@@ -782,6 +782,7 @@
           box-shadow 0.28s ease,
           border-color 0.28s ease;
       }
+      
       .breed-card:hover {
         transform: translateY(-6px);
         box-shadow: var(--shadow);
@@ -804,8 +805,37 @@
         object-position: center 25%;
         transition: transform 0.4s ease;
       }
+            /* Individual breed image positioning */
+      .breed-card[data-name="Golden Retriever"] .breed-image {
+          object-position: center 22%;
+      }
+
+      .breed-card[data-name="Labrador Retriever"] .breed-image {
+          object-position: center 35%;
+      }
+
+      .breed-card[data-name="German Shepherd"] .breed-image {
+          object-position: center 40%;
+      }
+
+      .breed-card[data-name="Beagle"] .breed-image {
+          object-position: center 35%;
+      }
+
+      .breed-card[data-name="Pomeranian"] .breed-image {
+          object-position: center 45%;
+      }
+
+      .breed-card[data-name="Shih Tzu"] .breed-image {
+          object-position: center 40%;
+      }
+
+      .breed-card[data-name="Pug"] .breed-image {
+          object-position: center 65%;
+      }
+
       .breed-card:hover .breed-image {
-        transform: scale(1.05);
+          transform: scale(1.05);
       }
       .breed-tag-pill {
         position: absolute;
@@ -1166,18 +1196,20 @@
 
       @media (max-width: 900px) {
         .dog-care-cta {
-          grid-template-columns: 1fr;
-          padding: 36px 28px;
-          text-align: center;
-        }
-        .dog-care-cta p {
-          margin: 0 auto;
-        }
-        .dog-cta-actions {
-          flex-direction: row;
-          justify-content: center;
-          flex-wrap: wrap;
-        }
+  grid-template-columns: 1fr;
+  padding: 36px 28px;
+  text-align: left;
+}
+
+.dog-care-cta p {
+  margin: 0;
+}
+
+.dog-cta-actions {
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
         .hero {
           gap: 20px;
         }
@@ -1215,7 +1247,7 @@
           grid-template-columns: 1fr;
         }
         .hero h1 {
-          font-size: 2.9rem;
+          font-size: 2.3rem;
         }
         .hero-visual {
           min-height: 340px;
@@ -1243,84 +1275,199 @@
         }
       }
 
-      .footer {
-        background: #f0f3eb;
-        padding-top: 48px;
-      }
-      .footer-grid {
-        display: grid;
-        grid-template-columns: 1.5fr 1fr 1fr 1fr;
-        gap: 35px;
-        padding-bottom: 35px;
-      }
-      .footer-grid > div {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 9px;
-        font-size: 0.84rem;
-        color: var(--muted);
-      }
-      .footer-grid p {
-        max-width: 260px;
-        margin: 0;
-        line-height: 1.6;
-      }
-      .footer-grid b {
-        color: var(--ink);
-        font-weight: 700;
-        margin-bottom: 2px;
-      }
-      .footer-grid a {
-        color: var(--muted);
-        text-decoration: none;
-        transition: color 0.2s ease;
-      }
-      .footer-grid a:hover {
-        color: var(--green);
-      }
-      .footer-grid .brand {
-        color: var(--ink);
-        margin-bottom: 4px;
-      }
-      .footer-grid .brand span {
-        color: var(--green);
-      }
-      .footer-bottom {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 17px 0;
-        border-top: 1px solid #dfe5dc;
-        font-size: 0.74rem;
-        color: #839087;
-      }
+      
+      .cta {
+  margin-top: 0;
+  margin-bottom: 92px;
+  border: 1px solid #e6d6c6;
+}
 
-      @media (max-width: 900px) {
-        .footer-grid {
-          grid-template-columns: 1.4fr 1fr 1fr;
-        }
-        .footer-grid > div:last-child {
-          grid-column: 1 / -1;
-        }
-      }
+.cta-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
 
-      @media (max-width: 620px) {
-        .footer-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-        .footer-grid > div:first-child {
-          grid-column: 1 / -1;
-        }
-        .footer-bottom {
-          display: block;
-          text-align: center;
-        }
-        .footer-bottom span {
-          display: block;
-          margin-top: 5px;
-        }
-      }
+.cta .button-outline {
+  background: transparent;
+  color: var(--green);
+  border-color: var(--green);
+}
+
+.cta .button-outline:hover {
+  background: var(--green);
+  color: white;
+}
+
+.cta > div:first-child {
+  text-align: left;
+}
+
+.cta > div:first-child .eyebrow,
+.cta > div:first-child h2,
+.cta > div:first-child p {
+  text-align: left;
+}
+
+@media (max-width: 640px) {
+  .cta-actions {
+    width: 100%;
+    flex-direction: column;
+    margin-top: 18px;
+  }
+
+  .cta-actions .button {
+    width: 100%;
+  }
+}
+
+/* Dog Breeds CTA - matching Cats CTA */
+.cta.section-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 48px 64px;
+  margin: 0 auto 92px;
+  background: #f4e8d8;
+  border: 1px solid #e6d6c6;
+  border-radius: 35px;
+  box-sizing: border-box;
+}
+
+.cta > div:first-child {
+  flex: 1;
+  max-width: 560px;
+  text-align: left;
+}
+
+.cta > div:first-child h2 {
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.2;
+  margin: 12px 0 16px;
+}
+
+.cta > div:first-child p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.cta-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.cta-actions .button {
+  white-space: nowrap;
+}
+
+.cta .button-light {
+  background: #246b4b;
+  color: white;
+  border: 1px solid #246b4b;
+  border-radius: 999px;
+}
+
+.cta .button-light:hover {
+  background: #174f37;
+  color: white;
+}
+
+.cta .button-outline {
+  background: transparent;
+  color: #246b4b;
+  border: 1px solid #246b4b;
+  border-radius: 999px;
+}
+
+.cta .button-outline:hover {
+  background: #246b4b;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .cta.section-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 24px;
+    gap: 24px;
+  }
+
+  .cta-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cta-actions .button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .cta.section-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 24px;
+    gap: 24px;
+  }
+
+  .cta-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cta-actions .button {
+    width: 100%;
+    text-align: center;
+  }
+}
+/* Final Dog Breeds CTA corrections */
+.cta.section-wrap {
+  background: #f4e8d8 !important;
+  border: 1px solid #e6d6c6 !important;
+  border-radius: 35px !important;
+}
+
+/* First button - solid green */
+.cta .button-light {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 26px;
+  background: #246b4b !important;
+  color: #ffffff !important;
+  border: 1px solid #246b4b !important;
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.cta .button-light:hover {
+  background: #174f37 !important;
+  color: #ffffff !important;
+}
+
+/* Second button - outlined */
+.cta .button-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 26px;
+  background: transparent !important;
+  color: #246b4b !important;
+  border: 1px solid #246b4b !important;
+  border-radius: 999px;
+  text-decoration: none;
+}
     </style>
   </head>
   <body>
@@ -1796,7 +1943,7 @@
           >
             <div class="breed-image-wrap">
               <img
-                src="https://images.unsplash.com/photo-1587402092301-725e37c70fd8?auto=format&fit=crop&w=800&q=80"
+                src="https://images.unsplash.com/photo-1564694202779-bc908c327862?auto=format&fit=crop&w=800&q=80"
                 alt="Labrador Retriever"
                 class="breed-image"
                 loading="lazy"
@@ -2017,7 +2164,7 @@
           >
             <div class="breed-image-wrap">
               <img
-                src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80"
+                src="https://images.unsplash.com/photo-1558236714-d1a6333fce68?auto=format&fit=crop&w=800&q=80"
                 alt="Pomeranian"
                 class="breed-image"
                 loading="lazy"
@@ -2567,7 +2714,7 @@
                   <td>
                     <div class="table-breed-cell">
                       <img
-                        src="https://images.unsplash.com/photo-1587402092301-725e37c70fd8?auto=format&fit=crop&w=120&q=80"
+                        src="https://images.unsplash.com/photo-1564694202779-bc908c327862?auto=format&fit=crop&w=120&q=80"
                         alt="Labrador Retriever"
                         class="table-breed-img"
                       />
@@ -2692,7 +2839,7 @@
                   <td>
                     <div class="table-breed-cell">
                       <img
-                        src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=120&q=80"
+                        src="https://images.unsplash.com/photo-1558236714-d1a6333fce68?auto=format&fit=crop&w=120&q=80"
                         alt="Pomeranian"
                         class="table-breed-img"
                       />

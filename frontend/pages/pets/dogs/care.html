@@ -82,6 +82,12 @@
       color: white;
     }
 
+    .floating-card > i {
+      color: var(--green);
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
     /* Quick Navigation Strip matching Cat Index */
     .guides-nav-strip {
       position: relative;
@@ -714,6 +720,40 @@
       flex-shrink: 0;
     }
 
+      .cta {
+        margin-top: 0;
+        margin-bottom: 92px;
+        border: 1px solid #e6d6c6;
+      }
+
+      .cta-actions {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        flex-shrink: 0;
+      }
+
+      .cta .button-outline {
+        background: transparent;
+        color: var(--green);
+        border-color: var(--green);
+      }
+
+      .cta .button-outline:hover {
+        background: var(--green);
+        color: white;
+      }
+
+      .cta > div:first-child {
+        text-align: left;
+      }
+
+      .cta > div:first-child .eyebrow,
+      .cta > div:first-child h2,
+      .cta > div:first-child p {
+        text-align: left;
+      }
+
     /* Responsive Adjustments */
     @media (max-width: 1100px) {
       .guides-nav-grid {
@@ -824,6 +864,16 @@
       .care-section {
         margin-bottom: 45px;
       }
+
+      .cta-actions {
+        width: 100%;
+        flex-direction: column;
+        margin-top: 18px;
+      }
+
+      .cta-actions .button {
+        width: 100%;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -883,20 +933,14 @@
         id="hero-dog-image"
         fetchpriority="high"
       />
-      <div class="floating-card card-top">
-        ☀️
-        <span>
-          <b>Everyday Wellness</b>
-          <small>Small habits matter</small>
-        </span>
-      </div>
+      <div class="floating-card card-top"> 
+        <i class="fa-solid fa-sun" aria-hidden="true"></i><span>
+          <b>Everyday Wellness</b><small>Small habits matter</small></span>
+        </div>
       <div class="floating-card card-bottom">
-        🐾
-        <span>
-          <b>Care with Confidence</b>
-          <small>Happy, healthy companion</small>
-        </span>
-      </div>
+        <i class="fa-solid fa-paw" aria-hidden="true"></i><span>
+          <b>Care with Confidence</b><small>Happy, healthy companion</small></span>
+        </div>
     </div>
   </section>
 
@@ -984,32 +1028,6 @@
         autocomplete="off"
       />
     </div>
-
-    <div class="care-filter-list" role="group" aria-label="Filter dog care topics">
-      <button class="care-filter-btn active-filter-btn" type="button" data-category="all" aria-pressed="true" id="resetFilterBtn">
-        <i class="fa-solid fa-layer-group" aria-hidden="true"></i> All Topics
-      </button>
-      <button class="care-filter-btn" type="button" data-category="Daily Care" aria-pressed="false">
-        <i class="fa-solid fa-sun" aria-hidden="true"></i> Daily Care
-      </button>
-      <button class="care-filter-btn" type="button" data-category="Grooming" aria-pressed="false">
-        <i class="fa-solid fa-soap" aria-hidden="true"></i> Grooming
-      </button>
-      <button class="care-filter-btn" type="button" data-category="Health" aria-pressed="false">
-        <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Health
-      </button>
-      <button class="care-filter-btn" type="button" data-category="Safety" aria-pressed="false">
-        <i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Safety
-      </button>
-      <button class="care-filter-btn" type="button" data-category="Puppy Care" aria-pressed="false">
-        <i class="fa-solid fa-dog" aria-hidden="true"></i> Puppy Care
-      </button>
-      <button class="care-filter-btn" type="button" data-category="Senior Dog Care" aria-pressed="false">
-        <i class="fa-solid fa-heart" aria-hidden="true"></i> Senior Care
-      </button>
-    </div>
-
-    <p class="care-results" id="careResults" role="status" aria-live="polite"></p>
   </section>
 
   <!-- Care Sections Container -->
@@ -1023,6 +1041,28 @@
       <span>Every dog is unique. Ask your veterinarian for personalized care advice tailored to your dog's age, breed, lifestyle, and medical history.</span>
     </aside>
   </div>
+
+  <section class="cta section-wrap">
+  <div>
+    <div class="eyebrow">START YOUR CANINE JOURNEY</div>
+    <h2>Every Dog Deserves a <em>Happy, Healthy Life.</em></h2>
+    <p>
+      Whether you are welcoming a playful puppy or caring for a loyal senior
+      dog, PetSathi is here to guide you with practical care tips, expert
+      advice, and everything you need to keep your furry companion happy
+      and healthy.
+    </p>
+  </div>
+  <div class="cta-actions">
+    <a class="button button-light" href="care.html" id="cta-care-guide">
+      Explore Dog Care Guide ↗
+    </a>
+    <a class="button button-outline" href="breeds.html" id="cta-breeds">
+      Browse Dog Breeds
+    </a>
+  </div>
+</section>
+
 </main>
 
 <!-- Standard PetSathi Footer -->

@@ -76,6 +76,12 @@
         margin-bottom: 16px;
       }
 
+      /* Hero icons in the PetSathi green (replace the old emojis) */
+      #dog-health-hero .floating-card i {
+        color: var(--green);
+        font-size: 1.2rem;
+      }
+
       /* Search & Filter Styles matching Index */
       .health-search-section {
         margin: 10px auto 35px;
@@ -803,7 +809,8 @@
       <section class="hero section-wrap" id="dog-health-hero">
         <div class="hero-copy">
           <div class="dog-badge-strip">
-            🐾 PetSathi • Canine Health &amp; Wellness Guide
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+            PetSathi • Canine Health &amp; Wellness Guide
           </div>
           <h1>Keeping Your Dog <em>Happy &amp; Healthy!</em></h1>
           <p>
@@ -832,11 +839,11 @@
             alt="Happy golden retriever enjoying a healthy life"
           />
           <div class="floating-card card-top">
-            ✨
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
             <span><b>Happy &amp; Active</b><small>Daily wellness routines</small></span>
           </div>
           <div class="floating-card card-bottom">
-            🐾
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
             <span><b>Paws &amp; Wellness</b><small>Routine checks &amp; care</small></span>
           </div>
         </div>
@@ -926,7 +933,7 @@
         <!-- 1. Common Problems Section -->
         <div
           id="problems-section"
-          class="category-section"
+          class="category-section section-wrap"
           data-category="problems"
         >
           <div class="dog-topics-heading">
@@ -1107,7 +1114,7 @@
 
         <!-- 2. Symptoms Section -->
         <div
-          class="category-section"
+          class="category-section section-wrap"
           data-category="symptoms"
           style="margin-bottom: 50px"
         >
@@ -1305,7 +1312,7 @@
 
         <!-- 3. Vaccination Guide Section -->
         <div
-          class="category-section"
+          class="category-section section-wrap"
           data-category="vaccination"
           style="margin-bottom: 50px"
         >
@@ -1469,7 +1476,7 @@
 
         <!-- 4. Parasite Prevention Section -->
         <div
-          class="category-section"
+          class="category-section section-wrap"
           data-category="preventive"
           style="margin-bottom: 50px"
         >
@@ -1612,7 +1619,7 @@
 
         <!-- 5. Wellness Exams Section -->
         <div
-          class="category-section"
+          class="category-section section-wrap"
           data-category="preventive"
           style="margin-bottom: 50px"
         >
@@ -1755,7 +1762,7 @@
 
         <!-- 6. First Aid & Emergency Care Section -->
         <div
-          class="category-section"
+          class="category-section section-wrap"
           data-category="firstaid"
           style="margin-bottom: 50px"
         >
@@ -1917,7 +1924,7 @@
 
         <!-- 7. Dental Health Section -->
         <div
-          class="category-section"
+          class="category-section section-wrap"
           data-category="preventive"
           style="margin-bottom: 50px"
         >
@@ -2061,7 +2068,7 @@
 
         <!-- 8. Mental Health Section -->
         <div
-          class="category-section"
+          class="category-section section-wrap"
           data-category="preventive"
           style="margin-bottom: 50px"
         >
@@ -2192,7 +2199,7 @@
 
         <!-- 9. Preventive Care Checklist Section -->
         <div
-          class="category-section"
+          class="category-section section-wrap"
           data-category="preventive"
           style="margin-bottom: 50px"
         >
@@ -2350,7 +2357,7 @@
 
         <!-- 10. Senior Dog Health Section -->
         <div
-          class="category-section"
+          class="category-section section-wrap"
           data-category="senior"
           style="margin-bottom: 50px"
         >
@@ -2477,7 +2484,7 @@
         </div>
 
         <!-- Frequently Asked Questions Section -->
-        <div style="margin-bottom: 60px">
+        <div class="section-wrap" style="margin-bottom: 60px">
           <div class="dog-topics-heading">
             <svg
               class="corner-wave wave-tl"

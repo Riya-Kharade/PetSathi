@@ -1051,80 +1051,39 @@
     }
 
     /* Complete Feline Care Section - Exact Match to Cat Index Final Section */
-    .cta-nutrition {
-      display: flex;
-      align-items: center;
-      gap: 40px;
-      background: #fcecef;
-      border: 1px solid var(--cat-warm-border);
-      border-radius: 28px;
-      padding: 32px 36px;
-      margin: 24px auto 60px;
-      max-width: 1200px;
-    }
+    .cta {
+         margin-top: 40px !important;
+        margin-bottom: 92px;
+        border: 1px solid #e6d6c6;
+      }
 
-    .cta-nutrition > div:first-child {
-      flex: 1 1 auto;
-      min-width: 0;
-      text-align: left;
-    }
+      .cta-actions {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        flex-shrink: 0;
+      }
 
-    .cta-nutrition .eyebrow {
-      color: #9c684e;
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin: 0 0 4px;
-    }
+      .cta .button-outline {
+        background: transparent;
+        color: var(--green);
+        border-color: var(--green);
+      }
 
-    main > section .cta-nutrition > div:first-child .eyebrow {
-      margin: 0 0 4px;
-    }
+      .cta .button-outline:hover {
+        background: var(--green);
+        color: white;
+      }
 
-    .cta-nutrition h2 {
-      font-family: Georgia, "Times New Roman", serif !important;
-      font-size: clamp(1.8rem, 3.2vw, 2.4rem);
-      margin: 0 0 8px;
-      color: var(--cat-ink);
-      line-height: 1.25;
-    }
+      .cta > div:first-child {
+        text-align: left;
+      }
 
-    main > section .cta-nutrition h2 {
-      text-align: left;
-    }
-
-    .cta-nutrition h2 em {
-      color: var(--cat-green-primary);
-      font-style: italic;
-    }
-
-    .cta-nutrition p {
-      max-width: 660px;
-      color: var(--cat-muted);
-      font-size: 0.98rem;
-      line-height: 1.7;
-      margin: 0;
-    }
-
-    .cta-nutrition .cta-actions {
-      display: flex;
-      gap: 14px;
-      flex: 0 0 420px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .cta-nutrition .button-outline {
-      background: transparent;
-      color: var(--cat-green-primary);
-      border-color: var(--cat-green-primary);
-    }
-
-    .cta-nutrition .button-outline:hover {
-      background: var(--cat-green-primary);
-      color: #ffffff;
-    }
+      .cta > div:first-child .eyebrow,
+      .cta > div:first-child h2,
+      .cta > div:first-child p {
+        text-align: left;
+      }
 
     /* Responsive Breakpoints */
     @media (max-width: 960px) {
@@ -1140,20 +1099,18 @@
         grid-template-columns: 1fr;
       }
 
-      .cta-nutrition {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 24px;
-      }
-
-      .cta-nutrition .cta-actions {
-        flex: auto;
-        justify-content: flex-start;
-      }
-
       .paw-left-1,
       .paw-right-1 {
         display: none;
+      }
+      .cta {
+        gap: 28px;
+        margin-top: 28px;
+        padding: 36px 30px;
+      }
+
+      .cta-actions {
+        gap: 12px;
       }
     }
 
@@ -1172,15 +1129,20 @@
         border-radius: 24px;
       }
 
-      .cta-nutrition {
-        gap: 18px;
-        padding: 28px 20px;
-        border-radius: 22px;
+      .cta {
+        margin-top: 28px;
+        margin-bottom: 55px;
       }
 
-      .cta-nutrition .cta-actions {
-        flex-direction: column;
-      }
+       .cta-actions {
+          width: 100%;
+          flex-direction: column;
+          margin-top: 18px;
+        }
+
+        .cta-actions .button {
+          width: 100%;
+        }
 
       .hero-key-points {
         flex-direction: column;
@@ -1968,23 +1930,26 @@
     </section>
 
     <!-- Section 7: Complete Feline Care Section - Matching Cat Index Final Section Style -->
-    <section class="section-wrap">
-      <div class="cta-nutrition">
+     <section class="cta section-wrap">
         <div>
-          <div class="eyebrow">COMPLETE FELINE CARE</div>
-          <h2>Ready to Explore More <em>Cat Guides?</em></h2>
+          <div class="eyebrow">NOURISH YOUR FELINE FRIEND</div>
+          <h2>Healthy Meals, <em>Happy Cats.</em></h2>
           <p>
-            Nutrition is the foundation of wellness, but joyful cat parenting also involves behavioral enrichment,
-            grooming routines, and discovering unique breed traits. Explore our comprehensive cat care library!
+            Give your cat the nutrition they deserve with the right balance
+            of essential nutrients. Explore our cat nutrition guides to
+            learn about healthy food choices, feeding habits, and tips for
+            keeping your feline friend happy and healthy.
           </p>
         </div>
         <div class="cta-actions">
-          <a class="button" href="index.html">← Back to Cats Overview</a>
-          <a class="button button-outline" href="care.html">Explore Cat Care Guide ↗</a>
-          <a class="button button-outline" href="breeds.html">Browse Cat Breeds</a>
+          <a class="button button-light" href="care.html" id="cta-care-guide"
+            >Explore Cat Care Guide ↗</a
+          >
+          <a class="button button-outline" href="breeds.html" id="cta-breeds"
+            >Browse Cat Breeds</a
+          >
         </div>
-      </div>
-    </section>
+      </section>
   </main>
 
   <!-- Footer (Matches main PetSathi homepage) -->
