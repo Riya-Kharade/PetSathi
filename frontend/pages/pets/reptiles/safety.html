@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Practical reptile safety tips for handling, household hazards, enclosure care, and hygiene.">
+  <title>Reptile Safety Guide | PetSathi</title>
+  <link rel="stylesheet" href="../../../css/global.css">
+  <link rel="stylesheet" href="../../../css/home.css">
+  <link rel="stylesheet" href="../../../css/inner.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    .hero-copy .safety-intro, .safety-eyebrow {
+      display: inline-flex; align-items: center; gap: .5rem; border-radius: 999px;
+      padding: .35rem .9rem; color: var(--green); background: #eaf2e9;
+      font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+    }
+    .safety-hero { color: var(--green); }
+    .safety-photo { object-position: center 60%; }
+    .safety-nav, .safety-heading, .safety-cta {
+      text-align: center; padding: clamp(1.2rem, 4vw, 3rem);
+      border: 1px solid #d7e6d6; border-radius: 28px; background: #f6f9f2;
+    }
+    .safety-nav { background: white; box-shadow: var(--shadow); }
+    .safety-nav h2, .safety-heading h2, .safety-cta h2 {
+      margin: .7rem 0 0; font-size: clamp(1.45rem, 4vw, 2.35rem); line-height: 1.2;
+    }
+    .safety-nav h2 span, .safety-heading h2 span { color: var(--green); }
+    .safety-search {
+      display: flex; align-items: center; gap: .65rem; max-width: 44rem; margin: 1rem auto;
+      padding: .2rem 1rem; border: 1px solid #c6dbc8; border-radius: 999px;
+      background: #f6f9f2; color: var(--green);
+    }
+    .safety-search input {
+      width: 100%; min-width: 0; padding: .55rem 0; background: transparent;
+      border: 0; color: var(--ink); font: inherit;
+    }
+    .safety-search:focus-within { outline: 2px solid var(--green); outline-offset: 2px; }
+    .safety-search input:focus { outline: none; }
+    .safety-links { display: flex; justify-content: center; gap: .65rem; flex-wrap: wrap; margin-top: 1rem; }
+    .safety-links a { gap: .55rem; background: #eaf5ec; color: var(--green); min-height: 44px; }
+    .safety-links a:hover, .safety-links a:focus-visible { background: var(--green); color: white; }
+    .safety-results { margin: .75rem 0 0; }
+    .safety-nav [hidden], .safety-section[hidden] { display: none; }
+    .safety-section { margin-block: clamp(2.5rem, 7vw, 5rem); scroll-margin-top: 8rem; }
+    .safety-heading { margin-bottom: 1.1rem; }
+    .safety-cta { display: block; }
+    .safety-cta .button { margin-top: 1rem; }
+    .safety-cta p { margin-top: .5rem; }
+    .safety-cards .service-card > span { color: var(--green); }
+    .safety-cards .service-card:hover { transform: none; }
+    .safety-checklist { line-height: 1.75; padding-inline-start: 1.5rem; }
+    .safety-checklist li + li { margin-top: .45rem; }
+    .safety-sources { margin-top: 1rem; }
+    .safety-sources a { text-decoration: underline; text-underline-offset: .15em; }
+    .safety-cta { margin-bottom: clamp(2rem, 5vw, 4rem); }
+    @media (min-width: 621px) and (max-width: 900px) {
+      .safety-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+  <div id="header"></div>
+  <main id="main-content">
+    <section class="hero section-wrap" aria-labelledby="reptile-safety-title">
+      <div class="hero-copy">
+        <p class="safety-intro"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> PetSathi Reptile Care</p>
+        <h1 id="reptile-safety-title">Reptile Safety Guide</h1>
+        <p>Keep your reptile safe and comfortable with a secure enclosure, careful handling, and habits that protect everyone in your home.</p>
+        <div class="hero-actions">
+          <a class="button" href="#essential-tips">Read the safety tips</a>
+          <a class="button button-outline" href="reptiles.html">Back to Reptile Guides</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-blob" aria-hidden="true"></div>
+        <img class="hero-photo safety-photo" src="../../../assets/images/reptiles/bearded-dragon.jpg" alt="Bearded dragon resting in its enclosure">
+        <div class="floating-card card-top">
+          <i class="fa-solid fa-lock safety-hero" aria-hidden="true"></i>
+          <span><b>Secure enclosure</b><small>Check latches and heating</small></span>
+        </div>
+        <div class="floating-card card-bottom">
+          <i class="fa-solid fa-heart safety-hero" aria-hidden="true"></i>
+          <span><b>Species-specific care</b><small>Start with your reptile’s needs</small></span>
+        </div>
+      </div>
+    </section>
+
+    <nav id="guide-navigation" class="safety-nav section-wrap" aria-labelledby="guide-navigation-title">
+      <span class="safety-eyebrow"><i class="fa-solid fa-compass" aria-hidden="true"></i> Quick Navigation &amp; Filter</span>
+      <h2 id="guide-navigation-title">Explore <span>Reptile Safety Topics</span></h2>
+      <div class="safety-search" hidden>
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <input type="search" id="safety-search" aria-label="Filter safety topics" placeholder="Search handling, heat, hygiene…">
+      </div>
+      <div class="safety-links">
+        <a class="button button-outline" href="#essential-tips"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Essential tips</a>
+        <a class="button button-outline" href="#household-hazards"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Household hazards</a>
+        <a class="button button-outline" href="#safe-handling"><i class="fa-solid fa-hand" aria-hidden="true"></i> Handling</a>
+        <a class="button button-outline" href="#habitat-safety"><i class="fa-solid fa-house" aria-hidden="true"></i> Habitat</a>
+        <a class="button button-outline" href="#hygiene"><i class="fa-solid fa-hands-bubbles" aria-hidden="true"></i> Hygiene</a>
+      </div>
+      <p class="safety-results" role="status"></p>
+    </nav>
+
+    <section id="essential-tips" class="section-wrap safety-section" aria-labelledby="essential-tips-title">
+      <header class="safety-heading">
+        <span class="safety-eyebrow"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Everyday safety</span>
+        <h2 id="essential-tips-title">Essential Reptile <span>Safety Tips</span></h2>
+      </header>
+      <div class="service-grid safety-cards">
+        <article class="service-card">
+          <span aria-hidden="true"><i class="fa-solid fa-hand"></i></span>
+          <h3>Safe Handling</h3>
+          <p>Learn how your species tolerates handling. Move slowly, support the body, and let the reptile retreat when it needs a break.</p>
+        </article>
+        <article class="service-card">
+          <span aria-hidden="true"><i class="fa-solid fa-hands-bubbles"></i></span>
+          <h3>Hand Hygiene</h3>
+          <p>Wash with soap and running water before and after handling your reptile or its supplies.</p>
+        </article>
+        <article class="service-card">
+          <span aria-hidden="true"><i class="fa-solid fa-lock"></i></span>
+          <h3>Enclosure Safety</h3>
+          <p>Close latches after every use and check that doors, lids, and cable openings are secure.</p>
+        </article>
+        <article class="service-card">
+          <span aria-hidden="true"><i class="fa-solid fa-temperature-half"></i></span>
+          <h3>Temperature Control</h3>
+          <p>Use thermostat-controlled heating and check the warm and cool areas against the requirements for your species.</p>
+        </article>
+        <article class="service-card">
+          <span aria-hidden="true"><i class="fa-solid fa-sun"></i></span>
+          <h3>Lighting Safety</h3>
+          <p>Use species-appropriate lighting. If your reptile needs UVB, follow the bulb maker’s placement and replacement guidance.</p>
+        </article>
+        <article class="service-card">
+          <span aria-hidden="true"><i class="fa-solid fa-mountain"></i></span>
+          <h3>Safe Decorations</h3>
+          <p>Choose smooth, sturdy décor. Secure heavy pieces so they cannot shift or fall.</p>
+        </article>
+        <article class="service-card">
+          <span aria-hidden="true"><i class="fa-solid fa-droplet"></i></span>
+          <h3>Clean Water</h3>
+          <p>Offer fresh water in a species-appropriate setup and clean bowls or water features regularly.</p>
+        </article>
+        <article class="service-card">
+          <span aria-hidden="true"><i class="fa-solid fa-eye"></i></span>
+          <h3>Supervision</h3>
+          <p>Keep other pets away during handling. Children under five should avoid contact with reptiles and their habitats.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="household-hazards" class="section-wrap safety-section" aria-labelledby="household-hazards-title">
+      <header class="safety-heading">
+        <span class="safety-eyebrow"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> At home</span>
+        <h2 id="household-hazards-title">Common <span>Household Hazards</span></h2>
+      </header>
+      <div class="service-grid safety-cards">
+        <article class="service-card">
+          <span aria-hidden="true"><i class="fa-solid fa-flask"></i></span>
+          <h3>Toxic Substances</h3>
+          <p>Store cleaners, sprays, and other chemicals away from the enclosure. Keep animals away while using them.</p>
+        </article>
+        <article class="service-card">
+          <span aria-hidden="true"><i class="fa-solid fa-leaf"></i></span>
+          <h3>Unsafe Plants</h3>
+          <p>Check that any plant in reach is safe for your species. Remove unidentified or treated plants.</p>
+        </article>
+        <article class="service-card">
+          <span aria-hidden="true"><i class="fa-solid fa-plug"></i></span>
+          <h3>Electrical Cables</h3>
+          <p>Route cords outside the enclosure and keep water away from plugs and power strips.</p>
+        </article>
+        <article class="service-card">
+          <span aria-hidden="true"><i class="fa-solid fa-thermometer"></i></span>
+          <h3>Extreme Temperatures</h3>
+          <p>Keep the enclosure away from direct sun, radiators, and drafts. Recheck temperatures during seasonal changes.</p>
+        </article>
+        <article class="service-card">
+          <span aria-hidden="true"><i class="fa-solid fa-circle-exclamation"></i></span>
+          <h3>Small Objects</h3>
+          <p>Remove loose pieces that could be swallowed or trap a foot or tail.</p>
+        </article>
+        <article class="service-card">
+          <span aria-hidden="true"><i class="fa-solid fa-paw"></i></span>
+          <h3>Other Pets</h3>
+          <p>Use a closed room or secure barrier during handling. Keep dogs and cats away from the reptile and its enclosure.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="safe-handling" class="section-wrap safety-section" aria-labelledby="handling-title">
+      <header class="safety-heading">
+        <span class="safety-eyebrow"><i class="fa-solid fa-hand" aria-hidden="true"></i> Gentle handling</span>
+        <h2 id="handling-title">Safe Reptile <span>Handling</span></h2>
+      </header>
+      <div class="service-card">
+        <ul class="safety-checklist">
+          <li>Approach calmly where the reptile can see you. Avoid sudden movements or grabbing from above.</li>
+          <li>Support its body with both hands when appropriate for the species. Never lift or pull it by the tail.</li>
+          <li>Keep sessions brief. Let the animal settle after a move or feeding, and stop if it tries to escape or shows distress.</li>
+          <li>If you are unsure how to handle your species safely, ask a veterinarian experienced with reptiles.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="habitat-safety" class="section-wrap safety-section" aria-labelledby="habitat-safety-title">
+      <header class="safety-heading">
+        <span class="safety-eyebrow"><i class="fa-solid fa-house" aria-hidden="true"></i> Enclosure care</span>
+        <h2 id="habitat-safety-title">Enclosure and <span>Habitat Safety</span></h2>
+      </header>
+      <div class="service-grid safety-cards">
+        <article class="service-card">
+          <span aria-hidden="true"><i class="fa-solid fa-lock"></i></span>
+          <h3>Secure Doors and Lids</h3>
+          <p>Check latches, hinges, and lid clips regularly. Repair gaps before returning your reptile to the enclosure.</p>
+        </article>
+        <article class="service-card">
+          <span aria-hidden="true"><i class="fa-solid fa-wind"></i></span>
+          <h3>Proper Ventilation</h3>
+          <p>Keep vents clear and choose ventilation suited to the species and humidity needs.</p>
+        </article>
+        <article class="service-card">
+          <span aria-hidden="true"><i class="fa-solid fa-fire"></i></span>
+          <h3>Guarded Heat Sources</h3>
+          <p>Mount heaters securely, use a thermostat, and prevent contact with hot bulbs or surfaces.</p>
+        </article>
+        <article class="service-card">
+          <span aria-hidden="true"><i class="fa-solid fa-layer-group"></i></span>
+          <h3>Suitable Substrate</h3>
+          <p>Choose bedding for the species, age, and health of your reptile. Ask your reptile vet if you are unsure.</p>
+        </article>
+        <article class="service-card">
+          <span aria-hidden="true"><i class="fa-solid fa-mountain"></i></span>
+          <h3>Stable Décor</h3>
+          <p>Check that branches, rocks, and hideouts cannot tip, collapse, or snag the animal.</p>
+        </article>
+        <article class="service-card">
+          <span aria-hidden="true"><i class="fa-solid fa-broom"></i></span>
+          <h3>Regular Cleaning</h3>
+          <p>Remove waste and soiled bedding promptly. Clean equipment away from kitchens and food preparation.</p>
+        </article>
+        <article class="service-card">
+          <span aria-hidden="true"><i class="fa-solid fa-gauge"></i></span>
+          <h3>Temperature and Humidity</h3>
+          <p>Check the habitat with appropriate meters. Compare the readings with guidance for your species.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="hygiene" class="section-wrap safety-section" aria-labelledby="hygiene-title">
+      <header class="safety-heading">
+        <span class="safety-eyebrow"><i class="fa-solid fa-hands-bubbles" aria-hidden="true"></i> Clean routines</span>
+        <h2 id="hygiene-title">Hygiene and <span>Disease Prevention</span></h2>
+      </header>
+      <div class="service-card">
+        <ul class="safety-checklist">
+          <li>Wash your hands with soap and running water after handling the reptile, cleaning its habitat, or touching food, water, and equipment.</li>
+          <li>Clean reptile equipment outdoors when possible. Keep it out of food preparation areas and use dedicated tubs and tools.</li>
+          <li>Follow the label for any disinfectant approved for the equipment. Keep the reptile away during cleaning and follow rinsing and drying instructions.</li>
+          <li>Clean food and water containers regularly. Keep reptile supplies separate from household dishes and utensils.</li>
+        </ul>
+        <p class="safety-sources">
+          <a href="https://www.cdc.gov/healthy-pets/about/reptiles-and-amphibians.html">CDC reptile hygiene guidance</a>
+          and <a href="https://www.rspca.org.uk/adviceandwelfare/pets/other/beardeddragon">RSPCA bearded dragon care guidance</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="cta section-wrap safety-cta" aria-labelledby="safety-cta-title">
+      <div>
+        <span class="safety-eyebrow"><i class="fa-solid fa-heart" aria-hidden="true"></i> Keep exploring</span>
+        <h2 id="safety-cta-title">Build a safer reptile routine</h2>
+        <p>Review the habitat and feeding needs of your species as your reptile grows.</p>
+      </div>
+      <a class="button button-light" href="nutrition.html">Reptile Nutrition Guide</a>
+    </section>
+  </main>
+  <div id="footer"></div>
+  <script src="../../../js/main.js"></script>
+  <script>
+    (() => {
+      const search = document.querySelector('#safety-search');
+      const form = search.parentElement;
+      const status = document.querySelector('.safety-results');
+      const links = [...document.querySelectorAll('.safety-links a')];
+      const topics = links.map(link => {
+        const section = document.getElementById(link.hash.slice(1));
+        return { link, section, text: section.textContent.toLowerCase() };
+      });
+
+      function applyFilter() {
+        const terms = search.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
+        let matches = 0;
+        for (const { link, section, text } of topics) {
+          const shown = terms.every(term => text.includes(term));
+          link.hidden = section.hidden = !shown;
+          if (shown) matches++;
+        }
+        status.textContent = !terms.length ? '' : matches
+          ? `${matches} matching ${matches === 1 ? 'topic' : 'topics'}.`
+          : 'No matching topics. Try a different search or clear the field.';
+      }
+
+      search.addEventListener('input', applyFilter);
+      // Keep the hero's jump link usable even when a search hid its target.
+      document.querySelector('.hero-actions a[href="#essential-tips"]').addEventListener('click', () => {
+        search.value = '';
+        applyFilter();
+      });
+      form.hidden = false;
+    })();
+  </script>
+</body>
+</html>
