@@ -116,8 +116,15 @@
       margin-bottom: 16px;
     }
 
+    .dog-badge-strip i,
+    #dog-training-hero .floating-card > i {
+      color: var(--dog-green);
+    }
+
     #dog-training-hero {
-      padding-block: 52px 64px;
+      min-height: calc(100vh - 84px);
+      min-height: calc(100svh - 84px);
+      padding-block: clamp(32px, 5vh, 52px) clamp(36px, 6vh, 64px);
     }
 
     #dog-training-hero h1 em {
@@ -484,31 +491,6 @@
       box-shadow: 0 4px 14px rgba(35, 100, 55, 0.12);
     }
 
-    .search-status-bar {
-      max-width: 1160px;
-      width: calc(100% - 48px);
-      margin: 0 auto 24px;
-      padding: 8px 18px;
-      background: #fafcf7;
-      border: 1px solid #e4ede6;
-      border-radius: 999px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: "DM Sans", "Manrope", sans-serif !important;
-      font-size: 0.84rem;
-      color: var(--dog-muted);
-    }
-
-    .results-count-text,
-    .results-count-text b {
-      font-family: "DM Sans", "Manrope", sans-serif !important;
-    }
-
-    .results-count-text b {
-      color: var(--green);
-    }
-
     /* Empty Results State */
     .no-results-box {
       display: none;
@@ -813,6 +795,16 @@
       margin-bottom: 14px;
     }
 
+    #section-tips .tip-item-card {
+      align-items: center;
+      text-align: center;
+    }
+
+    #section-tips .tip-item-content {
+      width: 100%;
+      text-align: center;
+    }
+
     .training-card h3,
     .tip-item-content h3 {
       font-size: 1.15rem;
@@ -847,47 +839,6 @@
       font-weight: 700;
     }
 
-    /* Inline Context Reminder & Tip Note (Clean Hairline Divider — No Nested Card) */
-    .card-tip-box,
-    .card-approach-box {
-      width: 100%;
-      margin-top: auto;
-      padding: 14px 0 0;
-      background: transparent;
-      border: none;
-      border-top: 1px solid var(--line);
-      border-radius: 0;
-      font-family: "DM Sans", "Manrope", sans-serif !important;
-      font-size: 0.85rem;
-      line-height: 1.6;
-      color: #45574c;
-      text-align: left;
-    }
-
-    .card-tip-box strong,
-    .card-approach-box strong {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      margin-bottom: 4px;
-      font-family: "DM Sans", "Manrope", sans-serif !important;
-      font-size: 0.74rem;
-      font-weight: 700;
-      letter-spacing: 0.7px;
-      text-transform: uppercase;
-      color: var(--green);
-    }
-
-    .card-tip-box strong::before,
-    .card-approach-box strong::before {
-      content: "";
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--green);
-      flex-shrink: 0;
-    }
-
     /* ========================================================
        SECTION BANNER PHOTOS (Matching cats/index.html media cards)
        ======================================================== */
@@ -906,8 +857,13 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 35%;
+      object-position: center 50%;
       transition: transform 0.35s ease;
+    }
+
+    #section-leash .section-banner-photo img,
+    #section-social .section-banner-photo img {
+      object-position: center 65%;
     }
 
     .section-banner-photo:hover img {
@@ -1396,7 +1352,6 @@
       }
 
       .dog-search-filter-wrap,
-      .search-status-bar,
       .no-results-box {
         width: calc(100% - 32px);
       }
@@ -1442,6 +1397,13 @@
         width: 100%;
       }
     }
+
+    @media (max-width: 850px) {
+      #dog-training-hero {
+        min-height: calc(100vh - 74px);
+        min-height: calc(100svh - 74px);
+      }
+    }
   </style>
 </head>
 
@@ -1457,7 +1419,7 @@
          ======================================================== -->
     <section class="hero section-wrap" id="dog-training-hero">
       <div class="hero-copy">
-        <div class="dog-badge-strip">🐾 PetSathi • Canine Training & Behaviour Guide</div>
+        <div class="dog-badge-strip"><i class="fa-solid fa-paw" aria-hidden="true"></i> PetSathi • Canine Training & Behaviour Guide</div>
         <h1>Train Better, <em>Live Happier!</em></h1>
         <p>
           Build a stronger bond with your dog through positive training, clear communication, and consistent practice.
@@ -1475,10 +1437,12 @@
           alt="Attentive dog focused on trainer during positive reinforcement training" class="hero-photo"
           id="hero-dog-image">
         <div class="floating-card card-top">
-          🐕 <span><b>Positive Reinforcement</b><small>Reward good behaviour</small></span>
+          <i class="fa-solid fa-dog" aria-hidden="true"></i>
+          <span><b>Positive Reinforcement</b><small>Reward good behaviour</small></span>
         </div>
         <div class="floating-card card-bottom">
-          🤝 <span><b>Lifelong Bond</b><small>Trust & clear communication</small></span>
+          <i class="fa-solid fa-handshake" aria-hidden="true"></i>
+          <span><b>Lifelong Bond</b><small>Trust & clear communication</small></span>
         </div>
       </div>
     </section>
@@ -1564,13 +1528,6 @@
         </button>
       </div>
 
-      <!-- Live Results Count -->
-      <div class="search-status-bar">
-        <span class="results-count-text" id="results-count-text" aria-live="polite">
-          Showing all <b>67</b> training topics & insights
-        </span>
-      </div>
-
       <!-- Empty Results Message -->
       <div class="no-results-box" id="no-results-box" role="status" aria-live="polite">
         <i class="fa-solid fa-paw no-results-icon" aria-hidden="true"></i>
@@ -1615,13 +1572,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-dog" aria-hidden="true"></i></span>
             <h3>Body Language</h3>
           </div>
-          <p>
-            Whole-body posture reveals genuine emotional state: a soft, loose spine indicates comfort, while stiff, forward-pitched stance signals high arousal or vigilance.
-          </p>
-          <div class="card-tip-box">
-            <strong>Context Reminder</strong>
-            Always observe your dog's complete posture—from snout to tail tip—before deciding how they feel.
-          </div>
+          <p>Read posture and tension together to understand your dog's emotional state.</p>
         </article>
 
         <!-- 2. Tail Movements -->
@@ -1631,13 +1582,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-shield-dog" aria-hidden="true"></i></span>
             <h3>Tail Movements</h3>
           </div>
-          <p>
-            A wag does not always mean friendliness. Low, sweeping wags indicate relaxed appeasement, whereas a high, rigid, vibrating tail signals alert tension.
-          </p>
-          <div class="card-tip-box">
-            <strong>Context Reminder</strong>
-            Note wag speed and height: broad hip-swaying wags indicate genuine joy, while stiff tips require caution.
-          </div>
+          <p>Tail height, speed, and stiffness reveal more than wagging alone.</p>
         </article>
 
         <!-- 3. Ear Positions -->
@@ -1647,13 +1592,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-ear-listen" aria-hidden="true"></i></span>
             <h3>Ear Positions</h3>
           </div>
-          <p>
-            Naturally positioned ears reflect calm. Pinned-back flat ears convey fear or submissive appeasement, while upright pricked ears display keen curiosity or focus.
-          </p>
-          <div class="card-tip-box">
-            <strong>Context Reminder</strong>
-            Account for breed anatomy; floppy-eared dogs shift the base of their ears rather than the tips.
-          </div>
+          <p>Ear positions can signal comfort, fear, curiosity, or focus.</p>
         </article>
 
         <!-- 4. Barking and Whining -->
@@ -1663,13 +1602,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i></span>
             <h3>Barking and Whining</h3>
           </div>
-          <p>
-            Vocal pitch conveys intent: high-pitched staccato barks indicate playful excitement, rhythmic low barks sound an alert, and continuous whining signals distress.
-          </p>
-          <div class="card-tip-box">
-            <strong>Context Reminder</strong>
-            Identify the trigger behind vocalizations instead of shouting, which dogs often interpret as joining in.
-          </div>
+          <p>Pitch and rhythm can distinguish play, alerts, demands, and distress.</p>
         </article>
 
         <!-- 5. Playful Behaviour -->
@@ -1679,13 +1612,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-baseball" aria-hidden="true"></i></span>
             <h3>Playful Behaviour</h3>
           </div>
-          <p>
-            Classic play bows (front chest down, rear in the air), exaggerated bouncy movements, and reciprocal chasing indicate healthy, mutual canine socialization.
-          </p>
-          <div class="card-tip-box">
-            <strong>Context Reminder</strong>
-            Healthy play features frequent natural pauses where both dogs take brief 3-second breathers.
-          </div>
+          <p>Play bows, bouncy movement, and turn-taking often signal friendly play.</p>
         </article>
 
         <!-- 6. Fear and Anxiety -->
@@ -1695,13 +1622,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-heart-crack" aria-hidden="true"></i></span>
             <h3>Fear and Anxiety</h3>
           </div>
-          <p>
-            Subtle early stress markers include lip licking, yawning when not tired, showing the whites of eyes (whale eye), low body carriage, and avoidance.
-          </p>
-          <div class="card-tip-box">
-            <strong>Context Reminder</strong>
-            When stress signals appear, increase distance from the perceived trigger immediately to prevent panic.
-          </div>
+          <p>Lip licking, yawning, whale eye, and avoidance can signal stress.</p>
         </article>
 
         <!-- 7. Aggressive Behaviour -->
@@ -1711,13 +1632,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i></span>
             <h3>Aggressive Behaviour</h3>
           </div>
-          <p>
-            Hard stares, sudden freezing, lip curling, and low growls are distance-increasing warnings that a dog feels overwhelmed and urgently needs physical space.
-          </p>
-          <div class="card-tip-box">
-            <strong>Context Reminder</strong>
-            Never punish a growl; growling is vital communication that prevents escalation to snapping or biting.
-          </div>
+          <p>Staring, freezing, growling, or lunging can signal distress; give your dog space.</p>
         </article>
 
         <!-- 8. Understanding Dog Communication -->
@@ -1727,13 +1642,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-brain" aria-hidden="true"></i></span>
             <h3>Understanding Dog Communication</h3>
           </div>
-          <p>
-            Canine language is rich and composite. Accurate interpretation requires evaluating the environment, your dog's baseline temperament, and multiple simultaneous signals.
-          </p>
-          <div class="card-tip-box">
-            <strong>Context Reminder</strong>
-            Recognize that a dog in a noisy clinic expresses stress differently than in a quiet living room.
-          </div>
+          <p>Consider the setting, your dog's baseline, and several signals together.</p>
         </article>
       </div>
     </section>
@@ -1773,13 +1682,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-arrow-down" aria-hidden="true"></i></span>
             <h3>Sit Command</h3>
           </div>
-          <p>
-            The fundamental cornerstone cue that teaches polite patience before mealtimes, door greetings, and street crossings.
-          </p>
-          <div class="card-tip-box">
-            <strong>Beginner Training Tip</strong>
-            Hold a treat right by their nose and sweep it gently backwards over their head; reward the instant their rump touches the floor.
-          </div>
+          <p>Teach polite pauses before meals, greetings, and street crossings.</p>
         </article>
 
         <!-- 2. Stay Command -->
@@ -1789,13 +1692,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-hand" aria-hidden="true"></i></span>
             <h3>Stay Command</h3>
           </div>
-          <p>
-            Keeps your dog safely in place until released, preventing bolting through open front doors and kitchen gates.
-          </p>
-          <div class="card-tip-box">
-            <strong>Beginner Training Tip</strong>
-            Build duration before adding distance. Return to reward while they are still stationary instead of calling them out of position.
-          </div>
+          <p>Build a reliable pause to prevent bolting through doors or gates.</p>
         </article>
 
         <!-- 3. Come Command -->
@@ -1805,13 +1702,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-person-walking-arrow-right" aria-hidden="true"></i></span>
             <h3>Come Command</h3>
           </div>
-          <p>
-            The life-saving recall command ensuring your dog returns immediately when called outdoors or near busy streets.
-          </p>
-          <div class="card-tip-box">
-            <strong>Beginner Training Tip</strong>
-            Always make recall a joyous celebration with high-value treats; never call your dog to you to scold, bathe, or clip nails.
-          </div>
+          <p>Practice recall so your dog returns when called, especially outdoors.</p>
         </article>
 
         <!-- 4. Down Command -->
@@ -1821,13 +1712,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-bed" aria-hidden="true"></i></span>
             <h3>Down Command</h3>
           </div>
-          <p>
-            A calm, settled resting position ideal for dining patios, family living rooms, and veterinary waiting rooms.
-          </p>
-          <div class="card-tip-box">
-            <strong>Beginner Training Tip</strong>
-            From a sit, lure a treat from their nose straight down between front paws and slide it forward along the floor in an 'L' shape.
-          </div>
+          <p>Teach a calm resting position for home, patios, and waiting rooms.</p>
         </article>
 
         <!-- 5. Leave It Command -->
@@ -1837,13 +1722,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-ban" aria-hidden="true"></i></span>
             <h3>Leave It Command</h3>
           </div>
-          <p>
-            Protects your dog from ingesting dropped medications, chicken bones, chocolate, or hazardous street trash.
-          </p>
-          <div class="card-tip-box">
-            <strong>Beginner Training Tip</strong>
-            Present a closed fist with a treat; the second your dog pulls their nose back from the fist, reward from your other hand.
-          </div>
+          <p>Help your dog avoid dropped food, medications, and street hazards.</p>
         </article>
 
         <!-- 6. Heel Command -->
@@ -1853,13 +1732,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-person-walking" aria-hidden="true"></i></span>
             <h3>Heel Command</h3>
           </div>
-          <p>
-            Guides your dog to walk attentively beside your leg, making navigation through busy sidewalks and tight corridors effortless.
-          </p>
-          <div class="card-tip-box">
-            <strong>Beginner Training Tip</strong>
-            Hold pea-sized treats at your hip seam, rewarding every 2–3 strides whenever their shoulder aligns comfortably with your knee.
-          </div>
+          <p>Encourage your dog to walk attentively beside you.</p>
         </article>
 
         <!-- 7. Wait Command -->
@@ -1869,13 +1742,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-pause" aria-hidden="true"></i></span>
             <h3>Wait Command</h3>
           </div>
-          <p>
-            A polite momentary boundary pause before stepping through car doors, crossing street curbs, or eating meals.
-          </p>
-          <div class="card-tip-box">
-            <strong>Beginner Training Tip</strong>
-            Hold your open flat palm out and say "Wait". Open the door an inch; if they move, close it gently, releasing with an upbeat "Free!".
-          </div>
+          <p>Practice pausing at doors, curbs, and before meals.</p>
         </article>
       </div>
     </section>
@@ -1921,13 +1788,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-users" aria-hidden="true"></i></span>
             <h3>Early Socialisation</h3>
           </div>
-          <p>
-            Safely introduce your pup to diverse surfaces, household noises, different people, and calm vaccinated dogs during the critical 8–16 week developmental window.
-          </p>
-          <div class="card-tip-box">
-            <strong>Puppy Tip</strong>
-            Prioritize positive quality over overwhelming quantity. Always allow the pup to retreat if they feel unsure.
-          </div>
+          <p>Introduce puppies to people, sounds, surfaces, and vaccinated dogs gradually.</p>
         </article>
 
         <!-- 2. Name Recognition -->
@@ -1937,13 +1798,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-tag" aria-hidden="true"></i></span>
             <h3>Name Recognition</h3>
           </div>
-          <p>
-            Teach your puppy that hearing their name predicts good things. Build an immediate reflex for joyful eye contact whenever you speak their name.
-          </p>
-          <div class="card-tip-box">
-            <strong>Puppy Tip</strong>
-            Play the 'Name Game': say their name once in a happy tone, and immediately mark with a treat the second their eyes meet yours.
-          </div>
+          <p>Pair your puppy's name with rewards to build quick, happy attention.</p>
         </article>
 
         <!-- 3. Basic Commands for Puppies -->
@@ -1953,13 +1808,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-star" aria-hidden="true"></i></span>
             <h3>Basic Commands</h3>
           </div>
-          <p>
-            Introduce gentle foundational cues like sit, look, and hand touch in micro-sessions lasting 2 to 3 minutes, using portions of their daily kibble as rewards.
-          </p>
-          <div class="card-tip-box">
-            <strong>Puppy Tip</strong>
-            Puppies have tiny attention spans; train right before meals when their focus and food motivation are highest.
-          </div>
+          <p>Teach simple cues in short, reward-based sessions.</p>
         </article>
 
         <!-- 4. Potty Training -->
@@ -1969,13 +1818,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-tree" aria-hidden="true"></i></span>
             <h3>Potty Training</h3>
           </div>
-          <p>
-            Take puppies to their designated outdoor spot every 2 hours, immediately after waking, eating, drinking, or vigorous play sessions.
-          </p>
-          <div class="card-tip-box">
-            <strong>Puppy Tip</strong>
-            Praise and treat warmly outside the exact moment they finish, never inside after they return indoors.
-          </div>
+          <p>Take puppies outside after waking, meals, drinks, and active play.</p>
         </article>
 
         <!-- 5. Crate Training -->
@@ -1985,13 +1828,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-house-chimney-window" aria-hidden="true"></i></span>
             <h3>Crate Training</h3>
           </div>
-          <p>
-            Establish the crate as a secure, restful sleeping den where your pup relaxes with comfortable bedding and safe chew toys.
-          </p>
-          <div class="card-tip-box">
-            <strong>Puppy Tip</strong>
-            Never use the crate as punishment; feed regular meals inside with the door open to foster positive associations.
-          </div>
+          <p>Make the crate a comfortable, secure place to rest.</p>
         </article>
 
         <!-- 6. Bite Inhibition -->
@@ -2001,13 +1838,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-tooth" aria-hidden="true"></i></span>
             <h3>Bite Inhibition</h3>
           </div>
-          <p>
-            Puppies explore the world with needle-sharp teeth. Teach soft-mouth control by promptly redirecting mouthiness onto durable rubber toys.
-          </p>
-          <div class="card-tip-box">
-            <strong>Puppy Tip</strong>
-            If teeth touch human skin, give a gentle high-pitched 'Ouch!' and pause play for 10 seconds so they learn biting stops fun.
-          </div>
+          <p>Redirect puppy mouthing to safe chew toys and pause play for hard bites.</p>
         </article>
 
         <!-- 7. Leash Introduction -->
@@ -2017,13 +1848,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-link" aria-hidden="true"></i></span>
             <h3>Leash Introduction</h3>
           </div>
-          <p>
-            Let puppies wear a lightweight harness indoors and drag a light leash around during supervised play to normalize the sensation before outdoor walks.
-          </p>
-          <div class="card-tip-box">
-            <strong>Puppy Tip</strong>
-            Pair clip-on moments with a tasty treat so putting on equipment always predicts fun adventures.
-          </div>
+          <p>Introduce a harness and leash indoors through supervised, positive practice.</p>
         </article>
       </div>
     </section>
@@ -2063,13 +1888,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></span>
             <h3>Potty Training Routine</h3>
           </div>
-          <p>
-            Designate a specific outdoor bathroom spot and escort your dog there on leash on a dependable schedule to reinforce biological habits.
-          </p>
-          <div class="card-tip-box">
-            <strong>Positive Advice</strong>
-            Clean indoor accidents with enzymatic cleaners to eliminate lingering scent markers that tempt repeat visits.
-          </div>
+          <p>Use a consistent outdoor bathroom spot and schedule.</p>
         </article>
 
         <!-- 2. Creating a Daily Routine -->
@@ -2079,13 +1898,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i></span>
             <h3>Creating a Daily Routine</h3>
           </div>
-          <p>
-            Synchronize regular mealtimes, morning walks, interactive play, and evening wind-down periods to give your dog predictable comfort.
-          </p>
-          <div class="card-tip-box">
-            <strong>Positive Advice</strong>
-            Predictable daily feeding schedules produce predictable bathroom schedules, making house training significantly easier.
-          </div>
+          <p>Keep meals, walks, play, and rest on a predictable schedule.</p>
         </article>
 
         <!-- 3. Indoor Behaviour -->
@@ -2095,13 +1908,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-couch" aria-hidden="true"></i></span>
             <h3>Indoor Behaviour</h3>
           </div>
-          <p>
-            Establish a dedicated 'place' mat or dog bed in living areas where your companion can settle calmly while remaining close to the family.
-          </p>
-          <div class="card-tip-box">
-            <strong>Positive Advice</strong>
-            Teach a 'Go to Mat' cue with treats so your dog has an enjoyable default spot during busy dinner prep or guest visits.
-          </div>
+          <p>Teach your dog to settle calmly on a mat or bed.</p>
         </article>
 
         <!-- 4. Preventing Furniture Chewing -->
@@ -2111,13 +1918,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-bone" aria-hidden="true"></i></span>
             <h3>Preventing Furniture Chewing</h3>
           </div>
-          <p>
-            Chewing is a natural biological need for dogs. Provide rotating durable puzzle toys and safe chew sticks to protect household furniture.
-          </p>
-          <div class="card-tip-box">
-            <strong>Positive Advice</strong>
-            Keep chewable shoes and remote controls out of reach, and supply frozen peanut butter Kongs to occupy active jaws.
-          </div>
+          <p>Offer durable, safe chew toys to protect furniture.</p>
         </article>
 
         <!-- 5. Teaching Boundaries -->
@@ -2127,13 +1928,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-door-open" aria-hidden="true"></i></span>
             <h3>Teaching Boundaries</h3>
           </div>
-          <p>
-            Use temporary baby gates and positive zone training to designate pet-safe rooms and establish off-limits areas like kitchen counters.
-          </p>
-          <div class="card-tip-box">
-            <strong>Positive Advice</strong>
-            Reward your dog handsomely whenever they choose to wait patiently outside the kitchen threshold while you cook.
-          </div>
+          <p>Use positive training and gates to create safe household boundaries.</p>
         </article>
 
         <!-- 6. Rewarding Good Behaviour -->
@@ -2143,13 +1938,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-award" aria-hidden="true"></i></span>
             <h3>Rewarding Good Behaviour</h3>
           </div>
-          <p>
-            Practice 'catching your dog being good'. Calmly drop a treat between their front paws when they voluntarily choose to rest quietly.
-          </p>
-          <div class="card-tip-box">
-            <strong>Positive Advice</strong>
-            Dogs repeat what is rewarded; noticing calm relaxation teaches your dog that peaceful behavior earns wonderful attention.
-          </div>
+          <p>Reward calm choices as soon as you notice them.</p>
         </article>
       </div>
     </section>
@@ -2195,13 +1984,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-vest" aria-hidden="true"></i></span>
             <h3>Introducing a Leash</h3>
           </div>
-          <p>
-            Pair your leash and ergonomic Y-shaped harness with delicious treats inside the house so wearing equipment always predicts fun, rewarding walks.
-          </p>
-          <div class="card-tip-box">
-            <strong>Walking Tip</strong>
-            Avoid neck-straining choke chains; a padded front-clip harness gently discourages pulling without compressing the trachea.
-          </div>
+          <p>Pair a well-fitted harness and leash with treats and positive experiences.</p>
         </article>
 
         <!-- 2. Walking Without Pulling -->
@@ -2211,13 +1994,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-anchor" aria-hidden="true"></i></span>
             <h3>Walking Without Pulling</h3>
           </div>
-          <p>
-            Master the 'Be a Tree' principle: the instant the leash tightens, stop moving forward completely until your dog turns and creates slack.
-          </p>
-          <div class="card-tip-box">
-            <strong>Walking Tip</strong>
-            Moving forward is the ultimate reward for dogs; never let pulling succeed in getting them to a smell.
-          </div>
+          <p>Stop when the leash tightens; move on when it slackens.</p>
         </article>
 
         <!-- 3. Loose-Leash Walking -->
@@ -2227,13 +2004,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-route" aria-hidden="true"></i></span>
             <h3>Loose-Leash Walking</h3>
           </div>
-          <p>
-            Keep a relaxed 'J' loop in your leash by frequently rewarding attention and proximity near your leg with high-value treats while moving.
-          </p>
-          <div class="card-tip-box">
-            <strong>Walking Tip</strong>
-            Reward right at your pant seam so your dog associates walking close to your side with frequent treat drops.
-          </div>
+          <p>Reward attention and proximity while keeping the leash relaxed.</p>
         </article>
 
         <!-- 4. Following Commands Outdoors -->
@@ -2243,13 +2014,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-compass" aria-hidden="true"></i></span>
             <h3>Following Commands Outdoors</h3>
           </div>
-          <p>
-            Generalize your basic cues by practicing sits and focus pauses amidst outdoor scents, passing strollers, and gentle neighborhood breezes.
-          </p>
-          <div class="card-tip-box">
-            <strong>Walking Tip</strong>
-            Step up the treat value outdoors: upgrade from dry biscuits to roast chicken or cheese to compete with outdoor smells.
-          </div>
+          <p>Practice familiar cues around manageable outdoor distractions.</p>
         </article>
 
         <!-- 5. Greeting Other Dogs -->
@@ -2259,13 +2024,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-paw" aria-hidden="true"></i></span>
             <h3>Greeting Other Dogs</h3>
           </div>
-          <p>
-            Follow the 3-second greeting rule: allow a brief 3-second curved sniff greeting, then cheerfully call your dog along before tension can build.
-          </p>
-          <div class="card-tip-box">
-            <strong>Walking Tip</strong>
-            Never force on-leash greetings with oncoming dogs; ask the other owner first and respect dogs that prefer space.
-          </div>
+          <p>Keep greetings brief, curved, and relaxed; move on before tension builds.</p>
         </article>
 
         <!-- 6. Walking Etiquette -->
@@ -2275,13 +2034,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-signs-post" aria-hidden="true"></i></span>
             <h3>Walking Etiquette</h3>
           </div>
-          <p>
-            Be a considerate neighbor: always pack waste bags, keep off private lawns, and give wide clearance to dogs wearing yellow ribbons.
-          </p>
-          <div class="card-tip-box">
-            <strong>Walking Tip</strong>
-            A yellow ribbon or bandana indicates a dog that needs space due to medical recovery, fear, or training.
-          </div>
+          <p>Carry waste bags, respect lawns, and give dogs space.</p>
         </article>
       </div>
     </section>
@@ -2364,9 +2117,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-gift" aria-hidden="true"></i></span>
             <h3>Reward-Based Training</h3>
           </div>
-          <p>
-            Utilizes your dog's natural motivations—food, toys, sniffing freedom, and social praise—to create an enthusiastic, willing partner in learning.
-          </p>
+          <p>Reward desired choices with food, play, freedom, or praise.</p>
         </article>
 
         <!-- 2. Treat Training -->
@@ -2376,9 +2127,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-bone" aria-hidden="true"></i></span>
             <h3>Treat Training</h3>
           </div>
-          <p>
-            Use pea-sized, fragrant treats (like freeze-dried liver or cheese) to keep calorie intake low while maintaining high training focus and drive.
-          </p>
+          <p>Use small, high-value treats to reward focus without excess calories.</p>
         </article>
 
         <!-- 3. Verbal Praise -->
@@ -2388,9 +2137,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-comment-dots" aria-hidden="true"></i></span>
             <h3>Verbal Praise</h3>
           </div>
-          <p>
-            A cheerful, sincere marker word like "Yes!" or "Good dog!" clearly communicates approval and releases feel-good dopamine in your dog's brain.
-          </p>
+          <p>Use a cheerful, consistent marker such as 'Yes!' to reward success.</p>
         </article>
 
         <!-- 4. Clicker Training -->
@@ -2400,9 +2147,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-hand-pointer" aria-hidden="true"></i></span>
             <h3>Clicker Training</h3>
           </div>
-          <p>
-            A clicker provides an unmistakable mechanical sound that marks the precise split-second your dog executes a skill, speeding up learning dramatically.
-          </p>
+          <p>Mark the exact moment your dog performs the desired behaviour.</p>
         </article>
 
         <!-- 5. Consistency and Patience -->
@@ -2412,9 +2157,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></span>
             <h3>Consistency and Patience</h3>
           </div>
-          <p>
-            Ensure every family member uses identical verbal cues and household rules to prevent frustrating confusion and foster steady learning.
-          </p>
+          <p>Use the same cues and household rules across the family.</p>
         </article>
 
         <!-- 6. Building Good Habits -->
@@ -2424,9 +2167,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-cubes-stacked" aria-hidden="true"></i></span>
             <h3>Building Good Habits</h3>
           </div>
-          <p>
-            Once a cue is 85% reliable, fade constant treats into a variable schedule of surprise rewards, verbal affection, and real-life privileges.
-          </p>
+          <p>Gradually vary rewards as your dog becomes more reliable.</p>
         </article>
       </div>
     </section>
@@ -2466,13 +2207,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-volume-high" aria-hidden="true"></i></span>
             <h3>Excessive Barking</h3>
           </div>
-          <p>
-            <strong>What it indicates:</strong> Boredom, territorial alarm, social frustration, or learned demand for treats and attention.
-          </p>
-          <div class="card-approach-box">
-            <strong>Positive Training Approach</strong>
-            Identify the trigger, teach a calm "Quiet" or "Go to Place" cue, and reward silence after one acknowledgement bark.
-          </div>
+          <p>Barking may reflect boredom, alarm, frustration, or a learned demand.</p>
         </article>
 
         <!-- 2. Separation Anxiety -->
@@ -2482,13 +2217,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-house-crack" aria-hidden="true"></i></span>
             <h3>Separation Anxiety</h3>
           </div>
-          <p>
-            <strong>What it indicates:</strong> Genuine panic and emotional distress triggered by isolation from attachment figures.
-          </p>
-          <div class="card-approach-box">
-            <strong>Positive Training Approach</strong>
-            Practice gradual desensitization to departure cues (keys, coats), provide long-lasting lick mats, and keep departures and arrivals calm.
-          </div>
+          <p>Distress when alone may require gradual training and professional support.</p>
         </article>
 
         <!-- 3. Chewing Furniture -->
@@ -2498,13 +2227,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-couch" aria-hidden="true"></i></span>
             <h3>Chewing Furniture</h3>
           </div>
-          <p>
-            <strong>What it indicates:</strong> Puppy teething discomfort, physical energy surplus, or stress-relief chewing.
-          </p>
-          <div class="card-approach-box">
-            <strong>Positive Training Approach</strong>
-            Dog-proof furniture legs with pet-safe deterrent spray, and redirect mouthiness immediately to irresistible frozen peanut butter Kongs.
-          </div>
+          <p>Chewing may stem from teething, boredom, excess energy, or stress.</p>
         </article>
 
         <!-- 4. Digging -->
@@ -2514,13 +2237,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-trowel" aria-hidden="true"></i></span>
             <h3>Digging</h3>
           </div>
-          <p>
-            <strong>What it indicates:</strong> Instinctual denning, cooling off in warm weather, pursuing underground scents, or boredom.
-          </p>
-          <div class="card-approach-box">
-            <strong>Positive Training Approach</strong>
-            Provide a designated legal sandbox pit in your yard with buried toys where digging is permitted and enthusiastically praised.
-          </div>
+          <p>Digging can reflect instinct, heat, scent, or unmet activity needs.</p>
         </article>
 
         <!-- 5. Jumping on People -->
@@ -2530,13 +2247,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-person-falling" aria-hidden="true"></i></span>
             <h3>Jumping on People</h3>
           </div>
-          <p>
-            <strong>What it indicates:</strong> Overexcited greeting behavior aimed at reaching human eye level for face-to-face social contact.
-          </p>
-          <div class="card-approach-box">
-            <strong>Positive Training Approach</strong>
-            Turn away and cross your arms the second paws leave the ground; only greet and treat when all four paws are planted on the floor.
-          </div>
+          <p>Jumping often comes from excitement and attention-seeking greetings.</p>
         </article>
 
         <!-- 6. Food Guarding -->
@@ -2546,13 +2257,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
             <h3>Food Guarding</h3>
           </div>
-          <p>
-            <strong>What it indicates:</strong> Deep-seated fear that valued food, bowls, or treats will be taken away.
-          </p>
-          <div class="card-approach-box">
-            <strong>Positive Training Approach</strong>
-            Never snatch bowls; practice 'trading up' by tossing higher-value chicken into their bowl from a safe distance. Seek a certified trainer for severe cases.
-          </div>
+          <p>Guarding may reflect fear of losing food or valued items.</p>
         </article>
 
         <!-- 7. Fear of Strangers -->
@@ -2562,13 +2267,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-person-circle-question" aria-hidden="true"></i></span>
             <h3>Fear of Strangers</h3>
           </div>
-          <p>
-            <strong>What it indicates:</strong> Incomplete early socialization, genetic sensitivity, or frightening past experiences.
-          </p>
-          <div class="card-approach-box">
-            <strong>Positive Training Approach</strong>
-            Instruct visitors to ignore your dog completely and avoid direct eye contact. Let the dog set the distance and toss treats from afar.
-          </div>
+          <p>Fear may relate to limited socialization, sensitivity, or past experiences.</p>
         </article>
 
         <!-- 8. Destructive Behaviour -->
@@ -2578,13 +2277,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-trash-can" aria-hidden="true"></i></span>
             <h3>Destructive Behaviour</h3>
           </div>
-          <p>
-            <strong>What it indicates:</strong> Chronic understimulation, insufficient physical exercise, or severe containment anxiety.
-          </p>
-          <div class="card-approach-box">
-            <strong>Positive Training Approach</strong>
-            Provide daily aerobic sniff-walks, introduce interactive brain puzzles, and rotate toys weekly to keep their mind engaged.
-          </div>
+          <p>Destructive behaviour may signal boredom, unmet exercise needs, or anxiety.</p>
         </article>
       </div>
     </section>
@@ -2630,13 +2323,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-handshake" aria-hidden="true"></i></span>
             <h3>Introducing New People</h3>
           </div>
-          <p>
-            Ask visitors to sit sideways, avoid looming over the dog, and allow your companion to initiate contact on their own comfortable terms.
-          </p>
-          <div class="card-tip-box">
-            <strong>Social Tip</strong>
-            Have guests gently drop treats behind the dog so approaching always remains a stress-free choice.
-          </div>
+          <p>Let your dog approach visitors at their own pace.</p>
         </article>
 
         <!-- 2. Meeting Other Dogs -->
@@ -2646,13 +2333,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-shield-dog" aria-hidden="true"></i></span>
             <h3>Meeting Other Dogs</h3>
           </div>
-          <p>
-            Begin by walking parallel side-by-side at a comfortable 15-foot distance before allowing curved, loose body sniffs to avoid head-on tension.
-          </p>
-          <div class="card-tip-box">
-            <strong>Social Tip</strong>
-            Avoid tight leash greetings, which restrict natural canine body language and can cause defensive reactions.
-          </div>
+          <p>Start with parallel walks at a comfortable distance before greetings.</p>
         </article>
 
         <!-- 3. Getting Comfortable in New Environments -->
@@ -2662,13 +2343,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-store" aria-hidden="true"></i></span>
             <h3>Getting Comfortable in New Environments</h3>
           </div>
-          <p>
-            Bring a familiar mat and high-value treats to outdoor cafes and parks, rewarding calm observation from quiet outer perimeters.
-          </p>
-          <div class="card-tip-box">
-            <strong>Social Tip</strong>
-            Let your dog take in sounds and sights at their own pace without forcing them into crowded center areas.
-          </div>
+          <p>Reward calm observation in new places from a comfortable distance.</p>
         </article>
 
         <!-- 4. Socialising Puppies -->
@@ -2678,13 +2353,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-paw" aria-hidden="true"></i></span>
             <h3>Socialising Puppies</h3>
           </div>
-          <p>
-            Introduce puppies gently to 100 new sounds, surfaces, and sights before 16 weeks without ever overwhelming their senses.
-          </p>
-          <div class="card-tip-box">
-            <strong>Social Tip</strong>
-            Keep all exposures brief, fun, and paired with treats so new experiences build lasting confidence.
-          </div>
+          <p>Introduce puppies to new sights, sounds, and surfaces without overwhelming them.</p>
         </article>
 
         <!-- 5. Safe Playtime -->
@@ -2694,13 +2363,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-dice" aria-hidden="true"></i></span>
             <h3>Safe Playtime</h3>
           </div>
-          <p>
-            Monitor play for loose, bouncy postures and mutual role reversals where chasers take turns being chased with frequent natural pauses.
-          </p>
-          <div class="card-tip-box">
-            <strong>Social Tip</strong>
-            Step in with cheerful redirection if one dog pins another repeatedly without trading places.
-          </div>
+          <p>Look for relaxed play, turn-taking, and natural pauses.</p>
         </article>
 
         <!-- 6. Building Confidence -->
@@ -2710,13 +2373,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-mountain-sun" aria-hidden="true"></i></span>
             <h3>Building Confidence</h3>
           </div>
-          <p>
-            Encourage your dog to explore low obstacles, tree stumps, and varied sidewalk textures, celebrating every brave inspection with praise.
-          </p>
-          <div class="card-tip-box">
-            <strong>Social Tip</strong>
-            Overcoming gentle physical challenges builds mental resilience and strengthens handler trust.
-          </div>
+          <p>Reward your dog for calmly exploring new textures and low obstacles.</p>
         </article>
       </div>
     </section>
@@ -2756,13 +2413,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-baseball-bat-ball" aria-hidden="true"></i></span>
             <h3>Fetch Training</h3>
           </div>
-          <p>
-            Master the complete fetch sequence—chase, grab, return, and drop—using the two-ball game where dropping ball one triggers the exciting throw of ball two.
-          </p>
-          <div class="card-tip-box">
-            <strong>Advanced Tip</strong>
-            Never chase a dog playing 'keep away'; turn and run in the opposite direction so they chase you instead.
-          </div>
+          <p>Teach chase, return, and drop with a rewarding two-toy game.</p>
         </article>
 
         <!-- 2. Recall Training -->
@@ -2772,13 +2423,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i></span>
             <h3>Recall Training</h3>
           </div>
-          <p>
-            Build an emergency recall whistle or distinct cue paired exclusively with super-premium jackpot treats (like roast beef) practiced weekly.
-          </p>
-          <div class="card-tip-box">
-            <strong>Advanced Tip</strong>
-            Keep emergency recall rewards rare and extraordinarily delicious to maintain an unbreakable reflex.
-          </div>
+          <p>Build an emergency recall cue with high-value rewards and regular practice.</p>
         </article>
 
         <!-- 3. Trick Training -->
@@ -2788,13 +2433,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></span>
             <h3>Trick Training</h3>
           </div>
-          <p>
-            Stimulate your dog's brain with enjoyable tricks like spin, roll over, leg weaves, gentle high-fives, and putting toys away into a basket.
-          </p>
-          <div class="card-tip-box">
-            <strong>Advanced Tip</strong>
-            Trick training relieves indoor boredom on rainy days and deepens your dog's eagerness to learn.
-          </div>
+          <p>Use fun tricks to provide mental stimulation and strengthen your bond.</p>
         </article>
 
         <!-- 4. Agility Basics -->
@@ -2804,13 +2443,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i></span>
             <h3>Agility Basics</h3>
           </div>
-          <p>
-            Introduce low-impact agility: guide through collapsible tunnels, weave around garden stakes, and step over low bars to build canine athleticism.
-          </p>
-          <div class="card-tip-box">
-            <strong>Advanced Tip</strong>
-            Wait until your dog's growth plates close (12–18 months depending on breed) before introducing high jumps.
-          </div>
+          <p>Start with low-impact tunnels, weave markers, and low obstacles.</p>
         </article>
 
         <!-- 5. Off-Leash Training -->
@@ -2820,13 +2453,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-shield" aria-hidden="true"></i></span>
             <h3>Off-Leash Training</h3>
           </div>
-          <p>
-            Practice off-leash obedience exclusively in safe, legally permitted enclosed dog parks or secure fenced training paddocks before reliable voice control is proven.
-          </p>
-          <div class="card-tip-box">
-            <strong>Safety Note</strong>
-            Never attempt off-leash work in unfenced public areas; use a 30-foot long line to practice distance safety.
-          </div>
+          <p>Practice only in secure, permitted areas until recall is reliable.</p>
         </article>
 
         <!-- 6. Advanced Obedience -->
@@ -2836,13 +2463,7 @@
             <span class="training-card-icon"><i class="fa-solid fa-medal" aria-hidden="true"></i></span>
             <h3>Advanced Obedience</h3>
           </div>
-          <p>
-            Develop long-distance downs, out-of-sight stays, drop-on-recall, and attentive heelwork past distractions in complex public environments.
-          </p>
-          <div class="card-tip-box">
-            <strong>Advanced Tip</strong>
-            Change only one variable at a time: distance, duration, or distraction level—never all three at once.
-          </div>
+          <p>Practice distance cues and focused heelwork around gradual distractions.</p>
         </article>
       </div>
     </section>
@@ -2976,10 +2597,8 @@
               <span class="training-card-icon"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i></span>
               <h3>Persistent Aggression</h3>
             </div>
-            <p>
-              Snapping, biting, growling, or lunging towards family members, strangers, or other animals that does not improve with space.
-            </p>
-          </article>
+            <p>Seek help for ongoing snapping, biting, growling, or lunging.</p>
+        </article>
 
           <!-- 2. Severe Separation Anxiety -->
           <article class="training-card" data-category="problems" data-title="Severe Separation Anxiety"
@@ -2988,10 +2607,8 @@
               <span class="training-card-icon"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i></span>
               <h3>Severe Separation Anxiety</h3>
             </div>
-            <p>
-              Self-injurious panic, frantic window or door scratching, non-stop vocalization, or refusal to eat whenever left alone.
-            </p>
-          </article>
+            <p>Get support for panic, self-injury, or refusal to eat when alone.</p>
+        </article>
 
           <!-- 3. Excessive Fear -->
           <article class="training-card" data-category="problems" data-title="Excessive Fear"
@@ -3000,10 +2617,8 @@
               <span class="training-card-icon"><i class="fa-solid fa-cloud-bolt" aria-hidden="true"></i></span>
               <h3>Excessive Fear</h3>
             </div>
-            <p>
-              Complete physical shutdown, uncontrollable trembling, panic during storms, or intense dread of ordinary household sounds.
-            </p>
-          </article>
+            <p>Seek help for persistent trembling, shutdown, or panic around everyday sounds.</p>
+        </article>
 
           <!-- 4. Uncontrollable Behaviour -->
           <article class="training-card" data-category="problems" data-title="Uncontrollable Behaviour"
@@ -3012,10 +2627,8 @@
               <span class="training-card-icon"><i class="fa-solid fa-arrows-spin" aria-hidden="true"></i></span>
               <h3>Uncontrollable Behaviour</h3>
             </div>
-            <p>
-              Compulsive tail-chasing, shadow stalking, or extreme frantic hyperactivity that fails to respond to redirection.
-            </p>
-          </article>
+            <p>Consult a specialist about compulsive or unredirectable behaviour.</p>
+        </article>
 
           <!-- 5. Resource Guarding -->
           <article class="training-card" data-category="problems" data-title="Resource Guarding"
@@ -3024,10 +2637,8 @@
               <span class="training-card-icon"><i class="fa-solid fa-shield-virus" aria-hidden="true"></i></span>
               <h3>Resource Guarding</h3>
             </div>
-            <p>
-              Escalating aggressive defense of food bowls, sleeping beds, found items, or specific family members when approached.
-            </p>
-          </article>
+            <p>Get professional guidance for escalating defence of food, beds, or objects.</p>
+        </article>
 
           <!-- 6. Sudden Behaviour Changes -->
           <article class="training-card" data-category="problems" data-title="Sudden Behaviour Changes"
@@ -3036,10 +2647,8 @@
               <span class="training-card-icon"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i></span>
               <h3>Sudden Behaviour Changes</h3>
             </div>
-            <p>
-              Abrupt aggression, irritability, or house-soiling in a previously calm, house-trained adult dog.
-            </p>
-          </article>
+            <p>Ask a veterinarian about abrupt aggression, irritability, or house-soiling.</p>
+        </article>
 
           <!-- 7. Finding a Certified Trainer -->
           <article class="training-card" data-category="problems" data-title="Finding a Certified Dog Trainer"
@@ -3048,10 +2657,8 @@
               <span class="training-card-icon"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i></span>
               <h3>Finding a Certified Specialist</h3>
             </div>
-            <p>
-              Look for force-free credentials (CPDT-KA, IAABC, DACVB, KPA-CTP); avoid trainers using shock, prong, or alpha-dominance methods.
-            </p>
-          </article>
+            <p>Choose a force-free certified trainer and avoid aversive equipment.</p>
+        </article>
         </div>
 
         <!-- Mandatory Advisory Box -->
@@ -3301,7 +2908,6 @@
       const searchInput = document.getElementById("training-search-input");
       const clearSearchBtn = document.getElementById("search-clear-btn");
       const filterPills = document.querySelectorAll(".filter-pill");
-      const resultsCountText = document.getElementById("results-count-text");
       const resetAllBtn = document.getElementById("reset-all-btn");
       const noResultsBox = document.getElementById("no-results-box");
       const noResultsResetBtn = document.getElementById("no-results-reset-btn");
@@ -3310,7 +2916,6 @@
 
       let currentCategory = "all";
       let currentQuery = "";
-      const totalCards = trainingCards.length;
 
       function filterContent() {
         let visibleCount = 0;
@@ -3356,15 +2961,6 @@
             section.style.display = "";
           }
         });
-
-        // Update live results count
-        if (resultsCountText) {
-          if (visibleCount === totalCards) {
-            resultsCountText.innerHTML = `Showing all <b>${totalCards}</b> training topics & insights`;
-          } else {
-            resultsCountText.innerHTML = `Showing <b>${visibleCount}</b> of <b>${totalCards}</b> training topics`;
-          }
-        }
 
         // Handle empty state message
         if (visibleCount === 0) {
