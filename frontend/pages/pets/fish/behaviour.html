@@ -654,87 +654,99 @@
         max-width: 330px;
       }
 
-      /* Warm Cream / Tan Final CTA Banner matching reference */
-      .fish-cta {
-        background: #efe7d8 !important;
-        border: 1px solid #e4dac8;
-        border-radius: 36px;
+      .fish-cta,
+      section.fish-cta.section-wrap {
+        background-color: #efe7d8 !important;
+        background-image: none !important;
+        border: 1px solid #e4dac8 !important;
+        border-radius: 36px !important;
         padding: 46px 52px !important;
-        margin: 44px auto 64px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 32px;
-        box-shadow: 0 8px 24px rgba(35, 75, 45, 0.04);
+        margin: 44px auto 64px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 32px !important;
+        box-shadow: 0 8px 24px rgba(35, 75, 45, 0.04) !important;
+        text-align: left !important;
       }
 
+      .fish-cta::before,
       .fish-cta::after {
-        content: none;
+        content: none !important;
+        display: none !important;
       }
 
       .fish-cta .eyebrow {
-        color: #246b43;
+        display: block !important;
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 0 12px !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        color: #246b43 !important;
         font-family: "DM Sans", "Manrope", sans-serif !important;
-        font-size: 0.78rem;
-        font-weight: 700;
-        letter-spacing: 1.4px;
-        text-transform: uppercase;
-        margin-bottom: 12px;
-        display: block;
+        font-size: 0.78rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 1.4px !important;
+        text-transform: uppercase !important;
+        text-align: left !important;
       }
 
       .fish-cta h2 {
         font-family: Georgia, "Times New Roman", serif !important;
-        font-size: clamp(1.85rem, 3vw, 2.55rem);
-        font-weight: 700;
-        color: #263b30;
-        line-height: 1.2;
-        margin: 0 0 14px;
+        font-size: clamp(1.85rem, 3vw, 2.55rem) !important;
+        font-weight: 700 !important;
+        color: #263b30 !important;
+        line-height: 1.2 !important;
+        margin: 0 0 14px !important;
+        text-align: left !important;
       }
 
       .fish-cta h2 em {
-        color: #28764a;
-        font-style: normal;
+        color: #28764a !important;
+        font-style: normal !important;
       }
 
       .fish-cta p {
-        color: #55665b;
+        color: #55665b !important;
         font-family: "DM Sans", "Manrope", sans-serif !important;
-        font-size: 0.96rem;
-        line-height: 1.7;
-        margin: 0;
-        max-width: 620px;
+        font-size: 0.96rem !important;
+        line-height: 1.7 !important;
+        margin: 0 !important;
+        max-width: 620px !important;
+        text-align: left !important;
       }
 
       .fish-cta-actions {
-        display: flex;
-        gap: 12px;
-        flex-shrink: 0;
+        display: flex !important;
+        gap: 12px !important;
+        flex-shrink: 0 !important;
       }
 
       .fish-cta .button.button-light {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        padding: 13px 26px;
-        border-radius: 9999px;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        padding: 13px 26px !important;
+        border-radius: 9999px !important;
         background: #ffffff !important;
         color: #246b43 !important;
         font-family: "DM Sans", "Manrope", sans-serif !important;
-        font-weight: 700;
-        font-size: 0.9rem;
+        font-weight: 700 !important;
+        font-size: 0.9rem !important;
         border: 1px solid #d4dfd5 !important;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-        text-decoration: none;
-        transition: all 0.22s ease;
-        white-space: nowrap;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04) !important;
+        text-decoration: none !important;
+        transition: all 0.22s ease !important;
+        white-space: nowrap !important;
       }
 
       .fish-cta .button.button-light:hover {
         background: #f4faf5 !important;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 16px rgba(35, 75, 45, 0.08);
+        transform: translateY(-2px) !important;
+        box-shadow: 0 6px 16px rgba(35, 75, 45, 0.08) !important;
       }
 
       @media (max-width: 1024px) {
@@ -757,21 +769,22 @@
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
-        .fish-cta {
-          flex-direction: column;
-          align-items: flex-start;
+        .fish-cta,
+        section.fish-cta.section-wrap {
+          flex-direction: column !important;
+          align-items: flex-start !important;
           padding: 36px 28px !important;
-          border-radius: 28px;
+          border-radius: 28px !important;
         }
 
         .fish-cta-actions {
-          width: 100%;
-          flex-wrap: wrap;
-          margin-top: 8px;
+          width: 100% !important;
+          flex-wrap: wrap !important;
+          margin-top: 8px !important;
         }
 
         .fish-cta-actions .button {
-          width: 100%;
+          width: 100% !important;
         }
       }
 
@@ -859,7 +872,7 @@
           <div class="hero-actions">
             <a class="button" href="#behaviour-overview">
               Explore Fish Behaviour
-              <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
             </a>
           </div>
           <div class="hero-note">
