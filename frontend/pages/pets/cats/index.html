@@ -30,6 +30,12 @@
             format("truetype");
       }
 
+      .hero-note i,
+      .floating-card > i {
+        color: var(--green);
+        font-size: 1.25rem;
+      }
+
       .cat-badge-strip {
         display: inline-flex;
         align-items: center;
@@ -81,7 +87,24 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        display: block;
         transition: transform 0.35s ease;
+      }
+
+      #card-grooming .cat-card-media img {
+        object-position: center 60%;
+      }
+
+      #card-health .cat-card-media img {
+        object-position: center 30%;
+      }
+
+      #card-behaviour .cat-card-media img {
+        object-position: center 25%;
+      }
+
+      #card-safety .cat-card-media img {
+        object-position: center 85%;
       }
 
       .cat-card:hover .cat-card-media img {
@@ -1039,14 +1062,14 @@
             id="hero-cat-image"
           />
           <div class="floating-card card-top">
-            ✨
+            <i class="fa-solid fa-cat" aria-hidden="true"></i>
             <span
               ><b>Gentle &amp; Curious</b
               ><small>Loving indoor companions</small></span
             >
           </div>
           <div class="floating-card card-bottom">
-            🐾
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
             <span
               ><b>Happy Purrs Everyday</b
               ><small>Complete care &amp; wellness</small></span
